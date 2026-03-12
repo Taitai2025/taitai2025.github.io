@@ -2135,6 +2135,60 @@
     overflow: hidden;
   }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+@media screen and (max-width: 768px) {
+  /* 1. 封面页适配 */
+  #avatar-frame {
+    width: 120px !important;
+    height: 120px !important;
+    margin-top: 20px;
+  }
+  #name {
+    font-size: 2.2rem !important;
+  }
+  #slogan {
+    font-size: 1rem !important;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .cover-buttons {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 15px !important;
+    margin-top: 30px;
+  }
+  .cover-buttons button {
+    width: 80% !important;
+    font-size: 1.1rem !important;
+  }
+
+  /* 2. 简历内容页适配 */
+  .container {
+    width: 92% !important;
+    padding: 20px 15px !important;
+    margin: 10px auto !important;
+  }
+  .resume-heading {
+    font-size: 2rem !important;
+  }
+  .section h2 {
+    font-size: 1.4rem !important;
+  }
+  .section h3 {
+    font-size: 1.2rem !important;
+  }
+  ul {
+    padding-left: 20px !important;
+  }
+  
+  /* 3. 确保表格在手机上可以左右滑动 */
+  table {
+    font-size: 0.9rem !important;
+  }
+}
+</style>
 </head>
 <body>
   <!-- Preloaded images for performance optimization -->
