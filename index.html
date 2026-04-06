@@ -14,7 +14,7 @@
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
 
@@ -1410,7 +1410,284 @@
       padding:0 2px;
     }
 
+  
+
+    /* ===== Requested round of refinements ===== */
+    body{
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .top-nav,
+    .nav-link,
+    .page-heading,
+    .social-heading,
+    .toolkit-heading,
+    .schedule-heading,
+    .resume-heading,
+    h2,
+    h3,
+    .category-title,
+    .schedule-title,
+    .social-title,
+    .toolkit-title{
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .cover-name{
+      font-family:"Great Vibes", Georgia, serif;
+      font-weight:400;
+      letter-spacing:.02em;
+    }
+    .cover-slogan{
+      font-family:"Allura", Georgia, cursive;
+    }
+    .cover-btn{
+      font-family:"Times New Roman", Times, serif;
+      font-style:italic;
+      letter-spacing:.45px;
+    }
+
+    .resume-hero-avatar{
+      min-height:230px;
+      display:flex;
+      align-items:stretch;
+    }
+    .resume-hero-avatar img{
+      background:linear-gradient(180deg, var(--surface-2), var(--surface-3));
+    }
+    .intro-profile-section{
+      background:linear-gradient(180deg, color-mix(in srgb, var(--surface) 82%, var(--accent-weak)), var(--surface));
+    }
+    .resume-hero-name{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .resume-hero-name::before{
+      content:"✦";
+      font-size:.85em;
+      color:var(--gold);
+      opacity:.9;
+    }
+    .profile-photo-hint{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.55;
+    }
+    .profile-photo-hint code{
+      display:inline-block;
+      margin-top:4px;
+      padding:2px 8px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:var(--surface-3);
+      font-family:Arial, sans-serif;
+      font-size:.82rem;
+      color:var(--accent-strong);
+    }
+
+    .social-grid{
+      margin-bottom:26px;
+    }
+    .social-stats-panel{
+      margin-top:6px;
+      padding:20px 22px;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, color-mix(in srgb, var(--surface) 90%, var(--accent-weak)), var(--surface-2));
+      box-shadow:var(--shadow-sm);
+    }
+    .stats-panel-head{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    .stats-panel-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:1.14rem;
+      font-weight:700;
+      color:var(--accent);
+    }
+    .stats-panel-title i{
+      color:var(--gold);
+    }
+    .stats-panel-tag{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:var(--surface);
+      box-shadow:var(--shadow-xs);
+      color:var(--muted);
+      font-size:.88rem;
+      white-space:nowrap;
+    }
+    .stats-mini-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+      gap:12px;
+    }
+    .stats-mini-card{
+      min-height:116px;
+      padding:16px 14px;
+      border-radius:14px;
+      border:1px solid color-mix(in srgb, var(--border) 86%, var(--accent-weak));
+      background:linear-gradient(180deg, var(--surface), var(--surface-2));
+      box-shadow:var(--shadow-xs);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      text-align:center;
+    }
+    .stats-mini-label{
+      color:var(--muted);
+      font-size:.9rem;
+      line-height:1.45;
+      min-height:2.8em;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .stats-mini-value{
+      margin-top:8px;
+      color:var(--accent);
+      font-size:1.68rem;
+      line-height:1.08;
+      font-weight:800;
+      font-family:Arial, sans-serif;
+    }
+    .stats-mini-note{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.6;
+    }
+
+    html,
+    body{
+      cursor:url('./assets/cursors/normal.cur'), auto;
+    }
+    a,
+    a *,
+    .social-link,
+    .social-link *,
+    .toolkit-link,
+    .toolkit-link *{
+      cursor:url('./assets/cursors/link_select.cur'), pointer;
+    }
+    button,
+    button *,
+    .top-icon,
+    .top-icon *,
+    .nav-link,
+    .nav-link *,
+    .cover-btn,
+    .cover-btn *,
+    .filter-btn,
+    .filter-btn *{
+      cursor:url('./assets/cursors/precise_select.cur'), pointer;
+    }
+    input,
+    textarea,
+    [contenteditable="true"]{
+      cursor:url('./assets/cursors/text_select.cur'), text;
+    }
+
+    .cover-inner{
+      transition:transform .35s ease, opacity 1s ease;
+      transform-style:preserve-3d;
+      will-change:transform;
+    }
+
+    .mouse-spark,
+    .mouse-burst{
+      position:fixed;
+      left:0;
+      top:0;
+      pointer-events:none;
+      transform:translate(-50%, -50%);
+      z-index:1500;
+    }
+    .mouse-spark{
+      width:var(--spark-size, 6px);
+      height:var(--spark-size, 6px);
+      border-radius:999px;
+      background:radial-gradient(circle, rgba(255,255,255,.98) 0%, rgba(163,199,235,.80) 48%, rgba(163,199,235,0) 78%);
+      box-shadow:0 0 14px rgba(163,199,235,.55);
+      animation:sparkFloat .72s ease-out forwards;
+    }
+    .mouse-burst{
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      border:1.5px solid rgba(255,255,255,.88);
+      box-shadow:0 0 0 1px rgba(163,199,235,.25), 0 0 16px rgba(163,199,235,.48);
+      animation:burstRing .62s ease-out forwards;
+    }
+    body.dark-mode .mouse-spark{
+      background:radial-gradient(circle, rgba(255,255,255,.96) 0%, rgba(185,160,255,.82) 48%, rgba(185,160,255,0) 78%);
+      box-shadow:0 0 14px rgba(185,160,255,.46);
+    }
+    body.dark-mode .mouse-burst{
+      border-color:rgba(236,229,255,.92);
+      box-shadow:0 0 0 1px rgba(185,160,255,.25), 0 0 16px rgba(185,160,255,.42);
+    }
+    @keyframes sparkFloat{
+      from{
+        opacity:.96;
+        transform:translate(-50%, -50%) scale(.55);
+      }
+      to{
+        opacity:0;
+        transform:translate(calc(-50% + var(--spark-x, 0px)), calc(-50% + var(--spark-y, -18px))) scale(1.95);
+      }
+    }
+    @keyframes burstRing{
+      from{
+        opacity:.92;
+        transform:translate(-50%, -50%) scale(.55);
+      }
+      to{
+        opacity:0;
+        transform:translate(-50%, -50%) scale(5.6);
+      }
+    }
+
+    @media (max-width: 768px){
+      .stats-mini-grid{ grid-template-columns:1fr 1fr; }
+      .stats-mini-card{ min-height:102px; }
+    }
+    @media (max-width: 560px){
+      .stats-mini-grid{ grid-template-columns:1fr; }
+      .stats-panel-head{ align-items:flex-start; }
+      .resume-hero-avatar{ min-height:200px; }
+    }
+    @media (hover: none){
+      html,
+      body,
+      a,
+      button,
+      input,
+      textarea,
+      .top-icon,
+      .nav-link,
+      .cover-btn,
+      .filter-btn,
+      .toolkit-link,
+      .social-link{
+        cursor:auto !important;
+      }
+      .mouse-spark,
+      .mouse-burst{
+        display:none !important;
+      }
+    }
+
   </style>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 <body data-lang="zh">
 
@@ -1475,6 +1752,28 @@
   <div class="resume-lang lang-zh">
     
 <div class="resume-heading">泰泰 (Thomas)</div>
+<div class="section intro-profile-section">
+  <div class="resume-hero">
+    <div class="resume-hero-avatar">
+      <img src="./assets/images/profile-photo.jpg" alt="个人照片位置" loading="lazy" onerror="this.onerror=null;this.src='./assets/profile-photo-placeholder.svg';">
+    </div>
+    <div class="resume-hero-body">
+      <div class="resume-hero-name">个人介绍</div>
+      <p class="resume-hero-intro">我目前就读于中国科学技术大学数学科学学院，未来将进入中国科学院数学与系统科学研究院继续攻读计算数学直博。我的兴趣主要交织在计算数学、最优化算法、民族音乐与学生组织工作之间；也希望把理性、审美与行动力慢慢统一到同一条成长轨迹里。</p>
+      <div class="chip-row">
+        <span class="pill"><i class="fas fa-infinity"></i> 计算数学 / 最优化</span>
+        <span class="pill"><i class="fas fa-music"></i> 民乐演奏 / 编配</span>
+        <span class="pill"><i class="fas fa-people-group"></i> 乐团与学生工作</span>
+      </div>
+      <div class="badges">
+        <span class="badge">本科：USTC</span>
+        <span class="badge">去向：AMSS, CAS</span>
+        <span class="badge">常驻：北京 × 合肥</span>
+      </div>
+      <div class="profile-photo-hint">照片位已预留，后续将图片替换为：<br><code>./assets/images/profile-photo.jpg</code></div>
+    </div>
+  </div>
+</div>
 <p class="contact-info">
         北京丰台, 100040<br/>
 <span class="email"><i class="fas fa-envelope"></i> Email: taitai@mail.ustc.edu.cn</span><br/>
@@ -2204,6 +2503,28 @@
   <div class="resume-lang lang-en">
     <div class="section"><h2>Education</h2>
 <div class="resume-heading">Thomas (TaiTai)</div>
+<div class="section intro-profile-section">
+  <div class="resume-hero">
+    <div class="resume-hero-avatar">
+      <img src="./assets/images/profile-photo.jpg" alt="Profile photo placeholder" loading="lazy" onerror="this.onerror=null;this.src='./assets/profile-photo-placeholder.svg';">
+    </div>
+    <div class="resume-hero-body">
+      <div class="resume-hero-name">About me</div>
+      <p class="resume-hero-intro">I am currently an undergraduate in the School of Mathematical Sciences at USTC, and I will continue to AMSS, CAS for a direct PhD in computational mathematics. My long-term interests move between computational mathematics, optimization algorithms, Chinese traditional music, and student service — and I hope, over time, to bring rigor, aesthetic sensitivity, and practical action into the same trajectory of growth.</p>
+      <div class="chip-row">
+        <span class="pill"><i class="fas fa-infinity"></i> Computational mathematics / optimization</span>
+        <span class="pill"><i class="fas fa-music"></i> Performance / arrangement</span>
+        <span class="pill"><i class="fas fa-people-group"></i> Orchestra & student service</span>
+      </div>
+      <div class="badges">
+        <span class="badge">Current: USTC</span>
+        <span class="badge">Next: AMSS, CAS</span>
+        <span class="badge">Mostly: Beijing × Hefei</span>
+      </div>
+      <div class="profile-photo-hint">A dedicated photo slot has been reserved. Replace the file with:<br><code>./assets/images/profile-photo.jpg</code></div>
+    </div>
+  </div>
+</div>
 <p class="contact-info">
   Fengtai, Beijing 100040<br />
   <span class="email"><i class="fas fa-envelope"></i> Email: taitai@mail.ustc.edu.cn</span><br />
@@ -2645,6 +2966,32 @@
         <div class="social-description"><span><span class="lang-zh">代码仓库、项目记录与网页相关内容。</span><span class="lang-en">Code repositories, project traces, and homepage-related experiments.</span></span></div>
         <a class="social-link" href="https://github.com/Taitai2025" target="_blank" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> <span><span class="lang-zh">查看主页</span><span class="lang-en">Open profile</span></span></a>
       </div>
+    </div>
+
+    <div class="social-stats-panel">
+      <div class="stats-panel-head">
+        <div class="stats-panel-title"><i class="fas fa-chart-line"></i> <span><span class="lang-zh">网页访问统计</span><span class="lang-en">Visit Statistics</span></span></div>
+        <div class="stats-panel-tag"><span><span class="lang-zh">社交页补充模块</span><span class="lang-en">Added to Social</span></span></div>
+      </div>
+      <div class="stats-mini-grid">
+        <div class="stats-mini-card">
+          <div class="stats-mini-label"><span><span class="lang-zh">总站浏览量</span><span class="lang-en">Site views</span></span></div>
+          <div class="stats-mini-value"><span id="busuanzi_value_site_pv">—</span></div>
+        </div>
+        <div class="stats-mini-card">
+          <div class="stats-mini-label"><span><span class="lang-zh">访客数</span><span class="lang-en">Visitors</span></span></div>
+          <div class="stats-mini-value"><span id="busuanzi_value_site_uv">—</span></div>
+        </div>
+        <div class="stats-mini-card">
+          <div class="stats-mini-label"><span><span class="lang-zh">当前页浏览量</span><span class="lang-en">This page</span></span></div>
+          <div class="stats-mini-value"><span id="busuanzi_value_page_pv">—</span></div>
+        </div>
+        <div class="stats-mini-card">
+          <div class="stats-mini-label"><span><span class="lang-zh">本机累计打开</span><span class="lang-en">This browser</span></span></div>
+          <div class="stats-mini-value" id="local-browser-visits">—</div>
+        </div>
+      </div>
+      <p class="stats-mini-note"><span><span class="lang-zh">这里接入了免配置的轻量访问统计，风格上向 Stardust 的统计模块靠齐。若浏览器或插件拦截第三方统计脚本，部分数字可能暂时显示为“—”。</span><span class="lang-en">A no-setup lightweight analytics script is enabled here, visually aligned with Stardust’s statistics module. If a browser or extension blocks third-party analytics, some numbers may temporarily remain as “—”.</span></span></p>
     </div>
   </div>
 </section>
@@ -3509,5 +3856,90 @@
   filterToolkit();
 
   </script>
+
+  <script>
+  (function(){
+    const localVisitEl = document.getElementById('local-browser-visits');
+    const LOCAL_VISIT_KEY = 'tt_browser_visit_counter';
+    const sessionKey = 'tt_browser_visit_session';
+    try {
+      let count = parseInt(localStorage.getItem(LOCAL_VISIT_KEY) || '0', 10);
+      if (!sessionStorage.getItem(sessionKey)) {
+        count += 1;
+        localStorage.setItem(LOCAL_VISIT_KEY, String(count));
+        sessionStorage.setItem(sessionKey, '1');
+      }
+      if (localVisitEl) localVisitEl.textContent = String(count || 1);
+    } catch (e) {
+      if (localVisitEl) localVisitEl.textContent = '—';
+    }
+  })();
+
+  (function(){
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasHover = window.matchMedia('(hover: hover)').matches;
+    if (prefersReduced || !hasHover) return;
+
+    const coverEl = document.getElementById('cover');
+    const coverInner = document.querySelector('.cover-inner');
+    let lastSparkTime = 0;
+    let lastX = null;
+    let lastY = null;
+
+    function spawnSpark(x, y){
+      const spark = document.createElement('span');
+      spark.className = 'mouse-spark';
+      spark.style.left = `${x}px`;
+      spark.style.top = `${y}px`;
+      spark.style.setProperty('--spark-size', `${4 + Math.random() * 5}px`);
+      spark.style.setProperty('--spark-x', `${(Math.random() - 0.5) * 24}px`);
+      spark.style.setProperty('--spark-y', `${-14 - Math.random() * 26}px`);
+      document.body.appendChild(spark);
+      window.setTimeout(() => spark.remove(), 760);
+    }
+
+    function spawnBurst(x, y){
+      const burst = document.createElement('span');
+      burst.className = 'mouse-burst';
+      burst.style.left = `${x}px`;
+      burst.style.top = `${y}px`;
+      document.body.appendChild(burst);
+      window.setTimeout(() => burst.remove(), 700);
+    }
+
+    document.addEventListener('mousemove', (event) => {
+      const now = performance.now();
+      if (lastX === null || Math.hypot(event.clientX - lastX, event.clientY - lastY) > 14) {
+        if (now - lastSparkTime > 42) {
+          spawnSpark(event.clientX, event.clientY);
+          lastSparkTime = now;
+          lastX = event.clientX;
+          lastY = event.clientY;
+        }
+      }
+
+      if (coverEl && coverInner && coverEl.style.display !== 'none' && !coverEl.classList.contains('hidden')) {
+        const rect = coverEl.getBoundingClientRect();
+        const px = (event.clientX - rect.left) / rect.width - 0.5;
+        const py = (event.clientY - rect.top) / rect.height - 0.5;
+        const rotateY = px * 6;
+        const rotateX = -py * 4.5;
+        coverInner.style.transform = `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+      }
+    }, { passive: true });
+
+    document.addEventListener('click', (event) => {
+      spawnBurst(event.clientX, event.clientY);
+      spawnSpark(event.clientX, event.clientY);
+    }, { passive: true });
+
+    if (coverEl && coverInner) {
+      coverEl.addEventListener('mouseleave', () => {
+        coverInner.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
+      });
+    }
+  })();
+  </script>
+
 </body>
 </html>
