@@ -78,7 +78,7 @@ window.SCHEDULE_PAGE_I18N.en = {
         <div class="section">
           <h2 data-sched-i18n="weekly_title">A rough weekly rhythm</h2>
           <div class="routine-table-wrap">
-            <table>
+            <table class="routine-table">
               <thead>
                 <tr>
                   <th data-sched-i18n="timeblock">Time block</th>

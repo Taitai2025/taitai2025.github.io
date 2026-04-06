@@ -12,16 +12,16 @@
     github_desc: "Repositories and ongoing projects",
     link_channel: "Channel",
     link_profile: "Profile",
-    link_open: "Open",
     stats_heading: "Website Statistics",
-    metric_total: "All-time (Total)",
-    metric_month: "Last 30 days",
-    metric_week: "Last 7 days",
-    metric_page: "This path",
-    dashboard_title: "GoatCounter Dashboard",
+    metric_site_pv: "Site page views",
+    metric_site_uv: "Site visitors",
+    metric_page_pv: "This page views",
+    metric_path: "Current path",
+    stats_live_title: "Counter status",
+    stats_live_main: "Counter enabled",
+    stats_live_body: "After deployment, the counter will start accumulating automatically. If a browser extension blocks third-party scripts, the values may stay as —.",
     visitor_map: "Visitor Map",
-    stats_hint: "Replace the tracking IDs in Social.js to activate.",
-    stats_placeholder: "Tracking placeholder",
-    visitor_placeholder: "Map placeholder"
+    visitor_placeholder: "Map slot reserved",
+    visitor_body: "The Stardust-style position is kept here, so you can replace it later with any visitor-map widget you prefer."
   };
 })();

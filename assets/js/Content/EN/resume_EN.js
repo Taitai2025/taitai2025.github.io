@@ -8,35 +8,36 @@
     <div id="clock">GMT+8 00:00</div>
     <div class="container">
       
-<div class="resume-heading">Thomas · TaiTai</div>
+
+<div class="resume-heading">Thomas</div>
 
 <div class="section resume-hero" id="resume-hero">
   <div class="resume-hero-avatar">
     <img src="./assets/images/profile.jpg" alt="Profile photo">
   </div>
   <div class="resume-hero-body">
-    <div class="resume-hero-name">About Me</div>
+    <div class="resume-hero-name">Thomas</div>
     <div class="resume-hero-chips">
       <span class="contact-pill"><strong>Focus</strong><span>Computational mathematics / optimization</span></span>
       <span class="contact-pill"><strong>Music</strong><span>Sheng performance / arrangement / orchestra work</span></span>
       <span class="contact-pill"><strong>Base</strong><span>Beijing × Hefei</span></span>
     </div>
     <p class="resume-hero-intro">
-      I am currently an undergraduate in the School of Mathematical Sciences at USTC, and I will continue to AMSS, CAS for a direct PhD in computational mathematics.
-      My long-term interests move between computational mathematics, optimization algorithms, Chinese traditional music, and student service — and I hope, over time,
-      to bring rigor, aesthetic sensitivity, and practical action into the same trajectory of growth.
+      I am currently an undergraduate in the School of Mathematical Sciences at USTC and have been admitted to the direct Ph.D. track in computational mathematics at AMSS, CAS, where I will continue my study under Academician Yuan Yaxiang.
+      For me, undergraduate life has never been a matter of fitting myself into a single label; it has been a process of searching for the meeting point between mathematics, optimization, the sheng and Chinese traditional music, student leadership, and public-minded service.
+      On the academic side, I have remained near the top of my cohort, led a national undergraduate innovation project, served as a teaching assistant for linear algebra, and kept sharpening my sense of problems through seminars and conferences; on the artistic and organizational side, I have long been deeply involved in the inheritance of Chinese traditional music and campus aesthetic education, and I currently serve as the head of the USTC Chinese Orchestra (NMOU), where I helped plan and promote the “Zhonghua Yinyun” teaching initiative so that more students can truly encounter and learn traditional music on campus.
+      The more I move forward, the more I believe that growth is not measured only by grades, prizes, or titles, but by whether one can gradually shape rigor, aesthetic sensitivity, responsibility in a team, and enthusiasm for public life into a steadier and more self-consistent rhythm.
     </p>
+    <div class="resume-hero-contacts">
+      <span class="contact-pill contact-detail"><i class="fas fa-location-dot contact-icon" aria-hidden="true"></i><span class="contact-label">Address</span><span class="contact-value">Fengtai, Beijing 100040</span></span>
+      <span class="contact-pill contact-detail"><i class="fas fa-envelope contact-icon" aria-hidden="true"></i><span class="contact-label">Email</span><a class="contact-value" href="mailto:taitai@mail.ustc.edu.cn">taitai@mail.ustc.edu.cn</a></span>
+      <span class="contact-pill contact-detail"><i class="fab fa-qq contact-icon" aria-hidden="true"></i><span class="contact-label">QQ</span><span class="contact-value">2592255858</span></span>
+      <span class="contact-pill contact-detail"><i class="fab fa-weixin contact-icon" aria-hidden="true"></i><span class="contact-label">WeChat</span><span class="contact-value">taitai_2026</span></span>
+      <span class="contact-pill contact-detail"><i class="fas fa-users contact-icon" aria-hidden="true"></i><span class="contact-label">Fan Group</span><span class="contact-value">NMOU Fan Group · 733028065</span></span>
+    </div>
   </div>
 </div>
 
-<p class="contact-info">
-  Fengtai, Beijing 100040<br>
-  <span class="email"><i class="fas fa-envelope"></i> Email: taitai@mail.ustc.edu.cn</span><br>
-  <i class="fab fa-qq"></i> QQ: 2592255858 &nbsp; | &nbsp;
-  <i class="fab fa-weixin"></i> WeChat: taitai_2026<br>
-  <i class="fas fa-users"></i> <strong>NMOU Fan Group:</strong> 733028065
-  <span style="font-size: 0.85em; color: #888;">(Please mention who you are and contact the group owner before joining.)</span>
-</p>
 
 <div class="section">
   <h2>Education</h2>
