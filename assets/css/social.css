@@ -308,3 +308,15 @@
   max-width: 36rem;
   line-height: 1.6;
 }
+
+
+.stats-path-value {
+  font-size: 1rem;
+  line-height: 1.35;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  word-break: break-all;
+}
+
+.stats-live-box {
+  min-height: 180px;
+}

@@ -543,6 +543,42 @@ a.download-link:hover {
   line-height: 1.55;
 }
 
+.resume-hero-contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.contact-pill.contact-detail {
+  white-space: normal;
+  line-height: 1.35;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-icon {
+  color: var(--accent);
+  font-size: 0.95em;
+}
+
+.contact-label {
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.contact-value {
+  color: var(--text);
+}
+
+.contact-pill.contact-detail a.contact-value {
+  color: inherit;
+}
+
+.contact-pill.contact-detail a.contact-value:hover {
+  color: var(--accent);
+}
+
 /* Responsive: stack photo above text on small screens */
 @media (max-width: 768px) {
   .section.resume-hero {
@@ -563,6 +599,15 @@ a.download-link:hover {
 
   .resume-hero-name {
     font-size: 1.95em;
+  }
+
+  .resume-hero-contacts {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-pill.contact-detail {
+    width: 100%;
   }
 }
 
