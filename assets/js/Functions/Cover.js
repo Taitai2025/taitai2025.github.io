@@ -24,7 +24,7 @@
 
   function setRandomCoverBackground(coverEl) {
     if (!coverEl) return null;
-    const covers = ['cover_1.jpg', 'cover_2.jpg', 'cover_3.jpg', 'cover_4.jpg', 'cover_5.jpg', 'cover_6.jpg'];
+    const covers = ['cover_1.jpg'];
     const chosen = covers[Math.floor(Math.random() * covers.length)];
     coverEl.style.backgroundImage = `url('./assets/images/${chosen}')`;
     coverEl.style.backgroundRepeat = 'no-repeat';
