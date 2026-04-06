@@ -12,16 +12,16 @@
     github_desc: "代码仓库与项目",
     link_channel: "频道",
     link_profile: "主页",
-    link_open: "打开",
     stats_heading: "网站统计",
-    metric_total: "累计 (总计)",
-    metric_month: "近 30 天",
-    metric_week: "近 7 天",
-    metric_page: "当前页面",
-    dashboard_title: "GoatCounter 面板",
+    metric_site_pv: "站点总浏览量",
+    metric_site_uv: "站点访客数",
+    metric_page_pv: "当前页浏览量",
+    metric_path: "当前路径",
+    stats_live_title: "计数状态",
+    stats_live_main: "统计已启用",
+    stats_live_body: "站点部署后会自动开始累计。如果浏览器插件屏蔽了第三方脚本，数字可能仍会显示为 —。",
     visitor_map: "访客地图",
-    stats_hint: "将 Social.js 里的统计 ID 替换成你自己的即可启用。",
-    stats_placeholder: "统计占位",
-    visitor_placeholder: "地图占位"
+    visitor_placeholder: "地图位已预留",
+    visitor_body: "这里保留了 Stardust 风格中的地图位置；之后你若想接别的访客地图小部件，可以直接替换这里。"
   };
 })();

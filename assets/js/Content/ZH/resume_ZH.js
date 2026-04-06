@@ -1,1 +1,754 @@
-window.RESUME_ZH_INNER_HTML = "\n    <button id=\"toggle-btn\">\n      <span><i class=\"fas fa-sun\"></i></span>\n    </button>\n    <div id=\"clock\">GMT+8 00:00</div>\n    <div class=\"container\">\n      \n<div class=\"resume-heading\">\u6cf0\u6cf0 \u00b7 Thomas</div>\n\n<div class=\"section resume-hero\" id=\"resume-hero\">\n  <div class=\"resume-hero-avatar\">\n    <img src=\"./assets/images/profile.jpg\" alt=\"\u4e2a\u4eba\u7167\u7247\">\n  </div>\n  <div class=\"resume-hero-body\">\n    <div class=\"resume-hero-name\">\u4e2a\u4eba\u4ecb\u7ecd</div>\n    <div class=\"resume-hero-chips\">\n      <span class=\"contact-pill\"><strong>\u7814\u7a76\u65b9\u5411</strong><span>\u8ba1\u7b97\u6570\u5b66 / \u6700\u4f18\u5316\u7b97\u6cd5</span></span>\n      <span class=\"contact-pill\"><strong>\u5174\u8da3</strong><span>\u6c11\u65cf\u97f3\u4e50 / \u7f16\u914d / \u4e50\u56e2\u5de5\u4f5c</span></span>\n      <span class=\"contact-pill\"><strong>\u5e38\u9a7b</strong><span>\u5317\u4eac \u00d7 \u5408\u80a5</span></span>\n    </div>\n    <p class=\"resume-hero-intro\">\n      \u6211\u76ee\u524d\u5c31\u8bfb\u4e8e\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u6570\u5b66\u79d1\u5b66\u5b66\u9662\uff0c\u672a\u6765\u5c06\u8fdb\u5165\u4e2d\u56fd\u79d1\u5b66\u9662\u6570\u5b66\u4e0e\u7cfb\u7edf\u79d1\u5b66\u7814\u7a76\u9662\u7ee7\u7eed\u653b\u8bfb\u8ba1\u7b97\u6570\u5b66\u76f4\u535a\u3002\n      \u6211\u7684\u5174\u8da3\u4e3b\u8981\u4ea4\u7ec7\u5728\u8ba1\u7b97\u6570\u5b66\u3001\u6700\u4f18\u5316\u7b97\u6cd5\u3001\u6c11\u65cf\u97f3\u4e50\u4e0e\u5b66\u751f\u7ec4\u7ec7\u5de5\u4f5c\u4e4b\u95f4\uff1b\u4e5f\u5e0c\u671b\u628a\u7406\u6027\u3001\u5ba1\u7f8e\u4e0e\u884c\u52a8\u529b\u6162\u6162\u7edf\u4e00\u5230\u540c\u4e00\u6761\u6210\u957f\u8f68\u8ff9\u91cc\u3002\n    </p>\n  </div>\n</div>\n<p class=\"contact-info\">\n        \u5317\u4eac\u4e30\u53f0, 100040<br>\n<span class=\"email\"><i class=\"fas fa-envelope\"></i> Email: taitai@mail.ustc.edu.cn</span><br/>\n<i class=\"fab fa-qq\"></i> QQ: 2592255858 \u00a0 | \u00a0 \n        <i class=\"fab fa-weixin\"></i> \u5fae\u4fe1: taitai_2026<br/>\n<i class=\"fas fa-users\"></i> <strong>NMOU \u6cf0\u871c\u5206\u8235:</strong> 733028065 \n        <span style=\"font-size: 0.85em; color: #888;\">(\u8fdb\u7fa4\u8bf7\u5907\u6ce8\u5e76\u8054\u7cfb\u7fa4\u4e3b)</span>\n</br></p>\n<div class=\"section\">\n<h2>\u6559\u80b2\u7ecf\u5386</h2>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u9662\u6570\u5b66\u4e0e\u7cfb\u7edf\u79d1\u5b66\u7814\u7a76\u9662</strong></span>\n<span style=\"font-size: 0.9em; color: #666;\">2026.09 (\u9884\u8ba1)</span>\n</div>\n<div style=\"font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;\">\n          (Academy of Mathematics and Systems Science, Chinese Academy of Sciences)\n        </div>\n<ul>\n<li><strong>\u5b66\u4f4d/\u8eab\u4efd:</strong> <strong>\u76f4\u535a\u751f (\u62df\u5f55\u53d6)</strong></li>\n<li><strong>\u57f9\u517b\u5355\u4f4d:</strong> \u8ba1\u7b97\u6570\u5b66\u4e0e\u79d1\u5b66\u5de5\u7a0b\u8ba1\u7b97\u7814\u7a76\u6240</li>\n<li><strong>\u653b\u8bfb\u4e13\u4e1a:</strong> \u8ba1\u7b97\u6570\u5b66</li>\n<li><strong>\u7814\u7a76\u65b9\u5411:</strong> \u6700\u4f18\u5316\u8ba1\u7b97\u65b9\u6cd5 I</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66</strong></span>\n<span style=\"font-size: 0.9em; color: #666;\">2022.09 - 2026.07 (\u9884\u8ba1)</span>\n</div>\n<div style=\"font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;\">\n          (University of Science and Technology of China)\n        </div>\n<ul>\n<li><strong>\u5b66\u4f4d/\u8eab\u4efd:</strong> \u7406\u5b66\u5b66\u58eb</li>\n<li><strong>\u6240\u5c5e\u9662\u7cfb:</strong> \u6570\u5b66\u79d1\u5b66\u5b66\u9662</li>\n<li><strong>\u4e3b\u4fee\u4e13\u4e1a:</strong> \u6570\u5b66\u4e0e\u5e94\u7528\u6570\u5b66 (\u6982\u7387\u7edf\u8ba1\u65b9\u5411)</li>\n<li><strong>\u8de8\u5b66\u79d1\u63a2\u7d22:</strong> \u672c\u79d1\u671f\u95f4\u66fe\u6df1\u5165\u8003\u8651\u8f85\u4fee\u8ba1\u7b97\u673a\u79d1\u5b66\u3001\u91d1\u878d\u5b66\u6216\u5316\u5b66\u3002\u867d\u7136\u7531\u4e8e\u5bf9\u5b66\u4e1a\u4e25\u8c28\u6027\u7684\u8ffd\u6c42\uff0c\u672a\u80fd\u5728\u89c4\u5b9a\u65f6\u95f4\u5185\u63d0\u4ea4\u6b63\u5f0f\u7533\u8bf7\uff0c\u4f46\u6211\u59cb\u7ec8\u4fdd\u6301\u7740\u5bf9\u4ea4\u53c9\u5b66\u79d1\u7684\u70ed\u60c5\u3002\u901a\u8fc7\u9009\u4fee\u76f8\u5173\u6838\u5fc3\u8bfe\u7a0b\u4e0e\u53c2\u4e0e\u8de8\u5b66\u79d1\u7ade\u8d5b\uff0c\u6211\u79ef\u7d2f\u4e86\u624e\u5b9e\u7684\u7b97\u6cd5\u8bbe\u8ba1\u4e0e\u591a\u5b66\u79d1\u5efa\u6a21\u7ecf\u9a8c\uff0c\u6784\u5efa\u4e86\u4ee5\u6570\u5b66\u4e3a\u6839\u57fa\u7684\u77e5\u8bc6\u7ed3\u6784\u3002</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u5317\u4eac\u5e02\u5341\u4e00\u5b66\u6821</strong></span>\n<span style=\"font-size: 0.9em; color: #666;\">2016.09 - 2022.07</span>\n</div>\n<div style=\"font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;\">\n          (Beijing National Day School)\n        </div>\n<p style=\"margin-left: 20px; font-size: 0.9em; color: #555;\">\u521d\u4e2d\u3001\u9ad8\u4e2d\uff08\u671f\u95f4\u5165\u9009\u201c\u4e2d\u5b66\u751f\u82f1\u624d\u8ba1\u5212\u201d\uff0c\u5f00\u542f\u5b66\u672f\u542f\u8499\uff09</p>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u9662\u9644\u5c5e\u7389\u6cc9\u5c0f\u5b66</strong></span>\n<span style=\"font-size: 0.9em; color: #666;\">2010.09 - 2016.07</span>\n</div>\n<div style=\"font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;\">\n          (The Affiliated Yuquan Primary School of CAS)\n        </div>\n<p style=\"margin-left: 20px; font-size: 0.9em; color: #555;\">\u5c0f\u5b66\uff08\u97f3\u4e50\u7d20\u517b\u4e0e\u827a\u672f\u68a6\u60f3\u7684\u8d77\u822a\u5730\uff09</p>\n</div>\n<div class=\"section\">\n<h2>\u672c\u79d1\u5b66\u4e1a\u60c5\u51b5 (2022\u5e74\u79cb\u5b63\u5b66\u671f\u81f32025\u5e74\u590f\u5b63\u5b66\u671f)</h2>\n<ul>\n<li><strong>GPA:</strong> 3.97/4.3</li>\n<li><strong>\u52a0\u6743\u5e73\u5747\u5206:</strong> 91.67</li>\n<li><strong>\u7b97\u6570\u5e73\u5747\u5206:</strong> 92.39</li>\n<li><strong>\u7efc\u5408\u6d4b\u8bc4\u5206\u6570:</strong> 87.88 (\u4fdd\u7814\u65f6\u7684\u7efc\u5408\u6210\u7ee9\u4e3a92.88)</li>\n<li><strong>2022\u7ea7\u6570\u5b66\u79d1\u5b66\u5b66\u9662GPA\u6392\u540d:</strong> 8/176 (top 5%)</li>\n<li><strong>2022\u7ea7\u6570\u5b66\u79d1\u5b66\u5b66\u9662\u6982\u7387\u7edf\u8ba1\u65b9\u5411GPA\u6392\u540d:</strong> 4/69</li>\n<li><strong>2022\u7ea7\u6570\u5b66\u79d1\u5b66\u5b66\u9662\u7efc\u5408\u6d4b\u8bc4\u6392\u540d:</strong> 2/176</li>\n</ul>\n<div style=\"margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;\">\n<p style=\"margin-top: 0;\"><strong>\u201c\u5728\u8ffd\u6c42\u5353\u8d8a\u7684\u8def\u4e0a\uff0c\u6211\u59cb\u7ec8\u5728\u5b66\u4e60\u5982\u4f55\u5e73\u8861\u9009\u62e9\u4e0e\u575a\u6301\u3002\u201d</strong></p>\n<p>\u56de\u987e\u672c\u79d1\u751f\u6daf\uff0c\u6211\u7684\u5b66\u672f\u8def\u5f84\u5e76\u975e\u5766\u9014\uff0c\u5374\u56e0\u201c\u4e0d\u8d70\u6377\u5f84\u201d\u800c\u6108\u53d1\u539a\u91cd\u3002\u5728\u4e13\u4e1a\u5206\u6d41\u7684\u5173\u952e\u65f6\u523b\uff0c\u6211\u9009\u62e9\u4e86\u6311\u6218\u81ea\u6211\uff0c\u6295\u8eab\u4e8e\u7ade\u4e89\u6781\u5ea6\u6fc0\u70c8\u7684<strong>\u6570\u5b66\u4e0e\u5e94\u7528\u6570\u5b66\uff08\u6982\u7387\u7edf\u8ba1\u65b9\u5411\uff09</strong>\u3002\u5c3d\u7ba1\u5f53\u65f6\u6211\u7684 GPA \u5728<strong>\u4fe1\u606f\u4e0e\u8ba1\u7b97\u79d1\u5b66\uff08\u8ba1\u7b97\u6570\u5b66\u65b9\u5411\uff09</strong>\u540c\u7ea7\u4e03\u5341\u4f59\u540d\u540c\u5b66\u4e2d\u9ad8\u5c45 <strong>\u7b2c 2 \u4f4d</strong>\uff0c\u4f46\u6211\u4ecd\u6e34\u671b\u5728\u968f\u673a\u5206\u6790\u4e0e\u6982\u7387\u7684\u6d77\u6d0b\u4e2d\u78e8\u783a\u601d\u7ef4\u3002</p>\n<p>\u8fd9\u79cd\u7eaf\u7cb9\u7684\u521d\u5fc3\u867d\u8ba9\u6211\u5728\u968f\u540e\u7684\u6392\u540d\u7ade\u4e89\u4e0e\u8363\u8a89\u8bc4\u5b9a\u4e2d\u7ecf\u5386\u4e86\u4e9b\u8bb8\u201c\u620f\u5267\u6027\u201d\u7684\u6ce2\u6298\uff0c\u4f46\u4e5f\u6b63\u662f\u8fd9\u6bb5\u8de8\u65b9\u5411\u7684\u6df1\u5ea6\u4fee\u8bfb\uff0c\u6781\u5927\u5730\u62d3\u5bbd\u4e86\u6211\u7684\u6570\u5b66\u89c6\u91ce\uff0c\u8d4b\u4e88\u4e86\u6211\u4ece\u968f\u673a\u6027\u89c6\u89d2\u5ba1\u89c6\u786e\u5b9a\u6027\u95ee\u9898\u7684\u72ec\u7279\u80fd\u529b\u3002</p>\n<p>\u63a8\u514d\u9636\u6bb5\uff0c\u6211\u9009\u62e9\u56de\u5f52\u521d\u5fc3\uff0c\u6df1\u8015<strong>\u8ba1\u7b97\u6570\u5b66</strong>\u9886\u57df\u3002\u867d\u66fe\u56e0\u65e9\u671f\u7684\u4e13\u4e1a\u8de8\u5ea6\u5728\u4fdd\u7814\u8fc7\u7a0b\u4e2d\u5386\u7ecf\u6ce2\u6298\uff0c\u4f46\u8fd9\u6bb5\u201c\u8de8\u754c\u201d\u7684\u78e8\u783a\u6700\u7ec8\u5185\u5316\u4e3a\u6211\u7814\u7a76\u6700\u4f18\u5316\u7b97\u6cd5\u65f6\u7684\u72ec\u7279\u5e95\u8574\u2014\u2014\u6982\u7387\u7684\u7075\u52a8\u4e0e\u8ba1\u7b97\u7684\u4e25\u8c28\u5728\u6b64\u4ea4\u6c47\u3002</p>\n<p style=\"margin-bottom: 0;\"><strong>\u201c\u9020\u5316\u5f04\u4eba\u201d\u7ec8\u662f\u5e8f\u66f2\u3002\u9009\u62e9\u7684\u610f\u4e49\u4e0d\u5728\u4e8e\u7ed3\u679c\u662f\u5426\u5168\u7136\u5b8c\u7f8e\uff0c\u800c\u5728\u4e8e\u8fd9\u4e00\u8def\u7d2f\u79ef\u7684\u539a\u5ea6\uff0c\u4ee5\u53ca\u5728\u6ce2\u6298\u4e2d\u6108\u53d1\u575a\u5b9a\u7684\u79d1\u7814\u5fd7\u5411\u3002</strong></p>\n</div>\n<h3 style=\"margin-top: 20px;\">\u90e8\u5206\u4ee3\u8868\u6027\u8bfe\u7a0b\u6210\u7ee9</h3>\n<p>\u867d\u7136\u7ecf\u5386\u4e86\u65b9\u5411\u7684\u8f6c\u6362\uff0c\u4f46\u5728\u6570\u5b66\u7684\u5404\u4e2a\u6838\u5fc3\u9886\u57df\u6211\u4f9d\u7136\u6253\u4e0b\u4e86\u624e\u5b9e\u7684\u57fa\u7840\u3002\u503c\u5f97\u4e00\u63d0\u7684\u662f\uff0c\u6211\u5728\u672c\u79d1\u9636\u6bb5\u63d0\u524d\u4fee\u8bfb\u4e86\u90e8\u5206\u7814\u7a76\u751f\u4e13\u4e1a\u8bfe\u7a0b\u5e76\u53d6\u5f97\u4e86\u4e0d\u9519\u7684\u6210\u7ee9\u3002\u540c\u65f6\uff0c\u5728\u8de8\u5b66\u79d1\u7406\u79d1\u3001\u601d\u60f3\u653f\u6cbb\u7406\u8bba\u4ee5\u53ca\u4eba\u6587\u4f53\u827a\u4e2d\uff0c\u6211\u4e5f\u4fdd\u6301\u7740\u6781\u9ad8\u7684\u70ed\u60c5\uff1a</p>\n<div style=\"overflow-x: auto;\">\n<table border=\"1\" cellpadding=\"8\" cellspacing=\"0\" style=\"width: 100%; text-align: left; border-collapse: collapse; min-width: 600px;\">\n<thead>\n<tr style=\"background-color: rgba(128, 128, 128, 0.15);\">\n<th>\u8bfe\u7a0b\u6a21\u5757</th>\n<th>\u8bfe\u7a0b\u540d\u79f0</th>\n<th>\u6210\u7ee9</th>\n<th>\u5b66\u5206</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td rowspan=\"3\"><strong>\u5206\u6790</strong></td>\n<td>\u6cdb\u51fd\u5206\u6790</td>\n<td><strong>100</strong></td>\n<td>3.0</td>\n</tr>\n<tr>\n<td>\u5fae\u5206\u65b9\u7a0b\u5f15\u8bba</td>\n<td><strong>95</strong></td>\n<td>4.0</td>\n</tr>\n<tr>\n<td>\u6570\u5b66\u5206\u6790 (A1)</td>\n<td><strong>93</strong></td>\n<td>6.0</td>\n</tr>\n<tr>\n<td rowspan=\"3\"><strong>\u4ee3\u6570</strong></td>\n<td>\u7ebf\u6027\u4ee3\u6570 (B1)</td>\n<td><strong>98</strong></td>\n<td>4.0</td>\n</tr>\n<tr>\n<td>\u7ebf\u6027\u4ee3\u6570 (A2)</td>\n<td><strong>94</strong></td>\n<td>4.0</td>\n</tr>\n<tr>\n<td>\u8fd1\u4e16\u4ee3\u6570</td>\n<td><strong>93</strong></td>\n<td>3.0</td>\n</tr>\n<tr>\n<td rowspan=\"4\"><strong>\u6982\u7387\u4e0e\u7edf\u8ba1</strong></td>\n<td>\u6982\u7387\u8bba</td>\n<td><strong>100</strong></td>\n<td>3.0</td>\n</tr>\n<tr>\n<td>\u8ba1\u91cf\u7ecf\u6d4e\u5b66</td>\n<td><strong>98</strong></td>\n<td>3.5</td>\n</tr>\n<tr>\n<td>\u968f\u673a\u8fc7\u7a0bA</td>\n<td><strong>96</strong></td>\n<td>3.0</td>\n</tr>\n<tr>\n<td>\u9ad8\u7b49\u6982\u7387\u8bba <span style=\"font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;\">\u7814\u7a76\u751f\u8bfe</span></td>\n<td><strong>89</strong></td>\n<td>4.0</td>\n</tr>\n<tr>\n<td rowspan=\"4\"><strong>\u8ba1\u7b97\u4e0e\u5e94\u7528\u6570\u5b66</strong></td>\n<td>\u79bb\u6563\u6570\u5b66</td>\n<td><strong>99</strong></td>\n<td>4.0</td>\n</tr>\n<tr>\n<td>\u8fd0\u7b79\u5b66</td>\n<td><strong>96</strong></td>\n<td>3.5</td>\n</tr>\n<tr>\n<td>\u504f\u5fae\u5206\u65b9\u7a0b\u6570\u503c\u89e3 <span style=\"font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;\">\u7814\u7a76\u751f\u8bfe</span></td>\n<td><strong>91</strong></td>\n<td>4.0</td>\n</tr>\n<tr>\n<td>\u6709\u9650\u5143\u65b9\u6cd5 <span style=\"font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;\">\u7814\u7a76\u751f\u8bfe</span></td>\n<td><strong>90</strong></td>\n<td>4.0</td>\n</tr>\n<tr>\n<td rowspan=\"4\"><strong>\u7269\u7406\u57fa\u7840</strong></td>\n<td>\u5149\u5b66B</td>\n<td><strong>99</strong></td>\n<td>2.0</td>\n</tr>\n<tr>\n<td>\u539f\u5b50\u7269\u7406B</td>\n<td><strong>98</strong></td>\n<td>2.0</td>\n</tr>\n<tr>\n<td>\u7535\u78c1\u5b66B</td>\n<td><strong>97</strong></td>\n<td>4.0</td>\n</tr>\n<tr>\n<td>\u70ed\u5b66B</td>\n<td><strong>97</strong></td>\n<td>1.5</td>\n</tr>\n<tr>\n<td rowspan=\"2\"><strong>\u601d\u60f3\u653f\u6cbb\u7406\u8bba</strong></td>\n<td>\u4e2d\u56fd\u8fd1\u73b0\u4ee3\u53f2\u7eb2\u8981</td>\n<td><strong>95</strong></td>\n<td>2.5</td>\n</tr>\n<tr>\n<td>\u601d\u60f3\u9053\u5fb7\u4e0e\u6cd5\u6cbb</td>\n<td><strong>95</strong></td>\n<td>3.0</td>\n</tr>\n<tr>\n<td rowspan=\"9\"><strong>\u79d1\u7814\u3001\u901a\u8bc6\u4e0e\u5916\u8bed\u7d20\u517b</strong></td>\n<td>\u201c\u79d1\u5b66\u4e0e\u793e\u4f1a\u201d\u7814\u8ba8\u8bfe</td>\n<td><strong>A+</strong></td>\n<td>1.0</td>\n</tr>\n<tr>\n<td>\u5927\u5b66\u751f\u5fc3\u7406\u5b66</td>\n<td><strong>A+</strong></td>\n<td>2.0</td>\n</tr>\n<tr>\n<td>\u897f\u65b9\u97f3\u4e50\u901a\u53f2</td>\n<td><strong>A+</strong></td>\n<td>2.0</td>\n</tr>\n<tr>\n<td>\u97f3\u4e50\u6765\u4fe1\u2014\u2014\u8d70\u8fdb\u4ea4\u54cd\u4e16\u754c</td>\n<td><strong>A+</strong></td>\n<td>2.0</td>\n</tr>\n<tr>\n<td>\u6e38\u6cf3</td>\n<td><strong>A+</strong></td>\n<td>1.0</td>\n</tr>\n<tr>\n<td>\u7fbd\u6bdb\u7403 I</td>\n<td><strong>A+</strong></td>\n<td>1.0</td>\n</tr>\n<tr>\n<td>\u7fbd\u6bdb\u7403 II</td>\n<td><strong>A+</strong></td>\n<td>1.0</td>\n</tr>\n<tr>\n<td>\u82f1\u8bed\u4ea4\u6d41\u8fdb\u9636 III</td>\n<td><strong>96</strong></td>\n<td>1.0</td>\n</tr>\n<tr>\n<td>\u82f1\u8bed\u8bfb\u5199\u8fdb\u9636 I</td>\n<td><strong>96</strong></td>\n<td>1.0</td>\n</tr>\n</tbody>\n</table>\n</div>\n</div>\n<div class=\"section\">\n<h2>\u5927\u5b66\u4ee5\u6765\u7684\u5956\u9879\u53ca\u8363\u8a89 (\u90e8\u5206)</h2>\n<p><strong>\u867d\u7136\u6211\u5728\u5c0f\u5b66\u548c\u4e2d\u5b66\u9636\u6bb5\u4e5f\u83b7\u5f97\u8fc7\u8bb8\u591a\u5956\u9879, \u4f46\u6211\u66f4\u613f\u610f\u5c55\u793a\u5927\u5b66\u4ee5\u6765\u7684\u8363\u8a89, \u56e0\u4e3a\u8fd9\u4e9b\u5956\u9879\u66f4\u80fd\u4f53\u73b0\u6211\u7684\u6210\u957f\u4e0e\u8fdb\u6b65. </strong></p>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udf93 \u5b66\u4e1a\u4e0e\u7efc\u5408\u8363\u8a89</h3>\n<ul>\n<li><strong>2023\u5e74\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u4f18\u79c0\u5b66\u751f\u5956\u5b66\u91d1 \u91d1\u5956</strong> (2024.01, 3%, 4000\u5143)</li>\n<li>2023\u5e74\u79cb\u5b63\u5b66\u671f\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u7535\u78c1\u5b66\u5c0f\u8bba\u6587\u7ade\u8d5b \u4e09\u7b49\u5956 (2024.01, \u4e0e\u6797\u7426\u7693\u5408\u4f5c)</li>\n<li><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662024\u5e74\u5ea6\u6700\u7f8e\u201c\u516d\u6709\u201d\u5927\u5b66\u751f \u63d0\u540d\u5956</strong> (2024.12)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u7b2c\u4e8c\u5341\u4e94\u671f\u5b66\u751f\u9aa8\u5e72\u57f9\u8bad\u73ed\u66a8\u56e2\u6821\u7b2c\u4e09\u5341\u4e00\u671f\u57f9\u8bad\u73ed \u4f18\u79c0\u5b66\u5458 (2024.12)</li>\n<li><strong>2024\u5e74\u4e2d\u56fd\u77f3\u6cb9\u5956\u5b66\u91d1</strong> (2025.03, \u6392\u540d2/174, 8000\u5143)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662024-2025\u5b66\u5e74\u4f18\u79c0\u5171\u9752\u56e2\u5e72\u90e8 (2025.05)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662024-2025\u5b66\u5e74\u4f18\u79c0\u5171\u9752\u56e2\u5458 (2025.05)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662024-2025\u5b66\u5e74\u9752\u5e74\u9a6c\u514b\u601d\u4e3b\u4e49\u57f9\u517b\u5de5\u7a0b\u66a8\u201c\u516d\u6709\u201d\u5927\u5b66\u751f\u201c\u9752\u9a6c\u8ba1\u5212\u201d\u73ed \u4f18\u79c0\u5b66\u5458 (2025.05)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662024-2025\u5b66\u5e74\u4f18\u79c0\u5b66\u751f\u793e\u56e2\u9aa8\u5e72 (2025.06)</li>\n<li><strong>\u901a\u8fc72025-2026\u5b66\u5e74\u90ed\u6cab\u82e5\u5956\u5b66\u91d1A\u7c7b\u8d44\u683c\u5ba1\u67e5 \u53c2\u52a0\u5b66\u9662\u7b54\u8fa9</strong> (2025.10, gpa:8/176, \u7efc\u5408\u6d4b\u8bc42/176, \u5747\u4f4d\u5217\u5b66\u9662top 5%, \u5b66\u9662\u51715\u4eba\u7b26\u5408\u7533\u62a5\u8d44\u683c)</li>\n<li>\u7b2c\u5341\u4e03\u5c4a\u5168\u56fd\u5927\u5b66\u751f\u6570\u5b66\u7ade\u8d5b \u5b89\u5fbd\u8d5b\u533a \u6570\u5b66A\u7c7b \u4e8c\u7b49\u5956 (2025.12, \u5168\u7701\u6392\u540d\u7b2c60)</li>\n<li><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662025\u5e74\u5ea6\u6700\u7f8e\u201c\u516d\u6709\u201d\u5927\u5b66\u751f \u63d0\u540d\u5956</strong> (2025.12)</li>\n<li><strong>2025\u5e74\u6bd4\u4e9a\u8fea\u5956\u5b66\u91d1</strong> (2026.03, \u6392\u540d2/174, 10000\u5143)</li>\n<li><strong>2025\u5e74\u9ec4\u6e1d\u7eaa\u5ff5\u5956\u5b66\u91d1</strong> (2026.03, \u5b66\u9662\u6700\u9ad8\u5956, \u5171\u5956\u52b110\u4eba, 10000\u5143)</li>\n<li>2026\u5c4a\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u4f18\u79c0\u6bd5\u4e1a\u751f (2026.03, 15%, \u73ed\u7ea7\u517110\u4e2a\u540d\u989d, \u5b66\u9662168\u540d\u6bd5\u4e1a\u751f\u517126\u4e2a\u540d\u989d)</li>\n<li><strong>2026\u5c4a\u5b89\u5fbd\u7701\u666e\u901a\u9ad8\u7b49\u5b66\u6821\u4f18\u79c0\u6bd5\u4e1a\u751f</strong> (2026.03, 3%, \u5b66\u9662168\u540d\u6bd5\u4e1a\u751f\u51716\u4e2a\u540d\u989d)</li>\n</ul>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udfb5 \u827a\u672f\u5c55\u6f14\u4e0e\u6587\u5316\u4ea4\u6d41</h3>\n<ul>\n<li>\u5b89\u5fbd\u6f14\u827a\u96c6\u56e2\u9996\u5c4a\u9752\u5c11\u5e74\u827a\u672f\u5c55\u6f14 \u7b19\u00b7\u9752\u5e74\u7ec4 \u91d1\u5956 (2024.07, \u6307\u5bfc\u6559\u5e08: \u9a6c\u6b27\u5b87)</li>\n<li>\u7b2c\u5341\u4e09\u5c4a\u4e2d\u56fd\u97f3\u4e50\u56fd\u97f3\u676f\u00b7\u6c11\u65cf\u5668\u4e50\u5927\u8d5b \u5317\u4eac\u8d5b\u533a \u7b19\u4e13\u4e1a \u9752\u5c11\u5e74\u7ec4 \u91d1\u5956 (2024.12)</li>\n<li>\u7b2c\u5341\u4e00\u5c4a\u6fb3\u95e8\u56fd\u9645\u827a\u672f\u516c\u5f00\u8d5b \u4e2d\u56fd\u8d5b\u533a\u521d\u8d5b \u6c11\u4e50-\u7b19\u9879\u76ee \u9752\u5e74\u7ec4 \u91d1\u5956 (2024.12, \u6307\u5bfc\u6559\u5e08: \u9ec4\u5b87\u987a)</li>\n<li>The 2024-2025 GIYAF International Youth Art Festival China Regional Qualifier, the First Prize (2024.12, Mentor: \u6881\u9e4f\u5b87 Liang Pengyu)</li>\n<li>The 11th Macau International Art Open Competition Final Round for Chinese Folk Music, Sheng Item-Youth Class, Gold Award (2025.01)</li>\n<li>The 2025 GIYAF International Youth Arts Festival Singapore Final, Gold Award (2025.01)</li>\n<li>\u7b2c\u56db\u5c4a\u4e50\u5e9c\u826f\u5320\u6c11\u65cf\u97f3\u4e50\u8282 \u7b19-\u5927\u5b66\u7ec4 \u4e00\u7b49\u5956 (2025.04, \u6307\u5bfc\u6559\u5e08: \u502a\u597d)</li>\n<li>\u7b2c\u5341\u4e94\u5c4a\u4e9a\u6d32\u56fd\u9645\u827a\u672f\u5927\u8d5b \u4e2d\u56fd\u8d5b\u533a \u6c11\u4e50-\u7b19\u9879\u76ee \u9752\u5e74\u7ec4 \u4e00\u7b49\u5956 (2025.06, \u6307\u5bfc\u6559\u5e08: \u4efb\u6d69\u539f)</li>\n<li><strong>\u53c2\u52a02026\u5e74\u6625\u665a\u5408\u80a5\u5206\u4f1a\u573a\u62cd\u6444 \u767b\u4e0a\u592e\u89c6\u6625\u665a</strong> (2026.01)</li>\n</ul>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udff8 \u4f53\u80b2\u7ade\u6280\u4e0e\u6d3b\u52a8\u53c2\u4e0e</h3>\n<ul>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u7b2c\u4e5d\u5c4a\u7fbd\u6bdb\u7403\u201c\u65b0\u661f\u8d5b\u201d \u7537\u535516\u5f3a (2022.10)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662022\u96cf\u9e70\u676f 8\u5f3a (2022.11)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662022\u96cf\u9e70\u676f \u516c\u5e73\u7ade\u8d5b\u5956 (2023.03)</li>\n<li>2023\u5e74\u6625\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u201c\u56db\u56fd\u5927\u6218\u201d\u7fbd\u6bdb\u7403\u56e2\u4f53\u8d5b \u7b2c\u4e09\u540d (2023.04)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u7b2c\u5341\u5c4a\u7fbd\u6bdb\u7403\u201c\u65b0\u661f\u8d5b\u201d \u7537\u53cc16\u5f3a (2023.10)</li>\n<li>2023\u5e74\u79cb\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u201c\u56db\u56fd\u5927\u6218\u201d\u7fbd\u6bdb\u7403\u56e2\u4f53\u8d5b \u7b2c\u4e09\u540d (2023.11)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u7b2c\u5341\u4e00\u5c4a\u7fbd\u6bdb\u7403\u201c\u65b0\u661f\u8d5b\u201d \u7537\u53cc16\u5f3a (2024.09)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u8dd1\u6b65\u7231\u597d\u8005\u534f\u4f1a2025\u5e74\u6691\u671f\u8dd1\u6b65\u6253\u5361 \u4e2a\u4eba\u5956\u4e09\u7b49\u5956 (2025.09, \u4e2a\u4eba\u8d5b\u6392\u540d\u7b2c33, \u603b\u8dd1\u91cf202.70km)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u8dd1\u6b65\u7231\u597d\u8005\u534f\u4f1a2025\u5e74\u6691\u671f\u8dd1\u6b65\u6253\u5361 \u56e2\u961f\u5956\u56db\u7b49\u5956 (2025.09, \u56e2\u961f\u8d5b\u6240\u5728\u961f\u4f0d\u201c\u5927\u8c61\u5927\u8c61\u5927\u8c61\u201d\u6392\u540d\u7b2c17, \u4e09\u4eba\u603b\u6392\u884c316)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u8dd1\u6b65\u7231\u597d\u8005\u534f\u4f1a2026\u5e74\u5bd2\u5047\u8dd1\u6b65\u6253\u5361 \u4e2a\u4eba\u5956\u4e09\u7b49\u5956 (2026.02, \u4e2a\u4eba\u8d5b\u6392\u540d\u7b2c32, \u603b\u8dd1\u91cf125.57km)</li>\n<li>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u8dd1\u6b65\u7231\u597d\u8005\u534f\u4f1a2026\u5e74\u5bd2\u5047\u8dd1\u6b65\u6253\u5361 \u7b2c\u4e09\u5468\u575a\u6301\u5956 (2026.02)</li>\n</ul>\n<div style=\"margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;\">\n<p style=\"margin-top: 0;\"><strong>\u867d\u7136\u6709\u8bb8\u591a\u5c0f\u5956\u9879, \u4f46\u5927\u90e8\u5206\u5927\u5956\u603b\u662f\u4e0e\u6211\u64e6\u80a9\u800c\u8fc7. </strong></p>\n<p><strong>\u6bcf\u5e74\u6211\u90fd\u5c3d\u5168\u529b\u53c2\u8bc4\u672c\u79d1\u751f\u56fd\u5bb6\u5956\u5b66\u91d1, \u5374\u59cb\u7ec8\u672a\u83b7\u5956, \u53cd\u800c\u5e38\u5e38\u80fd\u62ff\u5230\u5176\u4ed6\u5956\u5b66\u91d1\u4e2d\u7684\u6700\u9ad8\u5956\u9879. </strong></p>\n<p><strong>\u6bcf\u5e74\u7684\u672c\u79d1\u751f\u56fd\u5bb6\u81ea\u7136\u79d1\u5b66\u57fa\u91d1\u9752\u5e74\u5b66\u751f\u57fa\u7840\u7814\u7a76\u9879\u76ee\u6211\u4e5f\u90fd\u5c1d\u8bd5\u7533\u62a5, \u4f46\u6210\u7ee9\u53ca\u79d1\u7814\u7ecf\u5386\u7684\u4e0d\u8db3\u8ba9\u6211\u540c\u6837\u672a\u80fd\u5982\u613f.  </strong></p>\n<p><strong>\u79d1\u7814\u505a\u5f97\u5c11, \u7ade\u8d5b\u53c2\u52a0\u5f97\u4e5f\u5c11, \u6211\u7684\u7ade\u8d5b\u6210\u7ee9\u540c\u6837\u4e0d\u582a, \u5bfc\u81f4\u6bcf\u5e74\u7684\u672c\u79d1\u751f\u6768\u5143\u5e86\u6559\u80b2\u57fa\u91d1\u5956\u5b66\u91d1\u6211\u4e5f\u90fd\u65e0\u529b\u7533\u62a5.  </strong></p>\n<p><strong>\u53bb\u5e7410\u6708, \u6211\u901a\u8fc7\u4e86\u90ed\u6cab\u82e5\u5956\u5b66\u91d1A\u7c7b\u8d44\u683c\u5ba1\u67e5\u5e76\u53c2\u4e0e\u4e86\u5b66\u9662\u7684\u7b54\u8fa9, \u4f46\u6700\u7ec8\u8fd8\u662f\u6ca1\u80fd\u6210\u4e3a\u5b66\u9662\u7684\u4e09\u540d\u5019\u9009\u4eba\u4e4b\u4e00, \u81ea\u7136\u4e5f\u6ca1\u80fd\u83b7\u5956. </strong></p>\n<p><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662024\u53ca2025\u5e74\u5ea6\u6700\u7f8e\u201c\u516d\u6709\u201d\u5927\u5b66\u751f\u8bc4\u9009, \u6bcf\u6b21\u6211\u4e5f\u5747\u6b62\u6b65\u4e8e\u63d0\u540d\u5956. </strong></p>\n<p><strong>\u8fd9\u8ba9\u6211\u9010\u6e10\u610f\u8bc6\u5230, \u5c3d\u7ba1\u6709\u4e9b\u5956\u9879\u65e0\u6cd5\u5f97\u5230, \u4f46\u6bcf\u4e00\u6b21\u52aa\u529b\u90fd\u8ba9\u6211\u66f4\u63a5\u8fd1\u81ea\u6211\u8ba4\u77e5. </strong></p>\n<p><strong>\u4ece\u8fc7\u53bb\u7684\u6124\u61d1\u4e0d\u670d\u5230\u5982\u4eca\u7684\u9010\u6e10\u91ca\u7136, \u6211\u660e\u767d\u4e86\u81ea\u5df1\u53ea\u662f\u4e00\u4e2a\u666e\u901a\u4eba, \u5e76\u975e\u81ea\u5df1\u60f3\u8c61\u4e2d\u7684\u90a3\u4e48\u4f18\u79c0. </strong></p>\n<p><strong>\u6211\u4e5f\u6df1\u523b\u7406\u89e3\u5230, \u9057\u61be\u662f\u4eba\u751f\u5e38\u6001, \u800c\u771f\u6b63\u7684\u6536\u83b7, \u6765\u81ea\u4e8e\u6bcf\u4e00\u6b21\u594b\u6597\u7684\u8fc7\u7a0b. </strong></p>\n<p style=\"margin-bottom: 0;\"><strong>\u66f4\u4f55\u51b5, \u6211\u8fd8\u5e76\u4e0d\u90a3\u4e48\u7231\u594b\u6597, \u65f6\u5e38\u6446\u70c2. </strong></p>\n</div>\n</div>\n<div class=\"section\">\n<h2>\u4e50\u56e2\u7ecf\u5386</h2>\n<p><strong>\u4e50\u56e2\uff0c\u66f4\u5177\u4f53\u5730\u8bf4\uff0c\u6c11\u65cf\u7ba1\u5f26\u4e50\u56e2\uff0c\u4e00\u76f4\u662f\u6211\u751f\u547d\u4e2d\u4e0d\u53ef\u6216\u7f3a\u7684\u90e8\u5206\u3002</strong><br/>\n<strong>\u5b83\u4e0d\u4ec5\u9676\u51b6\u4e86\u6211\u7684\u60c5\u64cd\uff0c\u66f4\u5982\u540c\u4e00\u4f4d\u8001\u53cb\uff0c\u89c1\u8bc1\u4e86\u6211\u4ece\u61f5\u61c2\u5230\u6210\u719f\u7684\u6bcf\u4e00\u6b65\uff0c\u4e5f\u4e3a\u6211\u7406\u6027\u7684\u6570\u7406\u4e16\u754c\u6ce8\u5165\u4e86\u611f\u6027\u7684\u6e29\u5ea6\u3002</strong></p>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udf1f \u8d70\u5411\u5e7f\u9614\u7684\u821e\u53f0 (\u5927\u5b66\u53ca\u4ee5\u4e0a\u5e73\u53f0)</h3>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 (Nationalities Music Orchestra of USTC)</strong></span>\n<span>2022.09 \u81f3\u4eca</span>\n</div>\n<ul>\n<li><strong>\u62c5\u5f53\u89d2\u8272\uff1a</strong>\u5439\u7ba1\u58f0\u90e8 \u9ad8\u97f3\u7b19\u6f14\u594f\u5458</li>\n<li><strong>\u6df1\u5ea6\u7684\u60c5\u611f\u7f81\u7eca\uff1a</strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2\uff0c\u6211\u66f4\u559c\u6b22\u53eb\u5b83\u66f4\u4e3a\u4eb2\u5207\u7684\u540d\u5b57\u2014\u2014<strong>NMOU</strong>\u3002\u5728\u8fd9\u91cc\uff0c\u6211\u4e0d\u53ea\u662f\u4e00\u4e2a\u6f14\u594f\u5458\uff0c\u66f4\u662f\u4e50\u56e2\u5efa\u8bbe\u7684\u53c2\u4e0e\u8005\u3002\u6211\u5148\u540e\u62c5\u4efb\u8fc7\u5439\u7ba1\u58f0\u90e8\u957f\u53ca\u6267\u884c\u90e8\u957f\u3001\u56e2\u652f\u90e8\u4e66\u8bb0\u3001\u6559\u5b66\u603b\u8d1f\u8d23\u4eba\uff0c\u5e76\u957f\u671f\u5728\u8d22\u52a1\u3001\u8c31\u52a1\u548c\u5ba3\u4f20\u5c97\u4f4d\u4e0a\u201c\u62c9\u78e8\u201d\u3002\u73b0\u4efb\u4e50\u56e2\u56e2\u957f\u3002</li>\n<li><strong>\u5efa\u8bbe\u4e0e\u6f14\u51fa\uff1a</strong>\u5728\u6b64\u671f\u95f4\uff0c\u6211\u53c2\u4e0e\u63a8\u52a8\u4e86\u5439\u7ba1\u58f0\u90e8\u4e0e\u6559\u5b66\u5206\u90e8\u7684\u9769\u65b0\uff0c\u53d6\u5f97\u4e86\u4e0d\u9519\u7684\u6210\u6548\uff0c\u4e5f\u7b97\u662f\u4e3a\u56e2\u91cc\u505a\u8fc7\u4e00\u4e9b\u8d21\u732e\u3002\u4f5c\u4e3a\u6f14\u594f\u5458\uff0c\u6211\u53c2\u4e0e\u4e86 NMOU \u7684 4 \u573a\u4e13\u573a\u97f3\u4e50\u4f1a\u30013 \u573a\u72ec\u594f\u97f3\u4e50\u4f1a\u53ca\u5404\u7c7b\u6d3b\u52a8\uff0c\u5e76\u7ec4\u7ec7\u7b79\u5212\u4e86\u5176\u4e2d\u7684\u4e00\u90e8\u5206\u3002</li>\n<li><strong>\u4f20\u627f\u4e0e\u671f\u8bb8\uff1a</strong>\u7531\u4e8e\u6bd5\u4e1a\u8bbe\u8ba1\u548c\u672a\u6765\u7814\u7a76\u751f\u5b66\u4e1a\u7684\u538b\u529b\uff0c\u6211\u76ee\u524d\u5df2\u8f83\u5c11\u53c2\u4e0e\u4e50\u56e2\u7684\u65e5\u5e38\u6392\u7ec3\uff0c\u5927\u90e8\u5206\u7ba1\u7406\u4e8b\u52a1\u5df2\u5e73\u7a33\u4ea4\u63a5\u7ed9\u4e66\u8bb0\u949f\u627f\u5955\u548c\u5439\u7ba1\u58f0\u90e8\u957f\u502a\u597d\uff08\u4ed6\u4e5f\u5373\u5c06\u63a5\u4efb\u4e0b\u4e00\u4efb\u56e2\u957f\uff09\u3002\u5feb\u8981\u79bb\u5f00\u4e86\uff0c\u5fc3\u91cc\u786e\u6709\u4e0d\u820d\u4e0e\u4f24\u611f\u3002\u4f46\u79bb\u522b\u662f\u65e0\u6cd5\u963b\u6b62\u7684\uff0c\u53ea\u8981\u5728 NMOU \u6f2b\u957f\u7684\u5386\u53f2\u4e2d\u7559\u4e0b\u8fc7\u5c5e\u4e8e\u81ea\u5df1\u7684\u5370\u8bb0\uff0c\u4fbf\u5df2\u8db3\u591f\u3002<strong>\u8877\u5fc3\u795d\u613f NMOU \u8d8a\u6765\u8d8a\u597d\uff01</strong></li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u5b89\u5fbd\u4e50\u56e2\u00b7\u9752\u5c11\u5e74\u6c11\u65cf\u7ba1\u5f26\u4e50\u56e2</strong></span>\n<span>2024.07 \u81f3\u4eca</span>\n</div>\n<ul>\n<li><strong>\u62c5\u5f53\u89d2\u8272\uff1a</strong>\u9ad8\u97f3\u7b19\u6f14\u594f\u5458</li>\n<li><strong>\u5c65\u5386\u8bf4\u660e\uff1a</strong>\u51ed\u501f\u624e\u5b9e\u7684\u4e13\u4e1a\u529f\u5e95\u4e0e\u51fa\u8272\u7684\u821e\u53f0\u8868\u73b0\u529b\uff0c\u6211\u4e8e 2024 \u5e74 7 \u6708\u901a\u8fc7\u4e25\u82db\u9009\u62d4\uff0c\u6b63\u5f0f\u8003\u5165\u8be5\u7701\u7ea7\u9752\u5c11\u5e74\u4e50\u56e2\uff0c\u5f00\u542f\u4e86\u66f4\u5177\u4e13\u4e1a\u6027\u548c\u6311\u6218\u6027\u7684\u827a\u672f\u5b9e\u8df5\u3002</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u9662\u5927\u5b66\u6c11\u65cf\u7ba1\u5f26\u4e50\u56e2</strong></span>\n<span>2024.09 \u81f3\u4eca</span>\n</div>\n<ul>\n<li><strong>\u62c5\u5f53\u89d2\u8272\uff1a</strong>\u6c11\u65cf\u7ba1\u4e50\u58f0\u90e8 \u9ad8\u97f3\u7b19\u6f14\u594f\u5458</li>\n<li><strong>\u5c65\u5386\u8bf4\u660e\uff1a</strong>\u968f\u7740\u76f4\u535a\u4fdd\u7814\u7684\u786e\u5b9a\uff0c\u6211\u63d0\u524d\u4e00\u5e74\u878d\u5165\u4e86\u672a\u6765\u7814\u7a76\u751f\u6bcd\u6821\u7684\u827a\u672f\u6c1b\u56f4\uff0c\u5728\u8fd9\u91cc\u7ee7\u7eed\u5ef6\u7eed\u6211\u5bf9\u6c11\u4e50\u7684\u70ed\u7231\u3002</li>\n</ul>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udf31 \u68a6\u5f00\u59cb\u7684\u5730\u65b9 (\u4e2d\u5c0f\u5b66\u542f\u8499\u4e0e\u79ef\u6dc0)</h3>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u5317\u4eac\u5e02\u5341\u4e00\u5b66\u6821\u6c11\u4e50\u56e2</strong></span>\n<span>2016.09 - 2021.01</span>\n</div>\n<ul>\n<li>\u9ad8\u97f3\u7b19\u6f14\u594f\u5458 (\u4e2d\u5b66\u65f6\u4ee3\u575a\u6301\u78e8\u783a\u6f14\u594f\u6280\u827a\uff0c\u5e76\u62c5\u4efb\u4e86\u9996\u4efb\u56e2\u957f\uff0c\u521d\u6b21\u57f9\u517b\u4e86\u4e50\u56e2\u7ba1\u7406\u4e0e\u7edf\u7b79\u80fd\u529b\u3002)</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u9662\u9644\u5c5e\u7389\u6cc9\u5c0f\u5b66\u56fd\u4e50\u56e2</strong></span>\n<span>2010.09 - 2016.07</span>\n</div>\n<ul>\n<li>\u7b19\u58f0\u90e8 \u9ad8\u97f3\u7b19\u6f14\u594f\u5458 (\u6211\u7684\u97f3\u4e50\u542f\u8499\u4e4b\u5730\uff0c\u5f00\u542f\u4e86\u4e0e\u9ad8\u97f3\u7b19\u957f\u8fbe\u5341\u51e0\u5e74\u7684\u4e0d\u89e3\u4e4b\u7f18\u3002)</li>\n</ul>\n</div>\n<div class=\"section\">\n<h2>\u5927\u5b66\u4ee5\u6765\u7684\u6d3b\u52a8\u7ec4\u7ec7\u4e0e\u6f14\u51fa\u53c2\u4e0e\u7ecf\u5386</h2>\n<p><strong>\u672c\u6a21\u5757\u8bb0\u5f55\u4e86\u6211\u5728\u5927\u5b66\u671f\u95f4\u7684\u53f0\u524d\u5e55\u540e\u3002\u5728\u8bb8\u591a\u5927\u578b\u97f3\u4e50\u4f1a\u548c\u7efc\u5408\u6d3b\u52a8\u4e2d\uff0c\u6211\u5f80\u5f80\u8eab\u517c\u591a\u804c\u2014\u2014\u65e2\u662f\u5e55\u540e\u5954\u6ce2\u7684\u7edf\u7b79\u7b56\u5212\u8005\uff0c\u4e5f\u662f\u53f0\u4e0a\u4e13\u6ce8\u7684\u9ad8\u97f3\u7b19\u6f14\u594f\u5458\u3002\u8fd9\u4e9b\u7ecf\u5386\u867d\u7136\u7e41\u6742\uff0c\u751a\u81f3\u7565\u5fae\u5f71\u54cd\u4e86\u6211\u7684\u5b66\u4e1a\u6210\u7ee9\uff0c\u4f46\u5b83\u4eec\u5e26\u7ed9\u6211\u7684\u771f\u5b9e\u5feb\u4e50\u3001\u7edf\u7b79\u80fd\u529b\u7684\u98de\u8dc3\u4ee5\u53ca\u4e0e\u670b\u53cb\u4eec\u5e76\u80a9\u4f5c\u6218\u7684\u6210\u5c31\u611f\uff0c\u662f\u51e0\u5206 GPA \u65e0\u6cd5\u8861\u91cf\u7684\u3002</strong></p>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>[\u9884\u7559\u4f4d]</strong></span>\n<span>202X.XX</span>\n</div>\n<ul>\n<li><strong>\u53c2\u4e0e\u8eab\u4efd\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n<li><strong>\u5e55\u540e\u7edf\u7b79\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n<li><strong>\u53f0\u524d\u6f14\u51fa\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>[\u9884\u7559\u4f4d]</strong></span>\n<span>202X.XX</span>\n</div>\n<ul>\n<li><strong>\u53c2\u4e0e\u8eab\u4efd\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>[\u9884\u7559\u4f4d]</strong></span>\n<span>202X.XX</span>\n</div>\n<ul>\n<li><strong>\u53c2\u4e0e\u8eab\u4efd\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>[\u9884\u7559\u4f4d]</strong></span>\n<span>202X.XX</span>\n</div>\n<ul>\n<li><strong>\u53c2\u4e0e\u8eab\u4efd\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>[\u9884\u7559\u4f4d]</strong></span>\n<span>202X.XX - 202X.XX</span>\n</div>\n<ul>\n<li><strong>\u53c2\u4e0e\u8eab\u4efd\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c\uff1a</strong> <span style=\"color: #666;\">[]</span></li>\n</ul>\n<p style=\"margin-top: 20px; font-size: 0.9em; color: #888;\">* \u8fd8\u6709\u66f4\u591a\u7b56\u5212\u3001\u7ec4\u7ec7\u4e0e\u53c2\u6f14\u7ecf\u5386\uff0c\u6211\u5c06\u5728\u6574\u7406\u5b8c\u5177\u4f53\u7ec6\u8282\u540e\u7ee7\u7eed\u8865\u5145\u66f4\u65b0\u3002</p>\n</div>\n<div class=\"section\">\n<h2>\u79d1\u7814\u7ecf\u5386</h2>\n<p><strong>\u6211\u7684\u79d1\u7814\u4e4b\u8def\u8d77\u6b65\u8f83\u65e9\uff0c\u4ece\u4e2d\u5b66\u65f6\u4ee3\u7684\u201c\u82f1\u624d\u8ba1\u5212\u201d\u4e00\u76f4\u5ef6\u7eed\u81f3\u4eca\u3002\u76ee\u524d\uff0c\u6211\u7684\u7814\u7a76\u5174\u8da3\u4e3b\u8981\u96c6\u4e2d\u5728\u8ba1\u7b97\u6570\u5b66\u4e0e\u4f18\u5316\u7b97\u6cd5\u9886\u57df\u3002</strong></p>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83d\udd2c \u6838\u5fc3\u79d1\u7814\u9879\u76ee (\u8ba1\u7b97\u6570\u5b66\u4e0e\u4f18\u5316\u7b97\u6cd5)</h3>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u57fa\u4e8e\u5e38\u5fae\u5206\u65b9\u7a0b\u6570\u503c\u89e3\u6cd5\u7684\u52a0\u901f\u4e00\u9636\u4f18\u5316\u7b97\u6cd5\u7814\u7a76</strong><br/>\n<span style=\"font-size: 0.9em; font-weight: normal; color: #555;\">(Research on Accelerating First-Order Optimization Algorithms Based on Numerical Solutions of Ordinary Differential Equations)</span></span>\n<span>2025.09 \u81f3\u4eca</span>\n</div>\n<ul>\n<li><strong>\u9879\u76ee\u7c7b\u578b:</strong> \u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66 2022\u7ea7\u672c\u79d1\u6bd5\u4e1a\u8bbe\u8ba1 (\u7406\u8bba\u7c7b\u578b\u8bfe\u9898)</li>\n<li><strong>\u9879\u76ee\u89d2\u8272:</strong> <strong>\u72ec\u7acb\u5b8c\u6210\u4eba</strong></li>\n<li><strong>\u6307\u5bfc\u6559\u5e08:</strong> <strong>\u8881\u4e9a\u6e58 \u9662\u58eb</strong> (\u6821\u5916\u5bfc\u5e08) / \u9648\u58eb\u7965 \u7279\u4efb\u7814\u7a76\u5458 (\u6821\u5185\u5bfc\u5e08)</li>\n<li><strong>\u8fdb\u5c55\u72b6\u6001:</strong> \u9009\u9898\u6781\u5177\u7406\u8bba\u6311\u6218\u6027\uff0c\u76ee\u524d\u5df2\u5b8c\u6210\u6587\u732e\u8c03\u7814\u4e0e\u521d\u6b65\u6846\u67b6\u6784\u5efa\uff0c\u6b63\u6309\u8ba1\u5212\u8fdb\u884c\u7b97\u6cd5\u63a8\u5bfc\uff0c\u987a\u5229\u901a\u8fc7\u4e2d\u671f\u68c0\u67e5\u3002</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u5f3aLyapunov\u6846\u67b6\u4e0b\u4f18\u5316\u7b97\u6cd5\u7684\u5168\u5c40\u6536\u655b\u6027\u7814\u7a76\u4e0e\u5e94\u7528</strong><br/>\n<span style=\"font-size: 0.9em; font-weight: normal; color: #555;\">(Convergence Analysis of Optimization Algorithms via Strong Lyapunov Functions)</span></span>\n<span>2025.05 \u81f3\u4eca</span>\n</div>\n<ul>\n<li><strong>\u9879\u76ee\u7c7b\u578b:</strong> 2025\u6625\u5b63\u5b66\u671f\u5927\u5b66\u751f\u521b\u65b0\u521b\u4e1a\u8ba1\u5212 (<strong>\u56fd\u5bb6\u7ea7\u521b\u65b0\u8bad\u7ec3\u9879\u76ee</strong>)</li>\n<li><strong>\u9879\u76ee\u89d2\u8272:</strong> <strong>\u9879\u76ee\u4e3b\u6301\u4eba</strong></li>\n<li><strong>\u6307\u5bfc\u6559\u5e08:</strong> <strong>\u8881\u4e9a\u6e58 \u9662\u58eb</strong> (\u6821\u5916\u5bfc\u5e08) / \u8bb8\u5c0f\u536b \u6559\u6388 (\u6821\u5185\u5bfc\u5e08)</li>\n<li><strong>\u8fdb\u5c55\u72b6\u6001:</strong> \u6210\u529f\u5165\u9009\u56fd\u5bb6\u7ea7\u7acb\u9879\uff0c\u9879\u76ee\u6267\u884c\u60c5\u51b5\u826f\u597d\uff0c\u5df2\u5b8c\u6210\u5f3a Lyapunov \u6846\u67b6\u4e0b\u7684\u521d\u6b65\u6536\u655b\u6027\u5206\u6790\uff0c\u7814\u7a76\u6210\u679c\u6b63\u8fdb\u4e00\u6b65\u6df1\u5316\u4e2d\u3002</li>\n</ul>\n<h3 style=\"margin-top: 20px; color: #444;\">\u2699\ufe0f \u5b66\u79d1\u7ade\u8d5b\u4e0e\u8de8\u5b66\u79d1\u63a2\u7d22</h3>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u7535\u573a\u7ebf\u4e0e\u7b49\u52bf\u9762\u53ef\u89c6\u5316\u6a21\u62df\u5668\u2014\u2014\u57fa\u4e8eWeb\u6280\u672f\u7684\u9ad8\u5ea6\u4ea4\u4e92\u5f0f\u7269\u7406\u6559\u5b66\u5de5\u5177</strong></span>\n<span>2024.12 - 2025.10</span>\n</div>\n<ul>\n<li><strong>\u9879\u76ee\u7c7b\u578b:</strong> \u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u9996\u5c4a\u7535\u78c1\u5b66\u52a8\u753b\u8bbe\u8ba1\u5927\u8d5b\u9879\u76ee</li>\n<li><strong>\u9879\u76ee\u89d2\u8272:</strong> <strong>\u5171\u540c\u5b8c\u6210\u4eba</strong> (\u4e0e\u949f\u627f\u5955\u5408\u4f5c\uff0c\u4e3b\u8981\u8d1f\u8d23\u7406\u8bba\u63a8\u5bfc\u4e0e\u7b97\u6cd5\u8bbe\u8ba1)</li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c:</strong> \u9488\u5bf9\u6a21\u62df\u8fc7\u7a0b\u4e2d\u7684\u201c\u978d\u70b9\u5947\u5f02\u66f2\u7ebf\u201d\u548c\u201c\u7535\u8377\u60ac\u6b8a\u5bfc\u81f4\u573a\u7ebf\u5bc6\u5ea6\u5931\u8861\u201d\u7b49\u68d8\u624b\u95ee\u9898\uff0c\u6211\u5f15\u5165\u4e86\u81ea\u9002\u5e94\u6b65\u957f\u7b97\u6cd5\u4e0e\u52a8\u6001\u5bc6\u5ea6\u524a\u51cf\u673a\u5236\uff0c\u6709\u6548\u89e3\u51b3\u4e86\u7535\u573a\u7ebf\u7a81\u53d8\u65ad\u88c2\u4e0e\u89c6\u89c9\u4e0d\u5747\u8861\u7684\u75db\u70b9\uff0c\u6781\u5927\u4f18\u5316\u4e86\u7535\u573a\u7ebf\u5e73\u6ed1\u5ea6\u4e0e\u6700\u7ec8\u7684\u7f8e\u89c2\u6027 \u3002</li>\n<li><strong>\u8fdb\u5c55\u72b6\u6001:</strong> \u4f5c\u54c1\u5177\u6709\u8f83\u5f3a\u7684\u4ea4\u4e92\u6027\u4e0e\u6559\u5b66\u53c2\u8003\u4ef7\u503c\uff0c\u7ade\u8d5b\u5df2\u7ed3\u675f\uff0c\u76ee\u524d\u4ecd\u5728\u5bf9\u6210\u679c\u8fdb\u884c\u6539\u8fdb\uff0c\u9884\u8ba1\u540e\u7eed\u7533\u8bf7\u76f8\u5173\u4e13\u5229\u3002</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u51e0\u79cd\u7b80\u5355\u7535\u5b66\u6a21\u578b\u7684\u7535\u573a\u7ebf\u65b9\u7a0b\u7684\u6c42\u89e3\u4e0e\u8ba8\u8bba</strong></span>\n<span>2023.09 - 2024.01</span>\n</div>\n<ul>\n<li><strong>\u9879\u76ee\u7c7b\u578b:</strong> 2023\u5e74\u79cb\u5b63\u5b66\u671f\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u7535\u78c1\u5b66\u5c0f\u8bba\u6587\u7ade\u8d5b\u9879\u76ee (\u6388\u8bfe\u6559\u5e08: \u5b59\u971e)</li>\n<li><strong>\u9879\u76ee\u89d2\u8272:</strong> <strong>\u5171\u540c\u5b8c\u6210\u4eba</strong> (\u4e0e\u6797\u7426\u7693\u5408\u4f5c\uff0c\u4e3b\u8981\u8d1f\u8d23\u6838\u5fc3\u7406\u8bba\u63a8\u5bfc)</li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c:</strong> \u8fd0\u7528\u5e38\u5fae\u5206\u65b9\u7a0b\u7684\u521d\u7b49\u79ef\u5206\u6cd5\u7b49\u57fa\u7840\u6570\u5b66\u5de5\u5177\uff0c\u5bf9\u7b49\u91cf\u540c\u79cd/\u5f02\u79cd\u7535\u8377\u3001\u975e\u7b49\u91cf\u7535\u8377\u7b49\u591a\u79cd\u7b80\u5355\u7535\u5b66\u6a21\u578b\u7684\u7535\u573a\u7ebf\u65b9\u7a0b\u8fdb\u884c\u4e86\u4e25\u5bc6\u7684\u89e3\u6790\u89e3\u63a8\u5bfc\u3002\u901a\u8fc7\u6570\u5b66\u4e0e\u7269\u7406\u5b66\u7684\u6df1\u5ea6\u4ea4\u53c9\uff0c\u63a2\u7a76\u4e86\u7535\u5076\u6781\u5b50\u7b49\u6a21\u578b\u7684\u573a\u7ebf\u5206\u5e03\u7279\u5f81\u4e0e\u4e00\u822c\u5316\u89c4\u5f8b \u3002</li>\n<li><strong>\u8fdb\u5c55\u72b6\u6001:</strong> \u63a8\u5bfc\u4e25\u8c28\uff0c\u7ed3\u8bba\u5177\u6709\u7269\u7406\u542f\u53d1\u6027\uff0c\u9879\u76ee\u6210\u529f\u5165\u56f4\u6821\u7ea7\u7ade\u8d5b\u7b54\u8fa9\u5e76\u6700\u7ec8\u8363\u83b7<strong>\u4e09\u7b49\u5956</strong>\u3002</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u793e\u4ea4\u7f51\u7edc\u4e2d\u7684\u6709\u6548\u4ea4\u53cb\u95ee\u9898</strong> (\u5927\u5b66\u9636\u6bb5\u6df1\u5165\u7814\u7a76)</span>\n<span>2022.09 - 2023.06</span>\n</div>\n<ul>\n<li><strong>\u9879\u76ee\u7c7b\u578b:</strong> 2022-2023\u5b66\u5e74\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u201c\u79d1\u5b66\u4e0e\u793e\u4f1a\u201d\u7814\u8ba8\u8bfe\u8bfe\u9898 (\u6388\u8bfe\u6559\u5e08: \u5218\u6c38\u5f3a)</li>\n<li><strong>\u9879\u76ee\u89d2\u8272:</strong> <strong>\u6838\u5fc3\u7ec4\u5458</strong> (\u8d1f\u8d23\u8bba\u6587\u64b0\u5199\u3001\u7b97\u6cd5\u63a8\u5bfc\u4e0e\u7b54\u8fa9\u6c47\u62a5)</li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c:</strong> \u63a2\u8ba8\u4e86\u4ee5\u201c\u76ee\u6807\u7528\u6237\u63a5\u53d7\u6982\u7387\u6700\u5927\u5316\u201d\u4e3a\u5bfc\u5411\u7684\u7f51\u7edc\u4ea4\u53cb\u56fe\u8bba\u6a21\u578b\u3002\u6211\u5728\u4e2d\u5b66\u9636\u6bb5\u7684\u7814\u7a76\u57fa\u7840\u4e0a\u8fdb\u884c\u4e86\u6df1\u5316\uff0c\u8fdb\u4e00\u6b65\u63a2\u8ba8\u4e86\u201c\u5f71\u54cd\u529b\u6700\u5927\u5316\u201d\u95ee\u9898\uff0c\u5e76\u5f15\u5165\u4e86\u201c\u793e\u533a\u7ed3\u6784\u201d\u7684\u6982\u5ff5\u5bf9\u5b64\u7acb\u8282\u70b9\u8fdb\u884c\u5212\u5206 \u3002\u5728\u7b97\u6cd5\u5b9e\u73b0\u4e0a\uff0c\u5bf9\u6bd4\u5206\u6790\u4e86\u7a77\u4e3e\u3001\u8d2a\u5fc3\u4e0e\u9012\u63a8\u7b97\u6cd5\uff0c\u5e76\u5229\u7528\u771f\u5b9e\u7684 Facebook \u793e\u4ea4\u7f51\u7edc\u6570\u636e\u96c6\u5bf9\u9012\u63a8\u7b97\u6cd5\u7684\u6709\u6548\u6027\u8fdb\u884c\u4e86\u5927\u89c4\u6a21\u5b9e\u4f8b\u9a8c\u8bc1 \u3002</li>\n<li><strong>\u8fdb\u5c55\u72b6\u6001:</strong> \u6c47\u62a5\u5185\u5bb9\u8be6\u5b9e\uff0c\u903b\u8f91\u4e25\u5bc6\uff0c\u8bba\u8bc1\u5145\u5206\uff0c\u83b7\u5f97\u6388\u8bfe\u6559\u5e08\u9ad8\u5ea6\u8bc4\u4ef7\uff0c\u8bfe\u7a0b\u8bc4\u7ea7\u4e3a <strong>A+</strong>\u3002</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u7f51\u7edc\u73af\u5883\u4e2d\u7684\u4ece\u4f17\u884c\u4e3a\u5206\u6790</strong></span>\n<span>2022.09 - 2023.01</span>\n</div>\n<ul>\n<li><strong>\u9879\u76ee\u7c7b\u578b:</strong> \u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u300a\u5927\u5b66\u751f\u5fc3\u7406\u5b66\u300b\u8bfe\u7a0b\u7814\u7a76\u6027\u8bba\u6587 (\u6307\u5bfc\u6559\u5e08: \u738b\u73cf)</li>\n<li><strong>\u9879\u76ee\u89d2\u8272:</strong> <strong>\u72ec\u7acb\u5b8c\u6210\u4eba</strong></li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c:</strong> \u72ec\u7acb\u64b0\u5199\u7814\u7a76\u8bba\u6587\uff0c\u8fd0\u7528\u5fc3\u7406\u5b66\u4e2d\u7684\u4ece\u4f17\u53cc\u8fc7\u7a0b\u6a21\u578b (Dual-process model of conformity)\uff0c\u6df1\u5165\u5256\u6790\u4e86\u75ab\u60c5\u5c01\u6821\u671f\u95f4\u7f51\u7edc\u4e0a\u6d8c\u73b0\u7684\u201c\u5bbf\u820d\u5c0f\u72d7\u201d\u3001\u201c\u6821\u56ed\u722c\u884c\u201d\u53ca\u201c\u7f51\u8bfe\u7206\u7834\u201d\u7b49\u5178\u578b\u7fa4\u4f53\u73b0\u8c61\u3002\u5e76\u7ed3\u5408\u72b6\u6001\u7126\u8651\u7406\u8bba\uff0c\u63a2\u8ba8\u4e86\u60c5\u7eea\u5ba3\u6cc4\u5bf9\u7f51\u7edc\u975e\u7406\u6027\u4ece\u4f17\u884c\u4e3a\u7684\u8bf1\u53d1\u673a\u5236\u3002</li>\n<li><strong>\u8fdb\u5c55\u72b6\u6001:</strong> \u8bba\u6587\u903b\u8f91\u4e25\u5bc6\uff0c\u8bba\u8bc1\u5145\u5206\uff0c\u83b7\u5f97\u6388\u8bfe\u6559\u5e08\u9ad8\u5ea6\u8bc4\u4ef7\uff0c\u8bfe\u7a0b\u6700\u7ec8\u8bc4\u7ea7\u4e3a <strong>A+</strong>\u3002</li>\n</ul>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udf31 \u65e9\u671f\u79d1\u7814\u542f\u8499 (\u4e2d\u5b66\u751f\u82f1\u624d\u8ba1\u5212)</h3>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u793e\u4ea4\u7f51\u7edc\u4e2d\u7684\u6709\u6548\u4ea4\u53cb\u95ee\u9898</strong> (\u65e9\u671f\u63a2\u7d22)</span>\n<span>2019.01 - 2019.12</span>\n</div>\n<ul>\n<li><strong>\u9879\u76ee\u7c7b\u578b:</strong> 2019\u5e74\u4e2d\u5b66\u751f\u82f1\u624d\u8ba1\u5212 \u6570\u5b66\u5b66\u79d1\u9879\u76ee (\u57f9\u517b\u9ad8\u6821: \u4e2d\u56fd\u79d1\u5b66\u9662\u5927\u5b66)</li>\n<li><strong>\u9879\u76ee\u89d2\u8272:</strong> <strong>\u9879\u76ee\u4e3b\u6301\u4eba</strong> (\u6307\u5bfc\u6559\u5e08: <strong>\u5468\u5411\u5b87 \u9662\u58eb</strong>)</li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c:</strong> \u521d\u6b65\u786e\u7acb\u4e86\u7f51\u7edc\u4ea4\u53cb\u95ee\u9898\u7684\u6570\u5b66\u6a21\u578b\u4e0e\u7814\u7a76\u6846\u67b6 \u3002\u5728\u8be5\u9879\u76ee\u4e2d\uff0c\u6211\u7ed9\u51fa\u4e86\u793e\u4ea4\u7f51\u7edc\u7684\u56fe\u8bba\u523b\u753b\u65b9\u6cd5\uff0c\u63a8\u5bfc\u4e86\u57fa\u7840\u7684\u63a5\u53d7\u6982\u7387\u8fed\u4ee3\u516c\u5f0f\uff0c\u5e76\u521d\u6b65\u8bbe\u8ba1\u4e86\u6c42\u89e3\u7b97\u6cd5 \u3002\u8fd9\u4e00\u65e9\u671f\u7684\u7406\u8bba\u6784\u5efa\u4e3a\u6211\u5927\u5b66\u9636\u6bb5\u7684\u6df1\u5316\u7814\u7a76\u5960\u5b9a\u4e86\u575a\u5b9e\u7684\u57fa\u7840\u3002</li>\n<li><strong>\u8fdb\u5c55\u72b6\u6001:</strong> \u8868\u73b0\u51fa\u6781\u4f73\u7684\u6570\u5b66\u5efa\u6a21\u6f5c\u8d28\uff0c\u5165\u90092019\u5e74\u82f1\u624d\u8ba1\u5212\u5b66\u79d1\u8bba\u575b\uff0c\u9879\u76ee\u8bc4\u7ea7\u4e3a <strong>\u4f18\u79c0</strong>\u3002</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4ece\u96f6\u7ef4\u5230n\u7ef4\u7684\u4e00\u79cd\u63a8\u5bfc\u516c\u5f0f</strong></span>\n<span>2018.01 - 2018.12</span>\n</div>\n<ul>\n<li><strong>\u9879\u76ee\u7c7b\u578b:</strong> 2018\u5e74\u4e2d\u5b66\u751f\u82f1\u624d\u8ba1\u5212 \u6570\u5b66\u5b66\u79d1\u9879\u76ee (\u57f9\u517b\u9ad8\u6821: \u4e2d\u56fd\u79d1\u5b66\u9662\u5927\u5b66)</li>\n<li><strong>\u9879\u76ee\u89d2\u8272:</strong> <strong>\u9879\u76ee\u4e3b\u6301\u4eba</strong> (\u6307\u5bfc\u6559\u5e08: <strong>\u5468\u5411\u5b87 \u9662\u58eb</strong>)</li>\n<li><strong>\u6838\u5fc3\u5de5\u4f5c:</strong> \u72ec\u7acb\u5b8c\u6210\u4e86\u4ece\u96f6\u7ef4\u5230 n \u7ef4\u76f8\u5173\u6570\u5b66\u516c\u5f0f\u7684\u4e25\u5bc6\u63a8\u5bfc\u3002\u503c\u5f97\u4e00\u63d0\u7684\u662f\uff0c\u6211\u5c06\u8be5\u8bfe\u9898\u7684\u5b8c\u6574\u63a8\u5bfc\u8fc7\u7a0b\u64b0\u5199\u6210\u4e86\u79d1\u666e\u6587\u7ae0\u3002\u8be5\u6587\u7ae0\u4e0d\u4ec5\u5728\u6211\u4e2d\u5b66\u7684\u6570\u5b66\u5fae\u4fe1\u516c\u4f17\u53f7\u4e0a\u53d1\u8868\uff0c\u66f4\u83b7\u5f97\u4e86\u77e5\u540d\u79d1\u666e\u516c\u4f17\u5e73\u53f0\u201c\u73af\u7403\u7269\u7406\u201d\u7684\u5168\u6587\u8f6c\u8f7d\uff0c\u53d6\u5f97\u4e86\u826f\u597d\u7684\u5b66\u672f\u4f20\u64ad\u6548\u679c\u3002</li>\n<li><strong>\u8fdb\u5c55\u72b6\u6001:</strong> \u5177\u5907\u4f18\u79c0\u7684\u5b66\u672f\u8f93\u51fa\u4e0e\u79d1\u666e\u4f20\u64ad\u80fd\u529b\uff0c\u5165\u90092018\u5e74\u82f1\u624d\u8ba1\u5212\u5b66\u79d1\u8bba\u575b\uff0c\u9879\u76ee\u8bc4\u7ea7\u4e3a\u5408\u683c\u3002</li>\n</ul>\n</div>\n<div class=\"section\">\n<h2>\u5b66\u751f\u5de5\u4f5c\u4e0e\u4efb\u804c\u7ecf\u5386</h2>\n<p><strong>\u5728\u4e13\u6ce8\u5b66\u4e1a\u7684\u540c\u65f6\uff0c\u6211\u4e5f\u975e\u5e38\u70ed\u8877\u4e8e\u6295\u5165\u5b66\u751f\u5de5\u4f5c\uff0c\u7279\u522b\u662f\u5728\u6c11\u65cf\u4e50\u56e2\u7684\u5efa\u8bbe\u4e0e\u73ed\u7ea7\u670d\u52a1\u4e2d\u3002\u8fd9\u4e9b\u7ecf\u5386\u4e0d\u4ec5\u953b\u70bc\u4e86\u6211\u7684\u7edf\u7b79\u4e0e\u9886\u5bfc\u80fd\u529b\uff0c\u66f4\u8ba9\u6211\u7ed3\u8bc6\u4e86\u4e00\u7fa4\u5fd7\u540c\u9053\u5408\u7684\u670b\u53cb\u3002</strong></p>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udfb5 \u5b66\u751f\u4e50\u56e2\u4e0e\u827a\u672f\u7ba1\u7406 (\u6838\u5fc3\u5c65\u5386)</h3>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 (NMOU) \u56e2\u957f</strong></span>\n<span>2025-2026\u5b66\u5e74 (\u73b0\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 \u6559\u5b66\u526f\u90e8\u957f</strong></span>\n<span>2025-2026\u5b66\u5e74 (\u73b0\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u9662\u5927\u5b66\u6c11\u65cf\u7ba1\u5f26\u4e50\u56e2 \u5ba3\u4f20\u7ec4\u6210\u5458</strong></span>\n<span>2025-2026\u5b66\u5e74 (\u73b0\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 \u5fae\u4fe1\u516c\u4f17\u53f7\u5e38\u52a1\u8fd0\u8425 (\u5ba3\u4f20\u5206\u90e8\u5e72\u4e8b)</strong></span>\n<span>2025\u5e74\u6625\u5b63\u5b66\u671f\u81f3\u4eca (\u73b0\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 \u8c31\u52a1\u6210\u5458</strong></span>\n<span>2023\u5e74\u6625\u5b63\u5b66\u671f\u81f3\u4eca (\u73b0\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 \u56e2\u652f\u90e8\u4e66\u8bb0</strong></span>\n<span>2024-2025\u5b66\u5e74 (\u66fe\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 \u6559\u5b66\u603b\u8d1f\u8d23\u4eba (\u73b0\"\u6559\u5b66\u90e8\u957f\")</strong></span>\n<span>2024-2025\u5b66\u5e74 (\u66fe\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 \u5439\u7ba1\u58f0\u90e8\u6267\u884c\u90e8\u957f</strong></span>\n<span>2024-2025\u5b66\u5e74 (\u66fe\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 \u5fae\u4fe1\u516c\u4f17\u53f7\u4e3b\u7ba1 (\u5ba3\u4f20\u5206\u90e8\u5e72\u4e8b)</strong></span>\n<span>2023\u5e74\u79cb\u5b63\u5b66\u671f-2025\u5e74\u79cb\u5b63\u5b66\u671f (\u66fe\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u6c11\u65cf\u4e50\u56e2 \u5439\u7ba1\u58f0\u90e8\u957f</strong></span>\n<span>2023-2024\u5b66\u5e74 (\u66fe\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u5317\u4eac\u5e02\u5341\u4e00\u5b66\u6821\u6c11\u4e50\u56e2 \u56e2\u957f (\u9996\u4efb)</strong></span>\n<span>2016-2020\u5b66\u5e74 (\u66fe\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u9662\u9644\u5c5e\u7389\u6cc9\u5c0f\u5b66\u6c11\u4e50\u56e2 \u7b19\u58f0\u90e8\u957f</strong></span>\n<span>2014-2016\u5b66\u5e74 (\u66fe\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udfeb \u73ed\u7ea7\u5efa\u8bbe\u4e0e\u5b66\u751f\u7ec4\u7ec7</h3>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u5b66\u751f\u5fae\u7b11\u5fc3\u7406\u534f\u4f1a \u7ec4\u7ec7\u90e8\u90e8\u957f</strong></span>\n<span>2025-2026\u5b66\u5e74 (\u73b0\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u6570\u5b66\u79d1\u5b66\u5b66\u966222\u7ea701\u73ed \u5b66\u4e60\u59d4\u5458</strong></span>\n<span>2025-2026\u5b66\u5e74 (\u73b0\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u6570\u5b66\u79d1\u5b66\u5b66\u966222\u7ea701\u73ed \u526f\u73ed\u957f</strong></span>\n<span>2024-2025\u5b66\u5e74 (\u66fe\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u5317\u4eac\u5e02\u5341\u4e00\u5b66\u6821 (\u521d\u9ad8\u4e2d) \u7b2c12\u56e2\u652f\u90e8 \u56e2\u652f\u4e66</strong></span>\n<span>2018-2022\u5b66\u5e74 (\u66fe\u4efb)</span>\n</div>\n<ul>\n<li style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</li>\n</ul>\n</div>\n<div class=\"section\">\n<h2>\u97f3\u4e50\u521b\u4f5c\u4e0e\u6539\u7f16\u4f5c\u54c1</h2>\n<p><strong>\u5bf9\u6211\u800c\u8a00\uff0c\u6f14\u594f\u662f\u6f14\u7ece\u4ed6\u4eba\u7684\u5fc3\u58f0\uff0c\u800c\u7f16\u914d\u4e0e\u521b\u4f5c\u5219\u662f\u8868\u8fbe\u81ea\u6211\u7684\u91cd\u5851\u3002\u76ee\u524d\u6211\u4e3b\u8981\u81f4\u529b\u4e8e\u6c11\u65cf\u5ba4\u5185\u4e50\u7684\u6539\u7f16\u4e0e\u914d\u5668\uff0c\u672a\u6765\u4e5f\u5e0c\u671b\u80fd\u5b55\u80b2\u51fa\u5c5e\u4e8e\u81ea\u5df1\u7684\u539f\u521b\u4f5c\u54c1\u3002</strong></p>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udfbc \u6c11\u65cf\u5668\u4e50\u6539\u7f16\u4f5c\u54c1</h3>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u5927\u4e1c\u5317\u6211\u7684\u5bb6\u4e61 (\u6c11\u65cf\u5ba4\u5185\u4e50\u5408\u594f)</strong></span>\n<span>2025.07 \u7f16\u914d / 2025.12 \u7b2c\u4e8c\u7248</span>\n</div>\n<ul>\n<li><strong>\u4f5c\u54c1\u7c7b\u578b:</strong> \u6c11\u65cf\u5ba4\u5185\u4e50\u4f5c\u54c1</li>\n<li><strong>\u7b2c\u4e00\u7248\u7f16\u5236:</strong> \u5522\u5450\u00d72, \u6886\u7b1b\u00d72, \u66f2\u7b1b\u00d72, \u9ad8\u97f3\u7b19\u00d72, \u4e8c\u80e1\u00d72, \u7435\u7436\u00d71, \u4e2d\u56fd\u9f13\u00d71</li>\n<li><strong>\u7b2c\u4e8c\u7248\u7f16\u5236:</strong> \u5522\u5450\u00d72, \u6886\u7b1b\u00d72, \u66f2\u7b1b\u00d73, \u9ad8/\u4e2d/\u4f4e\u97f3\u7b19\u5404\u00d71, \u4e8c\u80e1\u00d72, \u7435\u7436\u00d71, \u6c11\u65cf\u6253\u51fb\u4e50 (\u4e2d\u56fd\u9f13\u3001\u5927\u9f13\u3001\u94c3\u9f13\u3001\u6c99\u9524)</li>\n<li><strong>\u6f14\u51fa\u5386\u7a0b:</strong>\n<ul style=\"margin-top: 5px; list-style-type: circle;\">\n<li>2025.09: \u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u793e\u56e2\u6e38\u56ed\u4f1a (\u975e\u6b63\u5f0f\u9996\u6f14)</li>\n<li>2025.10: \u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b662025\u5e74\u701a\u6d77\"\u65b0\"\u4e91\u8fce\u65b0\u665a\u4f1a (\u6b63\u5f0f\u9996\u6f14)</li>\n<li>2025.12: \u4e2d\u56fd\u79d1\u5b66\u6280\u672f\u5927\u5b66\u72ec\u594f\u97f3\u4e50\u4f1a (\u7b2c\u4e8c\u7248\u8c31\u9762\u9996\u6f14)</li>\n</ul>\n</li>\n</ul>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83c\udfb9 \u539f\u521b\u97f3\u4e50\u4f5c\u54c1</h3>\n<ul>\n<li style=\"color: #666;\"><em>\u8fd8\u5728\u7075\u611f\u915d\u917f\u4e2d\uff0c\u656c\u8bf7\u671f\u5f85...</em></li>\n</ul>\n</div>\n<div class=\"section\">\n<h2>\u8bfe\u7a0b\u52a9\u6559\u7ecf\u5386</h2>\n<p><strong>\u6211\u7684\u52a9\u6559\u7533\u8bf7\u4e4b\u8def\u5145\u6ee1\u4e86\u620f\u5267\u6027\uff0c\u4e5f\u89c1\u8bc1\u4e86\u6211\u5728\u5b66\u9662\u91cc\u8ba4\u53ef\u5ea6\u7684\u63d0\u5347\u3002\u4ece\u5927\u4e09\u4e0b\u5b66\u671f\u6295\u9012\u7b80\u5386\u77f3\u6c89\u5927\u6d77\uff0c\u5230\u5927\u56db\u4e0b\u5b66\u671f\u88ab\u6821\u9662\u4e24\u7ea7\u5f3a\u70c8\u63a8\u8350\uff0c\u8fd9\u79cd\u201c\u53cd\u8f6c\u201d\u8ba9\u6211\u6df1\u611f\u8363\u5e78\u3002\u540c\u65f6\uff0c\u5b83\u4e5f\u6559\u4f1a\u4e86\u6211\u5982\u4f55\u6743\u8861\u8f7b\u91cd\u3001\u5e76\u5728\u65e0\u6cd5\u5168\u5fc3\u6295\u5165\u65f6\u8d1f\u8d23\u4efb\u5730\u5b66\u4f1a\u62d2\u7edd\u3002</strong></p>\n<h3 style=\"margin-top: 20px; color: #444;\">\ud83d\udc68\u200d\ud83c\udfeb \u52a9\u6559\u4efb\u804c\u4e0e\u53d7\u9080\u60c5\u51b5 (\u6309\u65f6\u95f4\u5012\u5e8f)</h3>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>[\u9057\u61be\u5a49\u62d2] \u300a\u6570\u5b66\u5206\u6790(B2)\u300b &amp; \u300a\u6570\u5b66\u5206\u6790(A2)\u300b \u8bfe\u7a0b\u52a9\u6559\u53d7\u9080</strong></span>\n<span>2026\u5e74\u6625\u5b63\u5b66\u671f</span>\n</div>\n<ul>\n<li><strong>\u80cc\u540e\u7684\u6545\u4e8b:</strong> \u8fd9\u4e2a\u5b66\u671f\u6211\u539f\u672c\u5df2\u88ab\u5f90\u5bbd\u8001\u5e08\u7684\u300a\u7ebf\u6027\u4ee3\u6570 (B1)\u300b\u5f55\u7528\u4e3a\u52a9\u6559\uff0c\u4f46\u65e0\u5948\u56e0\u9009\u8bfe\u4eba\u6570\u4e0d\u8db3\u800c\u505c\u5f00\u3002\u968f\u540e\uff0c\u5b66\u6821\u6559\u52a1\u5904\u548c\u6570\u5b66\u79d1\u5b66\u5b66\u9662\u5206\u522b\u5411\u6211\u629b\u51fa\u4e86\u6a44\u6984\u679d\uff0c\u63a8\u8350\u6211\u62c5\u4efb\u7a0b\u827a\u8001\u5e08\u7684\u300a\u6570\u5b66\u5206\u6790 (B2)\u300b\u548c\u674e\u601d\u654f\u8001\u5e08\u7684\u300a\u6570\u5b66\u5206\u6790 (A2)\u300b\u52a9\u6559\u3002</li>\n<li><strong>\u6211\u7684\u51b3\u5b9a:</strong> \u8fd9\u4e24\u95e8\u90fd\u662f\u6781\u5176\u786c\u6838\u7684\u57fa\u7840\u8bfe\uff0c\u80fd\u5f97\u5230\u6821\u9662\u4e24\u7ea7\u7684\u8ba4\u53ef\u63a8\u8350\uff0c\u6211\u6df1\u611f\u8363\u5e78\u3002\u4f46\u7531\u4e8e\u6211\u5927\u56db\u4e0b\u5b66\u671f\u4eba\u5728\u5317\u4eac\uff08\u4e2d\u79d1\u9662\u6570\u5b66\u9662\uff09\u5168\u804c\u8fdb\u884c\u6bd5\u4e1a\u8bbe\u8ba1\uff0c\u5ba2\u89c2\u4e0a\u65e0\u6cd5\u5b8c\u7f8e\u5730\u5c65\u884c\u7ebf\u4e0b\u7b54\u7591\u4e0e\u6279\u6539\u804c\u8d23\u3002\u51fa\u4e8e\u5bf9\u5b66\u751f\u548c\u8bfe\u7a0b\u8d1f\u8d23\u7684\u6001\u5ea6\uff0c\u6211\u6700\u7ec8\u9057\u61be\u5730\u5a49\u62d2\u4e86\u8fd9\u4e24\u4efd\u6781\u5177\u542b\u91d1\u91cf\u7684\u9080\u8bf7\u3002</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>[\u6b63\u5f0f\u4efb\u804c] \u4e50\u73cf\u8001\u5e08\u300a\u7ebf\u6027\u4ee3\u6570(B2)\u300b\u8bfe\u7a0b\u52a9\u6559</strong></span>\n<span>2025\u5e74\u79cb\u5b63\u5b66\u671f</span>\n</div>\n<ul>\n<li><strong>\u5de5\u4f5c\u5185\u5bb9:</strong> <span style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</span></li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>[\u5c61\u8d25\u5c61\u6218] \u300a\u6982\u7387\u8bba\u300b &amp; \u300a\u6570\u5b66\u5206\u6790(B2)\u300b \u52a9\u6559\u7533\u8bf7 (\u672a\u5f55\u7528)</strong></span>\n<span>2025\u5e74\u6625\u5b63\u5b66\u671f</span>\n</div>\n<ul>\n<li><strong>\u7533\u8bf7\u7ecf\u5386:</strong> \u672c\u5b66\u671f\u6211\u6ee1\u6000\u70ed\u60c5\u5730\u7533\u8bf7\u4e86\u8fd9\u4e24\u95e8\u6838\u5fc3\u8bfe\u7684\u52a9\u6559\uff0c\u4f46\u9057\u61be\u88ab\u62d2\u3002\u8fd9\u6b21\u201c\u78b0\u58c1\u201d\u53cd\u800c\u8ba9\u6211\u66f4\u52a0\u6c89\u4e0b\u5fc3\u6765\u592f\u5b9e\u57fa\u7840\uff0c\u4e5f\u4e3a\u5927\u56db\u4e0b\u5b66\u671f\u88ab\u5e7f\u6cdb\u8ba4\u53ef\u57cb\u4e0b\u4e86\u4f0f\u7b14\u3002</li>\n</ul>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>[\u6b63\u5f0f\u4efb\u804c] \u4e50\u73cf\u8001\u5e08\u300a\u7ebf\u6027\u4ee3\u6570(B1)\u300b\u8bfe\u7a0b\u52a9\u6559</strong></span>\n<span>2024\u5e74\u79cb\u5b63\u5b66\u671f</span>\n</div>\n<ul>\n<li><strong>\u5de5\u4f5c\u5185\u5bb9:</strong> <span style=\"color: #666;\">[\u5de5\u4f5c\u9884\u7559]</span></li>\n</ul>\n</div>\n<div class=\"section\">\n<h2>\u53d1\u8868\u6587\u7ae0</h2>\n<div class=\"subheading\">\n<span class=\"subheading-title\">\u6682\u65e0</span>\n<span></span>\n</div>\n<ul><li style=\"color: #666;\"><em>(\u672c\u79d1\u9636\u6bb5\u6682\u672a\u6b63\u5f0f\u53d1\u8868\u5b66\u672f\u8bba\u6587\uff0c\u76f8\u5173\u79d1\u7814\u6210\u679c\u89c1\u201c\u79d1\u7814\u7ecf\u5386\u201d\u4e0e\u672a\u6765\u89c4\u5212)</em></li></ul>\n</div>\n<div class=\"section\">\n<h2>\u5176\u4ed6\u4fe1\u606f</h2>\n<ul>\n<li><strong>\u82f1\u8bed\u7b49\u7ea7\u53ca\u6210\u7ee9:</strong> \u56db\u7ea7 610, \u516d\u7ea7 644. </li>\n<li><strong>\u8ba1\u7b97\u673a\u80fd\u529b:</strong> C\u8bed\u8a00 (\u300a\u8ba1\u7b97\u673a\u7a0b\u5e8f\u8bbe\u8ba1A\u300b\u8bfe\u7a0b 87\u5206). </li>\n<li><strong>\u97f3\u4e50\u4e13\u4e1a\u7b49\u7ea7\u53ca\u6210\u7ee9:</strong> \u4e2d\u56fd\u6c11\u65cf\u7ba1\u5f26\u4e50\u5b66\u4f1a \u7b19\u4e13\u4e1a 10\u7ea7 (2016.4, \u76ee\u524d\u4e2a\u4eba\u4f20\u7edf\u7b19\u4e0e\u952e\u7b19\u6c34\u5e73\u5747\u5df2\u8fbe\u5230\u4e2d\u592e\u97f3\u4e50\u5b66\u9662\u6f14\u594f\u6587\u51ed\u7ea7\u6807\u51c6). </li>\n<li><strong>\u7231\u597d:</strong> \u6570\u5b66, \u97f3\u4e50 (\u6c11\u4e50\u6f14\u594f\u548c\u7f16\u66f2), \u7fbd\u6bdb\u7403, \u6e38\u6cf3, \u8dd1\u6b65, \u5065\u8eab, \u7bee\u7403, \u7535\u5f71, \u7f8e\u98df, \u8bfb\u4e66, \u601d\u8003. </li>\n<li style=\"margin-top: 10px;\">\n<strong>\u63a8\u514d\u4e0e\u76f4\u535a\u5f55\u53d6\u60c5\u51b5\uff1a</strong><br/>\n            \u6211\u4e8e 2025 \u5e74\u4e0a\u534a\u5e74\u53c2\u52a0\u4e86\u4e2d\u56fd\u79d1\u5b66\u9662\u6570\u5b66\u4e0e\u7cfb\u7edf\u79d1\u5b66\u7814\u7a76\u9662\u7684\u63a8\u514d\u9009\u62d4\u3002\u540c\u5e74 9 \u6708\uff0c\u6211\u4ee5 <strong>92.88 \u5206\u7684\u7efc\u5408\u6210\u7ee9 (\u5b66\u9662\u6392\u540d 2/174)</strong> \u83b7\u5f97\u63a8\u514d\u8d44\u683c\uff0c\u5e76 <strong>\u5728\u5b66\u9662\u83b7\u5f97\u4fdd\u7814\u8d44\u683c\u7684 73 \u4eba\u4e2d\u6392\u540d\u7b2c\u4e00</strong>\u3002\u5728\u968f\u540e\u7684\u590d\u8bd5\u4e2d\uff0c\u6211\u4ee5 <strong>96.5 \u5206\u7684\u603b\u6210\u7ee9\u4f4d\u5c45\u8ba1\u7b97\u6570\u5b66\u4e13\u4e1a\u7b2c\u4e8c\u540d</strong>\uff0c\u6b63\u5f0f\u88ab\u8ba1\u7b97\u6570\u5b66\u4e0e\u79d1\u5b66\u5de5\u7a0b\u8ba1\u7b97\u7814\u7a76\u6240\u62df\u5f55\u53d6\u4e3a <strong>\u76f4\u535a\u751f</strong> (\u8be5\u4e13\u4e1a\u76f4\u535a\u751f\u540d\u989d\u4ec5\u4e3a 4 \u4eba)\u3002\u76ee\u524d\u5df2\u63a5\u6536\u5f85\u5f55\u53d6\u901a\u77e5\uff0c\u9884\u8ba1\u5c06\u4e8e 2026 \u5e74 9 \u6708\u6b63\u5f0f\u5165\u5b66\u3002\n          </li>\n<li style=\"margin-top: 10px;\">\n<strong>\u76ee\u524d\u7684\u201c\u5927\u56db\u9000\u4f11\u201d\u751f\u6d3b\uff1a</strong><br/>\n            \u6211\u73b0\u5728\u5927\u56db\uff0c\u4eba\u57fa\u672c\u90fd\u5728\u5317\u4eac\u3002\u4f60\u901a\u5e38\u53ef\u4ee5\u5728 <strong>\u4e2d\u56fd\u79d1\u5b66\u9662\u5927\u5b66\u7389\u6cc9\u8def\u6821\u533a\u7684\u56fe\u4e66\u9986</strong> \u627e\u5230\u6211\uff0c\u6216\u8005\u5728\u5bbf\u820d (\u4e3b\u8981\u7528\u4e8e\u5076\u5c14\u7761\u4e2a\u5348\u89c9) \u548c\u5bb6\u91cc\u3002\u6211\u559c\u6b22\u4fdd\u6301\u8fd0\u52a8\uff0c\u5929\u5929\u8dd1\u6b65\uff0c\u5076\u5c14\u6253\u6253\u7fbd\u6bdb\u7403\u3002\u6bcf\u5468\u65e5\u6211\u4f1a\u53bb\u4e2d\u5173\u6751\u6821\u533a\u53c2\u52a0\u56fd\u79d1\u5927\u6c11\u65cf\u7ba1\u5f26\u4e50\u56e2\u7684\u6392\u7ec3\uff0c\u5076\u5c14\u4e5f\u4f1a\u56de\u5408\u80a5\u79d1\u5927\u5904\u7406\u4e00\u4e9b\u5b66\u4e1a\u548c\u4e50\u56e2\u4e8b\u52a1\u3002<strong>\u6b22\u8fce\u968f\u65f6\u627e\u6211\u73a9\uff01</strong>\n</li>\n</ul>\n</div>\n<div class=\"section\" style=\"border: 1px dashed #888; padding: 20px; background-color: rgba(255,255,255,0.05); margin-top: 50px;\">\n<h2 style=\"text-align: center; margin-top: 0;\">\ud83d\udcdc \u201c\u9526\u4e0a\u6dfb\u82b1\u201d\u2014\u2014\u4e2a\u4eba\u4e3b\u9875 2026 \u7115\u65b0\u8ba1\u5212</h2>\n<p style=\"font-style: italic; text-align: center; color: #666;\">\u201c\u4e2a\u4eba\u4e3b\u9875\u4e0d\u4ec5\u662f\u4e00\u4efd\u7b80\u5386\uff0c\u66f4\u662f\u6211\u6210\u957f\u7684\u535a\u7269\u9986\u3002\u201d</p>\n<div style=\"margin-top: 20px;\">\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u7b2c\u4e00\u9636\u6bb5\uff1a\u57fa\u77f3\u7a33\u56fa \u00b7 \u6846\u67b6\u521d\u6210</strong></span>\n<span style=\"color: #2e7d32;\"><strong>\u5df2\u8fbe\u6210 \u2705 (2026.03.12)</strong></span>\n</div>\n<p style=\"font-size: 0.9em; margin-left: 20px;\">\u5e95\u5c42\u4ee3\u7801\u91cd\u6784\u3001\u6559\u80b2\u7ecf\u5386\u4e0e\u5b66\u4e1a\u6570\u636e\u66f4\u65b0\u3001\u79fb\u52a8\u7aef\u57fa\u7840\u9002\u914d\u3002</p>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u7b2c\u4e8c\u9636\u6bb5\uff1a\u8840\u8089\u4e30\u6ee1 \u00b7 \u7ec6\u8282\u96d5\u7422</strong></span>\n<span style=\"color: #888;\">\u8fdb\u884c\u4e2d...</span>\n</div>\n<p style=\"font-size: 0.9em; margin-left: 20px;\">\u6df1\u5ea6\u6da6\u8272\u5e76\u8865\u5168\u4e50\u56e2\u5c65\u5386\u3001\u4efb\u804c\u7ecf\u5386\u53ca\u793e\u4f1a\u6d3b\u52a8\u7248\u5757\u3002\u5c06\u201c\u5c97\u4f4d\u6e05\u5355\u201d\u5347\u7ea7\u4e3a\u201c\u6838\u5fc3\u5de5\u4f5c\u63cf\u8ff0\u201d\u3002<br/>\n<em style=\"color: #999;\">\u9884\u8ba1\u5b8c\u6210\u65f6\u95f4\uff1a2026.04.10 \u4e4b\u524d</em></p>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u7b2c\u4e09\u9636\u6bb5\uff1a\u591a\u7ef4\u53d9\u4e8b \u00b7 \u7d20\u6750\u8865\u5168</strong></span>\n</div>\n<p style=\"font-size: 0.9em; margin-left: 20px;\">\n<strong>\u5b66\u672f\u9762\uff1a</strong>\u6302\u8f7d\u90ed\u5956/\u516d\u6709/\u6bd5\u8bbe\u7b54\u8fa9 PPT\u3001\u79d1\u7814\u8bba\u6587\u53ca\u5404\u7c7b\u8363\u8a89\u8bc1\u660e PDF\uff1b<br/>\n<strong>\u827a\u672f\u9762\uff1a</strong>\u5d4c\u5165\u6f14\u51fa\u7167\u7247\u3001\u89c6\u9891\u94fe\u63a5\u3001\u7f16\u66f2\u603b\u8c31\u9884\u89c8\u3002<br/>\n<em style=\"color: #999;\">\u9884\u8ba1\u5b8c\u6210\u65f6\u95f4\uff1a2026.05.20 \u4e4b\u524d</em>\n</p>\n<div class=\"subheading\">\n<span class=\"subheading-title\"><strong>\u7b2c\u56db\u9636\u6bb5\uff1a\u6539\u5929\u6362\u5730 \u00b7 \u7ec8\u6781\u7115\u65b0</strong></span>\n</div>\n<p style=\"font-size: 0.9em; margin-left: 20px;\">\u5f15\u5165\u5168\u65b0\u89c6\u89c9\u6a21\u677f\uff0c\u5b9e\u73b0\u65e2\u6709\u5185\u5bb9\u5411\u66f4\u5177\u73b0\u4ee3\u611f\u4e0e\u4ea4\u4e92\u6027\u7684\u65b0\u5bb9\u5668\u5e73\u79fb\u3002<br/>\n<em style=\"color: #999;\">\u6700\u7ec8\u4ea4\u4ed8\u65f6\u95f4\uff1a2026.07.01\uff08\u6bd5\u4e1a\u79bb\u6821\u524d\u5915\uff09</em></p>\n</div>\n<hr style=\"border: 0; border-top: 1px solid #ccc; margin: 20px 0;\"/>\n<div style=\"font-size: 0.9rem; text-align: center;\">\n<p>\ud83d\udca1 \u6b22\u8fce\u5927\u5bb6\u901a\u8fc7\u4ee5\u4e0b\u65b9\u5f0f\u4ea4\u6d41\u5efa\u8bae\uff1a</p>\n<p>\n<strong>NMOU \u6cf0\u871c\u5206\u8235 QQ \u7fa4\uff1a</strong> 733028065 <br/>\n<span style=\"font-size: 0.8rem; color: #777;\">(\u5165\u7fa4\u8bf7\u8054\u7cfb <strong>\u949f\u627f\u5955</strong> \u8fdb\u884c\u8d44\u683c\u9274\u5b9a\uff0c\u7ef4\u62a4\u98ce\u6e05\u6c14\u6b63\u7684\u7c89\u4e1d\u7fa4\u73af\u5883)</span>\n</p>\n</div>\n</div>\n\n    </div>\n    ";
+window.RESUME_ZH_INNER_HTML = `
+    <button id="toggle-btn">
+      <span><i class="fas fa-sun"></i></span>
+    </button>
+    <div id="clock">GMT+8 00:00</div>
+    <div class="container">
+      
+
+<div class="resume-heading">泰泰</div>
+
+<div class="section resume-hero" id="resume-hero">
+  <div class="resume-hero-avatar">
+    <img src="./assets/images/profile.jpg" alt="个人照片">
+  </div>
+  <div class="resume-hero-body">
+    <div class="resume-hero-name">泰泰</div>
+    <div class="resume-hero-chips">
+      <span class="contact-pill"><strong>研究方向</strong><span>计算数学 / 最优化算法</span></span>
+      <span class="contact-pill"><strong>兴趣</strong><span>民族音乐 / 编配 / 乐团工作</span></span>
+      <span class="contact-pill"><strong>常驻</strong><span>北京 × 合肥</span></span>
+    </div>
+    <p class="resume-hero-intro">
+      我目前就读于中国科学技术大学数学科学学院，已获中国科学院数学与系统科学研究院计算数学专业直博资格，未来将在袁亚湘院士指导下继续学习与研究。
+      对我而言，本科阶段并不是把自己限定在单一标签中的几年，而是在数学、最优化、笙与民族音乐、学生工作与公共服务之间不断寻找交汇点的过程：一方面，我保持了专业前列的学业表现，主持国家级大创项目，担任《线性代数》课程助教，并在学术交流中持续训练问题意识；另一方面，我长期投入民乐传承与校园美育实践，现任中国科学技术大学学生民族乐团团长，策划推进“中华音韵”教学课程，希望让更多同学真正接触并爱上民乐。
+      一路走来，我越来越相信，个人成长不只体现在分数、奖项或头衔上，更体现在能否把理性的严谨、审美的敏感、团队中的担当与面向公共生活的热情，慢慢沉淀成一种稳定而自洽的节奏。
+    </p>
+    <div class="resume-hero-contacts">
+      <span class="contact-pill contact-detail"><i class="fas fa-location-dot contact-icon" aria-hidden="true"></i><span class="contact-label">住址</span><span class="contact-value">北京丰台 100040</span></span>
+      <span class="contact-pill contact-detail"><i class="fas fa-envelope contact-icon" aria-hidden="true"></i><span class="contact-label">邮箱</span><a class="contact-value" href="mailto:taitai@mail.ustc.edu.cn">taitai@mail.ustc.edu.cn</a></span>
+      <span class="contact-pill contact-detail"><i class="fab fa-qq contact-icon" aria-hidden="true"></i><span class="contact-label">QQ</span><span class="contact-value">2592255858</span></span>
+      <span class="contact-pill contact-detail"><i class="fab fa-weixin contact-icon" aria-hidden="true"></i><span class="contact-label">微信</span><span class="contact-value">taitai_2026</span></span>
+      <span class="contact-pill contact-detail"><i class="fas fa-users contact-icon" aria-hidden="true"></i><span class="contact-label">粉丝群</span><span class="contact-value">NMOU 泰蜜分舵 · 733028065</span></span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+<h2>教育经历</h2>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学院数学与系统科学研究院</strong></span>
+<span style="font-size: 0.9em; color: #666;">2026.09 (预计)</span>
+</div>
+<div style="font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;">
+          (Academy of Mathematics and Systems Science, Chinese Academy of Sciences)
+        </div>
+<ul>
+<li><strong>学位/身份:</strong> <strong>直博生 (拟录取)</strong></li>
+<li><strong>培养单位:</strong> 计算数学与科学工程计算研究所</li>
+<li><strong>攻读专业:</strong> 计算数学</li>
+<li><strong>研究方向:</strong> 最优化计算方法 I</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学</strong></span>
+<span style="font-size: 0.9em; color: #666;">2022.09 - 2026.07 (预计)</span>
+</div>
+<div style="font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;">
+          (University of Science and Technology of China)
+        </div>
+<ul>
+<li><strong>学位/身份:</strong> 理学学士</li>
+<li><strong>所属院系:</strong> 数学科学学院</li>
+<li><strong>主修专业:</strong> 数学与应用数学 (概率统计方向)</li>
+<li><strong>跨学科探索:</strong> 本科期间曾深入考虑辅修计算机科学、金融学或化学。虽然由于对学业严谨性的追求，未能在规定时间内提交正式申请，但我始终保持着对交叉学科的热情。通过选修相关核心课程与参与跨学科竞赛，我积累了扎实的算法设计与多学科建模经验，构建了以数学为根基的知识结构。</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>北京市十一学校</strong></span>
+<span style="font-size: 0.9em; color: #666;">2016.09 - 2022.07</span>
+</div>
+<div style="font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;">
+          (Beijing National Day School)
+        </div>
+<p style="margin-left: 20px; font-size: 0.9em; color: #555;">初中、高中（期间入选“中学生英才计划”，开启学术启蒙）</p>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学院附属玉泉小学</strong></span>
+<span style="font-size: 0.9em; color: #666;">2010.09 - 2016.07</span>
+</div>
+<div style="font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;">
+          (The Affiliated Yuquan Primary School of CAS)
+        </div>
+<p style="margin-left: 20px; font-size: 0.9em; color: #555;">小学（音乐素养与艺术梦想的起航地）</p>
+</div>
+<div class="section">
+<h2>本科学业情况 (2022年秋季学期至2025年夏季学期)</h2>
+<ul>
+<li><strong>GPA:</strong> 3.97/4.3</li>
+<li><strong>加权平均分:</strong> 91.67</li>
+<li><strong>算数平均分:</strong> 92.39</li>
+<li><strong>综合测评分数:</strong> 87.88 (保研时的综合成绩为92.88)</li>
+<li><strong>2022级数学科学学院GPA排名:</strong> 8/176 (top 5%)</li>
+<li><strong>2022级数学科学学院概率统计方向GPA排名:</strong> 4/69</li>
+<li><strong>2022级数学科学学院综合测评排名:</strong> 2/176</li>
+</ul>
+<div style="margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;">
+<p style="margin-top: 0;"><strong>“在追求卓越的路上，我始终在学习如何平衡选择与坚持。”</strong></p>
+<p>回顾本科生涯，我的学术路径并非坦途，却因“不走捷径”而愈发厚重。在专业分流的关键时刻，我选择了挑战自我，投身于竞争极度激烈的<strong>数学与应用数学（概率统计方向）</strong>。尽管当时我的 GPA 在<strong>信息与计算科学（计算数学方向）</strong>同级七十余名同学中高居 <strong>第 2 位</strong>，但我仍渴望在随机分析与概率的海洋中磨砺思维。</p>
+<p>这种纯粹的初心虽让我在随后的排名竞争与荣誉评定中经历了些许“戏剧性”的波折，但也正是这段跨方向的深度修读，极大地拓宽了我的数学视野，赋予了我从随机性视角审视确定性问题的独特能力。</p>
+<p>推免阶段，我选择回归初心，深耕<strong>计算数学</strong>领域。虽曾因早期的专业跨度在保研过程中历经波折，但这段“跨界”的磨砺最终内化为我研究最优化算法时的独特底蕴——概率的灵动与计算的严谨在此交汇。</p>
+<p style="margin-bottom: 0;"><strong>“造化弄人”终是序曲。选择的意义不在于结果是否全然完美，而在于这一路累积的厚度，以及在波折中愈发坚定的科研志向。</strong></p>
+</div>
+<h3 style="margin-top: 20px;">部分代表性课程成绩</h3>
+<p>虽然经历了方向的转换，但在数学的各个核心领域我依然打下了扎实的基础。值得一提的是，我在本科阶段提前修读了部分研究生专业课程并取得了不错的成绩。同时，在跨学科理科、思想政治理论以及人文体艺中，我也保持着极高的热情：</p>
+<div style="overflow-x: auto;">
+<table border="1" cellpadding="8" cellspacing="0" style="width: 100%; text-align: left; border-collapse: collapse; min-width: 600px;">
+<thead>
+<tr style="background-color: rgba(128, 128, 128, 0.15);">
+<th>课程模块</th>
+<th>课程名称</th>
+<th>成绩</th>
+<th>学分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="3"><strong>分析</strong></td>
+<td>泛函分析</td>
+<td><strong>100</strong></td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>微分方程引论</td>
+<td><strong>95</strong></td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>数学分析 (A1)</td>
+<td><strong>93</strong></td>
+<td>6.0</td>
+</tr>
+<tr>
+<td rowspan="3"><strong>代数</strong></td>
+<td>线性代数 (B1)</td>
+<td><strong>98</strong></td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>线性代数 (A2)</td>
+<td><strong>94</strong></td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>近世代数</td>
+<td><strong>93</strong></td>
+<td>3.0</td>
+</tr>
+<tr>
+<td rowspan="4"><strong>概率与统计</strong></td>
+<td>概率论</td>
+<td><strong>100</strong></td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>计量经济学</td>
+<td><strong>98</strong></td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>随机过程A</td>
+<td><strong>96</strong></td>
+<td>3.0</td>
+</tr>
+<tr>
+<td>高等概率论 <span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td>
+<td><strong>89</strong></td>
+<td>4.0</td>
+</tr>
+<tr>
+<td rowspan="4"><strong>计算与应用数学</strong></td>
+<td>离散数学</td>
+<td><strong>99</strong></td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>运筹学</td>
+<td><strong>96</strong></td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>偏微分方程数值解 <span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td>
+<td><strong>91</strong></td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>有限元方法 <span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td>
+<td><strong>90</strong></td>
+<td>4.0</td>
+</tr>
+<tr>
+<td rowspan="4"><strong>物理基础</strong></td>
+<td>光学B</td>
+<td><strong>99</strong></td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>原子物理B</td>
+<td><strong>98</strong></td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>电磁学B</td>
+<td><strong>97</strong></td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>热学B</td>
+<td><strong>97</strong></td>
+<td>1.5</td>
+</tr>
+<tr>
+<td rowspan="2"><strong>思想政治理论</strong></td>
+<td>中国近现代史纲要</td>
+<td><strong>95</strong></td>
+<td>2.5</td>
+</tr>
+<tr>
+<td>思想道德与法治</td>
+<td><strong>95</strong></td>
+<td>3.0</td>
+</tr>
+<tr>
+<td rowspan="9"><strong>科研、通识与外语素养</strong></td>
+<td>“科学与社会”研讨课</td>
+<td><strong>A+</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>大学生心理学</td>
+<td><strong>A+</strong></td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>西方音乐通史</td>
+<td><strong>A+</strong></td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>音乐来信——走进交响世界</td>
+<td><strong>A+</strong></td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>游泳</td>
+<td><strong>A+</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>羽毛球 I</td>
+<td><strong>A+</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>羽毛球 II</td>
+<td><strong>A+</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>英语交流进阶 III</td>
+<td><strong>96</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>英语读写进阶 I</td>
+<td><strong>96</strong></td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section">
+<h2>大学以来的奖项及荣誉 (部分)</h2>
+<p><strong>虽然我在小学和中学阶段也获得过许多奖项, 但我更愿意展示大学以来的荣誉, 因为这些奖项更能体现我的成长与进步. </strong></p>
+<h3 style="margin-top: 20px; color: #444;">🎓 学业与综合荣誉</h3>
+<ul>
+<li><strong>2023年中国科学技术大学优秀学生奖学金 金奖</strong> (2024.01, 3%, 4000元)</li>
+<li>2023年秋季学期中国科学技术大学电磁学小论文竞赛 三等奖 (2024.01, 与林琦皓合作)</li>
+<li><strong>中国科学技术大学2024年度最美“六有”大学生 提名奖</strong> (2024.12)</li>
+<li>中国科学技术大学第二十五期学生骨干培训班暨团校第三十一期培训班 优秀学员 (2024.12)</li>
+<li><strong>2024年中国石油奖学金</strong> (2025.03, 排名2/174, 8000元)</li>
+<li>中国科学技术大学2024-2025学年优秀共青团干部 (2025.05)</li>
+<li>中国科学技术大学2024-2025学年优秀共青团员 (2025.05)</li>
+<li>中国科学技术大学2024-2025学年青年马克思主义培养工程暨“六有”大学生“青马计划”班 优秀学员 (2025.05)</li>
+<li>中国科学技术大学2024-2025学年优秀学生社团骨干 (2025.06)</li>
+<li><strong>通过2025-2026学年郭沫若奖学金A类资格审查 参加学院答辩</strong> (2025.10, gpa:8/176, 综合测评2/176, 均位列学院top 5%, 学院共5人符合申报资格)</li>
+<li>第十七届全国大学生数学竞赛 安徽赛区 数学A类 二等奖 (2025.12, 全省排名第60)</li>
+<li><strong>中国科学技术大学2025年度最美“六有”大学生 提名奖</strong> (2025.12)</li>
+<li><strong>2025年比亚迪奖学金</strong> (2026.03, 排名2/174, 10000元)</li>
+<li><strong>2025年黄渝纪念奖学金</strong> (2026.03, 学院最高奖, 共奖励10人, 10000元)</li>
+<li>2026届中国科学技术大学优秀毕业生 (2026.03, 15%, 班级共10个名额, 学院168名毕业生共26个名额)</li>
+<li><strong>2026届安徽省普通高等学校优秀毕业生</strong> (2026.03, 3%, 学院168名毕业生共6个名额)</li>
+</ul>
+<h3 style="margin-top: 20px; color: #444;">🎵 艺术展演与文化交流</h3>
+<ul>
+<li>安徽演艺集团首届青少年艺术展演 笙·青年组 金奖 (2024.07, 指导教师: 马欧宇)</li>
+<li>第十三届中国音乐国音杯·民族器乐大赛 北京赛区 笙专业 青少年组 金奖 (2024.12)</li>
+<li>第十一届澳门国际艺术公开赛 中国赛区初赛 民乐-笙项目 青年组 金奖 (2024.12, 指导教师: 黄宇顺)</li>
+<li>The 2024-2025 GIYAF International Youth Art Festival China Regional Qualifier, the First Prize (2024.12, Mentor: 梁鹏宇 Liang Pengyu)</li>
+<li>The 11th Macau International Art Open Competition Final Round for Chinese Folk Music, Sheng Item-Youth Class, Gold Award (2025.01)</li>
+<li>The 2025 GIYAF International Youth Arts Festival Singapore Final, Gold Award (2025.01)</li>
+<li>第四届乐府良匠民族音乐节 笙-大学组 一等奖 (2025.04, 指导教师: 倪好)</li>
+<li>第十五届亚洲国际艺术大赛 中国赛区 民乐-笙项目 青年组 一等奖 (2025.06, 指导教师: 任浩原)</li>
+<li><strong>参加2026年春晚合肥分会场拍摄 登上央视春晚</strong> (2026.01)</li>
+</ul>
+<h3 style="margin-top: 20px; color: #444;">🏸 体育竞技与活动参与</h3>
+<ul>
+<li>中国科学技术大学第九届羽毛球“新星赛” 男单16强 (2022.10)</li>
+<li>中国科学技术大学2022雏鹰杯 8强 (2022.11)</li>
+<li>中国科学技术大学2022雏鹰杯 公平竞赛奖 (2023.03)</li>
+<li>2023年春中国科学技术大学“四国大战”羽毛球团体赛 第三名 (2023.04)</li>
+<li>中国科学技术大学第十届羽毛球“新星赛” 男双16强 (2023.10)</li>
+<li>2023年秋中国科学技术大学“四国大战”羽毛球团体赛 第三名 (2023.11)</li>
+<li>中国科学技术大学第十一届羽毛球“新星赛” 男双16强 (2024.09)</li>
+<li>中国科学技术大学跑步爱好者协会2025年暑期跑步打卡 个人奖三等奖 (2025.09, 个人赛排名第33, 总跑量202.70km)</li>
+<li>中国科学技术大学跑步爱好者协会2025年暑期跑步打卡 团队奖四等奖 (2025.09, 团队赛所在队伍“大象大象大象”排名第17, 三人总排行316)</li>
+<li>中国科学技术大学跑步爱好者协会2026年寒假跑步打卡 个人奖三等奖 (2026.02, 个人赛排名第32, 总跑量125.57km)</li>
+<li>中国科学技术大学跑步爱好者协会2026年寒假跑步打卡 第三周坚持奖 (2026.02)</li>
+</ul>
+<div style="margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;">
+<p style="margin-top: 0;"><strong>虽然有许多小奖项, 但大部分大奖总是与我擦肩而过. </strong></p>
+<p><strong>每年我都尽全力参评本科生国家奖学金, 却始终未获奖, 反而常常能拿到其他奖学金中的最高奖项. </strong></p>
+<p><strong>每年的本科生国家自然科学基金青年学生基础研究项目我也都尝试申报, 但成绩及科研经历的不足让我同样未能如愿.  </strong></p>
+<p><strong>科研做得少, 竞赛参加得也少, 我的竞赛成绩同样不堪, 导致每年的本科生杨元庆教育基金奖学金我也都无力申报.  </strong></p>
+<p><strong>去年10月, 我通过了郭沫若奖学金A类资格审查并参与了学院的答辩, 但最终还是没能成为学院的三名候选人之一, 自然也没能获奖. </strong></p>
+<p><strong>中国科学技术大学2024及2025年度最美“六有”大学生评选, 每次我也均止步于提名奖. </strong></p>
+<p><strong>这让我逐渐意识到, 尽管有些奖项无法得到, 但每一次努力都让我更接近自我认知. </strong></p>
+<p><strong>从过去的愤懑不服到如今的逐渐释然, 我明白了自己只是一个普通人, 并非自己想象中的那么优秀. </strong></p>
+<p><strong>我也深刻理解到, 遗憾是人生常态, 而真正的收获, 来自于每一次奋斗的过程. </strong></p>
+<p style="margin-bottom: 0;"><strong>更何况, 我还并不那么爱奋斗, 时常摆烂. </strong></p>
+</div>
+</div>
+<div class="section">
+<h2>乐团经历</h2>
+<p><strong>乐团，更具体地说，民族管弦乐团，一直是我生命中不可或缺的部分。</strong><br/>
+<strong>它不仅陶冶了我的情操，更如同一位老友，见证了我从懵懂到成熟的每一步，也为我理性的数理世界注入了感性的温度。</strong></p>
+<h3 style="margin-top: 20px; color: #444;">🌟 走向广阔的舞台 (大学及以上平台)</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 (Nationalities Music Orchestra of USTC)</strong></span>
+<span>2022.09 至今</span>
+</div>
+<ul>
+<li><strong>担当角色：</strong>吹管声部 高音笙演奏员</li>
+<li><strong>深度的情感羁绊：</strong>中国科学技术大学学生民族乐团，我更喜欢叫它更为亲切的名字——<strong>NMOU</strong>。在这里，我不只是一个演奏员，更是乐团建设的参与者。我先后担任过吹管声部长及执行部长、团支部书记、教学总负责人，并长期在财务、谱务和宣传岗位上“拉磨”。现任乐团团长。</li>
+<li><strong>建设与演出：</strong>在此期间，我参与推动了吹管声部与教学分部的革新，取得了不错的成效，也算是为团里做过一些贡献。作为演奏员，我参与了 NMOU 的 4 场专场音乐会、3 场独奏音乐会及各类活动，并组织筹划了其中的一部分。</li>
+<li><strong>传承与期许：</strong>由于毕业设计和未来研究生学业的压力，我目前已较少参与乐团的日常排练，大部分管理事务已平稳交接给书记钟承奕和吹管声部长倪好（他也即将接任下一任团长）。快要离开了，心里确有不舍与伤感。但离别是无法阻止的，只要在 NMOU 漫长的历史中留下过属于自己的印记，便已足够。<strong>衷心祝愿 NMOU 越来越好！</strong></li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>安徽乐团·青少年民族管弦乐团</strong></span>
+<span>2024.07 至今</span>
+</div>
+<ul>
+<li><strong>担当角色：</strong>高音笙演奏员</li>
+<li><strong>履历说明：</strong>凭借扎实的专业功底与出色的舞台表现力，我于 2024 年 7 月通过严苛选拔，正式考入该省级青少年乐团，开启了更具专业性和挑战性的艺术实践。</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学院大学民族管弦乐团</strong></span>
+<span>2024.09 至今</span>
+</div>
+<ul>
+<li><strong>担当角色：</strong>民族管乐声部 高音笙演奏员</li>
+<li><strong>履历说明：</strong>随着直博保研的确定，我提前一年融入了未来研究生母校的艺术氛围，在这里继续延续我对民乐的热爱。</li>
+</ul>
+<h3 style="margin-top: 20px; color: #444;">🌱 梦开始的地方 (中小学启蒙与积淀)</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>北京市十一学校民乐团</strong></span>
+<span>2016.09 - 2021.01</span>
+</div>
+<ul>
+<li>高音笙演奏员 (中学时代坚持磨砺演奏技艺，并担任了首任团长，初次培养了乐团管理与统筹能力。)</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学院附属玉泉小学国乐团</strong></span>
+<span>2010.09 - 2016.07</span>
+</div>
+<ul>
+<li>笙声部 高音笙演奏员 (我的音乐启蒙之地，开启了与高音笙长达十几年的不解之缘。)</li>
+</ul>
+</div>
+<div class="section">
+<h2>大学以来的活动组织与演出参与经历</h2>
+<p><strong>本模块记录了我在大学期间的台前幕后。在许多大型音乐会和综合活动中，我往往身兼多职——既是幕后奔波的统筹策划者，也是台上专注的高音笙演奏员。这些经历虽然繁杂，甚至略微影响了我的学业成绩，但它们带给我的真实快乐、统筹能力的飞跃以及与朋友们并肩作战的成就感，是几分 GPA 无法衡量的。</strong></p>
+<div class="subheading">
+<span class="subheading-title"><strong>[预留位]</strong></span>
+<span>202X.XX</span>
+</div>
+<ul>
+<li><strong>参与身份：</strong> <span style="color: #666;">[]</span></li>
+<li><strong>幕后统筹：</strong> <span style="color: #666;">[]</span></li>
+<li><strong>台前演出：</strong> <span style="color: #666;">[]</span></li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>[预留位]</strong></span>
+<span>202X.XX</span>
+</div>
+<ul>
+<li><strong>参与身份：</strong> <span style="color: #666;">[]</span></li>
+<li><strong>核心工作：</strong> <span style="color: #666;">[]</span></li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>[预留位]</strong></span>
+<span>202X.XX</span>
+</div>
+<ul>
+<li><strong>参与身份：</strong> <span style="color: #666;">[]</span></li>
+<li><strong>核心工作：</strong> <span style="color: #666;">[]</span></li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>[预留位]</strong></span>
+<span>202X.XX</span>
+</div>
+<ul>
+<li><strong>参与身份：</strong> <span style="color: #666;">[]</span></li>
+<li><strong>核心工作：</strong> <span style="color: #666;">[]</span></li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>[预留位]</strong></span>
+<span>202X.XX - 202X.XX</span>
+</div>
+<ul>
+<li><strong>参与身份：</strong> <span style="color: #666;">[]</span></li>
+<li><strong>核心工作：</strong> <span style="color: #666;">[]</span></li>
+</ul>
+<p style="margin-top: 20px; font-size: 0.9em; color: #888;">* 还有更多策划、组织与参演经历，我将在整理完具体细节后继续补充更新。</p>
+</div>
+<div class="section">
+<h2>科研经历</h2>
+<p><strong>我的科研之路起步较早，从中学时代的“英才计划”一直延续至今。目前，我的研究兴趣主要集中在计算数学与优化算法领域。</strong></p>
+<h3 style="margin-top: 20px; color: #444;">🔬 核心科研项目 (计算数学与优化算法)</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>基于常微分方程数值解法的加速一阶优化算法研究</strong><br/>
+<span style="font-size: 0.9em; font-weight: normal; color: #555;">(Research on Accelerating First-Order Optimization Algorithms Based on Numerical Solutions of Ordinary Differential Equations)</span></span>
+<span>2025.09 至今</span>
+</div>
+<ul>
+<li><strong>项目类型:</strong> 中国科学技术大学 2022级本科毕业设计 (理论类型课题)</li>
+<li><strong>项目角色:</strong> <strong>独立完成人</strong></li>
+<li><strong>指导教师:</strong> <strong>袁亚湘 院士</strong> (校外导师) / 陈士祥 特任研究员 (校内导师)</li>
+<li><strong>进展状态:</strong> 选题极具理论挑战性，目前已完成文献调研与初步框架构建，正按计划进行算法推导，顺利通过中期检查。</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>强Lyapunov框架下优化算法的全局收敛性研究与应用</strong><br/>
+<span style="font-size: 0.9em; font-weight: normal; color: #555;">(Convergence Analysis of Optimization Algorithms via Strong Lyapunov Functions)</span></span>
+<span>2025.05 至今</span>
+</div>
+<ul>
+<li><strong>项目类型:</strong> 2025春季学期大学生创新创业计划 (<strong>国家级创新训练项目</strong>)</li>
+<li><strong>项目角色:</strong> <strong>项目主持人</strong></li>
+<li><strong>指导教师:</strong> <strong>袁亚湘 院士</strong> (校外导师) / 许小卫 教授 (校内导师)</li>
+<li><strong>进展状态:</strong> 成功入选国家级立项，项目执行情况良好，已完成强 Lyapunov 框架下的初步收敛性分析，研究成果正进一步深化中。</li>
+</ul>
+<h3 style="margin-top: 20px; color: #444;">⚙️ 学科竞赛与跨学科探索</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>电场线与等势面可视化模拟器——基于Web技术的高度交互式物理教学工具</strong></span>
+<span>2024.12 - 2025.10</span>
+</div>
+<ul>
+<li><strong>项目类型:</strong> 中国科学技术大学首届电磁学动画设计大赛项目</li>
+<li><strong>项目角色:</strong> <strong>共同完成人</strong> (与钟承奕合作，主要负责理论推导与算法设计)</li>
+<li><strong>核心工作:</strong> 针对模拟过程中的“鞍点奇异曲线”和“电荷悬殊导致场线密度失衡”等棘手问题，我引入了自适应步长算法与动态密度削减机制，有效解决了电场线突变断裂与视觉不均衡的痛点，极大优化了电场线平滑度与最终的美观性 。</li>
+<li><strong>进展状态:</strong> 作品具有较强的交互性与教学参考价值，竞赛已结束，目前仍在对成果进行改进，预计后续申请相关专利。</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>几种简单电学模型的电场线方程的求解与讨论</strong></span>
+<span>2023.09 - 2024.01</span>
+</div>
+<ul>
+<li><strong>项目类型:</strong> 2023年秋季学期中国科学技术大学电磁学小论文竞赛项目 (授课教师: 孙霞)</li>
+<li><strong>项目角色:</strong> <strong>共同完成人</strong> (与林琦皓合作，主要负责核心理论推导)</li>
+<li><strong>核心工作:</strong> 运用常微分方程的初等积分法等基础数学工具，对等量同种/异种电荷、非等量电荷等多种简单电学模型的电场线方程进行了严密的解析解推导。通过数学与物理学的深度交叉，探究了电偶极子等模型的场线分布特征与一般化规律 。</li>
+<li><strong>进展状态:</strong> 推导严谨，结论具有物理启发性，项目成功入围校级竞赛答辩并最终荣获<strong>三等奖</strong>。</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>社交网络中的有效交友问题</strong> (大学阶段深入研究)</span>
+<span>2022.09 - 2023.06</span>
+</div>
+<ul>
+<li><strong>项目类型:</strong> 2022-2023学年中国科学技术大学“科学与社会”研讨课课题 (授课教师: 刘永强)</li>
+<li><strong>项目角色:</strong> <strong>核心组员</strong> (负责论文撰写、算法推导与答辩汇报)</li>
+<li><strong>核心工作:</strong> 探讨了以“目标用户接受概率最大化”为导向的网络交友图论模型。我在中学阶段的研究基础上进行了深化，进一步探讨了“影响力最大化”问题，并引入了“社区结构”的概念对孤立节点进行划分 。在算法实现上，对比分析了穷举、贪心与递推算法，并利用真实的 Facebook 社交网络数据集对递推算法的有效性进行了大规模实例验证 。</li>
+<li><strong>进展状态:</strong> 汇报内容详实，逻辑严密，论证充分，获得授课教师高度评价，课程评级为 <strong>A+</strong>。</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>网络环境中的从众行为分析</strong></span>
+<span>2022.09 - 2023.01</span>
+</div>
+<ul>
+<li><strong>项目类型:</strong> 中国科学技术大学《大学生心理学》课程研究性论文 (指导教师: 王珏)</li>
+<li><strong>项目角色:</strong> <strong>独立完成人</strong></li>
+<li><strong>核心工作:</strong> 独立撰写研究论文，运用心理学中的从众双过程模型 (Dual-process model of conformity)，深入剖析了疫情封校期间网络上涌现的“宿舍小狗”、“校园爬行”及“网课爆破”等典型群体现象。并结合状态焦虑理论，探讨了情绪宣泄对网络非理性从众行为的诱发机制。</li>
+<li><strong>进展状态:</strong> 论文逻辑严密，论证充分，获得授课教师高度评价，课程最终评级为 <strong>A+</strong>。</li>
+</ul>
+<h3 style="margin-top: 20px; color: #444;">🌱 早期科研启蒙 (中学生英才计划)</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>社交网络中的有效交友问题</strong> (早期探索)</span>
+<span>2019.01 - 2019.12</span>
+</div>
+<ul>
+<li><strong>项目类型:</strong> 2019年中学生英才计划 数学学科项目 (培养高校: 中国科学院大学)</li>
+<li><strong>项目角色:</strong> <strong>项目主持人</strong> (指导教师: <strong>周向宇 院士</strong>)</li>
+<li><strong>核心工作:</strong> 初步确立了网络交友问题的数学模型与研究框架 。在该项目中，我给出了社交网络的图论刻画方法，推导了基础的接受概率迭代公式，并初步设计了求解算法 。这一早期的理论构建为我大学阶段的深化研究奠定了坚实的基础。</li>
+<li><strong>进展状态:</strong> 表现出极佳的数学建模潜质，入选2019年英才计划学科论坛，项目评级为 <strong>优秀</strong>。</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>从零维到n维的一种推导公式</strong></span>
+<span>2018.01 - 2018.12</span>
+</div>
+<ul>
+<li><strong>项目类型:</strong> 2018年中学生英才计划 数学学科项目 (培养高校: 中国科学院大学)</li>
+<li><strong>项目角色:</strong> <strong>项目主持人</strong> (指导教师: <strong>周向宇 院士</strong>)</li>
+<li><strong>核心工作:</strong> 独立完成了从零维到 n 维相关数学公式的严密推导。值得一提的是，我将该课题的完整推导过程撰写成了科普文章。该文章不仅在我中学的数学微信公众号上发表，更获得了知名科普公众平台“环球物理”的全文转载，取得了良好的学术传播效果。</li>
+<li><strong>进展状态:</strong> 具备优秀的学术输出与科普传播能力，入选2018年英才计划学科论坛，项目评级为合格。</li>
+</ul>
+</div>
+<div class="section">
+<h2>学生工作与任职经历</h2>
+<p><strong>在专注学业的同时，我也非常热衷于投入学生工作，特别是在民族乐团的建设与班级服务中。这些经历不仅锻炼了我的统筹与领导能力，更让我结识了一群志同道合的朋友。</strong></p>
+<h3 style="margin-top: 20px; color: #444;">🎵 学生乐团与艺术管理 (核心履历)</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 (NMOU) 团长</strong></span>
+<span>2025-2026学年 (现任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 教学副部长</strong></span>
+<span>2025-2026学年 (现任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学院大学民族管弦乐团 宣传组成员</strong></span>
+<span>2025-2026学年 (现任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 微信公众号常务运营 (宣传分部干事)</strong></span>
+<span>2025年春季学期至今 (现任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 谱务成员</strong></span>
+<span>2023年春季学期至今 (现任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 团支部书记</strong></span>
+<span>2024-2025学年 (曾任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 教学总负责人 (现"教学部长")</strong></span>
+<span>2024-2025学年 (曾任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 吹管声部执行部长</strong></span>
+<span>2024-2025学年 (曾任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 微信公众号主管 (宣传分部干事)</strong></span>
+<span>2023年秋季学期-2025年秋季学期 (曾任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生民族乐团 吹管声部长</strong></span>
+<span>2023-2024学年 (曾任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>北京市十一学校民乐团 团长 (首任)</strong></span>
+<span>2016-2020学年 (曾任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学院附属玉泉小学民乐团 笙声部长</strong></span>
+<span>2014-2016学年 (曾任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<h3 style="margin-top: 20px; color: #444;">🏫 班级建设与学生组织</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学学生微笑心理协会 组织部部长</strong></span>
+<span>2025-2026学年 (现任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学数学科学学院22级01班 学习委员</strong></span>
+<span>2025-2026学年 (现任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>中国科学技术大学数学科学学院22级01班 副班长</strong></span>
+<span>2024-2025学年 (曾任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>北京市十一学校 (初高中) 第12团支部 团支书</strong></span>
+<span>2018-2022学年 (曾任)</span>
+</div>
+<ul>
+<li style="color: #666;">[工作预留]</li>
+</ul>
+</div>
+<div class="section">
+<h2>音乐创作与改编作品</h2>
+<p><strong>对我而言，演奏是演绎他人的心声，而编配与创作则是表达自我的重塑。目前我主要致力于民族室内乐的改编与配器，未来也希望能孕育出属于自己的原创作品。</strong></p>
+<h3 style="margin-top: 20px; color: #444;">🎼 民族器乐改编作品</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>大东北我的家乡 (民族室内乐合奏)</strong></span>
+<span>2025.07 编配 / 2025.12 第二版</span>
+</div>
+<ul>
+<li><strong>作品类型:</strong> 民族室内乐作品</li>
+<li><strong>第一版编制:</strong> 唢呐×2, 梆笛×2, 曲笛×2, 高音笙×2, 二胡×2, 琵琶×1, 中国鼓×1</li>
+<li><strong>第二版编制:</strong> 唢呐×2, 梆笛×2, 曲笛×3, 高/中/低音笙各×1, 二胡×2, 琵琶×1, 民族打击乐 (中国鼓、大鼓、铃鼓、沙锤)</li>
+<li><strong>演出历程:</strong>
+<ul style="margin-top: 5px; list-style-type: circle;">
+<li>2025.09: 中国科学技术大学社团游园会 (非正式首演)</li>
+<li>2025.10: 中国科学技术大学2025年瀚海"新"云迎新晚会 (正式首演)</li>
+<li>2025.12: 中国科学技术大学独奏音乐会 (第二版谱面首演)</li>
+</ul>
+</li>
+</ul>
+<h3 style="margin-top: 20px; color: #444;">🎹 原创音乐作品</h3>
+<ul>
+<li style="color: #666;"><em>还在灵感酝酿中，敬请期待...</em></li>
+</ul>
+</div>
+<div class="section">
+<h2>课程助教经历</h2>
+<p><strong>我的助教申请之路充满了戏剧性，也见证了我在学院里认可度的提升。从大三下学期投递简历石沉大海，到大四下学期被校院两级强烈推荐，这种“反转”让我深感荣幸。同时，它也教会了我如何权衡轻重、并在无法全心投入时负责任地学会拒绝。</strong></p>
+<h3 style="margin-top: 20px; color: #444;">👨‍🏫 助教任职与受邀情况 (按时间倒序)</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>[遗憾婉拒] 《数学分析(B2)》 &amp; 《数学分析(A2)》 课程助教受邀</strong></span>
+<span>2026年春季学期</span>
+</div>
+<ul>
+<li><strong>背后的故事:</strong> 这个学期我原本已被徐宽老师的《线性代数 (B1)》录用为助教，但无奈因选课人数不足而停开。随后，学校教务处和数学科学学院分别向我抛出了橄榄枝，推荐我担任程艺老师的《数学分析 (B2)》和李思敏老师的《数学分析 (A2)》助教。</li>
+<li><strong>我的决定:</strong> 这两门都是极其硬核的基础课，能得到校院两级的认可推荐，我深感荣幸。但由于我大四下学期人在北京（中科院数学院）全职进行毕业设计，客观上无法完美地履行线下答疑与批改职责。出于对学生和课程负责的态度，我最终遗憾地婉拒了这两份极具含金量的邀请。</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>[正式任职] 乐珏老师《线性代数(B2)》课程助教</strong></span>
+<span>2025年秋季学期</span>
+</div>
+<ul>
+<li><strong>工作内容:</strong> <span style="color: #666;">[工作预留]</span></li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>[屡败屡战] 《概率论》 &amp; 《数学分析(B2)》 助教申请 (未录用)</strong></span>
+<span>2025年春季学期</span>
+</div>
+<ul>
+<li><strong>申请经历:</strong> 本学期我满怀热情地申请了这两门核心课的助教，但遗憾被拒。这次“碰壁”反而让我更加沉下心来夯实基础，也为大四下学期被广泛认可埋下了伏笔。</li>
+</ul>
+<div class="subheading">
+<span class="subheading-title"><strong>[正式任职] 乐珏老师《线性代数(B1)》课程助教</strong></span>
+<span>2024年秋季学期</span>
+</div>
+<ul>
+<li><strong>工作内容:</strong> <span style="color: #666;">[工作预留]</span></li>
+</ul>
+</div>
+<div class="section">
+<h2>发表文章</h2>
+<div class="subheading">
+<span class="subheading-title">暂无</span>
+<span></span>
+</div>
+<ul><li style="color: #666;"><em>(本科阶段暂未正式发表学术论文，相关科研成果见“科研经历”与未来规划)</em></li></ul>
+</div>
+<div class="section">
+<h2>其他信息</h2>
+<ul>
+<li><strong>英语等级及成绩:</strong> 四级 610, 六级 644. </li>
+<li><strong>计算机能力:</strong> C语言 (《计算机程序设计A》课程 87分). </li>
+<li><strong>音乐专业等级及成绩:</strong> 中国民族管弦乐学会 笙专业 10级 (2016.4, 目前个人传统笙与键笙水平均已达到中央音乐学院演奏文凭级标准). </li>
+<li><strong>爱好:</strong> 数学, 音乐 (民乐演奏和编曲), 羽毛球, 游泳, 跑步, 健身, 篮球, 电影, 美食, 读书, 思考. </li>
+<li style="margin-top: 10px;">
+<strong>推免与直博录取情况：</strong><br/>
+            我于 2025 年上半年参加了中国科学院数学与系统科学研究院的推免选拔。同年 9 月，我以 <strong>92.88 分的综合成绩 (学院排名 2/174)</strong> 获得推免资格，并 <strong>在学院获得保研资格的 73 人中排名第一</strong>。在随后的复试中，我以 <strong>96.5 分的总成绩位居计算数学专业第二名</strong>，正式被计算数学与科学工程计算研究所拟录取为 <strong>直博生</strong> (该专业直博生名额仅为 4 人)。目前已接收待录取通知，预计将于 2026 年 9 月正式入学。
+          </li>
+<li style="margin-top: 10px;">
+<strong>目前的“大四退休”生活：</strong><br/>
+            我现在大四，人基本都在北京。你通常可以在 <strong>中国科学院大学玉泉路校区的图书馆</strong> 找到我，或者在宿舍 (主要用于偶尔睡个午觉) 和家里。我喜欢保持运动，天天跑步，偶尔打打羽毛球。每周日我会去中关村校区参加国科大民族管弦乐团的排练，偶尔也会回合肥科大处理一些学业和乐团事务。<strong>欢迎随时找我玩！</strong>
+</li>
+</ul>
+</div>
+<div class="section" style="border: 1px dashed #888; padding: 20px; background-color: rgba(255,255,255,0.05); margin-top: 50px;">
+<h2 style="text-align: center; margin-top: 0;">📜 “锦上添花”——个人主页 2026 焕新计划</h2>
+<p style="font-style: italic; text-align: center; color: #666;">“个人主页不仅是一份简历，更是我成长的博物馆。”</p>
+<div style="margin-top: 20px;">
+<div class="subheading">
+<span class="subheading-title"><strong>第一阶段：基石稳固 · 框架初成</strong></span>
+<span style="color: #2e7d32;"><strong>已达成 ✅ (2026.03.12)</strong></span>
+</div>
+<p style="font-size: 0.9em; margin-left: 20px;">底层代码重构、教育经历与学业数据更新、移动端基础适配。</p>
+<div class="subheading">
+<span class="subheading-title"><strong>第二阶段：血肉丰满 · 细节雕琢</strong></span>
+<span style="color: #888;">进行中...</span>
+</div>
+<p style="font-size: 0.9em; margin-left: 20px;">深度润色并补全乐团履历、任职经历及社会活动版块。将“岗位清单”升级为“核心工作描述”。<br/>
+<em style="color: #999;">预计完成时间：2026.04.10 之前</em></p>
+<div class="subheading">
+<span class="subheading-title"><strong>第三阶段：多维叙事 · 素材补全</strong></span>
+</div>
+<p style="font-size: 0.9em; margin-left: 20px;">
+<strong>学术面：</strong>挂载郭奖/六有/毕设答辩 PPT、科研论文及各类荣誉证明 PDF；<br/>
+<strong>艺术面：</strong>嵌入演出照片、视频链接、编曲总谱预览。<br/>
+<em style="color: #999;">预计完成时间：2026.05.20 之前</em>
+</p>
+<div class="subheading">
+<span class="subheading-title"><strong>第四阶段：改天换地 · 终极焕新</strong></span>
+</div>
+<p style="font-size: 0.9em; margin-left: 20px;">引入全新视觉模板，实现既有内容向更具现代感与交互性的新容器平移。<br/>
+<em style="color: #999;">最终交付时间：2026.07.01（毕业离校前夕）</em></p>
+</div>
+<hr style="border: 0; border-top: 1px solid #ccc; margin: 20px 0;"/>
+<div style="font-size: 0.9rem; text-align: center;">
+<p>💡 欢迎大家通过以下方式交流建议：</p>
+<p>
+<strong>NMOU 泰蜜分舵 QQ 群：</strong> 733028065 <br/>
+<span style="font-size: 0.8rem; color: #777;">(入群请联系 <strong>钟承奕</strong> 进行资格鉴定，维护风清气正的粉丝群环境)</span>
+</p>
+</div>
+</div>
+
+    </div>
+    `;
