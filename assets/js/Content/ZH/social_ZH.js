@@ -17,11 +17,14 @@
     metric_site_uv: "站点访客数",
     metric_page_pv: "当前页浏览量",
     metric_path: "当前路径",
-    stats_live_title: "计数状态",
-    stats_live_main: "统计已启用",
-    stats_live_body: "站点部署后会自动开始累计。如果浏览器插件屏蔽了第三方脚本，数字可能仍会显示为 —。",
+    stats_live_title: "统计明细",
+    stats_live_body: "上方摘要和这里的明细都已经接入实时计数服务；若浏览器拦截统计脚本，数值可能仍会显示为 —。",
+    stats_service_busuanzi: "不蒜子计数",
+    stats_service_active: "实时在线",
     visitor_map: "访客地图",
-    visitor_placeholder: "地图位已预留",
-    visitor_body: "这里保留了 Stardust 风格中的地图位置；之后你若想接别的访客地图小部件，可以直接替换这里。"
+    visitor_body: "地图已真正接入。点击地图可在新标签页查看更详细的地域访问分布。",
+    link_open_map: "打开地图",
+    provider_smallcounter: "map counter",
+    stats_embed_fail: "外部访客地图加载失败，请检查网络环境或拦截插件。"
   };
 })();
