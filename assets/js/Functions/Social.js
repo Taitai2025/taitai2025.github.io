@@ -53,30 +53,30 @@
 
       <div class="stats-metrics" aria-label="Statistics summary">
         <div class="stats-metric">
-          <div class="stats-metric-label" data-i18n="metric_total">All-time (Total)</div>
-          <div class="stats-metric-value" id="gc-total">—</div>
+          <div class="stats-metric-label" data-i18n="metric_site_pv">Site page views</div>
+          <div class="stats-metric-value"><span id="busuanzi_value_site_pv">—</span></div>
         </div>
         <div class="stats-metric">
-          <div class="stats-metric-label" data-i18n="metric_month">Last 30 days</div>
-          <div class="stats-metric-value" id="gc-month">—</div>
+          <div class="stats-metric-label" data-i18n="metric_site_uv">Site visitors</div>
+          <div class="stats-metric-value"><span id="busuanzi_value_site_uv">—</span></div>
         </div>
         <div class="stats-metric">
-          <div class="stats-metric-label" data-i18n="metric_week">Last 7 days</div>
-          <div class="stats-metric-value" id="gc-week">—</div>
+          <div class="stats-metric-label" data-i18n="metric_page_pv">This page views</div>
+          <div class="stats-metric-value"><span id="busuanzi_value_page_pv">—</span></div>
         </div>
         <div class="stats-metric">
-          <div class="stats-metric-label" data-i18n="metric_page">This path</div>
-          <div class="stats-metric-value" id="gc-page">—</div>
+          <div class="stats-metric-label" data-i18n="metric_path">Current path</div>
+          <div class="stats-metric-value stats-path-value" id="stats-current-path">/</div>
         </div>
       </div>
 
       <div class="stats-block">
         <div class="stats-subtitle">
-          <span data-i18n="dashboard_title">GoatCounter Dashboard</span>
+          <span data-i18n="stats_live_title">Counter status</span>
         </div>
-        <div class="stats-embed stats-placeholder-box">
-          <div class="stats-placeholder-main" data-i18n="stats_placeholder">Tracking placeholder</div>
-          <div class="stats-placeholder-sub" data-i18n="stats_hint">Replace the tracking IDs in Social.js to activate.</div>
+        <div class="stats-embed stats-placeholder-box stats-live-box">
+          <div class="stats-placeholder-main" data-i18n="stats_live_main">Counter enabled</div>
+          <div class="stats-placeholder-sub" data-i18n="stats_live_body">After deployment, the counter will start accumulating automatically. If a browser extension blocks third-party scripts, the values may stay as —.</div>
         </div>
       </div>
 
@@ -86,11 +86,9 @@
         <div class="stats-subtitle">
           <span data-i18n="visitor_map">Visitor Map</span>
         </div>
-        <div class="clustrmaps-wrap">
-          <div class="stats-embed stats-placeholder-box">
-            <div class="stats-placeholder-main" data-i18n="visitor_placeholder">Map placeholder</div>
-            <div class="stats-placeholder-sub" data-i18n="stats_hint">Replace the tracking IDs in Social.js to activate.</div>
-          </div>
+        <div class="stats-embed stats-placeholder-box">
+          <div class="stats-placeholder-main" data-i18n="visitor_placeholder">Map slot reserved</div>
+          <div class="stats-placeholder-sub" data-i18n="visitor_body">The Stardust-style position is kept here, so you can replace it later with any visitor-map widget you prefer.</div>
         </div>
       </div>
     </div>
@@ -99,56 +97,35 @@
 })();
 
 (function () {
-  // Replace these with your own values after you register the services:
-  const GOATCOUNTER_BASE = "";
-  const CLUSTRMAPS_SCRIPT = "";
+  const BUSUANZI_SCRIPT = 'https://cdn.jsdelivr.net/npm/busuanzi@2.3.0';
 
-  async function fetchCounter(path, start) {
-    const qs = new URLSearchParams();
-    if (start) qs.set("start", start);
-    const url = `${GOATCOUNTER_BASE}/counter/${encodeURIComponent(path)}.json${qs.toString() ? "?" + qs.toString() : ""}`;
-    const r = await fetch(url, { mode: "cors" });
-    if (!r.ok) throw new Error(`GoatCounter counter failed: ${r.status}`);
-    const data = await r.json();
-    return data && (data.count || data.count_unique) ? (data.count || data.count_unique) : "—";
+  function normalizePath(pathname) {
+    const clean = String(pathname || '/').replace(/\/+/g, '/');
+    if (!clean || clean === '') return '/';
+    return clean;
   }
 
-  async function setText(id, text) {
-    const el = document.getElementById(id);
-    if (el) el.textContent = text;
+  function setCurrentPath() {
+    const el = document.getElementById('stats-current-path');
+    if (!el) return;
+    el.textContent = normalizePath(window.location.pathname || '/');
   }
 
-  async function initStats() {
-    if (!GOATCOUNTER_BASE) return;
-    try {
-      await setText("gc-total", await fetchCounter("TOTAL"));
-      await setText("gc-month", await fetchCounter("TOTAL", "month"));
-      await setText("gc-week", await fetchCounter("TOTAL", "week"));
-      const p = window.location.pathname || "/";
-      await setText("gc-page", await fetchCounter(p));
-    } catch (e) {
-      ["gc-total", "gc-month", "gc-week", "gc-page"].forEach((id) => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.textContent = "—";
-      });
-    }
+  function injectBusuanzi() {
+    if (document.getElementById('busuanzi-script')) return;
+    const s = document.createElement('script');
+    s.id = 'busuanzi-script';
+    s.async = true;
+    s.src = BUSUANZI_SCRIPT;
+    document.head.appendChild(s);
   }
 
-  function initVisitorMap() {
-    if (!CLUSTRMAPS_SCRIPT) return;
-    const wrap = document.querySelector('.clustrmaps-wrap');
-    if (!wrap) return;
-    wrap.innerHTML = "";
-    const s = document.createElement("script");
-    s.type = "text/javascript";
-    s.id = "clustrmaps";
-    s.src = CLUSTRMAPS_SCRIPT;
-    wrap.appendChild(s);
-  }
-
-  window.addEventListener("load", () => {
-    initStats();
-    initVisitorMap();
+  window.addEventListener('load', () => {
+    setCurrentPath();
+    injectBusuanzi();
   }, { once: true });
+
+  window.addEventListener('site:langchange', () => {
+    setCurrentPath();
+  });
 })();

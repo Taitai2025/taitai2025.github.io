@@ -267,6 +267,49 @@
     });
   }
 
+
+  /* ------------------------------
+   * Cover I18N
+   * ------------------------------ */
+  function applyCoverI18N(lang) {
+    const l = normalizeLang(lang);
+
+    const nameEl = document.getElementById("name");
+    if (nameEl) {
+      const nextName = l === LANG.ZH
+        ? (nameEl.getAttribute("data-name-zh") || "泰泰")
+        : (nameEl.getAttribute("data-name-en") || "Thomas");
+      nameEl.textContent = nextName;
+    }
+
+    const sloganEl = document.getElementById("slogan");
+    if (sloganEl) {
+      const nextSlogan = l === LANG.ZH
+        ? (sloganEl.getAttribute("data-slogan-zh") || sloganEl.textContent)
+        : (sloganEl.getAttribute("data-slogan-en") || sloganEl.textContent);
+      sloganEl.textContent = nextSlogan;
+    }
+
+    const scrollSub = document.querySelector("#cover-scroll .cover-scroll-sub");
+    if (scrollSub) {
+      const nextText = l === LANG.ZH
+        ? (scrollSub.getAttribute("data-cover-scroll-zh") || "进入")
+        : (scrollSub.getAttribute("data-cover-scroll-en") || "Scroll");
+      scrollSub.textContent = nextText;
+    }
+
+    const scrollBtn = document.getElementById("cover-scroll");
+    if (scrollBtn) {
+      if (l === LANG.ZH) {
+        scrollBtn.setAttribute("aria-label", "进入关于页");
+        scrollBtn.title = "进入关于页";
+      } else {
+        scrollBtn.setAttribute("aria-label", "Scroll to About");
+        scrollBtn.title = "Scroll to About";
+      }
+    }
+  }
+
   /* ------------------------------
    * Top Nav I18N
    * ------------------------------ */
@@ -418,6 +461,7 @@
     applyToolkitI18N(l);
     applySocialI18N(l);
     applyTopNavI18N(l);
+    applyCoverI18N(l);
   }
 
   // Expose applyLanguage for pages that want to force a change
@@ -456,6 +500,7 @@
       applyToolkitI18N(l);
       applySocialI18N(l);
       applyTopNavI18N(l);
+      applyCoverI18N(l);
       updateLangButton(l);
     });
   }

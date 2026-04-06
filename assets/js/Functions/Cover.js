@@ -1,17 +1,30 @@
 (function () {
-  function getRandomSlogan() {
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function getRandomSloganPair() {
     const slogans = [
-      'Mathematics, music, and a life slowly taking shape.',
-      '在数学、音乐与日常之间，慢慢把自己活成一条清晰的轨迹。',
-      'Rigor, rhythm, and a little bit of tenderness.',
-      '把理性、审美与行动力，安放在同一条成长轨迹里。'
+      {
+        en: 'Mathematics, music, and a life slowly taking shape.',
+        zh: '玉树临风美少年，揽镜自顾夜不眠'
+      },
+      {
+        en: 'Rigor, rhythm, and a little bit of tenderness.',
+        zh: '玉树临风美少年，揽镜自顾夜不眠'
+      }
     ];
     return slogans[Math.floor(Math.random() * slogans.length)];
   }
 
   function setRandomCoverBackground(coverEl) {
     if (!coverEl) return null;
-    const covers = ['cover_1.jpg','cover_2.jpg','cover_3.jpg','cover_4.jpg','cover_5.jpg','cover_6.jpg'];
+    const covers = ['cover_1.jpg', 'cover_2.jpg', 'cover_3.jpg', 'cover_4.jpg', 'cover_5.jpg', 'cover_6.jpg'];
     const chosen = covers[Math.floor(Math.random() * covers.length)];
     coverEl.style.backgroundImage = `url('./assets/images/${chosen}')`;
     coverEl.style.backgroundRepeat = 'no-repeat';
@@ -21,11 +34,11 @@
     return chosen;
   }
 
-  const mount = document.getElementById("mount-cover") || document.body;
-  const slogan = getRandomSlogan();
+  const mount = document.getElementById('mount-cover') || document.body;
+  const sloganPair = getRandomSloganPair();
 
   mount.insertAdjacentHTML(
-    "beforeend",
+    'beforeend',
     `
     <div id="cover">
       <div id="avatar-frame"
@@ -34,8 +47,10 @@
         <img src="./assets/images/avatar.jpg" alt="Profile Avatar" loading="lazy">
       </div>
 
-      <div id="name">Thomas · TaiTai</div>
-      <div id="slogan">${slogan}</div>
+      <div id="name" data-name-en="Thomas" data-name-zh="泰泰">Thomas</div>
+      <div id="slogan"
+           data-slogan-en="${escapeHtml(sloganPair.en)}"
+           data-slogan-zh="${escapeHtml(sloganPair.zh)}">${escapeHtml(sloganPair.en)}</div>
 
       <button id="cover-scroll"
               type="button"
@@ -48,7 +63,7 @@
           <path class="chev c2" d="M18 30 L32 44 L46 30" />
           <path class="chev c3" d="M22 38 L32 48 L42 38" />
         </svg>
-        <span class="cover-scroll-sub">Scroll</span>
+        <span class="cover-scroll-sub" data-cover-scroll-en="Scroll" data-cover-scroll-zh="进入">Scroll</span>
       </button>
     </div>
     `
