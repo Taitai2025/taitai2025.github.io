@@ -78,13 +78,13 @@ window.RESUME_ZH_INNER_HTML = `
 <p style="margin-left: 20px; font-size: 0.9em; color: #555;">小学（音乐素养与艺术梦想的起航地）</p>
 </div>
 <div class="section">
-<h2>本科学业情况 (2022年秋季学期至2025年夏季学期)</h2>
+<h2>本科学业情况 (2022年秋季学期至2025年秋季学期)</h2>
 <ul>
-<li><strong>GPA:</strong> 3.97/4.3</li>
-<li><strong>加权平均分:</strong> 91.67</li>
-<li><strong>算数平均分:</strong> 92.39</li>
+<li><strong>GPA:</strong> 3.98/4.3</li>
+<li><strong>加权平均分:</strong> 91.89</li>
+<li><strong>算数平均分:</strong> 92.46</li>
 <li><strong>综合测评分数:</strong> 87.88 (保研时的综合成绩为92.88)</li>
-<li><strong>2022级数学科学学院GPA排名:</strong> 8/176 (top 5%)</li>
+<li><strong>2022级数学科学学院GPA排名:</strong> 6/176 (top 5%)</li>
 <li><strong>2022级数学科学学院概率统计方向GPA排名:</strong> 4/69</li>
 <li><strong>2022级数学科学学院综合测评排名:</strong> 2/176</li>
 </ul>
