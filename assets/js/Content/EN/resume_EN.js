@@ -74,10 +74,10 @@
 <div class="section"><h2>Undergraduate Academic Record (Fall 2022 – Summer 2025)</h2>
 <ul>
 <li><strong>GPA:</strong> 3.97 / 4.3</li>
-<li><strong>Weighted average:</strong> 91.67</li>
-<li><strong>Arithmetic average:</strong> 92.39</li>
+<li><strong>Weighted average:</strong> 91.89</li>
+<li><strong>Arithmetic average:</strong> 92.46</li>
 <li><strong>Comprehensive evaluation score:</strong> 87.88 (92.88 at the time of graduate recommendation)</li>
-<li><strong>GPA rank in the School of Mathematical Sciences, Class of 2022:</strong> 8 / 176 (top 5%)</li>
+<li><strong>GPA rank in the School of Mathematical Sciences, Class of 2022:</strong> 6 / 176 (top 5%)</li>
 <li><strong>GPA rank within the Probability &amp; Statistics track:</strong> 4 / 69</li>
 <li><strong>Comprehensive evaluation rank in the School of Mathematical Sciences, Class of 2022:</strong> 2 / 176</li>
 </ul>
