@@ -24,13 +24,53 @@
 
   function setRandomCoverBackground(coverEl) {
     if (!coverEl) return null;
+
+    const basePath = './assets/images/';
     const covers = ['cover_1.jpg'];
     const chosen = covers[Math.floor(Math.random() * covers.length)];
-    coverEl.style.backgroundImage = `url('./assets/images/${chosen}')`;
-    coverEl.style.backgroundRepeat = 'no-repeat';
-    coverEl.style.backgroundPosition = 'center center';
-    coverEl.style.backgroundSize = 'cover';
+    const src = `${basePath}${chosen}`;
+
+    // 先显示 cover 容器本身；CSS 中的轻量占位背景会立刻出现。
     coverEl.classList.add('visible');
+    coverEl.classList.remove('cover-bg-loaded', 'cover-bg-fallback');
+
+    const reveal = () => {
+      coverEl.style.setProperty('--cover-bg', `url("${src}")`);
+      requestAnimationFrame(() => {
+        coverEl.classList.add('cover-bg-loaded');
+      });
+    };
+
+    const img = new Image();
+    img.decoding = 'async';
+    if ('fetchPriority' in img) img.fetchPriority = 'high';
+
+    img.onload = () => {
+      if (img.decode) {
+        img.decode().catch(() => null).finally(reveal);
+      } else {
+        reveal();
+      }
+    };
+
+    img.onerror = () => {
+      console.warn(`[Cover] Failed to load ${src}; using placeholder background.`);
+      coverEl.classList.add('cover-bg-fallback');
+    };
+
+    img.src = src;
+
+    const idle = window.requestIdleCallback || ((callback) => window.setTimeout(callback, 800));
+    idle(() => {
+      covers
+        .filter((name) => name !== chosen)
+        .forEach((name) => {
+          const preload = new Image();
+          preload.decoding = 'async';
+          preload.src = `${basePath}${name}`;
+        });
+    });
+
     return chosen;
   }
 
