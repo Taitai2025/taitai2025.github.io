@@ -22,58 +22,6 @@
     return slogans[Math.floor(Math.random() * slogans.length)];
   }
 
-  function setRandomCoverBackground(coverEl) {
-    if (!coverEl) return null;
-
-    const basePath = './assets/images/';
-    const covers = ['cover_1.jpg'];
-    const chosen = covers[Math.floor(Math.random() * covers.length)];
-    const src = `${basePath}${chosen}`;
-
-    // 先显示 cover 容器本身；CSS 中的轻量占位背景会立刻出现。
-    coverEl.classList.add('visible');
-    coverEl.classList.remove('cover-bg-loaded', 'cover-bg-fallback');
-
-    const reveal = () => {
-      coverEl.style.setProperty('--cover-bg', `url("${src}")`);
-      requestAnimationFrame(() => {
-        coverEl.classList.add('cover-bg-loaded');
-      });
-    };
-
-    const img = new Image();
-    img.decoding = 'async';
-    if ('fetchPriority' in img) img.fetchPriority = 'high';
-
-    img.onload = () => {
-      if (img.decode) {
-        img.decode().catch(() => null).finally(reveal);
-      } else {
-        reveal();
-      }
-    };
-
-    img.onerror = () => {
-      console.warn(`[Cover] Failed to load ${src}; using placeholder background.`);
-      coverEl.classList.add('cover-bg-fallback');
-    };
-
-    img.src = src;
-
-    const idle = window.requestIdleCallback || ((callback) => window.setTimeout(callback, 800));
-    idle(() => {
-      covers
-        .filter((name) => name !== chosen)
-        .forEach((name) => {
-          const preload = new Image();
-          preload.decoding = 'async';
-          preload.src = `${basePath}${name}`;
-        });
-    });
-
-    return chosen;
-  }
-
   const mount = document.getElementById('mount-cover') || document.body;
   const sloganPair = getRandomSloganPair();
 
@@ -84,7 +32,7 @@
       <div id="avatar-frame"
            data-cursor="precise_select"
            data-cursor-fallback="pointer">
-        <img src="./assets/images/avatar.jpg" alt="Profile Avatar" loading="lazy">
+        <img src="./assets/images/avatar.jpg" alt="Profile Avatar">
       </div>
 
       <div id="name" data-name-en="Thomas" data-name-zh="泰泰">Thomas</div>
@@ -110,7 +58,8 @@
   );
 
   const coverEl = document.getElementById('cover');
-  setRandomCoverBackground(coverEl);
+  // 封面背景已由 CSS 直接使用 background.jpg，这里只需让封面显示出来。
+  if (coverEl) coverEl.classList.add('visible');
 
   (function initCoverArrowStardust() {
     const arrow = document.getElementById('cover-scroll');
