@@ -111,7 +111,7 @@ window.RESUME_ZH_INNER_HTML = `
 <tr><td>数学分析(A1)</td><td><strong>93</strong></td><td>6.0</td></tr>
 <tr><td>数学分析(A2)</td><td><strong>88</strong></td><td>6.0</td></tr>
 
-<tr><td rowspan="4"><strong>代数</strong></td><td>线性代数(B1)</td><td><strong>98</strong></td><td>4.0</td></tr>
+<tr><td rowspan="4"><strong>代数</strong></td><td>线性代数(A1)</td><td><strong>90</strong></td><td>4.0</td></tr>
 <tr><td>线性代数(A2)</td><td><strong>94</strong></td><td>4.0</td></tr>
 <tr><td>近世代数</td><td><strong>93</strong></td><td>3.0</td></tr>
 <tr><td>代数学基础</td><td><strong>88</strong></td><td>3.0</td></tr>
@@ -119,15 +119,15 @@ window.RESUME_ZH_INNER_HTML = `
 <tr><td rowspan="6"><strong>概率统计</strong></td><td>概率论</td><td><strong>100</strong></td><td>3.0</td></tr>
 <tr><td>计量经济学</td><td><strong>98</strong></td><td>3.5</td></tr>
 <tr><td>随机过程A</td><td><strong>96</strong></td><td>3.0</td></tr>
-<tr><td>随机过程B</td><td><strong>96</strong></td><td>2.0</td></tr>
+<tr><td>回归分析</td><td><strong>88</strong></td><td>3.5</td></tr>
 <tr><td>多元统计分析A</td><td><strong>88</strong></td><td>3.5</td></tr>
-<tr><td>高等概率论</td><td><strong>89</strong></td><td>4.0</td></tr>
+<tr><td>高等概率论<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td><td><strong>89</strong></td><td>4.0</td></tr>
 
 <tr><td rowspan="5"><strong>计算与应用数学</strong></td><td>离散数学</td><td><strong>99</strong></td><td>4.0</td></tr>
 <tr><td>运筹学</td><td><strong>96</strong></td><td>3.5</td></tr>
-<tr><td>最优化算法</td><td><strong>92</strong></td><td>4.0</td></tr>
-<tr><td>偏微分方程数值解</td><td><strong>91</strong></td><td>4.0</td></tr>
-<tr><td>有限元方法</td><td><strong>90</strong></td><td>4.0</td></tr>
+<tr><td>最优化算法<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td><td><strong>92</strong></td><td>4.0</td></tr>
+<tr><td>偏微分方程数值解<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td><td><strong>91</strong></td><td>4.0</td></tr>
+<tr><td>有限元方法<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td><td><strong>90</strong></td><td>4.0</td></tr>
 
 <tr><td rowspan="2"><strong>科研与项目</strong></td><td>毕业论文</td><td><strong>A+</strong></td><td>8.0</td></tr>
 <tr><td>大学生创新创业计划</td><td><strong>A+</strong></td><td>4.0</td></tr>
