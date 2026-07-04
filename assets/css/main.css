@@ -96,7 +96,7 @@ a:hover { color: var(--accent-strong); text-decoration: underline; }
 
 @font-face {
   font-family: 'CygnetRound';
-  src: url('./assets/fonts/CygnetRound.ttf') format('truetype');
+  src: url('../fonts/CygnetRound.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -203,6 +203,12 @@ h2 {
 .subheading-title {
   font-weight: 700;
   color: var(--accent);
+}
+
+/* Date / status span on the right of a subheading (unifies ZH & EN rendering) */
+.subheading > span:not(.subheading-title) {
+  font-size: 0.9em;
+  color: var(--muted);
 }
 
 .subsubheading {
