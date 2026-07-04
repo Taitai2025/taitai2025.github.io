@@ -17,10 +17,10 @@ window.RESUME_ZH_INNER_HTML = `
     <div class="resume-hero-chips">
       <span class="contact-pill"><strong>研究方向</strong><span>计算数学 / 最优化算法</span></span>
       <span class="contact-pill"><strong>兴趣</strong><span>民族音乐 / 编配 / 乐团工作</span></span>
-      <span class="contact-pill"><strong>常驻</strong><span>北京 × 合肥</span></span>
+      <span class="contact-pill"><strong>常驻</strong><span>北京</span></span>
     </div>
     <p class="resume-hero-intro">
-      我是泰泰，中国科学技术大学数学科学学院本科生，主要兴趣在计算数学与最优化算法，同时也长期从事笙演奏、民乐编配与校园美育实践。学业上，我在本科阶段保持了较好的成绩和综合表现，主持国家级大创项目，并完成《线性代数B1》《线性代数B2》课程助教工作；音乐与学生工作方面，我长期参与并组织校园民乐演出，现任校学生民族乐团团长，同时策划“中华音韵”课程，尝试把民乐的推广从舞台延伸到更日常的校园学习场景。除了学习和音乐，我也持续参与学生组织与志愿服务，关心同伴支持与校园公共生活。这个主页记录的，正是我在数学、音乐、组织与生活之间不断摸索、慢慢成形的轨迹。
+      我是泰泰，中国科学技术大学数学科学学院本科生，主要兴趣在计算数学与最优化算法，同时也长期从事笙演奏、民乐编配与校园美育实践。学业上，我在本科阶段保持了较好的成绩和综合表现，主持国家级大创项目并获评校级优秀，并完成《线性代数B1》《线性代数B2》课程助教工作；音乐与学生工作方面，我长期参与并组织校园民乐演出，现任校学生民族乐团团长，同时策划“中华音韵”课程，尝试把民乐的推广从舞台延伸到更日常的校园学习场景。除了学习和音乐，我也持续参与学生组织与志愿服务，关心同伴支持与校园公共生活。这个主页记录的，正是我在数学、音乐、组织与生活之间不断摸索、慢慢成形的轨迹。
     </p>
     <div class="resume-hero-contacts">
       <span class="contact-pill contact-detail"><i class="fas fa-location-dot contact-icon" aria-hidden="true"></i><span class="contact-label">住址</span><span class="contact-value">北京丰台 100040</span></span>
@@ -82,6 +82,7 @@ window.RESUME_ZH_INNER_HTML = `
 <ul>
 <li><strong>全部课程 GPA:</strong> 4.00/4.30</li>
 <li><strong>全部课程加权平均分:</strong> 92.19</li>
+<li><strong>全部课程算数平均分:</strong> 92.52</li>
 <li><strong>2022级数学科学学院GPA排名:</strong> 5/176 (top 3%)</li>
 <li><strong>2022级数学科学学院概率统计方向GPA排名:</strong> 3/69</li>
 <li><strong>2022级数学科学学院综合测评排名:</strong> 2/176</li>
@@ -548,7 +549,7 @@ window.RESUME_ZH_INNER_HTML = `
 </div>
 <div class="section">
 <h2>课程助教经历</h2>
-<p><strong>本节仅保留正式任职及与教学服务直接相关的简要说明，重点放在已承担或已确认的教学支持上，不再展开未录用申请过程。</strong></p>
+<p><strong>本节仅保留正式任职及与教学服务直接相关的简要说明，重点放在已承担或已确认的教学支持上，不展开未录用申请过程。</strong></p>
 
 <h3 style="margin-top: 20px; color: #444;">👨‍🏫 正式任职</h3>
 
