@@ -7,22 +7,30 @@
 <meta name="description" content="泰泰 Thomas 的个人主页：数学、音乐、科研与学生工作。">
 <meta name="keywords" content="泰泰, Thomas, USTC, AMSS, 计算数学, 最优化, 民乐, Sheng, 个人主页">
 <meta name="author" content="泰泰 Thomas">
-<link rel="icon" href="./assets/images/favicon.png" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-<link rel="preload" href="./assets/images/avatar.jpg" as="image">
-<link rel="preload" href="./assets/images/cover_1.jpg" as="image" fetchpriority="high">
-<link rel="preload" href="./assets/images/background.jpg" as="image">
-<link rel="preload" href="./assets/images/old-paper-texture.jpg" as="image">
-<link rel="preload" href="./assets/images/scroll-texture.png" as="image">
-<link rel="preload" href="./assets/animation/fire-animation.gif" as="image">
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=MedievalSharp&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales-all.min.js"></script>
+<meta name="theme-color" content="#f2f5f8">
 
-<script src="./assets/js/blog.js"></script>
+<!-- Social sharing cards -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="泰泰 Thomas | Personal Homepage">
+<meta property="og:description" content="数学、音乐、科研与学生工作 · Mathematics, music, research, and student life.">
+<meta property="og:url" content="https://taitai2025.github.io/">
+<meta property="og:image" content="https://taitai2025.github.io/assets/images/avatar.jpg">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="./assets/images/favicon.png" type="image/png">
+
+<!-- Fonts & CDN: preconnect first, then one merged font request -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Great+Vibes&family=Cinzel:wght@400;700&family=UnifrakturMaguntia&family=MedievalSharp&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- First-screen images only -->
+<link rel="preload" href="./assets/images/avatar.jpg" as="image">
+<link rel="preload" href="./assets/images/background.jpg" as="image">
+
+<script src="./assets/js/blog.js" defer></script>
 <link rel="stylesheet" href="./assets/css/blog.css">
 
 <link rel="stylesheet" href="./assets/css/main.css">
@@ -35,14 +43,12 @@
 <link rel="stylesheet" href="./assets/css/meditations.css">
 </head>
 <body>
-  <div class="preload-images">
-    <img src="./assets/images/avatar.jpg" alt="Preload Avatar">
-    <img src="./assets/images/cover_1.jpg" alt="Preload Cover">
-    <img src="./assets/images/background.jpg" alt="Preload Background">
-    <img src="./assets/images/old-paper-texture.jpg" alt="Preload Paper Texture">
-    <img src="./assets/images/scroll-texture.png" alt="Preload Scroll Texture">
-    <img src="./assets/animation/fire-animation.gif" alt="Preload Fire Animation">
-  </div>
+  <noscript>
+    <div style="padding: 2.5rem 1.5rem; text-align: center; font-family: Georgia, serif;">
+      本站需要启用 JavaScript 才能正常浏览。 / This site requires JavaScript.<br>
+      联系 / Contact: <a href="mailto:taitai@mail.ustc.edu.cn">taitai@mail.ustc.edu.cn</a>
+    </div>
+  </noscript>
 
   <div id="mount-top-nav"></div>
   <div id="mount-cover"></div>
@@ -52,32 +58,32 @@
   <div id="mount-schedule"></div>
   <div id="mount-meditations"></div>
 
-  <script src="./assets/js/Functions/Top-nav.js"></script>
-  <script src="./assets/js/Functions/Cover.js"></script>
+  <script src="./assets/js/Functions/Top-nav.js" defer></script>
+  <script src="./assets/js/Functions/Cover.js" defer></script>
 
-  <script src="./assets/js/Content/EN/resume_EN.js"></script>
-  <script src="./assets/js/Content/ZH/resume_ZH.js"></script>
+  <script src="./assets/js/Content/EN/resume_EN.js" defer></script>
+  <script src="./assets/js/Content/ZH/resume_ZH.js" defer></script>
 
-  <script src="./assets/js/Content/EN/meditations_EN.js"></script>
-  <script src="./assets/js/Content/ZH/meditations_ZH.js"></script>
+  <script src="./assets/js/Content/EN/meditations_EN.js" defer></script>
+  <script src="./assets/js/Content/ZH/meditations_ZH.js" defer></script>
 
-  <script src="./assets/js/Content/EN/social_EN.js"></script>
-  <script src="./assets/js/Content/ZH/social_ZH.js"></script>
-  <script src="./assets/js/Functions/Social.js"></script>
+  <script src="./assets/js/Content/EN/social_EN.js" defer></script>
+  <script src="./assets/js/Content/ZH/social_ZH.js" defer></script>
+  <script src="./assets/js/Functions/Social.js" defer></script>
 
-  <script src="./assets/js/Content/EN/toolkit_EN.js"></script>
-  <script src="./assets/js/Content/ZH/toolkit_ZH.js"></script>
-  <script src="./assets/js/Functions/Toolkit.js"></script>
+  <script src="./assets/js/Content/EN/toolkit_EN.js" defer></script>
+  <script src="./assets/js/Content/ZH/toolkit_ZH.js" defer></script>
+  <script src="./assets/js/Functions/Toolkit.js" defer></script>
 
-  <script src="./assets/js/Content/EN/schedule_EN.js"></script>
-  <script src="./assets/js/Content/ZH/schedule_ZH.js"></script>
-  <script src="./assets/js/Functions/Schedule.js"></script>
+  <script src="./assets/js/Content/EN/schedule_EN.js" defer></script>
+  <script src="./assets/js/Content/ZH/schedule_ZH.js" defer></script>
+  <script src="./assets/js/Functions/Schedule.js" defer></script>
 
-  <script src="./assets/js/Functions/Bootstrap.js"></script>
-  <script src="./assets/js/Functions/Clock.js"></script>
-  <script src="./assets/js/Functions/Theme.js"></script>
-  <script src="./assets/js/Functions/Translate.js"></script>
-  <script src="./assets/js/Functions/Expanders.js"></script>
-  <script src="./assets/js/Functions/Custom-cursors.js"></script>
+  <script src="./assets/js/Functions/Bootstrap.js" defer></script>
+  <script src="./assets/js/Functions/Clock.js" defer></script>
+  <script src="./assets/js/Functions/Theme.js" defer></script>
+  <script src="./assets/js/Functions/Translate.js" defer></script>
+  <script src="./assets/js/Functions/Expanders.js" defer></script>
+  <script src="./assets/js/Functions/Custom-cursors.js" defer></script>
 </body>
 </html>
