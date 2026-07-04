@@ -15,45 +15,9 @@
   overscroll-behavior: none;
   touch-action: pan-y;
   opacity: 0;
-  overflow: hidden;
-
-  /* 轻量占位背景：先立刻显示，避免首屏空白 */
-  background:
-    radial-gradient(circle at 50% 38%, rgba(255,255,255,0.08), rgba(255,255,255,0) 34%),
-    linear-gradient(135deg, rgba(12,18,28,0.82), rgba(38,50,70,0.78)),
-    url('../images/background.jpg') center center / cover no-repeat;
-
+  background: url('../images/background.jpg') center center / cover no-repeat;
   transition: opacity 1.5s ease-in-out;
   z-index: 100;
-}
-
-#cover::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-
-  background-image: var(--cover-bg, none);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  opacity: 0;
-  transform: scale(1.015);
-  transition:
-    opacity 1.1s ease-in-out,
-    transform 1.4s ease-out;
-  will-change: opacity, transform;
-}
-
-#cover.cover-bg-loaded::before {
-  opacity: 1;
-  transform: scale(1);
-}
-
-#cover.cover-bg-fallback::before {
-  opacity: 0;
 }
 
 /* Cover visibility states */
@@ -417,10 +381,6 @@
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  #cover::before {
-    transition: none !important;
-  }
-
   .cover-stardust {
     animation: none !important;
     opacity: 0 !important;
