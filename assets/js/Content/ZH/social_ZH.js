@@ -16,7 +16,7 @@
     metric_site_pv: "站点总浏览量",
     metric_site_uv: "站点访客数",
     metric_site_location: "站点所在位置",
-    metric_site_location_value: "中国 · 北京 × 合肥",
+    metric_site_location_value: "中国 · 北京",
     metric_current_path: "当前路径",
     stats_live_body: "上方两项访问统计会在站点部署后自动累计；若浏览器拦截统计脚本，数字可能仍会显示为 —。位置项为站点主页当前展示的常驻地区信息。",
     stats_service_busuanzi: "不蒜子计数",
