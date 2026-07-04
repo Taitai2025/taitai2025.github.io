@@ -55,7 +55,7 @@
               <i class="fas fa-calculator"></i>
             </div>
             <div class="toolkit-title">Maple</div>
-            <a href="https://learn.maplesoft.com/doc" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
+            <a href="https://learn.maplesoft.com/doc" class="toolkit-link"  rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- DeepSeek -->
