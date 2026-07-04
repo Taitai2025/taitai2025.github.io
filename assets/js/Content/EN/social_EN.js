@@ -16,7 +16,7 @@
     metric_site_pv: "Site page views",
     metric_site_uv: "Site visitors",
     metric_site_location: "Site location",
-    metric_site_location_value: "Beijing × Hefei, China",
+    metric_site_location_value: "Beijing, China",
     metric_current_path: "Current path",
     stats_live_body: "The two counters above start to accumulate automatically after deployment. If a browser blocker prevents the external counter script from loading, the numbers may remain as —. The location field shows the base location displayed for this homepage.",
     stats_service_busuanzi: "Busuanzi Counter",
