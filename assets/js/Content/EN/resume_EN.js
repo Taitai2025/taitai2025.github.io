@@ -23,7 +23,7 @@
       <span class="contact-pill"><strong>Base</strong><span>Beijing</span></span>
     </div>
     <p class="resume-hero-intro">
-      I am Thomas, an undergraduate at the School of Mathematical Sciences, USTC. My main interests lie in computational mathematics and optimization, while another equally important part of my life has been Chinese traditional music, sheng performance, arranging, and student organization. Academically, I have maintained solid performance, led a national-level undergraduate innovation project that was later rated university-level outstanding, and worked as a teaching assistant for Linear Algebra B1 and B2; beyond academics, I have long participated in and organized campus performances, and I formerly served as the head of the USTC Student Chinese Orchestra. I also helped plan the “Zhonghua Yinyun” teaching program, hoping to extend the presence of traditional music from the stage into everyday campus life. Beyond study and music, I have continued to take part in student organizations and volunteer service, with a sustained interest in peer support and campus public life. This homepage records that ongoing attempt to hold mathematics, music, organization, and ordinary life together in one continuous path.
+      I am Thomas, a Class of 2026 graduate of the School of Mathematical Sciences at USTC and an incoming direct-entry Ph.D. student (pre-admitted) at the Academy of Mathematics and Systems Science, CAS. My main interests lie in computational mathematics and optimization, while another equally important part of my life has been Chinese traditional music, sheng performance, arranging, and student organization. Academically, I have maintained solid performance, led a national-level undergraduate innovation project that was later rated university-level outstanding, and worked as a teaching assistant for Linear Algebra B1 and B2; beyond academics, I have long participated in and organized campus performances, and I formerly served as the head of the USTC Student Chinese Orchestra. I also helped plan the “Zhonghua Yinyun” teaching program, hoping to extend the presence of traditional music from the stage into everyday campus life. Beyond study and music, I have continued to take part in student organizations and volunteer service, with a sustained interest in peer support and campus public life. This homepage records that ongoing attempt to hold mathematics, music, organization, and ordinary life together in one continuous path.
     </p>
     <div class="resume-hero-contacts">
       <span class="contact-pill contact-detail"><i class="fas fa-location-dot contact-icon" aria-hidden="true"></i><span class="contact-label">Address</span><span class="contact-value">Fengtai, Beijing 100040</span></span>
@@ -51,7 +51,7 @@
 
   <div class="subheading">
     <span class="subheading-title"><strong>University of Science and Technology of China</strong></span>
-    <span style="font-size: 0.9em; color: #666;">2022.09 – Expected 2026.07</span>
+    <span style="font-size: 0.9em; color: #666;">2022.09 – 2026.07</span>
   </div>
   <ul>
     <li><strong>Degree:</strong> B.Sc.</li>
@@ -124,8 +124,8 @@
 <tr><td>Numerical solution for Partial Differential Equations<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">Graduate Course</span></td><td><strong>91</strong></td><td>4.0</td></tr>
 <tr><td>Finite Element Methods<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">Graduate Course</span></td><td><strong>90</strong></td><td>4.0</td></tr>
 
-<tr><td rowspan="3"><strong>Research Projects</strong></td><td>Graduation Thesis</td><td><strong>A+</strong></td><td>8.0</td></tr>
-<tr><td>Undergraduate Innovation and Entrepreneurship Training Program</td><td><strong>A+</strong></td><td>4.0</td></tr>
+<tr><td rowspan="3"><strong>Research Projects</strong></td><td>Graduation Thesis</td><td><strong>A+</strong><span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">University-level Outstanding</span></td><td>8.0</td></tr>
+<tr><td>Undergraduate Innovation and Entrepreneurship Training Program</td><td><strong>A+</strong><span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">University-level Outstanding</span></td><td>4.0</td></tr>
 <tr><td>Freshman Seminar (“Science and Society”)</td><td><strong>A+</strong></td><td>1.0</td></tr>
 
 <tr><td rowspan="5"><strong>Foundational Physics</strong></td><td>Optics B</td><td><strong>99</strong></td><td>2.0</td></tr>
