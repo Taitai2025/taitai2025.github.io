@@ -78,14 +78,12 @@ window.RESUME_ZH_INNER_HTML = `
 <p style="margin-left: 20px; font-size: 0.9em; color: #555;">小学（音乐素养与艺术梦想的起航地）</p>
 </div>
 <div class="section">
-<h2>本科学业情况 (2022年秋季学期至2025年秋季学期)</h2>
+<h2>本科学业情况 (2022年秋季学期至2026年春季学期)</h2>
 <ul>
-<li><strong>GPA:</strong> 3.98/4.3</li>
-<li><strong>加权平均分:</strong> 91.89</li>
-<li><strong>算数平均分:</strong> 92.46</li>
-<li><strong>综合测评分数:</strong> 87.88 (保研时的综合成绩为92.88)</li>
-<li><strong>2022级数学科学学院GPA排名:</strong> 6/176 (top 5%)</li>
-<li><strong>2022级数学科学学院概率统计方向GPA排名:</strong> 4/69</li>
+<li><strong>全部课程 GPA:</strong> 4.00/4.30</li>
+<li><strong>全部课程加权平均分:</strong> 92.19</li>
+<li><strong>2022级数学科学学院GPA排名:</strong> 5/176 (top 3%)</li>
+<li><strong>2022级数学科学学院概率统计方向GPA排名:</strong> 3/69</li>
 <li><strong>2022级数学科学学院综合测评排名:</strong> 2/176</li>
 </ul>
 <div style="margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;">
@@ -108,158 +106,46 @@ window.RESUME_ZH_INNER_HTML = `
 </tr>
 </thead>
 <tbody>
-<tr>
-<td rowspan="3"><strong>分析</strong></td>
-<td>泛函分析</td>
-<td><strong>100</strong></td>
-<td>3.0</td>
-</tr>
-<tr>
-<td>微分方程引论</td>
-<td><strong>95</strong></td>
-<td>4.0</td>
-</tr>
-<tr>
-<td>数学分析 (A1)</td>
-<td><strong>93</strong></td>
-<td>6.0</td>
-</tr>
-<tr>
-<td rowspan="3"><strong>代数</strong></td>
-<td>线性代数 (B1)</td>
-<td><strong>98</strong></td>
-<td>4.0</td>
-</tr>
-<tr>
-<td>线性代数 (A2)</td>
-<td><strong>94</strong></td>
-<td>4.0</td>
-</tr>
-<tr>
-<td>近世代数</td>
-<td><strong>93</strong></td>
-<td>3.0</td>
-</tr>
-<tr>
-<td rowspan="4"><strong>概率与统计</strong></td>
-<td>概率论</td>
-<td><strong>100</strong></td>
-<td>3.0</td>
-</tr>
-<tr>
-<td>计量经济学</td>
-<td><strong>98</strong></td>
-<td>3.5</td>
-</tr>
-<tr>
-<td>随机过程A</td>
-<td><strong>96</strong></td>
-<td>3.0</td>
-</tr>
-<tr>
-<td>高等概率论 <span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td>
-<td><strong>89</strong></td>
-<td>4.0</td>
-</tr>
-<tr>
-<td rowspan="4"><strong>计算与应用数学</strong></td>
-<td>离散数学</td>
-<td><strong>99</strong></td>
-<td>4.0</td>
-</tr>
-<tr>
-<td>运筹学</td>
-<td><strong>96</strong></td>
-<td>3.5</td>
-</tr>
-<tr>
-<td>偏微分方程数值解 <span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td>
-<td><strong>91</strong></td>
-<td>4.0</td>
-</tr>
-<tr>
-<td>有限元方法 <span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td>
-<td><strong>90</strong></td>
-<td>4.0</td>
-</tr>
-<tr>
-<td rowspan="4"><strong>物理基础</strong></td>
-<td>光学B</td>
-<td><strong>99</strong></td>
-<td>2.0</td>
-</tr>
-<tr>
-<td>原子物理B</td>
-<td><strong>98</strong></td>
-<td>2.0</td>
-</tr>
-<tr>
-<td>电磁学B</td>
-<td><strong>97</strong></td>
-<td>4.0</td>
-</tr>
-<tr>
-<td>热学B</td>
-<td><strong>97</strong></td>
-<td>1.5</td>
-</tr>
-<tr>
-<td rowspan="2"><strong>思想政治理论</strong></td>
-<td>中国近现代史纲要</td>
-<td><strong>95</strong></td>
-<td>2.5</td>
-</tr>
-<tr>
-<td>思想道德与法治</td>
-<td><strong>95</strong></td>
-<td>3.0</td>
-</tr>
-<tr>
-<td rowspan="9"><strong>科研、通识与外语素养</strong></td>
-<td>“科学与社会”研讨课</td>
-<td><strong>A+</strong></td>
-<td>1.0</td>
-</tr>
-<tr>
-<td>大学生心理学</td>
-<td><strong>A+</strong></td>
-<td>2.0</td>
-</tr>
-<tr>
-<td>西方音乐通史</td>
-<td><strong>A+</strong></td>
-<td>2.0</td>
-</tr>
-<tr>
-<td>音乐来信——走进交响世界</td>
-<td><strong>A+</strong></td>
-<td>2.0</td>
-</tr>
-<tr>
-<td>游泳</td>
-<td><strong>A+</strong></td>
-<td>1.0</td>
-</tr>
-<tr>
-<td>羽毛球 I</td>
-<td><strong>A+</strong></td>
-<td>1.0</td>
-</tr>
-<tr>
-<td>羽毛球 II</td>
-<td><strong>A+</strong></td>
-<td>1.0</td>
-</tr>
-<tr>
-<td>英语交流进阶 III</td>
-<td><strong>96</strong></td>
-<td>1.0</td>
-</tr>
-<tr>
-<td>英语读写进阶 I</td>
-<td><strong>96</strong></td>
-<td>1.0</td>
-</tr>
+<tr><td rowspan="4"><strong>分析</strong></td><td>泛函分析</td><td><strong>100</strong></td><td>3.0</td></tr>
+<tr><td>微分方程引论</td><td><strong>95</strong></td><td>4.0</td></tr>
+<tr><td>数学分析(A1)</td><td><strong>93</strong></td><td>6.0</td></tr>
+<tr><td>数学分析(A2)</td><td><strong>88</strong></td><td>6.0</td></tr>
+
+<tr><td rowspan="4"><strong>代数</strong></td><td>线性代数(B1)</td><td><strong>98</strong></td><td>4.0</td></tr>
+<tr><td>线性代数(A2)</td><td><strong>94</strong></td><td>4.0</td></tr>
+<tr><td>近世代数</td><td><strong>93</strong></td><td>3.0</td></tr>
+<tr><td>代数学基础</td><td><strong>88</strong></td><td>3.0</td></tr>
+
+<tr><td rowspan="6"><strong>概率统计</strong></td><td>概率论</td><td><strong>100</strong></td><td>3.0</td></tr>
+<tr><td>计量经济学</td><td><strong>98</strong></td><td>3.5</td></tr>
+<tr><td>随机过程A</td><td><strong>96</strong></td><td>3.0</td></tr>
+<tr><td>随机过程B</td><td><strong>96</strong></td><td>2.0</td></tr>
+<tr><td>多元统计分析A</td><td><strong>88</strong></td><td>3.5</td></tr>
+<tr><td>高等概率论</td><td><strong>89</strong></td><td>4.0</td></tr>
+
+<tr><td rowspan="5"><strong>计算与应用数学</strong></td><td>离散数学</td><td><strong>99</strong></td><td>4.0</td></tr>
+<tr><td>运筹学</td><td><strong>96</strong></td><td>3.5</td></tr>
+<tr><td>最优化算法</td><td><strong>92</strong></td><td>4.0</td></tr>
+<tr><td>偏微分方程数值解</td><td><strong>91</strong></td><td>4.0</td></tr>
+<tr><td>有限元方法</td><td><strong>90</strong></td><td>4.0</td></tr>
+
+<tr><td rowspan="2"><strong>科研与项目</strong></td><td>毕业论文</td><td><strong>A+</strong></td><td>8.0</td></tr>
+<tr><td>大学生创新创业计划</td><td><strong>A+</strong></td><td>4.0</td></tr>
+
+<tr><td rowspan="5"><strong>基础物理</strong></td><td>光学B</td><td><strong>99</strong></td><td>2.0</td></tr>
+<tr><td>原子物理B</td><td><strong>98</strong></td><td>2.0</td></tr>
+<tr><td>电磁学B</td><td><strong>97</strong></td><td>4.0</td></tr>
+<tr><td>热学B</td><td><strong>97</strong></td><td>1.5</td></tr>
+<tr><td>大学物理-基础实验B</td><td><strong>94</strong></td><td>1.0</td></tr>
+
+<tr><td rowspan="8"><strong>通识、音乐与英语</strong></td><td>中国近现代史纲要</td><td><strong>95</strong></td><td>2.5</td></tr>
+<tr><td>思想道德与法治</td><td><strong>95</strong></td><td>3.0</td></tr>
+<tr><td>“科学与社会”研讨课</td><td><strong>A+</strong></td><td>1.0</td></tr>
+<tr><td>大学生心理学</td><td><strong>A+</strong></td><td>2.0</td></tr>
+<tr><td>西方音乐通史</td><td><strong>A+</strong></td><td>2.0</td></tr>
+<tr><td>音乐来信——走进交响世界</td><td><strong>A+</strong></td><td>2.0</td></tr>
+<tr><td>英语交流进阶III</td><td><strong>96</strong></td><td>1.0</td></tr>
+<tr><td>英语读写进阶I</td><td><strong>96</strong></td><td>1.0</td></tr>
 </tbody>
 </table>
 </div>
@@ -278,7 +164,7 @@ window.RESUME_ZH_INNER_HTML = `
 <li>中国科学技术大学2024-2025学年优秀共青团员 (2025.05)</li>
 <li>中国科学技术大学2024-2025学年青年马克思主义培养工程暨“六有”大学生“青马计划”班 优秀学员 (2025.05)</li>
 <li>中国科学技术大学2024-2025学年优秀学生社团骨干 (2025.06)</li>
-<li><strong>通过2025-2026学年郭沫若奖学金A类资格审查 参加学院答辩</strong> (2025.10, gpa:8/176, 综合测评2/176, 均位列学院top 5%, 学院共5人符合申报资格)</li>
+<li><strong>通过2025-2026学年郭沫若奖学金A类资格审查，参加学院答辩</strong> (2025.10；最新GPA排名5/176，综合测评排名2/176，GPA位列学院top 3%，学院共5人符合申报资格)</li>
 <li>第十七届全国大学生数学竞赛 安徽赛区 数学A类 二等奖 (2025.12, 全省排名第60)</li>
 <li><strong>中国科学技术大学2025年度最美“六有”大学生 提名奖</strong> (2025.12)</li>
 <li><strong>2025年比亚迪奖学金</strong> (2026.03, 排名2/174, 10000元)</li>
@@ -423,26 +309,29 @@ window.RESUME_ZH_INNER_HTML = `
 <p><strong>我的科研之路起步较早，从中学时代的“英才计划”一直延续至今。目前，我的研究兴趣主要集中在计算数学与优化算法领域。</strong></p>
 <h3 style="margin-top: 20px; color: #444;">🔬 核心科研项目 (计算数学与优化算法)</h3>
 <div class="subheading">
-<span class="subheading-title"><strong>基于常微分方程数值解法的加速一阶优化算法研究</strong><br/>
-<span style="font-size: 0.9em; font-weight: normal; color: #555;">(Research on Accelerating First-Order Optimization Algorithms Based on Numerical Solutions of Ordinary Differential Equations)</span></span>
-<span>2025.09 至今</span>
+<span class="subheading-title"><strong>块映射视角下固定记忆谱梯度法的统一收敛理论及应用</strong><br/>
+<span style="font-size: 0.9em; font-weight: normal; color: #555;">(A Unified Convergence Theory and Applications of Fixed-Memory Spectral Gradient Methods from a Block-Mapping Perspective)</span></span>
+<span>2025.09 - 2026.06</span>
 </div>
 <ul>
-<li><strong>项目类型:</strong> 中国科学技术大学 2022级本科毕业设计 (理论类型课题)</li>
+<li><strong>项目类型:</strong> 中国科学技术大学 2022级本科毕业论文 / 毕业设计</li>
 <li><strong>项目角色:</strong> <strong>独立完成人</strong></li>
-<li><strong>指导教师:</strong> <strong>袁亚湘 院士</strong> (校外导师) / 陈士祥 特任研究员 (校内导师)</li>
-<li><strong>进展状态:</strong> 选题极具理论挑战性，目前已完成文献调研与初步框架构建，正按计划进行算法推导，顺利通过中期检查。</li>
+<li><strong>指导教师:</strong> 陈士祥 特任研究员</li>
+<li><strong>结题结果:</strong> <strong>A+</strong>，8学分</li>
+<li><strong>当前延伸:</strong> 正在将毕业设计成果整理为拟投稿论文。</li>
 </ul>
+
 <div class="subheading">
-<span class="subheading-title"><strong>强Lyapunov框架下优化算法的全局收敛性研究与应用</strong><br/>
-<span style="font-size: 0.9em; font-weight: normal; color: #555;">(Convergence Analysis of Optimization Algorithms via Strong Lyapunov Functions)</span></span>
-<span>2025.05 至今</span>
+<span class="subheading-title"><strong>加权 Ritz-sweep 谱梯度法的齐次块动力系统理论与收敛性分析</strong><br/>
+<span style="font-size: 0.9em; font-weight: normal; color: #555;">(Homogeneous Block Dynamical Systems for Weighted Ritz-Sweep Spectral Gradient Methods: Theory and Convergence Analysis)</span></span>
+<span>2025.05 - 2026.06</span>
 </div>
 <ul>
-<li><strong>项目类型:</strong> 2025春季学期大学生创新创业计划 (<strong>国家级创新训练项目</strong>)</li>
+<li><strong>项目类型:</strong> 大学生创新创业计划项目</li>
 <li><strong>项目角色:</strong> <strong>项目主持人</strong></li>
-<li><strong>指导教师:</strong> <strong>袁亚湘 院士</strong> (校外导师) / 许小卫 教授 (校内导师)</li>
-<li><strong>进展状态:</strong> 成功入选国家级立项，项目执行情况良好，已完成强 Lyapunov 框架下的初步收敛性分析，研究成果正进一步深化中。</li>
+<li><strong>指导教师:</strong> 许小卫 教授</li>
+<li><strong>结题结果:</strong> <strong>A+</strong>，4学分</li>
+<li><strong>当前延伸:</strong> 正在将项目成果整理为拟投稿论文。</li>
 </ul>
 <h3 style="margin-top: 20px; color: #444;">⚙️ 学科竞赛与跨学科探索</h3>
 <div class="subheading">
@@ -652,45 +541,55 @@ window.RESUME_ZH_INNER_HTML = `
 </div>
 <div class="section">
 <h2>课程助教经历</h2>
-<p><strong>我的助教申请之路充满了戏剧性，也见证了我在学院里认可度的提升。从大三下学期投递简历石沉大海，到大四下学期被校院两级强烈推荐，这种“反转”让我深感荣幸。同时，它也教会了我如何权衡轻重、并在无法全心投入时负责任地学会拒绝。</strong></p>
-<h3 style="margin-top: 20px; color: #444;">👨‍🏫 助教任职与受邀情况 (按时间倒序)</h3>
-<div class="subheading">
-<span class="subheading-title"><strong>[遗憾婉拒] 《数学分析(B2)》 &amp; 《数学分析(A2)》 课程助教受邀</strong></span>
-<span>2026年春季学期</span>
-</div>
-<ul>
-<li><strong>背后的故事:</strong> 这个学期我原本已被徐宽老师的《线性代数 (B1)》录用为助教，但无奈因选课人数不足而停开。随后，学校教务处和数学科学学院分别向我抛出了橄榄枝，推荐我担任程艺老师的《数学分析 (B2)》和李思敏老师的《数学分析 (A2)》助教。</li>
-<li><strong>我的决定:</strong> 这两门都是极其硬核的基础课，能得到校院两级的认可推荐，我深感荣幸。但由于我大四下学期人在北京（中科院数学院）全职进行毕业设计，客观上无法完美地履行线下答疑与批改职责。出于对学生和课程负责的态度，我最终遗憾地婉拒了这两份极具含金量的邀请。</li>
-</ul>
+<p><strong>本节仅保留正式任职及与教学服务直接相关的简要说明，重点放在已承担或已确认的教学支持上，不再展开未录用申请过程。</strong></p>
+
+<h3 style="margin-top: 20px; color: #444;">👨‍🏫 正式任职</h3>
+
 <div class="subheading">
 <span class="subheading-title"><strong>[正式任职] 乐珏老师《线性代数(B2)》课程助教</strong></span>
 <span>2025年秋季学期</span>
 </div>
 <ul>
-<li><strong>工作内容:</strong> <span style="color: #666;">[工作预留]</span></li>
+<li><strong>工作内容:</strong> 按课程安排参与教学辅助工作，包括习题反馈、答疑沟通及相关课程支持。</li>
 </ul>
-<div class="subheading">
-<span class="subheading-title"><strong>[屡败屡战] 《概率论》 &amp; 《数学分析(B2)》 助教申请 (未录用)</strong></span>
-<span>2025年春季学期</span>
-</div>
-<ul>
-<li><strong>申请经历:</strong> 本学期我满怀热情地申请了这两门核心课的助教，但遗憾被拒。这次“碰壁”反而让我更加沉下心来夯实基础，也为大四下学期被广泛认可埋下了伏笔。</li>
-</ul>
+
 <div class="subheading">
 <span class="subheading-title"><strong>[正式任职] 乐珏老师《线性代数(B1)》课程助教</strong></span>
 <span>2024年秋季学期</span>
 </div>
 <ul>
-<li><strong>工作内容:</strong> <span style="color: #666;">[工作预留]</span></li>
+<li><strong>工作内容:</strong> 按课程安排参与教学辅助工作，包括习题反馈、答疑沟通及相关课程支持。</li>
+</ul>
+
+<h3 style="margin-top: 20px; color: #444;">📝 相关说明</h3>
+
+<div class="subheading">
+<span class="subheading-title"><strong>[课程停开] 徐宽老师《线性代数(B1)》课程助教</strong></span>
+<span>2026年春季学期</span>
+</div>
+<ul>
+<li>原已确定承担该课程助教工作，后因选课人数不足课程停开，故未实际开展教学辅助。</li>
+</ul>
+
+<div class="subheading">
+<span class="subheading-title"><strong>[受邀但婉拒] 《数学分析(B2)》与《数学分析(A2)》课程助教</strong></span>
+<span>2026年春季学期</span>
+</div>
+<ul>
+<li>因同期在北京中科院数学院集中完成毕业设计，无法稳定承担线下答疑与批改工作，故出于对课程和学生负责的考虑婉拒。</li>
 </ul>
 </div>
 <div class="section">
 <h2>发表文章</h2>
 <div class="subheading">
-<span class="subheading-title">暂无</span>
-<span></span>
+<span class="subheading-title">拟投稿论文筹备中</span>
+<span>2026年暑假</span>
 </div>
-<ul><li style="color: #666;"><em>(本科阶段暂未正式发表学术论文，相关科研成果见“科研经历”与未来规划)</em></li></ul>
+<ul>
+<li>正在将毕业设计成果整理为拟投稿论文。</li>
+<li>正在将大学生创新创业计划项目成果整理为拟投稿论文。</li>
+<li style="color: #666;"><em>目前暂未正式发表学术论文。</em></li>
+</ul>
 </div>
 <div class="section">
 <h2>其他信息</h2>
@@ -704,8 +603,8 @@ window.RESUME_ZH_INNER_HTML = `
             我于 2025 年上半年参加了中国科学院数学与系统科学研究院的推免选拔。同年 9 月，我以 <strong>92.88 分的综合成绩 (学院排名 2/174)</strong> 获得推免资格，并 <strong>在学院获得保研资格的 73 人中排名第一</strong>。在随后的复试中，我以 <strong>96.5 分的总成绩位居计算数学专业第二名</strong>，正式被计算数学与科学工程计算研究所拟录取为 <strong>直博生</strong> (该专业直博生名额仅为 4 人)。目前已接收待录取通知，预计将于 2026 年 9 月正式入学。
           </li>
 <li style="margin-top: 10px;">
-<strong>目前的“大四退休”生活：</strong><br/>
-            我现在大四，人基本都在北京。你通常可以在 <strong>中国科学院大学玉泉路校区的图书馆</strong> 找到我，或者在宿舍 (主要用于偶尔睡个午觉) 和家里。我喜欢保持运动，天天跑步，偶尔打打羽毛球。每周日我会去中关村校区参加国科大民族管弦乐团的排练，偶尔也会回合肥科大处理一些学业和乐团事务。<strong>欢迎随时找我玩！</strong>
+<strong>大四结束后的暑假生活：</strong><br/>
+            本科阶段结束后，我目前主要在北京和家里之间切换。这个暑假的主要学术任务，是把毕业设计和大学生创新创业计划项目的成果整理为拟投稿论文，同时准备中科院开学考试。平日一般上午去 <strong>中国科学院大学玉泉路校区</strong> 写作、复习或整理材料，下午多在家继续推进论文和其他事务。生活上，我会看电影、听民乐演出，国家大剧院只要有时间合适的民族管弦乐演出基本都会去；也会打羽毛球保持运动。每周日我会和 <strong>国科大民族管弦乐团</strong> 一起排练。暑假期间，7月9日会赴上海参加由吴宝珠教授和恽之玮教授带来的小型闭门分享会；7月17日至19日会赴昆明参加“西部运筹学研究与发展论坛第3期——运筹优化与数智科学前沿研讨会”。
 </li>
 </ul>
 </div>
@@ -723,20 +622,20 @@ window.RESUME_ZH_INNER_HTML = `
 <span style="color: #888;">进行中...</span>
 </div>
 <p style="font-size: 0.9em; margin-left: 20px;">深度润色并补全乐团履历、任职经历及社会活动版块。将“岗位清单”升级为“核心工作描述”。<br/>
-<em style="color: #999;">预计完成时间：2026.04.10 之前</em></p>
+<em style="color: #999;">预计完成时间：2026.07.31 之前</em></p>
 <div class="subheading">
 <span class="subheading-title"><strong>第三阶段：多维叙事 · 素材补全</strong></span>
 </div>
 <p style="font-size: 0.9em; margin-left: 20px;">
 <strong>学术面：</strong>挂载郭奖/六有/毕设答辩 PPT、科研论文及各类荣誉证明 PDF；<br/>
 <strong>艺术面：</strong>嵌入演出照片、视频链接、编曲总谱预览。<br/>
-<em style="color: #999;">预计完成时间：2026.05.20 之前</em>
+<em style="color: #999;">预计完成时间：2026.08.20 之前</em>
 </p>
 <div class="subheading">
 <span class="subheading-title"><strong>第四阶段：改天换地 · 终极焕新</strong></span>
 </div>
 <p style="font-size: 0.9em; margin-left: 20px;">引入全新视觉模板，实现既有内容向更具现代感与交互性的新容器平移。<br/>
-<em style="color: #999;">最终交付时间：2026.07.01（毕业离校前夕）</em></p>
+<em style="color: #999;">最终交付时间：2026.09.01（直博入学前）</em></p>
 </div>
 <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px 0;"/>
 <div style="font-size: 0.9rem; text-align: center;">
