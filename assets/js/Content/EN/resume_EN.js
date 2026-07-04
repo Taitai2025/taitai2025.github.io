@@ -18,19 +18,19 @@
   <div class="resume-hero-body">
     <div class="resume-hero-name">Thomas</div>
     <div class="resume-hero-chips">
-      <span class="contact-pill"><strong>Focus</strong><span>Computational mathematics / optimization</span></span>
-      <span class="contact-pill"><strong>Music</strong><span>Sheng performance / arrangement / orchestra work</span></span>
-      <span class="contact-pill"><strong>Base</strong><span>Beijing × Hefei</span></span>
+      <span class="contact-pill"><strong>Focus</strong><span>Computational mathematics / optimization algorithms</span></span>
+      <span class="contact-pill"><strong>Interests</strong><span>Chinese music / arranging / orchestra work</span></span>
+      <span class="contact-pill"><strong>Base</strong><span>Beijing</span></span>
     </div>
     <p class="resume-hero-intro">
-      I am Thomas, an undergraduate at the School of Mathematical Sciences, USTC. My main interests lie in computational mathematics and optimization, while another equally important part of my life has been Chinese traditional music, sheng performance, arranging, and student organization. Academically, I have maintained solid performance, led a national undergraduate innovation project, and worked as a teaching assistant for Linear Algebra B1 and B2; beyond academics, I have long participated in and organized campus performances, and I currently serve as the head of the USTC Student Chinese Orchestra. I also helped plan the “Zhonghua Yinyun” teaching program, hoping to extend the presence of traditional music from the stage into everyday campus life. Beyond study and music, I have continued to take part in student organizations and volunteer service, with a sustained interest in peer support and campus public life. This homepage records that ongoing attempt to hold mathematics, music, organization, and ordinary life together in one continuous path.
+      I am Thomas, an undergraduate at the School of Mathematical Sciences, USTC. My main interests lie in computational mathematics and optimization, while another equally important part of my life has been Chinese traditional music, sheng performance, arranging, and student organization. Academically, I have maintained solid performance, led a national-level undergraduate innovation project that was later rated university-level outstanding, and worked as a teaching assistant for Linear Algebra B1 and B2; beyond academics, I have long participated in and organized campus performances, and I formerly served as the head of the USTC Student Chinese Orchestra. I also helped plan the “Zhonghua Yinyun” teaching program, hoping to extend the presence of traditional music from the stage into everyday campus life. Beyond study and music, I have continued to take part in student organizations and volunteer service, with a sustained interest in peer support and campus public life. This homepage records that ongoing attempt to hold mathematics, music, organization, and ordinary life together in one continuous path.
     </p>
     <div class="resume-hero-contacts">
       <span class="contact-pill contact-detail"><i class="fas fa-location-dot contact-icon" aria-hidden="true"></i><span class="contact-label">Address</span><span class="contact-value">Fengtai, Beijing 100040</span></span>
       <span class="contact-pill contact-detail"><i class="fas fa-envelope contact-icon" aria-hidden="true"></i><span class="contact-label">Email</span><a class="contact-value" href="mailto:taitai@mail.ustc.edu.cn">taitai@mail.ustc.edu.cn</a></span>
       <span class="contact-pill contact-detail"><i class="fab fa-qq contact-icon" aria-hidden="true"></i><span class="contact-label">QQ</span><span class="contact-value">2592255858</span></span>
       <span class="contact-pill contact-detail"><i class="fab fa-weixin contact-icon" aria-hidden="true"></i><span class="contact-label">WeChat</span><span class="contact-value">taitai_2026</span></span>
-      <span class="contact-pill contact-detail"><i class="fas fa-users contact-icon" aria-hidden="true"></i><span class="contact-label">Fan Group</span><span class="contact-value">NMOU Fan Group · 733028065</span></span>
+      <span class="contact-pill contact-detail"><i class="fas fa-users contact-icon" aria-hidden="true"></i><span class="contact-label">Fan Group</span><span class="contact-value">NMOU Fan Group (泰蜜分舵) · 733028065</span></span>
     </div>
   </div>
 </div>
@@ -57,6 +57,7 @@
     <li><strong>Degree:</strong> B.Sc.</li>
     <li><strong>School:</strong> School of Mathematical Sciences</li>
     <li><strong>Major:</strong> Mathematics and Applied Mathematics (Probability &amp; Statistics track)</li>
+    <li><strong>Interdisciplinary exploration:</strong> During my undergraduate years I seriously considered a minor in computer science, finance, or chemistry. Out of respect for academic rigor I never submitted a formal application within the required window, yet my enthusiasm for interdisciplinary work has stayed: through relevant core electives and cross-disciplinary competitions, I accumulated solid experience in algorithm design and multi-disciplinary modeling, building a knowledge structure rooted in mathematics.</li>
   </ul>
 
   <div class="subheading">
@@ -75,6 +76,7 @@
 <ul>
 <li><strong>All-curriculum GPA:</strong> 4.00 / 4.30</li>
 <li><strong>All-curriculum weighted average score:</strong> 92.19</li>
+<li><strong>All-curriculum arithmetic average score:</strong> 92.52</li>
 <li><strong>GPA rank in the School of Mathematical Sciences, Class of 2022:</strong> 5 / 176 (top 3%)</li>
 <li><strong>GPA rank within the Probability &amp; Statistics track:</strong> 3 / 69</li>
 <li><strong>Comprehensive evaluation rank in the School of Mathematical Sciences, Class of 2022:</strong> 2 / 176</li>
@@ -104,7 +106,7 @@
 <tr><td>Mathematical Analysis A1</td><td><strong>93</strong></td><td>6.0</td></tr>
 <tr><td>Mathematical Analysis A2</td><td><strong>88</strong></td><td>6.0</td></tr>
 
-<tr><td rowspan="4"><strong>Algebra</strong></td><td>Linear Algebra B1</td><td><strong>98</strong></td><td>4.0</td></tr>
+<tr><td rowspan="4"><strong>Algebra</strong></td><td>Linear Algebra A1</td><td><strong>90</strong></td><td>4.0</td></tr>
 <tr><td>Linear Algebra A2</td><td><strong>94</strong></td><td>4.0</td></tr>
 <tr><td>Modern Algebra</td><td><strong>93</strong></td><td>3.0</td></tr>
 <tr><td>Foundation of Algebra</td><td><strong>88</strong></td><td>3.0</td></tr>
@@ -112,18 +114,19 @@
 <tr><td rowspan="6"><strong>Probability &amp; Statistics</strong></td><td>Probability Theory</td><td><strong>100</strong></td><td>3.0</td></tr>
 <tr><td>Econometrics</td><td><strong>98</strong></td><td>3.5</td></tr>
 <tr><td>Stochastic Processes A</td><td><strong>96</strong></td><td>3.0</td></tr>
-<tr><td>Stochastic Processes B</td><td><strong>96</strong></td><td>2.0</td></tr>
+<tr><td>Regression Analysis</td><td><strong>88</strong></td><td>3.5</td></tr>
 <tr><td>Multivariate Analysis A</td><td><strong>88</strong></td><td>3.5</td></tr>
-<tr><td>Advanced Probability Theory</td><td><strong>89</strong></td><td>4.0</td></tr>
+<tr><td>Advanced Probability Theory<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">Graduate Course</span></td><td><strong>89</strong></td><td>4.0</td></tr>
 
 <tr><td rowspan="5"><strong>Computational &amp; Applied Mathematics</strong></td><td>Discrete Mathematics</td><td><strong>99</strong></td><td>4.0</td></tr>
 <tr><td>Operations Research</td><td><strong>96</strong></td><td>3.5</td></tr>
-<tr><td>Optimization algorithm</td><td><strong>92</strong></td><td>4.0</td></tr>
-<tr><td>Numerical solution for Partial Differential Equations</td><td><strong>91</strong></td><td>4.0</td></tr>
-<tr><td>Finite Element Methods</td><td><strong>90</strong></td><td>4.0</td></tr>
+<tr><td>Optimization algorithm<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">Graduate Course</span></td><td><strong>92</strong></td><td>4.0</td></tr>
+<tr><td>Numerical solution for Partial Differential Equations<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">Graduate Course</span></td><td><strong>91</strong></td><td>4.0</td></tr>
+<tr><td>Finite Element Methods<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">Graduate Course</span></td><td><strong>90</strong></td><td>4.0</td></tr>
 
-<tr><td rowspan="2"><strong>Research Projects</strong></td><td>Graduation Thesis</td><td><strong>A+</strong></td><td>8.0</td></tr>
+<tr><td rowspan="3"><strong>Research Projects</strong></td><td>Graduation Thesis</td><td><strong>A+</strong></td><td>8.0</td></tr>
 <tr><td>Undergraduate Innovation and Entrepreneurship Training Program</td><td><strong>A+</strong></td><td>4.0</td></tr>
+<tr><td>Freshman Seminar (“Science and Society”)</td><td><strong>A+</strong></td><td>1.0</td></tr>
 
 <tr><td rowspan="5"><strong>Foundational Physics</strong></td><td>Optics B</td><td><strong>99</strong></td><td>2.0</td></tr>
 <tr><td>Atomic Physics B</td><td><strong>98</strong></td><td>2.0</td></tr>
@@ -131,9 +134,8 @@
 <tr><td>Thermotics B</td><td><strong>97</strong></td><td>1.5</td></tr>
 <tr><td>College Physics – Base Experimentation B</td><td><strong>94</strong></td><td>1.0</td></tr>
 
-<tr><td rowspan="8"><strong>General Education, Music &amp; English</strong></td><td>An Outline of Modern and Contemporary Chinese History</td><td><strong>95</strong></td><td>2.5</td></tr>
+<tr><td rowspan="7"><strong>General Education, Music &amp; English</strong></td><td>An Outline of Modern and Contemporary Chinese History</td><td><strong>95</strong></td><td>2.5</td></tr>
 <tr><td>Moral and Legal Education</td><td><strong>95</strong></td><td>3.0</td></tr>
-<tr><td>Freshman Seminar</td><td><strong>A+</strong></td><td>1.0</td></tr>
 <tr><td>*Collegiate Psychology</td><td><strong>A+</strong></td><td>2.0</td></tr>
 <tr><td>General History of Western Music</td><td><strong>A+</strong></td><td>2.0</td></tr>
 <tr><td>Music Letters - Entering the Symphony World</td><td><strong>A+</strong></td><td>2.0</td></tr>
@@ -145,21 +147,22 @@
 </div><div class="section"><h2>Awards and Honours Since Entering University (Selected)</h2>
 <p><strong>I received many awards in primary and secondary school as well, but I prefer to foreground my university-era honours here, because they better reflect the growth that has happened in recent years.</strong></p>
 <h3 style="margin-top: 20px; color: #444;">🎓 Academic and comprehensive honours</h3>
-<ul><li>USTC Outstanding Student Scholarship, Gold Prize (2024.01, top 3%, CNY 4,000)</li><li>Third Prize, USTC Electromagnetism Mini-Paper Competition, Fall 2023 (2024.01, with Lin Qihao)</li><li>Nomination Award, USTC 2024 “Most Beautiful Six-Haves Student” (2024.12)</li><li>Outstanding Trainee, 25th Student Cadre Training Program and 31st Youth League School Training Program, USTC (2024.12)</li><li>CNPC Scholarship 2024 (2025.03, rank 2 / 174, CNY 8,000)</li><li>Outstanding Communist Youth League Cadre, USTC, 2024–2025 (2025.05)</li><li>Outstanding Communist Youth League Member, USTC, 2024–2025 (2025.05)</li><li>Outstanding Trainee, Youth Marxism Training Program / “Six-Haves Student” Program, USTC, 2024–2025 (2025.05)</li><li>Outstanding Student Club Cadre, USTC, 2024–2025 (2025.06)</li><li>Passed the eligibility review for the Class A Guo Moruo Scholarship and entered the college-level interview (2025.10; latest GPA rank 5 / 176, comprehensive evaluation rank 2 / 176; GPA within the top 3% of the school; 5 students in the school met the eligibility threshold)</li><li>Second Prize, Mathematics A Category, Anhui Division, 17th Chinese Mathematics Competitions for College Students (2025.12, provincial rank No. 60)</li><li>Nomination Award, USTC 2025 “Most Beautiful Six-Haves Student” (2025.12)</li><li>BYD Scholarship 2025 (2026.03, rank 2 / 174, CNY 10,000)</li><li>Huang Yu Memorial Scholarship 2025 (2026.03, top school-level scholarship within the college; awarded to 10 students, CNY 10,000)</li><li>USTC Outstanding Graduate, Class of 2026 (2026.03, top 15%; 10 places in my class and 26 places among 168 graduates in the school)</li><li>Outstanding Graduate of Anhui Province, Class of 2026 (2026.03, top 3%; 6 places among 168 graduates in the school)</li></ul>
+<ul><li><strong>USTC Outstanding Student Scholarship 2023, Gold Prize</strong> (2024.01, top 3%, CNY 4,000)</li><li>Third Prize, USTC Electromagnetism Mini-Paper Competition, Fall 2023 (2024.01, with Lin Qihao)</li><li><strong>Nomination Award, USTC 2024 “Most Beautiful Six-Haves Student”</strong> (2024.12)</li><li>Outstanding Trainee, 25th Student Cadre Training Program and 31st Youth League School Training Program, USTC (2024.12)</li><li><strong>CNPC Scholarship 2024</strong> (2025.03, rank 2 / 174, CNY 8,000)</li><li>Outstanding Communist Youth League Cadre, USTC, 2024–2025 (2025.05)</li><li>Outstanding Student Cadre, USTC, 2024–2025 (2025.05)</li><li>Outstanding Communist Youth League Member, USTC, 2024–2025 (2025.05)</li><li>Outstanding Trainee, Youth Marxism Training Program / “Six-Haves Student” Program, USTC, 2024–2025 (2025.05)</li><li>Outstanding Student Club Cadre, USTC, 2024–2025 (2025.06, as a student cadre of the USTC Student Nationalities Music Orchestra)</li><li><strong>Passed the eligibility review for the Class A Guo Moruo Scholarship and entered the school-level interview</strong> (2025.10; at the time of selection, both my GPA rank and comprehensive-evaluation rank were within the top 5% of the school; 5 students in the school met the Class A eligibility threshold)</li><li><strong>Huang Yu Memorial Scholarship 2025</strong> (2025.11, the school’s top scholarship; awarded to 10 students, CNY 10,000)</li><li>Second Prize, Mathematics A Category, Anhui Division, 17th Chinese Mathematics Competitions for College Students (2025.12, provincial rank No. 60)</li><li><strong>Nomination Award, USTC 2025 “Most Beautiful Six-Haves Student”</strong> (2025.12)</li><li><strong>BYD Scholarship 2025</strong> (2026.01, rank 2 / 174, CNY 10,000)</li><li>USTC Outstanding Graduate, Class of 2026 (2026.04, top 15%; 10 places in my class and 26 places among 168 graduates in the school)</li><li><strong>Outstanding Graduate of Anhui Province, Class of 2026</strong> (2026.04, top 3%; 6 places among 168 graduates in the school)</li><li>Outstanding Communist Youth League Cadre, USTC, 2025–2026 (2026.05)</li><li>Outstanding Student Cadre, USTC, 2025–2026 (2026.05)</li><li>Outstanding Communist Youth League Member, USTC, 2025–2026 (2026.05)</li><li>Outstanding Student Club Cadre, USTC, 2025–2026 (2026.06, as a student cadre of the USTC Smile Psychology Association)</li><li><strong>University-level Outstanding Project Award, USTC 2026 Undergraduate Innovation Training Program</strong> (2026.06, 61 students awarded across the university; among the 10 concluded projects in the school, mine was the only one rated university-level outstanding; project: Homogeneous Block Dynamical Systems for Weighted Ritz-Sweep Spectral Gradient Methods: Theory and Convergence Analysis)</li><li><strong>University-level Outstanding Graduation Thesis Award, USTC 2026</strong> (2026.06, awarded to 92 graduating undergraduates across the university; only 4 of the 168 graduates in the school were rated university-level outstanding; thesis: A Unified Convergence Theory and Applications of Fixed-Memory Spectral Gradient Methods from a Block-Mapping Perspective)</li></ul>
 <h3 style="margin-top: 20px; color: #444;">🎵 Artistic performance and cultural exchange</h3>
-<ul><li>Gold Award, Sheng, Youth Group, 1st Youth Arts Showcase of Anhui Performing Arts Group (2024.07, instructor: Ma Ouyu)</li><li>Gold Award, Sheng, Youth Group, Beijing Division, 13th Guoyin Cup Chinese National Instrument Competition (2024.12)</li><li>Gold Award, Youth Group, Sheng Item, China Preliminary of the 11th Macau International Art Open Competition (2024.12, instructor: Huang Yushun)</li><li>The 2024–2025 GIYAF International Youth Art Festival China Regional Qualifier, First Prize (2024.12, mentor: Liang Pengyu)</li><li>The 11th Macau International Art Open Competition Final Round for Chinese Folk Music, Sheng Item, Youth Class, Gold Award (2025.01)</li><li>The 2025 GIYAF International Youth Arts Festival Singapore Final, Gold Award (2025.01)</li><li>First Prize, Sheng, University Group, 4th Yuefu Liangjiang Chinese Music Festival (2025.04, instructor: Ni Hao)</li><li>First Prize, Youth Group, Sheng Item, China Division, 15th Asian International Arts Competition (2025.06, instructor: Ren Haoyuan)</li><li>Participated in the filming of the Hefei branch venue for the 2026 CCTV Spring Festival Gala and appeared on the national Spring Festival Gala broadcast (2026.01)</li></ul>
+<ul><li>Gold Award, Sheng, Youth Group, 1st Youth Arts Showcase of Anhui Performing Arts Group (2024.07, instructor: Ma Ouyu)</li><li>Gold Award, Sheng, Youth Group, Beijing Division, 13th Guoyin Cup Chinese National Instrument Competition (2024.12)</li><li>Gold Award, Youth Group, Sheng Item, China Preliminary of the 11th Macau International Art Open Competition (2024.12, instructor: Huang Yushun)</li><li>The 2024–2025 GIYAF International Youth Art Festival China Regional Qualifier, First Prize (2024.12, mentor: Liang Pengyu)</li><li>The 11th Macau International Art Open Competition Final Round for Chinese Folk Music, Sheng Item, Youth Class, Gold Award (2025.01)</li><li>The 2025 GIYAF International Youth Arts Festival Singapore Final, Gold Award (2025.01)</li><li>First Prize, Sheng, University Group, 4th Yuefu Liangjiang Chinese Music Festival (2025.04, instructor: Ni Hao)</li><li>First Prize, Youth Group, Sheng Item, China Division, 15th Asian International Arts Competition (2025.06, instructor: Ren Haoyuan)</li><li><strong>Participated in the filming of the Hefei branch venue for the 2026 CCTV Spring Festival Gala and appeared on the national Spring Festival Gala broadcast</strong> (2026.01)</li><li>Gold Award, Sheng / Suona / Xun / Electronic Wind Instrument / Bawu &amp; Hulusi / Other Instruments Group, 6th “Minyue Fanghua Cup” Chinese Instrumental Music Competition (2026.06, instructor: Zhong Chengyi)</li></ul>
 <h3 style="margin-top: 20px; color: #444;">🏸 Sports and activity participation</h3>
 <ul><li>Top 16, Men’s Singles, 9th USTC Badminton Freshman Tournament (2022.10)</li><li>Top 8, USTC 2022 Chuying Cup (2022.11)</li><li>Fair Play Award, USTC 2022 Chuying Cup (2023.03)</li><li>Third Place, USTC “Four Nations Battle” Badminton Team Tournament, Spring 2023 (2023.04)</li><li>Top 16, Men’s Doubles, 10th USTC Badminton Freshman Tournament (2023.10)</li><li>Third Place, USTC “Four Nations Battle” Badminton Team Tournament, Fall 2023 (2023.11)</li><li>Top 16, Men’s Doubles, 11th USTC Badminton Freshman Tournament (2024.09)</li><li>Third Prize, Individual Category, USTC Running Association Summer Running Challenge 2025 (2025.09, individual rank 33, total mileage 202.70 km)</li><li>Fourth Prize, Team Category, USTC Running Association Summer Running Challenge 2025 (2025.09, team “Elephant Elephant Elephant” ranked 17th, team-of-three total rank 316)</li><li>Third Prize, Individual Category, USTC Running Association Winter Running Challenge 2026 (2026.02, individual rank 32, total mileage 125.57 km)</li><li>Perseverance Award, Week 3, USTC Running Association Winter Running Challenge 2026 (2026.02)</li></ul>
 <div style="margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;">
-<p style="margin-top: 0;"><strong>Quite a few small and medium-sized awards came my way, yet the biggest prizes often slipped past me.</strong></p>
-<p><strong>Every year I tried my best for the National Scholarship for undergraduates, but never received it—even though I often won the top prize in other scholarship categories.</strong></p>
-<p><strong>I also repeatedly applied for undergraduate student research funding, but my research record at the time was still not strong enough.</strong></p>
-<p><strong>Because I did relatively little research and participated in few competitions, I was also not competitive for some other high-profile scholarships.</strong></p>
-<p><strong>In October last year, I passed the eligibility review for the Guo Moruo Scholarship and entered the school-level interview, but still was not selected as one of the college’s final nominees.</strong></p>
-<p><strong>For the USTC “Most Beautiful Six-Haves Student” selection in both 2024 and 2025, I again stopped at the nomination stage.</strong></p>
-<p><strong>Over time I gradually learned that not every honour can be obtained, but every attempt brings me closer to a clearer understanding of myself.</strong></p>
-<p><strong>From frustration to a calmer acceptance, I have come to understand that regret is part of life—and that the real reward often lies in the process of striving.</strong></p>
-<p style="margin-bottom: 0;"><strong>To be honest, I am not even that obsessed with grinding all the time. I do slack off from time to time.</strong></p>
+<p style="margin-top: 0;"><strong>Quite a few small awards came my way, yet most of the biggest prizes slipped past me.</strong></p>
+<p><strong>Every year I tried my best for the National Scholarship for undergraduates, but never received it—while often winning the top prize in other scholarship categories instead.</strong></p>
+<p><strong>Every year I also applied for the NSFC basic research program for young undergraduate students, but my grades and research record were not yet strong enough.</strong></p>
+<p><strong>Having done little research and entered few competitions—with an equally unimpressive competition record—I was never even in a position to apply for the Yang Yuanqing Education Fund Scholarship.</strong></p>
+<p><strong>In October last year, I passed the eligibility review for the Class A Guo Moruo Scholarship and took part in the school’s interview, but still did not become one of the school’s three final nominees—and naturally did not win.</strong></p>
+<p><strong>For the USTC “Most Beautiful Six-Haves Student” selection in both 2024 and 2025, I stopped at the nomination stage each time.</strong></p>
+<p><strong>This gradually taught me that although some honours cannot be obtained, every attempt brings me closer to knowing myself.</strong></p>
+<p><strong>From past indignation to today’s growing acceptance, I have come to see that I am just an ordinary person—not as outstanding as I once imagined.</strong></p>
+<p><strong>I also deeply understand that regret is a constant of life, and the real reward comes from every process of striving.</strong></p>
+<p style="margin-bottom: 0;"><strong>Besides, I am not even that fond of striving—I do slack off from time to time.</strong></p>
 </div>
 </div><div class="section"><h2>Orchestra Experience</h2>
 <p><strong>Orchestras—more specifically, Chinese orchestras—have long been an indispensable part of my life.</strong><br/>
@@ -167,30 +170,30 @@
 <h3 style="margin-top: 20px; color: #444;">🌟 Stepping onto broader stages (university level and beyond)</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>USTC Student Nationalities Music Orchestra (NMOU)</strong></span>
-<span style="font-size: 0.9em; color: #666;">2022.09 – Present</span>
+<span style="font-size: 0.9em; color: #666;">2022.09 – 2026.06</span>
 </div>
-<ul><li><strong>Role:</strong> Sheng player in the wind section</li><li><strong>A deep emotional bond:</strong> I usually call the orchestra by the more intimate name <strong>NMOU</strong>. Here I have never been only a performer; I have also been a builder of the orchestra itself. I have served as section head and executive head of the wind section, Youth League branch secretary, overall teaching coordinator, and long-term worker in finance, music-score management, and publicity. I am currently the head of the orchestra.</li><li><strong>Construction and performance:</strong> During these years, I helped push forward reforms in the wind section and the teaching division, and I believe I contributed something meaningful. As a performer, I took part in four full concerts, three solo concerts, and many other events, while also helping organize some of them.</li><li><strong>Inheritance and farewell:</strong> Because of my thesis and future graduate study, I now participate less in daily rehearsals. Most management work has already been smoothly handed over to the current secretary Zhong Chengyi and the wind-section head Ni Hao, who is also about to become the next head of the orchestra. Leaving is inevitably bittersweet, but if I have left even a small mark in the long history of NMOU, that is already enough. <strong>I sincerely hope NMOU will keep growing better and better.</strong></li></ul>
+<ul><li><strong>Role:</strong> Soprano sheng player in the wind section</li><li><strong>A deep emotional bond:</strong> I usually call the orchestra by the more intimate name <strong>NMOU</strong>. Here I have never been only a performer; I have also been a builder of the orchestra itself. I have served as head and executive head of the wind section, Youth League branch secretary, general coordinator for teaching, and head of the orchestra, while also working long-term in finance, music-score management, and publicity.</li><li><strong>Construction and performance:</strong> During these years, I helped push forward reforms in the wind section and the teaching division, and I believe I contributed something meaningful. As a performer, I took part in five full concerts, three solo concerts, and many other events, while also helping organize some of them.</li><li><strong>Inheritance and farewell:</strong> The orchestra completed its formal handover and unified leadership transition in June this year, and management has been smoothly passed to the new head Ni Hao and the other incoming leaders. Graduating from USTC also meant formally leaving NMOU, and there is real reluctance and sadness in that. But partings cannot be prevented; it is enough to have left a mark of my own somewhere in NMOU’s long history. Perhaps one day I will even be back to hear a concert—or step on stage again! <strong>I sincerely hope NMOU will keep growing better and better!</strong></li></ul>
 <div class="subheading">
 <span class="subheading-title"><strong>Anhui Youth Chinese Orchestra</strong></span>
 <span style="font-size: 0.9em; color: #666;">2024.07 – Present</span>
 </div>
-<ul><li><strong>Role:</strong> Sheng player</li><li><strong>Note:</strong> With solid technical preparation and stage performance, I passed the selection process in July 2024 and officially joined this provincial youth orchestra, entering a more professional and demanding environment of artistic practice.</li></ul>
+<ul><li><strong>Role:</strong> Soprano sheng player</li><li><strong>Note:</strong> With solid technical preparation and stage performance, I passed the selection process in July 2024 and officially joined this provincial youth orchestra, entering a more professional and demanding environment of artistic practice.</li><li><strong>Guest-performer recruitment attempt:</strong> In 2026, I applied for the guest performer recruitment of the Anhui Chinese Orchestra (安徽乐团民族管弦乐团) and was shortlisted for the interview, but after weighing everything I ultimately chose to give up.</li></ul>
 <div class="subheading">
 <span class="subheading-title"><strong>University of Chinese Academy of Sciences Chinese Orchestra</strong></span>
 <span style="font-size: 0.9em; color: #666;">2024.09 – Present</span>
 </div>
-<ul><li><strong>Role:</strong> Sheng player in the wind section</li><li><strong>Note:</strong> After securing my direct Ph.D. path, I began participating one year early in the artistic life of my future graduate institution, continuing my long-standing love for Chinese instrumental music.</li></ul><h3 style="margin-top: 20px; color: #444;">🌱 Where the dream began (primary and secondary school foundations)</h3>
+<ul><li><strong>Role:</strong> Soprano sheng player in the Chinese wind section</li><li><strong>Note:</strong> After securing my direct Ph.D. path, I began participating one year early in the artistic life of my future graduate institution, continuing my long-standing love for Chinese instrumental music. Not long ago, I performed with the orchestra in its special concert “仲夏清韵·廿念不忘”.</li></ul><h3 style="margin-top: 20px; color: #444;">🌱 Where the dream began (primary and secondary school foundations)</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>Beijing National Day School Chinese Orchestra</strong></span>
 <span style="font-size: 0.9em; color: #666;">2016.09 – 2021.01</span>
 </div>
-<ul><li>Sheng player. During secondary school I kept polishing my performance skills and also served as the first head of the orchestra, which was my first substantial training in leadership and coordination within an ensemble.</li></ul>
+<ul><li>Soprano sheng player. During secondary school I kept polishing my performance skills and also served as the first head of the orchestra, which was my first substantial training in leadership and coordination within an ensemble.</li></ul>
 <div class="subheading">
 <span class="subheading-title"><strong>The Affiliated Yuquan Primary School of CAS Chinese Orchestra</strong></span>
 <span style="font-size: 0.9em; color: #666;">2010.09 – 2016.07</span>
 </div>
-<ul><li>Sheng-section performer. This was my place of musical initiation and the beginning of my more than ten-year bond with the sheng.</li></ul></div><div class="section"><h2>Event Organization and Performance Participation Since Entering University</h2>
-<p><strong>This section records both the visible and invisible sides of my university life. In many large concerts and broader student events, I often took multiple roles at once—both a planner running behind the scenes and a focused sheng player on stage. These experiences were complicated, and in a mild way they even affected my grades, but the real joy, the leap in coordination skills, and the sense of fulfillment from working with friends are not things that a few GPA points can measure.</strong></p>
+<ul><li>Soprano sheng player in the sheng section. This was my place of musical initiation and the beginning of a bond of more than ten years with the soprano sheng.</li></ul></div><div class="section"><h2>Event Organization and Performance Participation Since Entering University</h2>
+<p><strong>This section records both the visible and invisible sides of my university life. In many large concerts and broader student events, I often took multiple roles at once—both a planner running behind the scenes and a focused soprano sheng player on stage. These experiences were complicated, and in a mild way they even affected my grades, but the real joy, the leap in coordination skills, and the sense of fulfillment from working with friends are not things that a few GPA points can measure.</strong></p>
 <div class="subheading">
 <span class="subheading-title"><strong>[Reserved Entry]</strong></span>
 <span style="font-size: 0.9em; color: #666;">202X.XX</span>
@@ -226,7 +229,7 @@
 <li><strong>Project type:</strong> USTC undergraduate graduation thesis, Class of 2022</li>
 <li><strong>Role:</strong> Sole researcher</li>
 <li><strong>Supervisor:</strong> Dr. Chen Shixiang</li>
-<li><strong>Result:</strong> Completed with grade <strong>A+</strong> and 8 credits.</li>
+<li><strong>Result:</strong> Completed with grade <strong>A+</strong> and 8 credits; rated a <strong>University-level Outstanding Graduation Thesis</strong> of USTC 2026.</li>
 <li><strong>Current follow-up:</strong> Revising the thesis results into a manuscript intended for submission.</li>
 </ul>
 
@@ -238,7 +241,7 @@
 <li><strong>Project type:</strong> Undergraduate Innovation and Entrepreneurship Training Program</li>
 <li><strong>Role:</strong> Principal investigator</li>
 <li><strong>Mentor:</strong> Prof. Xu Xiaowei</li>
-<li><strong>Result:</strong> Completed with grade <strong>A+</strong> and 4 credits.</li>
+<li><strong>Result:</strong> Completed with grade <strong>A+</strong> and 4 credits; rated a <strong>university-level outstanding project</strong> of the USTC 2026 Undergraduate Innovation Training Program.</li>
 <li><strong>Current follow-up:</strong> Organizing the project results into a manuscript intended for submission.</li>
 </ul><h3 style="margin-top: 20px; color: #444;">⚙️ Competitions and interdisciplinary explorations</h3>
 <div class="subheading">
@@ -275,27 +278,27 @@
 <h3 style="margin-top: 20px; color: #444;">🎵 Orchestra leadership and arts administration (core record)</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>Head, USTC Student Nationalities Music Orchestra (NMOU)</strong></span>
-<span style="font-size: 0.9em; color: #666;">2025–2026 academic year (current)</span>
+<span style="font-size: 0.9em; color: #666;">2025–2026 academic year (former)</span>
 </div>
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul>
 <div class="subheading">
 <span class="subheading-title"><strong>Deputy Director for Teaching, USTC Student Nationalities Music Orchestra</strong></span>
-<span style="font-size: 0.9em; color: #666;">2025–2026 academic year (current)</span>
+<span style="font-size: 0.9em; color: #666;">2025–2026 academic year (former)</span>
 </div>
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul>
 <div class="subheading">
-<span class="subheading-title"><strong>Publicity Team Member, UCAS Chinese Orchestra</strong></span>
+<span class="subheading-title"><strong>Publicity Department Staff, UCAS Chinese Orchestra</strong></span>
 <span style="font-size: 0.9em; color: #666;">2025–2026 academic year (current)</span>
 </div>
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul>
 <div class="subheading">
 <span class="subheading-title"><strong>Executive Operator of the WeChat Public Account (Publicity Division), USTC Student Nationalities Music Orchestra</strong></span>
-<span style="font-size: 0.9em; color: #666;">Spring 2025 – Present (current)</span>
+<span style="font-size: 0.9em; color: #666;">Spring 2025 – Spring 2026 (former)</span>
 </div>
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul>
 <div class="subheading">
 <span class="subheading-title"><strong>Score Management Member, USTC Student Nationalities Music Orchestra</strong></span>
-<span style="font-size: 0.9em; color: #666;">Spring 2023 – Present (current)</span>
+<span style="font-size: 0.9em; color: #666;">Spring 2023 – Spring 2026 (former)</span>
 </div>
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul>
 <div class="subheading">
@@ -335,12 +338,12 @@
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul><h3 style="margin-top: 20px; color: #444;">🏫 Class building and student organizations</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>Minister of Organization, USTC Smile Psychology Association</strong></span>
-<span style="font-size: 0.9em; color: #666;">2025–2026 academic year (current)</span>
+<span style="font-size: 0.9em; color: #666;">2025–2026 academic year (former)</span>
 </div>
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul>
 <div class="subheading">
 <span class="subheading-title"><strong>Academic Affairs Commissioner, Class 01, School of Mathematical Sciences, USTC (Class of 2022)</strong></span>
-<span style="font-size: 0.9em; color: #666;">2025–2026 academic year (current)</span>
+<span style="font-size: 0.9em; color: #666;">2025–2026 academic year (former)</span>
 </div>
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul>
 <div class="subheading">
@@ -359,7 +362,7 @@
 <span class="subheading-title"><strong>My Homeland in the Great Northeast (Chinese chamber ensemble)</strong></span>
 <span style="font-size: 0.9em; color: #666;">Arranged in 2025.07 / Second version in 2025.12</span>
 </div>
-<ul><li><strong>Type:</strong> Chinese chamber music work</li><li><strong>Instrumentation, version 1:</strong> 2 suonas, 2 bangdis, 2 dizi, 2 high shengs, 2 erhus, 1 pipa, 1 Chinese drum</li><li><strong>Instrumentation, version 2:</strong> 2 suonas, 2 bangdis, 3 dizi, 1 each of high / alto / bass sheng, 2 erhus, 1 pipa, Chinese percussion (Chinese drum, bass drum, tambourine, maracas)</li><li><strong>Performance history:</strong>
+<ul><li><strong>Type:</strong> Chinese chamber music work</li><li><strong>Instrumentation, version 1:</strong> 2 suonas, 2 bangdis, 2 qudis, 2 soprano shengs, 2 erhus, 1 pipa, 1 Chinese drum</li><li><strong>Instrumentation, version 2:</strong> 2 suonas, 2 bangdis, 3 qudis, 1 each of soprano / alto / bass sheng, 2 erhus, 1 pipa, Chinese percussion (Chinese drum, bass drum, tambourine, maracas)</li><li><strong>Performance history:</strong>
 <ul style="margin-top: 5px; list-style-type: circle;">
 <li>2025.09: USTC student-club fair (informal premiere)</li>
 <li>2025.10: USTC 2025 Freshers’ Welcome Gala “Hanhai New Cloud” (official premiere)</li>
@@ -424,7 +427,7 @@
   </li>
 <li style="margin-top: 10px;">
 <strong>Summer after my senior year:</strong><br/>
-    After finishing my undergraduate years, I am mostly in Beijing and at home. My main academic task this summer is to revise the results of my graduation thesis and the USTC Undergraduate Innovation and Entrepreneurship Training Program into manuscripts intended for submission. On ordinary weekdays, I usually spend the morning at the Yuquan Road campus of the University of Chinese Academy of Sciences and the afternoon at home. Outside writing and exam preparation, I watch films, go to Chinese instrumental concerts whenever there is a suitable performance at the National Centre for the Performing Arts, and play badminton. Every Sunday I rehearse with the UCAS Chinese Orchestra, while also preparing for the entrance examinations before starting at the Chinese Academy of Sciences. In July, I will attend a small closed-door sharing session in Shanghai on July 9 with Prof. Ngô Bảo Châu and Prof. Zhiwei Yun, and then travel to Kunming from July 17 to 19 for the Third Western Forum on Operations Research and Development — Frontiers of Operations Optimization and Digital-Intelligent Science.
+    After finishing my undergraduate years, I am mostly in Beijing and at home. My main academic task this summer is to revise the results of my graduation thesis and the USTC Undergraduate Innovation and Entrepreneurship Training Program into manuscripts intended for submission. On ordinary weekdays, I usually spend the morning at the Yuquan Road campus of the University of Chinese Academy of Sciences and the afternoon at home. Outside writing and exam preparation, I watch films, go to Chinese instrumental concerts whenever there is a suitable performance at the National Centre for the Performing Arts, and play badminton, run, and work out to stay active. Every Sunday I rehearse with the UCAS Chinese Orchestra, while also preparing for the entrance examinations before starting at the Chinese Academy of Sciences. In July, I will attend a small closed-door sharing session in Shanghai on July 9 with Prof. Ngô Bảo Châu and Prof. Zhiwei Yun, and then travel to Kunming from July 17 to 19 for the Third Western Forum on Operations Research and Development — Frontiers of Operations Optimization and Digital-Intelligent Science.
 </li>
 </ul>
 </div><div class="section"><h2>📜 “Adding Finishing Touches” — Personal Homepage Renewal Plan for 2026</h2>
@@ -459,7 +462,7 @@
 <div style="font-size: 0.9rem; text-align: center;">
 <p>💡 Suggestions are always welcome through the following channel:</p>
 <p>
-<strong>NMOU fan QQ group:</strong> 733028065 <br/>
+<strong>NMOU fan QQ group (泰蜜分舵):</strong> 733028065 <br/>
 <span style="font-size: 0.8rem; color: #777;">(Please contact <strong>Zhong Chengyi</strong> for verification before joining, so that the group atmosphere stays healthy and orderly.)</span>
 </p>
 </div>
