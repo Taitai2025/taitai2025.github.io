@@ -2,7 +2,7 @@
   window.TOOLKIT_ZH_I18N = {
     toolkit_heading: "学术工具箱",
 
-    search_placeholder: "按名称搜索工具...",
+    search_placeholder: "按名称搜索工具……",
 
     filter_all: "全部",
     filter_development: "开发",
@@ -27,6 +27,6 @@
     link_visit1: "访问 1",
     link_visit2: "访问 2",
 
-    no_results: "未找到匹配工具, 请尝试其他关键词."
+    no_results: "未找到匹配工具，请尝试其他关键词。"
   };
 })();
