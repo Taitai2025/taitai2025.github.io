@@ -20,7 +20,7 @@ window.RESUME_ZH_INNER_HTML = `
       <span class="contact-pill"><strong>常驻</strong><span>北京</span></span>
     </div>
     <p class="resume-hero-intro">
-      我是泰泰，中国科学技术大学数学科学学院本科生，主要兴趣在计算数学与最优化算法，同时也长期从事笙演奏、民乐编配与校园美育实践。学业上，我在本科阶段保持了较好的成绩和综合表现，主持国家级大创项目并获评校级优秀，并完成《线性代数B1》《线性代数B2》课程助教工作；音乐与学生工作方面，我长期参与并组织校园民乐演出，曾任校学生民族乐团团长，同时策划“中华音韵”课程，尝试把民乐的推广从舞台延伸到更日常的校园学习场景。除了学习和音乐，我也持续参与学生组织与志愿服务，关心同伴支持与校园公共生活。这个主页记录的，正是我在数学、音乐、组织与生活之间不断摸索、慢慢成形的轨迹。
+      我是泰泰，中国科学技术大学数学科学学院2026届本科毕业生、中国科学院数学与系统科学研究院直博生（拟录取），主要兴趣在计算数学与最优化算法，同时也长期从事笙演奏、民乐编配与校园美育实践。学业上，我在本科阶段保持了较好的成绩和综合表现，主持国家级大创项目并获评校级优秀，并完成《线性代数B1》《线性代数B2》课程助教工作；音乐与学生工作方面，我长期参与并组织校园民乐演出，曾任校学生民族乐团团长，同时策划“中华音韵”课程，尝试把民乐的推广从舞台延伸到更日常的校园学习场景。除了学习和音乐，我也持续参与学生组织与志愿服务，关心同伴支持与校园公共生活。这个主页记录的，正是我在数学、音乐、组织与生活之间不断摸索、慢慢成形的轨迹。
     </p>
     <div class="resume-hero-contacts">
       <span class="contact-pill contact-detail"><i class="fas fa-location-dot contact-icon" aria-hidden="true"></i><span class="contact-label">住址</span><span class="contact-value">北京丰台 100040</span></span>
@@ -49,7 +49,7 @@ window.RESUME_ZH_INNER_HTML = `
 </ul>
 <div class="subheading">
 <span class="subheading-title"><strong>中国科学技术大学</strong></span>
-<span style="font-size: 0.9em; color: #666;">2022.09 - 2026.07（预计）</span>
+<span style="font-size: 0.9em; color: #666;">2022.09 - 2026.07</span>
 </div>
 <div style="font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;">
           (University of Science and Technology of China)
@@ -130,8 +130,8 @@ window.RESUME_ZH_INNER_HTML = `
 <tr><td>偏微分方程数值解<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td><td><strong>91</strong></td><td>4.0</td></tr>
 <tr><td>有限元方法<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td><td><strong>90</strong></td><td>4.0</td></tr>
 
-<tr><td rowspan="3"><strong>科研与项目</strong></td><td>毕业论文</td><td><strong>A+</strong></td><td>8.0</td></tr>
-<tr><td>大学生创新创业计划</td><td><strong>A+</strong></td><td>4.0</td></tr>
+<tr><td rowspan="3"><strong>科研与项目</strong></td><td>毕业论文</td><td><strong>A+</strong><span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">校级优秀</span></td><td>8.0</td></tr>
+<tr><td>大学生创新创业计划</td><td><strong>A+</strong><span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">校级优秀</span></td><td>4.0</td></tr>
 <tr><td>“科学与社会”研讨课</td><td><strong>A+</strong></td><td>1.0</td></tr>
 
 <tr><td rowspan="5"><strong>基础物理</strong></td><td>光学B</td><td><strong>99</strong></td><td>2.0</td></tr>
