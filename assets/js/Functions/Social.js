@@ -62,7 +62,7 @@
         </div>
         <div class="stats-metric">
           <div class="stats-metric-label" data-i18n="metric_site_location">Site location</div>
-          <div class="stats-metric-value stats-location-value" data-i18n="metric_site_location_value">Beijing × Hefei, China</div>
+          <div class="stats-metric-value stats-location-value" data-i18n="metric_site_location_value">Beijing, China</div>
         </div>
       </div>
 
