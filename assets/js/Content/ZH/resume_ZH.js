@@ -129,7 +129,7 @@ window.RESUME_ZH_INNER_HTML = `
 <tr><td>偏微分方程数值解<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td><td><strong>91</strong></td><td>4.0</td></tr>
 <tr><td>有限元方法<span style="font-size: 0.8em; color: #d9534f; border: 1px solid #d9534f; padding: 1px 4px; border-radius: 3px; margin-left: 5px;">研究生课</span></td><td><strong>90</strong></td><td>4.0</td></tr>
 
-<tr><td rowspan="2"><strong>科研与项目</strong></td><td>毕业论文</td><td><strong>A+</strong></td><td>8.0</td></tr>
+<tr><td rowspan="3"><strong>科研与项目</strong></td><td>毕业论文</td><td><strong>A+</strong></td><td>8.0</td></tr>
 <tr><td>大学生创新创业计划</td><td><strong>A+</strong></td><td>4.0</td></tr>
 <tr><td>“科学与社会”研讨课</td><td><strong>A+</strong></td><td>1.0</td></tr>
 
@@ -139,7 +139,7 @@ window.RESUME_ZH_INNER_HTML = `
 <tr><td>热学B</td><td><strong>97</strong></td><td>1.5</td></tr>
 <tr><td>大学物理-基础实验B</td><td><strong>94</strong></td><td>1.0</td></tr>
 
-<tr><td rowspan="8"><strong>通识、音乐与英语</strong></td><td>中国近现代史纲要</td><td><strong>95</strong></td><td>2.5</td></tr>
+<tr><td rowspan="7"><strong>通识、音乐与英语</strong></td><td>中国近现代史纲要</td><td><strong>95</strong></td><td>2.5</td></tr>
 <tr><td>思想道德与法治</td><td><strong>95</strong></td><td>3.0</td></tr>
 <tr><td>大学生心理学</td><td><strong>A+</strong></td><td>2.0</td></tr>
 <tr><td>西方音乐通史</td><td><strong>A+</strong></td><td>2.0</td></tr>
