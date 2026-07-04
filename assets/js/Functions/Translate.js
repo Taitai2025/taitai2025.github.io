@@ -480,18 +480,10 @@
   }
 
   function init() {
-    // Always default back to English on a full refresh
-    applyLanguage(LANG.EN);
+    // Respect the visitor's last language choice;
+    // first-time visitors still start in English.
+    applyLanguage(getLang());
     bindLangToggle();
-
-    let retry = 0;
-    const timer = setInterval(() => {
-      bindLangToggle();
-      updateLangButton(getLang());
-      retry += 1;
-      if (document.getElementById("top-lang-btn") && retry >= 3) clearInterval(timer);
-      if (retry >= 10) clearInterval(timer);
-    }, 200);
 
     window.addEventListener("site:langchange", function (e) {
       const l = normalizeLang(e && e.detail ? e.detail.lang : getLang());
