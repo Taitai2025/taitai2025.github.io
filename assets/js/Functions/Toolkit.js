@@ -46,7 +46,7 @@
               <i class="fab fa-github"></i>
             </div>
             <div class="toolkit-title">GitHub</div>
-            <a href="https://github.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://github.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Maple -->
@@ -55,7 +55,7 @@
               <i class="fas fa-calculator"></i>
             </div>
             <div class="toolkit-title">Maple</div>
-            <a href="https://learn.maplesoft.com/doc" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://learn.maplesoft.com/doc" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- DeepSeek -->
@@ -64,7 +64,7 @@
               <i class="fas fa-robot"></i>
             </div>
             <div class="toolkit-title">DeepSeek</div>
-            <a href="https://chat.deepseek.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://chat.deepseek.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- ChatGPT -->
@@ -73,7 +73,7 @@
               <i class="fas fa-comment-dots"></i>
             </div>
             <div class="toolkit-title">ChatGPT</div>
-            <a href="https://chatgpt.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://chatgpt.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Grok -->
@@ -82,7 +82,7 @@
               <i class="fas fa-brain"></i>
             </div>
             <div class="toolkit-title">Grok</div>
-            <a href="https://grok.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://grok.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- DeepL -->
@@ -91,7 +91,7 @@
               <i class="fas fa-language"></i>
             </div>
             <div class="toolkit-title">DeepL</div>
-            <a href="https://www.deepl.com/zh/translator" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.deepl.com/zh/translator" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Overleaf -->
@@ -100,7 +100,7 @@
               <i class="fas fa-leaf"></i>
             </div>
             <div class="toolkit-title">Overleaf</div>
-            <a href="https://cn.overleaf.com/project" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://cn.overleaf.com/project" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Jupyter -->
@@ -109,7 +109,7 @@
               <i class="fas fa-code"></i>
             </div>
             <div class="toolkit-title">Jupyter</div>
-            <a href="https://jupyter.org/try" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://jupyter.org/try" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- Wolfram Alpha -->
@@ -118,7 +118,7 @@
               <i class="fas fa-infinity"></i>
             </div>
             <div class="toolkit-title">Wolfram Alpha</div>
-            <a href="https://www.wolframalpha.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.wolframalpha.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- GitLab -->
@@ -127,7 +127,7 @@
               <i class="fab fa-gitlab"></i>
             </div>
             <div class="toolkit-title">GitLab</div>
-            <a href="https://gitlab.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://gitlab.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- CodeSandbox -->
@@ -136,7 +136,7 @@
               <i class="fas fa-laptop-code"></i>
             </div>
             <div class="toolkit-title">CodeSandbox</div>
-            <a href="https://codesandbox.io/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://codesandbox.io/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- LeetCode -->
@@ -145,7 +145,7 @@
               <i class="fas fa-code"></i>
             </div>
             <div class="toolkit-title">LeetCode</div>
-            <a href="https://leetcode.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://leetcode.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- Tableau -->
@@ -154,7 +154,7 @@
               <i class="fas fa-chart-bar"></i>
             </div>
             <div class="toolkit-title">Tableau Public</div>
-            <a href="https://public.tableau.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://public.tableau.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- Colab -->
@@ -163,7 +163,7 @@
               <i class="fas fa-brain"></i>
             </div>
             <div class="toolkit-title">Colab</div>
-            <a href="https://colab.research.google.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://colab.research.google.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
         </div>
       </div>
@@ -178,7 +178,7 @@
               <i class="fas fa-envelope"></i>
             </div>
             <div class="toolkit-title">Gmail</div>
-            <a href="https://mail.google.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://mail.google.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- QQ Mail -->
@@ -187,7 +187,7 @@
               <i class="fas fa-envelope"></i>
             </div>
             <div class="toolkit-title">QQ Mail</div>
-            <a href="https://mail.qq.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://mail.qq.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- NetEase Mail -->
@@ -196,7 +196,7 @@
               <i class="fas fa-envelope"></i>
             </div>
             <div class="toolkit-title">NetEase Mail</div>
-            <a href="https://email.163.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://email.163.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Quora -->
@@ -205,7 +205,7 @@
               <i class="fab fa-quora"></i>
             </div>
             <div class="toolkit-title">Quora</div>
-            <a href="https://www.quora.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.quora.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Twitter/X -->
@@ -214,7 +214,7 @@
               <i class="fab fa-twitter"></i>
             </div>
             <div class="toolkit-title">X (Twitter)</div>
-            <a href="https://x.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://x.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
         </div>
       </div>
@@ -229,7 +229,7 @@
               <i class="fab fa-youtube"></i>
             </div>
             <div class="toolkit-title">YouTube</div>
-            <a href="https://www.youtube.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.youtube.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- TikTok -->
@@ -238,7 +238,7 @@
               <i class="fab fa-tiktok"></i>
             </div>
             <div class="toolkit-title">TikTok</div>
-            <a href="https://www.douyin.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.douyin.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- REDnote -->
@@ -247,7 +247,7 @@
               <i class="fas fa-book"></i>
             </div>
             <div class="toolkit-title">REDnote</div>
-            <a href="https://www.xiaohongshu.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.xiaohongshu.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Bilibili -->
@@ -256,7 +256,7 @@
               <i class="fas fa-play-circle"></i>
             </div>
             <div class="toolkit-title">Bilibili</div>
-            <a href="https://www.bilibili.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.bilibili.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- iQIYI -->
@@ -265,7 +265,7 @@
               <i class="fas fa-film"></i>
             </div>
             <div class="toolkit-title">iQIYI</div>
-            <a href="https://www.iqiyi.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.iqiyi.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Tencent Video/WeTV -->
@@ -275,9 +275,9 @@
             </div>
             <div class="toolkit-title">Tencent Video</div>
             <div style="display: flex; gap: 5px; justify-content: center; align-items: center;">
-              <a href="https://v.qq.com/" class="toolkit-link" target="_blank" data-i18n="link_visit1">Visit 1</a>
+              <a href="https://v.qq.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit1">Visit 1</a>
               <span class="social-divider">/</span>
-              <a href="https://wetv.vip/" class="toolkit-link" target="_blank" data-i18n="link_visit2">Visit 2</a>
+              <a href="https://wetv.vip/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit2">Visit 2</a>
             </div>
           </div>
         </div>
@@ -293,7 +293,7 @@
               <i class="fas fa-music"></i>
             </div>
             <div class="toolkit-title">QQ Music</div>
-            <a href="https://y.qq.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://y.qq.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- NetEase Cloud Music -->
@@ -302,7 +302,7 @@
               <i class="fas fa-music"></i>
             </div>
             <div class="toolkit-title">NetEase Cloud Music</div>
-            <a href="https://music.163.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://music.163.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- KuGou Music -->
@@ -311,7 +311,7 @@
               <i class="fas fa-music"></i>
             </div>
             <div class="toolkit-title">KuGou Music</div>
-            <a href="https://www.kugou.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.kugou.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Spotify -->
@@ -320,7 +320,7 @@
               <i class="fab fa-spotify"></i>
             </div>
             <div class="toolkit-title">Spotify</div>
-            <a href="https://open.spotify.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://open.spotify.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
         </div>
       </div>
@@ -335,7 +335,7 @@
               <i class="fab fa-wikipedia-w"></i>
             </div>
             <div class="toolkit-title">Wikipedia</div>
-            <a href="https://www.wikipedia.org/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.wikipedia.org/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Google Scholar -->
@@ -344,7 +344,7 @@
               <i class="fas fa-graduation-cap"></i>
             </div>
             <div class="toolkit-title">Google Scholar</div>
-            <a href="https://scholar.google.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://scholar.google.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Z-Library -->
@@ -353,7 +353,7 @@
               <i class="fas fa-book"></i>
             </div>
             <div class="toolkit-title">Z-Library</div>
-            <a href="https://zh.z-library.sk/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://zh.z-library.sk/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- CNKI -->
@@ -362,7 +362,7 @@
               <i class="fas fa-search"></i>
             </div>
             <div class="toolkit-title">CNKI</div>
-            <a href="https://www.cnki.net/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.cnki.net/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- ScienceDirect -->
@@ -371,7 +371,7 @@
               <i class="fas fa-book-open"></i>
             </div>
             <div class="toolkit-title">ScienceDirect</div>
-            <a href="https://www.sciencedirect.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.sciencedirect.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
           
           <!-- Web of Science -->
@@ -380,7 +380,7 @@
               <i class="fas fa-globe"></i>
             </div>
             <div class="toolkit-title">Web of Science</div>
-            <a href="https://www.webofscience.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.webofscience.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- MathOverflow -->
@@ -389,7 +389,7 @@
               <i class="fas fa-square-root-alt"></i>
             </div>
             <div class="toolkit-title">MathOverflow</div>
-            <a href="https://mathoverflow.net/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://mathoverflow.net/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- OEIS -->
@@ -398,7 +398,7 @@
               <i class="fas fa-list-ol"></i>
             </div>
             <div class="toolkit-title">OEIS</div>
-            <a href="https://oeis.org/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://oeis.org/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
         </div>
       </div>
@@ -413,7 +413,7 @@
               <i class="fas fa-clipboard-list"></i>
             </div>
             <div class="toolkit-title">Notion</div>
-            <a href="https://www.notion.so/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.notion.so/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- Obsidian -->
@@ -422,7 +422,7 @@
               <i class="fas fa-book"></i>
             </div>
             <div class="toolkit-title">Obsidian</div>
-            <a href="https://obsidian.md/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://obsidian.md/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- Tencent Docs -->
@@ -431,7 +431,7 @@
               <i class="fas fa-file-alt"></i>
             </div>
             <div class="toolkit-title">Tencent Docs</div>
-            <a href="https://docs.qq.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://docs.qq.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- Typora -->
@@ -440,7 +440,7 @@
               <i class="fas fa-edit"></i>
             </div>
             <div class="toolkit-title">Typora</div>
-            <a href="https://typora.io/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://typora.io/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- Yuque -->
@@ -449,7 +449,7 @@
               <i class="fas fa-feather-alt"></i>
             </div>
             <div class="toolkit-title">Yuque</div>
-            <a href="https://www.yuque.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.yuque.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- Canva -->
@@ -458,7 +458,7 @@
               <i class="fas fa-palette"></i>
             </div>
             <div class="toolkit-title">Canva</div>
-            <a href="https://www.canva.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.canva.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- Remove.bg -->
@@ -467,7 +467,7 @@
               <i class="fas fa-image"></i>
             </div>
             <div class="toolkit-title">Remove.bg</div>
-            <a href="https://www.remove.bg/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.remove.bg/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
 
           <!-- TinyPNG -->
@@ -476,7 +476,7 @@
               <i class="fas fa-compress-alt"></i>
             </div>
             <div class="toolkit-title">TinyPNG</div>
-            <a href="https://tinypng.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://tinypng.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
         </div>
       </div>
@@ -491,7 +491,7 @@
               <i class="fas fa-quote-right"></i>
             </div>
             <div class="toolkit-title">EndNote</div>
-            <a href="http://www.myendnoteweb.com" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="http://www.myendnoteweb.com" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- Zotero -->
@@ -500,7 +500,7 @@
               <i class="fas fa-book"></i>
             </div>
             <div class="toolkit-title">Zotero</div>
-            <a href="https://www.zotero.org/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.zotero.org/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- Mendeley -->
@@ -509,7 +509,7 @@
               <i class="fas fa-file-alt"></i>
             </div>
             <div class="toolkit-title">Mendeley</div>
-            <a href="https://www.mendeley.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.mendeley.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- Academia -->
@@ -518,7 +518,7 @@
               <i class="fas fa-graduation-cap"></i>
             </div>
             <div class="toolkit-title">Academia</div>
-            <a href="https://www.academia.edu/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.academia.edu/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
         </div>
       </div>
@@ -533,7 +533,7 @@
               <i class="fas fa-chalkboard"></i>
             </div>
             <div class="toolkit-title">USTC Blackboard</div>
-            <a href="https://www.bb.ustc.edu.cn/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.bb.ustc.edu.cn/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- USTC Mail -->
@@ -542,7 +542,7 @@
               <i class="fas fa-envelope"></i>
             </div>
             <div class="toolkit-title">USTC Mail</div>
-            <a href="https://email.ustc.edu.cn/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://email.ustc.edu.cn/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- USTC Flyer -->
@@ -551,7 +551,7 @@
               <i class="fas fa-paper-plane"></i>
             </div>
             <div class="toolkit-title">USTC Flyer</div>
-            <a href="https://ustcflyer.com/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://ustcflyer.com/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- USTC Website -->
@@ -560,7 +560,7 @@
               <i class="fas fa-globe"></i>
             </div>
             <div class="toolkit-title">USTC Website</div>
-            <a href="https://www.ustc.edu.cn/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://www.ustc.edu.cn/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- Integrated Academic Affairs System -->
@@ -569,7 +569,7 @@
               <i class="fas fa-graduation-cap"></i>
             </div>
             <div class="toolkit-title">Academic Affairs System</div>
-            <a href="https://jw.ustc.edu.cn/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://jw.ustc.edu.cn/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- USTC Course Review Community -->
@@ -578,7 +578,7 @@
               <i class="fas fa-comments"></i>
             </div>
             <div class="toolkit-title">Course Review Community</div>
-            <a href="https://icourse.club/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://icourse.club/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- USTC Software -->
@@ -587,7 +587,7 @@
               <i class="fas fa-download"></i>
             </div>
             <div class="toolkit-title">USTC Software</div>
-            <a href="https://software.ustc.edu.cn/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://software.ustc.edu.cn/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
     
           <!-- Hanhai Teaching Network -->
@@ -596,7 +596,7 @@
               <i class="fas fa-video"></i>
             </div>
             <div class="toolkit-title">Hanhai Teaching Network</div>
-            <a href="https://course.ustc.edu.cn/" class="toolkit-link" target="_blank" data-i18n="link_visit">Visit</a>
+            <a href="https://course.ustc.edu.cn/" class="toolkit-link" target="_blank" rel="noopener noreferrer" data-i18n="link_visit">Visit</a>
           </div>
         </div>
       </div>
