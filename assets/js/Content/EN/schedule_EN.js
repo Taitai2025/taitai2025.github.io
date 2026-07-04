@@ -1,4 +1,3 @@
-
 window.SCHEDULE_PAGE_I18N = window.SCHEDULE_PAGE_I18N || {};
 window.SCHEDULE_PAGE_I18N.en = {
   heading: "Current Rhythm",
@@ -7,11 +6,11 @@ window.SCHEDULE_PAGE_I18N.en = {
   btn_ustc: "USTC Timetable",
   btn_calendar: "Calendar",
   focus_title: "Current focus",
-  focus_body: "This semester I am mainly in Beijing for my undergraduate thesis, with sustained attention to numerical ODE methods, accelerated optimization algorithms, and paper reading.",
+  focus_body: "During the summer after my senior year, my main work is to turn the results of my graduation thesis and the Undergraduate Innovation and Entrepreneurship Training Program into manuscripts intended for submission, while preparing for the entrance examinations before starting at the Chinese Academy of Sciences. I will be in Shanghai on July 9 for a small closed-door sharing session with Prof. Ngô Bảo Châu and Prof. Zhiwei Yun, and in Kunming from July 17 to 19 for the Third Western Forum on Operations Research and Development, a workshop on the frontiers of operations optimization and digital-intelligent science.",
   base_title: "Usual base",
-  base_body: "I am mostly based in Beijing, often around UCAS Yuquan Road and Zhongguancun, and I occasionally return to Hefei for academic matters and orchestra work.",
+  base_body: "I am mostly based in Beijing and at home. On ordinary weekdays, I usually spend the morning at the UCAS Yuquan Road campus and the afternoon at home.",
   reach_title: "Best way to reach me",
-  reach_body: "Email is the best choice for academic or formal communication; friends can reach me through WeChat. Sundays are often reserved for rehearsal or orchestra-related work.",
+  reach_body: "Email is the best choice for academic or formal communication; friends can reach me through WeChat. Sundays are usually reserved for UCAS Chinese Orchestra rehearsal.",
   weekly_title: "A rough weekly rhythm",
   timeblock: "Time block",
   monfri: "Mon–Fri",
@@ -20,13 +19,13 @@ window.SCHEDULE_PAGE_I18N.en = {
   morning: "Morning",
   afternoon: "Afternoon",
   evening: "Evening",
-  monfri_morning: "Paper reading, derivations, and thesis-related core tasks",
+  monfri_morning: "UCAS Yuquan Road campus: manuscript writing, algorithm notes, and exam preparation",
   sat_morning: "Supplementary reading, errands, and lighter recovery-oriented tasks",
-  sun_morning: "Rest, tidying up, and light exercise",
-  monfri_afternoon: "Writing, note organization, and communication with supervisors or classmates",
-  sat_afternoon: "Music-related tasks, travel back, or temporary arrangements",
-  sun_afternoon: "UCAS orchestra rehearsal or orchestra-related work",
-  monfri_evening: "Running, badminton, and a brief review of the day",
+  sun_morning: "Rest, tidying up, light exercise, or concert-related arrangements",
+  monfri_afternoon: "Working from home: manuscript revision, note organization, and submission preparation",
+  sat_afternoon: "Films, Chinese instrumental concerts, badminton, running and working out, or temporary arrangements",
+  sun_afternoon: "UCAS Chinese Orchestra rehearsal",
+  monfri_evening: "Films, Chinese instrumental concerts, badminton, running and working out, or a brief review of the day",
   sat_evening: "Meeting friends, watching films, or relaxing",
   sun_evening: "Closing the week and planning the next one",
   notes_title: "A small local note to myself",
@@ -63,15 +62,15 @@ window.SCHEDULE_PAGE_I18N.en = {
         <div class="schedule-grid">
           <div class="schedule-card">
             <div class="schedule-title" data-sched-i18n="focus_title">Current focus</div>
-            <p data-sched-i18n="focus_body">This semester I am mainly in Beijing for my undergraduate thesis, with sustained attention to numerical ODE methods, accelerated optimization algorithms, and paper reading.</p>
+            <p data-sched-i18n="focus_body">During the summer after my senior year, my main work is to turn the results of my graduation thesis and the Undergraduate Innovation and Entrepreneurship Training Program into manuscripts intended for submission, while preparing for the entrance examinations before starting at the Chinese Academy of Sciences. I will be in Shanghai on July 9 for a small closed-door sharing session with Prof. Ngô Bảo Châu and Prof. Zhiwei Yun, and in Kunming from July 17 to 19 for the Third Western Forum on Operations Research and Development, a workshop on the frontiers of operations optimization and digital-intelligent science.</p>
           </div>
           <div class="schedule-card">
             <div class="schedule-title" data-sched-i18n="base_title">Usual base</div>
-            <p data-sched-i18n="base_body">I am mostly based in Beijing, often around UCAS Yuquan Road and Zhongguancun, and I occasionally return to Hefei for academic matters and orchestra work.</p>
+            <p data-sched-i18n="base_body">I am mostly based in Beijing and at home. On ordinary weekdays, I usually spend the morning at the UCAS Yuquan Road campus and the afternoon at home.</p>
           </div>
           <div class="schedule-card">
             <div class="schedule-title" data-sched-i18n="reach_title">Best way to reach me</div>
-            <p data-sched-i18n="reach_body">Email is the best choice for academic or formal communication; friends can reach me through WeChat. Sundays are often reserved for rehearsal or orchestra-related work.</p>
+            <p data-sched-i18n="reach_body">Email is the best choice for academic or formal communication; friends can reach me through WeChat. Sundays are usually reserved for UCAS Chinese Orchestra rehearsal.</p>
           </div>
         </div>
 
@@ -90,19 +89,19 @@ window.SCHEDULE_PAGE_I18N.en = {
               <tbody>
                 <tr>
                   <td data-sched-i18n="morning">Morning</td>
-                  <td data-sched-i18n="monfri_morning">Paper reading, derivations, and thesis-related core tasks</td>
+                  <td data-sched-i18n="monfri_morning">UCAS Yuquan Road campus: manuscript writing, algorithm notes, and exam preparation</td>
                   <td data-sched-i18n="sat_morning">Supplementary reading, errands, and lighter recovery-oriented tasks</td>
-                  <td data-sched-i18n="sun_morning">Rest, tidying up, and light exercise</td>
+                  <td data-sched-i18n="sun_morning">Rest, tidying up, light exercise, or concert-related arrangements</td>
                 </tr>
                 <tr>
                   <td data-sched-i18n="afternoon">Afternoon</td>
-                  <td data-sched-i18n="monfri_afternoon">Writing, note organization, and communication with supervisors or classmates</td>
-                  <td data-sched-i18n="sat_afternoon">Music-related tasks, travel back, or temporary arrangements</td>
-                  <td data-sched-i18n="sun_afternoon">UCAS orchestra rehearsal or orchestra-related work</td>
+                  <td data-sched-i18n="monfri_afternoon">Working from home: manuscript revision, note organization, and submission preparation</td>
+                  <td data-sched-i18n="sat_afternoon">Films, Chinese instrumental concerts, badminton, running and working out, or temporary arrangements</td>
+                  <td data-sched-i18n="sun_afternoon">UCAS Chinese Orchestra rehearsal</td>
                 </tr>
                 <tr>
                   <td data-sched-i18n="evening">Evening</td>
-                  <td data-sched-i18n="monfri_evening">Running, badminton, and a brief review of the day</td>
+                  <td data-sched-i18n="monfri_evening">Films, Chinese instrumental concerts, badminton, running and working out, or a brief review of the day</td>
                   <td data-sched-i18n="sat_evening">Meeting friends, watching films, or relaxing</td>
                   <td data-sched-i18n="sun_evening">Closing the week and planning the next one</td>
                 </tr>
