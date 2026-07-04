@@ -71,14 +71,12 @@
   </div>
   <p style="margin-left: 20px; font-size: 0.95em; color: #555;">Primary school, where my musical training first began.</p>
 </div>
-<div class="section"><h2>Undergraduate Academic Record (Fall 2022 – Fall 2025)</h2>
+<div class="section"><h2>Undergraduate Academic Record (Fall 2022 – Spring 2026)</h2>
 <ul>
-<li><strong>GPA:</strong> 3.98 / 4.3</li>
-<li><strong>Weighted average:</strong> 91.89</li>
-<li><strong>Arithmetic average:</strong> 92.46</li>
-<li><strong>Comprehensive evaluation score:</strong> 87.88 (92.88 at the time of graduate recommendation)</li>
-<li><strong>GPA rank in the School of Mathematical Sciences, Class of 2022:</strong> 6 / 176 (top 5%)</li>
-<li><strong>GPA rank within the Probability &amp; Statistics track:</strong> 4 / 69</li>
+<li><strong>All-curriculum GPA:</strong> 4.00 / 4.30</li>
+<li><strong>All-curriculum weighted average score:</strong> 92.19</li>
+<li><strong>GPA rank in the School of Mathematical Sciences, Class of 2022:</strong> 5 / 176 (top 3%)</li>
+<li><strong>GPA rank within the Probability &amp; Statistics track:</strong> 3 / 69</li>
 <li><strong>Comprehensive evaluation rank in the School of Mathematical Sciences, Class of 2022:</strong> 2 / 176</li>
 </ul>
 <div style="margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;">
@@ -101,42 +99,53 @@
 </tr>
 </thead>
 <tbody>
-<tr><td rowspan="3"><strong>Analysis</strong></td><td>Functional Analysis</td><td><strong>100</strong></td><td>3.0</td></tr>
+<tr><td rowspan="4"><strong>Analysis</strong></td><td>Functional Analysis</td><td><strong>100</strong></td><td>3.0</td></tr>
 <tr><td>Introduction to Differential Equations</td><td><strong>95</strong></td><td>4.0</td></tr>
-<tr><td>Mathematical Analysis (A1)</td><td><strong>93</strong></td><td>6.0</td></tr>
-<tr><td rowspan="3"><strong>Algebra</strong></td><td>Linear Algebra (B1)</td><td><strong>98</strong></td><td>4.0</td></tr>
-<tr><td>Linear Algebra (A2)</td><td><strong>94</strong></td><td>4.0</td></tr>
+<tr><td>Mathematical Analysis A1</td><td><strong>93</strong></td><td>6.0</td></tr>
+<tr><td>Mathematical Analysis A2</td><td><strong>88</strong></td><td>6.0</td></tr>
+
+<tr><td rowspan="4"><strong>Algebra</strong></td><td>Linear Algebra B1</td><td><strong>98</strong></td><td>4.0</td></tr>
+<tr><td>Linear Algebra A2</td><td><strong>94</strong></td><td>4.0</td></tr>
 <tr><td>Modern Algebra</td><td><strong>93</strong></td><td>3.0</td></tr>
-<tr><td rowspan="4"><strong>Probability &amp; Statistics</strong></td><td>Probability Theory</td><td><strong>100</strong></td><td>3.0</td></tr>
+<tr><td>Foundation of Algebra</td><td><strong>88</strong></td><td>3.0</td></tr>
+
+<tr><td rowspan="6"><strong>Probability &amp; Statistics</strong></td><td>Probability Theory</td><td><strong>100</strong></td><td>3.0</td></tr>
 <tr><td>Econometrics</td><td><strong>98</strong></td><td>3.5</td></tr>
 <tr><td>Stochastic Processes A</td><td><strong>96</strong></td><td>3.0</td></tr>
-<tr><td>Advanced Probability Theory (Graduate Course)</td><td><strong>89</strong></td><td>4.0</td></tr>
-<tr><td rowspan="4"><strong>Computational &amp; Applied Mathematics</strong></td><td>Discrete Mathematics</td><td><strong>99</strong></td><td>4.0</td></tr>
+<tr><td>Stochastic Processes B</td><td><strong>96</strong></td><td>2.0</td></tr>
+<tr><td>Multivariate Analysis A</td><td><strong>88</strong></td><td>3.5</td></tr>
+<tr><td>Advanced Probability Theory</td><td><strong>89</strong></td><td>4.0</td></tr>
+
+<tr><td rowspan="5"><strong>Computational &amp; Applied Mathematics</strong></td><td>Discrete Mathematics</td><td><strong>99</strong></td><td>4.0</td></tr>
 <tr><td>Operations Research</td><td><strong>96</strong></td><td>3.5</td></tr>
-<tr><td>Numerical Methods for PDEs (Graduate Course)</td><td><strong>91</strong></td><td>4.0</td></tr>
-<tr><td>Finite Element Methods (Graduate Course)</td><td><strong>90</strong></td><td>4.0</td></tr>
-<tr><td rowspan="4"><strong>Foundational Physics</strong></td><td>Optics B</td><td><strong>99</strong></td><td>2.0</td></tr>
+<tr><td>Optimization algorithm</td><td><strong>92</strong></td><td>4.0</td></tr>
+<tr><td>Numerical solution for Partial Differential Equations</td><td><strong>91</strong></td><td>4.0</td></tr>
+<tr><td>Finite Element Methods</td><td><strong>90</strong></td><td>4.0</td></tr>
+
+<tr><td rowspan="2"><strong>Research Projects</strong></td><td>Graduation Thesis</td><td><strong>A+</strong></td><td>8.0</td></tr>
+<tr><td>Undergraduate Innovation and Entrepreneurship Training Program</td><td><strong>A+</strong></td><td>4.0</td></tr>
+
+<tr><td rowspan="5"><strong>Foundational Physics</strong></td><td>Optics B</td><td><strong>99</strong></td><td>2.0</td></tr>
 <tr><td>Atomic Physics B</td><td><strong>98</strong></td><td>2.0</td></tr>
 <tr><td>Electromagnetism B</td><td><strong>97</strong></td><td>4.0</td></tr>
-<tr><td>Thermodynamics B</td><td><strong>97</strong></td><td>1.5</td></tr>
-<tr><td rowspan="2"><strong>Ideological and Political Theory</strong></td><td>Outline of Modern Chinese History</td><td><strong>95</strong></td><td>2.5</td></tr>
-<tr><td>Ideological &amp; Moral Cultivation and Rule of Law</td><td><strong>95</strong></td><td>3.0</td></tr>
-<tr><td rowspan="9"><strong>Research, General Education &amp; English</strong></td><td>Seminar on Science and Society</td><td><strong>A+</strong></td><td>1.0</td></tr>
-<tr><td>Psychology for University Students</td><td><strong>A+</strong></td><td>2.0</td></tr>
+<tr><td>Thermotics B</td><td><strong>97</strong></td><td>1.5</td></tr>
+<tr><td>College Physics – Base Experimentation B</td><td><strong>94</strong></td><td>1.0</td></tr>
+
+<tr><td rowspan="8"><strong>General Education, Music &amp; English</strong></td><td>An Outline of Modern and Contemporary Chinese History</td><td><strong>95</strong></td><td>2.5</td></tr>
+<tr><td>Moral and Legal Education</td><td><strong>95</strong></td><td>3.0</td></tr>
+<tr><td>Freshman Seminar</td><td><strong>A+</strong></td><td>1.0</td></tr>
+<tr><td>*Collegiate Psychology</td><td><strong>A+</strong></td><td>2.0</td></tr>
 <tr><td>General History of Western Music</td><td><strong>A+</strong></td><td>2.0</td></tr>
-<tr><td>Letters from Music: Entering the Symphonic World</td><td><strong>A+</strong></td><td>2.0</td></tr>
-<tr><td>Swimming</td><td><strong>A+</strong></td><td>1.0</td></tr>
-<tr><td>Badminton I</td><td><strong>A+</strong></td><td>1.0</td></tr>
-<tr><td>Badminton II</td><td><strong>A+</strong></td><td>1.0</td></tr>
-<tr><td>Advanced English Communication III</td><td><strong>96</strong></td><td>1.0</td></tr>
-<tr><td>Advanced English Reading &amp; Writing I</td><td><strong>96</strong></td><td>1.0</td></tr>
+<tr><td>Music Letters - Entering the Symphony World</td><td><strong>A+</strong></td><td>2.0</td></tr>
+<tr><td>English Communication Intermediate III</td><td><strong>96</strong></td><td>1.0</td></tr>
+<tr><td>English Reading &amp; Writing Upper Intermediate I</td><td><strong>96</strong></td><td>1.0</td></tr>
 </tbody>
 </table>
 </div>
 </div><div class="section"><h2>Awards and Honours Since Entering University (Selected)</h2>
 <p><strong>I received many awards in primary and secondary school as well, but I prefer to foreground my university-era honours here, because they better reflect the growth that has happened in recent years.</strong></p>
 <h3 style="margin-top: 20px; color: #444;">🎓 Academic and comprehensive honours</h3>
-<ul><li>USTC Outstanding Student Scholarship, Gold Prize (2024.01, top 3%, CNY 4,000)</li><li>Third Prize, USTC Electromagnetism Mini-Paper Competition, Fall 2023 (2024.01, with Lin Qihao)</li><li>Nomination Award, USTC 2024 “Most Beautiful Six-Haves Student” (2024.12)</li><li>Outstanding Trainee, 25th Student Cadre Training Program and 31st Youth League School Training Program, USTC (2024.12)</li><li>CNPC Scholarship 2024 (2025.03, rank 2 / 174, CNY 8,000)</li><li>Outstanding Communist Youth League Cadre, USTC, 2024–2025 (2025.05)</li><li>Outstanding Communist Youth League Member, USTC, 2024–2025 (2025.05)</li><li>Outstanding Trainee, Youth Marxism Training Program / “Six-Haves Student” Program, USTC, 2024–2025 (2025.05)</li><li>Outstanding Student Club Cadre, USTC, 2024–2025 (2025.06)</li><li>Passed the eligibility review for the Class A Guo Moruo Scholarship and entered the school-level interview at the college (2025.10; GPA rank 8 / 176, comprehensive evaluation rank 2 / 176; both within the top 5% of the school; 5 students in the school met the eligibility threshold)</li><li>Second Prize, Mathematics A Category, Anhui Division, 17th Chinese Mathematics Competitions for College Students (2025.12, provincial rank No. 60)</li><li>Nomination Award, USTC 2025 “Most Beautiful Six-Haves Student” (2025.12)</li><li>BYD Scholarship 2025 (2026.03, rank 2 / 174, CNY 10,000)</li><li>Huang Yu Memorial Scholarship 2025 (2026.03, top school-level scholarship within the college; awarded to 10 students, CNY 10,000)</li><li>USTC Outstanding Graduate, Class of 2026 (2026.03, top 15%; 10 places in my class and 26 places among 168 graduates in the school)</li><li>Outstanding Graduate of Anhui Province, Class of 2026 (2026.03, top 3%; 6 places among 168 graduates in the school)</li></ul>
+<ul><li>USTC Outstanding Student Scholarship, Gold Prize (2024.01, top 3%, CNY 4,000)</li><li>Third Prize, USTC Electromagnetism Mini-Paper Competition, Fall 2023 (2024.01, with Lin Qihao)</li><li>Nomination Award, USTC 2024 “Most Beautiful Six-Haves Student” (2024.12)</li><li>Outstanding Trainee, 25th Student Cadre Training Program and 31st Youth League School Training Program, USTC (2024.12)</li><li>CNPC Scholarship 2024 (2025.03, rank 2 / 174, CNY 8,000)</li><li>Outstanding Communist Youth League Cadre, USTC, 2024–2025 (2025.05)</li><li>Outstanding Communist Youth League Member, USTC, 2024–2025 (2025.05)</li><li>Outstanding Trainee, Youth Marxism Training Program / “Six-Haves Student” Program, USTC, 2024–2025 (2025.05)</li><li>Outstanding Student Club Cadre, USTC, 2024–2025 (2025.06)</li><li>Passed the eligibility review for the Class A Guo Moruo Scholarship and entered the college-level interview (2025.10; latest GPA rank 5 / 176, comprehensive evaluation rank 2 / 176; GPA within the top 3% of the school; 5 students in the school met the eligibility threshold)</li><li>Second Prize, Mathematics A Category, Anhui Division, 17th Chinese Mathematics Competitions for College Students (2025.12, provincial rank No. 60)</li><li>Nomination Award, USTC 2025 “Most Beautiful Six-Haves Student” (2025.12)</li><li>BYD Scholarship 2025 (2026.03, rank 2 / 174, CNY 10,000)</li><li>Huang Yu Memorial Scholarship 2025 (2026.03, top school-level scholarship within the college; awarded to 10 students, CNY 10,000)</li><li>USTC Outstanding Graduate, Class of 2026 (2026.03, top 15%; 10 places in my class and 26 places among 168 graduates in the school)</li><li>Outstanding Graduate of Anhui Province, Class of 2026 (2026.03, top 3%; 6 places among 168 graduates in the school)</li></ul>
 <h3 style="margin-top: 20px; color: #444;">🎵 Artistic performance and cultural exchange</h3>
 <ul><li>Gold Award, Sheng, Youth Group, 1st Youth Arts Showcase of Anhui Performing Arts Group (2024.07, instructor: Ma Ouyu)</li><li>Gold Award, Sheng, Youth Group, Beijing Division, 13th Guoyin Cup Chinese National Instrument Competition (2024.12)</li><li>Gold Award, Youth Group, Sheng Item, China Preliminary of the 11th Macau International Art Open Competition (2024.12, instructor: Huang Yushun)</li><li>The 2024–2025 GIYAF International Youth Art Festival China Regional Qualifier, First Prize (2024.12, mentor: Liang Pengyu)</li><li>The 11th Macau International Art Open Competition Final Round for Chinese Folk Music, Sheng Item, Youth Class, Gold Award (2025.01)</li><li>The 2025 GIYAF International Youth Arts Festival Singapore Final, Gold Award (2025.01)</li><li>First Prize, Sheng, University Group, 4th Yuefu Liangjiang Chinese Music Festival (2025.04, instructor: Ni Hao)</li><li>First Prize, Youth Group, Sheng Item, China Division, 15th Asian International Arts Competition (2025.06, instructor: Ren Haoyuan)</li><li>Participated in the filming of the Hefei branch venue for the 2026 CCTV Spring Festival Gala and appeared on the national Spring Festival Gala broadcast (2026.01)</li></ul>
 <h3 style="margin-top: 20px; color: #444;">🏸 Sports and activity participation</h3>
@@ -210,15 +219,28 @@
 <p><strong>My research path started relatively early and can be traced back to the “Talents Program for Secondary School Students.” My current interests are mainly centered on computational mathematics and optimization algorithms.</strong></p>
 <h3 style="margin-top: 20px; color: #444;">🔬 Core research projects (computational mathematics and optimization algorithms)</h3>
 <div class="subheading">
-<span class="subheading-title"><strong>Research on Accelerating First-Order Optimization Algorithms Based on Numerical Solutions of Ordinary Differential Equations</strong></span>
-<span style="font-size: 0.9em; color: #666;">2025.09 – Present</span>
+<span class="subheading-title"><strong>A Unified Convergence Theory and Applications of Fixed-Memory Spectral Gradient Methods from a Block-Mapping Perspective</strong></span>
+<span style="font-size: 0.9em; color: #666;">2025.09 – 2026.06</span>
 </div>
-<ul><li><strong>Project type:</strong> Undergraduate thesis for the USTC Class of 2022 (theoretical topic)</li><li><strong>Role:</strong> Sole researcher</li><li><strong>Supervisors:</strong> Academician Yuan Yaxiang (external supervisor) / Dr. Chen Shixiang (internal supervisor)</li><li><strong>Progress:</strong> The topic is theoretically challenging. I have completed the literature review and the preliminary framework, and I am now moving forward with algorithm derivation. The mid-term review has been passed smoothly.</li></ul>
+<ul>
+<li><strong>Project type:</strong> USTC undergraduate graduation thesis, Class of 2022</li>
+<li><strong>Role:</strong> Sole researcher</li>
+<li><strong>Supervisor:</strong> Dr. Chen Shixiang</li>
+<li><strong>Result:</strong> Completed with grade <strong>A+</strong> and 8 credits.</li>
+<li><strong>Current follow-up:</strong> Revising the thesis results into a manuscript intended for submission.</li>
+</ul>
+
 <div class="subheading">
-<span class="subheading-title"><strong>Convergence Analysis of Optimization Algorithms via Strong Lyapunov Functions</strong></span>
-<span style="font-size: 0.9em; color: #666;">2025.05 – Present</span>
+<span class="subheading-title"><strong>Homogeneous Block Dynamical Systems for Weighted Ritz-Sweep Spectral Gradient Methods: Theory and Convergence Analysis</strong></span>
+<span style="font-size: 0.9em; color: #666;">2025.05 – 2026.06</span>
 </div>
-<ul><li><strong>Project type:</strong> 2025 Spring Undergraduate Innovation and Entrepreneurship Project (<strong>National-level innovation training project</strong>)</li><li><strong>Role:</strong> Principal investigator</li><li><strong>Supervisors:</strong> Academician Yuan Yaxiang (external supervisor) / Prof. Xu Xiaowei (internal supervisor)</li><li><strong>Progress:</strong> Successfully approved as a national-level project. The project is progressing well; an initial convergence analysis under the strong Lyapunov framework has been completed, and the work is being deepened further.</li></ul><h3 style="margin-top: 20px; color: #444;">⚙️ Competitions and interdisciplinary explorations</h3>
+<ul>
+<li><strong>Project type:</strong> Undergraduate Innovation and Entrepreneurship Training Program</li>
+<li><strong>Role:</strong> Principal investigator</li>
+<li><strong>Mentor:</strong> Prof. Xu Xiaowei</li>
+<li><strong>Result:</strong> Completed with grade <strong>A+</strong> and 4 credits.</li>
+<li><strong>Current follow-up:</strong> Organizing the project results into a manuscript intended for submission.</li>
+</ul><h3 style="margin-top: 20px; color: #444;">⚙️ Competitions and interdisciplinary explorations</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>Electric Field Lines and Equipotential Surface Visualizer: A Highly Interactive Physics Teaching Tool Based on Web Technologies</strong></span>
 <span style="font-size: 0.9em; color: #666;">2024.12 – 2025.10</span>
@@ -343,33 +365,53 @@
 <li>2025.10: USTC 2025 Freshers’ Welcome Gala “Hanhai New Cloud” (official premiere)</li>
 <li>2025.12: USTC Solo Concert (premiere of the second-version score)</li>
 </ul></li></ul><h3 style="margin-top: 20px; color: #444;">🎹 Original works</h3><ul><li><em>Still in the stage of gathering ideas. Stay tuned.</em></li></ul></div><div class="section"><h2>Teaching Assistant Experience</h2>
-<p><strong>My path toward teaching-assistant work has been unexpectedly dramatic, and in some sense it also reflects how my recognition within the school gradually increased. From sending applications in my junior year and hearing nothing back, to being strongly recommended by both school and college-level offices in my senior year, the contrast was striking. It also taught me how to weigh priorities and how to decline responsibly when I know I cannot fully commit.</strong></p>
-<h3 style="margin-top: 20px; color: #444;">👨‍🏫 TA appointments and invitations (reverse chronological order)</h3>
-<div class="subheading">
-<span class="subheading-title"><strong>[Regretfully declined] Invitations to serve as TA for Mathematical Analysis (B2) and Mathematical Analysis (A2)</strong></span>
-<span style="font-size: 0.9em; color: #666;">Spring 2026</span>
-</div>
-<ul><li><strong>Background:</strong> I was originally appointed as the TA for Prof. Xu Kuan’s Linear Algebra (B1), but the course was canceled because of insufficient enrollment. After that, both the Academic Affairs Office and the School of Mathematical Sciences recommended me for TA positions in Cheng Yi’s Mathematical Analysis (B2) and Li Simin’s Mathematical Analysis (A2).</li><li><strong>My decision:</strong> These are both extremely demanding foundational courses, and I felt deeply honored to receive recommendations from both school and college levels. However, during the second semester of my senior year I was based in Beijing at AMSS-CAS and working full-time on my undergraduate thesis. Since I could not responsibly guarantee in-person office hours and grading, I ultimately declined both invitations.</li></ul>
+<p><strong>This section focuses on formal TA appointments and directly related teaching-service notes. I have removed detailed narratives about unsuccessful applications, so that the section stays concise and responsibility-oriented.</strong></p>
+
+<h3 style="margin-top: 20px; color: #444;">👨‍🏫 Official TA appointments</h3>
+
 <div class="subheading">
 <span class="subheading-title"><strong>[Official appointment] TA for Prof. Le Jue’s Linear Algebra (B2)</strong></span>
 <span style="font-size: 0.9em; color: #666;">Fall 2025</span>
 </div>
-<ul><li><strong>Work content:</strong> <span style="color: #666;">[Reserved]</span></li></ul>
-<div class="subheading">
-<span class="subheading-title"><strong>[Several unsuccessful attempts] Applications for Probability Theory and Mathematical Analysis (B2) (not selected)</strong></span>
-<span style="font-size: 0.9em; color: #666;">Spring 2025</span>
-</div>
-<ul><li><strong>Application experience:</strong> I applied to both core courses with genuine enthusiasm, but was not selected. This disappointment nevertheless pushed me to consolidate my foundations more seriously, which in turn laid part of the groundwork for the stronger recognition I received later.</li></ul>
+<ul>
+<li><strong>Work content:</strong> Supported course instruction as arranged by the instructor, including exercise feedback, Q&amp;A, and course-related communication.</li>
+</ul>
+
 <div class="subheading">
 <span class="subheading-title"><strong>[Official appointment] TA for Prof. Le Jue’s Linear Algebra (B1)</strong></span>
 <span style="font-size: 0.9em; color: #666;">Fall 2024</span>
 </div>
-<ul><li><strong>Work content:</strong> <span style="color: #666;">[Reserved]</span></li></ul></div><div class="section"><h2>Publications</h2>
+<ul>
+<li><strong>Work content:</strong> Supported course instruction as arranged by the instructor, including exercise feedback, Q&amp;A, and course-related communication.</li>
+</ul>
+
+<h3 style="margin-top: 20px; color: #444;">📝 Related teaching-service notes</h3>
+
 <div class="subheading">
-<span class="subheading-title">None yet</span>
-<span></span>
+<span class="subheading-title"><strong>[Course canceled] TA appointment for Prof. Xu Kuan’s Linear Algebra (B1)</strong></span>
+<span style="font-size: 0.9em; color: #666;">Spring 2026</span>
 </div>
-<ul><li style="color: #666;"><em>No formal academic paper has been officially published during my undergraduate years so far. Relevant work is reflected instead in the “Research Experience” section and in my longer-term plans.</em></li></ul>
+<ul>
+<li>The TA appointment had been confirmed, but the course was later canceled because of insufficient enrollment, so no actual teaching-assistant work was carried out.</li>
+</ul>
+
+<div class="subheading">
+<span class="subheading-title"><strong>[Invited but declined] Mathematical Analysis (B2) and Mathematical Analysis (A2)</strong></span>
+<span style="font-size: 0.9em; color: #666;">Spring 2026</span>
+</div>
+<ul>
+<li>I was invited to serve as a TA for these foundational courses, but I was based in Beijing at the time for my undergraduate thesis and could not reliably undertake in-person Q&amp;A and grading duties. I therefore declined the invitations responsibly.</li>
+</ul>
+</div><div class="section"><h2>Publications</h2>
+<div class="subheading">
+<span class="subheading-title">Manuscripts in preparation</span>
+<span style="font-size: 0.9em; color: #666;">Summer 2026</span>
+</div>
+<ul>
+<li>Revising the results of my graduation thesis into a manuscript intended for submission.</li>
+<li>Organizing the results of the Undergraduate Innovation and Entrepreneurship Training Program into a manuscript intended for submission.</li>
+<li style="color: #666;"><em>No formal academic paper has been officially published yet.</em></li>
+</ul>
 </div><div class="section"><h2>Additional Information</h2>
 <ul>
 <li><strong>English proficiency:</strong> CET-4 610; CET-6 644.</li>
@@ -381,8 +423,8 @@
     In the first half of 2025, I joined the recommendation-based admission process of the Academy of Mathematics and Systems Science, Chinese Academy of Sciences. In September of that year, I secured graduate-recommendation qualification with a <strong>comprehensive score of 92.88 (rank 2 / 174 in the school)</strong> and ranked <strong>No. 1 among the 73 students in my school who obtained recommendation qualification</strong>. In the subsequent interview, I achieved a <strong>total score of 96.5, ranking second in Computational Mathematics</strong>, and was formally pre-admitted as a <strong>direct-entry Ph.D. student</strong> at the Institute of Computational Mathematics and Scientific/Engineering Computing, where the direct-Ph.D. quota was only four students. I have already accepted the formal admission notice and expect to enroll in September 2026.
   </li>
 <li style="margin-top: 10px;">
-<strong>My current “retired senior-year” life:</strong><br/>
-    I am now in my senior year and spend most of my time in Beijing. You can usually find me in the <strong>library of the Yuquan Road campus of the University of Chinese Academy of Sciences</strong>, or in my dormitory (mainly for the occasional nap) and at home. I like to keep exercising, run almost every day, and sometimes play badminton. Every Sunday I go to the Zhongguancun campus for rehearsals with the UCAS Chinese Orchestra, and I occasionally return to Hefei for academic matters and orchestra work at USTC. <strong>You are always welcome to reach out and hang out.</strong>
+<strong>Summer after my senior year:</strong><br/>
+    After finishing my undergraduate years, I am mostly in Beijing and at home. My main academic task this summer is to revise the results of my graduation thesis and the USTC Undergraduate Innovation and Entrepreneurship Training Program into manuscripts intended for submission. On ordinary weekdays, I usually spend the morning at the Yuquan Road campus of the University of Chinese Academy of Sciences and the afternoon at home. Outside writing and exam preparation, I watch films, go to Chinese instrumental concerts whenever there is a suitable performance at the National Centre for the Performing Arts, and play badminton. Every Sunday I rehearse with the UCAS Chinese Orchestra, while also preparing for the entrance examinations before starting at the Chinese Academy of Sciences. In July, I will attend a small closed-door sharing session in Shanghai on July 9 with Prof. Ngô Bảo Châu and Prof. Zhiwei Yun, and then travel to Kunming from July 17 to 19 for the Third Western Forum on Operations Research and Development — Frontiers of Operations Optimization and Digital-Intelligent Science.
 </li>
 </ul>
 </div><div class="section"><h2>📜 “Adding Finishing Touches” — Personal Homepage Renewal Plan for 2026</h2>
@@ -398,20 +440,20 @@
 <span style="color: #888;">In progress...</span>
 </div>
 <p style="font-size: 0.9em; margin-left: 20px;">Deep polishing and completion of the orchestra record, service record, and event-participation sections. Turning “position lists” into more substantial descriptions of actual work.<br/>
-<em style="color: #999;">Expected before 2026.04.10</em></p>
+<em style="color: #999;">Expected before 2026.07.31</em></p>
 <div class="subheading">
 <span class="subheading-title"><strong>Phase III: Multi-dimensional narrative and material completion</strong></span>
 </div>
 <p style="font-size: 0.9em; margin-left: 20px;">
 <strong>Academic side:</strong> upload slides from scholarship and thesis presentations, research papers, and certificates of honours;<br/>
 <strong>Artistic side:</strong> embed performance photos, video links, and score previews for arranged works.<br/>
-<em style="color: #999;">Expected before 2026.05.20</em>
+<em style="color: #999;">Expected before 2026.08.20</em>
 </p>
 <div class="subheading">
 <span class="subheading-title"><strong>Phase IV: Full visual renewal</strong></span>
 </div>
 <p style="font-size: 0.9em; margin-left: 20px;">Introduce a new visual template and migrate the existing content into a cleaner, more modern, and more interactive framework.<br/>
-<em style="color: #999;">Final delivery target: 2026.07.01 (before graduation departure)</em></p>
+<em style="color: #999;">Final delivery target: 2026.09.01 (before Ph.D. enrollment)</em></p>
 </div>
 <hr style="border: 0; border-top: 1px solid #ccc; margin: 20px 0;"/>
 <div style="font-size: 0.9rem; text-align: center;">
