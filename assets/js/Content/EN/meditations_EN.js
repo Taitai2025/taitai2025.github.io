@@ -1,5 +1,6 @@
 (function () {
   const mount = document.getElementById("mount-meditations") || document.body;
+  if (mount.id === "mount-meditations") mount.replaceChildren();
   mount.insertAdjacentHTML("beforeend", `
   <div id="meditations">
     <button id="toggle-btn-meditations">

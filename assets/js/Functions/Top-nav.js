@@ -1,7 +1,9 @@
 (function () {
   'use strict';
 
-  function getTopLevelHref(pageKey) { return '#' + pageKey; }
+  function getTopLevelHref(pageKey) {
+    return ({resume:'/about/',research:'/research/',meditations:'/notes/'})[pageKey] || '/#' + pageKey;
+  }
 
   // ------------------------------
   // Render Top Nav HTML
@@ -49,7 +51,7 @@
             data-cursor="precise_select"
             data-cursor-fallback="pointer"
           >About</a>
-          <a class="top-nav-link" href="#research" data-page="research" data-cursor="precise_select" data-cursor-fallback="pointer">Research</a>
+          <a class="top-nav-link" href="/research/" data-page="research" data-cursor="precise_select" data-cursor-fallback="pointer">Research</a>
 
           <a
             class="top-nav-link"

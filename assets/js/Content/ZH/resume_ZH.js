@@ -23,7 +23,7 @@ window.RESUME_ZH_INNER_HTML = `
     <p class="resume-hero-intro">中国科学院大学计算数学专业直博研究生一年级，培养单位为中国科学院数学与系统科学研究院，目前在雁栖湖校区参加研究生一年级集中教学。本科毕业于中国科学技术大学数学科学学院（2026届）。</p><details class="full-intro"><summary>更多：数学、音乐与校园生活</summary><p>
       我是杨书泰（泰泰 / Thomas），现为中国科学院大学计算数学专业直博研究生一年级学生，培养单位为中国科学院数学与系统科学研究院，目前在国科大雁栖湖校区参加研究生一年级集中教学。我于2026年本科毕业于中国科学技术大学数学科学学院，研究兴趣集中于数值优化、谱梯度方法与收敛性理论，同时也长期从事笙演奏、民乐编配与校园美育实践。学业上，我在本科阶段保持了较好的成绩和综合表现，主持国家级大创项目并获评校级优秀，并完成《线性代数B1》《线性代数B2》课程助教工作；音乐与学生工作方面，我长期参与并组织校园民乐演出，曾任校学生民族乐团团长，同时策划“中华音韵”课程，尝试把民乐的推广从舞台延伸到更日常的校园学习场景。除了学习和音乐，我也持续参与学生组织与志愿服务，关心同伴支持与校园公共生活。这个主页记录的，正是我在数学、音乐、组织与生活之间不断摸索、慢慢成形的轨迹。
     </p></details>
-    <p class="research-intro">近期，我在研究生导师袁亚湘老师的指导下，研究 Barzilai–Borwein 方法的最紧渐近速率、Lyapunov 函数及 R-线性收敛，以及加权有限记忆最速下降法（LMSD）的收敛理论。我尤其关心谱结构、齐次动力系统与优化算法之间的联系。欢迎就数值优化、计算数学和相关问题与我交流。</p><div class="hero-actions"><a href="https://orcid.org/0009-0003-5581-2970" target="_blank" rel="me noopener noreferrer">ORCID ↗</a><a href="https://github.com/Taitai2025" target="_blank" rel="me noopener noreferrer">GitHub ↗</a><a href="http://www.amss.ac.cn/" target="_blank" rel="noopener noreferrer">AMSS ↗</a><a href="#research">科研与文章 ↗</a><a href="mailto:yangshutai26@mails.ucas.ac.cn">学术交流 ↗</a></div><p class="small">日常联系优先微信或QQ；学术交流请使用 <a href="mailto:yangshutai26@mails.ucas.ac.cn">UCAS邮箱</a>。</p><div class="resume-hero-contacts">
+    <p class="research-intro">近期，我在研究生导师袁亚湘院士的指导下，研究 Barzilai–Borwein 方法的最紧渐近速率、Lyapunov 函数及 R-线性收敛，以及加权有限记忆最速下降法（LMSD）的收敛理论。我尤其关心谱结构、齐次动力系统与优化算法之间的联系。欢迎就数值优化、计算数学和相关问题与我交流。</p><div class="hero-actions"><a href="https://orcid.org/0009-0003-5581-2970" target="_blank" rel="me noopener noreferrer">ORCID ↗</a><a href="https://github.com/Taitai2025" target="_blank" rel="me noopener noreferrer">GitHub ↗</a><a href="http://www.amss.ac.cn/" target="_blank" rel="noopener noreferrer">AMSS ↗</a><a href="#research">科研与文章 ↗</a><a href="mailto:yangshutai26@mails.ucas.ac.cn">学术交流 ↗</a></div><p class="small">日常联系优先微信或QQ；学术交流请使用 <a href="mailto:yangshutai26@mails.ucas.ac.cn">UCAS邮箱</a>。</p><div class="resume-hero-contacts">
       <span class="contact-pill contact-detail"><i class="fas fa-location-dot contact-icon" aria-hidden="true"></i><span class="contact-label">住址</span><span class="contact-value">北京丰台 100040</span></span>
       
       <span class="contact-pill contact-detail"><i class="fab fa-qq contact-icon" aria-hidden="true"></i><span class="contact-label">QQ</span><span class="contact-value">2592255858</span></span>
@@ -44,7 +44,7 @@ window.RESUME_ZH_INNER_HTML = `
         </div>
 <ul>
 <li><strong>学位/身份：</strong> <strong>直博研究生一年级</strong></li>
-<li><strong>培养单位：</strong> 中国科学院数学与系统科学研究院</li><li><strong>研究生导师：</strong> 袁亚湘老师</li><li><strong>研究所：</strong> 计算数学与科学工程计算研究所</li><li><strong>学籍学校 / 当前校区：</strong> 中国科学院大学 / 雁栖湖校区（研究生一年级集中教学）</li>
+<li><strong>培养单位：</strong> 中国科学院数学与系统科学研究院</li><li><strong>研究生导师：</strong> 袁亚湘院士</li><li><strong>研究所：</strong> 计算数学与科学工程计算研究所</li><li><strong>学籍学校 / 当前校区：</strong> 中国科学院大学 / 雁栖湖校区（研究生一年级集中教学）</li>
 <li><strong>攻读专业：</strong> 计算数学</li>
 <li><strong>研究方向：</strong> 最优化计算方法 I</li>
 </ul>
@@ -536,19 +536,31 @@ window.RESUME_ZH_INNER_HTML = `
 <h3 style="margin-top: 20px; color: #444;">🎼 民族器乐改编作品</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>大东北我的家乡（民族室内乐合奏）</strong></span>
-<span>2025.07 编配 / 2025.12 第二版</span>
+<span>2025.07 编配 / 2025 独奏音乐会新版</span>
 </div>
 <ul>
 <li><strong>作品类型：</strong> 民族室内乐作品</li>
+<li><strong>原作与改编：</strong> 刘旗词曲，杨书泰改编。新版重新组织中低音笙与打击乐，丰富中低声部支撑和合奏层次。</li>
 <li><strong>第一版编制：</strong> 唢呐×2，梆笛×2，曲笛×2，高音笙×2，二胡×2，琵琶×1，中国鼓×1</li>
-<li><strong>第二版编制：</strong> 唢呐×2，梆笛×2，曲笛×3，高/中/低音笙各×1，二胡×2，琵琶×1，民族打击乐（中国鼓、大鼓、铃鼓、沙锤）</li>
+<li><strong>新版谱本编制：</strong> 竹笛、唢呐、高音笙、中音笙、低音笙、二胡、弹拨与鼓，共八条乐器声部。</li>
 <li><strong>演出历程：</strong>
 <ul style="margin-top: 5px; list-style-type: circle;">
 <li>2025.09：中国科学技术大学社团游园会（非正式首演）</li>
 <li>2025.10：中国科学技术大学2025年瀚海“新”云迎新晚会（正式首演）</li>
-<li>2025.12：中国科学技术大学独奏音乐会（第二版谱面首演）</li>
+<li>2025.12：中国科学技术大学 NMOU 校学生民族乐团独奏音乐会，新版上演。</li>
 </ul>
 </li>
+</ul>
+<h3 style="margin-top: 20px; color: #444;">🎼 中西乐混合室内乐改编</h3>
+<div class="subheading">
+<span class="subheading-title"><strong>《La La Land》电影音乐选段</strong></span>
+<span>2026.11 编配</span>
+</div>
+<ul>
+<li><strong>改编构思：</strong> 以 Mark Brymer 的合唱选段编配为基础，改写为中西乐混合室内乐合奏，探索民族音色与电影配乐、爵士律动的融合。</li>
+<li><strong>主题串联：</strong> Mia &amp; Sebastian’s Theme、Another Day of Sun、Audition、City of Stars、Someone in the Crowd。</li>
+<li><strong>作品编制：</strong> 结合民族吹管、弹拨、二胡与西洋管弦、钢琴和架子鼓，共 17 个声部，全曲约 7 分钟。</li>
+<li><strong>当前进展：</strong> 已完成总谱与分谱整理及合成试听。</li>
 </ul>
 <h3 style="margin-top: 20px; color: #444;">🎹 原创音乐作品</h3>
 <ul>

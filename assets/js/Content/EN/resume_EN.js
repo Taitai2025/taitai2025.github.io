@@ -1,5 +1,6 @@
 (function () {
   const mount = document.getElementById("mount-resume") || document.body;
+  if (mount.id === "mount-resume") mount.replaceChildren();
   mount.insertAdjacentHTML("beforeend", `
   <div id="resume">
     <button id="toggle-btn">
@@ -412,14 +413,23 @@
 <h3 style="margin-top: 20px; color: #444;">🎼 Arrangements for Chinese instrumental ensemble</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>My Homeland in the Great Northeast (Chinese chamber ensemble)</strong></span>
-<span style="font-size: 0.9em; color: #666;">Arranged in 2025.07 / Second version in 2025.12</span>
+<span style="font-size: 0.9em; color: #666;">Arranged in July 2025 / Revised for the 2025 solo concert</span>
 </div>
-<ul><li><strong>Type:</strong> Chinese chamber music work</li><li><strong>Instrumentation, version 1:</strong> 2 suonas, 2 bangdis, 2 qudis, 2 soprano shengs, 2 erhus, 1 pipa, 1 Chinese drum</li><li><strong>Instrumentation, version 2:</strong> 2 suonas, 2 bangdis, 3 qudis, 1 each of soprano / alto / bass sheng, 2 erhus, 1 pipa, Chinese percussion (Chinese drum, bass drum, tambourine, maracas)</li><li><strong>Performance history:</strong>
+<ul><li><strong>Type:</strong> Chinese chamber music work</li><li><strong>Credits and approach:</strong> Music and lyrics by Liu Qi; arranged by Shutai Yang. The revision develops the middle and low sheng parts and percussion to enrich the ensemble texture.</li><li><strong>Instrumentation, version 1:</strong> 2 suonas, 2 bangdis, 2 qudis, 2 soprano shengs, 2 erhus, 1 pipa, 1 Chinese drum</li><li><strong>Revised score:</strong> Eight instrumental parts: dizi, suona, soprano sheng, alto sheng, bass sheng, erhu, plucked strings and drum.</li><li><strong>Performance history:</strong>
 <ul style="margin-top: 5px; list-style-type: circle;">
 <li>2025.09: USTC student-club fair (informal premiere)</li>
 <li>2025.10: USTC 2025 Freshers’ Welcome Gala “Hanhai New Cloud” (official premiere)</li>
-<li>2025.12: USTC Solo Concert (premiere of the second-version score)</li>
-</ul></li></ul><h3 style="margin-top: 20px; color: #444;">🎹 Original works</h3><ul><li><em>Still in the stage of gathering ideas. Stay tuned.</em></li></ul></div><div class="section"><h2>Teaching Assistant Experience</h2>
+<li>December 2025: the revised version was performed at the USTC NMOU Student Chinese Orchestra Solo Concert.</li>
+</ul></li></ul>
+<h3 style="margin-top: 20px; color: #444;">🎼 Arrangements for mixed Chinese and Western chamber ensemble</h3>
+<div class="subheading"><span class="subheading-title"><strong>La La Land — selections from the film</strong></span><span>November 2026</span></div>
+<ul>
+<li><strong>Approach:</strong> Adapted from Mark Brymer’s choral selection arrangement for a mixed Chinese and Western chamber ensemble, exploring Chinese instrumental colours alongside film music and jazz rhythms.</li>
+<li><strong>Themes:</strong> Mia &amp; Sebastian’s Theme, Another Day of Sun, Audition, City of Stars, and Someone in the Crowd.</li>
+<li><strong>Instrumentation:</strong> Seventeen parts combining Chinese winds, plucked strings and erhu with Western orchestral instruments, piano and drum kit; approximately seven minutes.</li>
+<li><strong>Progress:</strong> Full score, instrumental parts and synthesized playback have been prepared.</li>
+</ul>
+<h3 style="margin-top: 20px; color: #444;">🎹 Original works</h3><ul><li><em>Still in the stage of gathering ideas. Stay tuned.</em></li></ul></div><div class="section"><h2>Teaching Assistant Experience</h2>
 <p><strong>This section focuses on formal TA appointments and directly related teaching-service notes. I have removed detailed narratives about unsuccessful applications, so that the section stays concise and responsibility-oriented.</strong></p>
 
 <h3 style="margin-top: 20px; color: #444;">👨‍🏫 Official TA appointments</h3>

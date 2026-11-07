@@ -2,6 +2,12 @@
 (function () {
   'use strict';
   const pages = ['resume', 'research', 'social', 'toolkit', 'schedule', 'meditations'];
+  const publicPaths = { resume: '/about/', research: '/research/', meditations: '/notes/' };
+  const pageFromLocation = () => {
+    const hash = location.hash.slice(1);
+    if (pages.includes(hash) || hash === 'cover') return hash;
+    return Object.keys(publicPaths).find(key => publicPaths[key] === location.pathname) || 'cover';
+  };
   let current = null;
   let transition = 0;
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -11,7 +17,10 @@
     const cover = document.getElementById('cover');
     const leavingCover = current === 'cover' && page !== 'cover';
     current = page;
-    if (updateHash && location.hash !== '#' + page) history.pushState(null, '', '#' + page);
+    if (updateHash) {
+      const destination = (publicPaths[page] || '/') + '#' + page;
+      if (location.pathname + location.hash !== destination) history.pushState(null, '', destination);
+    }
     if (leavingCover) {
       cover?.classList.add('leaving');
       window.BootstrapCoverInput?.hideCoverElements();
@@ -69,9 +78,9 @@
       const target = a.getAttribute('href').slice(1);
       if (pages.includes(target) || target === 'cover' || a.classList.contains('back-btn')) { event.preventDefault(); navigate(target || 'cover'); }
     });
-    window.addEventListener('hashchange', () => navigate(location.hash.slice(1), false));
-    window.addEventListener('popstate', () => navigate(location.hash.slice(1), false));
-    navigate(location.hash.slice(1) || 'cover', false);
+    window.addEventListener('hashchange', () => navigate(pageFromLocation(), false));
+    window.addEventListener('popstate', () => navigate(pageFromLocation(), false));
+    navigate(pageFromLocation(), false);
   }
   window.SitePages = { navigate };
   if (document.readyState !== 'complete') document.addEventListener('DOMContentLoaded', boot);

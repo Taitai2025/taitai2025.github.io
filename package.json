@@ -1,0 +1,6 @@
+{
+  "name": "shutai-yang-homepage",
+  "private": true,
+  "scripts": { "build": "node scripts/build-static.cjs" },
+  "devDependencies": { "jsdom": "30.1.3" }
+}
