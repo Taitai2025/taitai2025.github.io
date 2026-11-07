@@ -1,0 +1,331 @@
+/* =========================================================
+   About / Profile Page
+   - Profile avatar and hero layout
+   - Profile text links
+   - Award text links
+   - Expandable image previews
+   - Project action groups
+   - Profile layout utilities
+   ========================================================= */
+
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--muted);
+}
+
+/* Profile hero */
+.section.resume-hero {
+  display: flex;
+  align-items: stretch;
+  gap: 22px;
+}
+
+.resume-hero-avatar {
+  flex: 0 0 clamp(120px, 16vw, 170px);
+  align-self: stretch;
+}
+
+.resume-hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  border-radius: calc(var(--radius) + 2px);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+}
+
+.resume-hero-body {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.resume-hero-name {
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--accent);
+}
+
+.resume-hero-intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02em;
+  line-height: 1.55;
+}
+
+/* Profile layout utilities */
+.profile-degree-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.profile-degree-line > span:first-child {
+  min-width: 0;
+}
+
+.profile-degree-line > span:last-child {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.profile-advisor-list {
+  margin-left: 20px;
+}
+
+#resume table {
+  width: 100%;
+}
+
+#resume img {
+  max-width: 100%;
+}
+
+/* Expandable image previews */
+#resume .profile-image-preview {
+  cursor: zoom-in;
+}
+
+#resume .profile-image-preview:focus-visible {
+  outline: none;
+}
+
+#resume .profile-image-preview img {
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+#resume .profile-image-preview:hover img,
+#resume .profile-image-preview:focus-visible img {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.74);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  animation: profileImageLightboxFadeIn 0.18s ease both;
+}
+
+.profile-image-lightbox img {
+  max-width: min(94vw, 1280px);
+  max-height: 86vh;
+  display: block;
+  object-fit: contain;
+
+  border-radius: 18px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.42);
+}
+
+.profile-image-lightbox-close {
+  position: absolute;
+  right: 22px;
+  top: 18px;
+
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@keyframes profileImageLightboxFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile and award text links */
+#resume .profile-link,
+#resume .profile-link:visited,
+#resume .award-link,
+#resume .award-link:visited {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+}
+
+#resume .profile-link:hover,
+#resume .profile-link:focus-visible,
+#resume .award-link:hover,
+#resume .award-link:focus-visible {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+/* Profile action links */
+#resume .expand-action-btn,
+#resume .expand-action-btn:visited {
+  position: relative;
+
+  gap: 0.42em;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+
+  color: var(--accent);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-decoration: none;
+}
+
+#resume .expand-action-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+
+  height: 1px;
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform 0.15s ease;
+}
+
+#resume .expand-action-btn:hover,
+#resume .expand-action-btn:focus-visible {
+  transform: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+#resume .expand-action-btn:hover::after,
+#resume .expand-action-btn:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin-top: 10px;
+}
+
+.btn-ico {
+  width: 1em;
+  height: 1em;
+  flex: 0 0 1em;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 0;
+  line-height: 1;
+}
+
+/* Separator between adjacent project action links */
+.project-actions .expand-action-btn + .expand-action-btn {
+  margin-left: 1.3em;
+}
+
+.project-actions .expand-action-btn + .expand-action-btn::before {
+  content: "、";
+  position: absolute;
+  left: -0.95em;
+  top: 50%;
+
+  font-family: inherit;
+  font-weight: 400;
+  color: inherit;
+
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+/* Responsive: stack photo above text on small screens */
+@media (max-width: 768px) {
+
+  .section.resume-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .resume-hero-avatar {
+    flex: 0 0 auto;
+    width: min(240px, 70vw);
+  }
+
+  .resume-hero-avatar img {
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .resume-hero-name {
+    font-size: 1.95em;
+  }
+
+  .profile-degree-line {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .profile-degree-line > span:last-child {
+    text-align: left;
+  }
+
+  .profile-advisor-list {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #resume .profile-image-preview img {
+    transition: none;
+  }
+
+  .profile-image-lightbox {
+    animation: none;
+  }
+}

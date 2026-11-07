@@ -1,0 +1,250 @@
+/* =========================================================
+   Social Page - Account Cards
+   - Social platform cards
+   - Icons, descriptions, links
+   - ORCID QR modal
+   ========================================================= */
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 0;
+}
+
+.social-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 25px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.social-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: var(--accent-weak);
+  transition: height 0.2s ease, background-color 0.2s ease;
+}
+
+.social-card:hover::before {
+  height: 6px;
+  background: var(--accent);
+}
+
+.social-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.social-icon svg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+}
+
+.social-card:hover .social-icon {
+  transform: scale(1.1);
+}
+
+/* Steam icon */
+.social-card .fa-steam {
+  color: var(--accent);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-card:hover .fa-steam {
+  color: var(--accent-strong);
+  transform: scale(1.1);
+}
+
+.social-description {
+  color: var(--muted);
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 8px 18px;
+
+  background: var(--surface);
+  color: var(--accent);
+
+  border-radius: 26px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--accent-weak);
+  color: var(--accent-strong);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.social-qr-button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.social-link-group {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Social link separator */
+.social-divider {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 5px;
+
+  color: var(--muted);
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+/* ORCID QR modal */
+.orcid-qr-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.52);
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.orcid-qr-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.orcid-qr-dialog {
+  position: relative;
+
+  width: min(92vw, 380px);
+  padding: 30px 28px 26px;
+
+  text-align: center;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 8px);
+  box-shadow: var(--shadow);
+
+  transform: translateY(8px) scale(0.98);
+  transition: transform 0.2s ease;
+}
+
+.orcid-qr-modal.is-open .orcid-qr-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.orcid-qr-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  padding: 0;
+
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.orcid-qr-close:hover {
+  color: var(--accent-strong);
+  background: var(--accent-weak);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.orcid-qr-title {
+  margin: 0 34px 18px;
+
+  color: var(--accent);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.orcid-qr-image {
+  display: block;
+
+  width: min(240px, 72vw);
+  height: auto;
+  margin: 0 auto 18px;
+  padding: 10px;
+
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.orcid-qr-caption {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 0.95rem;
+}

@@ -1,0 +1,243 @@
+/* =========================================================
+   Global Site Footer Label
+   - Minimal academic-style footer
+   - Loaded lazily by SiteFooterLabel.js
+   - No card, no frame, no special font
+   ========================================================= */
+
+.site-footer-label {
+  width: min(1280px, calc(100% - 44px));
+  box-sizing: border-box;
+
+  margin: 72px auto 22px;
+  padding: 0 clamp(10px, 1.2vw, 18px) 4px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(480px, max-content)
+    minmax(0, 1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: clamp(18px, 2vw, 28px);
+
+  overflow: visible;
+
+  font: inherit;
+  color: var(--muted);
+}
+
+.site-footer-label__left,
+.site-footer-label__center,
+.site-footer-label__right {
+  min-width: 0;
+}
+
+.site-footer-label__left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.site-footer-label__center {
+  text-align: center;
+  line-height: 1.55;
+}
+
+.site-footer-label__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.site-footer-label__emblem-link {
+  display: block;
+  max-width: 100%;
+
+  color: inherit;
+  text-decoration: none;
+  line-height: 0;
+
+  border-radius: 2px;
+  cursor: pointer;
+
+  transition: opacity 0.16s ease;
+}
+
+.site-footer-label__emblem-link.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.site-footer-label__emblem-link:hover .site-footer-label__emblem {
+  opacity: 0.96;
+}
+
+.site-footer-label__emblem-link:focus-visible {
+  outline: 2px solid color-mix(in srgb, #2563eb 72%, transparent);
+  outline-offset: 6px;
+}
+
+.site-footer-label__emblem {
+  width: clamp(330px, 29vw, 420px);
+  max-width: 100%;
+  height: auto;
+
+  display: block;
+  object-fit: contain;
+
+  opacity: 0.86;
+  visibility: visible;
+}
+
+.site-footer-label__emblem.is-hidden {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.site-footer-label__copyright {
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+.site-footer-label__quote {
+  margin-top: 2px;
+
+  font-size: 0.78rem;
+  font-weight: 400;
+  font-style: normal;
+  color: color-mix(in srgb, var(--muted) 88%, var(--text));
+
+  white-space: nowrap;
+}
+
+.site-footer-label__updated {
+  margin-top: 2px;
+
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: color-mix(in srgb, var(--muted) 78%, var(--text));
+}
+
+.site-footer-label__links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  max-width: 100%;
+}
+
+.site-footer-label__profile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  padding: 0;
+
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.3;
+
+  color: #2563eb;
+  text-decoration: none;
+  white-space: nowrap;
+
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  transition:
+    color 0.16s ease,
+    opacity 0.16s ease;
+}
+
+.site-footer-label__profile-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.site-footer-label__github-icon {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+
+  color: currentColor;
+  opacity: 0.9;
+}
+
+.site-footer-label__orcid-icon {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+
+  display: inline-block;
+  object-fit: contain;
+}
+
+@media (max-width: 1180px) {
+  .site-footer-label {
+    width: min(100% - 28px, 620px);
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+
+    margin-top: 52px;
+    padding: 0 8px 4px;
+
+    text-align: center;
+  }
+
+  .site-footer-label__left,
+  .site-footer-label__center,
+  .site-footer-label__right {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .site-footer-label__left {
+    order: 1;
+  }
+
+  .site-footer-label__center {
+    order: 2;
+  }
+
+  .site-footer-label__right {
+    order: 3;
+  }
+
+  .site-footer-label__links {
+    justify-content: center;
+  }
+
+  .site-footer-label__emblem {
+    width: min(86vw, 420px);
+    max-width: 420px;
+  }
+
+  .site-footer-label__quote {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 430px) {
+  .site-footer-label__links {
+    gap: 10px;
+  }
+
+  .site-footer-label__profile-link {
+    font-size: 0.8rem;
+  }
+}
+/* AMSS is a text institution link, not a fabricated institute emblem. */
+.site-footer-label__amss { line-height: 1.4; text-align: center; padding: 6px 8px; }
+.site-footer-label__amss-name { display: block; font-family: Georgia, serif; font-size: 1.8rem; letter-spacing: .16em; color: var(--text); opacity: .8; }
+.site-footer-label__amss-caption { display: block; font-size: .63rem; letter-spacing: .03em; margin-top: 2px; }
+.site-footer-label__orcid-icon { border-radius: 50%; background: #a6ce39; color: white; font: bold 10px/15px Arial, sans-serif; text-align: center; }

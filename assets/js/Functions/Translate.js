@@ -11,12 +11,12 @@
   }
 
   function getLang() {
-    return normalizeLang(localStorage.getItem(STORAGE_KEY) || LANG.EN);
+    try { return normalizeLang(localStorage.getItem(STORAGE_KEY) || LANG.ZH); } catch (e) { return LANG.ZH; }
   }
 
   function setLang(lang) {
     const l = normalizeLang(lang);
-    localStorage.setItem(STORAGE_KEY, l);
+    try { localStorage.setItem(STORAGE_KEY, l); } catch (e) {}
 
     document.documentElement.setAttribute("lang", l === LANG.ZH ? "zh-CN" : "en");
     document.body.dataset.lang = l;
@@ -319,8 +319,8 @@
 
     const l = normalizeLang(lang);
     const labels = (l === LANG.ZH)
-      ? { resume: "关于", schedule: "日程", social: "社交", toolkit: "工具", meditations: "随记" }
-      : { resume: "About", schedule: "Schedule", social: "Social", toolkit: "Toolkit", meditations: "Notes" };
+      ? { resume: "关于", research: "科研与文章", schedule: "日程", social: "社交", toolkit: "工具", meditations: "随记" }
+      : { resume: "About", research: "Research", schedule: "Schedule", social: "Social", toolkit: "Toolkit", meditations: "Notes" };
 
     nav.querySelectorAll(".top-nav-link[data-page]").forEach((btn) => {
       const page = btn.getAttribute("data-page");
@@ -462,6 +462,7 @@
     applySocialI18N(l);
     applyTopNavI18N(l);
     applyCoverI18N(l);
+    if (window.Research) window.Research.render(l);
   }
 
   // Expose applyLanguage for pages that want to force a change
@@ -493,6 +494,7 @@
       applySocialI18N(l);
       applyTopNavI18N(l);
       applyCoverI18N(l);
+    if (window.Research) window.Research.render(l);
       updateLangButton(l);
     });
   }

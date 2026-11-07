@@ -1,3 +1,5 @@
+> **参考模板原始说明，保留备查。** 以下姓名、联系信息、履历和作品属于原模板作者 Jinghao Chen，并非杨书泰本人。当前站点的维护说明请看 README.md。
+
 # Personal Information and Schedule Management Webpage
 
 This repository contains a static HTML webpage designed to serve as a comprehensive personal portfolio and schedule management tool. Built using HTML, it integrates personal details, social media links, an academic toolkit, and an interactive schedule system. The project is styled with CSS (assumed to be linked externally or embedded) and enhanced with JavaScript (assumed for interactivity), offering a user-friendly interface for both personal reference and public sharing.

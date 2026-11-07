@@ -1,3 +1,32 @@
+# 杨书泰 Shutai Yang · 个人主页
+
+2026-10-23 更新。直接用浏览器打开 `index.html`，或通过静态服务器预览；无需构建或安装依赖。只发布本文件所在的网站目录，不要上传上一级的申请材料与工作说明。
+
+## 本轮入口与维护位置
+
+- 默认打开动态封面 `#cover`；`#resume`、`#research`、`#schedule`、`#social`、`#toolkit`、`#meditations`可直接分享并进入对应正文。
+- 个人介绍、完整履历、荣誉、音乐与任职：`assets/js/Content/ZH/resume_ZH.js`及`EN/resume_EN.js`。两种语言同步修改。
+- 论文、文章、报告：`assets/js/Content/research.js`中的`window.RESEARCH_CONTENT`。条目区分预印本/在投/正式文章，PDF为公开版本。
+- 科研渲染、资源链接与履历目录：`assets/js/Functions/Research.js`。
+- 当前视觉层：`assets/stardust/style/stardust.css` 聚合源站基础、字体、导航、简介、社交、日程与随记样式；本站结构适配放在同目录 `adaptation.css`。旧 `assets/css/academic.css` 保留但已停止加载，后续视觉修改从 Stardust 层继续。
+- 动态封面、景深、进入与滚轮交互：`assets/stardust/cover/`；数学加载动画：`assets/stardust/loading/`；光标：`assets/stardust/Custom-cursors.js` 与 `cursors/`。背景图和视频在对应 `images/cover/`、`animation/cover/`；不改动旧照片。
+- 邮箱展开/复制和页脚：`assets/stardust/profile/`。ORCID `0009-0003-5581-2970`、GitHub `Taitai2025` 和 AMSS 官网已接入简介、社交与页脚。
+- PDF方式沿用源站：`assets/stardust/resources/PdfReader.js`、`ResourceLinks.js` 与对应CSS连接到 `assets/vendor/pdfjs/`。普通点击页内阅读，可全屏、新标签、下载或直接打开原文件；直接双击本地HTML时回退为原生PDF打开，完整阅读器请通过HTTP预览。
+- 导航路由：`assets/js/Functions/Bootstrap.js`；中英导航：`Top-nav.js`及`Translate.js`。
+- 公开附件：`assets/documents/`，证书在其`honors/`子目录。附件来源与公开处理记录在上一级`工作说明/research-attachments.md`。
+- 原有封面、工具、社交、日程、随记、完整课程与经历均保留。旧暑假节律与旧焕新计划已标历史语境。
+- `README.markdown`和`assets/pdf/`的两份旧PDF属于参考模板作者，不代表杨书泰的履历或成果。保留其信息与署名，不加入本人论文列表。`LICENSE`中原作者署名保留。
+- `assets/js/Functions/Blog.js`保留了原模板的独有彩蛋代码，目前未由首页加载；本轮没有擅自启用或删去。
+
+## 检查与发布
+
+浏览器中检查中英切换、六个导航页、深浅主题、工具搜索、日程便签与PDF阅读/下载。根目录`工作说明/checks/verify-site.cjs`为维护时的DOM集成检查，不属于网站部署内容。
+本轮25项DOM检查通过，覆盖页面、中英文、科研与附件、主题和基础工具；36个网站及迁移脚本语法检查通过。浏览器已实际检查桌面简介、科研、51页PDF渲染和全屏，并修复全屏导航遮挡及外边距；390px手机等实机检查的最终记录以外层 `工作说明/Stardust风格改造完成说明.md` 为准，不能把本说明理解为所有设备和全部交互均已验收。所有先前新生成/脱敏PDF已经渲染核查。当前修改仅在本地，未自动发布。
+
+以下保留原有模块说明，供理解各模块原始职责；涉及首屏、科研和附件的内容以上方更新说明为准。
+
+---
+
 # Taitai Homepage (Stardust-style modular rebuild)
 
 This rebuild follows the **same modular planning philosophy** as the Stardust homepage:
@@ -93,5 +122,5 @@ These keep the visual and interaction style close to Stardust's modular arrangem
 ## Notes for future editing
 1. If you want to change **text content**, edit the files under `assets/js/Content/EN` and `assets/js/Content/ZH`.
 2. If you want to change **page structure / interaction**, edit the corresponding file under `assets/js/Functions`.
-3. If you want to change **visual style**, edit the corresponding file under `assets/css`.
+3. If you want to change **visual style**, continue in `assets/stardust/style/` (especially `adaptation.css`); the older `assets/css` files below describe retained historical modules and are not the current visual source of truth.
 4. To enable **real analytics**, replace the placeholder IDs inside `assets/js/Functions/Social.js`.

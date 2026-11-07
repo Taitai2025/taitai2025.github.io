@@ -11,6 +11,8 @@
       <div class="social-heading" data-i18n="social_heading">Connect With Me</div>
 
       <div class="social-grid">
+        <div class="social-card"><div class="social-icon"><i class="fab fa-orcid"></i></div><div class="social-title">ORCID</div><div class="social-description">0009-0003-5581-2970</div><a href="https://orcid.org/0009-0003-5581-2970" class="social-link" target="_blank" rel="me noopener noreferrer" data-i18n="link_profile">Profile</a></div>
+        <div class="social-card"><div class="social-icon"><i class="fas fa-landmark"></i></div><div class="social-title">AMSS · 中国科学院数学与系统科学研究院</div><div class="social-description">Academy of Mathematics and Systems Science, CAS</div><a href="http://www.amss.ac.cn/" class="social-link" target="_blank" rel="noopener noreferrer" data-i18n="link_profile">Homepage</a></div>
         <div class="social-card">
           <div class="social-icon">
             <svg class="bilibili-icon" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">

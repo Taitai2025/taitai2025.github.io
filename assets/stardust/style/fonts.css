@@ -1,0 +1,569 @@
+/* =========================================================
+   Fonts
+   Centralized font-face declarations and typography tokens
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Local display fonts
+   --------------------------------------------------------- */
+
+@font-face {
+  font-family: "CygnetRound Local";
+  src:
+    url("../fonts/Local_Display/CygnetRound.woff2") format("woff2"),
+    url("../fonts/Local_Display/CygnetRound.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Beautiful ES Local";
+  src:
+    url("../fonts/Local_Display/Beautiful-ES-1.woff2") format("woff2"),
+    url("../fonts/Local_Display/Beautiful-ES-1.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cataneo BT Local";
+  src:
+    url("../fonts/Local_Display/Cataneo%20BT.woff2") format("woff2"),
+    url("../fonts/Local_Display/Cataneo%20BT.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HongLeiXingShu Local";
+  src:
+    url("../fonts/Local_Display/HongLeiXingShuJianTi-2.woff2") format("woff2"),
+    url("../fonts/Local_Display/HongLeiXingShuJianTi-2.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------
+   Local fallbacks for Google Fonts
+   --------------------------------------------------------- */
+
+@font-face {
+  font-family: "Allura Local";
+  src:
+    url("../fonts/Google_Fonts/Allura-Regular.woff2") format("woff2"),
+    url("../fonts/Google_Fonts/Allura-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Great Vibes Local";
+  src:
+    url("../fonts/Google_Fonts/GreatVibes-Regular.woff2") format("woff2"),
+    url("../fonts/Google_Fonts/GreatVibes-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cinzel Local";
+  src:
+    url("../fonts/Google_Fonts/Cinzel%5Bwght%5D.woff2") format("woff2"),
+    url("../fonts/Google_Fonts/Cinzel%5Bwght%5D.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MedievalSharp Local";
+  src:
+    url("../fonts/Google_Fonts/MedievalSharp.woff2") format("woff2"),
+    url("../fonts/Google_Fonts/MedievalSharp.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UnifrakturMaguntia Local";
+  src:
+    url("../fonts/Google_Fonts/UnifrakturMaguntia-Book.woff2") format("woff2"),
+    url("../fonts/Google_Fonts/UnifrakturMaguntia-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------
+   Font tokens
+   --------------------------------------------------------- */
+
+:root {
+  /*
+    Chinese typography policy:
+    - Keep the current desktop system fonts as the first choices.
+    - Use LXGW WenKai GB Screen as the cross-platform web fallback.
+    - The segmented webfont stylesheet is loaded on demand by SiteFonts.js
+      only after the site enters Chinese mode.
+
+    Dedicated display fonts under assets/fonts/ remain unchanged,
+    especially Activities & Moments date/title fonts, Cover fonts,
+    and display-font stacks.
+  */
+
+  --font-zh-regular:
+    "STKaiti",
+    "华文楷体",
+    "LXGW WenKai GB Screen",
+    "Kaiti SC",
+    "KaiTi",
+    "楷体",
+    serif;
+
+  --font-zh-heading:
+    "STXinwei",
+    "华文新魏",
+    "STKaiti",
+    "华文楷体",
+    "LXGW WenKai GB Screen",
+    "Kaiti SC",
+    "KaiTi",
+    "楷体",
+    serif;
+
+  /* System families */
+  --font-serif:
+    "Georgia",
+    "Times New Roman",
+    "STKaiti",
+    "华文楷体",
+    "LXGW WenKai GB Screen",
+    "Noto Serif",
+    "Kaiti SC",
+    "KaiTi",
+    "楷体",
+    serif;
+
+  --font-sans:
+    Arial,
+    "Helvetica Neue",
+    Helvetica,
+    sans-serif;
+
+  --font-zh-serif:
+    var(--font-zh-regular);
+
+  --font-zh-kai:
+    var(--font-zh-regular);
+
+  --font-zh-fangsong:
+    var(--font-zh-regular);
+
+  --font-emoji:
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Noto Color Emoji",
+    sans-serif;
+
+  /* Common semantic families */
+  --font-heading-serif:
+    var(--font-serif);
+
+  --font-body-serif:
+    var(--font-serif);
+
+  --font-body-sans:
+    var(--font-sans);
+
+  --font-number-sans:
+    var(--font-sans);
+
+  /* Navigation */
+  --font-nav-serif:
+    "Palatino Linotype",
+    Palatino,
+    "Book Antiqua",
+    "Times New Roman",
+    "STKaiti",
+    "华文楷体",
+    "LXGW WenKai GB Screen",
+    "Noto Serif",
+    "Kaiti SC",
+    "KaiTi",
+    "楷体",
+    serif;
+
+  /*
+    External families are loaded through SiteFonts.js.
+    Local families are fallback copies stored under
+    assets/fonts/Google_Fonts/.
+  */
+  --font-script-external:
+    "Great Vibes",
+    "Great Vibes Local",
+    "Allura",
+    "Allura Local",
+    cursive;
+
+  --font-display-cinzel:
+    "Cinzel",
+    "Cinzel Local",
+    Georgia,
+    serif;
+
+  --font-display-medieval:
+    "MedievalSharp",
+    "MedievalSharp Local",
+    Georgia,
+    serif;
+
+  --font-display-gothic:
+    "UnifrakturMaguntia",
+    "UnifrakturMaguntia Local",
+    Georgia,
+    serif;
+
+  /*
+    Cover:
+    keep dedicated assets/fonts display fonts unchanged.
+  */
+  --font-cover-name:
+    "CygnetRound Local",
+    "Great Vibes",
+    "Great Vibes Local",
+    cursive;
+
+  --font-cover-slogan:
+    "Allura",
+    "Allura Local",
+    "Great Vibes",
+    "Great Vibes Local",
+    cursive;
+
+  --font-cover-scroll:
+    var(--font-display-cinzel);
+
+  /*
+    Activities & Moments:
+    keep dedicated assets/fonts display fonts unchanged.
+  */
+  --font-activities-date:
+    "Beautiful ES Local",
+    "Great Vibes",
+    "Great Vibes Local",
+    "Allura",
+    "Allura Local",
+    cursive;
+
+  --font-activities-title-en:
+    "Cataneo BT Local",
+    "Cataneo BT",
+    Georgia,
+    serif;
+
+  /*
+    HongLeiXingShu remains the normal first choice.
+
+    The shared Chinese title stack is used only if the
+    dedicated display font cannot be loaded.
+  */
+  --font-activities-title-zh:
+    "HongLeiXingShu Local",
+    var(--font-zh-heading);
+
+  /* Social */
+  --font-social-heading:
+    var(--font-heading-serif);
+
+  --font-social-number:
+    var(--font-number-sans);
+
+  --font-social-action:
+    var(--font-body-sans);
+
+  /* Meditations */
+  --font-medit-en-body:
+    "Times New Roman",
+    Times,
+    serif;
+
+  --font-medit-en-title:
+    var(--font-display-cinzel);
+
+  --font-medit-zh-body:
+    var(--font-zh-regular);
+
+  --font-medit-zh-title:
+    var(--font-zh-heading);
+
+  --font-medit-zh-subtitle:
+    var(--font-zh-regular);
+
+  --font-medit-heading-en:
+    var(--font-heading-serif);
+
+  --font-medit-heading-zh:
+    var(--font-medit-zh-title);
+}
+
+/* =========================================================
+   Chinese-mode typography overrides
+   ========================================================= */
+
+/*
+  General title-like Chinese texts.
+
+  Covered examples:
+  - top navigation buttons
+  - About section titles
+  - Schedule page title and subnavigation
+  - Schedule modal titles
+  - Social page titles
+  - Life page title and Life subnavigation
+
+  Not covered intentionally:
+  - Activities & Moments card date numbers
+  - Activities & Moments custom Chinese card titles
+  - Cover custom display fonts
+*/
+body[data-lang="zh"] .top-nav-link,
+body[data-lang="zh"] h2,
+body[data-lang="zh"] .meditations-heading,
+body[data-lang="zh"] .schedule-heading,
+body[data-lang="zh"] .schedule-switch-btn,
+body[data-lang="zh"] .social-heading,
+body[data-lang="zh"] .stats-heading,
+body[data-lang="zh"] .stats-subtitle,
+body[data-lang="zh"] .life-heading,
+body[data-lang="zh"] .life-switch-btn,
+body[data-lang="zh"] .category-title,
+body[data-lang="zh"] #meditations .medit-contents-title,
+body[data-lang="zh"] #meditations .medit-row-big .medit-title,
+body[data-lang="zh"] #schedule .fc-toolbar-title,
+body[data-lang="zh"] #schedule .week-title,
+body[data-lang="zh"] #schedule .event-modal-title,
+body[data-lang="zh"] #schedule .modal-title,
+body[data-lang="zh"] #schedule .course-modal-title {
+  font-family:
+    var(--font-zh-heading) !important;
+
+  font-variant:
+    normal;
+}
+
+body[data-lang="zh"] .top-nav-link,
+body[data-lang="zh"] .life-switch-btn,
+body[data-lang="zh"] .schedule-switch-btn {
+  letter-spacing:
+    0.8px;
+}
+
+/*
+  Ordinary Chinese text.
+
+  This changes ordinary Songti / Kaiti / Fangsong-like
+  Chinese text to the shared cross-platform Chinese
+  stack, while avoiding direct overrides on dedicated
+  display-font elements such as:
+
+  .am-card-date
+  .am-card-title
+  .am-card-meta
+  .am-detail-date
+  .am-detail-title
+*/
+body[data-lang="zh"] #about,
+body[data-lang="zh"] #social,
+body[data-lang="zh"] #schedule,
+body[data-lang="zh"] #life,
+body[data-lang="zh"] .container,
+body[data-lang="zh"] .life-container,
+body[data-lang="zh"] #meditations,
+body[data-lang="zh"] #meditations p,
+body[data-lang="zh"] #meditations .medit-body,
+body[data-lang="zh"]
+#meditations
+.medit-row-small
+.medit-title {
+  font-family:
+    var(--font-zh-regular);
+}
+
+/*
+  About ordinary buttons.
+
+  Explicitly covers:
+  - 仓库
+  - 展示页
+  - 代码
+
+  These buttons are styled with var(--font-sans),
+  so they need a stronger Chinese-mode rule here.
+*/
+body[data-lang="zh"]
+#about
+.expand-action-btn,
+body[data-lang="zh"]
+#about
+.expand-action-btn span,
+body[data-lang="zh"]
+#about
+.project-actions,
+body[data-lang="zh"]
+#about
+.project-actions
+.expand-action-btn,
+body[data-lang="zh"]
+#about
+.project-actions
+.expand-action-btn span {
+  font-family:
+    var(--font-zh-regular) !important;
+}
+
+/*
+  Schedule ordinary controls and content.
+
+  Explicitly covers:
+  - semester controls
+  - current semester title
+  - add event controls
+  - event form labels, inputs and buttons
+  - timetable cells
+  - course names, instructors and locations
+  - FullCalendar ordinary buttons and event text
+
+  Modal titles are handled in the title block above.
+*/
+body[data-lang="zh"] #schedule .fc,
+body[data-lang="zh"] #schedule .fc-button,
+body[data-lang="zh"] #schedule .fc-event,
+body[data-lang="zh"] #schedule .timetable,
+body[data-lang="zh"] #schedule .timetable th,
+body[data-lang="zh"] #schedule .timetable td,
+body[data-lang="zh"] #schedule #ustc-timetable,
+body[data-lang="zh"] #schedule #ustc-timetable th,
+body[data-lang="zh"] #schedule #ustc-timetable td,
+body[data-lang="zh"] #schedule .my-classes-table,
+body[data-lang="zh"] #schedule .my-classes-table th,
+body[data-lang="zh"] #schedule .my-classes-table td,
+body[data-lang="zh"] #schedule .ustc-classes-table,
+body[data-lang="zh"] #schedule .ustc-classes-table th,
+body[data-lang="zh"] #schedule .ustc-classes-table td,
+body[data-lang="zh"] #schedule .semester-selector,
+body[data-lang="zh"] #schedule .semester-dropdown,
+body[data-lang="zh"] #schedule .semester-dropdown-btn,
+body[data-lang="zh"] #schedule .semester-dropdown-content,
+body[data-lang="zh"] #schedule .semester-dropdown-content a,
+body[data-lang="zh"] #schedule [data-semester],
+body[data-lang="zh"] #schedule .semester-option,
+body[data-lang="zh"] #schedule .semester-label,
+body[data-lang="zh"] #schedule .semester-select,
+body[data-lang="zh"] #schedule .semester-timetable-container,
+body[data-lang="zh"]
+#schedule
+.semester-timetable-container > h3,
+body[data-lang="zh"] #schedule .semester-title,
+body[data-lang="zh"]
+#schedule
+.my-classes-container h3,
+body[data-lang="zh"]
+#schedule
+.ustc-classes-container h3,
+body[data-lang="zh"] #schedule .add-event-btn,
+body[data-lang="zh"]
+#schedule
+.event-form-group label,
+body[data-lang="zh"] #schedule .event-form-control,
+body[data-lang="zh"] #schedule .event-form-btn,
+body[data-lang="zh"]
+#schedule
+.days-container label,
+body[data-lang="zh"]
+#schedule
+.week-checkbox label,
+body[data-lang="zh"] #schedule .weeks-title,
+body[data-lang="zh"] #schedule .week-display,
+body[data-lang="zh"]
+#schedule
+.ustc-local-save-hint,
+body[data-lang="zh"] #schedule .course-number,
+body[data-lang="zh"] #schedule .course-name,
+body[data-lang="zh"] #schedule .course-code,
+body[data-lang="zh"] #schedule .course-type-badge,
+body[data-lang="zh"] #schedule .credits-inline,
+body[data-lang="zh"] #schedule .instructor,
+body[data-lang="zh"] #schedule .location,
+body[data-lang="zh"] #schedule .weeks {
+  font-family:
+    var(--font-zh-regular) !important;
+}
+
+/*
+  Schedule modal and form ordinary text.
+
+  This catches dynamically generated course and event
+  dialog body text.
+*/
+body[data-lang="zh"] #schedule .event-modal,
+body[data-lang="zh"] #schedule .event-modal-content,
+body[data-lang="zh"] #schedule .event-modal-body,
+body[data-lang="zh"] #schedule .event-modal-footer,
+body[data-lang="zh"] #schedule .course-modal,
+body[data-lang="zh"] #schedule .course-modal-content,
+body[data-lang="zh"] #schedule .course-modal-body,
+body[data-lang="zh"] #schedule .modal-content,
+body[data-lang="zh"] #schedule .modal-body,
+body[data-lang="zh"] #schedule .modal-footer,
+body[data-lang="zh"] #schedule input,
+body[data-lang="zh"] #schedule select,
+body[data-lang="zh"] #schedule textarea,
+body[data-lang="zh"]
+#schedule
+button:not(.schedule-switch-btn) {
+  font-family:
+    var(--font-zh-regular) !important;
+}
+
+/*
+  Social ordinary text and controls.
+*/
+body[data-lang="zh"] .social-card,
+body[data-lang="zh"] .social-description,
+body[data-lang="zh"] .social-link,
+body[data-lang="zh"] .stats-metric-label,
+body[data-lang="zh"] .stats-note,
+body[data-lang="zh"] .stats-link {
+  font-family:
+    var(--font-zh-regular);
+}
+
+/*
+  Life ordinary text.
+
+  Do not target:
+  - .am-card-date
+  - .am-detail-date
+  - .am-card-title
+  - .am-card-meta
+  - .am-detail-title
+  - .am-detail-meta
+
+  These are dedicated Activities & Moments
+  display-font elements.
+*/
+body[data-lang="zh"] .am-card-summary,
+body[data-lang="zh"] .am-card-action,
+body[data-lang="zh"] .am-detail-back,
+body[data-lang="zh"] .am-detail-body,
+body[data-lang="zh"] .am-detail-body p {
+  font-family:
+    var(--font-zh-regular);
+}

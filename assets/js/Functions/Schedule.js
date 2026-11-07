@@ -43,13 +43,17 @@
     const status = document.getElementById('note-status');
     if (!box || !status) return;
     const KEY = 'taitai_schedule_local_note';
-    box.value = localStorage.getItem(KEY) || '';
+    try { box.value = localStorage.getItem(KEY) || ''; } catch (e) { box.value = ''; }
     let timer = null;
     box.addEventListener('input', () => {
       if (timer) clearTimeout(timer);
       timer = setTimeout(() => {
-        localStorage.setItem(KEY, box.value);
-        status.textContent = t('notes_saved');
+        try {
+          localStorage.setItem(KEY, box.value);
+          status.textContent = t('notes_saved');
+        } catch (e) {
+          status.textContent = getLang() === 'zh' ? '当前浏览器无法保存此便签，请复制留存。' : 'This browser cannot save the note. Please copy it to keep it.';
+        }
       }, 220);
     });
   }

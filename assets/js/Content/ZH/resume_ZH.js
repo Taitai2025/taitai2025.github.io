@@ -6,25 +6,26 @@ window.RESUME_ZH_INNER_HTML = `
     <div class="container">
       
 
-<div class="resume-heading">泰泰</div>
+<div class="resume-heading">关于我 <span>ABOUT</span></div>
 
 <div class="section resume-hero" id="resume-hero">
   <div class="resume-hero-avatar">
     <img src="./assets/images/profile.jpg" alt="个人照片">
   </div>
   <div class="resume-hero-body">
-    <div class="resume-hero-name">泰泰</div>
+    <div class="eyebrow">COMPUTATIONAL MATHEMATICS · AMSS / UCAS</div><h1 class="resume-hero-name">杨书泰 <span>Shutai Yang</span></h1><p class="identity-line">泰泰 / Thomas · 计算数学专业直博一年级</p>
+    <div class="profile-email-block"><div class="profile-email-title"><i class="fas fa-envelope" aria-hidden="true"></i><span>电子邮箱</span><button class="expander profile-email-expander" data-expand-target="exp-hero-email-zh" aria-expanded="false" aria-label="电子邮箱"><i class="fas fa-chevron-down" aria-hidden="true"></i></button></div><div class="expand-row profile-email-expand" id="exp-hero-email-zh" style="display:none"><div class="expand-content profile-email-content"><div class="profile-email-list"><div class="profile-email-row"><span class="profile-email-label">常用邮箱</span><a class="profile-email-address" href="mailto:yangshutai26@mails.ucas.ac.cn">yangshutai26@mails.ucas.ac.cn</a><span class="profile-email-actions"><button type="button" class="profile-email-icon-btn profile-email-copy-btn" data-copy-email="yangshutai26@mails.ucas.ac.cn" title="复制邮箱" aria-label="复制邮箱"><i class="far fa-copy" aria-hidden="true"></i></button><a class="profile-email-icon-btn profile-email-send-btn" href="mailto:yangshutai26@mails.ucas.ac.cn" title="发送邮件" aria-label="发送邮件"><i class="far fa-paper-plane" aria-hidden="true"></i></a></span></div><div class="profile-email-row"><span class="profile-email-label">Gmail</span><a class="profile-email-address" href="mailto:yangshutai51@gmail.com">yangshutai51@gmail.com</a><span class="profile-email-actions"><button type="button" class="profile-email-icon-btn profile-email-copy-btn" data-copy-email="yangshutai51@gmail.com" title="复制邮箱" aria-label="复制邮箱"><i class="far fa-copy" aria-hidden="true"></i></button><a class="profile-email-icon-btn profile-email-send-btn" href="mailto:yangshutai51@gmail.com" title="发送邮件" aria-label="发送邮件"><i class="far fa-paper-plane" aria-hidden="true"></i></a></span></div><div class="profile-email-row"><span class="profile-email-label">科大邮箱</span><a class="profile-email-address" href="mailto:taitai@mail.ustc.edu.cn">taitai@mail.ustc.edu.cn</a><span class="profile-email-actions"><button type="button" class="profile-email-icon-btn profile-email-copy-btn" data-copy-email="taitai@mail.ustc.edu.cn" title="复制邮箱" aria-label="复制邮箱"><i class="far fa-copy" aria-hidden="true"></i></button><a class="profile-email-icon-btn profile-email-send-btn" href="mailto:taitai@mail.ustc.edu.cn" title="发送邮件" aria-label="发送邮件"><i class="far fa-paper-plane" aria-hidden="true"></i></a></span></div></div></div></div></div>
     <div class="resume-hero-chips">
       <span class="contact-pill"><strong>研究方向</strong><span>计算数学 / 最优化算法</span></span>
       <span class="contact-pill"><strong>兴趣</strong><span>民族音乐 / 编配 / 乐团工作</span></span>
       <span class="contact-pill"><strong>常驻</strong><span>北京</span></span>
     </div>
-    <p class="resume-hero-intro">
-      我是泰泰，中国科学技术大学数学科学学院2026届本科毕业生、中国科学院数学与系统科学研究院直博生（拟录取），主要兴趣在计算数学与最优化算法，同时也长期从事笙演奏、民乐编配与校园美育实践。学业上，我在本科阶段保持了较好的成绩和综合表现，主持国家级大创项目并获评校级优秀，并完成《线性代数B1》《线性代数B2》课程助教工作；音乐与学生工作方面，我长期参与并组织校园民乐演出，曾任校学生民族乐团团长，同时策划“中华音韵”课程，尝试把民乐的推广从舞台延伸到更日常的校园学习场景。除了学习和音乐，我也持续参与学生组织与志愿服务，关心同伴支持与校园公共生活。这个主页记录的，正是我在数学、音乐、组织与生活之间不断摸索、慢慢成形的轨迹。
-    </p>
-    <div class="resume-hero-contacts">
+    <p class="resume-hero-intro">中国科学院大学计算数学专业直博研究生一年级，培养单位为中国科学院数学与系统科学研究院，目前在雁栖湖校区参加研究生一年级集中教学。本科毕业于中国科学技术大学数学科学学院（2026届）。</p><details class="full-intro"><summary>更多：数学、音乐与校园生活</summary><p>
+      我是杨书泰（泰泰 / Thomas），现为中国科学院大学计算数学专业直博研究生一年级学生，培养单位为中国科学院数学与系统科学研究院，目前在国科大雁栖湖校区参加研究生一年级集中教学。我于2026年本科毕业于中国科学技术大学数学科学学院，研究兴趣集中于数值优化、谱梯度方法与收敛性理论，同时也长期从事笙演奏、民乐编配与校园美育实践。学业上，我在本科阶段保持了较好的成绩和综合表现，主持国家级大创项目并获评校级优秀，并完成《线性代数B1》《线性代数B2》课程助教工作；音乐与学生工作方面，我长期参与并组织校园民乐演出，曾任校学生民族乐团团长，同时策划“中华音韵”课程，尝试把民乐的推广从舞台延伸到更日常的校园学习场景。除了学习和音乐，我也持续参与学生组织与志愿服务，关心同伴支持与校园公共生活。这个主页记录的，正是我在数学、音乐、组织与生活之间不断摸索、慢慢成形的轨迹。
+    </p></details>
+    <p class="research-intro">近期，我在研究生导师袁亚湘老师的指导下，研究 Barzilai–Borwein 方法的最紧渐近速率、Lyapunov 函数及 R-线性收敛，以及加权有限记忆最速下降法（LMSD）的收敛理论。我尤其关心谱结构、齐次动力系统与优化算法之间的联系。欢迎就数值优化、计算数学和相关问题与我交流。</p><div class="hero-actions"><a href="https://orcid.org/0009-0003-5581-2970" target="_blank" rel="me noopener noreferrer">ORCID ↗</a><a href="https://github.com/Taitai2025" target="_blank" rel="me noopener noreferrer">GitHub ↗</a><a href="http://www.amss.ac.cn/" target="_blank" rel="noopener noreferrer">AMSS ↗</a><a href="#research">科研与文章 ↗</a><a href="mailto:yangshutai26@mails.ucas.ac.cn">学术交流 ↗</a></div><p class="small">日常联系优先微信或QQ；学术交流请使用 <a href="mailto:yangshutai26@mails.ucas.ac.cn">UCAS邮箱</a>。</p><div class="resume-hero-contacts">
       <span class="contact-pill contact-detail"><i class="fas fa-location-dot contact-icon" aria-hidden="true"></i><span class="contact-label">住址</span><span class="contact-value">北京丰台 100040</span></span>
-      <span class="contact-pill contact-detail"><i class="fas fa-envelope contact-icon" aria-hidden="true"></i><span class="contact-label">邮箱</span><a class="contact-value" href="mailto:taitai@mail.ustc.edu.cn">taitai@mail.ustc.edu.cn</a></span>
+      
       <span class="contact-pill contact-detail"><i class="fab fa-qq contact-icon" aria-hidden="true"></i><span class="contact-label">QQ</span><span class="contact-value">2592255858</span></span>
       <span class="contact-pill contact-detail"><i class="fab fa-weixin contact-icon" aria-hidden="true"></i><span class="contact-label">微信</span><span class="contact-value">taitai_2026</span></span>
       <span class="contact-pill contact-detail"><i class="fas fa-users contact-icon" aria-hidden="true"></i><span class="contact-label">粉丝群</span><span class="contact-value">NMOU 泰蜜分舵 · 733028065</span></span>
@@ -36,14 +37,14 @@ window.RESUME_ZH_INNER_HTML = `
 <h2>教育经历</h2>
 <div class="subheading">
 <span class="subheading-title"><strong>中国科学院数学与系统科学研究院</strong></span>
-<span style="font-size: 0.9em; color: #666;">2026.09（预计）</span>
+<span style="font-size: 0.9em; color: #666;">2026.09 至今</span>
 </div>
 <div style="font-size: 0.85em; color: #555; margin-bottom: 5px; padding-left: 2px;">
           (Academy of Mathematics and Systems Science, Chinese Academy of Sciences)
         </div>
 <ul>
-<li><strong>学位/身份：</strong> <strong>直博生（拟录取）</strong></li>
-<li><strong>培养单位：</strong> 计算数学与科学工程计算研究所</li>
+<li><strong>学位/身份：</strong> <strong>直博研究生一年级</strong></li>
+<li><strong>培养单位：</strong> 中国科学院数学与系统科学研究院</li><li><strong>研究生导师：</strong> 袁亚湘老师</li><li><strong>研究所：</strong> 计算数学与科学工程计算研究所</li><li><strong>学籍学校 / 当前校区：</strong> 中国科学院大学 / 雁栖湖校区（研究生一年级集中教学）</li>
 <li><strong>攻读专业：</strong> 计算数学</li>
 <li><strong>研究方向：</strong> 最优化计算方法 I</li>
 </ul>
@@ -83,8 +84,8 @@ window.RESUME_ZH_INNER_HTML = `
 <li><strong>全部课程 GPA：</strong> 4.00/4.30</li>
 <li><strong>全部课程加权平均分：</strong> 92.19</li>
 <li><strong>全部课程算数平均分：</strong> 92.52</li>
-<li><strong>2022级数学科学学院GPA排名：</strong> 5/176 (top 3%)</li>
-<li><strong>2022级数学科学学院概率统计方向GPA排名：</strong> 3/69</li>
+<li><strong>数学科学学院2026届毕业生GPA排名：</strong> 6/165</li>
+<li><strong>2022级数学科学学院概率统计方向GPA排名：</strong> 约第3–4名 / 约70人</li>
 <li><strong>2022级数学科学学院综合测评排名：</strong> 2/176</li>
 </ul>
 <div style="margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;">
@@ -154,58 +155,52 @@ window.RESUME_ZH_INNER_HTML = `
 <div class="section">
 <h2>大学以来的奖项及荣誉（部分）</h2>
 <p><strong>虽然我在小学和中学阶段也获得过许多奖项，但我更愿意展示大学以来的荣誉，因为这些奖项更能体现我的成长与进步。</strong></p>
-<h3 style="margin-top: 20px; color: #444;">🎓 学业与综合荣誉</h3>
-<ul>
-<li><strong>2023年中国科学技术大学优秀学生奖学金 金奖</strong>（2024.01，3%，4000元）</li>
-<li>2023年秋季学期中国科学技术大学电磁学小论文竞赛 三等奖（2024.01，与林琦皓合作）</li>
-<li><strong>中国科学技术大学2024年度最美“六有”大学生 提名奖</strong> (2024.12)</li>
-<li>中国科学技术大学第二十五期学生骨干培训班暨团校第三十一期培训班 优秀学员（2024.12）</li>
-<li><strong>2024年中国石油奖学金</strong>（2025.03，排名2/174，8000元）</li>
-<li>中国科学技术大学2024-2025学年优秀共青团干部（2025.05）</li>
-<li>中国科学技术大学2024-2025学年优秀学生干部（2025.05）</li>
-<li>中国科学技术大学2024-2025学年优秀共青团员（2025.05）</li>
-<li>中国科学技术大学2024-2025学年青年马克思主义培养工程暨“六有”大学生“青马计划”班 优秀学员（2025.05）</li>
-<li>中国科学技术大学2024-2025学年优秀学生社团骨干（2025.06，担任中国科学技术大学学生民族乐团学生骨干）</li>
-<li><strong>通过2025-2026学年郭沫若奖学金A类资格审查，参加学院答辩</strong>（2025.10，评选时GPA与综合测评排名均位列学院top 5%，学院共5人符合A类申报资格）</li>
-<li><strong>2025年黄渝纪念奖学金</strong>（2025.11，学院最高奖，共奖励10人，10000元）</li>
-<li>第十七届全国大学生数学竞赛 安徽赛区 数学A类 二等奖（2025.12，全省排名第60）</li>
-<li><strong>中国科学技术大学2025年度最美“六有”大学生 提名奖</strong> (2025.12)</li>
-<li><strong>2025年比亚迪奖学金</strong>（2026.01，排名2/174，10000元）</li>
-<li>2026届中国科学技术大学优秀毕业生（2026.04，15%，班级共10个名额，学院168名毕业生共26个名额）</li>
-<li><strong>2026届安徽省普通高等学校优秀毕业生</strong>（2026.04，3%，学院168名毕业生共6个名额）</li>
-<li>中国科学技术大学2025-2026学年优秀共青团干部（2026.05）</li>
-<li>中国科学技术大学2025-2026学年优秀学生干部（2026.05）</li>
-<li>中国科学技术大学2025-2026学年优秀共青团员（2026.05）</li>
-<li>中国科学技术大学2025-2026学年优秀学生社团骨干（2026.06，担任中国科学技术大学微笑心理协会学生骨干）</li>
-<li><strong>中国科学技术大学2026年度“大学生创新训练计划”项目校级优秀奖</strong>（2026.06，全校共61名同学获得，学院10个参与结题项目仅有我一人的项目获评校优，项目名称：加权 Ritz-sweep 谱梯度法的齐次块动力系统理论与收敛性分析）</li>
-<li><strong>中国科学技术大学2026年度校级优秀毕业论文奖</strong>（2026.06，全校共92名本科毕业生获得，学院168名毕业生中仅有4人获评校优，项目名称：块映射视角下固定记忆谱梯度法的统一收敛理论及应用）</li>
-</ul>
-<h3 style="margin-top: 20px; color: #444;">🎵 艺术展演与文化交流</h3>
-<ul>
-<li>安徽演艺集团首届青少年艺术展演 笙·青年组 金奖（2024.07，指导教师：马欧宇）</li>
-<li>第十三届中国音乐国音杯·民族器乐大赛 北京赛区 笙专业 青少年组 金奖（2024.12）</li>
-<li>第十一届澳门国际艺术公开赛 中国赛区初赛 民乐-笙项目 青年组 金奖（2024.12，指导教师：黄宇顺）</li>
-<li>The 2024-2025 GIYAF International Youth Art Festival China Regional Qualifier, the First Prize (2024.12, Mentor: 梁鹏宇 Liang Pengyu)</li>
-<li>The 11th Macau International Art Open Competition Final Round for Chinese Folk Music, Sheng Item-Youth Class, Gold Award (2025.01)</li>
-<li>The 2025 GIYAF International Youth Arts Festival Singapore Final, Gold Award (2025.01)</li>
-<li>第四届乐府良匠民族音乐节 笙-大学组 一等奖（2025.04，指导教师：倪好）</li>
-<li>第十五届亚洲国际艺术大赛 中国赛区 民乐-笙项目 青年组 一等奖（2025.06，指导教师：任浩原）</li>
-<li><strong>参加2026年春晚合肥分会场拍摄 登上央视春晚</strong> (2026.01)</li>
-<li>第六届“闽乐芳华杯”民族器乐大赛 笙、唢呐、埙、电子吹管、巴乌/葫芦丝、其他乐器组 金奖（2026.06，指导教师：钟承奕）</li>
-</ul>
-<h3 style="margin-top: 20px; color: #444;">🏸 体育竞技与活动参与</h3>
-<ul>
-<li>中国科学技术大学第九届羽毛球“新星赛” 男单16强（2022.10）</li>
-<li>中国科学技术大学2022雏鹰杯 8强（2022.11）</li>
-<li>中国科学技术大学2022雏鹰杯 公平竞赛奖（2023.03）</li>
-<li>2023年春中国科学技术大学“四国大战”羽毛球团体赛 第三名（2023.04）</li>
-<li>中国科学技术大学第十届羽毛球“新星赛” 男双16强（2023.10）</li>
-<li>2023年秋中国科学技术大学“四国大战”羽毛球团体赛 第三名（2023.11）</li>
-<li>中国科学技术大学第十一届羽毛球“新星赛” 男双16强（2024.09）</li>
-<li>中国科学技术大学跑步爱好者协会2025年暑期跑步打卡 个人奖三等奖（2025.09，个人赛排名第33，总跑量202.70km）</li>
-<li>中国科学技术大学跑步爱好者协会2025年暑期跑步打卡 团队奖四等奖（2025.09，团队赛所在队伍“大象大象大象”排名第17，三人总排行316）</li>
-<li>中国科学技术大学跑步爱好者协会2026年寒假跑步打卡 个人奖三等奖（2026.02，个人赛排名第32，总跑量125.57km）</li>
-<li>中国科学技术大学跑步爱好者协会2026年寒假跑步打卡 第三周坚持奖（2026.02）</li>
+<h3 class="honors-stage">本科阶段</h3>
+<ul class="honors-list">
+<li>中国科学技术大学第九届羽毛球“新星赛” 男单16强（2022.10） <span class="honor-category">体育竞技与活动参与</span></li>
+<li>中国科学技术大学2022雏鹰杯 8强（2022.11） <span class="honor-category">体育竞技与活动参与</span></li>
+<li>中国科学技术大学2022雏鹰杯 公平竞赛奖（2023.03） <span class="honor-category">体育竞技与活动参与</span></li>
+<li>2023年春中国科学技术大学“四国大战”羽毛球团体赛 第三名（2023.04） <span class="honor-category">体育竞技与活动参与</span></li>
+<li>中国科学技术大学第十届羽毛球“新星赛” 男双16强（2023.10） <span class="honor-category">体育竞技与活动参与</span></li>
+<li>2023年秋中国科学技术大学“四国大战”羽毛球团体赛 第三名（2023.11） <span class="honor-category">体育竞技与活动参与</span></li>
+<li><strong>2023年中国科学技术大学优秀学生奖学金 金奖</strong>（2024.01，3%，4000元） <span class="honor-category">学业与综合荣誉</span></li>
+<li>2023年秋季学期中国科学技术大学电磁学小论文竞赛 三等奖（2024.01，与林琦皓合作） <span class="honor-category">学业与综合荣誉</span></li>
+<li>安徽演艺集团首届青少年艺术展演 笙·青年组 金奖（2024.07，指导教师：马欧宇） <a class="document-link" href="assets/documents/honors/anhui-youth-art-gold-2024.pdf" target="_blank" rel="noopener noreferrer">证书 PDF ↗</a> <span class="honor-category">艺术展演与文化交流</span></li>
+<li>中国科学技术大学第十一届羽毛球“新星赛” 男双16强（2024.09） <span class="honor-category">体育竞技与活动参与</span></li>
+<li><strong>中国科学技术大学2024年度最美“六有”大学生 提名奖</strong> (2024.12) <span class="honor-category">学业与综合荣誉</span></li>
+<li>中国科学技术大学第二十五期学生骨干培训班暨团校第三十一期培训班 优秀学员（2024.12） <span class="honor-category">学业与综合荣誉</span></li>
+<li>第十三届中国音乐国音杯·民族器乐大赛 北京赛区 笙专业 青少年组 金奖（2024.12） <a class="document-link" href="assets/documents/honors/guoyin-cup-gold-2024.pdf" target="_blank" rel="noopener noreferrer">证书 PDF ↗</a> <span class="honor-category">艺术展演与文化交流</span></li>
+<li>第十一届澳门国际艺术公开赛 中国赛区初赛 民乐-笙项目 青年组 金奖（2024.12，指导教师：黄宇顺） <span class="honor-category">艺术展演与文化交流</span></li>
+<li>The 2024-2025 GIYAF International Youth Art Festival China Regional Qualifier, the First Prize (2024.12, Mentor: 梁鹏宇 Liang Pengyu) <span class="honor-category">艺术展演与文化交流</span></li>
+<li>The 11th Macau International Art Open Competition Final Round for Chinese Folk Music, Sheng Item-Youth Class, Gold Award (2025.01) <span class="honor-category">艺术展演与文化交流</span></li>
+<li>The 2025 GIYAF International Youth Arts Festival Singapore Final, Gold Award (2025.01) <span class="honor-category">艺术展演与文化交流</span></li>
+<li><strong>2024年中国石油奖学金</strong>（2025.03，排名2/174，8000元） <span class="honor-category">学业与综合荣誉</span></li>
+<li>第四届乐府良匠民族音乐节 线上竞演 笙-大学组 一等奖（2025.04，指导教师：倪好） <a class="document-link" href="assets/documents/honors/yuefu-liangjiang-first-prize-2025.pdf" target="_blank" rel="noopener noreferrer">证书 PDF ↗</a> <span class="honor-category">艺术展演与文化交流</span></li>
+<li>中国科学技术大学2024-2025学年优秀共青团干部（2025.05） <span class="honor-category">学业与综合荣誉</span></li>
+<li>中国科学技术大学2024-2025学年优秀学生干部（2025.05） <span class="honor-category">学业与综合荣誉</span></li>
+<li>中国科学技术大学2024-2025学年优秀共青团员（2025.05） <span class="honor-category">学业与综合荣誉</span></li>
+<li>中国科学技术大学2024-2025学年青年马克思主义培养工程暨“六有”大学生“青马计划”班 优秀学员（2025.05） <span class="honor-category">学业与综合荣誉</span></li>
+<li>中国科学技术大学2024-2025学年优秀学生社团骨干（2025.06，担任中国科学技术大学学生民族乐团学生骨干） <span class="honor-category">学业与综合荣誉</span></li>
+<li>第十五届亚洲国际艺术大赛 中国赛区 民乐-笙项目 青年组 一等奖（2025.06，指导教师：任浩原） <span class="honor-category">艺术展演与文化交流</span></li>
+<li>中国科学技术大学跑步爱好者协会2025年暑期跑步打卡 个人奖三等奖（2025.09，个人赛排名第33，总跑量202.70km） <span class="honor-category">体育竞技与活动参与</span></li>
+<li>中国科学技术大学跑步爱好者协会2025年暑期跑步打卡 团队奖四等奖（2025.09，团队赛所在队伍“大象大象大象”排名第17，三人总排行316） <span class="honor-category">体育竞技与活动参与</span></li>
+<li><strong>通过2025-2026学年郭沫若奖学金A类资格审查，参加学院答辩</strong>（2025.10，评选时GPA与综合测评排名均位列学院top 5%，学院共5人符合A类申报资格） <span class="honor-category">学业与综合荣誉</span></li>
+<li><strong>2025年黄渝纪念奖学金</strong>（2025.11，学院最高奖，共奖励10人，10000元） <span class="honor-category">学业与综合荣誉</span></li>
+<li>第十七届全国大学生数学竞赛 安徽赛区 数学A类 二等奖（2025.12，全省排名第60） <span class="honor-category">学业与综合荣誉</span></li>
+<li><strong>中国科学技术大学2025年度最美“六有”大学生 提名奖</strong> (2025.12) <span class="honor-category">学业与综合荣誉</span></li>
+<li><strong>2025年比亚迪奖学金</strong>（2026.01，排名2/174，10000元） <span class="honor-category">学业与综合荣誉</span></li>
+<li><strong>参加2026年春晚合肥分会场拍摄 登上央视春晚</strong> (2026.01) <span class="honor-category">艺术展演与文化交流</span></li>
+<li>中国科学技术大学跑步爱好者协会2026年寒假跑步打卡 个人奖三等奖（2026.02，个人赛排名第32，总跑量125.57km） <span class="honor-category">体育竞技与活动参与</span></li>
+<li>中国科学技术大学跑步爱好者协会2026年寒假跑步打卡 第三周坚持奖（2026.02） <span class="honor-category">体育竞技与活动参与</span></li>
+<li>2026届中国科学技术大学优秀毕业生（2026.04，15%，班级共10个名额，学院168名毕业生共26个名额） <span class="honor-category">学业与综合荣誉</span></li>
+<li><strong>2026届安徽省普通高等学校优秀毕业生</strong>（2026.04，3%，学院168名毕业生共6个名额） <span class="honor-category">学业与综合荣誉</span></li>
+<li>中国科学技术大学2025-2026学年优秀共青团干部（2026.05） <span class="honor-category">学业与综合荣誉</span></li>
+<li>中国科学技术大学2025-2026学年优秀学生干部（2026.05） <span class="honor-category">学业与综合荣誉</span></li>
+<li>中国科学技术大学2025-2026学年优秀共青团员（2026.05） <span class="honor-category">学业与综合荣誉</span></li>
+<li>中国科学技术大学2025-2026学年优秀学生社团骨干（2026.06，担任中国科学技术大学微笑心理协会学生骨干） <span class="honor-category">学业与综合荣誉</span></li>
+<li><strong>中国科学技术大学2026年度“大学生创新训练计划”项目校级优秀奖</strong>（2026.06，全校共61名同学获得，学院10个参与结题项目仅有我一人的项目获评校优，项目名称：加权 Ritz-sweep 谱梯度法的齐次块动力系统理论与收敛性分析） <span class="honor-category">学业与综合荣誉</span></li>
+<li><strong>中国科学技术大学2026年度校级优秀毕业论文奖</strong>（2026.06，全校共92名本科毕业生获得，学院168名毕业生中仅有4人获评校优，项目名称：块映射视角下固定记忆谱梯度法的统一收敛理论及应用） <span class="honor-category">学业与综合荣誉</span></li>
+<li>第六届“闽乐芳华杯”民族器乐大赛 笙、唢呐、埙、电子吹管、巴乌/葫芦丝、其他乐器组 金奖（2026.06，指导教师：钟承奕） <span class="honor-category">艺术展演与文化交流</span></li>
 </ul>
 <div style="margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;">
 <p style="margin-top: 0;"><strong>虽然有许多小奖项，但大部分大奖总是与我擦肩而过。</strong></p>
@@ -219,6 +214,17 @@ window.RESUME_ZH_INNER_HTML = `
 <p><strong>我也深刻理解到，遗憾是人生常态，而真正的收获，来自于每一次奋斗的过程。</strong></p>
 <p style="margin-bottom: 0;"><strong>更何况，我还并不那么爱奋斗，时常摆烂。</strong></p>
 </div>
+<h3 class="honors-stage">研究生阶段</h3>
+<ul class="honors-list">
+<li>国科大民族管弦乐团2026“仲夏清韵 · 廿念不忘”专场音乐会 <strong>最佳表演奖</strong>（2026.06）</li>
+<li>国科大民族管弦乐团2026“仲夏清韵 · 廿念不忘”专场音乐会 <strong>杰出贡献奖</strong>（2026.06）</li>
+<li><strong>2026年度“华罗庚奖学金（硕士生）”</strong>（2026.09，10万元，一年内按月发放；笔试、面试两阶段选拔，笔试位列100余名考生第2名）</li>
+<li><strong>2026年研究生学业奖学金 博士二等</strong>（2026.09，13000元）</li>
+<li>国科大一年级研究生助学金 博士（2026.09，9000元/年）</li>
+<li>研究生国家助学金 博士（2026.09，15000元/年）</li>
+</ul>
+<p class="source-note">奖学金与助学金分列。学业奖学金的个人等次以当年获奖通知为准。 <a href="https://yjsgl.ucas.edu.cn/index.php/zh-cn/richang/jiangjin/371-2026-01-15-07-12-06" target="_blank" rel="noopener noreferrer">国科大奖助学金管理办法 ↗</a></p>
+<p><a class="document-link" href="https://amss.cas.cn/ttxw/202609/t20260930_8288764.html" target="_blank" rel="noopener noreferrer">数学院开学典礼 · 新生代表发言报道 ↗</a> <a class="document-link" href="#research">发言稿与相关资料 ↗</a></p>
 </div>
 <div class="section">
 <h2>乐团经历</h2>
@@ -252,7 +258,7 @@ window.RESUME_ZH_INNER_HTML = `
 <li><strong>担当角色：</strong>民族管乐声部 高音笙演奏员</li>
 <li><strong>履历说明：</strong>随着直博保研的确定，我提前一年融入了未来研究生母校的艺术氛围，在这里继续延续我对民乐的热爱。前不久，我刚刚参与了乐团“仲夏清韵·廿念不忘”专场音乐会的演出。</li>
 </ul>
-<h3 style="margin-top: 20px; color: #444;">🌱 梦开始的地方（中小学启蒙与积淀）</h3>
+<h3>室内乐与乐队</h3><div class="subheading"><strong>思旺乐队</strong><span>成立于2026.06.18</span></div><p>现任笙演奏员；团体介绍与演出记录将继续补充。</p><div class="subheading"><strong>怀柔音乐专家</strong><span>成立于2026.09</span></div><p>现任笙演奏员；团体介绍与演出记录将继续补充。</p><div class="subheading"><strong>国科大民族管弦乐团 · 舜华民族室内乐团</strong></div><p>现任笙演奏员；团体介绍与演出记录将继续补充。</p><h3 style="margin-top: 20px; color: #444;">🌱 梦开始的地方（中小学启蒙与积淀）</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>北京市十一学校民乐团</strong></span>
 <span>2016.09 - 2021.01</span>
@@ -326,9 +332,9 @@ window.RESUME_ZH_INNER_HTML = `
 <ul>
 <li><strong>项目类型：</strong> 中国科学技术大学 2022级本科毕业论文 / 毕业设计</li>
 <li><strong>项目角色：</strong> <strong>独立完成人</strong></li>
-<li><strong>指导教师：</strong> 陈士祥 特任研究员</li>
+<li><strong>指导教师：</strong> 陈士祥 特任研究员（校内导师）；袁亚湘 研究员</li>
 <li><strong>结题结果：</strong> <strong>A+</strong>，8学分，获评中国科学技术大学2026年度<strong>校级优秀毕业论文奖</strong></li>
-<li><strong>当前延伸：</strong> 正在将毕业设计成果整理为拟投稿论文。</li>
+<li><strong>当前延伸：</strong> 毕业设计成果已继续发展为谱梯度方法与收敛性理论研究，相关预印本见“科研与文章”。</li>
 </ul>
 
 <div class="subheading">
@@ -339,9 +345,9 @@ window.RESUME_ZH_INNER_HTML = `
 <ul>
 <li><strong>项目类型：</strong> 大学生创新创业计划项目</li>
 <li><strong>项目角色：</strong> <strong>项目主持人</strong></li>
-<li><strong>指导教师：</strong> 许小卫 教授</li>
+<li><strong>指导教师：</strong> 许小卫 教授（校内导师）；袁亚湘 研究员</li>
 <li><strong>结题结果：</strong> <strong>A+</strong>，4学分，获评中国科学技术大学2026年度“大学生创新训练计划”项目<strong>校级优秀奖</strong></li>
-<li><strong>当前延伸：</strong> 正在将项目成果整理为拟投稿论文。</li>
+<li><strong>当前延伸：</strong> 项目成果已继续发展为加权 LMSD 与谱梯度方法研究，相关预印本见“科研与文章”。</li>
 </ul>
 <h3 style="margin-top: 20px; color: #444;">⚙️ 学科竞赛与跨学科探索</h3>
 <div class="subheading">
@@ -409,7 +415,7 @@ window.RESUME_ZH_INNER_HTML = `
 <div class="section">
 <h2>学生工作与任职经历</h2>
 <p><strong>在专注学业的同时，我也非常热衷于投入学生工作，特别是在民族乐团的建设与班级服务中。这些经历不仅锻炼了我的统筹与领导能力，更让我结识了一群志同道合的朋友。</strong></p>
-<h3 style="margin-top: 20px; color: #444;">🎵 学生乐团与艺术管理（核心履历）</h3>
+<h3 style="margin-top: 20px; color: #444;">🎵 学生乐团与艺术管理（核心履历）</h3><div class="subheading"><span class="subheading-title"><strong>中国科学院大学民族管弦乐团 吹管声部长</strong></span><span>2026-2027学年（现任）</span></div>
 <div class="subheading">
 <span class="subheading-title"><strong>中国科学技术大学学生民族乐团（NMOU）团长</strong></span>
 <span>2025-2026学年（曾任）</span>
@@ -426,7 +432,7 @@ window.RESUME_ZH_INNER_HTML = `
 </ul>
 <div class="subheading">
 <span class="subheading-title"><strong>中国科学院大学民族管弦乐团 宣传部干事</strong></span>
-<span>2025-2026学年（现任）</span>
+<span>2025-2027学年（现任）</span>
 </div>
 <ul>
 <li style="color: #666;">[工作预留]</li>
@@ -590,16 +596,13 @@ window.RESUME_ZH_INNER_HTML = `
 </ul>
 </div>
 <div class="section">
-<h2>发表文章</h2>
+<h2>科研论文与发表文章</h2>
 <div class="subheading">
-<span class="subheading-title">拟投稿论文筹备中</span>
-<span>2026年暑假</span>
-</div>
-<ul>
-<li>正在将毕业设计成果整理为拟投稿论文。</li>
-<li>正在将大学生创新创业计划项目成果整理为拟投稿论文。</li>
-<li style="color: #666;"><em>目前暂未正式发表学术论文。</em></li>
-</ul>
+<span class="subheading-title">四篇 arXiv 预印本 · 科普文章 · 报告资料</span>
+<span>更新于 2026.10</span></div>
+<p>围绕 Barzilai–Borwein（BB）方法、加权 LMSD、齐次动力系统和 Lyapunov 分析开展研究。四篇预印本均与袁亚湘合作；其中三篇在投，预印本与正式发表状态分开标注。</p>
+<p>毕业设计和大创项目成果的后续论文、《蛙鸣》第68期文章，以及2018年《数理天地：初中版》文章，统一收录在科研与文章板块。</p>
+<a class="document-link" href="#research">查看论文、报告和 PDF ↗</a>
 </div>
 <div class="section">
 <h2>其他信息</h2>
@@ -610,16 +613,20 @@ window.RESUME_ZH_INNER_HTML = `
 <li><strong>爱好：</strong> 数学，音乐（民乐演奏和编曲），羽毛球，游泳，跑步，健身，篮球，电影，美食，读书，思考。</li>
 <li style="margin-top: 10px;">
 <strong>推免与直博录取情况：</strong><br/>
-            我于 2025 年上半年参加了中国科学院数学与系统科学研究院的推免选拔。同年 9 月，我以 <strong>92.88 分的综合成绩（学院排名 2/174）</strong> 获得推免资格，并 <strong>在学院获得保研资格的 73 人中排名第一</strong>。在随后的复试中，我以 <strong>96.5 分的总成绩位居计算数学专业第二名</strong>，正式被计算数学与科学工程计算研究所拟录取为 <strong>直博生</strong>（该专业直博生名额仅为 4 人）。目前已接收待录取通知，预计将于 2026 年 9 月正式入学。
+            我于 2025 年上半年参加了中国科学院数学与系统科学研究院的推免选拔。同年 9 月，我以 <strong>92.88 分的综合成绩（学院排名 2/174）</strong> 获得推免资格，并 <strong>在学院获得保研资格的 73 人中排名第一</strong>。在随后的复试中，我以 <strong>96.5 分的总成绩位居计算数学专业第二名、四名直博生第一名</strong>，被计算数学与科学工程计算研究所录取为 <strong>直博生</strong>（该专业直博生名额仅为 4 人）。已于 2026 年 9 月正式入学。
           </li>
 <li style="margin-top: 10px;">
-<strong>大四结束后的暑假生活：</strong><br/>
+<strong>近期生活与日程（2026年秋季）：</strong><br/>
+            目前在 <strong>中国科学院大学雁栖湖校区</strong> 参加研究生一年级集中教学，周一至周六上午上课。周日上午与 <strong>舜华民族室内乐团</strong> 排练，下午与 <strong>国科大民族管弦乐团</strong> 排练，周日空闲时也可能打打羽毛球。工作日常驻雁栖湖校区，周日在中关村校区，其他节假日一般在玉泉路校区附近的家。<strong>2026年12月6日</strong> 将回中国科学技术大学，参与 <strong>NMOU校学生民族乐团2026独奏音乐会</strong>。日常联系优先微信或QQ，学术交流请通过 <a href="mailto:yangshutai26@mails.ucas.ac.cn">UCAS邮箱</a> 联系。<a href="#schedule">查看详细日程 ↗</a>
+</li>
+<li style="margin-top: 10px;">
+<strong>大四结束后的暑假生活（2026年暑假记录）：</strong><br/>
             本科阶段结束后，我目前主要在学校和家里之间切换。这个暑假的主要学术任务，是把毕业设计和大学生创新创业计划项目的成果整理为拟投稿论文，同时准备中科院开学考试。平日一般上午去 <strong>中国科学院大学玉泉路校区</strong> 写作、复习或整理材料，下午多在家继续推进论文和其他事务。生活上，我会看电影、听民乐演出，国家大剧院只要有时间合适的民族管弦乐演出基本都会去；也会打羽毛球、跑步、健身保持运动。每周日我会和 <strong>国科大民族管弦乐团</strong> 一起排练。暑假期间，7月9日会赴上海参加由吴宝珠教授和恽之玮教授带来的小型闭门分享会；7月17日至19日会赴昆明参加“西部运筹学研究与发展论坛第3期——运筹优化与数智科学前沿研讨会”。
 </li>
 </ul>
 </div>
 <div class="section" style="border: 1px dashed #888; padding: 20px; background-color: rgba(255,255,255,0.05); margin-top: 50px;">
-<h2 style="text-align: center; margin-top: 0;">📜 “锦上添花”——个人主页 2026 焕新计划</h2>
+<h2 style="text-align: center; margin-top: 0;">📜 “锦上添花”——个人主页 2026 焕新计划（早期规划留存）</h2>
 <p style="font-style: italic; text-align: center; color: #666;">“个人主页不仅是一份简历，更是我成长的博物馆。”</p>
 <div style="margin-top: 20px;">
 <div class="subheading">

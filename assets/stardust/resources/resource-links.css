@@ -1,0 +1,12 @@
+/* Thin integration layer; visual PDF reader rules are copied from Stardust. */
+.resource-inline-reader { margin: 24px 0; clear: both; }
+.resource-inline-reader.is-fullscreen { margin: 0; z-index: 25000; }
+.paper > .resource-inline-reader { grid-column: 1 / -1; flex-basis: 100%; }
+.resource-inline-reader[hidden] { display: none !important; }
+.resource-pdf-link { cursor: pointer; }
+.resource-inline-reader:not(.is-fullscreen) { --accent-strong: var(--accent); --surface-2: var(--surface); }
+.resource-inline-reader .pdf-reader-action { white-space: normal; }
+.resource-inline-reader .pdf-reader-fallback { font-family: var(--font-body, inherit); }
+@media (prefers-reduced-motion: reduce) {
+  .pdf-reader-action { transition: none; }
+}

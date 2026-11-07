@@ -1,0 +1,129 @@
+/* =========================================================
+   Life / Meditations
+   - Meditations typography
+   - Meditations page layout
+   - Shared PDF reader styling lives in:
+     assets/css/components/pdf-reader.css
+   ========================================================= */
+
+#meditations {
+  --medit-en-body:
+    var(--font-medit-en-body);
+
+  --medit-en-title:
+    var(--font-medit-en-title);
+
+  --medit-zh-body:
+    var(--font-medit-zh-body);
+
+  --medit-zh-title:
+    var(--font-medit-zh-title);
+
+  font-family:
+    var(--medit-en-body);
+}
+
+body[data-lang="zh"]
+#meditations {
+  font-family:
+    var(--medit-zh-body);
+}
+
+/* Page title */
+#meditations .meditations-heading {
+  margin-bottom: 18px;
+
+  color: var(--accent);
+  font-family:
+    var(--font-medit-heading-en);
+  font-size: 2.4em;
+  font-variant: small-caps;
+  letter-spacing: 0.6px;
+  text-align: center;
+}
+
+body[data-lang="zh"]
+#meditations .meditations-heading {
+  font-family:
+    var(--font-medit-heading-zh);
+  font-variant: normal;
+}
+
+/* Reader page width */
+#meditations .medit-pdf-page {
+  max-width:
+    min(
+      1280px,
+      calc(100vw - 48px)
+    );
+}
+
+/*
+  These selectors are deliberately not scoped through
+  #meditations.
+
+  During fullscreen mode the shared PdfReader temporarily
+  moves .medit-pdf-reader under document.body to prevent
+  ancestor overflow and transforms from clipping it.
+*/
+.medit-pdf-reader {
+  font-family:
+    var(--font-medit-en-body);
+}
+
+body[data-lang="zh"]
+.medit-pdf-reader {
+  font-family:
+    var(--font-medit-zh-body);
+}
+
+.medit-pdf-reader
+.pdf-reader-fullscreen-title {
+  font-family:
+    var(--font-medit-heading-en);
+}
+
+body[data-lang="zh"]
+.medit-pdf-reader
+.pdf-reader-fullscreen-title {
+  font-family:
+    var(--font-medit-heading-zh);
+  font-variant: normal;
+}
+
+.medit-loading {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.medit-loading a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.medit-loading a:hover {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  #meditations .medit-pdf-page {
+    max-width:
+      calc(100vw - 24px);
+  }
+
+  #meditations .meditations-heading {
+    margin-bottom: 14px;
+    font-size: 2.05em;
+  }
+}
+
+@media (max-width: 480px) {
+  #meditations .medit-pdf-page {
+    max-width:
+      calc(100vw - 18px);
+  }
+}

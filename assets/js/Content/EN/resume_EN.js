@@ -9,25 +9,26 @@
     <div class="container">
       
 
-<div class="resume-heading">Thomas</div>
+<div class="resume-heading">About <span>SHUTAI YANG</span></div>
 
 <div class="section resume-hero" id="resume-hero">
   <div class="resume-hero-avatar">
     <img src="./assets/images/profile.jpg" alt="Profile photo">
   </div>
   <div class="resume-hero-body">
-    <div class="resume-hero-name">Thomas</div>
+    <div class="eyebrow">COMPUTATIONAL MATHEMATICS · AMSS / UCAS</div><h1 class="resume-hero-name">Shutai Yang <span>杨书泰</span></h1><p class="identity-line">Taitai / Thomas · First-year direct-entry Ph.D. student</p>
+    <div class="profile-email-block"><div class="profile-email-title"><i class="fas fa-envelope" aria-hidden="true"></i><span>Email</span><button class="expander profile-email-expander" data-expand-target="exp-hero-email-en" aria-expanded="false" aria-label="Email"><i class="fas fa-chevron-down" aria-hidden="true"></i></button></div><div class="expand-row profile-email-expand" id="exp-hero-email-en" style="display:none"><div class="expand-content profile-email-content"><div class="profile-email-list"><div class="profile-email-row"><span class="profile-email-label">Primary email</span><a class="profile-email-address" href="mailto:yangshutai26@mails.ucas.ac.cn">yangshutai26@mails.ucas.ac.cn</a><span class="profile-email-actions"><button type="button" class="profile-email-icon-btn profile-email-copy-btn" data-copy-email="yangshutai26@mails.ucas.ac.cn" title="Copy email" aria-label="Copy email"><i class="far fa-copy" aria-hidden="true"></i></button><a class="profile-email-icon-btn profile-email-send-btn" href="mailto:yangshutai26@mails.ucas.ac.cn" title="Send email" aria-label="Send email"><i class="far fa-paper-plane" aria-hidden="true"></i></a></span></div><div class="profile-email-row"><span class="profile-email-label">Gmail</span><a class="profile-email-address" href="mailto:yangshutai51@gmail.com">yangshutai51@gmail.com</a><span class="profile-email-actions"><button type="button" class="profile-email-icon-btn profile-email-copy-btn" data-copy-email="yangshutai51@gmail.com" title="Copy email" aria-label="Copy email"><i class="far fa-copy" aria-hidden="true"></i></button><a class="profile-email-icon-btn profile-email-send-btn" href="mailto:yangshutai51@gmail.com" title="Send email" aria-label="Send email"><i class="far fa-paper-plane" aria-hidden="true"></i></a></span></div><div class="profile-email-row"><span class="profile-email-label">USTC email</span><a class="profile-email-address" href="mailto:taitai@mail.ustc.edu.cn">taitai@mail.ustc.edu.cn</a><span class="profile-email-actions"><button type="button" class="profile-email-icon-btn profile-email-copy-btn" data-copy-email="taitai@mail.ustc.edu.cn" title="Copy email" aria-label="Copy email"><i class="far fa-copy" aria-hidden="true"></i></button><a class="profile-email-icon-btn profile-email-send-btn" href="mailto:taitai@mail.ustc.edu.cn" title="Send email" aria-label="Send email"><i class="far fa-paper-plane" aria-hidden="true"></i></a></span></div></div></div></div></div>
     <div class="resume-hero-chips">
       <span class="contact-pill"><strong>Focus</strong><span>Computational mathematics / optimization algorithms</span></span>
       <span class="contact-pill"><strong>Interests</strong><span>Chinese music / arranging / orchestra work</span></span>
       <span class="contact-pill"><strong>Base</strong><span>Beijing</span></span>
     </div>
-    <p class="resume-hero-intro">
-      I am Thomas, a Class of 2026 graduate of the School of Mathematical Sciences at USTC and an incoming direct-entry Ph.D. student (pre-admitted) at the Academy of Mathematics and Systems Science, CAS. My main interests lie in computational mathematics and optimization, while another equally important part of my life has been Chinese traditional music, sheng performance, arranging, and student organization. Academically, I have maintained solid performance, led a national-level undergraduate innovation project that was later rated university-level outstanding, and worked as a teaching assistant for Linear Algebra B1 and B2; beyond academics, I have long participated in and organized campus performances, and I formerly served as the head of the USTC Student Chinese Orchestra. I also helped plan the “Zhonghua Yinyun” teaching program, hoping to extend the presence of traditional music from the stage into everyday campus life. Beyond study and music, I have continued to take part in student organizations and volunteer service, with a sustained interest in peer support and campus public life. This homepage records that ongoing attempt to hold mathematics, music, organization, and ordinary life together in one continuous path.
-    </p>
-    <div class="resume-hero-contacts">
+    <p class="resume-hero-intro">First-year direct-entry Ph.D. student in Computational Mathematics at UCAS, with AMSS, Chinese Academy of Sciences as my training institution. Currently attending the first-year graduate coursework program at the Yanqi Lake campus; B.Sc., USTC, 2026.</p><details class="full-intro"><summary>More about mathematics, music and campus life</summary><p>
+      I am Shutai Yang (Taitai / Thomas), a first-year direct-entry Ph.D. student in Computational Mathematics at UCAS, with the Academy of Mathematics and Systems Science, CAS as my training institution. I am currently attending the first-year graduate coursework program at the Yanqi Lake campus. I graduated from the School of Mathematical Sciences at USTC in 2026. My main interests lie in computational mathematics and optimization, while another equally important part of my life has been Chinese traditional music, sheng performance, arranging, and student organization. Academically, I have maintained solid performance, led a national-level undergraduate innovation project that was later rated university-level outstanding, and worked as a teaching assistant for Linear Algebra B1 and B2; beyond academics, I have long participated in and organized campus performances, and I formerly served as the head of the USTC Student Chinese Orchestra. I also helped plan the “Zhonghua Yinyun” teaching program, hoping to extend the presence of traditional music from the stage into everyday campus life. Beyond study and music, I have continued to take part in student organizations and volunteer service, with a sustained interest in peer support and campus public life. This homepage records that ongoing attempt to hold mathematics, music, organization, and ordinary life together in one continuous path.
+    </p></details>
+    <p class="research-intro">Under the guidance of my doctoral advisor, Ya-xiang Yuan, my recent research concerns sharp asymptotic rates of Barzilai–Borwein methods, Lyapunov functions, R-linear convergence, and weighted limited-memory steepest descent (LMSD). I am interested in connections between spectral structure, homogeneous dynamical systems and optimization algorithms. I welcome discussions on numerical optimization, computational mathematics and related topics.</p><div class="hero-actions"><a href="https://orcid.org/0009-0003-5581-2970" target="_blank" rel="me noopener noreferrer">ORCID ↗</a><a href="https://github.com/Taitai2025" target="_blank" rel="me noopener noreferrer">GitHub ↗</a><a href="http://www.amss.ac.cn/" target="_blank" rel="noopener noreferrer">AMSS ↗</a><a href="#research">Research &amp; writing ↗</a><a href="mailto:yangshutai26@mails.ucas.ac.cn">Get in touch ↗</a></div><p class="small">WeChat or QQ is preferred for everyday contact. For academic discussions, please use my <a href="mailto:yangshutai26@mails.ucas.ac.cn">UCAS email</a>.</p><div class="resume-hero-contacts">
       <span class="contact-pill contact-detail"><i class="fas fa-location-dot contact-icon" aria-hidden="true"></i><span class="contact-label">Address</span><span class="contact-value">Fengtai, Beijing 100040</span></span>
-      <span class="contact-pill contact-detail"><i class="fas fa-envelope contact-icon" aria-hidden="true"></i><span class="contact-label">Email</span><a class="contact-value" href="mailto:taitai@mail.ustc.edu.cn">taitai@mail.ustc.edu.cn</a></span>
+      
       <span class="contact-pill contact-detail"><i class="fab fa-qq contact-icon" aria-hidden="true"></i><span class="contact-label">QQ</span><span class="contact-value">2592255858</span></span>
       <span class="contact-pill contact-detail"><i class="fab fa-weixin contact-icon" aria-hidden="true"></i><span class="contact-label">WeChat</span><span class="contact-value">taitai_2026</span></span>
       <span class="contact-pill contact-detail"><i class="fas fa-users contact-icon" aria-hidden="true"></i><span class="contact-label">Fan Group</span><span class="contact-value">NMOU Fan Group (泰蜜分舵) · 733028065</span></span>
@@ -40,11 +41,11 @@
   <h2>Education</h2>
   <div class="subheading">
     <span class="subheading-title"><strong>Academy of Mathematics and Systems Science, Chinese Academy of Sciences</strong></span>
-    <span style="font-size: 0.9em; color: #666;">Expected 2026.09</span>
+    <span style="font-size: 0.9em; color: #666;">2026.09 – present</span>
   </div>
   <ul>
-    <li><strong>Degree / status:</strong> Direct-entry Ph.D. student (pre-admitted)</li>
-    <li><strong>Institute:</strong> Institute of Computational Mathematics and Scientific/Engineering Computing</li>
+    <li><strong>Degree / status:</strong> First-year direct-entry Ph.D. student</li>
+    <li><strong>Training institution:</strong> Academy of Mathematics and Systems Science, CAS</li><li><strong>Doctoral advisor:</strong> Ya-xiang Yuan</li><li><strong>Institute:</strong> Institute of Computational Mathematics and Scientific/Engineering Computing</li><li><strong>University / current campus:</strong> UCAS / Yanqi Lake campus (first-year graduate coursework program)</li>
     <li><strong>Program:</strong> Computational Mathematics</li>
     <li><strong>Research direction:</strong> Computational methods in optimization I</li>
   </ul>
@@ -77,8 +78,8 @@
 <li><strong>All-curriculum GPA:</strong> 4.00 / 4.30</li>
 <li><strong>All-curriculum weighted average score:</strong> 92.19</li>
 <li><strong>All-curriculum arithmetic average score:</strong> 92.52</li>
-<li><strong>GPA rank in the School of Mathematical Sciences, Class of 2022:</strong> 5 / 176 (top 3%)</li>
-<li><strong>GPA rank within the Probability &amp; Statistics track:</strong> 3 / 69</li>
+<li><strong>GPA rank among the School of Mathematical Sciences 2026 graduates:</strong> 6 / 165</li>
+<li><strong>GPA rank within the Probability &amp; Statistics track:</strong> approximately 3rd–4th out of about 70</li>
 <li><strong>Comprehensive evaluation rank in the School of Mathematical Sciences, Class of 2022:</strong> 2 / 176</li>
 </ul>
 <div style="margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;">
@@ -146,12 +147,53 @@
 </div>
 </div><div class="section"><h2>Awards and Honours Since Entering University (Selected)</h2>
 <p><strong>I received many awards in primary and secondary school as well, but I prefer to foreground my university-era honours here, because they better reflect the growth that has happened in recent years.</strong></p>
-<h3 style="margin-top: 20px; color: #444;">🎓 Academic and comprehensive honours</h3>
-<ul><li><strong>USTC Outstanding Student Scholarship 2023, Gold Prize</strong> (2024.01, top 3%, CNY 4,000)</li><li>Third Prize, USTC Electromagnetism Mini-Paper Competition, Fall 2023 (2024.01, with Lin Qihao)</li><li><strong>Nomination Award, USTC 2024 “Most Beautiful Six-Haves Student”</strong> (2024.12)</li><li>Outstanding Trainee, 25th Student Cadre Training Program and 31st Youth League School Training Program, USTC (2024.12)</li><li><strong>CNPC Scholarship 2024</strong> (2025.03, rank 2 / 174, CNY 8,000)</li><li>Outstanding Communist Youth League Cadre, USTC, 2024–2025 (2025.05)</li><li>Outstanding Student Cadre, USTC, 2024–2025 (2025.05)</li><li>Outstanding Communist Youth League Member, USTC, 2024–2025 (2025.05)</li><li>Outstanding Trainee, Youth Marxism Training Program / “Six-Haves Student” Program, USTC, 2024–2025 (2025.05)</li><li>Outstanding Student Club Cadre, USTC, 2024–2025 (2025.06, as a student cadre of the USTC Student Nationalities Music Orchestra)</li><li><strong>Passed the eligibility review for the Class A Guo Moruo Scholarship and entered the school-level interview</strong> (2025.10; at the time of selection, both my GPA rank and comprehensive-evaluation rank were within the top 5% of the school; 5 students in the school met the Class A eligibility threshold)</li><li><strong>Huang Yu Memorial Scholarship 2025</strong> (2025.11, the school’s top scholarship; awarded to 10 students, CNY 10,000)</li><li>Second Prize, Mathematics A Category, Anhui Division, 17th Chinese Mathematics Competitions for College Students (2025.12, provincial rank No. 60)</li><li><strong>Nomination Award, USTC 2025 “Most Beautiful Six-Haves Student”</strong> (2025.12)</li><li><strong>BYD Scholarship 2025</strong> (2026.01, rank 2 / 174, CNY 10,000)</li><li>USTC Outstanding Graduate, Class of 2026 (2026.04, top 15%; 10 places in my class and 26 places among 168 graduates in the school)</li><li><strong>Outstanding Graduate of Anhui Province, Class of 2026</strong> (2026.04, top 3%; 6 places among 168 graduates in the school)</li><li>Outstanding Communist Youth League Cadre, USTC, 2025–2026 (2026.05)</li><li>Outstanding Student Cadre, USTC, 2025–2026 (2026.05)</li><li>Outstanding Communist Youth League Member, USTC, 2025–2026 (2026.05)</li><li>Outstanding Student Club Cadre, USTC, 2025–2026 (2026.06, as a student cadre of the USTC Smile Psychology Association)</li><li><strong>University-level Outstanding Project Award, USTC 2026 Undergraduate Innovation Training Program</strong> (2026.06, 61 students awarded across the university; among the 10 concluded projects in the school, mine was the only one rated university-level outstanding; project: Homogeneous Block Dynamical Systems for Weighted Ritz-Sweep Spectral Gradient Methods: Theory and Convergence Analysis)</li><li><strong>University-level Outstanding Graduation Thesis Award, USTC 2026</strong> (2026.06, awarded to 92 graduating undergraduates across the university; only 4 of the 168 graduates in the school were rated university-level outstanding; thesis: A Unified Convergence Theory and Applications of Fixed-Memory Spectral Gradient Methods from a Block-Mapping Perspective)</li></ul>
-<h3 style="margin-top: 20px; color: #444;">🎵 Artistic performance and cultural exchange</h3>
-<ul><li>Gold Award, Sheng, Youth Group, 1st Youth Arts Showcase of Anhui Performing Arts Group (2024.07, instructor: Ma Ouyu)</li><li>Gold Award, Sheng, Youth Group, Beijing Division, 13th Guoyin Cup Chinese National Instrument Competition (2024.12)</li><li>Gold Award, Youth Group, Sheng Item, China Preliminary of the 11th Macau International Art Open Competition (2024.12, instructor: Huang Yushun)</li><li>The 2024–2025 GIYAF International Youth Art Festival China Regional Qualifier, First Prize (2024.12, mentor: Liang Pengyu)</li><li>The 11th Macau International Art Open Competition Final Round for Chinese Folk Music, Sheng Item, Youth Class, Gold Award (2025.01)</li><li>The 2025 GIYAF International Youth Arts Festival Singapore Final, Gold Award (2025.01)</li><li>First Prize, Sheng, University Group, 4th Yuefu Liangjiang Chinese Music Festival (2025.04, instructor: Ni Hao)</li><li>First Prize, Youth Group, Sheng Item, China Division, 15th Asian International Arts Competition (2025.06, instructor: Ren Haoyuan)</li><li><strong>Participated in the filming of the Hefei branch venue for the 2026 CCTV Spring Festival Gala and appeared on the national Spring Festival Gala broadcast</strong> (2026.01)</li><li>Gold Award, Sheng / Suona / Xun / Electronic Wind Instrument / Bawu &amp; Hulusi / Other Instruments Group, 6th “Minyue Fanghua Cup” Chinese Instrumental Music Competition (2026.06, instructor: Zhong Chengyi)</li></ul>
-<h3 style="margin-top: 20px; color: #444;">🏸 Sports and activity participation</h3>
-<ul><li>Top 16, Men’s Singles, 9th USTC Badminton Freshman Tournament (2022.10)</li><li>Top 8, USTC 2022 Chuying Cup (2022.11)</li><li>Fair Play Award, USTC 2022 Chuying Cup (2023.03)</li><li>Third Place, USTC “Four Nations Battle” Badminton Team Tournament, Spring 2023 (2023.04)</li><li>Top 16, Men’s Doubles, 10th USTC Badminton Freshman Tournament (2023.10)</li><li>Third Place, USTC “Four Nations Battle” Badminton Team Tournament, Fall 2023 (2023.11)</li><li>Top 16, Men’s Doubles, 11th USTC Badminton Freshman Tournament (2024.09)</li><li>Third Prize, Individual Category, USTC Running Association Summer Running Challenge 2025 (2025.09, individual rank 33, total mileage 202.70 km)</li><li>Fourth Prize, Team Category, USTC Running Association Summer Running Challenge 2025 (2025.09, team “Elephant Elephant Elephant” ranked 17th, team-of-three total rank 316)</li><li>Third Prize, Individual Category, USTC Running Association Winter Running Challenge 2026 (2026.02, individual rank 32, total mileage 125.57 km)</li><li>Perseverance Award, Week 3, USTC Running Association Winter Running Challenge 2026 (2026.02)</li></ul>
+<h3 class="honors-stage">Undergraduate stage</h3>
+<ul class="honors-list">
+<li>Top 16, Men’s Singles, 9th USTC Badminton Freshman Tournament (2022.10) <span class="honor-category">Sports & activities</span></li>
+<li>Top 8, USTC 2022 Chuying Cup (2022.11) <span class="honor-category">Sports & activities</span></li>
+<li>Fair Play Award, USTC 2022 Chuying Cup (2023.03) <span class="honor-category">Sports & activities</span></li>
+<li>Third Place, USTC “Four Nations Battle” Badminton Team Tournament, Spring 2023 (2023.04) <span class="honor-category">Sports & activities</span></li>
+<li>Top 16, Men’s Doubles, 10th USTC Badminton Freshman Tournament (2023.10) <span class="honor-category">Sports & activities</span></li>
+<li>Third Place, USTC “Four Nations Battle” Badminton Team Tournament, Fall 2023 (2023.11) <span class="honor-category">Sports & activities</span></li>
+<li><strong>USTC Outstanding Student Scholarship 2023, Gold Prize</strong> (2024.01, top 3%, CNY 4,000) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Third Prize, USTC Electromagnetism Mini-Paper Competition, Fall 2023 (2024.01, with Lin Qihao) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Gold Award, Sheng, Youth Group, 1st Youth Arts Showcase of Anhui Performing Arts Group (2024.07, instructor: Ma Ouyu) <a class="document-link" href="assets/documents/honors/anhui-youth-art-gold-2024.pdf" target="_blank" rel="noopener noreferrer">Certificate PDF ↗</a> <span class="honor-category">Arts & cultural exchange</span></li>
+<li>Top 16, Men’s Doubles, 11th USTC Badminton Freshman Tournament (2024.09) <span class="honor-category">Sports & activities</span></li>
+<li><strong>Nomination Award, USTC 2024 “Most Beautiful Six-Haves Student”</strong> (2024.12) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Outstanding Trainee, 25th Student Cadre Training Program and 31st Youth League School Training Program, USTC (2024.12) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Gold Award, Sheng, Youth Group, Beijing Division, 13th Guoyin Cup Chinese National Instrument Competition (2024.12) <a class="document-link" href="assets/documents/honors/guoyin-cup-gold-2024.pdf" target="_blank" rel="noopener noreferrer">Certificate PDF ↗</a> <span class="honor-category">Arts & cultural exchange</span></li>
+<li>Gold Award, Youth Group, Sheng Item, China Preliminary of the 11th Macau International Art Open Competition (2024.12, instructor: Huang Yushun) <span class="honor-category">Arts & cultural exchange</span></li>
+<li>The 2024–2025 GIYAF International Youth Art Festival China Regional Qualifier, First Prize (2024.12, mentor: Liang Pengyu) <span class="honor-category">Arts & cultural exchange</span></li>
+<li>The 11th Macau International Art Open Competition Final Round for Chinese Folk Music, Sheng Item, Youth Class, Gold Award (2025.01) <span class="honor-category">Arts & cultural exchange</span></li>
+<li>The 2025 GIYAF International Youth Arts Festival Singapore Final, Gold Award (2025.01) <span class="honor-category">Arts & cultural exchange</span></li>
+<li><strong>CNPC Scholarship 2024</strong> (2025.03, rank 2 / 174, CNY 8,000) <span class="honor-category">Academic & comprehensive</span></li>
+<li>First Prize, Sheng, University Group, 4th Yuefu Liangjiang Chinese Music Festival, online competition (2025.04, instructor: Ni Hao) <a class="document-link" href="assets/documents/honors/yuefu-liangjiang-first-prize-2025.pdf" target="_blank" rel="noopener noreferrer">Certificate PDF ↗</a> <span class="honor-category">Arts & cultural exchange</span></li>
+<li>Outstanding Communist Youth League Cadre, USTC, 2024–2025 (2025.05) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Outstanding Student Cadre, USTC, 2024–2025 (2025.05) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Outstanding Communist Youth League Member, USTC, 2024–2025 (2025.05) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Outstanding Trainee, Youth Marxism Training Program / “Six-Haves Student” Program, USTC, 2024–2025 (2025.05) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Outstanding Student Club Cadre, USTC, 2024–2025 (2025.06, as a student cadre of the USTC Student Nationalities Music Orchestra) <span class="honor-category">Academic & comprehensive</span></li>
+<li>First Prize, Youth Group, Sheng Item, China Division, 15th Asian International Arts Competition (2025.06, instructor: Ren Haoyuan) <span class="honor-category">Arts & cultural exchange</span></li>
+<li>Third Prize, Individual Category, USTC Running Association Summer Running Challenge 2025 (2025.09, individual rank 33, total mileage 202.70 km) <span class="honor-category">Sports & activities</span></li>
+<li>Fourth Prize, Team Category, USTC Running Association Summer Running Challenge 2025 (2025.09, team “Elephant Elephant Elephant” ranked 17th, team-of-three total rank 316) <span class="honor-category">Sports & activities</span></li>
+<li><strong>Passed the eligibility review for the Class A Guo Moruo Scholarship and entered the school-level interview</strong> (2025.10; at the time of selection, both my GPA rank and comprehensive-evaluation rank were within the top 5% of the school; 5 students in the school met the Class A eligibility threshold) <span class="honor-category">Academic & comprehensive</span></li>
+<li><strong>Huang Yu Memorial Scholarship 2025</strong> (2025.11, the school’s top scholarship; awarded to 10 students, CNY 10,000) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Second Prize, Mathematics A Category, Anhui Division, 17th Chinese Mathematics Competitions for College Students (2025.12, provincial rank No. 60) <span class="honor-category">Academic & comprehensive</span></li>
+<li><strong>Nomination Award, USTC 2025 “Most Beautiful Six-Haves Student”</strong> (2025.12) <span class="honor-category">Academic & comprehensive</span></li>
+<li><strong>BYD Scholarship 2025</strong> (2026.01, rank 2 / 174, CNY 10,000) <span class="honor-category">Academic & comprehensive</span></li>
+<li><strong>Participated in the filming of the Hefei branch venue for the 2026 CCTV Spring Festival Gala and appeared on the national Spring Festival Gala broadcast</strong> (2026.01) <span class="honor-category">Arts & cultural exchange</span></li>
+<li>Third Prize, Individual Category, USTC Running Association Winter Running Challenge 2026 (2026.02, individual rank 32, total mileage 125.57 km) <span class="honor-category">Sports & activities</span></li>
+<li>Perseverance Award, Week 3, USTC Running Association Winter Running Challenge 2026 (2026.02) <span class="honor-category">Sports & activities</span></li>
+<li>USTC Outstanding Graduate, Class of 2026 (2026.04, top 15%; 10 places in my class and 26 places among 168 graduates in the school) <span class="honor-category">Academic & comprehensive</span></li>
+<li><strong>Outstanding Graduate of Anhui Province, Class of 2026</strong> (2026.04, top 3%; 6 places among 168 graduates in the school) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Outstanding Communist Youth League Cadre, USTC, 2025–2026 (2026.05) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Outstanding Student Cadre, USTC, 2025–2026 (2026.05) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Outstanding Communist Youth League Member, USTC, 2025–2026 (2026.05) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Outstanding Student Club Cadre, USTC, 2025–2026 (2026.06, as a student cadre of the USTC Smile Psychology Association) <span class="honor-category">Academic & comprehensive</span></li>
+<li><strong>University-level Outstanding Project Award, USTC 2026 Undergraduate Innovation Training Program</strong> (2026.06, 61 students awarded across the university; among the 10 concluded projects in the school, mine was the only one rated university-level outstanding; project: Homogeneous Block Dynamical Systems for Weighted Ritz-Sweep Spectral Gradient Methods: Theory and Convergence Analysis) <span class="honor-category">Academic & comprehensive</span></li>
+<li><strong>University-level Outstanding Graduation Thesis Award, USTC 2026</strong> (2026.06, awarded to 92 graduating undergraduates across the university; only 4 of the 168 graduates in the school were rated university-level outstanding; thesis: A Unified Convergence Theory and Applications of Fixed-Memory Spectral Gradient Methods from a Block-Mapping Perspective) <span class="honor-category">Academic & comprehensive</span></li>
+<li>Gold Award, Sheng / Suona / Xun / Electronic Wind Instrument / Bawu &amp; Hulusi / Other Instruments Group, 6th “Minyue Fanghua Cup” Chinese Instrumental Music Competition (2026.06, instructor: Zhong Chengyi) <span class="honor-category">Arts & cultural exchange</span></li>
+</ul>
 <div style="margin-top: 30px; padding: 15px; background-color: rgba(0,0,0,0.03); border-left: 4px solid #888; border-radius: 4px;">
 <p style="margin-top: 0;"><strong>Quite a few small awards came my way, yet most of the biggest prizes slipped past me.</strong></p>
 <p><strong>Every year I tried my best for the National Scholarship for undergraduates, but never received it—while often winning the top prize in other scholarship categories instead.</strong></p>
@@ -164,6 +206,16 @@
 <p><strong>I also deeply understand that regret is a constant of life, and the real reward comes from every process of striving.</strong></p>
 <p style="margin-bottom: 0;"><strong>Besides, I am not even that fond of striving—I do slack off from time to time.</strong></p>
 </div>
+<h3 class="honors-stage">Graduate stage</h3>
+<ul class="honors-list">
+<li><strong>Best Performance Award</strong>, UCAS Chinese Orchestra 2026 “仲夏清韵 · 廿念不忘” Concert (2026.06)</li>
+<li><strong>Outstanding Contribution Award</strong>, UCAS Chinese Orchestra 2026 “仲夏清韵 · 廿念不忘” Concert (2026.06)</li>
+<li><strong>2026 Hua Loo-Keng Scholarship (Master’s category)</strong> (2026.09, RMB 100,000, paid monthly over one year; written examination and interview, second among more than 100 candidates in the written examination)</li>
+<li><strong>2026 Graduate Academic Scholarship, doctoral, second class</strong> (2026.09, RMB 13,000)</li>
+<li>UCAS First-year Graduate Grant, doctoral (2026.09, RMB 9,000/year)</li>
+<li>National Graduate Grant, doctoral (2026.09, RMB 15,000/year)</li>
+</ul>
+<p class="source-note">Scholarships and grants are listed separately. The individual academic-scholarship classification is subject to the official award notice. <a href="https://yjsgl.ucas.edu.cn/index.php/zh-cn/richang/jiangjin/371-2026-01-15-07-12-06" target="_blank" rel="noopener noreferrer">UCAS scholarship and grant policy ↗</a></p><p><a class="document-link" href="https://amss.cas.cn/ttxw/202609/t20260930_8288764.html" target="_blank" rel="noopener noreferrer">AMSS opening ceremony: freshman representative address ↗</a> <a class="document-link" href="#research">Speech and documents ↗</a></p>
 </div><div class="section"><h2>Orchestra Experience</h2>
 <p><strong>Orchestras—more specifically, Chinese orchestras—have long been an indispensable part of my life.</strong><br/>
 <strong>They have not only cultivated my artistic sensibility, but have also accompanied me like an old friend, witnessing my growth and bringing warmth to an otherwise highly rational mathematical world.</strong></p>
@@ -182,7 +234,7 @@
 <span class="subheading-title"><strong>University of Chinese Academy of Sciences Chinese Orchestra</strong></span>
 <span style="font-size: 0.9em; color: #666;">2024.09 – Present</span>
 </div>
-<ul><li><strong>Role:</strong> Soprano sheng player in the Chinese wind section</li><li><strong>Note:</strong> After securing my direct Ph.D. path, I began participating one year early in the artistic life of my future graduate institution, continuing my long-standing love for Chinese instrumental music. Not long ago, I performed with the orchestra in its special concert “仲夏清韵·廿念不忘”.</li></ul><h3 style="margin-top: 20px; color: #444;">🌱 Where the dream began (primary and secondary school foundations)</h3>
+<ul><li><strong>Role:</strong> Soprano sheng player in the Chinese wind section</li><li><strong>Note:</strong> After securing my direct Ph.D. path, I began participating one year early in the artistic life of my future graduate institution, continuing my long-standing love for Chinese instrumental music. Not long ago, I performed with the orchestra in its special concert “仲夏清韵·廿念不忘”.</li></ul><h3>Chamber ensembles & bands</h3><p><strong>思旺乐队 (Siwang Band)</strong> — founded June 18, 2026; current sheng performer.</p><p><strong>怀柔音乐专家 (Huairou Music Experts)</strong> — founded September 2026; current sheng performer.</p><p><strong>舜华民族室内乐团 (Shunhua Chinese Chamber Ensemble), UCAS Chinese Orchestra</strong> — current sheng performer.</p><p>Further introductions and performance records will be added.</p><h3 style="margin-top: 20px; color: #444;">🌱 Where the dream began (primary and secondary school foundations)</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>Beijing National Day School Chinese Orchestra</strong></span>
 <span style="font-size: 0.9em; color: #666;">2016.09 – 2021.01</span>
@@ -228,9 +280,9 @@
 <ul>
 <li><strong>Project type:</strong> USTC undergraduate graduation thesis, Class of 2022</li>
 <li><strong>Role:</strong> Sole researcher</li>
-<li><strong>Supervisor:</strong> Dr. Chen Shixiang</li>
+<li><strong>Supervisors:</strong> Dr. Chen Shixiang (USTC advisor); Ya-xiang Yuan, Research Professor</li>
 <li><strong>Result:</strong> Completed with grade <strong>A+</strong> and 8 credits; rated a <strong>University-level Outstanding Graduation Thesis</strong> of USTC 2026.</li>
-<li><strong>Current follow-up:</strong> Revising the thesis results into a manuscript intended for submission.</li>
+<li><strong>Follow-up:</strong> The earlier plan was to revise the thesis results into a manuscript for submission. This work has since developed into research on spectral gradient methods and convergence theory; related preprints are listed in Research &amp; Writing.</li>
 </ul>
 
 <div class="subheading">
@@ -240,9 +292,9 @@
 <ul>
 <li><strong>Project type:</strong> Undergraduate Innovation and Entrepreneurship Training Program</li>
 <li><strong>Role:</strong> Principal investigator</li>
-<li><strong>Mentor:</strong> Prof. Xu Xiaowei</li>
+<li><strong>Supervisors:</strong> Prof. Xu Xiaowei (USTC advisor); Ya-xiang Yuan, Research Professor</li>
 <li><strong>Result:</strong> Completed with grade <strong>A+</strong> and 4 credits; rated a <strong>university-level outstanding project</strong> of the USTC 2026 Undergraduate Innovation Training Program.</li>
-<li><strong>Current follow-up:</strong> Organizing the project results into a manuscript intended for submission.</li>
+<li><strong>Follow-up:</strong> The earlier plan was to organize the project results into a manuscript for submission. This work has since developed into research on weighted LMSD and spectral gradient methods; related preprints are listed in Research &amp; Writing.</li>
 </ul><h3 style="margin-top: 20px; color: #444;">⚙️ Competitions and interdisciplinary explorations</h3>
 <div class="subheading">
 <span class="subheading-title"><strong>Electric Field Lines and Equipotential Surface Visualizer: A Highly Interactive Physics Teaching Tool Based on Web Technologies</strong></span>
@@ -286,9 +338,9 @@
 <span style="font-size: 0.9em; color: #666;">2025–2026 academic year (former)</span>
 </div>
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul>
-<div class="subheading">
+<div class="subheading"><span class="subheading-title"><strong>Wind Section Leader, UCAS Chinese Orchestra</strong></span><span>2026–2027 academic year (current)</span></div><div class="subheading">
 <span class="subheading-title"><strong>Publicity Department Staff, UCAS Chinese Orchestra</strong></span>
-<span style="font-size: 0.9em; color: #666;">2025–2026 academic year (current)</span>
+<span style="font-size: 0.9em; color: #666;">2025–2027 academic years (current)</span>
 </div>
 <ul><li><span style="color: #666;">[Work notes to be completed]</span></li></ul>
 <div class="subheading">
@@ -405,16 +457,9 @@
 <ul>
 <li>I was invited to serve as a TA for these foundational courses, but I was based in Beijing at the time for my undergraduate thesis and could not reliably undertake in-person Q&amp;A and grading duties. I therefore declined the invitations responsibly.</li>
 </ul>
-</div><div class="section"><h2>Publications</h2>
+</div><div class="section"><h2>Research Papers and Articles</h2>
 <div class="subheading">
-<span class="subheading-title">Manuscripts in preparation</span>
-<span style="font-size: 0.9em; color: #666;">Summer 2026</span>
-</div>
-<ul>
-<li>Revising the results of my graduation thesis into a manuscript intended for submission.</li>
-<li>Organizing the results of the Undergraduate Innovation and Entrepreneurship Training Program into a manuscript intended for submission.</li>
-<li style="color: #666;"><em>No formal academic paper has been officially published yet.</em></li>
-</ul>
+<span class="subheading-title">Four arXiv preprints · Expository articles · Talks</span><span>Updated October 2026</span></div><p>My work with Ya-xiang Yuan studies Barzilai–Borwein methods, weighted LMSD, homogeneous dynamics and Lyapunov analysis. Three manuscripts are under review; preprints are distinguished from published articles.</p><p>Follow-up work from my undergraduate thesis and innovation project, my article in Waming No. 68, and my 2018 mathematics article are collected in the research section.</p><a class="document-link" href="#research">Browse papers, slides and PDFs ↗</a>
 </div><div class="section"><h2>Additional Information</h2>
 <ul>
 <li><strong>English proficiency:</strong> CET-4 610; CET-6 644.</li>
@@ -423,14 +468,18 @@
 <li><strong>Interests:</strong> Mathematics, music (Chinese instrumental performance and arranging), badminton, swimming, running, fitness, basketball, films, food, reading, and thinking.</li>
 <li style="margin-top: 10px;">
 <strong>Graduate recommendation and direct Ph.D. admission:</strong><br/>
-    In the first half of 2025, I joined the recommendation-based admission process of the Academy of Mathematics and Systems Science, Chinese Academy of Sciences. In September of that year, I secured graduate-recommendation qualification with a <strong>comprehensive score of 92.88 (rank 2 / 174 in the school)</strong> and ranked <strong>No. 1 among the 73 students in my school who obtained recommendation qualification</strong>. In the subsequent interview, I achieved a <strong>total score of 96.5, ranking second in Computational Mathematics</strong>, and was formally pre-admitted as a <strong>direct-entry Ph.D. student</strong> at the Institute of Computational Mathematics and Scientific/Engineering Computing, where the direct-Ph.D. quota was only four students. I have already accepted the formal admission notice and expect to enroll in September 2026.
+    In the first half of 2025, I joined the recommendation-based admission process of the Academy of Mathematics and Systems Science, Chinese Academy of Sciences. In September of that year, I secured graduate-recommendation qualification with a <strong>comprehensive score of 92.88 (rank 2 / 174 in the school)</strong> and ranked <strong>No. 1 among the 73 students in my school who obtained recommendation qualification</strong>. In the subsequent interview, I achieved a <strong>total score of 96.5, ranking second in Computational Mathematics and first among the four direct-entry Ph.D. students</strong>, and was admitted as a <strong>direct-entry Ph.D. student</strong> at the Institute of Computational Mathematics and Scientific/Engineering Computing, where the direct-Ph.D. quota was only four students. I enrolled in September 2026.
   </li>
 <li style="margin-top: 10px;">
-<strong>Summer after my senior year:</strong><br/>
+<strong>Current life and schedule (autumn 2026):</strong><br/>
+    I am attending the first-year graduate coursework program at the <strong>UCAS Yanqi Lake campus</strong>, with morning classes from Monday through Saturday. On Sundays, I rehearse with the <strong>Shunhua Chinese Chamber Ensemble</strong> in the morning and the <strong>UCAS Chinese Orchestra</strong> in the afternoon; I may also play badminton when free. My usual base is Yanqi Lake on weekdays, the Zhongguancun campus on Sundays, and home near the Yuquan Road campus on other holidays. On <strong>December 6, 2026</strong>, I will return to USTC to take part in the <strong>NMOU Student Chinese Orchestra 2026 Solo Concert</strong>. WeChat or QQ is preferred for everyday contact; for academic discussions, please use my <a href="mailto:yangshutai26@mails.ucas.ac.cn">UCAS email</a>. <a href="#schedule">View my detailed schedule ↗</a>
+</li>
+<li style="margin-top: 10px;">
+<strong>Summer after my senior year (summer 2026 record):</strong><br/>
     After finishing my undergraduate years, I am mostly in Beijing and at home. My main academic task this summer is to revise the results of my graduation thesis and the USTC Undergraduate Innovation and Entrepreneurship Training Program into manuscripts intended for submission. On ordinary weekdays, I usually spend the morning at the Yuquan Road campus of the University of Chinese Academy of Sciences and the afternoon at home. Outside writing and exam preparation, I watch films, go to Chinese instrumental concerts whenever there is a suitable performance at the National Centre for the Performing Arts, and play badminton, run, and work out to stay active. Every Sunday I rehearse with the UCAS Chinese Orchestra, while also preparing for the entrance examinations before starting at the Chinese Academy of Sciences. In July, I will attend a small closed-door sharing session in Shanghai on July 9 with Prof. Ngô Bảo Châu and Prof. Zhiwei Yun, and then travel to Kunming from July 17 to 19 for the Third Western Forum on Operations Research and Development — Frontiers of Operations Optimization and Digital-Intelligent Science.
 </li>
 </ul>
-</div><div class="section"><h2>📜 “Adding Finishing Touches” — Personal Homepage Renewal Plan for 2026</h2>
+</div><div class="section"><h2>📜 “Adding Finishing Touches” — Personal Homepage Renewal Plan for 2026 (earlier plan)</h2>
 <p style="font-style: italic; text-align: center; color: #666;">“A personal homepage is not just a résumé; it is also a small museum of my growth.”</p>
 <div style="margin-top: 20px;">
 <div class="subheading">

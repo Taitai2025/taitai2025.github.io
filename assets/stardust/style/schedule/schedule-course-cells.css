@@ -1,0 +1,472 @@
+/* =========================================================
+   Schedule Course Cells
+   - Visual styling for My Timetable, USTC Timetable and General Timetable event cells
+   - Keep table logic and cell merging untouched
+   ========================================================= */
+
+#schedule {
+  --course-card-radius: 10px;
+  --course-card-radius-sm: 8px;
+
+  --course-card-bg-top: color-mix(in srgb, var(--surface) 90%, var(--accent-weak));
+  --course-card-bg-bottom: color-mix(in srgb, var(--surface-2) 90%, var(--accent-weak));
+
+  --course-card-hover-bg-top: color-mix(in srgb, var(--surface) 84%, var(--accent-weak));
+  --course-card-hover-bg-bottom: color-mix(in srgb, var(--surface-2) 84%, var(--accent-weak));
+
+  --course-card-border: color-mix(in srgb, var(--border) 84%, var(--accent));
+  --course-card-border-hover: color-mix(in srgb, var(--border) 54%, var(--accent));
+
+  --course-card-accent: color-mix(in srgb, var(--accent) 72%, var(--text));
+  --course-card-muted-accent: color-mix(in srgb, var(--accent) 38%, var(--muted));
+
+  --course-card-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.045),
+    inset 0 1px 0 color-mix(in srgb, #ffffff 30%, transparent);
+
+  --course-card-shadow-hover:
+    0 12px 24px rgba(0, 0, 0, 0.13),
+    0 3px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 color-mix(in srgb, #ffffff 38%, transparent);
+}
+
+/* Time labels shown on hover */
+.event-cell .time-info {
+  position: absolute;
+  font-size: 0.68em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  z-index: 20;
+
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+  color: var(--muted);
+  box-shadow: var(--shadow-xs);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease;
+}
+
+.event-cell:hover .time-info,
+.event-cell:focus-within .time-info {
+  opacity: 1;
+  visibility: visible;
+}
+
+.start-info {
+  top: 3px;
+  left: 3px;
+}
+
+.end-info {
+  right: 3px;
+  bottom: 3px;
+}
+
+/* Base event cell: keep the actual table grid rectangular */
+.event-cell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+.event-cell:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+/* USTC fallback cell structure */
+.ustc-timetable-cell {
+  position: relative;
+  height: 50px;
+}
+
+.ustc-course-info {
+  position: absolute;
+  inset: 3px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 7px 6px;
+  z-index: 5;
+
+  border-radius: var(--course-card-radius-sm);
+  border: 1px solid var(--course-card-border);
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--course-card-bg-top),
+      var(--course-card-bg-bottom)
+    );
+
+  box-shadow: var(--course-card-shadow);
+}
+
+.ustc-course-info:hover {
+  background:
+    linear-gradient(
+      180deg,
+      var(--course-card-hover-bg-top),
+      var(--course-card-hover-bg-bottom)
+    );
+
+  border-color: var(--course-card-border-hover);
+  box-shadow: var(--course-card-shadow-hover);
+}
+
+/* Hidden cells created by rowspan merging */
+.merged-cell {
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  height: 0 !important;
+}
+
+/* Course content containers */
+.course-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+.period-number {
+  background-color: var(--surface-2);
+  font-weight: 700;
+  border-right: 1px solid var(--border);
+}
+
+.overlap-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  width: 100%;
+
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+.overlap-course {
+  position: relative;
+
+  flex: 0 0 auto;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  display: block;
+
+  text-align: center;
+  padding: 7px 4px;
+
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.overlap-course + .overlap-course {
+  margin-top: 4px;
+  padding-top: 9px;
+  border-top: none;
+}
+
+/* =========================================================
+   Course cells for My Timetable, USTC Timetable and General Timetable
+
+   Important:
+   - td.event-cell keeps the normal rectangular table border.
+   - td.event-cell::before / ::after draw the visual course card.
+   - .course-container / .overlap-container remain in normal flow and
+     provide only content layout, so table row sizing stays content-aware.
+   - The visual card is positioned against the final table-cell box and
+     therefore does not depend on percentage heights inside rowspan cells.
+   - No table logic or cell-merging behavior is changed here.
+   ========================================================= */
+
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell,
+#schedule #ustc-timetable td.event-cell,
+#schedule #timetable-section .timetable td.general-timetable-event-cell {
+  position: relative;
+
+  padding: 0 !important;
+  vertical-align: middle;
+
+  border: 1px solid var(--border) !important;
+  border-radius: 0 !important;
+
+  background: var(--surface) !important;
+  background-clip: border-box;
+
+  cursor: pointer;
+  overflow: visible;
+
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell:hover,
+#schedule #ustc-timetable td.event-cell:hover,
+#schedule #timetable-section .timetable td.general-timetable-event-cell:hover {
+  border-color: var(--border) !important;
+  background: var(--surface) !important;
+
+  box-shadow: none !important;
+  transform: none !important;
+  z-index: 5;
+}
+
+/*
+  The visual course card belongs to the table cell rather than the content
+  container. Absolute insets use the table cell's final used dimensions,
+  including any rowspan height calculated by the browser.
+*/
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell::before,
+#schedule #ustc-timetable td.event-cell::before,
+#schedule #timetable-section .timetable td.general-timetable-event-cell::before,
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell::after,
+#schedule #ustc-timetable td.event-cell::after,
+#schedule #timetable-section .timetable td.general-timetable-event-cell::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Card background, border, shadow and top accent line */
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell::before,
+#schedule #ustc-timetable td.event-cell::before,
+#schedule #timetable-section .timetable td.general-timetable-event-cell::before {
+  inset: 0;
+  z-index: 1;
+
+  box-sizing: border-box;
+
+  border: 1px solid var(--course-card-border);
+  border-radius: var(--course-card-radius);
+
+  background-image:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--course-card-muted-accent) 68%, transparent),
+      color-mix(in srgb, var(--course-card-accent) 88%, transparent),
+      color-mix(in srgb, var(--course-card-muted-accent) 68%, transparent)
+    ),
+    linear-gradient(
+      180deg,
+      var(--course-card-bg-top),
+      var(--course-card-bg-bottom)
+    );
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, center;
+  background-size: 100% 2px, 100% 100%;
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+
+  box-shadow: var(--course-card-shadow);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease,
+    background-size 0.18s ease;
+}
+
+/* Soft highlight layer, visible mainly on hover */
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell::after,
+#schedule #ustc-timetable td.event-cell::after,
+#schedule #timetable-section .timetable td.general-timetable-event-cell::after {
+  inset: 1px;
+  z-index: 3;
+
+  border-radius: calc(var(--course-card-radius) - 1px);
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      color-mix(in srgb, var(--accent-weak) 38%, transparent),
+      transparent 58%
+    );
+
+  opacity: 0;
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease;
+}
+
+/*
+  Content stays in normal flow. The extra 1px on each padding edge replaces
+  the card border that previously belonged to this element, preserving the
+  original text width, wrapping and distance from the visible card edge.
+*/
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell > .course-container,
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell > .overlap-container,
+#schedule #ustc-timetable td.event-cell > .overlap-container,
+#schedule #timetable-section .timetable td.general-timetable-event-cell > .course-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 10px 8px;
+
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.18s ease;
+}
+
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell:hover::before,
+#schedule #ustc-timetable td.event-cell:hover::before,
+#schedule #timetable-section .timetable td.general-timetable-event-cell:hover::before {
+  background-image:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--course-card-muted-accent) 68%, transparent),
+      color-mix(in srgb, var(--course-card-accent) 88%, transparent),
+      color-mix(in srgb, var(--course-card-muted-accent) 68%, transparent)
+    ),
+    linear-gradient(
+      180deg,
+      var(--course-card-hover-bg-top),
+      var(--course-card-hover-bg-bottom)
+    );
+  background-size: 100% 3px, 100% 100%;
+
+  border-color: var(--course-card-border-hover);
+  box-shadow: var(--course-card-shadow-hover);
+
+  transform: translate3d(0, -3px, 0);
+}
+
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell:hover::after,
+#schedule #ustc-timetable td.event-cell:hover::after,
+#schedule #timetable-section .timetable td.general-timetable-event-cell:hover::after {
+  opacity: 1;
+  transform: translate3d(0, -3px, 0);
+}
+
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell:hover > .course-container,
+#schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell:hover > .overlap-container,
+#schedule #ustc-timetable td.event-cell:hover > .overlap-container,
+#schedule #timetable-section .timetable td.general-timetable-event-cell:hover > .course-container {
+  transform: translate3d(0, -3px, 0);
+}
+
+/* Stable divider between overlapped courses */
+#my-timetable-section .semester-timetable-container.active .timetable td.event-cell > .overlap-container > .overlap-course + .overlap-course::before,
+#ustc-timetable td.event-cell > .overlap-container > .overlap-course + .overlap-course::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 11%;
+  right: 11%;
+
+  border-top: 1px solid color-mix(in srgb, var(--border) 82%, var(--accent));
+  opacity: 0.58;
+
+  pointer-events: none;
+}
+
+/* Text hierarchy inside course cards */
+#my-timetable-section .semester-timetable-container.active .timetable td.event-cell .course-number,
+#ustc-timetable td.event-cell .course-number,
+#timetable-section .timetable td.general-timetable-event-cell .course-number {
+  max-width: 100%;
+
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: normal;
+
+  color: color-mix(in srgb, var(--text) 78%, var(--course-card-accent));
+  font-weight: 700;
+  line-height: 1.22;
+  letter-spacing: 0.18px;
+}
+
+#my-timetable-section .semester-timetable-container.active .timetable td.event-cell .course-name,
+#ustc-timetable td.event-cell .course-name,
+#timetable-section .timetable td.general-timetable-event-cell .course-name {
+  max-width: 100%;
+
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: normal;
+
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.24;
+}
+
+#my-timetable-section .semester-timetable-container.active .timetable td.event-cell .instructor,
+#my-timetable-section .semester-timetable-container.active .timetable td.event-cell .location,
+#my-timetable-section .semester-timetable-container.active .timetable td.event-cell .weeks,
+#ustc-timetable td.event-cell .instructor,
+#ustc-timetable td.event-cell .location,
+#ustc-timetable td.event-cell .weeks,
+#timetable-section .timetable td.general-timetable-event-cell .location,
+#timetable-section .timetable td.general-timetable-event-cell .weeks {
+  max-width: 100%;
+
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: normal;
+
+  color: var(--muted);
+  line-height: 1.24;
+}
+
+#my-timetable-section .semester-timetable-container.active .timetable td.event-cell .location,
+#ustc-timetable td.event-cell .location,
+#timetable-section .timetable td.general-timetable-event-cell .location {
+  color: color-mix(in srgb, var(--muted) 86%, var(--course-card-accent));
+}
+
+#my-timetable-section .semester-timetable-container.active .timetable td.event-cell .weeks,
+#ustc-timetable td.event-cell .weeks,
+#timetable-section .timetable td.general-timetable-event-cell .weeks {
+  font-size: 0.78em;
+  opacity: 0.88;
+}
+
+/* Keep credits visible but less visually heavy */
+#my-timetable-section .semester-timetable-container.active .timetable td.event-cell .credits-inline,
+#ustc-timetable td.event-cell .credits-inline {
+  color: color-mix(in srgb, var(--text) 78%, var(--course-card-accent));
+  font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #schedule #my-timetable-section .semester-timetable-container.active .timetable td.event-cell::before,
+  #schedule #ustc-timetable td.event-cell::before,
+  #schedule #timetable-section .timetable td.general-timetable-event-cell::before {
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease,
+      background 0.18s ease;
+  }
+}

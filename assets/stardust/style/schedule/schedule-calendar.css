@@ -1,0 +1,483 @@
+#calendar-container {
+  height: 70vh;
+  margin-bottom: 20px;
+}
+
+#calendar-container.fc {
+  width: 100%;
+}
+
+/*
+  FullCalendar mounts itself directly on #calendar-container:
+  <div id="calendar-container" class="fc ...">
+
+  Therefore the root selector must be #calendar-container.fc, not
+  #calendar-container .fc.
+
+  In timeGrid views, FullCalendar draws most horizontal rules through slot
+  borders. The final time-grid boundary can visually look unfinished under the
+  site's custom border color and scrollable time-grid body. Add the missing
+  terminal rule to the actual timeGrid content layers without changing layout
+  height, scroll behavior, event timing, or FullCalendar initialization.
+*/
+#calendar-container .fc-timegrid-body,
+#calendar-container .fc-timegrid-slots table,
+#calendar-container .fc-timegrid-cols table {
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 72%, transparent) !important;
+}
+
+/*
+  FullCalendar writes pixel widths to several inner wrappers after measuring
+  getBoundingClientRect(). Under the site's desktop html zoom, those inline
+  widths can become visually too narrow. Keep this fix scoped to the Calendar
+  module and only reset FullCalendar's measured width wrappers, not global tables.
+*/
+#calendar-container .fc-view-harness,
+#calendar-container .fc-view,
+#calendar-container .fc-scrollgrid,
+#calendar-container .fc-scrollgrid-section,
+#calendar-container .fc-scrollgrid-section > td,
+#calendar-container .fc-scroller-harness,
+#calendar-container .fc-scroller,
+#calendar-container .fc-col-header,
+#calendar-container .fc-col-header table,
+#calendar-container .fc-daygrid-body,
+#calendar-container .fc-daygrid-body table,
+#calendar-container .fc-scrollgrid-sync-table,
+#calendar-container .fc-timegrid-body,
+#calendar-container .fc-timegrid-body table,
+#calendar-container .fc-timegrid-slots,
+#calendar-container .fc-timegrid-slots table,
+#calendar-container .fc-timegrid-cols,
+#calendar-container .fc-timegrid-cols table {
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+#calendar-container .fc-scroller {
+  overflow-x: hidden !important;
+}
+
+.fc {
+  font-family: "Georgia", serif;
+}
+
+.fc .fc-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.fc .fc-toolbar-chunk {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fc .fc-toolbar-title {
+  min-width: 0;
+  text-align: center;
+}
+
+.fc-toolbar-title {
+  font-family: "Georgia", serif;
+  font-size: 1.35em;
+  color: var(--accent);
+}
+
+/* FullCalendar grid polish (paper-like, understated) */
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid table,
+.fc .fc-scrollgrid-section > td,
+.fc .fc-scrollgrid-section table,
+.fc .fc-scrollgrid td,
+.fc .fc-scrollgrid th {
+  border-color: color-mix(in srgb, var(--border) 72%, transparent) !important;
+}
+
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number {
+  text-decoration: none;
+}
+
+.fc-daygrid-day.fc-day-sat:not(.fc-day-today),
+.fc-daygrid-day.fc-day-sun:not(.fc-day-today) {
+  background: color-mix(in srgb, var(--surface) 88%, var(--surface-2)) !important;
+}
+
+.fc .fc-button,
+.fc-button {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.fc .fc-button:hover,
+.fc-button:hover {
+  background: var(--surface-2) !important;
+  box-shadow: var(--shadow) !important;
+  transform: translateY(-0.5px);
+}
+
+.fc .fc-button:active,
+.fc-button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-xs) !important;
+}
+
+.fc .fc-button:focus-visible,
+.fc-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-weak), var(--shadow-sm) !important;
+}
+
+.fc .fc-button:disabled,
+.fc-button:disabled {
+  opacity: 0.6;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.fc .fc-button-primary.fc-button-active,
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #ffffff !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.fc-daygrid-day-number {
+  color: var(--accent);
+}
+
+.fc-daygrid-day.fc-day-today {
+  background: var(--accent-weak) !important;
+}
+
+/* Calendar event cards: align FullCalendar events with My/USTC Timetable cards. */
+.fc-event,
+.fc-h-event,
+.fc-v-event {
+  position: relative;
+  box-sizing: border-box;
+
+  max-width: 100%;
+  min-width: 0;
+
+  border: 1px solid var(--course-card-border) !important;
+  border-radius: var(--course-card-radius) !important;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--course-card-bg-top),
+      var(--course-card-bg-bottom)
+    ) !important;
+
+  color: var(--text) !important;
+
+  box-shadow: var(--course-card-shadow) !important;
+
+  padding: 4px 7px 5px !important;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transform: translate3d(0, 0, 0);
+  will-change: transform, box-shadow, border-color;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+/*
+  FullCalendar Month view wraps each event in a harness.
+  Keep the card inside the day cell instead of letting padding/title
+  stretch the event beyond the grid column.
+*/
+.fc .fc-daygrid-event-harness {
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.fc .fc-daygrid-event {
+  box-sizing: border-box;
+  max-width: calc(100% - 4px);
+  min-width: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+/*
+  In timeGrid views, the column frame is the real vertical boundary of a day.
+  Keep event shadows, rounded corners, and hover effects from painting outside
+  00:00 / 24:00 without clipping FullCalendar's internal event positioning layer.
+*/
+#calendar-container .fc-timegrid-col-frame {
+  overflow: hidden;
+}
+
+.fc-event::before,
+.fc-h-event::before,
+.fc-v-event::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--course-card-muted-accent) 68%, transparent),
+      color-mix(in srgb, var(--course-card-accent) 88%, transparent),
+      color-mix(in srgb, var(--course-card-muted-accent) 68%, transparent)
+    );
+
+  opacity: 1;
+  pointer-events: none;
+  transition: height 0.18s ease;
+}
+
+.fc-event::after,
+.fc-h-event::after,
+.fc-v-event::after {
+  content: "";
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      color-mix(in srgb, var(--accent-weak) 38%, transparent),
+      transparent 58%
+    );
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.fc-event:hover,
+.fc-h-event:hover,
+.fc-v-event:hover {
+  background:
+    linear-gradient(
+      180deg,
+      var(--course-card-hover-bg-top),
+      var(--course-card-hover-bg-bottom)
+    ) !important;
+
+  border-color: var(--course-card-border-hover) !important;
+  box-shadow: var(--course-card-shadow-hover) !important;
+
+  transform: translate3d(0, -2px, 0);
+}
+
+.fc-event:hover::before,
+.fc-h-event:hover::before,
+.fc-v-event:hover::before {
+  height: 3px;
+}
+
+/*
+  Day/Week timed events sit inside exact time intervals. Do not move them
+  upward on hover, otherwise events near 00:00 / 24:00 can visually cross
+  the clipped day boundary.
+*/
+.fc-timeGridWeek-view .fc-timegrid-event:hover,
+.fc-timeGridDay-view .fc-timegrid-event:hover {
+  transform: translate3d(0, 0, 0);
+}
+
+.fc-event:hover::after,
+.fc-h-event:hover::after,
+.fc-v-event:hover::after {
+  opacity: 1;
+}
+
+.fc-event:active,
+.fc-h-event:active,
+.fc-v-event:active {
+  transform: translate3d(0, 0, 0);
+  box-shadow: var(--course-card-shadow) !important;
+}
+
+.fc .fc-daygrid-event-dot {
+  display: none !important;
+}
+
+/*
+  Hide FullCalendar's native time text completely.
+  Calendar time is rendered only by .schedule-calendar-event-time.
+*/
+.fc .fc-event-time {
+  display: none !important;
+}
+
+.fc .fc-event-main {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  max-width: 100%;
+  color: var(--text) !important;
+}
+
+.schedule-calendar-event-frame {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  align-items: center;
+  column-gap: 4px;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  overflow: hidden;
+}
+
+.schedule-calendar-event-time {
+  min-width: 0;
+  max-width: 100%;
+
+  color: color-mix(in srgb, var(--text) 78%, var(--course-card-accent));
+  font-weight: 700;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.schedule-calendar-event-title {
+  min-width: 0;
+  max-width: 100%;
+
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.25;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Month cells are narrow: stack time/title to avoid the cramped inline look. */
+.fc-dayGridMonth-view .schedule-calendar-event-frame {
+  display: block;
+}
+
+.fc-dayGridMonth-view .schedule-calendar-event-time {
+  display: block;
+  font-size: 0.78em;
+  line-height: 1.1;
+  opacity: 0.78;
+}
+
+.fc-dayGridMonth-view .schedule-calendar-event-title {
+  display: block;
+  margin-top: 1px;
+  line-height: 1.18;
+}
+
+/* Week/Day native timeGrid events: keep the same card language, but let FullCalendar position and size them. */
+.fc-timeGridWeek-view .schedule-calendar-event-frame,
+.fc-timeGridDay-view .schedule-calendar-event-frame {
+  align-items: start;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  row-gap: 2px;
+}
+
+.fc-timeGridWeek-view .schedule-calendar-event-time,
+.fc-timeGridDay-view .schedule-calendar-event-time {
+  font-size: 0.82em;
+  line-height: 1.15;
+}
+
+.fc-timeGridWeek-view .schedule-calendar-event-title,
+.fc-timeGridDay-view .schedule-calendar-event-title {
+  font-size: 0.92em;
+  line-height: 1.16;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-event::before,
+  .fc-h-event::before,
+  .fc-v-event::before {
+    transition: none;
+  }
+}
+
+@media (max-width: 760px) {
+  #calendar-container {
+    height: 68vh;
+  }
+
+  .fc .fc-toolbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .fc .fc-toolbar-chunk {
+    justify-content: center;
+  }
+
+  .fc .fc-toolbar-chunk:nth-child(2) {
+    order: -1;
+    flex-basis: 100%;
+  }
+
+  .fc-toolbar-title {
+    font-size: 1.18em;
+  }
+
+  .fc .fc-button {
+    padding: 0.34em 0.54em !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #calendar-container {
+    height: 66vh;
+  }
+
+  .fc .fc-toolbar {
+    align-items: stretch;
+  }
+
+  .fc .fc-toolbar-chunk {
+    flex-wrap: wrap;
+  }
+
+  .fc .fc-toolbar-chunk:first-child,
+  .fc .fc-toolbar-chunk:last-child {
+    flex: 1 1 100%;
+  }
+
+  .fc .fc-button {
+    font-size: 0.9em !important;
+  }
+
+  .fc-dayGridMonth-view .schedule-calendar-event-time {
+    font-size: 0.72em;
+  }
+
+  .fc-dayGridMonth-view .schedule-calendar-event-title {
+    font-size: 0.86em;
+  }
+}
