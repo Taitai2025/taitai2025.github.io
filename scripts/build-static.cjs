@@ -2,10 +2,17 @@
    Run after updating resume, research or notes: node scripts/build-static.cjs */
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 const { JSDOM } = require('jsdom');
 const root = path.resolve(__dirname, '..');
 const origin = 'https://taitai2025.github.io';
 const read = relative => fs.readFileSync(path.join(root, relative), 'utf8');
+const assetVersion = relative => crypto.createHash('sha256').update(fs.readFileSync(path.join(root,relative))).digest('hex').slice(0,12);
+// Refresh the active adaptation stylesheet and top-level scripts/styles when
+// their content changes, while retaining cacheability for unchanged assets.
+const styleEntry='assets/stardust/style/stardust.css';
+const adaptationVersion=assetVersion('assets/stardust/style/adaptation.css');
+fs.writeFileSync(path.join(root,styleEntry),read(styleEntry).replace(/adaptation\.css(?:\?v=[^'"\)]+)?/,'adaptation.css?v='+adaptationVersion));
 const dom = new JSDOM('<div id="mount-resume"></div><div id="mount-research"></div><div id="mount-meditations"></div>', {url:origin+'/',runScripts:'outside-only'});
 const w = dom.window;
 for (const file of ['Content/EN/resume_EN.js','Content/ZH/resume_ZH.js','Content/EN/meditations_EN.js','Content/ZH/meditations_ZH.js','Content/research.js','Functions/Research.js']) w.eval(read('assets/js/'+file));
@@ -13,6 +20,7 @@ w.document.getElementById('resume').innerHTML = w.RESUME_ZH_INNER_HTML;
 w.document.getElementById('meditations').innerHTML = w.MEDITATIONS_ZH_INNER_HTML;
 w.Research.render('zh');
 let html = read('index.html');
+html=html.replace(/((?:src|href)=")((?:\.\/)?assets\/[^"?]+\.(?:js|css))(?:\?v=[^"\s]+)?(")/g,(_,prefix,file,suffix)=>prefix+file+'?v='+assetVersion(file)+suffix);
 for (const name of ['resume','research','meditations']) {
   const opening = '<!-- static:'+name+':start -->';
   const closing = '<!-- static:'+name+':end -->';

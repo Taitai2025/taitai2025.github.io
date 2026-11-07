@@ -11,6 +11,18 @@
   let current = null;
   let transition = 0;
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function revealFragment() {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return false; }
+    if (!id || pages.includes(id) || id === 'cover') return false;
+    const target = document.getElementById(id);
+    if (!target || target.closest('[inert]')) return false;
+    for (let el = target; el; el = el.parentElement) {
+      if (el.tagName === 'DETAILS') el.open = true;
+    }
+    target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    return true;
+  }
   async function navigate(page, updateHash = true) {
     if (!pages.includes(page) && page !== 'cover') page = 'cover';
     const version = ++transition;
@@ -54,7 +66,7 @@
       if (el.dataset.page === page) el.setAttribute('aria-current', 'page');
       else el.removeAttribute('aria-current');
     });
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    if (!revealFragment()) window.scrollTo({ top: 0, behavior: 'instant' });
     if (page !== 'cover' && updateHash) {
       const heading = document.querySelector('#' + page + ' h1, #' + page + ' [class$="-heading"]');
       if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({ preventScroll: true }); }
@@ -81,6 +93,8 @@
     window.addEventListener('hashchange', () => navigate(pageFromLocation(), false));
     window.addEventListener('popstate', () => navigate(pageFromLocation(), false));
     navigate(pageFromLocation(), false);
+    // Initial language rendering can replace the static content in the next frame.
+    requestAnimationFrame(() => requestAnimationFrame(revealFragment));
   }
   window.SitePages = { navigate };
   if (document.readyState !== 'complete') document.addEventListener('DOMContentLoaded', boot);

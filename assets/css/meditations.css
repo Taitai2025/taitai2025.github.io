@@ -207,3 +207,20 @@ body[data-lang="zh"] #meditations .medit-row-small .medit-title{
   margin-bottom: 0;
   color: var(--muted);
 }
+
+/* Long-form writing uses the same quiet typography and file controls as Research. */
+#meditations .notes-intro {max-width: 46em; margin: 0 auto 2.5rem; color: var(--muted); text-align: center;}
+#meditations .notes-section {margin: 2.5rem 0; scroll-margin-top: 100px;}
+#meditations .notes-section h2 {font-size: 1.45rem; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: .7rem;}
+#meditations .note-publication {padding: 1.4rem 0; border-bottom: 1px solid var(--border);}
+#meditations .note-publication:last-child {border-bottom: 0;}
+#meditations .note-publication h3 {font-family: var(--medit-zh-title); font-size: 1.2rem; line-height: 1.6; margin: 0 0 .6rem;}
+body:not([data-lang="zh"]) #meditations .note-publication h3 {font-family: var(--medit-en-body);}
+#meditations .note-publication .note-meta {font-family: system-ui, "Microsoft YaHei", sans-serif; font-size: .75rem; color: var(--muted);}
+#meditations .note-actions {display: flex; flex-wrap: wrap; gap: .2rem; margin-top: .8rem;}
+#meditations .note-actions .document-link {min-height: 34px;}
+@media (max-width: 600px) {
+  #meditations .notes-intro {text-align: left;}
+  #meditations .note-publication h3 {font-size: 1.08rem;}
+  #meditations .notes-section {scroll-margin-top: 140px;}
+}

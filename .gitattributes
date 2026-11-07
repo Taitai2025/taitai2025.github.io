@@ -1,2 +1,15 @@
 *.md linguist-detectable=true
 *.md linguist-language=Markdown
+
+# Keep published asset bytes identical on Windows and GitHub Pages.
+* -text
+*.pdf binary
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.mp4 binary

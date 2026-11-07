@@ -370,6 +370,15 @@
     } catch (e) { }
   }
 
+  function nativeDetailsState(root) {
+    return Array.from(root?.querySelectorAll('details[id]') || [], el => [el.id, el.open]);
+  }
+  function restoreNativeDetails(state) {
+    state.forEach(([id, open]) => {
+      const el = document.getElementById(id);
+      if (el?.tagName === 'DETAILS') el.open = open;
+    });
+  }
   function smoothSwapResume(lang, openKeys) {
     const resume = document.getElementById("resume");
     if (!resume) {
@@ -377,6 +386,7 @@
       return;
     }
 
+    const nativeState = nativeDetailsState(resume);
     const prevH = resume.getBoundingClientRect().height;
     if (prevH > 0) resume.style.minHeight = prevH + "px";
 
@@ -386,6 +396,7 @@
     requestAnimationFrame(() => {
       applyResumeLanguage(lang);
       restoreResumeOpenKeys(openKeys);
+      restoreNativeDetails(nativeState);
 
       try {
         window.dispatchEvent(new CustomEvent("site:langchange", { detail: { lang: lang, openKeys: openKeys } }));
@@ -422,6 +433,7 @@
       return;
     }
 
+    const nativeState = nativeDetailsState(m);
     const prevH = m.getBoundingClientRect().height;
     if (prevH > 0) m.style.minHeight = prevH + "px";
 
@@ -431,6 +443,7 @@
     requestAnimationFrame(() => {
       applyMeditationsLanguage(lang);
       restoreMeditationsOpenKeys(openKeys);
+      restoreNativeDetails(nativeState);
 
       requestAnimationFrame(() => {
         m.style.opacity = "1";

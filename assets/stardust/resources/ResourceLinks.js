@@ -42,7 +42,7 @@
       </div>
       <div class="pdf-reader-frame-shell"><iframe class="pdf-reader-frame" title="${escape(title)} PDF" loading="lazy" allow="fullscreen" allowfullscreen></iframe></div>
       <p class="pdf-reader-fallback">${label('如未能正常显示，可', 'If the preview is unavailable, ')}<a href="${escape(direct)}" target="_blank" rel="noopener noreferrer" data-pdf-direct-link>${label('直接打开原 PDF', 'open the original PDF')}</a>${label('，或使用上方下载按钮。', ' or use the download button above.')}</p>`;
-    const host = link.closest('article, li, .section') || link.parentElement;
+    const host = link.closest('article, li, .activity-body, .section') || link.parentElement;
     host.appendChild(reader);
     window.PdfReader.init(reader);
     reader.querySelector('[data-resource-close]').addEventListener('click', () => toggle(reader, link, false));

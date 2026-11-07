@@ -8,7 +8,7 @@
     copyright: 'Copyright © 2026 Shutai Yang',
     quote: 'You have reached the end of this page, but not the end of the journey.',
     amssHome: 'http://www.amss.ac.cn/',
-    lastUpdated: 'Oct 23, 2026',
+    lastUpdated: 'Nov 7, 2026',
     targetPageIds: ['resume', 'research', 'social', 'toolkit', 'schedule', 'meditations']
   };
   let stylesheetLoaded = false;
