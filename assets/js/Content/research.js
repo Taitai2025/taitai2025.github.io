@@ -123,9 +123,10 @@ window.RESEARCH_CONTENT = {
     {
       "title": "加权 Ritz-sweep 谱梯度法的齐次块动力系统理论与收敛性分析",
       "meta": "2026.05.14 · 大学生创新训练计划 · 研究报告 · 119 页",
-      "zh": "项目研究报告，系统整理闭锥连续正齐次块映射理论、谱梯度方法及其收敛性分析。",
-      "en": "A research report on continuous positively homogeneous block maps on closed cones and their application to spectral gradient convergence.",
-      "file": "assets/documents/weighted-ritz-sweep-research-report.pdf"
+      "zh": "项目研究报告，系统整理闭锥连续正齐次块映射理论、谱梯度方法及其收敛性分析。 原立项题目为《强Lyapunov框架下优化算法的全局收敛性研究与应用》，这里沿用后续研究题目；另附国家级项目立项通知节选。",
+      "en": "A research report on continuous positively homogeneous block maps on closed cones and their application to spectral gradient convergence. The original approved project concerned global convergence and applications of optimization algorithms under a strong Lyapunov framework; this report uses the subsequent research title. An excerpt from the national project approval notice is also available.",
+      "file": "assets/documents/weighted-ritz-sweep-research-report.pdf",
+      "projectNotice": "assets/documents/research/ustc-national-innovation-project-approval-2025.pdf"
     },
     {
       "title": "最优化算法课程汇报：BB 方法的 R 线性收敛",
