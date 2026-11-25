@@ -22,3 +22,8 @@
 - [交替罚参数下的二次 ADMM](admm-alternating/) · v1.0 · 4 页。同谱二维二次问题中，固定使用两个端点罚参数各自收敛，交替使用则在一个可精确计算的条件数阈值后出现发散初值。
 
 [前一版源码与结果](https://github.com/Taitai2025/taitai2025.github.io/tree/40643759bb67ec03fec1aa7cc3384352b950fe15/research/working)
+
+## 步长设计
+
+- [周期 BB 切换](periodic-bb/)附完整理论补充、预算实验及周期响应证书。
+- [试探值与首次达标](trial-firsthit/)附两条逆序轨迹、查询成本与 Lean 证书。

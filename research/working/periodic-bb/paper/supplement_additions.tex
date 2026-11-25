@@ -1,0 +1,77 @@
+\section{A transition-frequency refinement}\label{sec:transition-frequency}
+This section strengthens Theorem~\ref{thm:explicit-mixed-gap}; all assumptions and normalization by $\|g_1\|$ remain unchanged.
+\begin{theorem}[Gap controlled by transition frequency]\label{thm:density}
+For a mixed cyclic word of length $L$ put
+\[
+ {\cal J}=\{j:\sigma_j=1,\ \sigma_{j+1}=0\},\qquad
+ t=|{\cal J}|,\qquad \ell=L/t.
+\]
+Define $k_0,H,Q_C$ as in Theorem~\ref{thm:explicit-mixed-gap}, and
+\[
+ A_\ell=\frac{(14+C)\sqrt\ell+2Q_C\ell H}{\sqrt{k_0}},\quad
+ B_\ell=2Q_C\ell,\quad
+ \delta_\ell(C)=\left(\frac{2C}{A_\ell+
+ \sqrt{A_\ell^2+4C(B_\ell+C)}}\right)^2.
+\]
+Then $\Gamma_{\bm\sigma}\le C e^{-\delta_\ell(C)}<C$. For a fixed mixed word the cubic lower constant improves to
+$D_\ell=[2(14\sqrt\ell+12\ell)^2]^{-1}$; the upper constant $\operatorname{Var}(r)/2$ is unchanged.
+\end{theorem}
+\begin{proof}
+There are equally many $1\to0$ and $0\to1$ boundaries, so $\ell\ge2$. Fix a finite-average ergodic invariant $\Pi$ and use the active-hull variables $r,s,\mu,J,\Delta$ of Section~\ref{sec:quantitative-gap-proof}. Let $\Pi_q$ be its normalized phase-$q$ conditional. The proved defect bounds give
+\[
+ \sum_q\mathbb E_{\Pi_q}s^2\le L\Delta/k_0,\quad
+ \sum_q\mathbb E_{\Pi_q}J\le LM(\Delta),\quad
+ M(\Delta)=2\Delta+2H\sqrt{\Delta/k_0}.
+\]
+Every set $I$ of $t$ distinct phases therefore satisfies, by Cauchy--Schwarz and nonnegativity,
+\begin{equation}\label{eq:subset-phase}
+ \frac1t\sum_{q\in I}\mathbb E_{\Pi_q}|s|\le\sqrt{\ell\Delta/k_0},
+ \qquad \frac1t\sum_{q\in I}\mathbb E_{\Pi_q}J\le\ell M(\Delta).
+\end{equation}
+For $j\in{\cal J}$ sample $X=(w,z,j-1)$ under $\Pi_{j-1}$ and write $TX=(w',w,j)$, $T^2X=(w'',w',j+1)$. Then $s(TX)=s_1(w)$ and $s(T^2X)=s_0(w')$. The BB2 balance identity and mean-update estimate already proved give
+\[
+ r\le(1+C)|s(TX)|+12|s(X)|+|s(T^2X)|+Q_CJ(w).
+\]
+Average expectations over $j\in{\cal J}$. Because $T_\#\Pi_q=\Pi_{q+1}$, the selector terms read phases in $ {\cal J}$, $ {\cal J}-1$, and $ {\cal J}+1$. Each has $t$ elements. Apply \eqref{eq:subset-phase} to each separately:
+\[
+ r\le(14+C)\sqrt{\ell\Delta/k_0}+Q_C\ell M(\Delta)
+ =A_\ell\sqrt\Delta+B_\ell\Delta.
+\]
+No independence is used; the sets may overlap. Put $G=\log C-\int f\,d\Pi$. Then $\Delta\le G$ and $r\ge Ce^{-G}$. For $G<1$,
+$C\le A_\ell\sqrt G+(B_\ell+C)G$, whose positive root yields $G\ge\delta_\ell(C)$. The case $G\ge1$ is immediate. Ergodic decomposition proves the bound. The expansion $\delta_\ell(C)\sim D_\ell C^2$, combined with the unchanged endpoint-response lower bound, proves the cubic claim.
+\end{proof}
+For fixed $C$, $A_x,B_x$ strictly increase in $x>0$, so the positive root of $(B_x+C)u^2+A_xu=C$ strictly decreases. Thus $\delta_\ell\ge\delta_L$, strictly for $t>1$. The minimal word $000101$ has $L=6,t=2$ and gives $\delta_3>\delta_6$. Repetition and cyclic rotation leave $\ell$ unchanged. This compares certificates, not exact factors of different words.
+
+The refinement also controls a family of unbounded minimal periods. For $m\ge1$, the word $w_m=0(01)^m$ has $m+1$ zeros and $m$ ones. Any repetition multiplicity divides both counts, so its minimal period is $2m+1$. Since $t=m$, one has $\ell=2+1/m\le3$, and hence, for each fixed spectral interval,
+\[
+ \sup_{m\ge1}\Gamma_{w_m}\le C e^{-\delta_3(C)}<C.
+\]
+This is a uniform threshold bound. The theorem supplies a finite prefactor for each individual word at rates above its threshold; it does not supply a common prefactor for the entire family or a theorem for nonperiodic schedules.
+
+\section{Large-condition-number and transient bounds}\label{sec:significance}
+For $Q=q^{\rm fd}_{01}$ or $\Gamma_{01}$, the actual three-dimensional orbit of Theorem~\ref{thm:three-point-orbit} gives
+\[
+ \rho_3=\frac{\kappa-1}{\sqrt{\kappa^2+6\kappa+1}}\le Q<
+ \frac{\kappa-1}{\kappa+1}=C\qquad(\kappa>577+408\sqrt2).
+\]
+This does not assume $q^{\rm fd}_{01}=\Gamma_{01}$. Rationalization yields
+\[
+ 1-\rho_3=\frac{8\kappa}{\sqrt{\kappa^2+6\kappa+1}
+ [\sqrt{\kappa^2+6\kappa+1}+\kappa-1]}.
+\]
+Together with $1-C=2/(\kappa+1)$ this proves
+$2\le\liminf\kappa(1-Q)\le\limsup\kappa(1-Q)\le4$ as $\kappa\to\infty$.
+For the transient example take $A=\diag(1,\kappa)$, $g_0=(1,\varepsilon)$ with $\varepsilon>0$, and $\alpha_0=1$. Then $g_1=(0,-(\kappa-1)\varepsilon)$, and a first governed BB1 step gives
+$\|g_2\|/\|g_1\|=(\kappa-1)/(1+\kappa\varepsilon^2)\to\kappa-1$.
+The next governed step terminates. Any envelope at rate $\tau$ needs $K_\tau\ge(\kappa-1)/\tau$.
+
+\section{Numerical protocol and reproducibility}\label{sec:numerical-protocol}
+The companion ZIP includes the self-contained program, pinned dependencies, every initial condition, all 1,080 traces and outcomes, and \texttt{experiments/README.md}. It regenerates both figures from synthetic data without network access. Python 3.12.4, NumPy 1.26.4, Matplotlib 3.8.4, and mpmath 1.3.0 were used on a local Intel Core i9-14900HX CPU (32 logical processors), running Windows 11 x86-64.
+
+Each case has dimension 64. Spectra are log-spaced, linearly spaced, or 32 nodes in each of $[1,1.05]$ and $[0.95\kappa,\kappa]$, for $\kappa=10,100,1000$. Each has 20 Gaussian initial gradients. SeedSequence inputs are $[20260922,\text{family index},\kappa,\text{seed}]$, seed $0,\ldots,19$. All methods share the initial gradient and warm-up $2/(1+\kappa)$. No method-specific tuning is performed.
+
+Runs stop on first reaching $\|g_{n+1}\|/\|g_1\|\le10^{-8}$ or at 500 updates. Timeouts remain right-censored; medians include their hitting times as infinity. Plots show median log ratios, with interquartile shading for $01$ and ABBmin1 using NumPy linearly interpolated 25th and 75th sample percentiles, holding successes at $-8$ after the first hit. This floor does not claim termination or later monotonicity.
+
+ABBmin1 follows Frassoldati et al.~\cite[eq.~(14)]{FrassoldatiZanniZanghirati2008}, with $\tau=0.8,m=9$, including the current and up to nine previous BB2 values. CBB1($m=2$) refreshes BB1 on updates 1,3,5,\ldots and reuses it once. Selector inner products for $n$ updates are $2n$ for fixed rules and words, $3n$ for ABBmin1, and $2\lceil n/2\rceil$ for CBB1($m=2$). Gradient count is $n+2$; norm monitoring is additional. These direct-secant inner-product counts recompute the quadratic forms; norm caching and fused products can change additional computation and communication costs. They are distinct from simulator timings. The raw-data key \texttt{CBB2} denotes CBB1($m=2$) throughout this package; it does not denote the cyclic-BB2 method.
+
+Cycle checks use 90 digits for one exact cycle. A double-precision diagnostic retains the loss of tracking of the repelling response. CSVs retain invalid three-point masses below threshold and all 43 timeouts. Numerical checks support sampled formulas; unrestricted and Hilbert-space statements rely on the analytic proofs.

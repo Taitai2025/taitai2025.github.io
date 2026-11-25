@@ -96,6 +96,37 @@ window.RESEARCH_CONTENT = {
       "descriptionZh": "同谱二维二次问题中，固定使用两个端点罚参数各自收敛，交替使用则在一个可精确计算的条件数阈值后出现发散初值。",
       "descriptionEn": "In a two-dimensional family, each fixed endpoint penalty converges, while the alternating sequence has divergent initial states above an explicit condition-number threshold.",
       "related": []
+    },
+    {
+      "id": "periodic-bb",
+      "version": "1.0",
+      "releaseDate": "2026.11.26",
+      "pages": 46,
+      "zh": "周期 BB 切换的相位平衡与精确局部速率",
+      "en": "Periodic Barzilai–Borwein switching: phase balance and exact local gaps",
+      "groupZh": "谱梯度与周期切换",
+      "groupEn": "Spectral gradients and periodic switching",
+      "descriptionZh": "BB1 与 BB2 的混合周期打破共同端点平衡，因而严格改善最坏一致速率。全文含完整证明、有限预算实验与周期系数的 Lean 证书。",
+      "descriptionEn": "Mixed BB1–BB2 patterns break common endpoint balance and strictly improve the worst uniform threshold. Includes the supplementary proofs, finite-budget evidence and Lean certificates for three patterns.",
+      "related": [
+        "trial-firsthit"
+      ]
+    },
+    {
+      "id": "trial-firsthit",
+      "version": "1.0",
+      "releaseDate": "2026.11.26",
+      "pages": 6,
+      "zh": "用线搜索试探值重选步长",
+      "en": "Choosing a shorter step from a line-search trial value",
+      "groupZh": "步长设计与停止条件",
+      "groupEn": "Stepsizes and stopping criteria",
+      "descriptionZh": "在试探点已通过 GLL 检验、尚未取得梯度时重选步长。两个精确反例给出相反的首次达标顺序与分项查询费用。",
+      "descriptionEn": "Reconsiders a step after its value passes the GLL test and before querying its gradient. Two exact examples give opposite first-hit and separately priced query comparisons.",
+      "related": [
+        "periodic-bb",
+        "gll-window"
+      ]
     }
   ],
   "papers": [

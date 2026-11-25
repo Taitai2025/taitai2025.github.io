@@ -93,7 +93,7 @@
       }).join('');
       const meta = [
         zh ? note.groupZh : note.groupEn,
-        '2026.11.25',
+        note.releaseDate || '2026.11.25',
         'v' + note.version,
         zh ? note.pages + ' 页' : note.pages + ' pages'
       ].map(esc).join(' · ');
