@@ -10,7 +10,7 @@
 \usepackage{tikz,xcolor,enumitem,hyperref,bookmark}
 \usetikzlibrary{arrows.meta,positioning,calc}
 \definecolor{navy}{HTML}{173B55}
-\hypersetup{unicode,colorlinks=true,linkcolor=navy,urlcolor=navy,citecolor=navy,pdftitle={PCP 中常数背景与矩形扰动的精确最优性判据},pdfauthor={Anonymous working draft},pdfsubject={AI-assisted research working draft; author review pending; version 1.0, 2026-11-25}}
+\hypersetup{unicode,colorlinks=true,linkcolor=navy,urlcolor=navy,citecolor=navy,pdftitle={常数背景上静止矩形目标的 PCP 最优性判据},pdfauthor={Anonymous working draft},pdfsubject={AI-assisted research working draft; author review pending; version 1.2, 2026-11-25}}
 \ctexset{section={format=\large\sffamily\bfseries\color{navy}},subsection={format=\normalsize\sffamily\bfseries}}
 \newtheoremstyle{plainzh}{7pt}{7pt}{\normalfont}{}{\bfseries}{。}{.5em}{}
 \theoremstyle{plainzh}
@@ -42,9 +42,9 @@
 \makeatother
 \pagestyle{research}
 
-\title{\vspace{-1.3em}\bfseries PCP 中常数背景与矩形扰动的\par 精确最优性判据}
+\title{\vspace{-1.3em}\bfseries 常数背景上静止矩形目标的\par PCP 最优性判据}
 \author{匿名整理工作稿}
-\date{版本 1.1 · 2026 年 11 月 25 日}
+\date{版本 1.2 · 2026 年 11 月 25 日}
 
 \begin{document}
 \maketitle
@@ -54,7 +54,8 @@
 \end{abstract}
 \noindent\textbf{关键词：} 主成分追踪；鲁棒主成分分析；对偶证书；静止目标；正则化参数
 
-\section{问题与结论的范围}
+\section{静止目标何时仍能识别为前景}
+固定相机的视频中，常数背景在每帧都相同。处在同一位置的物体也会在许多帧中留下同样的图案，因此这部分变化既占据有限个像素，又具有低秩结构。主成分追踪在这两种表示之间如何取舍，取决于正则化权重。以下从一个可以完整算出答案的情形入手：背景亮度恒定，矩形目标内部的亮度变化也相同。
 
 设视频每帧有 $p$ 个像素，共 $T$ 帧。将每帧作为一列，得到矩阵 $M\in\R^{p\times T}$。PCP 问题为
 \begin{equation}\label{eq:pcp}
@@ -78,7 +79,7 @@ $B$ 不必由连续帧组成；PCP 本身不区分连续停留与多次回到同
 
 PCP 模型及其对偶证书有成熟的理论基础。Chandrasekaran 等\cite[第 4.1 节、Proposition 2]{CSPW}给出共同次梯度的必要充分最优性条件及严格证书的唯一性充分条件；Cand\`es 等\cite[第 2.3 节、Lemma 2.4]{CLMW}在 PCP 分析中明确使用并归属这一框架。本文不把这些原则作为新结果，也不借用随机支撑恢复定理保证下文的确定性矩形实例。
 
-本文的具体工作是对\eqref{eq:model}逐步完成证书的对称约化、四块谱范数计算和明暗参数区间的求解。本主题由课程小组项目引出，静止斑块问题见相应未发表课程报告；本匿名版本所用矩阵均为独立重新生成的合成样例。本文给出完整的独立阅读路径，不要求取得原报告，也不把小组项目的全部工作归于某一个人。已有文献的结构可辨识性与切空间分析覆盖本工作的基本方法；目前的有限先行文献核查不足以确认这组专门公式的首次出现。因此，本稿定位为显式算例与可复核推导，而非新的恢复原理。
+下文先说明怎样用一个矩阵验证指定分解的最优性，再利用矩形支撑的对称性求出它。这一步会把原先看似依赖所有像素和帧的约束缩减为四项。随后分别解出亮块、暗块的权重区间，并说明区间内部的严格不等式怎样导出唯一性。这个具体问题来自一项课程小组研究，本文的数值核验均使用独立合成矩阵。
 
 \section{从最优性到一个四块矩阵}
 
@@ -264,7 +265,15 @@ $\lambda\ge\ell$ 仍必要。此时两个负块的上界自动成立，下界分
 
 亮块与暗块的差别不是计算误差。背景奇异向量对应的基本证书为正矩阵 $\ell\one\one^T$。亮块只需把支撑值从 $\ell$ 移到 $\lambda$，幅度为 $\lambda-\ell$；暗块要移到 $-\lambda$，幅度为 $\lambda+\ell$，并在其它位置补偿零行列和。所以暗块的上界比相同 $a,b$ 的亮块少 $2\ell$，下界也更高。
 
-\section{最优性何时能够升级为唯一恢复}
+\subsection{同一面积与停留时间下的比较}
+取 \(p=T=10\)、\(a=b=2\)，则 \(\ell=1/10\)、\(\omega=2/5\)。两个区间分别为
+\[
+  \text{亮块}\quad [1/10,1/2],\qquad
+  \text{暗块}\quad [1/6,3/10].
+\]
+例如 \(\lambda=1/8\) 时，亮块的指定分解为最优解；把目标改暗而保持面积、停留时间与幅度绝对值不变，指定分解便不再最优。此时式 \eqref{eq:budget} 仍然满足，因为 \(\lambda\sqrt{ab}=1/4\)。差别来自证书必须在相同的背景下取相反的支撑值。
+
+\section{最优性何时意味着唯一恢复}
 
 令 $\Omega$ 为支撑在 $A\times B$ 上的矩阵空间，$\mathcal T$ 为秩一矩阵 $L_0$ 的切空间：
 \[

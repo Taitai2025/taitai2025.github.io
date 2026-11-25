@@ -1,29 +1,94 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[margin=25mm]{geometry}
-\usepackage{amsmath,amsthm,amssymb,mathtools,booktabs,microtype}
+\usepackage{amsmath,amsthm,amssymb,mathtools,booktabs,microtype,xcolor}
 \usepackage[unicode,colorlinks=true,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!60!black]{hyperref}
-\usepackage{xcolor}
 \hypersetup{pdftitle={Sharp rates for fixed-weight Ritz sweeps on p+1 spectral nodes},pdfauthor={}}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
 \DeclareMathOperator{\osc}{osc}
 \newcommand{\R}{\mathbb R}
 \newcommand{\abs}[1]{\lvert #1\rvert}
 \newcommand{\norm}[1]{\lVert #1\rVert}
 \title{Exact Convergence Rates of Fixed-Weight LMSD\\ on \(p+1\) Eigenvalues}
 \author{}
-\date{25 November 2026 \quad\textbullet\quad Version 0.2.0}
+\date{25 November 2026 \quad\textbullet\quad Version 0.3.0 --- review draft}
 \begin{document}
 \maketitle
 \begin{center}
 \small AI-assisted research working paper. Author review is pending.\\
-The release is anonymous and draws on joint research.
+Prepared from joint research; identifying author details are omitted.
 \end{center}
 \begin{abstract}
-A sweep of limited-memory steepest descent takes several steps with Ritz values computed from an earlier gradient history. We restrict the matrix to \(p+1\) distinct active eigenvalues and use memory \(p\) with one fixed positive spectral weight. On this support, a Lagrange formula identifies the unique balanced spectral energy and the sharp uniform gradient factor. The same interpolation formula gives a linear recurrence for the logarithms of the component ratios. Outside the balanced pair, a two-sweep estimate converts the growth of these ratios into doubly exponential decay in the number of completed sweeps. The proof also gives a uniform prefactor at the sharp factor and an exact three-node example.
+Limited-memory steepest descent (LMSD) computes several estimates of the Hessian eigenvalues from stored gradients and uses their reciprocals in the next group of gradient steps. We determine its exact convergence factor when the history length is \(p\) and the initial gradients have components in \(p+1\) distinct eigenspaces. The inner product used for the Ritz calculation is fixed. A particular distribution of the weighted component energies gives a gradient norm ratio \(\tau\) in every group of \(p\) steps, where \(\tau^{-1}\) is the sum of the absolute values of the cardinal interpolation polynomials at zero. We prove a bound at this same factor with a constant independent of the admissible initial pair. Every other pair with all components nonzero converges doubly exponentially. The proof derives the Ritz polynomial explicitly, follows the logarithms of the component energy ratios, and then bounds the gradient norm. It also explains how a long interval of nearly linear decay can precede the faster asymptotic decay.
 \end{abstract}
 
-\section{The delayed sweep}
+\section{Introduction}\label{sec:intro}
+We consider the minimization of
+\[
+ f(x)=\tfrac12x^\top Hx-b^\top x,\qquad H=H^\top\succ0.
+\]
+Writing \(g=Hx-b\), a gradient step of size \(\alpha>0\) gives
+\(g^+=(I-\alpha H)g\). On an eigenspace of eigenvalue \(\lambda\), the
+step multiplies the gradient by \(1-\alpha\lambda\). A reciprocal
+eigenvalue therefore removes the corresponding component exactly.
+
+LMSD estimates several eigenvalues from a history of gradients. A
+\emph{sweep} applies one step for each estimated eigenvalue. The
+gradients stored during this sweep determine the Ritz values for the
+next sweep. This delay is essential: the polynomial computed from one
+gradient is applied to a later gradient. Even the best polynomial on
+the given spectrum need not be generated again after it has been used.
+
+The first case that can continue indefinitely has \(p+1\) distinct
+eigenvalues and a history of length \(p\). With at most \(p\) such
+eigenvalues, the projected problem recovers every active eigenvalue
+and the subsequent sweep terminates. On \(p+1\) eigenvalues, we ask two
+questions. What is the smallest geometric factor that bounds every
+admissible run with one common multiplicative constant? Which initial
+gradients actually sustain this factor?
+
+We give an explicit answer. If \(L_i\) are the cardinal interpolation
+polynomials on the \(p+1\) eigenvalues, put
+\[
+ \tau=\left(\sum_{i=0}^{p}|L_i(0)|\right)^{-1}.
+\]
+The exact factor is \(\tau\) per sweep, or \(\tau^{1/p}\) per gradient
+step. One distribution of the weighted spectral energies attains
+equality. All other full-support initial pairs have zero asymptotic
+root factor, with a more precise double-logarithmic exponent
+\(\log\sqrt2/p\) per gradient step. The common bound at \(\tau\) remains
+valid for initial pairs arbitrarily close to the attaining pair.
+
+Fletcher introduced LMSD \cite{Fletcher}. Curtis and Guo established
+\(R\)-linear convergence on positive definite quadratics under
+full-rank history and a uniform conditioning assumption
+\cite{CurtisGuo}. Yang and Yuan treat exact rank compression and fixed
+positive spectral weights on arbitrary finite spectra
+\cite{YangYuan}. Their general argument provides an \(R\)-linear
+bound but does not, by itself, identify the sharp factor used here.
+The finite interpolation problem behind \(\tau\) belongs to the
+theory of extremal polynomial growth at an exterior point
+\cite{Bos}.
+
+There is direct overlap with Gu's analysis of historical Ritz steps
+\cite[Section~3]{Gu}: the minimal-support nodal identity, the
+logarithmic recurrence for a fixed repetition count, and the
+double-logarithmic exponent include the case considered here.
+We do not present these facts as a new superlinear convergence
+phenomenon. The focus of this account is the explicit attaining
+energy distribution and the uniform bound at its exact geometric
+factor. A companion account treats repetition of the Ritz steps
+\cite{ReuseNote}. The present proof is self-contained and keeps the
+inner product fixed throughout. It develops the minimal-support
+results of the accompanying joint research manuscript
+\cite{ArchiveA}, rather than replacing that manuscript's analysis
+of larger supports and further structural results.
+
+\section{The algorithm and its initial data}\label{sec:algorithm}
 
 Let \(H\) be a real symmetric positive definite matrix and consider the gradient of \(\tfrac12 x^\top Hx-b^\top x\). A gradient step with size \(s\) maps \(g\) to \((I-sH)g\). We work in the invariant subspace spanned by eigenspaces for
 \[
@@ -49,13 +114,17 @@ Let \(u_k\) and \(u_{k+1}\) be the gradients at the start and end of a completed
 \end{equation}
 The order of the factors can change the gradients within a sweep. The factors commute, so their order does not change its final gradient.
 
-We call the initial pair compatible if \(u_1=q(H)u_0\), with \(q\) a product of at most \(p\) factors \(1-t/\theta\), \(\theta\in[\lambda_0,\lambda_p]\). This assumption specifies one way to obtain \(u_1\) from \(u_0\), for example by a fixed-step warm-up with reciprocal step size in the given interval.
+The theorem is stated for the following initial data. We call
+\((u_0,u_1)\) \emph{compatible} if \(u_1=q(H)u_0\), with \(q\) a product of at most \(p\) factors \(1-t/\theta\), \(\theta\in[\lambda_0,\lambda_p]\). This condition specifies how to obtain \(u_1\) from \(u_0\), for example by a fixed-step initialization whose reciprocal step
+size belongs to the given interval. The constants below are relative
+to \(\|u_0\|+\|u_1\|\). If a preceding initialization uses unrestricted
+step sizes, its possible growth must be included separately.
 
 A distinct eigenvalue \(\lambda_i\) is active for \(u\) if \(E_i u\ne0\). Full support means that all \(p+1\) values are active. Multiplication by a polynomial in \(H\) cannot create a component that is zero, so the active sets are nested. If \(u_k\) has at most \(p\) active eigenvalues, its Krylov space contains each nonzero \(E_i u_k\): interpolation gives a polynomial of degree less than \(p\) selecting that component. The Ritz values are then exactly the active eigenvalues. Since \(u_{k+1}\) has no additional active components, \(P_{u_k}(H)u_{k+1}=0\). If only \(u_{k+1}\) has lost support, the same argument at the next index yields \(u_{k+3}=0\). After termination all gradients are set to zero.
 
-Fletcher introduced the limited-memory sweep \cite{Fletcher}, and Curtis and Guo proved \(R\)-linear convergence on positive definite quadratics under a full-rank, uniformly conditioned history assumption \cite{CurtisGuo}. Rank compression for weighted sweeps on an arbitrary finite spectrum is treated by Yang and Yuan \cite{YangYuan}; a \href{https://taitai2025.github.io/assets/documents/research/lmsd-sweep-proof-note.pdf}{companion proof note} develops that framework in detail. Gu studies rolling and sampled historical Ritz rules, including nodal formulas on minimal supports and superlinear rates under reuse \cite[Section~3]{Gu}. Here the setting is one full delayed sweep per refresh with a fixed weight. Our purpose is to present the balanced attaining orbit, the uniform bound at its exact factor, and a proof based only on finite-dimensional identities on this support.
+\section{The Ritz polynomial on the spectral nodes}\label{sec:polynomial}
 
-\section{The balanced polynomial and the logarithmic dynamics}
+\subsection{The polynomial of smallest nodal maximum}
 
 Set
 \[
@@ -65,21 +134,43 @@ Set
  \tau=(\textstyle\sum_i c_i)^{-1},\quad
  w_i=\tau c_i .
 \]
-The signs of \(L_i(0)\) are \((-1)^i\). The numbers \(w_i\) depend only on the eigenvalues and set the mean used in the proof. The prescribed \(\omega_i\) specify the algorithm. The \(w_i\) sum to one, and \(0<\tau<1\) since the alternating sum \(\sum_i L_i(0)\) is one. For any polynomial \(P\) of degree at most \(p\) with \(P(0)=1\),
+The signs of \(L_i(0)\) are \((-1)^i\). The numbers \(w_i\) depend only on the eigenvalues and set the mean used in the proof. The prescribed \(\omega_i\) specify the algorithm. The \(w_i\) sum to one, and \(0<\tau<1\). Indeed, \(\sum_iL_i(0)=1\), whereas at least
+one \(L_i(0)\) is negative and none is zero, so \(\sum_i|L_i(0)|>1\). For any polynomial \(P\) of degree at most \(p\) with \(P(0)=1\),
 \[
   1=\abs{\textstyle\sum_iL_i(0)P(\lambda_i)}
     \le\tau^{-1}\max_i\abs{P(\lambda_i)} .
 \]
-The unique minimizer of the nodal maximum is \(P_\star=\tau\sum_i(-1)^iL_i\). Equality forces \(P(\lambda_i)=(-1)^i\tau\) at every node. This finite-set interpolation problem is a special case of extremal growth at an external evaluation point \cite{Bos}. Its role here is to give the filter of a trajectory that sustains equality under the delayed update.
+The unique minimizer of the nodal maximum is \(P_\star=\tau\sum_i(-1)^iL_i\). The displayed polynomial has \(P_\star(0)=\tau\sum_i c_i=1\)
+and nodal values \(P_\star(\lambda_i)=(-1)^i\tau\).
+Equality in the preceding inequalities forces every nodal absolute
+value to equal \(\tau\) and every product \(L_i(0)P(\lambda_i)\) to
+be positive. These \(p+1\) values determine the polynomial uniquely.
+Its alternating signs give one root in each interval
+\((\lambda_i,\lambda_{i+1})\), so it is an admissible sweep
+polynomial. We next determine precisely which gradients generate it.
+
+\subsection{Recovering the polynomial from the gradient}
 
 For a full-support anchor \(u\), put \(m_i(u)=\omega_i\norm{E_i u}^2\). The polynomial \(P_u\) is characterized by
 \begin{equation}\label{eq:ortho}
    \sum_i m_i(u) P_u(\lambda_i)\lambda_i^j=0,\qquad 0\le j<p,
    \qquad P_u(0)=1 .
 \end{equation}
-To see this, let \(A\) be the orthogonal compression of \(H\) in the \(W\)-inner product. For \(0\le j\le p\), \(A^ju\) is the projection of \(H^ju\) onto the Krylov space. This follows by induction since the earlier powers already belong to the space. Cayley--Hamilton for \(A\) yields \eqref{eq:ortho}. The rectangular Vandermonde matrix in \eqref{eq:ortho} has full row rank, and its kernel is spanned by \(1/D_i\), because the coefficient of \(t^p\) on the two sides of \(t^j=\sum_i\lambda_i^jL_i(t)\) gives \(\sum_i \lambda_i^j/D_i=0\) for \(j<p\). Thus \(m_i(u)P_u(\lambda_i)\) is a scalar multiple of \(1/D_i\). Its scale is determined by evaluation at zero. The nodal values are nonzero and alternate in sign, so the roots lie strictly one to each gap. In particular a full-support pair stays full support.
+For completeness, let \(\Pi\) be the \(W\)-orthogonal projection
+onto \(\mathcal K_p(H,u)\), and let \(A=\Pi H|_{\mathcal K_p(H,u)}\).
+For \(0\le j<p\), \(H^ju\) belongs to this space, hence
+\(A^ju=H^ju\); for \(j=p\), \(A^pu=\Pi H^pu\).
+The normalized characteristic polynomial of \(A\) is \(P_u\).
+Cayley--Hamilton gives \(P_u(A)u=0\), and the preceding identities
+give \(\Pi P_u(H)u=0\). Taking its \(W\)-inner product with
+\(H^ju\), \(0\le j<p\), proves \eqref{eq:ortho}.
 
-Define the centered coordinates and the weighted exponential sum by
+The rectangular Vandermonde matrix in \eqref{eq:ortho} has full row rank, and its kernel is spanned by \(1/D_i\), because the coefficient of \(t^p\) on the two sides of \(t^j=\sum_i\lambda_i^jL_i(t)\) gives \(\sum_i \lambda_i^j/D_i=0\) for \(j<p\). Thus \(m_i(u)P_u(\lambda_i)\) is a scalar multiple of \(1/D_i\). Its scale is determined by evaluation at zero. The nodal values are nonzero and alternate in sign, so the roots lie strictly one to each gap. In particular a full-support pair stays full support.
+
+\section{Logarithms of the component energies}\label{sec:coordinates}
+The nodal formula separates changes in the total size of a gradient
+from changes in the relative sizes of its spectral components.
+For this purpose define
 \begin{align*}
   Y_i(u)&=\log(m_i(u)\abs{D_i})
          -\sum_j w_j\log(m_j(u)\abs{D_j}),\\
@@ -89,7 +180,14 @@ The vector \(Y(u)=0\) if and only if \(m_i(u)\) is proportional to \(1/\abs{D_i}
 \begin{equation}\label{eq:nodal}
  P_u(\lambda_i)=(-1)^i \tau\frac{e^{-Y_i(u)}}{M(-Y(u))}.
 \end{equation}
-Taking the logarithm of squared component sizes in \eqref{eq:rule} and subtracting the \(w\)-mean cancels the scalar denominator in \eqref{eq:nodal}. With \(Y_k=Y(u_k)\),
+The denominator in \eqref{eq:nodal} is independent of \(i\).
+More explicitly, \eqref{eq:rule} gives
+\[
+ \log(m_i(u_{k+2})|D_i|)
+ =\log(m_i(u_{k+1})|D_i|)-2Y_{k,i}
+   +2\log\tau-2\log M(-Y_k).
+\]
+Subtracting the \(w\)-mean removes the last two terms. With \(Y_k=Y(u_k)\),
 \begin{equation}\label{eq:recurrence}
  Y_{k+2}=Y_{k+1}-2Y_k .
 \end{equation}
@@ -99,15 +197,28 @@ The quadratic form
        =\tfrac72\norm y_2^2+2\norm{z-y/2}_2^2
 \]
 is positive definite. Expanding \(Q(z,z-2y)\) gives \(2Q(y,z)\). By \eqref{eq:recurrence},
-\[
+\begin{equation}\label{eq:energy-doubling}
  Q(Y_k,Y_{k+1})=2^kQ(Y_0,Y_1).
-\]
+\end{equation}
+
+Thus either both initial vectors \(Y_0,Y_1\) are zero, or the
+size of their successive pairs grows like \(2^{k/2}\). This describes
+ratios of component energies; it does not yet establish that the
+gradient decreases. That additional step is the subject of the next
+section.
 
 At balance the filter \eqref{eq:nodal} is \(P_\star\). It changes the signs of the components and multiplies their absolute sizes by \(\tau\). Taking a balanced \(u_0\) and \(u_1=P_\star(H)u_0\) gives a compatible orbit that attains the factor \(\tau\) on all sweeps. Every full-support pair with both energy shapes balanced has the same norm ratio from \(u_1\) onward.
 
 \section{From changing spectral shapes to norm decay}
 
-Measure the gradient in the norm \(\norm u_*=\norm{H^{-1/2}W^{1/2}u}_2\), where \(\norm u_*^2=\sum_i m_i(u)/\lambda_i\). On this fixed spectrum the norm is equivalent to the Euclidean norm. The proportion of its square at node \(i\) is
+Measure the gradient in the norm \(\norm u_*=\norm{H^{-1/2}W^{1/2}u}_2\), where \(\norm u_*^2=\sum_i m_i(u)/\lambda_i\). The choice of \(H^{-1/2}\) will make the same numbers \(w_i\)
+appear in both the polynomial and the norm. Explicitly,
+\[
+ \min_i\frac{\omega_i}{\lambda_i}\,\|u\|_2^2
+ \le \|u\|_*^2
+ \le \max_i\frac{\omega_i}{\lambda_i}\,\|u\|_2^2.
+\]
+Thus all root factors are the same in this norm and the Euclidean norm. The proportion of its square at node \(i\) is
 \[
   \pi_{k,i}=\frac{m_i(u_k)/\lambda_i}{\sum_j m_j(u_k)/\lambda_j}
            =\frac{w_i e^{Y_{k,i}}}{M(Y_k)} .
@@ -116,13 +227,29 @@ Here \(c_i=(\prod_j\lambda_j)/(\lambda_i\abs{D_i})\). Write \(x_k=\norm{u_{k+2}}
 \begin{equation}\label{eq:factor}
  x_k=\tau^2\frac{M(Y_{k+2})}{M(Y_{k+1})M(-Y_k)^2}.
 \end{equation}
-Centering matters: Jensen's inequality yields \(M(-Y_k)\ge1\). This will control the initial stay near the balanced shape.
+For example, to obtain \eqref{eq:factor}, multiply
+\(\pi_{k+1,i}=w_ie^{Y_{k+1,i}}/M(Y_{k+1})\) by the square of
+\eqref{eq:nodal}, sum over \(i\), and use
+\(Y_{k+1}-2Y_k=Y_{k+2}\).
+This is the step that connects changes in the ratios with actual
+norm decay. Centering matters: Jensen's inequality yields \(M(-Y_k)\ge1\). This will control the initial stay near the balanced shape.
 
 For the large-coordinate region, set \(a=\min_i w_i>0\). For arbitrary vectors \(v,z\),
 \[
  M(v+z)\le a^{-1}M(v)M(z).
 \]
-The product on the right contains the diagonal terms, each with coefficient \(w_i^2\ge aw_i\). Since \(Y_{k+2}=-Y_k-2Y_{k-1}\) for \(k\ge1\), multiplying two instances of \eqref{eq:factor} gives
+The product on the right contains the diagonal terms, each with coefficient \(w_i^2\ge aw_i\). Multiplication of two consecutive instances of \eqref{eq:factor}
+first gives the exact cancellation
+\[
+ x_{k-1}x_k
+ =\tau^4
+ \frac{M(Y_{k+2})}
+ {M(Y_k)M(-Y_{k-1})^2M(-Y_k)^2}.
+\]
+For \(k\ge1\), the recurrence also gives
+\(Y_{k+2}=-Y_k-2Y_{k-1}\). Applying the preceding inequality twice
+bounds its numerator by
+\(a^{-2}M(-Y_k)M(-Y_{k-1})^2\). Therefore
 \begin{align}
  x_{k-1}x_k
  &\le \frac{\tau^4 a^{-2}}{M(Y_k)M(-Y_k)}
@@ -130,22 +257,39 @@ The product on the right contains the diagonal terms, each with coefficient \(w_
 \end{align}
 For the last inequality, take the two terms corresponding to the largest and smallest coordinates in the product of sums.
 
-Every step factor in \eqref{eq:rule} is bounded in absolute value by \(K=\max(1,\lambda_p/\lambda_0-1)\). In particular \(x_k\le K^{2p}\). Each centered vector has \(\norm y_2\le \sqrt{p+1}\,\osc(y)\). The largest eigenvalue of the matrix of \(Q\) on each coordinate pair is \(3+\sqrt2\). Hence for
+Every step factor in \eqref{eq:rule} is bounded in absolute value by \(K=\max(1,\lambda_p/\lambda_0-1)\). In particular \(x_k\le K^{2p}\). Each centered vector has \(\norm y_2\le \sqrt{p+1}\,\osc(y)\). The eigenvalues of the matrix of \(Q\) on each coordinate pair
+are \(3-\sqrt2\) and \(3+\sqrt2\). In particular,
 \[
- d=\frac{1}{2\sqrt{(p+1)(3+\sqrt2)}}\quad\text{and}\quad E_0=Q(Y_0,Y_1),
+ Q(y,z)\le(p+1)(3+\sqrt2)
+          \{\operatorname{osc}(y)^2+\operatorname{osc}(z)^2\}.
 \]
-at least one of \(\osc(Y_{j+1})\) and \(\osc(Y_{j+2})\) is at least \(d\,2^{(j+1)/2}\sqrt{E_0}\). Applying \eqref{eq:two} to the corresponding pair of factors in a triple gives
+Combining this inequality with \eqref{eq:energy-doubling}, and taking
+a slightly smaller constant for convenience, set
+\[
+ d=\frac{1}{2\sqrt{(p+1)(3+\sqrt2)}}\quad\text{and}\quad E_0=Q(Y_0,Y_1).
+\]
+Then at least one of \(\osc(Y_{j+1})\) and \(\osc(Y_{j+2})\) is at least \(d\,2^{(j+1)/2}\sqrt{E_0}\). Applying \eqref{eq:two} to the corresponding pair of factors in a triple gives
 \begin{equation}\label{eq:triple}
  x_jx_{j+1}x_{j+2}
  \le K^{2p}\tau^4a^{-4}\exp(-d\,2^{(j+1)/2}\sqrt{E_0}) .
 \end{equation}
 
-\begin{theorem}[Sharp factor and uniform prefactor]\label{thm:sharp}
+\section{The exact factor and the faster nonbalanced case}\label{sec:rate}
+For clarity, the asymptotic root factor at sweep endpoints means
+\(\limsup_{n\to\infty}\|u_{n+1}\|^{1/n}\). After termination it is
+zero. A common geometric bound is stronger than a bound for this
+limit: it must use the same multiplicative constant for every
+compatible initial pair and every finite \(n\).
+
+\begin{theorem}[Exact factor with one constant for all initial pairs]\label{thm:sharp}
 There is a constant \(C(J,W)<\infty\) such that every compatible starting pair satisfies
 \[
  \norm{u_{n+1}}_*\le C(J,W)\tau^n(\norm{u_0}_*+\norm{u_1}_*)\qquad(n\ge0).
 \]
-The worst asymptotic root factor is \(\tau\) per full sweep and \(\tau^{1/p}\) per individual step. On any nonbalanced full-support trajectory, for \(n\ge3\),
+The constant is independent of the starting pair. The smallest
+possible common sweep factor, and the largest asymptotic root factor
+among these pairs, are both \(\tau\). In terms of individual gradient
+steps these factors are \(\tau^{1/p}\). On any nonbalanced full-support trajectory, for \(n\ge3\),
 \[
   \norm{u_{n+1}}_*
   \le K^{p(n-2)}\tau^2a^{-2}
@@ -157,18 +301,99 @@ Such a trajectory has root factor zero. The theorem makes no assumption on the m
 \begin{proof}
 For the last bound, apply \eqref{eq:triple} with \(j=n-3\), bound the preceding \(n-3\) squared factors by \(K^{2p}\), and take square roots. This proves double exponential decay up to an exponential prefactor whenever \(E_0>0\).
 
-For the uniform bound, choose \(A>0\) so large that the right side of \eqref{eq:triple} is at most \(\tau^6\) whenever \(2^{j+1}E_0\ge A\). If \(E_0\ge A\), apply the bound to consecutive groups of three factors. At most two factors remain, each at most \(K^{2p}\). Relative to \(\tau^{2n}\), their contribution is bounded by \(\max\{1,(K^{2p}/\tau^2)^2\}\).
+To prove that one constant works even near balance, choose \(A>0\)
+such that
+\[
+ d\sqrt A\ge 2p\log K+4\log(1/a)+2\log(1/\tau).
+\]
+The right side of \eqref{eq:triple} is then at most \(\tau^6\)
+whenever \(2^{j+1}E_0\ge A\).
+There are two portions of the proof: before this threshold, we use
+the exact product formula; after it, every group of three factors has
+the required contraction.
 
-If \(0<E_0<A\), let \(N\) be the first index with \(2^NE_0\ge A\). For every \(m\le N\) we have \(Q(Y_m,Y_{m+1})<2A\). Positive definiteness of \(Q\) bounds \(M(Y_{m+1})\) above by a constant \(B_A\) independent of the initial pair and \(N\). Multiplication of \eqref{eq:factor} gives
+Suppose first that \(0<E_0<A\), and let \(N\) be the smallest
+nonnegative integer with \(2^NE_0\ge A\). For \(m\le N\),
+\[
+ Q(Y_m,Y_{m+1})=2^mE_0<2A.
+\]
+The lower eigenvalue \(3-\sqrt2\) of \(Q\) therefore bounds every
+coordinate of \(Y_{m+1}\) in absolute value by
+\(\sqrt{2A/(3-\sqrt2)}\). Put
+\(B_A=\exp(\sqrt{2A/(3-\sqrt2)})\).
+Multiplying \eqref{eq:factor} for \(0\le k<m\) gives
 \[
  \prod_{k=0}^{m-1}x_k
  =\tau^{2m}\frac{M(Y_{m+1})}{M(Y_1)}
-   \prod_{k=0}^{m-1} M(-Y_k)^{-2}
+       \prod_{k=0}^{m-1}M(-Y_k)^{-2}
  \le B_A\tau^{2m}.
 \]
-All the vectors are centered, so \(M(Y_1)\ge1\) and \(M(-Y_k)\ge1\). This controls the initial segment, even when \(N\) is large. At index \(N\) the three-factor bound applies and gives the rest of the estimate. If \(E_0=0\), all squared norm ratios equal \(\tau^2\). A pair with fewer active components terminates within the two sweeps discussed after \eqref{eq:rule}, and any nonzero ratios in this prefix are covered by the same bound on individual factors.
+Here \(M(Y_1)\ge1\) and \(M(-Y_k)\ge1\) by centering and Jensen's
+inequality. Consequently the estimate is independent of \(N\),
+even when the starting pair is extremely close to balance.
+
+For factors with index at least \(N\), group them in consecutive
+triples. Each full triple is at most \(\tau^6\) by
+\eqref{eq:triple}. At most two factors remain; each is at most
+\(K^{2p}\). If \(D=K^{2p}/\tau^2\), their excess over the desired
+factor is at most \(D^2\). Thus every prefix of the full product is
+at most \(B_A D^2\tau^{2n}\).
+
+If \(E_0\ge A\), the same grouping applies from the beginning,
+with no initial portion. If \(E_0=0\), every \(x_k=\tau^2\).
+If one of the initial gradients has fewer active components,
+termination occurs by \(u_3\), and the one possible nonzero
+sweep from \(u_1\) has norm factor at most \(K^p\).
+Enlarging the common constant, if necessary, covers these finite
+prefixes as well. This proves the stated bound.
 
 The attaining balanced example gives the sharp lower bound. In a nonterminating trajectory each sweep has \(p\) gradient updates. At most \(p-1\) factors, each bounded by \(K\), connect an intermediate gradient to the previous sweep endpoint. The endpoints provide a subsequence for the opposite inequality between root factors. A terminating trajectory has root factor zero in both index conventions.
+\end{proof}
+
+\begin{corollary}[Exact double-logarithmic exponent]\label{cor:exponent}
+For a compatible full-support pair with \(E_0>0\), every component
+satisfies, for some constants \(\beta_i,\alpha_i>0\) and all sufficiently
+large \(n\),
+\[
+ e^{-\beta_i2^{n/2}}\le \|E_i u_{n+1}\|_2
+                   \le e^{-\alpha_i2^{n/2}}.
+\]
+Consequently the limit
+\[
+ \lim_{n\to\infty}
+ \frac{\log(-\log\|u_n\|_2)}{n}
+ =\log\sqrt2
+\]
+holds. Counting individual gradient steps gives
+\(\log\sqrt2/p\). The same exponent holds for the distance to the
+minimizer and the objective gap.
+\end{corollary}
+\begin{proof}
+The theorem and norm equivalence give the upper bound for every
+component, since \(bn-c2^{n/2}\le-(c/2)2^{n/2}\) on a tail.
+For the lower bound, \eqref{eq:energy-doubling} and positive
+definiteness give
+\[
+ \|Y_k\|_\infty\le
+ \sqrt{\frac{E_0}{3-\sqrt2}}\,2^{k/2}.
+\]
+Since \(\log M(-Y_k)\le\|Y_k\|_\infty\), the nodal formula gives
+\[
+ \log|P_{u_k}(\lambda_i)|
+ \ge\log\tau-2\|Y_k\|_\infty .
+\]
+Summing over \(0\le k<n\), and using
+\(\sum_{k<n}2^{k/2}=(2^{n/2}-1)/(\sqrt2-1)\), proves the
+lower bound. All initial component norms are nonzero.
+
+For an intermediate gradient, propagation forward to the next
+sweep endpoint, and from the previous endpoint to that gradient,
+uses at most \(p\) factors bounded by \(K\). These two bounds
+transfer the same exponent to the intermediate gradients.
+Finally \(x-x^\star=H^{-1}g\), and
+\(f(x)-f(x^\star)=\tfrac12g^\top H^{-1}g\). Multiplication by
+fixed positive constants, or squaring the norm, does not change
+the double-logarithmic exponent.
 \end{proof}
 
 \section{Two exact examples and scope}
@@ -180,11 +405,18 @@ For \(J=\{1,2,4\}\), the values of \(c_i\) are \(8/3,2,1/3\), the balanced propo
  P_\star(t)=1-t+t^2/5,\qquad
  P_\star(1)=1/5,\quad P_\star(2)=-1/5,\quad P_\star(4)=1/5.
 \]
-The root factor per individual step is \(1/\sqrt5\). The accompanying exact arithmetic script also checks a nonbalanced trajectory by comparing energy ratios and the product formula for the norm. The proof above is analytic. The script checks finite examples and does not certify the general theorem.
+The root factor per individual step is \(1/\sqrt5\). The accompanying exact arithmetic script also checks a nonbalanced trajectory by comparing energy ratios and the product formula for the norm. For instance, the lower and upper component bounds of
+Corollary~\ref{cor:exponent} come from the analytic argument, not from
+a finite numerical experiment. The script checks finite exact
+identities and representative iterates. It is not a formal
+verification of the general convergence theorem.
 
-The sharp factor refers to one delayed complete sweep with a fixed weight and at most \(p+1\) distinct spectral nodes. Time-varying weights or reusing a filter for several sweeps changes \eqref{eq:recurrence}. With more than \(p+1\) active nodes the Vandermonde equations no longer have a one-dimensional kernel, so the same proof gives no rate on those supports. Near balance the time to leave a neighborhood defined by \(Q<A\) grows as \(\log_2(A/E_0)\), which explains why the worst linear rate can persist during a long transient even when the eventual root factor is zero.
+The sharp factor refers to one delayed complete sweep with a fixed weight and at most \(p+1\) distinct spectral nodes. Time-varying weights or reusing a filter for several sweeps changes \eqref{eq:recurrence}. With more than \(p+1\) active nodes the Vandermonde equations no longer have a one-dimensional kernel, so the same proof gives no rate on those supports. Near balance the time to leave a neighborhood defined by \(Q<A\) grows as \(\log_2(A/E_0)\), which explains why nearly linear decay can persist for many
+sweeps before the faster asymptotic regime becomes visible.
+This distinction matters when interpreting computations performed
+at a fixed accuracy.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{9}\small\setlength{\itemsep}{2pt}
 \bibitem{Fletcher} R. Fletcher, A limited memory steepest descent method,
 \emph{Math. Program.} 135 (2012), 413--436.
 \href{https://doi.org/10.1007/s10107-011-0479-6}{doi:10.1007/s10107-011-0479-6}.
@@ -205,5 +437,12 @@ The sharp factor refers to one delayed complete sweep with a fixed weight and at
 
 \bibitem{BBsharp} S. Yang and Y.-X. Yuan, The sharp worst-case asymptotic rate of the Barzilai--Borwein method in \(\R^d\) and Hilbert spaces,
 2026. \href{https://arxiv.org/abs/2608.07839}{arXiv:2608.07839}.
+
+\bibitem{ReuseNote} Anonymous, An exact bound for repeating historical Ritz sweeps,
+companion AI-assisted working paper, 2026.
+\href{https://taitai2025.github.io/assets/documents/research/ritz-reuse.pdf}{Public working version}.
+\bibitem{ArchiveA} Anonymous joint research manuscript,
+Sharp spectral bounds and regeneration in limited-memory steepest descent,
+November 23, 2026. \href{https://taitai2025.github.io/assets/documents/research/lmsd-spectral.pdf}{Public archival copy, including the appendices}.
 \end{thebibliography}
 \end{document}

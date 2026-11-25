@@ -1,0 +1,11 @@
+{
+  "symbolic_equalities_checked": 10,
+  "trace_at_199": "-14467601/6368000",
+  "determinant_at_199": "888099601/6400000000",
+  "characteristic_at_minus_one_at_199": "-1443188379401/1273600000000",
+  "threshold_bracket": [
+    126,
+    127
+  ],
+  "sympy_version": "1.12"
+}

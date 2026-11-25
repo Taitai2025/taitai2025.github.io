@@ -54,3 +54,29 @@ if __name__ == "__main__":
     for m in range(12):
         run_example(m)
     print("Exact periodic rejection and accepted-window bounds verified for M=0,...,11.")
+
+def verify_actual_periodic_rejection(memory):
+    history = [F(1)]
+    last_steps = []
+    pattern = cycle(memory)
+    length = len(pattern)
+    for k in range(8 * length):
+        current = history[-1]
+        reference = max(f(q) for q in history[max(0,k-memory):])
+        step = pattern[k % length]
+        contractions = 0
+        while f((1-step)*current) > reference - F(1,4)*step*current**2:
+            step *= F(2,5)
+            contractions += 1
+        last_steps.append(contractions)
+        history.append((1-step)*current)
+    assert last_steps == ([0]*(length-1)+[1])*8
+    for start in range(0,8*length,length):
+        assert abs(history[start+length]) == abs(history[start])/10
+    assert history[-1] != 0
+
+
+if __name__ == "__main__":
+    for m in range(12):
+        verify_actual_periodic_rejection(m)
+    print("Exact real backtracking: one reduction per period and amplitude factor 1/10.")
