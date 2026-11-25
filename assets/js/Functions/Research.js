@@ -7,18 +7,47 @@
   function attachments(item,zh){return (item.file?link(item.file,zh?(item.fileLabelZh||'PDF 阅读'):(item.fileLabelEn||'Read PDF'))+link(item.file,zh?'下载':'Download',true):'')+(item.manuscript?link(item.manuscript,zh?'作者稿（归档版本） · '+item.manuscriptPages+' 页':'Author manuscript (archived version) · '+item.manuscriptPages+' pages'):'')+(item.projectNotice?link(item.projectNotice,zh?'国家级立项通知（节选）':'National project approval (excerpt)'):'')+(item.url?link(item.url,zh?'原文链接':'Source'):'');}
   function list(items,zh){return items.map((item,i)=>'<article class="paper"><div class="paper-number">'+String(i+1).padStart(2,'0')+'</div><div><h3>'+esc(item.title)+'</h3><p class="paper-meta">'+esc(item.meta)+'</p><p class="paper-summary">'+esc(zh?item.zh:item.en)+'</p>'+attachments(item,zh)+'</div></article>').join('');}
   function readingNote(zh){
-    const title=zh?'谱梯度法的端点动力学与有限记忆收敛':'Endpoint dynamics and finite-memory convergence';
-    const description=zh
-      ?'基于四篇公开合著预印本，从正定二次模型推导平衡端点轨道、Lyapunov 能量、闭锥统一收缩和 Ritz 扫掠的行列式公式。'
-      :'A Chinese reading note based on four coauthored preprints. It derives the balanced endpoint orbit, the Lyapunov energy, the uniform closed-cone contraction, and the determinant identity for Ritz sweeps.';
-    const disclosure=zh
-      ?'整理与文字修订使用 AI 辅助，仍待逐项人工核阅。引用研究结论时请引用原始预印本。'
-      :'The synthesis and editing used AI assistance. Item-by-item human review is pending. Cite the original preprints for their research results.';
-    return '<section id="research-reading" class="research-section"><h2>'+(zh?'研究导读与复现':'Reading note & reproducibility')+'</h2><article class="paper"><div><h3>'+esc(title)+'</h3><p class="paper-meta">2026.11 · '+(zh?'中文技术导读':'Technical reading note in Chinese')+'</p><p class="paper-summary">'+esc(description)+'</p><p class="source-note">'+esc(disclosure)+'</p>'+
-      link('assets/documents/research/spectral-reading-note.pdf',zh?'阅读 PDF':'Read PDF')+
-      link('assets/documents/research/spectral-reading-note.pdf',zh?'下载 PDF':'Download PDF',true)+
-      link('https://github.com/Taitai2025/taitai2025.github.io/tree/main/research/spectral',zh?'源文件与校验':'Source and checks')+
-      '</div></article></section>';
+    const notes = [
+      {
+        zh: '有限记忆谱梯度法的完整扫掠、秩退化与统一指数收敛',
+        en: 'Complete sweeps, rank loss, and uniform exponential convergence',
+        typeZh: '中文证明阅读稿 · 14 页',
+        typeEn: 'Proof reading note in Chinese · 14 pages',
+        descriptionZh: '逐步推导秩压缩 LMSD 的整轮乘子、退化端点与统一指数界，附三维精确算例和 Lean 文件。',
+        descriptionEn: 'A worked proof of the complete-sweep multiplier, the rank-loss boundary, and the uniform rate, with an exact example and Lean files.',
+        file: 'lmsd-sweep-proof-note.pdf',
+        source: 'lmsd'
+      },
+      {
+        zh: '谱梯度法的端点动力学与有限记忆收敛',
+        en: 'Endpoint dynamics and finite-memory convergence',
+        typeZh: '中文技术导读 · 6 页',
+        typeEn: 'Technical reading note in Chinese · 6 pages',
+        descriptionZh: '基于四篇公开合著预印本，推导平衡端点轨道、Lyapunov 能量和 Ritz 扫掠的行列式公式。',
+        descriptionEn: 'A reading note based on four coauthored preprints, covering balanced endpoint orbits, Lyapunov energy, and the determinant identity for Ritz sweeps.',
+        file: 'spectral-reading-note.pdf',
+        source: 'spectral'
+      }
+    ];
+    const disclosure = zh
+      ? '阅读稿使用了 AI 辅助，仍待作者逐项核阅。引用研究结论时请引用原始预印本。'
+      : 'The notes used AI assistance and are pending author review. Cite the original preprints for research results.';
+    const items = notes.map(note => {
+      const file = 'assets/documents/research/' + note.file;
+      const source = 'https://github.com/Taitai2025/taitai2025.github.io/tree/main/research/' + note.source;
+      return `<article class="paper"><div>
+        <h3>${esc(zh ? note.zh : note.en)}</h3>
+        <p class="paper-meta">2026.11 · ${esc(zh ? note.typeZh : note.typeEn)}</p>
+        <p class="paper-summary">${esc(zh ? note.descriptionZh : note.descriptionEn)}</p>
+        ${link(file, zh ? '阅读 PDF' : 'Read PDF')}
+        ${link(file, zh ? '下载 PDF' : 'Download PDF', true)}
+        ${link(source, zh ? '源文件与校验' : 'Source and checks')}
+      </div></article>`;
+    }).join('');
+    const heading = zh ? '研究导读与复现' : 'Reading notes & reproducibility';
+    return `<section id="research-reading" class="research-section">
+      <h2>${heading}</h2><p class="source-note">${esc(disclosure)}</p>${items}
+    </section>`;
   }
   function render(lang){
     const zh=lang==='zh',data=window.RESEARCH_CONTENT;

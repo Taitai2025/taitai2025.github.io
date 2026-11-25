@@ -1,0 +1,556 @@
+% !TeX program = xelatex
+\documentclass[UTF8,zihao=-4,a4paper]{ctexart}
+\usepackage[a4paper,margin=25mm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,tabularx}
+\usepackage{xcolor,hyperref}
+\definecolor{inkblue}{HTML}{173B55}
+\hypersetup{colorlinks,linkcolor=inkblue,citecolor=inkblue,urlcolor=inkblue,
+ pdftitle={有限记忆谱梯度法的完整扫掠、秩退化与统一指数收敛},pdfauthor={},pdfsubject={公开预印本的证明阅读稿}}
+\ctexset{section={format=\Large\bfseries\color{inkblue}},subsection={format=\large\bfseries}}
+\pagestyle{plain}
+\setlength{\parskip}{4pt plus 1pt}\setlength{\parindent}{2em}
+\setcounter{tocdepth}{1}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}\newtheorem{example}[theorem]{例}
+\renewcommand{\proofname}{证明}
+\newcommand{\R}{\mathbb R}\newcommand{\N}{\mathbb N}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\K}{\mathcal K}\newcommand{\I}{\mathcal I}
+\DeclareMathOperator{\diag}{diag}\DeclareMathOperator{\Span}{span}\DeclareMathOperator{\rank}{rank}
+\title{\bfseries 有限记忆谱梯度法的完整扫掠、\\秩退化与统一指数收敛}
+\author{}\date{2026 年 11 月 25 日}
+\begin{document}
+\maketitle
+\begin{abstract}
+有限记忆最速下降法把一段梯度历史压缩为低维谱问题，再将得到的 Ritz 值用于下一轮更新。历史趋于低秩时，单个 Ritz 值未必随归一化梯度连续变化，因此收敛证明需要区分投影谱与实际更新的连续性。本文以已公开的秩压缩 LMSD 预印本为依据，从历史矩阵的 Krylov 结构出发，完整推导整轮乘子的行列式表示、逐谱分量收敛、相容端点锥上的边界连续性，以及由紧性得到的统一指数估计。最后说明固定正谱权重的共轭关系、扫掠与单次更新的速率换算，并给出一个三维精确算例和三个假设边界示例。全文以有限维正定二次问题与精确代数秩为范围。
+\end{abstract}
+\noindent{\small\textbf{版本与署名说明}\quad
+本文是围绕公开文献独立编排的证明阅读稿，不作为新的原创定理或期刊接受版本。主要结果来源于 Yang--Yuan 的公开预印本 \cite{YY2026}，原论文的合著信息保留在参考文献中。结构整理、推导复核与文字修订使用 AI 辅助，尚需作者逐项核阅。抽象闭锥定理和部分低秩子引理已有形式化核验，具体范围见第~\ref{sec:scope} 节；完整 LMSD 算法理论的依据仍为本文及所引文献的人工证明。}
+\tableofcontents
+
+\section{要证明什么，状态为何需要两个端点}
+
+考虑正定二次函数
+\begin{equation}\label{eq:model}
+ f(x)=\frac12x^THx-b^Tx,\qquad H\in\R^{d\times d},\quad H=H^T\succ0.
+\end{equation}
+将唯一极小点 $x_*=H^{-1}b$ 平移至原点后，记 $g=Hx$。一次负梯度更新满足
+\begin{equation}\label{eq:step}
+ x^+=x-\alpha g,\qquad g^+=(I-\alpha H)g.
+\end{equation}
+因此，梯度的每个特征分量分别乘以 $1-\alpha\lambda$。所有后继梯度都是 $H$ 的多项式作用于初始梯度的结果，已经消失的谱分量不会重新出现。
+
+LMSD 的历史并非只用来估计一个步长。它把一轮中的多个梯度组成矩阵，在它们张成的子空间上求 Ritz 值，再把所有 Ritz 值的倒数用于下一轮。形成谱信息的梯度与接受这些步长的梯度属于相邻两轮。本文始终保留这个延迟：若 $u_k$ 是第 $k$ 轮的起点，$\Psi_{u_k}$ 由从 $u_k$ 出发的历史决定，则
+\begin{equation}\label{eq:delay}
+ u_{k+2}=\Psi_{u_k}(H)u_{k+1}.
+\end{equation}
+把右端误写成 $\Psi_{u_k}(H)u_k$ 会得到另一个迭代。
+
+本文依次回答三个问题。首先，每条实际轨道是否收敛？其次，相邻端点 $(u_k,u_{k+1})$ 能否组成一个在终止边界仍连续的状态系统？最后，能否用与初始端点无关的同一对常数 $C,\rho$ 写出
+\begin{equation}\label{eq:target}
+ \norm{(u_k,u_{k+1})}_\times
+ \le C\rho^k\norm{(u_0,u_1)}_\times,
+ \qquad 0<\rho<1,
+\end{equation}
+其中 $\norm{(u,v)}_\times=(\norm u^2+\norm v^2)^{1/2}$？式~\eqref{eq:target} 首先按\emph{完整扫掠}计步，稍后才换成单次梯度更新。
+
+Fletcher 提出了 LMSD 的基本规则及 harmonic Ritz 变体 \cite{Fletcher}。Curtis--Guo 已建立其 $R$ 线性收敛理论，分析中使用了历史满秩及沿运行统一的归一化条件 \cite{CurtisGuo}。本文所整理的公开预印本 \cite{YY2026} 采用精确代数秩压缩，证明链允许历史趋于秩退化。齐次系统中从逐轨道收敛得到指数稳定的一般原理有更早的文献基础 \cite{ShenHu}；在具体算法中，主要工作是把该原理所需的状态、连续性和全状态收敛逐项建立起来。
+
+\section{历史空间、秩压缩与有限终止}
+
+\subsection{梯度历史为何是 Krylov 空间}
+
+设一段历史包含 $p$ 次更新，步长均为有限正数，其更新前梯度为
+\[
+ G=[g_0,g_1,\ldots,g_{p-1}],\qquad
+ g_{j+1}=(I-\alpha_jH)g_j.
+\]
+记
+\[
+ \K_p(H,g_0)=\Span\{g_0,Hg_0,\ldots,H^{p-1}g_0\}.
+\]
+\begin{proposition}[历史的张成空间]\label{prop:history}
+只要 $\alpha_0,\ldots,\alpha_{p-2}$ 非零，就有
+$\operatorname{ran}G=\K_p(H,g_0)$。
+\end{proposition}
+\begin{proof}
+写成 $g_j=p_j(H)g_0$，其中
+$p_j(t)=\prod_{h=0}^{j-1}(1-\alpha_ht)$。多项式 $p_j$ 的次数恰为 $j$，最高次项系数非零。从单项式 $1,t,\ldots,t^{p-1}$ 到 $p_0,\ldots,p_{p-1}$ 的基变换矩阵为可逆三角矩阵。将这些多项式作用于 $g_0$，两组向量张成的空间相同。
+\end{proof}
+
+重特征值不会增加一条轨道实际使用的谱维数。写原矩阵的谱分解为
+\[H=\sum_{i=1}^n\lambda_iP_i.\]其中 $\lambda_i$ 枚举原矩阵的\emph{全部}不同特征值。轨道始终位于
+\[\Span\{P_i g_0:P_i g_0\ne0\}.\]为在不同初值之间保持同一个状态空间，下面始终使用固定对角矩阵
+\begin{equation}\label{eq:simple}
+ \Lambda=\diag(\lambda_1,\ldots,\lambda_n),\qquad
+ 0<\lambda_1<\cdots<\lambda_n,
+\end{equation}
+缺失谱点的坐标填零。为简化公式，下面的坐标证明将 $\Lambda$ 仍记为 $H$；$n$ 表示原矩阵不同特征值的总数，活跃谱数另记为
+$S(u)=\{i:u_i\ne0\}$、$s(u)=|S(u)|$。原空间的等距对应将在第~\ref{sec:uniform} 节说明。全文固定环境谱界与单步放大界\[\underline\lambda=\lambda_1,\qquad\overline\lambda=\lambda_n,\qquad B=\max\{1,\overline\lambda/\underline\lambda-1\}.\]即使某条轨道的活跃谱缩小，$B$ 的含义也不改变。
+
+\begin{lemma}[Krylov 秩]\label{lem:rank}
+对任意 $u$，
+$\rank[u,Hu,\ldots,H^{p-1}u]=\min\{p,s(u)\}$。
+\end{lemma}
+\begin{proof}
+在非零行上，该矩阵等于一个可逆对角矩阵乘以 Vandermonde 矩阵
+$(\lambda_i^{j-1})$。任何大小不超过 $\min\{p,s(u)\}$ 的方形 Vandermonde 子式均非零；行数和列数又给出相同的秩上界。
+\end{proof}
+
+\subsection{压缩后的算法及终止分支}
+
+给定历史 $G_k$，取其列空间的正交基 $Q_k$，令 $d_k=\rank G_k$。求正定矩阵 $Q_k^THQ_k$ 的全部特征值
+$\theta_{k,1},\ldots,\theta_{k,d_k}$，在下一轮依次使用
+$\theta_{k,1}^{-1},\ldots,\theta_{k,d_k}^{-1}$，同时保存新的更新前梯度。初始预热使用 $p$ 个正步长，若梯度先达到零便停止。
+
+各根的排列会影响轮内状态，但完整乘积
+\[
+ \prod_{j=1}^{d_k}(I-H/\theta_{k,j})
+\]
+不受排列影响。这里的压缩按\emph{精确代数秩}进行。浮点计算中按阈值删除近相关方向涉及另外的扰动问题，不能直接用本文定理代替分析。
+
+\begin{proposition}[有限终止]\label{prop:finite}
+若一段完整的 $p$ 步历史从 $u$ 出发，且 $s(u)=d\le p$，则压缩 Ritz 值恰为 $\{\lambda_i:i\in S(u)\}$。它们的倒数作用于当前端点后，至多 $d$ 步到达零。
+\end{proposition}
+\begin{proof}
+由引理~\ref{lem:rank}，历史空间维数是 $d$，且它包含在 $d$ 维不变子空间
+$E(u)=\Span\{e_i:i\in S(u)\}$ 中，因此二者相等。$H$ 在这个空间的压缩拥有全部活跃特征值。当前端点仍在 $E(u)$ 中，故
+$\prod_{i\in S(u)}(I-H/\lambda_i)$ 将其消去。
+\end{proof}
+
+如果某一轮历史首次降到小于 $p$ 的秩，则此前各轮仍为 $p$ 步，该轮起点的活跃谱数小于 $p$，命题~\ref{prop:finite} 随即适用。因此，非终止运行的每轮都是 $p$ 步，且各轮起点至少含 $p+1$ 个活跃特征值。支撑只能减小，经过有限多次变化后就固定下来。后面的全局收敛证明可以从这个固定支撑的尾段开始。
+
+\section{完整扫掠的行列式与正权重表示}
+
+令 $K(u)=[u,Hu,\ldots,H^{p-1}u]$，并暂设 $s(u)\ge p$。取同一列空间的正交基 $Q$。Ritz 值也等于广义特征值问题
+\[
+ K(u)^THK(u)z=\theta K(u)^TK(u)z
+\]
+的根。对完整乘子 $\Psi_u(t)=\prod_{j=1}^p(1-t/\theta_j)$，有
+\begin{equation}\label{eq:det}
+ \Psi_u(t)=\frac{\det(K(u)^T(H-tI)K(u))}
+                    {\det(K(u)^THK(u))}.
+\end{equation}
+分母严格为正。这个公式可由 $K=QR$ 的基变换直接验证：分子、分母中的 $\det(R)^2$ 消去，剩下
+$\det(Q^THQ-tI)/\det(Q^THQ)$。
+
+令 $\I_p$ 为 $\{1,\ldots,n\}$ 的所有 $p$ 元子集，并记
+\[
+ V_{ij}=\lambda_i^{j-1},\qquad
+ \Delta_I=\det V_I=\prod_{i<j,\ i,j\in I}(\lambda_j-\lambda_i).
+\]
+$K(u)=\diag(u)V$。对 $I\in\I_p$ 定义
+\begin{equation}\label{eq:weights}
+ \beta_I(u)=\Delta_I^2\prod_{i\in I}\lambda_i u_i^2,
+ \quad \pi_I(u)=\frac{\beta_I(u)}{\sum_{J\in\I_p}\beta_J(u)},
+ \quad \phi_I^{(r)}=\prod_{i\in I}(1-\lambda_r/\lambda_i).
+\end{equation}
+至少一个 $\beta_I(u)>0$。允许部分 $u_i=0$，相应权重取零。
+
+\begin{proposition}[完整乘子的凸组合]\label{prop:CB}
+在 $s(u)\ge p$ 时，对每个谱点 $\lambda_r$，
+\begin{equation}\label{eq:CB}
+ \Psi_u(\lambda_r)=\sum_{I\in\I_p}\pi_I(u)\phi_I^{(r)},
+ \qquad \pi_I(u)\ge0,\qquad\sum_I\pi_I(u)=1.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Cauchy--Binet 公式分别给出
+\begin{align*}
+ \det(K^THK)&=\sum_I\Delta_I^2\prod_{i\in I}\lambda_i u_i^2
+             =\sum_I\beta_I(u),\\
+ \det(K^T(H-\lambda_rI)K)
+ &=\sum_I\Delta_I^2\prod_{i\in I}(\lambda_i-\lambda_r)u_i^2
+   =\sum_I\beta_I(u)\phi_I^{(r)}.
+\end{align*}
+两式相除并使用~\eqref{eq:det} 即得结论。分子中的 $H-\lambda_rI$ 可以不正定，Cauchy--Binet 仍是代数恒等式；非负性来自分母所定义的权重。
+\end{proof}
+
+式~\eqref{eq:CB} 把变化的 Ritz 根换成有限个固定数 $\phi_I^{(r)}$ 的组合。其用途并非断言每一个固定数都小于 $1$；对高谱分量，它们可能很大。真正有用的是：含 $r$ 的集合贡献为零，只含较大特征值的集合给出严格收缩，而含较小特征值的集合可以通过权重比来控制。这将成为下一节归纳的核心。
+
+\section{先证明每条轨道都收敛}
+
+\subsection{延迟递推的一个标量引理}
+
+\begin{lemma}\label{lem:scalar}
+设非负序列 $a_k$ 满足 $a_{k+2}\le Ma_{k+1}$，其中 $M\ge1$。又设存在同一个 $c\in(0,1)$，使对每个 $\varepsilon>0$ 都存在 $k_\varepsilon$，满足
+\[
+ k\ge k_\varepsilon,\quad a_k\ge\varepsilon
+ \quad\Longrightarrow\quad a_{k+2}\le ca_{k+1}.
+\]
+则 $a_k\to0$。所有条件从某个固定尾段开始成立也足够。
+\end{lemma}
+\begin{proof}
+固定 $\delta>0$。必存在任意晚的指标 $N$ 使 $a_N<\delta$；否则 $a_k\ge\delta$ 最终恒成立，触发条件就会强制后继每一步按 $c$ 收缩，与下界 $\delta$ 矛盾。取 $N$ 足够晚，使以后可使用对应 $\delta$ 的触发条件。
+
+证明 $a_j<M^2\delta$ 对所有 $j\ge N$ 成立。$j=N$ 显然，$j=N+1$ 由粗界得到。设结论已到 $m\ge N+1$。若 $a_{m-1}<\delta$，连续使用两次粗界可得 $a_{m+1}<M^2\delta$；若 $a_{m-1}\ge\delta$，触发条件给出 $a_{m+1}\le ca_m<M^2\delta$。归纳完成，故 $\limsup a_j\le M^2\delta$。再令 $\delta\downarrow0$。
+\end{proof}
+
+引理允许 $a_{k+1}$ 偶尔增大。触发收缩的量在 $k$ 时刻，而受缩小的是 $k+1$ 到 $k+2$ 的比例；这一时序正适合历史步长。
+
+\subsection{按特征值从小到大归纳}
+
+\begin{theorem}[逐轨道收敛]\label{thm:global}
+上述精确秩压缩 LMSD 或有限终止，或所有端点梯度和轮内梯度趋于零。
+\end{theorem}
+\begin{proof}
+仅考虑非终止情况。在支撑稳定的尾段，本证明临时将活跃特征值记为 $\nu_1<\cdots<\nu_q$，其中 $q>p$，相应梯度分量均非零。这里 $q$ 可以小于环境全谱的不同特征值数 $n$；本证明中的 $\I_p$、$\beta_I$ 和 $\phi_I$ 按这 $q$ 个活跃谱点计算。所有 Ritz 值仍属于固定环境区间 $[\underline\lambda,\overline\lambda]$，因此使用全文统一的 $B$ 就有 $\abs{1-\nu_r/\theta}\le B$，从而
+\begin{equation}\label{eq:rough}
+ \abs{\Psi_{u_k}(\nu_r)}\le B^p.
+\end{equation}
+
+先看 $r=1$。若 $1\in I$，则 $\phi_I^{(1)}=0$；若 $1\notin I$，则
+\[
+ 0<\phi_I^{(1)}\le(1-\nu_1/\nu_q)^p<1.
+\]
+由~\eqref{eq:CB} 与延迟递推~\eqref{eq:delay}，$u_{k,1}\to0$。
+
+假设 $i<r$ 的分量已趋零，考察 $a_k=|u_{k,r}|$。固定 $\varepsilon>0$，只考虑 $a_k\ge\varepsilon$ 的指标。把 $\I_p$ 分成三类：含 $r$ 的集合、全部位于 $\{r+1,\ldots,q\}$ 的集合，以及其余集合。前一类贡献为零。第二类的模板至多为
+$\rho_r=(1-\nu_r/\nu_q)^p<1$；若第二类为空，直接取 $\rho_r=0$。
+
+对于第三类的 $I$，它遗漏 $r$ 且含有某个 $i(I)<r$。以 $r$ 替换该指标，记
+$J=(I\setminus\{i(I)\})\cup\{r\}$。由~\eqref{eq:weights}，
+\begin{equation}\label{eq:exchange}
+ \frac{\beta_I(u_k)}{\beta_J(u_k)}
+ =\frac{\Delta_I^2}{\Delta_J^2}
+   \frac{\nu_{i(I)}}{\nu_r}
+   \frac{u_{k,i(I)}^2}{u_{k,r}^2}.
+\end{equation}
+在 $|u_{k,r}|\ge\varepsilon$ 的指标上，右端趋于零，且
+$0\le\pi_I(u_k)\le\beta_I(u_k)/\beta_J(u_k)$。第三类只有有限个集合，它们的模板为固定有限数，因此
+\[
+ \limsup_{k\to\infty,\ |u_{k,r}|\ge\varepsilon}
+       |\Psi_{u_k}(\nu_r)|\le\rho_r<1.
+\]
+若这样的指标只有有限多个，触发条件在它们之后自动成立。取与 $\varepsilon$ 无关的
+$c_r=(1+\rho_r)/2<1$，再结合~\eqref{eq:rough}，即可对 $a_k$ 使用引理~\ref{lem:scalar}。于是第 $r$ 个分量也趋于零，完成归纳。
+
+一轮内至多有 $p$ 个更新，每个矩阵因子的范数至多 $B$，所以所有轮内梯度均受 $B^p\norm{u_k}$ 控制，也趋于零。最后 $x=H^{-1}g$ 给出迭代点趋于极小点。
+\end{proof}
+
+以上临时活跃谱记号只用于逐分量证明；下文继续使用固定环境全谱 $\lambda_1,\ldots,\lambda_n$ 和同一个 $B$。这个证明尚未直接给出对所有初值通用的指数常数。不同分量的触发时间可能依赖整条轨道。接下来构造一个包含全部合法端点的闭状态空间，使紧性能够处理这些依赖。
+
+\section{相容端点锥及其边界连续性}
+
+\subsection{状态空间必须保留历史约束}
+
+令
+\begin{align}
+ \mathcal Q_p&=\left\{q(t)=\prod_{j=1}^p(1-\alpha_jt):
+                \alpha_j\in[\lambda_n^{-1},\lambda_1^{-1}]\right\},\label{eq:Q}\\
+ \Omega_p&=\{(u,v):v=q(H)u\text{ 对某个 }q\in\mathcal Q_p\}.\label{eq:cone}
+\end{align}
+$\Omega_p$ 是相容的相邻端点集合。这里的约束比 $S(v)\subseteq S(u)$ 强；它还要求 $u$ 和 $v$ 确由 $p$ 个合法范围内的梯度步连接。
+
+\begin{lemma}\label{lem:closed}
+$\Omega_p$ 是闭锥，且每个 $(u,v)\in\Omega_p$ 满足
+$S(v)\subseteq S(u)$ 和 $\norm v\le B^p\norm u$。
+\end{lemma}
+\begin{proof}
+同倍缩放 $u,v$ 保持相容性，原点也在其中。若 $(u^\ell,v^\ell)\to(u,v)$，选取相容表示中的 $p$ 个步长。它们属于一个紧盒，因而可取子列逐个收敛到同一区间内的步长。乘积多项式随参数连续，取极限就有 $v=q(H)u$。其余两条由每个谱分量的乘积表示和单因子界立即得到。
+\end{proof}
+
+定义
+\begin{equation}\label{eq:F}
+ F_p(u,v)=\begin{cases}\Psi_u(H)v,&s(u)>p,\\0,&s(u)\le p,\end{cases}
+ \qquad T_p(u,v)=(v,F_p(u,v)).
+\end{equation}
+在 $s(u)=p$ 时，满秩投影恰好得到所有活跃特征值，也会将 $v$ 消去；在 $s(u)<p$ 时，精确压缩产生更短的终止扫掠。两类的端点输出一致为零。
+
+$T_p$ 将 $\Omega_p$ 映回自身。常规分支的全部 $p$ 个 Ritz 倒数位于区间~\eqref{eq:Q} 中；终止分支可取包含 $v$ 全部活跃特征值倒数的因子，并重复合法因子补到 $p$ 个，将 $v$ 消去。此外，$T_p(tu,tv)=tT_p(u,v)$ 对 $t\ge0$ 成立：非零缩放保持历史列空间和 Ritz 值，零状态的结论由定义成立。
+
+\subsection{秩变小为何没有破坏实际输出的连续性}
+
+\begin{theorem}[端点连续性]\label{thm:continuous}
+$F_p$ 和 $T_p$ 在整个 $\Omega_p$ 上连续，包括 $s(u)=p$、$s(u)<p$ 和原点。
+\end{theorem}
+\begin{proof}
+设 $(u^\ell,v^\ell)\to(u,v)$ 为相容状态列。由于 $T_p$ 的第一分量就是 $v$，只需证明\[F_p(u^\ell,v^\ell)\longrightarrow F_p(u,v).\]下文对常规分支的子列分析；若某项落在终止分支，其输出为零。
+
+\emph{第一种情况：$s(u)>p$。} 至少 $p+1$ 个非零分量在充分晚时仍非零。$K(u)^THK(u)$ 正定，行列式比~\eqref{eq:det} 的分母在极限处非零，因此每个 $\Psi_{u^\ell}(\lambda_i)$ 收敛到对应极限，乘以收敛的 $v_i^\ell$ 即得结论。
+
+\emph{第二种情况：$s(u)=p$。} 此时 $K(u)$ 仍列满秩，所以同样可取行列式比的极限。在 $i\in S(u)$ 上，极限投影的根包含 $\lambda_i$，故 $\Psi_u(\lambda_i)=0$。在 $i\notin S(u)$ 上，相容性保证 $v_i=0$，再用统一界
+$|\Psi_{u^\ell}(\lambda_i)|\le B^p$，乘积仍趋零。因此总输出趋零。
+
+\emph{第三种情况：$1\le s(u)<p$。} 对 $i\notin S(u)$，同样使用 $v_i^\ell\to0$ 和统一粗界。固定 $r\in S(u)$，考虑~\eqref{eq:CB} 中的集合。含 $r$ 的集合模板为零。任何遗漏 $r$ 的 $p$ 元集合 $I$，必含某个 $h\notin S(u)$；否则 $I$ 的大小不可能达到 $p$。令 $J=(I\setminus\{h\})\cup\{r\}$。当 $\beta_I(u^\ell)>0$ 且 $\ell$ 足够大时，$\beta_J(u^\ell)>0$，并且
+\begin{equation}\label{eq:boundaryratio}
+ 0\le\pi_I(u^\ell)\le\frac{\beta_I(u^\ell)}{\beta_J(u^\ell)}
+ =\frac{\Delta_I^2}{\Delta_J^2}\frac{\lambda_h}{\lambda_r}
+   \frac{(u_h^\ell)^2}{(u_r^\ell)^2}\longrightarrow0.
+\end{equation}
+若 $\beta_I(u^\ell)=0$，其贡献本已为零。有限多个遗漏 $r$ 的集合全部消失，因而
+$\Psi_{u^\ell}(\lambda_r)\to0$。乘以有界的 $v_r^\ell$ 即得该坐标的输出趋零。
+
+\emph{第四种情况：$u=0$。} 相容性给出 $v=0$，且
+$\norm{F_p(u^\ell,v^\ell)}\le B^p\norm{v^\ell}\to0$。
+
+在终止极限处，终止分支子列恒为零，而常规分支子列也趋零；于是整个序列具有同一极限。四种情况覆盖全部状态。
+\end{proof}
+
+证明中两次出现了“替换一个指标”的权重比：全局收敛时用已趋零的较低谱分量；边界连续性时用在极限中消失的分量。二者依靠同一个 Cauchy--Binet 结构，但它们处理的是不同的极限过程。
+
+\section{从逐点收敛到统一指数估计}\label{sec:uniform}
+
+\subsection{有限维闭锥上的紧性论证}
+
+\begin{theorem}[齐次系统的统一指数估计]\label{thm:compact}
+设 $X$ 为有限维赋范空间，$\Omega\subset X$ 是闭锥，$T:\Omega\to\Omega$ 连续且正一次齐次。若对每个 $z\in\Omega$ 有 $T^kz\to0$，则存在 $C\ge1$、$0<\rho<1$，使
+\[
+ \norm{T^kz}\le C\rho^k\norm z\qquad(z\in\Omega,\ k\ge0).
+\]
+\end{theorem}
+\begin{proof}
+若 $\Omega=\{0\}$，结论直接成立。否则单位截面
+$\Sigma=\{z\in\Omega:\norm z=1\}$ 非空且紧。每个 $z\in\Sigma$ 都存在正整数 $n_z$ 使 $\norm{T^{n_z}z}<1/2$。有限次复合连续，故 $z$ 有相对开邻域，在其中同一时刻 $n_z$ 的范数仍小于 $1/2$。
+
+取有限子覆盖，并令 $N$ 为相应有限个时刻的最大值。于是每个单位状态都可在 $1$ 到 $N$ 步中的某个时刻把范数降到至多一半。同时，有限个连续函数在紧集上有界，因此
+\[
+ B_0=\max_{0\le j<N}\sup_{z\in\Sigma}\norm{T^jz}<\infty,
+ \qquad B_0\ge1.
+\]
+
+固定初值 $z$ 和时刻 $k$。若 $T^kz=0$，所需估计直接成立。以下设 $T^kz\ne0$；因为 $T(0)=0$，直到 $k$ 的各状态均非零。从 $z$ 开始，利用齐次性把上述性质从单位截面缩放回来；到达收缩时刻后，再对新的非零状态重复选择。在首次零状态之前持续构造累计收缩时刻
+$0=s_0<s_1<s_2<\cdots$，则
+$s_{q+1}-s_q\in\{1,\ldots,N\}$，且
+$\norm{T^{s_q}z}\le2^{-q}\norm z$。若中途达到零，后继始终为零。
+
+由于第 $k$ 个状态非零，上述构造一定能走到一个超过 $k$ 的收缩时刻（该时刻本身允许首次到零）。取 $q$ 使 $s_q\le k<s_{q+1}$。余下不足 $N$ 步，用 $B_0$ 控制，而 $k<(q+1)N$ 给出 $q>k/N-1$。于是
+\[
+ \norm{T^kz}\le B_0\,2^{-q}\norm z
+ \le 2B_0(2^{-1/N})^k\norm z.
+\]
+取 $C=2B_0$、$\rho=2^{-1/N}$ 即得结论。
+\end{proof}
+
+这里并未把“每个状态有一个收缩时刻”直接换成“所有状态在同一个时刻都收缩”。有限覆盖先给的是有界等待时间，随后重新选择收缩段，并把段内可能的放大计入 $B_0$。这一点使证明适用于非单调轨道。一般理论见 Shen--Hu \cite[Theorem 5.3]{ShenHu}；上述表述是单映射、一次齐次情况下适合本文的直接证明。
+
+\subsection{每个相容状态都要有收敛依据}
+
+定理~\ref{thm:global} 讨论实际算法，而定理~\ref{thm:compact} 要求闭锥中的\emph{每一个}状态都收敛。两者之间还需要实现论证。
+
+给定 $(u_0,u_1)\in\Omega_p$，相容性提供 $p$ 个合法步长，将它们作为从 $u_0$ 出发的预热。若途中已到零，则 $u_1=0$，抽象状态下一步到 $(0,0)$。否则历史完整，由命题~\ref{prop:history}，其列空间正是 $\K_p(H,u_0)$；从中提取的根和 $F_p(u_0,u_1)$ 所用根相同。继续运行便得到相同的端点递推；若活跃谱数不超过 $p$，有限终止命题保证零分支也是合法的完整输出。因此，定理~\ref{thm:global} 对每个相容初值提供 $T_p^k(u_0,u_1)\to(0,0)$。
+
+\begin{corollary}[统一端点率]\label{cor:endpoint}
+固定 $H$ 和 $p$，存在只依赖于这两者的 $C_*(H,p)\ge1$ 与 $\rho_*(H,p)\in(0,1)$，使所有相容状态满足
+\[
+ \norm{T_p^kz}_\times\le C_*\rho_*^k\norm z_\times.
+\]
+有限终止轨道按零延拓。
+\end{corollary}
+\begin{proof}
+闭性由引理~\ref{lem:closed}，自映射和齐次性由定义~\eqref{eq:F} 后的论证，连续性由定理~\ref{thm:continuous}，全状态逐点收敛由刚才的实现论证。应用定理~\ref{thm:compact}。
+\end{proof}
+
+若预热使用任意大的正步长，预热端点未必属于规定范围的相容锥。此时从第一轮正常 Ritz 扫掠的起终点开始使用推论。任意预热造成的放大量保留在初始状态 $z$ 中；不能删除它，再声称相对于预热前梯度仍有同一常数。
+
+对于原空间中的重特征值，固定使用式~\eqref{eq:simple} 中原矩阵的全部不同特征值。给定相容状态 $(u,v)$，在每个 $P_i u\ne0$ 的特征空间取单位方向 $e_i=P_i u/\norm{P_i u}$；若 $P_i u=0$，在该特征空间任取一个单位方向，并把对应坐标填零。映射 $J:\R^n\to\R^d$，$Jc=\sum_i c_i e_i$ 是等距嵌入，满足 $HJ=J\Lambda$，其像包含 $u,v$ 及后续全部谱多项式更新。令 $\widehat u_i=\norm{P_i u}$，则 $u=J\widehat u$；相容性给出 $v=Jq(\Lambda)\widehat u$。由此，历史列空间、压缩谱问题、整个端点轨道及其范数均由同一个 $J$ 保持。固定矩阵 $\Lambda$ 的统一常数即可直接用于原空间的每个初值，无须改变相容步长区间。
+
+保留全谱区间是必要的。例如原矩阵为 $\diag(1,2,10)$、$p=1$，取 $u=e_2$ 和 $\alpha=1/10$，便有合法相容端点 $v=(4/5)e_2$。若按该初值的唯一活跃特征值 $2$ 把允许步长误缩为 $\{1/2\}$，它只能生成零端点，反而会排除原来的合法状态。完整原空间表述可对照 \cite[Corollary 25]{YY2026}。
+
+\section{固定正谱权重、轮内状态与计步}
+
+设 $W=\omega(H)\succ0$ 固定，使用加权广义谱问题
+\[
+ Q^TWHQv=\theta Q^TWQv.
+\]
+令 $S=W^{1/2}$。由于 $SH=HS$，变换 $\widetilde g=Sg$ 保持梯度更新的形式。更具体地，
+\[
+ K(Su)=SK(u),\qquad
+ K(Su)^THK(Su)=K(u)^TWHK(u),
+\]
+且 $K(Su)^TK(Su)=K(u)^TWK(u)$。因此 $u$ 的加权谱问题就是 $Su$ 的标准谱问题。
+
+定义 $\mathcal S(u,v)=(Su,Sv)$。它将 $\Omega_p$ 双射到自身，保持活跃支撑和代数秩，并满足
+\begin{equation}\label{eq:conjugacy}
+ T_{p,W}=\mathcal S^{-1}T_p\mathcal S.
+\end{equation}
+从而
+\begin{equation}\label{eq:weighted}
+ \norm{T_{p,W}^kz}_\times
+ \le C_*\sqrt{\kappa_2(W)}\,\rho_*^k\norm z_\times.
+\end{equation}
+所有固定正谱权重共享同一个\emph{可用的}衰减因子 $\rho_*$；欧氏范数中的前因子会变。这里没有断言这个存在性证明给出的 $\rho_*$ 就是最优因子。
+
+$W=I$ 对应标准 Ritz，$W=H$ 对应 harmonic Ritz；$p=1$ 时分别给出二次模型上的延迟 BB1 和 BB2。当 $W=H^a$ 时，前因子的变化为 $\kappa_2(H)^{|a|/2}$。如果权重随迭代改变，式~\eqref{eq:conjugacy} 中不再存在一个固定共轭变换，本文结论不能直接沿用。
+
+现在把扫掠计数换成梯度步。对非终止轨道，所有正常扫掠均为 $p$ 步。令 $\ell=kp+j$、$0\le j<p$，第 $\ell$ 个梯度记为 $g_\ell$，并以一个相容轮起点为索引原点，则
+\[
+ \norm{g_\ell}\le B^p C_*\sqrt{\kappa_2(W)}\,
+                  \rho_*^k\norm{z_0}_\times.
+\]
+取 $\gamma=\rho_*^{1/p}$，由 $\rho_*^k=\gamma^{\ell-j}\le\rho_*^{-1}\gamma^\ell$ 得
+\begin{equation}\label{eq:stepRate}
+ \norm{g_\ell}\le
+ B^p C_*\sqrt{\kappa_2(W)}\,\rho_*^{-1}
+ \gamma^\ell\norm{z_0}_\times.
+\end{equation}
+终止运行直接在终止后补零。有限个最后的轮内更新也受同样的单因子界控制，可吸收到前因子中。
+
+最后，
+\[
+ \norm{x-x_*}\le\lambda_1^{-1}\norm g,
+ \qquad f(x)-f(x_*)=\tfrac12g^TH^{-1}g
+                   \le\frac{\norm g^2}{2\lambda_1}.
+\]
+所以误差有同一个可用因子 $\gamma$，目标差有因子 $\gamma^2$。这是指数在\emph{平方量}上的变化，不应把目标差曲线的斜率直接当作梯度范数的斜率。实际计算时间还包括正交化、内积与小规模特征值求解，单靠式~\eqref{eq:stepRate} 不能比较这些成本。
+
+\section{一个能精确算清的秩退化例子}
+
+取
+\begin{equation}\label{eq:example}
+ H=\diag(1,2,3),\qquad p=2,\qquad
+ u_\varepsilon=\frac{(\varepsilon,\varepsilon^2,1)^T}
+                   {\sqrt{1+\varepsilon^2+\varepsilon^4}},\quad\varepsilon>0.
+\end{equation}
+这是公开预印本 \cite[Proposition 9]{YY2026} 的秩变化路径，下面补全其整轮乘子的精确计算。
+
+\subsection{梯度趋于一个方向，两个 Ritz 值却趋于两个谱点}
+
+显然 $u_\varepsilon\to e_3$，而
+\[
+ \frac{(H-3I)u_\varepsilon}{\norm{(H-3I)u_\varepsilon}}
+ =\frac{(-2,-\varepsilon,0)^T}{\sqrt{4+\varepsilon^2}}
+ \longrightarrow-e_1.
+\]
+这两个向量的内积趋零，对第二个作正交化就得到收敛到 $[e_3,-e_1]$ 的正交基。因此
+$\K_2(H,u_\varepsilon)\to\Span\{e_1,e_3\}$，两个 Ritz 值趋于 $3,1$。
+
+极限起点本身的 Krylov 空间却只有 $\Span\{e_3\}$。所以“起点趋于 $e_3$”不足以推出两个预极限 Ritz 值都靠近 $3$。这个例子讨论的是允许的静态历史路径；它没有证明某条实际无限 LMSD 轨道必沿该路径逼近，也没有否定算法收敛。
+
+\subsection{正权重展开给出三个精确乘子}
+
+由于齐次性，可略去 $u_\varepsilon$ 的公共归一化因子。三个集合的未归一化权重为
+\[
+ \beta_{12}=2\varepsilon^6,\qquad
+ \beta_{13}=12\varepsilon^2,\qquad
+ \beta_{23}=6\varepsilon^4.
+\]
+约去 $2\varepsilon^2$，令 $D_\varepsilon=6+3\varepsilon^2+\varepsilon^4$，得到
+\begin{equation}\label{eq:explicitPsi}
+ \begin{aligned}
+ \Psi_\varepsilon(t)=\frac{1}{D_\varepsilon}\bigl[
+ &\varepsilon^4(1-t)(1-t/2)
+ +6(1-t)(1-t/3)\\
+ &+3\varepsilon^2(1-t/2)(1-t/3)\bigr].
+ \end{aligned}
+\end{equation}
+所以
+\begin{equation}\label{eq:three}
+ \Psi_\varepsilon(1)=\frac{\varepsilon^2}{D_\varepsilon},\qquad
+ \Psi_\varepsilon(2)=-\frac{2}{D_\varepsilon},\qquad
+ \Psi_\varepsilon(3)=\frac{\varepsilon^4}{D_\varepsilon}.
+\end{equation}
+第二个乘子趋于 $-1/3$，并不趋于零。但是对相容 $v_\varepsilon=q_\varepsilon(H)u_\varepsilon$，有
+$|(v_\varepsilon)_2|\le B^2|(u_\varepsilon)_2|=O(\varepsilon^2)$。
+实际输出的第二分量仍趋零。由此可以直接看见定理~\ref{thm:continuous} 控制的是\emph{乘子与被作用分量的乘积}。
+
+为使检验可独立重复，表~\ref{tab:exact} 将 $\varepsilon$ 取成有理数。每行来自式~\eqref{eq:three} 的精确有理运算，不涉及特征值求解器或迭代收敛判据。
+\begin{table}[htbp]\centering
+\caption{三维例子的精确谱乘子}\label{tab:exact}
+\small
+\begin{tabular}{cccc}\toprule
+$\varepsilon$ & $\Psi_\varepsilon(1)$ & $\Psi_\varepsilon(2)$ & $\Psi_\varepsilon(3)$\\\midrule
+$1$ & $1/10$ & $-1/5$ & $1/10$\\
+$1/10$ & $100/60301$ & $-20000/60301$ & $1/60301$\\
+$1/100$ & $10000/600030001$ & $-200000000/600030001$ & $1/600030001$\\\bottomrule
+\end{tabular}
+\end{table}
+
+还可以显式选择合法预热 $\alpha_1=\alpha_2=1/3$，令
+$N_\varepsilon=\sqrt{1+\varepsilon^2+\varepsilon^4}$。其终点为
+\[
+ v_\varepsilon=\frac{(4\varepsilon/9,\varepsilon^2/9,0)^T}{N_\varepsilon}.
+\]
+由式~\eqref{eq:three}，下一轮端点恰为
+\[
+ F_p(u_\varepsilon,v_\varepsilon)
+ =\frac{(4\varepsilon^3,-2\varepsilon^2,0)^T}
+        {9D_\varepsilon N_\varepsilon}.
+\]
+下一段历史从 $v_\varepsilon$ 出发，其活跃谱只有 $1,2$，压缩投影正好返回这两个根，故再下一轮终止。这给出一个真实的有限终止轨道，并同时检验了延迟索引、相容性、乘子符号和终止分支。
+
+\section{为什么紧性原理的假设不能随意去掉}
+
+下面的例子可直接验证，其作用是检查定理~\ref{thm:compact} 的适用范围，不作为新的稳定性结果。
+
+\begin{example}[去掉一次齐次性]
+在 $[0,\infty)$ 上取 $T(x)=x/(1+x)$。它连续且所有轨道趋零，直接归纳得
+$T^k(x)=x/(1+kx)$。从 $x=1$ 出发为 $1/(k+1)$，不存在 $C<\infty$、$\rho<1$ 使其被 $C\rho^k$ 控制。闭性与有限维仍成立，缺失的是一次齐次性。
+\end{example}
+
+\begin{example}[去掉闭性]
+令 $\Omega=\{(x,y):x>0,y>0\}\cup\{0\}$，对非零点定义
+$T(x,y)=\frac{x}{x+y}(x,y)$，并令 $T(0)=0$。该映射连续、正一次齐次，保持每条射线；沿固定射线的收缩因子 $x/(x+y)$ 小于 $1$，故每条轨道趋零。但当 $y/x\downarrow0$，该因子趋于 $1$。若存在同一 $C,\rho<1$，选择一条因子大于 $\rho$ 的射线，随 $k\to\infty$ 即矛盾。单位截面在缺失的边界方向上不紧。
+\end{example}
+
+\begin{example}[去掉有限维紧性]
+在 $\ell^2$ 上取左移算子
+$T(x_1,x_2,\ldots)=(x_2,x_3,\ldots)$。对每个 $x$，
+$\norm{T^kx}^2=\sum_{j>k}|x_j|^2\to0$。但对每个 $k$ 有
+$\norm{T^ke_{k+1}}=1$，所以 $\norm{T^k}=1$。它是连续线性映射，定义域也是闭锥，仍没有对所有单位初值的统一指数估计。
+\end{example}
+
+这些例子说明：在有限维 LMSD 中，闭锥与连续性不能只在非退化历史上证明；在 Hilbert 空间中，也不能直接复用单位球面的有限覆盖步骤。跨模型推广必须另有紧性或一致性依据。
+
+\section{原文定位与结论的使用范围}\label{sec:scope}
+
+
+形式化核验分为两个范围。Lean 定理 \texttt{closedConeRate} 完整覆盖本稿定理~\ref{thm:compact} 的抽象闭锥结论，已经在 Lean 4.8.0 与 Mathlib 中通过内核和公理检查，依赖标准公理而无未完成证明占位。低秩部分另有 14 个有限集合、有限乘积换元及支撑关系子引理通过检查。后者并未形式化整个秩变化连续性定理；LMSD 的行列式表示、逐谱归纳、全状态实现与完整算法收敛链仍由人工证明建立。形式化文件应与本稿同时阅读，其实际定理陈述界定机器核验的范围。
+为便于核对，表~\ref{tab:source} 给出本文证明环节在公开版本 \cite{YY2026} 中的位置。本文重新安排了叙述顺序与记号，表中的编号属于\emph{原始预印本 v1}。
+\begin{table}[htbp]\centering\small
+\caption{与公开原文的证明对应}\label{tab:source}
+\begin{tabularx}{\linewidth}{@{}Xl@{}}\toprule
+本文环节 & 原文位置\\\midrule
+历史空间、有限终止 & Proposition 2、Proposition 5\\
+整轮行列式与 Cauchy--Binet & Proposition 11，式 (4.5)--(4.10)\\
+标量触发引理、逐谱收敛 & Lemma 12、Theorem 13\\
+齐次紧性原理 & Theorem 15\\
+闭锥、自映射、边界连续性 & Lemma 16、Proposition 17、Theorem 19\\
+全相容状态的实现与统一端点率 & Lemma 20、Theorem 21\\
+固定权重及单步换算 & Proposition 22、Corollaries 23--24\\
+三维秩变化路径 & Proposition 9\\\bottomrule
+\end{tabularx}
+\end{table}
+
+得到统一指数估计后，还应区分它与其他速率结论。某一轨道的根渐近因子
+ 小于 $1$，未必自动提供对全部初值通用的前因子；反过来，本篇紧性证明给出的统一界也未计算其最佳指数。增加步长复用次数、重建采样历史或者改变记忆规则，均会改变状态映射与计步，不能只依据“LMSD”这一名称移用定理。
+
+现有数值方法还会使用有限精度的 QR、SVD 或 Cholesky 分解、容差截断与非线性线搜索。相关实现和变体见 Ferrandi--Hochstenbach \cite{Ferrandi}。本文的证明范围由式~\eqref{eq:model}、固定正谱权重与精确代数秩共同确定。验证这些条件后，读者可以逐一使用已经建立的端点率、轮内界和误差换算；超出该范围的断言需要重新检查证明链。
+
+\begin{thebibliography}{9}
+\bibitem{YY2026}
+S. Yang and Y.-X. Yuan.
+\emph{Global and unconditional $R$-linear convergence of rank-compressed weighted LMSD sweeps for strictly convex quadratics}.
+公开预印本，2026，\href{https://arxiv.org/abs/2609.12114v1}{arXiv:2609.12114v1}.
+本文按该公开版本的编号引用。
+
+\bibitem{Fletcher}
+R. Fletcher.
+A limited memory steepest descent method.
+\emph{Mathematical Programming}, 135 (2012), 413--436.
+\href{https://doi.org/10.1007/s10107-011-0479-6}{doi:10.1007/s10107-011-0479-6}.
+
+\bibitem{CurtisGuo}
+F. E. Curtis and W. Guo.
+$R$-linear convergence of limited memory steepest descent.
+\emph{IMA Journal of Numerical Analysis}, 38 (2018), 720--742.
+\href{https://arxiv.org/abs/1610.03831}{作者预印本 arXiv:1610.03831}.
+
+\bibitem{ShenHu}
+J. Shen and J. Hu.
+Stability of discrete-time switched homogeneous systems on cones and conewise homogeneous inclusions.
+\emph{SIAM Journal on Control and Optimization}, 50 (2012), 2216--2253.
+\href{https://doi.org/10.1137/110845215}{doi:10.1137/110845215}.
+\href{https://engineering.purdue.edu/~jianghai/Publication/SICON2011_SHLS_Cone.pdf}{作者公开全文}，Theorem 5.3.
+
+\bibitem{Ferrandi}
+G. Ferrandi and M. E. Hochstenbach.
+Limited memory gradient methods for unconstrained optimization.
+\emph{Numerical Algorithms}, 99 (2025), 735--764.
+\href{https://doi.org/10.1007/s11075-024-01895-9}{doi:10.1007/s11075-024-01895-9}.
+\end{thebibliography}
+\end{document}
