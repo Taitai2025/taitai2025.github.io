@@ -1,0 +1,120 @@
+\section{Specific interfaces with general surrogate convergence theorems}
+\label{app:mm-interface}
+
+This section makes the prior-method comparison precise; it adds no new update
+rule or contribution claim. For a positive exact anchor $s$, put
+\[
+ b_i(s)=s_ip_i(s)/v_s,\qquad
+ L_s(w)=\left(\sum_i b_i(s)^2/w_i\right)^{-1}\le v(w),
+ \qquad L_s(s)=v_s.
+\]
+The corresponding minimization majorant for $f=-v$ is $u(w,s)=-L_s(w)$.
+The SUM algorithm of Razaviyayn, Hong and Luo~\cite[Assumption~1 and
+Theorem~1, arXiv v1, pp.~4--8]{razaviyayn2013} exactly minimizes the
+current model. Its hypotheses include value contact, majorization,
+directional first-order agreement (A3), and joint continuity (A4).
+It permits nonsmooth objectives. Mairal's first-order-surrogate
+framework~\cite[Definition~2.2, Algorithm~1 and Proposition~2.5]{mairal2015}
+also exactly minimizes the chosen model and requires a common finite
+Lipschitz constant for the gradients of the surrogate errors.
+We check these specific interfaces rather than excluding nonsmooth
+optimization theories as a class.
+
+\paragraph{The fresh affine step is not the exact covariance-model optimizer.}
+Cauchy--Schwarz gives the full-simplex maximizer of $L_s$ as
+$w_i^*=s_i|p_i|/\sum_j s_j|p_j|$ when every $p_i\ne0$.
+The fresh affine step instead has multiplier
+$w_i^+/s_i=1-t+tp_i^2/v_s$. In our counterexample the four positive squared
+scores obey $S<\delta<1<P$. Equality of the two updates would require all
+four different numbers $z_i=|p_i|$ to solve
+\[
+ (t/v_s)z_i^2-Cz_i+(1-t)=0
+\]
+for one $C>0$. A nonzero quadratic has at most two roots, and $t>0$.
+Thus the specified fresh steps, capped or uncapped, are not exact optimizers
+of this particular model. This does not negate the model-improvement
+monotonicity argument of Yu~\cite{yu2010} or exclude other inexact-MM rules.
+
+\paragraph{Directional agreement at the bad boundary.}
+In aggregate coordinates write $e_0=(1,0,0,0)$ and let $u_*$ be the informative
+pair optimum with masses $1/(R+1),R/(R+1)$. The value formula gives
+\[
+ v((1-h)e_0+hu_*)=1+(B-1)h,\qquad v'(e_0;u_*-e_0)=B-1=.01.
+\]
+The natural boundary estimator is $b(e_0)=e_0$, so
+$L_{e_0}(w)=w_0$ and $L'_{e_0}(e_0;u_*-e_0)=-1$.
+Thus this extension violates A3. In particular $-v$ is not directionally
+stationary at $e_0$; referring only to single-row transfer directions would
+miss the improving pair direction.
+
+\paragraph{No jointly continuous, contacting extension of this model.}
+For small $h>0$, take the two positive designs
+\[
+ \begin{aligned}
+ s(h)&=(1-h-h^2,h^2,h/(R+1),Rh/(R+1)),\\
+ w(h)&=(1-h-h^2-h^3,h^2,h^3,h).
+ \end{aligned}
+\]
+Both tend to $e_0$. At the anchor the exact fit is zero and
+$v(s)=1+(B-1)h+(\delta-1)h^2\to1$. The first informative coefficient
+$b_1(s)=\sqrt B h/[(R+1)v(s)]$ yields
+\[
+ \sum_i\frac{b_i(s(h))^2}{w_i(h)}
+ \ge\frac{B}{(R+1)^2v(s(h))^2h}\longrightarrow\infty,
+ \qquad L_{s(h)}(w(h))\longrightarrow0.
+\]
+Contact would require $L_{e_0}(e_0)=1$. Hence any extension agreeing with
+the interior formula and retaining contact fails joint continuity A4.
+These are test paths for a model hypothesis, not purported algorithm iterates.
+
+\paragraph{Error smoothness along actual fresh anchors.}
+Let $s=(s_0,\omega,x_1,x_2)$ be an actual fresh anchor of the Bsur
+counterexample. Write $\epsilon=1-s_0$, $r=(\omega,x_1,x_2)/\epsilon$,
+and $w(\alpha)=(1-\alpha,\alpha r)$. Scaling every non-base mass equally
+leaves the minimizing nuisance fit unchanged. If $c$ is the value of the
+normalized non-base design, then
+\[
+ v(w(\alpha))=1+(c-1)\alpha,\qquad v_s=1+(c-1)\epsilon.
+\]
+The invariant $x_1+x_2\le2\cdot10^{-20}\omega$ gives
+\[
+ c\ge\frac{\delta\omega}{\epsilon}>.98,\qquad
+ c\le\frac{\delta\omega+B(x_1+x_2)}{\epsilon}<1,
+ \qquad 0<\epsilon<2\cdot10^{-6}.
+\]
+For the error $h_s=v-L_s$, the exact model along this local test ray is
+\[
+ L_s(w(\alpha))=\frac{v_s^2}{D(\alpha)},\qquad
+ D(\alpha)=\frac{(1-\epsilon)^2}{1-\alpha}
+                 +\frac{c\epsilon^2}{\alpha}.
+\]
+At $\alpha=\epsilon$, we have $D=v_s$, $D'=1-c$, and
+$D''=2/(1-\epsilon)+2c/\epsilon$. Differentiating twice gives
+\[
+ \left.\frac{d^2}{d\alpha^2}h_s(w(\alpha))\right|_{\alpha=\epsilon}
+ =\frac2{1-\epsilon}+\frac{2c}{\epsilon}
+      -\frac{2(c-1)^2}{v_s}
+ >\frac{1.96}{\epsilon}-.001>\frac1\epsilon.
+\]
+Since $\|w'(\alpha)\|^2=1+\|r\|^2\le2$, any local Lipschitz constant
+for $\nabla h_s$ must exceed $1/(2\epsilon)$. This also holds before
+aggregation: the two disjoint groups are scaled according to probability
+vectors, whose squared norms sum to at most two. The actual fresh anchors
+have $\epsilon\to0$, so there is no common finite error-smoothness constant
+for this canonical model along that sequence. The ray is a local curvature
+test at each actual anchor, not the update trajectory itself.
+
+\paragraph{What the comparison does and does not exclude.}
+A fixed old model generally lacks current contact, but the Bsur local proof
+can use a latent exact current-contact model without computing its anchor.
+The exact-optimizer and boundary conditions above remain separate obstacles;
+absence of an executed current solve is not absence of an analysis model.
+Mairal's incremental Algorithm~2 and Proposition~3.1 require randomly refreshed
+component surrogates and exact minimization of their average. They are not
+identified with our gate-triggered whole-cache refresh and affine partial
+step; unbounded component age alone would not distinguish them.
+Conversely, on a fixed positive-weight-floor simplex, exact minimization of
+the current covariance model satisfies the SUM interface and yields a
+restricted-domain optimum because $-v$ is convex. These concrete comparisons
+neither rule out every surrogate representation or convergence theorem nor
+constitute an absolute priority claim.

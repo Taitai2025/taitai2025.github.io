@@ -1,0 +1,735 @@
+\documentclass[11pt]{article}
+\input{preamble}
+\renewcommand{\thetheorem}{S\arabic{theorem}}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\title{Supplement to\\Certifying Delayed Multiplicative Updates\\for Linear Experimental Design}
+\author{}\date{26 November 2026}
+\begin{document}
+\maketitle\internalnotice
+This supplement gives self-contained proofs, exact worked examples, an implementation contract, and a reproduction guide. All proved guarantees concern exact arithmetic and known finite linear regressors. Numerical checks illustrate the statements; they are not substitutes for the proofs.
+
+\section{Model, value, and tangent gap}
+Let $f_i=(a_i,z_i^\top)^\top\in\R^{p+1}$, $i=1,\ldots,m$, and assume the matrix $F$ of feature rows has full column rank. For a positive probability vector $w$, put
+\[
+ A_w=\sum_iw_iz_iz_i^\top,\quad b_w=\sum_iw_iz_ia_i,
+ \quad c_w=\sum_iw_i a_i^2.
+\]
+Then $A_w\succ0$ and
+\begin{equation}\label{eq:svalue}
+ \theta_w=-A_w^{-1}b_w,\quad
+ v(w)=c_w-b_w^\top A_w^{-1}b_w>0.
+\end{equation}
+Indeed $M_w=F^\top\diag(w)F\succ0$, and its Schur complement of $A_w$ is $v(w)$. The inverse block formula gives $(M_w^{-1})_{11}=1/v(w)$. For independent homoscedastic observations with exactly $Nw_i$ observations at site $i$, the information matrix is $NM_w/\sigma^2$ and the least-squares target variance is $\sigma^2/(Nv(w))$. This statement assumes integral counts and full rank; it makes no rounding claim.
+
+Fix a positive cache $s$. Set $p_i=a_i+z_i^\top\theta_s$, $v_s=\sum_i s_i p_i^2$, and store a factorization of $A_s$. The cache normal equation is $\sum_i s_i z_i p_i=0$. At any positive current design $w$, let
+\[
+ q_w=\sum_iw_ip_i^2,\qquad r_w=\sum_iw_iz_ip_i.
+\]
+For $u=\theta-\theta_s$, the contrast energy is exactly
+\begin{equation}\label{eq:sexpand}
+ \sum_iw_i(a_i+z_i^\top\theta)^2
+ =q_w+2r_w^\top u+u^\top A_wu.
+\end{equation}
+Completing the square proves
+\begin{equation}\label{eq:sresid}
+ \theta_w=\theta_s-A_w^{-1}r_w,\quad
+ v(w)=q_w-r_w^\top A_w^{-1}r_w.
+\end{equation}
+In particular
+\[
+ D(w\mid s):=v(s)+\nabla v(s)^\top(w-s)-v(w)
+ =r_w^\top A_w^{-1}r_w
+ =\sum_iw_i(p_i-p_{w,i})^2.
+\]
+To justify the gradient without an unproved differentiation step, note that the normal equations give $\sum_i w_i z_i p_{w,i}=0$. Differentiating~\eqref{eq:svalue} or~\eqref{eq:sexpand} therefore cancels the terms involving $d\theta_w$, leaving $dv=\sum_i p_{w,i}^2dw_i$. Smoothness follows from $A_w\succ0$. The ambient gradient is defined for the homogeneous extension to positive weights, so it has no arbitrary additive constant from simplex coordinates.
+
+\section{Full proof of the safeguard}
+Suppress the subscript $w$ on $q,r$. Define
+\[
+ T_i=w_i p_i^2/q,\quad d_i=T_i-w_i,\quad
+ h=\sum_i d_i z_i p_i,\quad B=\sum_i d_i z_i z_i^\top.
+\]
+Since $q>0$, $T$ is a probability vector and $\sum_i d_i=0$.
+Let
+\begin{align*}
+ Q&=r^\top A_s^{-1}r,&H&=h^\top A_s^{-1}h,&
+ \alpha&=\min_i w_i/s_i,\\
+ \rho_i&=d_i/w_i=p_i^2/q-1,&
+ \gamma&=\max_i|\rho_i|,&\zeta&=\max_i(-\rho_i),\\
+ g&=\sum_i d_i p_i^2
+ =\frac{\sum_iw_ip_i^4-q^2}{q},&&&
+ G&=g-\frac{2\sqrt{HQ}+\zeta Q}{\alpha},\\
+ K&=\frac{(\sqrt H+\gamma\sqrt Q)^2}{\alpha}.&&&&
+\end{align*}
+The zero weighted mean of $\rho$ and $\rho_i\ge-1$ imply $0\le\zeta\le1$. Both $Q,H$ are nonnegative and $g\ge0$.
+
+\begin{theorem}\label{thm:smain}
+For $0\le t<1$, all updated weights $w_i+td_i$ are positive, and
+\[
+ v(w+td)-v(w)\ge tG-\frac{t^2K}{1-t\zeta}.
+\]
+If $G>0$, choose $t=\min\{1/2,G/(4K)\}$ for $K>0$ and $t=1/2$ for $K=0$. Then $v(w+td)-v(w)\ge tG/2>0$.
+\end{theorem}
+\begin{proof}
+Let $A=A_w$ and $e=A^{-1}r$. These current objects are analysis variables, not algorithm inputs. The componentwise bounds on $w_i/s_i$ imply $A\succeq\alpha A_s$ and hence
+\begin{equation}\label{eq:snorms}
+ r^\top A^{-1}r\le Q/\alpha,
+ \qquad h^\top A^{-1}h\le H/\alpha.
+\end{equation}
+The componentwise bounds on $d_i/w_i$ imply
+\begin{equation}\label{eq:sB}
+ -\zeta A\preceq B\preceq\gamma A,\qquad
+ \norm{A^{-1/2}BA^{-1/2}}_2\le\gamma.
+\end{equation}
+For the second inequality, the negative eigenvalues have magnitude at most $\zeta\le\gamma$.
+Write $P_i=p_i-z_i^\top e$ for the unknown current optimal contrast.
+The true directional derivative equals
+\[
+ L:=\sum_i d_iP_i^2=g-2h^\top e+e^\top Be.
+\]
+Cauchy--Schwarz in the $A^{-1}$ metric and~\eqref{eq:snorms} give
+$|h^\top e|\le\sqrt{HQ}/\alpha$.
+Also~\eqref{eq:sB} gives $e^\top Be\ge-\zeta Q/\alpha$.
+Therefore $L\ge G$.
+
+Now $A_t=A+tB\succeq(1-t\zeta)A\succ0$.
+The residual of $P$ under the new design is
+\[
+ \sum_i(w_i+td_i)z_iP_i=t(h-Be)=:tb.
+\]
+Completing the square at the coefficient $\theta_w$ gives the exact, finite-step identity
+\begin{equation}\label{eq:sexactchange}
+ v(w+td)-v(w)=tL-t^2b^\top A_t^{-1}b.
+\end{equation}
+There is no omitted Taylor remainder. By~\eqref{eq:sB},
+\[
+ \norm b_{A^{-1}}
+ \le\norm h_{A^{-1}}+\norm{Be}_{A^{-1}}
+ \le\sqrt{H/\alpha}+\gamma\sqrt{Q/\alpha}=\sqrt K.
+\]
+Thus $b^\top A_t^{-1}b\le K/(1-t\zeta)$, proving the first bound.
+For the recommended step, $t\le1/2$ and so $1-t\zeta\ge1/2$.
+If $K>0$, $tK\le G/4$; if $K=0$, the whole remainder vanishes.
+In either case the claimed gain follows. Positivity follows from
+$w_i+td_i=w_i(1+t\rho_i)\ge(1-t)w_i>0$.
+\end{proof}
+
+\paragraph{Boundary and zero cases.}
+Some $p_i$ may be zero; no division by $p_i$ occurs and damping retains that site's positive weight. If $Q=0$, then $r=0$ and the cached coefficient is also current-optimal. If $K=0$, the proof forces $b=0$ and the objective is affine on the segment. If $d=0$, then $g=G=0$, so no false strict gain is claimed. If $g=0$, positivity of all $w_i$ forces every $p_i^2$ to be equal and hence $d=0$. Stale zero motion does not itself establish that the current design is optimal; the optimality conclusion requires a current cache. Singular caches, nonestimable targets, and floating-point error bounds are not covered.
+
+\begin{corollary}[Local nonvacuity with a positive lower step]\label{cor:slocal}
+Fix a positive cache $s$ with nonconstant squared sensitivities. Put $g_s=g(s)>0$ and $K_s=K(s)$. There is a relative neighborhood of $s$ on which
+\[
+ G(w)\ge g_s/2,\qquad K(w)\le K_s+g_s,
+\]
+and the selected step satisfies
+\[
+ t(w)\ge t_0:=\min\{1/2,g_s/[8(K_s+g_s)]\}>0,
+ \qquad v(w+t(w)d(w))-v(w)\ge t_0g_s/4.
+\]
+\end{corollary}
+\begin{proof}
+At $w=s$ the cache normal equation gives $Q=0$, $\alpha=1$ and
+$G=g_s=\Var_s(p_i^2)/v_s>0$.
+The finite sums, ratios with positive denominators, square roots and finite maxima defining $G,K$ are continuous. Choose a neighborhood satisfying the displayed inequalities and apply Theorem~\ref{thm:smain}. If $K=0$, the selected step is $1/2$, which satisfies the same bound.
+\end{proof}
+The neighborhood is not asserted to contain the next point after an accepted step. In particular this corollary cannot be iterated to obtain an unproved number of cache reuses.
+
+\section{Efficiency and value intervals}
+For a positive candidate $u$, define $q_u,r_u,Q_u$ as above, and
+$\alpha_u=\min_i u_i/s_i$, $\beta_u=\max_i u_i/s_i$.
+Positive-definite comparison gives
+\begin{equation}\label{eq:sinterval}
+ q_u-Q_u/\alpha_u\le v(u)\le q_u-Q_u/\beta_u.
+\end{equation}
+For the positive dual lower bound, put $\ell_i=s_i p_i/v_s$.
+The normal equation implies $\sum_i\ell_i z_i=0$, and
+\[
+ \sum_i\ell_i a_i
+ =v_s^{-1}\sum_i s_i p_i(p_i-z_i^\top\theta_s)=1.
+\]
+Consequently $\sum_i\ell_i(a_i+z_i^\top\theta)=1$ for every $\theta$.
+Weighted Cauchy--Schwarz gives
+\[
+ v(u)\ge L_{\rm dual}(u):=
+ \left(\sum_i\ell_i^2/u_i\right)^{-1}>0.
+\]
+Define $L_s(u)=\max\{q_u-Q_u/\alpha_u,L_{\rm dual}(u)\}$ and
+$U_s(u)=q_u-Q_u/\beta_u$.
+Then $L_s(u)\le v(u)\le U_s(u)$, so $L_s(u)\ge U_s(w)$ certifies a nondecrease.
+The maximum cached sensitivity $V_s=\max_i p_i^2$ bounds $v_*$ from above because the cached contrast is feasible for every design. Hence
+\begin{equation}\label{eq:seff}
+ \eff(u)\ge L_s(u)/V_s.
+\end{equation}
+Combining this with an accepted damped step yields the possibly sharper
+$\eff(w+td)\ge[L_s(w)+tG/2]/V_s$.
+All these bounds are deterministic design-value bounds, not confidence intervals for random observations.
+
+\paragraph{Incremental evaluation.}
+After computing $A_s^{-1}r$ and $A_s^{-1}h$, form
+$C=r^\top A_s^{-1}h$.
+Along the chosen line,
+\[
+ q_{w+td}=q+tg,\quad r_{w+td}=r+th,\quad
+ Q_{w+td}=Q+2tC+t^2H.
+\]
+The new weight ratios and reciprocal dual sum take $O(m)$ work. Thus evaluating the interval after the certified step requires no third cached solve. A completely unrelated candidate generally requires an additional residual contraction and cached solve.
+
+\section{Exact diagnostic examples}
+\subsection{A reachable efficiency collapse}
+For $x=(1,b)$, $b>1$, and first weight $u$, direct minimization gives
+\[
+ \theta_u=-\frac{u+b(1-u)}{u+b^2(1-u)},\qquad
+ v(u)=\frac{(b-1)^2u(1-u)}{u+b^2(1-u)}.
+\]
+The maximizing first weight is $b/(b+1)$, with
+$v_*=(b-1)^2/(b+1)^2$.
+At $s=(1/2,1/2)$,
+\[
+ p_1=\frac{b(b-1)}{1+b^2},\quad
+ p_2=-\frac{b-1}{1+b^2}.
+\]
+Thus the fresh first proposal is $w=(b^2,1)/(1+b^2)$ and the next stale full proposal is $u=(b^4,1)/(1+b^4)$.
+Substitution gives
+\[
+ v(s)=v(w)=\frac{(b-1)^2}{2(1+b^2)},\quad
+ v(u)=\frac{b^2(b-1)^2}{(1+b^4)(1+b^2)},
+\]
+proving the efficiency-collapse claim in the main text.
+At $b=2$, $s=(1/2,1/2)$, $w=(4/5,1/5)$,
+$u=(16/17,1/17)$, $v(w)=1/10$, and $v(u)=4/85$.
+The directional certificate rejects this harmful proposal: its exact $G$ is $-828/10625$.
+
+\subsection{Arbitrarily small drift with the wrong sign}
+Take two feature rows $(1,1)$ and $(1,-1)$ and let their first weights be $y$ at the cache and $x$ currently. Then
+$v(x)=4x(1-x)$ and $T_y(x)=x(1-y)^2/[x(1-y)^2+(1-x)y^2]$.
+Choose $y=1/2-\epsilon$, $x=1/2+\epsilon$, where $0<\epsilon<1/2$.
+This pair is reachable by a fresh full update, since $T_y(y)=1-y=x$.
+The following exact quantities make the obstruction quantitative:
+\begin{align*}
+ \norm{w-s}_1&=4\epsilon,&
+ \alpha&=(1-2\epsilon)/(1+2\epsilon),&
+ D(w\mid s)&=16\epsilon^2,\\
+ q&=1+12\epsilon^2,&
+ d_1&=\frac{2\epsilon(1-4\epsilon^2)}{1+12\epsilon^2},&
+ g&=\frac{16\epsilon^2(1-4\epsilon^2)}{1+12\epsilon^2}.
+\end{align*}
+The true slope is $\nabla v(w)^\top d=-g<0$.
+Every $0<t\le1$ moves farther to the right of the maximizer and decreases $v$.
+Thus an absolute tolerance on mismatch or relative weight drift is insufficient without accounting for an ascent margin. This does not contradict a margin-dependent local neighborhood.
+
+\subsection{A certified second step without a new factorization}
+Take $x=(1,2,3)$ and $s=(1/3,1/3,1/3)$.
+Then $A_s=14/3$ and $p=(4,1,-2)/7$.
+The first safe step from the cache has $t_0=1/2$ and produces
+$w=(23,8,11)/42$.
+At this genuinely stale design, direct rational arithmetic gives
+\[
+ q=10/49,\quad g=156/1715,\quad r=1/7,\quad h=67/245,
+ \quad\alpha=4/7,\quad\gamma=\zeta=9/10.
+\]
+Since there is one nuisance parameter, the square-root products simplify exactly:
+$\sqrt{HQ}=|hr|/A_s$ and
+$K=(|h|+\gamma|r|)^2/(A_s\alpha)$.
+Consequently
+\[
+ G=1503/27440>0,\qquad K=116427/1920800,\qquad
+ t=17535/77618<1/2.
+\]
+Theorem~\ref{thm:smain} certifies this second update using the original cache. The accompanying exact-arithmetic program independently recomputes the new weights and checks the actual rational gain against $tG/2$.
+
+\subsection{A full proposal certified by interval separation}
+Take $x=(1,2,3)$ and $s=(1,7,1)/9$.
+Here $p=(10,1,-8)/19$, $v_s=1/19$,
+$w=(100,7,64)/171$, and $u=(10000,7,4096)/14103$.
+Using~\eqref{eq:sinterval} and the dual bound gives
+\[
+ U_s(w)=1481081/6516050,
+ \qquad L_s(u)=6931/29773.
+\]
+Their difference is positive by integer cross multiplication.
+The exact target values are $v(w)=743/3344$ and
+$v(u)=4553852/18369941$.
+For this pair the directional lower bound has $G<0$, so that test rejects while the full interval test accepts. The example demonstrates conservative rejection, not a contradiction between certificates.
+
+
+\section{Two limits of reliable local updates}
+\subsection{Vanishing relative mismatch and efficiency collapse}
+At nodes $(1,K)$ with $K>1$, parameterize the positive design by first-weight odds $u$. The normal equation and value are
+\[
+ \theta_u=-\frac{u+K}{u+K^2},\quad
+ P_u(1)=\frac{K(K-1)}{u+K^2},\quad
+ P_u(K)=-\frac{u(K-1)}{u+K^2},\quad
+ v(u)=\frac{u(K-1)^2}{(1+u)(u+K^2)}.
+\]
+These formulas show both that the nodal values never vanish and that an old contrast from odds $a$ updates current odds $b$ to $bK^2/a^2$.
+The optimum is at $u=K$, as the exact identity
+\[
+ (1+u)(u+K^2)-u(K+1)^2=(u-K)^2
+\]
+proves $v(u)\le(K-1)^2/(K+1)^2$ with equality there.
+For any positive $a,b$, the nuisance information is $A_b=(b+K^2)/(1+b)$, so the square-completion gap gives
+\[
+ \frac{D(\pi(b)\mid\pi(a))}{v(b)}
+ =\frac{K^2(a-b)^2}{b(a+K^2)^2}.
+\]
+Now take an integer $n\ge2$, put $K=n^2$, and use identical initial odds $u_0=u_1=n^3$. The successive odds are
+\[
+ n^3,n^3,n,n^{-1},n,n^7.
+\]
+At the step from $u_4=n$ using $u_3=n^{-1}$, substitution gives
+\[
+ d_n=\frac{n^3(n^2-1)^2}{(n^5+1)^2},\qquad
+ \frac{v(u_5)}{v(u_4)}=\frac{n^3(n+1)}{n^7+1}.
+\]
+Both quantities tend to zero as $n\to\infty$. The current efficiency equals
+\[
+ E_n=\frac{(n^2+1)^2}{(n+1)^2(n^2-n+1)},\qquad
+ 1-E_n=\frac{n(n-1)^2}{(n+1)^2(n^2-n+1)}\to0.
+\]
+Hence the asserted geometry-independent lower bound cannot hold. This proof controls exact compatible history and exact statistical efficiency; it does not turn this elementary two-node mechanism into a general lower bound for all delayed algorithms.
+
+\subsection{Proof that refresh only upon failure can stall}
+Let the two feature rows be $(1,-1)$ and $(1,1)$, cache $s=(1/4,3/4)$, and initial current design $w=s$. Write $x$ for the current first weight. The cache has $A_s=1$, $\theta_s=-1/2$, $p=(3/2,1/2)$, and the value is $v(x)=4x(1-x)$ with optimum $1$.
+For $1/4\le x<1/2$, put
+\[
+ d=\frac{8x(1-x)}{1+8x},\quad R=2x-1/2,\quad
+ \alpha=\frac{4(1-x)}3,\quad\gamma=d/x,\quad\zeta=d/(1-x).
+\]
+The direction is $(d,-d)$, $r=-R$, $h=-2d$, $Q=R^2$, $H=4d^2$, and $g=2d$. Direct substitution into the certificate gives
+\[
+ G=dZ(x),\quad Z(x)=\frac{80x^2-160x+53}{16(1-x)^2},\qquad
+ K=\frac{d^2(4-1/(2x))^2}{\alpha}.
+\]
+Let $\rho=1-3\sqrt{15}/20$ and $\rho_+=1+3\sqrt{15}/20$.
+Then $G>0$ for $1/4\le x<\rho$. The selected positive increment obeys
+\begin{align*}
+ td&\le\frac{\alpha Z(x)}{4(4-1/(2x))^2}\\
+   &=(\rho-x)\frac{5(\rho_+-x)}{3(1-x)(4-1/(2x))^2}.
+\end{align*}
+On this interval the last factor is at most
+\[
+ C=\frac{5(5+\sqrt{15})}{12\sqrt{15}}<1.
+\]
+Indeed $\rho_+-x\le\rho_+-1/4$, $1-x\ge1-\rho$, and $4-1/(2x)\ge2$. The strict inequality $C<1$ is equivalent to $25<7\sqrt{15}$, whose square is $625<735$.
+Thus every iterate strictly increases yet remains below $\rho$, and $G$ stays positive at every finite step: the cache never refreshes.
+If the increasing sequence had limit $\ell<\rho$, continuity would give positive limiting $G,K,d$ and hence a positive limiting increment, a contradiction. Its limit is exactly $\rho$.
+Finally
+\[
+ v(\rho)=4\rho(1-\rho)=3\sqrt{15}/5-27/20<0.99.
+\]
+The last strict inequality also follows by squaring $\sqrt{15}<39/10$.
+This proves failure of the stated refresh-on-failure rule, not of every possible refresh policy.
+Fresh half-power weighting has initial unnormalized masses
+$(1/4)(3/2)=(3/4)(1/2)=3/8$ and therefore reaches the optimal half-half design immediately.
+
+\subsection{A nonempty zero-curvature branch}
+At positive nodes $(1,3,8)$, let $s=w=(15,14,6)/35$.
+The cache is $A_s=15$, $\theta_s=-1/5$, and $p=(4,2,-3)/5$.
+Then $r=h=0$, $Q=H=K=0$, while $g=G=3/25$.
+The defined branch $t=1/2$ yields weights $(39/70,7/25,57/350)$, and the value increases from $2/5$ to $23/50$.
+Thus the exact gain is $3/50=tG$. Omitting the zero-$K$ branch would leave a real admissible case undefined.
+The supplied independent rational check also verifies the small-drift example, using 36 scalar offline solves; none are algorithm inputs.
+
+\section{Algorithm and actual accounting}
+The following protocol implements the proved damped rule.
+\begin{enumerate}[label=\arabic*.]
+\item At a positive cache $s$, form and factor $A_s$, solve for $\theta_s$, and cache $p_i,v_s$.
+\item At the current positive $w$, form $q,d,r,h$ and all weight ratios. Use the cached factor for $A_s^{-1}r$ and $A_s^{-1}h$.
+\item Evaluate $G,K$. If $G>0$, use the stated step and retain the cache. Optionally compute the incremental efficiency certificate.
+\item If $G\le0$, count the rejected certificate. A refresh recomputes the cache at $w$ and pays the entire matrix-formation and factorization cost. If the refreshed sensitivities are constant, the current design is optimal. Otherwise the refreshed gate admits a positive step.
+\end{enumerate}
+A separately configured full-proposal interval test is valid if the proposal is positive. It must be evaluated and charged explicitly; it is not assumed in the damped protocol. The preceding stall proof shows that this exact refresh rule can fail to reach a requested efficiency even while every finite step is accepted. The relative-margin rule with a refresh-count cap is analyzed separately below; it is not the preceding refresh-on-failure rule.
+
+For dense features the refresh costs $O(mp^2+p^3)$, while a stale gate costs $O(mp+p^2)$, including two solves against a cached factor. A triangular solve uses both forward and backward substitution; it is not counted as a scalar operation. Rejected gates, fresh retries, and true-value audits all have nonzero cost. The 240-case batch additionally computes 240 matrix condition estimates, generally involving singular-value calculations; these are separately charged offline diagnostics. Known feature storage is $O(mp)$; cache storage is $O(p^2+m)$.
+Low-dimensional examples do not test the potential asymptotic saving. Fair performance comparisons would also include current-gradient damping, one or two preconditioned corrections using the same cached factor, maintained inverse or low-rank updates, and an LP-based finite $c$-design solver. This round does not claim to have completed that benchmark.
+
+
+\section{A specialization at the same cached-solve budget of the classical surrogate argument}
+The following comparison is included as prior-principle attribution, not as a second innovation. Write $P_i=p_i-z_i^\top e$ for the exact current contrast and $V=v(w)>0$. Its unbiased estimator coefficients $b_i=w_iP_i/V$ satisfy $\sum_i b_i f_i=e_1$. The classical covariance bound gives, for any positive design $u$,
+\[
+ v(u)\ge\left(\sum_i\frac{b_i^2}{u_i}\right)^{-1}.
+\]
+At $u=w$ this bound has equality. At $u=w+td$, with $\rho_i=d_i/w_i$, let
+\[
+ C_t=\sum_i\frac{w_i\rho_iP_i^2}{1+t\rho_i}.
+\]
+The surrogate denominator is exactly
+\[
+ \sum_i\frac{b_i^2}{w_i+td_i}
+ =\frac{V-tC_t}{V^2}>0.
+\]
+Thus if $C_t\ge0$,
+\begin{equation}\label{eq:syugain}
+ v(w+td)-V\ge\frac{VtC_t}{V-tC_t}\ge tC_t.
+\end{equation}
+The exact current $P$ is not computed by the following bound. Since
+\[
+ C_t=L-t\sum_i\frac{w_i\rho_i^2P_i^2}{1+t\rho_i},\qquad L\ge G,
+\]
+put $R_2=\sum_iw_i\rho_i^2p_i^2$ and use the weighted triangle inequality:
+\[
+ \left(\sum_iw_i\rho_i^2P_i^2\right)^{1/2}
+ \le\sqrt{R_2}+\gamma\left(\sum_iw_i(z_i^\top e)^2\right)^{1/2}
+ \le\sqrt{R_2}+\gamma\sqrt{Q/\alpha}.
+\]
+Therefore, with $B_{\rm sur}=(\sqrt{R_2}+\gamma\sqrt{Q/\alpha})^2$,
+\[
+ C_t\ge G-\frac{tB_{\rm sur}}{1-t\zeta}.
+\]
+If $G>0$, choosing $t=\min\{1/2,G/(4B_{\rm sur})\}$ when $B_{\rm sur}>0$, and $t=1/2$ otherwise, ensures $C_t\ge G/2$. Equation~\eqref{eq:syugain} yields the same certified form of improvement $tG/2$.
+
+The observable $G$ still uses the two old-factor quadratic forms $Q,H$; $R_2$ needs only a scalar pass over already available weights and contrast values. No new current solve or feature contraction is needed. This proves a safe-existence reduction at the same cached-solve budget to the classical auxiliary-function principle, augmented by the explicit residual slope bound. It does not assert that this alternative step equals the step based on $K$, that the original step always satisfies the surrogate decrease condition, or that all detailed formulas appeared in the cited source. It does show why a correct one-step formula and cache reuse alone do not establish a new algorithmic principle.
+
+\section{Boundary-safe convergence of the capped margin protocol}
+This section proves the new global statement without a minimum-weight assumption. The original uncapped relative-margin protocol is separate and fails in general by the later explicit boundary construction. All reasoning is in exact arithmetic.
+
+\subsection{The classical finite-interpolant bound}
+Let $Z$ have rows $z_i^\top$, and let $\mathcal I$ be the finite collection of $p$-row sets with nonsingular $Z_I$. Full rank ensures $\mathcal I$ is nonempty. Put
+\[
+ \theta_I=-Z_I^{-1}a_I,\qquad
+ \omega_I(w)=\frac{\det(Z_I)^2\prod_{i\in I}w_i}{\det(Z^\top\diag(w)Z)}.
+\]
+Cauchy--Binet and Cramer's rule give the classical identity
+\begin{equation}\label{eq:volume}
+ \sum_{I\in\mathcal I}\omega_I(w)=1,\qquad
+ \theta_w=\sum_{I\in\mathcal I}\omega_I(w)\theta_I.
+\end{equation}
+For completeness, replace column $j$ of $Z$ by $-a$ to obtain $Z^{(j)}$. Cramer's numerator for $(\theta_w)_j$ is $\det(Z^\top\diag(w)Z^{(j)})$. Its Cauchy--Binet expansion is
+$\sum_I\det(Z_I)\det(Z_I^{(j)})\prod_{i\in I}w_i$.
+Singular terms vanish, and each other term equals
+$\det(Z_I)^2(\theta_I)_j\prod_{i\in I}w_i$.
+Dividing proves~\eqref{eq:volume}. Thus no general-position assumption is needed.
+
+This is the weighted least-squares convex-hull property of Ben-Tal and Teboulle~\cite{bental1990}, also the square-size specialization of the volume-sampling expectation identity in Derezi\'nski and Warmuth~\cite{derezinski2018}, Theorem~5 and Appendix~B. The identity is background, not a new result. It implies the finite constant
+\begin{equation}\label{eq:uniformL}
+ L=\max_{I\in\mathcal I,\,1\le i\le m}(a_i+z_i^\top\theta_I)^2>0,
+ \qquad (a_i+z_i^\top\theta_w)^2\le L
+\end{equation}
+for every positive $w$. For $p=0$ the unique empty interpolant gives the same assertion directly. Computing $L$ is not part of the algorithm: it is a proof constant and may involve many subsets. The bound does not control $\|A_w^{-1}\|$ or impose a floor on the weights.
+
+The closed-simplex optimum exists. Indeed $v$ is an upper-semicontinuous infimum of continuous affine functions of $w$, and is bounded on the compact simplex by the objective at $\theta=0$. The strictly positive starting value $v_0$ is positive by full rank. The gain guarantee ensures $v_0\le v(w_k)\le v_*$. At every cache $p_i^2\le L$, whence $v_*\le L$ and $q_k\ge v(w_k)\ge v_0$.
+
+Giannelli et al.~\cite{giannelli2024}, Theorem~1 (published page 54), give the same finite-interpolant identity: set their collocation matrix to $Z$ and data vector to $-a$. Positive weights and full column rank hold here. This additional direct reference neither changes the classical attribution nor implies convergence of fits at a singular limit.
+
+\subsection{Precise algorithm and the smaller-step guarantee}
+The initial exact cache has counter $j=0$. If the current cache fails $g>0$ and $G\ge g/2$, replace it by the exact current fit and increment $j$. Stop only if this refreshed fit has $g=0$. Otherwise take
+\[
+ t=\min\{1/2,1/(j+1),G/(4K)\},
+\]
+with the last quantity omitted for $K=0$, and set $w^+=w+td$. A nonconstant fresh fit has $Q=0,G=g>0$, so a refreshed nonoptimal state always has a step. In practice initialization can check $g=0$ before a redundant refresh; this changes no accepted trajectory or proof.
+For every chosen positive $t$, $w_i^+\ge w_i/2$. Since $t\le1/2$ and $tK\le G/4$, the original remainder bound gives
+\begin{equation}\label{eq:smallerstep}
+ v(w^+)-v(w)\ge tG-2t^2K\ge tG/2\ge tg/4.
+\end{equation}
+The zero-$K$ case is immediate. Finite termination occurs at an optimal fresh fit because equal positive-design sensitivities bound all design values above by the current value. An old cache with $g=0$ is not alone a reason to certify an arbitrary current design: the refresh instruction is essential.
+
+\subsection{Finitely many refreshes}
+Suppose there is an infinite sequence of accepted steps but only finitely many refreshes. Fix its last cache. Set $\lambda_i=p_i^2$, $M=\max_i\lambda_i$ and $m_0=\min_i\lambda_i$. If all $\lambda_i$ are equal, the protocol stops at that fresh cache; hence this infinite branch has $M>m_0\ge0$ and $M>0$.
+The cap $c=\min\{1/2,1/(j+1)\}$ is now a fixed positive number.
+
+If $\sum_k t_k<\infty$, the inequality $\log(1-t)\ge-2t$ for $t\le1/2$ implies
+$w_{k,i}\ge w_{b,i}\exp(-2\sum_{k\ge b}t_k)>0$ uniformly after the last refresh $b$. Thus $\alpha$ is bounded below. The finite fixed cached data and $q\ge v_0$ bound $\gamma,Q,H,K$ above. Distinct $\lambda_i,\lambda_l$ give
+\[
+ g=\frac{\sum_{i<l}w_iw_l(\lambda_i-\lambda_l)^2}{q}\ge\underline g>0.
+\]
+The margin yields $G\ge\underline g/2$. Together with the fixed cap and bounded $K$, this gives a uniform positive lower bound on $t$, contradicting its summability. This conditional lower weight bound is derived from the contradiction hypothesis; it is not imposed on the actual run. Consequently $\sum_k t_k=\infty$.
+
+Choose a maximum-score index $l$. For any $i$ with $\lambda_i<M$,
+\[
+ \frac{w_i^+/w_l^+}{w_i/w_l}
+ =1-\frac{t(M-\lambda_i)}{q+t(M-q)}
+ \le\exp\{-t(M-\lambda_i)/M\}.
+\]
+The denominator lies in $(0,M]$. Hence all lower-score mass vanishes, while ratios among maximum-score weights stay constant. In particular $q\to M$, $g\to0$, and
+$\zeta=1-m_0/q\to1-m_0/M>0$.
+The margin gives
+\[
+ 0\le D(w\mid s)\le Q/\alpha\le g/(2\zeta)\to0.
+\]
+It follows that $v(w)\to M$. The fixed contrast bounds every design value by $M$, while every iterate has value at most $v_*$, so $M=v_*$. Indeed the weights converge to the normalized restriction of $w_b$ to the maximum-score indices. Since $\alpha\le1$, also $Q\to0$ and $r\to0$. At the limiting, possibly singular, design $w_\infty$,
+\[
+ \sum_i w_{\infty,i}(p_i+z_i^\top u)^2
+ =M+u^\top A_{w_\infty}u\ge M,
+\]
+showing $v(w_\infty)=v_*$ without invoking boundary inverse continuity.
+
+\subsection{Infinitely many refreshes}
+At a fresh cache write $\rho_i=p_i^2/q-1$. The weighted projection contraction gives
+\begin{align*}
+ H&=\left\|A_w^{-1/2}\sum_iw_i\rho_i z_i p_i\right\|^2
+ \le\sum_iw_i\rho_i^2p_i^2
+ \le L\sum_iw_i\rho_i^2=L g/q.
+\end{align*}
+Here $Q=0$, $G=g$ and $K=H$. Thus the original fresh safe step is at least $\tau=v_0/(4L)>0$, including $H=0$. The capped fresh step at counter $j$ is therefore at least $\min\{\tau,1/(j+1)\}$. If refreshes are infinite, these steps alone have divergent sum. Moreover the current counter tends to infinity, so all accepted steps satisfy $t_k\to0$. Neither fact assumes a bound on epoch length.
+
+For any epoch beginning at a fresh state $b$, hold its residual vector fixed in defining $q$. Then $q_b=v(w_b)$ and
+$q_{k+1}-q_k=t_kg_k$ throughout that epoch. Summing~\eqref{eq:smallerstep} shows
+\begin{equation}\label{eq:epoch-supp}
+ 0\le D_k=q_k-v(w_k)
+ \le3\{v(w_k)-v(w_b)\}\le3\{\bar v-v(w_b)\},
+\end{equation}
+where $\bar v=\lim_k v(w_k)$ exists by monotonicity and boundedness. At a refresh $D=0$; at every other sufficiently late state its epoch start also tends to infinity. Therefore $D_k\to0$ and $q_k\to\bar v$. This argument does not require $g$ at the increasingly damped refreshes to tend to zero.
+
+Fix any optimal $u_*\in\Delta_m$, used only in the proof. For each current cached contrast,
+$\sum_i u_{*,i}p_{k,i}^2\ge v_*$ by the variational definition. Let
+\[
+ \rho_{k,i}=p_{k,i}^2/q_k-1,\quad
+ R=\max\{1,L/v_0\},\quad
+ \mathcal D_k=\sum_{i:u_{*,i}>0}u_{*,i}\log\frac{u_{*,i}}{w_{k,i}}.
+\]
+Then $-1\le\rho_{k,i}\le R$, $|\rho_{k,i}|\le R$, and the relative entropy $\mathcal D_k$ is finite and nonnegative. Suppose $\bar v<v_*$. Since $q_k\to\bar v$ and $q_k\le L$, eventually
+\[
+ \sum_i u_{*,i}\rho_{k,i}\ge\frac{v_*-q_k}{q_k}
+ \ge\delta:=\frac{v_*-\bar v}{2L}>0.
+\]
+For $x\ge-1/2$, $\log(1+x)\ge x-x^2$: the derivative of their difference is $x(1+2x)/(1+x)$, negative on $[-1/2,0]$ and positive on $[0,\infty)$, with difference zero at zero. The weight update and $t_k\rho_{k,i}\ge-1/2$ now yield
+\begin{align*}
+ \mathcal D_{k+1}-\mathcal D_k
+ &=-\sum_i u_{*,i}\log(1+t_k\rho_{k,i})\\
+ &\le-t_k\sum_i u_{*,i}\rho_{k,i}
+       +t_k^2\sum_i u_{*,i}\rho_{k,i}^2\\
+ &\le-\delta t_k+R^2t_k^2.
+\end{align*}
+Eventually $t_k\le\delta/(2R^2)$, so each difference is at most $-\delta t_k/2$. Summing contradicts $\mathcal D_k\ge0$ because $\sum_k t_k=\infty$. Hence $\bar v=v_*$, completing the global proof. This is a classical diminishing-step entropy mechanism, within the established multiplicative-weights framework~\cite{freund1997}, Section~2 and Theorem~2 with its admissible linear multiplier; the design-specific obligations are the epoch error control, the uniform residual bound, and divergence of the refresh-step sum.
+
+The proof also covers the capped surrogate step, replacing $K$ by $B_{\rm sur}$. The previous surrogate theorem supplies the identical smaller-step gain. At a fresh cache, $B_{\rm sur}=R_2\le Lg/q$. In the finite-refresh summability contradiction, an interior weight bound makes $B_{\rm sur}$ bounded as well. The remaining arguments are unchanged. Therefore this qualitative result establishes no separation from the classical surrogate route.
+
+\subsection{What the uncapped argument does and does not imply}
+The uncapped rule $t=\min\{1/2,G/(4K)\}$ with the same relative margin shares the finite-refresh result. At infinitely many fresh steps it has a uniform positive step lower bound, so their $g$ tends to zero by summable objective gains. The epoch argument still gives $D\to0$ and $q\to\bar v$. These facts alone do not imply global optimality, because $t_k\to0$ need not hold. The later actual-protocol counterexample shows that universal convergence is false.
+An exact illustration of the weakness of weighted stationarity uses fixed rows
+$(1,0),(2,1),(2,-1)$ and weights
+$(1-\epsilon,\epsilon/100,99\epsilon/100)$.
+The exact fit is $\theta=49/25$, $A=\epsilon$, and
+\[
+ v=1-\frac{526}{625}\epsilon\uparrow1,
+ \qquad g\to0,\qquad v_*=4.
+\]
+The optimum is attained by equal mass on the latter two rows; the contrast $\theta=0$ bounds every value by four. This sequence is explicitly \emph{not} a trajectory or a counterexample to either algorithm. It only rules out a proof that substitutes bounded fits, monotone values and vanishing weighted stationarity for a boundary argument.
+
+\section{The two sufficient steps are not universally ordered}
+This exact comparison uses the same observable $G$ and compares only the selected steps, not actual improvement or total trajectory cost. Fix the intercept nodes and cache
+\[
+ x=(1,2,3,7/3),\quad s=(1/6,1/6,1/6,1/2),\quad
+ w_\epsilon=((1-\epsilon)/3,(1-\epsilon)/3,(1-\epsilon)/3,\epsilon),
+ \quad0<\epsilon<1/2.
+\]
+Direct substitution gives $\theta_s=-3/7$, $p=(4,1,-2,0)/7$, $A_s=91/18$, and
+\[
+ r=Q=0,\quad q=(1-\epsilon)/7,\quad h=2/7,\quad
+ H=72/4459,\quad\alpha=2\epsilon.
+\]
+Therefore
+\[
+ G=(6+7\epsilon)/49,\quad K=36/(4459\epsilon),\quad
+ B_{\rm sur}=\frac{456+588\epsilon+343\epsilon^2}{2401(1-\epsilon)}.
+\]
+The selected uncapped safe steps satisfy
+\[
+ t_K\sim(91/24)\epsilon\to0,\qquad
+ t_{\rm sur}\to49/304,\qquad
+ t_{\rm sur}/t_K\sim21/(494\epsilon)\to\infty.
+\]
+The geometry and cache are fixed; $A_{w_\epsilon}\to14/3$, so the nuisance matrix is not becoming singular. The minimum coordinate-ratio bound is responsible for this conservatism. A zero cached residual is permitted by the theorem, and every damped design stays positive.
+Conversely, the earlier $(1,3,8)$ example has $K=0$, $G=3/25$, but $B_{\rm sur}=153/1250$, hence $t_K=1/2>25/102=t_{\rm sur}$. Thus neither step dominates everywhere. These are elementary coefficient comparisons, not a new optimization advantage.
+
+\section{Full-trajectory experiment protocol and costs}
+The new experiment implements three initially specified methods: uncapped relative-margin updates, fresh half-power updates, and fresh half-affine updates. Eighteen core instances use fixed features or seed 2026092202, with nuisance dimensions one through three. Nine further instances use rows $(\sqrt{c_0},0),(1,1),(1,K)$ with $K=2,10,100$. Set $c_0$ at fractions $0.001,0.5,0.999$ between the hidden two-site uniform value $(K-1)^2/[2(1+K^2)]$ and optimum $(K-1)^2/(K+1)^2$. This probes a competing face; every design begins uniformly. Each run has a 2000-update limit, with floating numerical stops retained explicitly.
+
+The new capped $K$ policy and capped surrogate policy were subsequently tested on the saturated $(1,2)$ case, the positive cubic case, and the $K=100$, fraction-$0.999$ boundary case. The compared policies use identical features and initialization. The surrogate evaluates $R_2$ with an additional charged scalar reduction. The cap counter is the number of cache refreshes after initialization, not the iteration count. No weight floor or unreported correction changes the update.
+
+For every instance an offline LP minimizes $\|b\|_1$ subject to $F^\top b=e_1$, giving $v_*=1/\|b\|_1^2$. Its primal/dual residuals and returned design are recorded. After every accepted update, offline objective evaluation pays for its own current matrix assembly, Cholesky factorization, solve, feature matvecs and residual-norm evaluation. The algorithm cannot access these values. First-hit and matched-resource summaries are extracted afterward; no implementation stops using the known LP optimum. The target $0.999999$ in the main table is therefore a common \emph{offline evaluation} criterion, not a free online stopping certificate.
+
+A fresh gate exploits its known zero normal residual, using one old-factor solve for $H$; a stale gate pays for both $Q,H$. Rejected stale gates and fresh retries are both charged. Matrix assemblies, factorizations, fresh-contrast solves, cached-factor forward/back pairs, feature matvec passes and conceptual fusible scalar reductions are separate resources. The experiment makes no wall-time claim or conversion to a common FLOP scalar. Matching feature passes leaves factor and solve budgets unequal; matching those other resources is also recorded separately.
+
+All eighteen core uncapped runs reached the target, but the fresh half-power baseline had higher efficiency at each matched feature-pass budget. Six boundary cases reached the target within 409 uncapped updates; the three near-tie cases did not by the cap. Their final hidden mass stayed approximately $0.64$--$0.68$, offering no finite evidence of a hidden-mass extinction trap. The capped cubic run reached only $0.9999101845$ at 2000 updates; its classical-surrogate counterpart reached $0.9999093154$. The latter expended 6189 scalar reductions versus 4126 for the projected coefficient, in addition to the equal counts displayed in the main text. On the difficult boundary case, the surrogate used 4060 solves and 4091 feature passes versus 4086 and 4130 for $K$, but 6090 scalar reductions versus 4086. These are resource tradeoffs and finite results, not a universal ordering.
+
+The exact scripts additionally check twelve rational uncapped-margin steps on three models, plus two saturated half-power steps, paying for 26 exact current-value evaluations. A separate 107-assertion rational check verifies finite-interpolant identities, fresh projection bounds and the nontrajectory boundary witness: six $2\times2$ basis solves, five current $2\times2$ solves, five additional $H$ inverse actions, and five scalar normal-equation solves. Neither finite verification substitutes for the general proofs.
+
+The machine-readable results retain numerical stops, minimum observed increments and all audit costs. Roundoff-level negative increments are not a validated certificate. A separate 49-model exploratory scan for uncapped boundary attraction found no counterexample, but is explicitly exploratory and supplies no probability or universal assurance. All executed work, including preliminary runs and the later direct-surrogate comparison, is recorded in the accompanying research cost ledger. A new three-case preconditioned-correction comparison is given below; maintained inverses, LP solve time and high-dimensional applications remain unbenchmarked.
+
+\section{An explicit but extremely conservative accuracy--work bound}
+This bound concerns precisely the capped relative-margin policy, with curvature coefficient $C=K$ or $C=B_{\rm sur}$. It is not a useful acceleration guarantee. Initialize uniformly. Divide objective-scale quantities by $v_0$; all ratios and selected steps are unchanged. Set $\ell=L/v_0$, so $1\le v\le v_*\le\ell$, $1\le q\le\ell$, $0\le\lambda_i=p_i^2\le\ell$, and $|\rho_i|\le\ell$. Fix $0<\epsilon<1$ and define a target by $v_*-v\le\epsilon$. In unnormalized units this means a gap at most $\epsilon v_0$, sufficient for efficiency at least $1-\epsilon$. The target is an analysis variable, not an online stopping input.
+
+If $m=1$ or $\ell=1$, the initial design is optimal. Otherwise define
+\begin{align*}
+ a&=\epsilon/(2\ell),& B&=8\ell(\ell-1)/\epsilon^2,& A&=1+4\ell/\epsilon,\\
+ J_0&=\lceil4\ell^3/\epsilon\rceil,&
+ E_0&=(\tfrac12\log m+B)A^{J_0},\\
+ S_{\max}&=E_0+B+(4\ell/\epsilon)(\log m+2E_0+2B),\\
+ J_{\max}&=\lceil(4\ell+1)\exp(S_{\max})\rceil,&
+ d_{\min}&=m^{-1}\exp(-2S_{\max}),\\
+ t_{\min}&=\min\{1/2,1/(J_{\max}+1),d_{\min}^4\epsilon^2/(32\ell^4)\},\\
+ N_{\max}&=\lceil S_{\max}/t_{\min}\rceil+1.
+\end{align*}
+The displayed arrays only define constants; $E_0$ is unrelated to the correction-baseline residual error $E$ below.
+
+\begin{proposition}[Explicit first-hit work bound]
+The first design of efficiency at least $1-\epsilon$ occurs by $N_{\max}$ accepted steps and $J_{\max}$ refreshes. Up to that hit, at most $J_{\max}+1$ caches are constructed and at most $N_{\max}+J_{\max}+1$ gates are evaluated, including rejected stale gates and fresh retries. The assertion holds for both $K$ and $B_{\rm sur}$ without a minimum-weight or matrix-conditioning hypothesis.
+\end{proposition}
+\begin{proof}
+We bound every finite prefix whose update origins have $v_*-v>\epsilon$, allowing its last endpoint to be the first hit. The earlier exact cache satisfies $\lambda_{\min}\le v(s)\le v(w)$. Hence
+\[
+ \zeta=1-\lambda_{\min}/q\ge D/q,\qquad
+ g/2\ge\zeta Q/\alpha\ge\zeta D\ge D^2/q.
+\]
+The accepted gain is at least $tg/4$, so $\sum tg\le4(\ell-1)$. Declare a step bad when $D>\epsilon/2$. Then $g>\epsilon^2/(2\ell)$ on bad steps, and their total time satisfies $\sum_{\rm bad}t\le B$.
+
+Let $S_b=\sum_{k<b}t_k$ denote elapsed step time. Since $w_i^+\ge(1-t)w_i$ and $\log(1-t)\ge-2t$,
+\[
+ w_{b,i}\ge m^{-1}\exp(-2S_b).
+\]
+Fix an epoch beginning at $b$ and a maximum-score coordinate with $M=\max_i\lambda_i$. It never decreases because $q\le M$. At a good, subtarget-origin step, $q=v+D<v_*-\epsilon/2$ and $M\ge v_*$. Therefore
+\[
+ \log(w_i^+/w_i)
+ \ge\frac{t(M-q)}{q+t(M-q)}\ge\frac{\epsilon t}{2\ell}=at.
+\]
+Here $\log(1+x)\ge x/(1+x)$ for $x\ge0$, and the denominator is at most $M\le\ell$. Bad steps have nonnegative change for this same coordinate. Its weight cannot exceed one, so the epoch's good time is at most $(\log m+2S_b)/a$. If $B_b$ is its bad time, its final clock obeys
+\[
+ S_{\rm end}\le A S_b+\frac{\log m}{a}+B_b.
+\]
+Iterating over $r$ epochs with total $\sum B_b\le B$ gives
+\[
+ S_{\rm end}\le\tfrac12\log m(A^r-1)+BA^{r-1}
+ \le(\tfrac12\log m+B)A^r.
+\]
+The same bound holds for a prefix ending inside an epoch. Thus the first $J_0$ epochs have clock at most $E_0$ before the target.
+
+For any optimal design $u_*$, let $\Phi=\mathrm{KL}(u_*\Vert w)$. Uniform initialization gives $\Phi_0\le\log m$. Every step satisfies $\Delta\Phi\le-\log(1-t)\le2t$. At the start of epoch $J_0$, if reached before the target, $\Phi\le\log m+2E_0$. On each later good step, $u_*\cdot\rho\ge\epsilon/(2\ell)=a$, so the logarithm inequality already proved yields
+\[
+ \Delta\Phi\le-at+\ell^2t^2\le-at/2,
+\]
+where the cap gives $t\le1/(J_0+1)\le\epsilon/(4\ell^3)$. Late bad steps increase entropy by at most $2B$ in total. Nonnegativity of entropy bounds late good time by
+$(2/a)(\log m+2E_0+2B)$.
+Adding early time and late bad time yields total clock at most $S_{\max}$ for any subtarget-origin prefix. This argument uses no unknown value-convergence time.
+
+The accepted fresh step at refresh counter $j$ is at least
+$\min\{1/(4\ell),1/(j+1)\}\ge1/(4\ell+j+1)$.
+If the prefix includes the accepted fresh step at counter $J$, then
+\[
+ S_{\max}\ge\sum_{j=0}^J\frac1{4\ell+j+1}
+ \ge\log\frac{4\ell+J+2}{4\ell+1}.
+\]
+This proves the conservative refresh bound $J_{\max}$. Exact optimal termination already meets the target and cannot insert an uncharged sequence of refreshes.
+
+Every current and earlier cached weight in such a prefix is at least $d=d_{\min}$, a consequence of the proved clock bound. Thus $\alpha\ge d$ and $\max_i w_i/s_i\le1/d$. Weighted projection onto the nuisance columns gives
+\[
+ Q\le\sum_i(w_i^2/s_i)p_i^2\le\ell/d,\qquad
+ H\le\sum_i(w_i^2/s_i)\rho_i^2p_i^2\le\ell^3/d.
+\]
+Consequently $K\le4\ell^3/d^2$. Also $R_2\le\ell^3$, whence
+$B_{\rm sur}\le\ell^3(1+1/d)^2\le4\ell^3/d^2$.
+Before the target, the cached score range exceeds $\epsilon$, because its maximum is at least $v_*$ and its minimum is at most $v(s)\le v(w)<v_*-\epsilon$. The corresponding two current weights are each at least $d$. The pairwise variance formula yields
+\[
+ \operatorname{Var}_w(\lambda)\ge d^2\epsilon^2,
+ \quad g\ge d^2\epsilon^2/\ell,
+ \quad G/(4C)\ge d^4\epsilon^2/(32\ell^4)
+\]
+when $C>0$. Omitting the zero-$C$ term can only increase the step. Therefore every subtarget-origin accepted step is at least $t_{\min}$. A prefix of $N$ such steps has $Nt_{\min}\le S_{\max}$; the stated $N_{\max}$ covers the first hit. An infinite subtarget run is impossible. Every refresh has at most one preceding rejected stale gate, giving the gate and cache counts.
+\end{proof}
+A dense arithmetic bound follows directly:
+\[
+ O\!\left((J_{\max}+1)(mp^2+p^3+mp)
+ +(N_{\max}+J_{\max}+1)(mp+p^2+m)\right).
+\]
+This charges all cache builds and failed/successful gates; the surrogate has its additional scalar reduction. It is not a wall-time statement. Computing $L$ by enumerating interpolation bases, if desired, would be extra work; the actual protocol does not compute it.
+
+For proof parameters $m=3$, $\ell=2$, $\epsilon=0.1$, one has $J_0=320$, $A=81$, $B=1600$, and $E_0>81^{320}>10^{610}$. The refresh bound then exponentiates an even larger clock bound. This example evaluates the formulas, not a design experiment. Such loose constants cannot support practical acceleration, a matching complexity lower bound, or a distinction between the two coefficients. Early-epoch control through a worst-case minimum weight and inversion of a harmonic sum are the two sources of exponential amplification.
+
+\section{A reliable preconditioned-correction comparator}
+The line-minimized inner correction is classical preconditioned steepest descent: apply Saad's Algorithm~5.2 with the symmetric preconditioning transformation in Sec.~9.2.1~\cite{saad2003} to the current normal equations, using $A_s$ as preconditioner.
+At a current design, retain the original exact anchor contrast $p_0$ and old factor of $A_s$. Form $r_0=Z^\top Wp_0$. If $r_0=0$, set $p_1=p_0,r_1=0,E=0$: the fit is current-exact and no correction solve is needed. Otherwise compute
+\[
+ u=A_s^{-1}r_0,\quad b=Z^\top WZu,\quad
+ \eta=\frac{r_0^\top u}{u^\top b}>0,\quad
+ p_1=p_0-\eta Zu,\quad r_1=r_0-\eta b.
+\]
+The denominator is positive because $A_w\succ0$ and $u\ne0$; $\eta$ exactly minimizes the weighted quadratic along this preconditioned residual direction. Computing $b$ requires the two feature passes $Zu$ and $Z^\top WZu$, without forming $A_w$. A second old-factor solve, skipped when $r_1=0$, gives
+\[
+ E=r_1^\top A_s^{-1}r_1/\alpha\ge
+ r_1^\top A_w^{-1}r_1.
+\]
+Using $p_1$, form the ordinary multiplicative direction and its $q,\rho,g,\gamma,\zeta$, then set
+\[
+ R_2=\sum_iw_i\rho_i^2p_{1,i}^2,\quad
+ G_c=g-2\sqrt{R_2E}-\zeta E,\quad
+ B_c=(\sqrt{R_2}+\gamma\sqrt E)^2.
+\]
+If $g>0,G_c\ge g/2$, take $t=\min\{1/2,1/(j+1),G_c/(4B_c)\}$, omitting the last term when $B_c=0$. Otherwise refresh exactly and retry. Fresh zero $g$ certifies an optimum; the fresh gate has $E=0$ and needs no correction solves. The corrected contrast is not falsely designated an exact anchor: every subsequent attempt starts from the stored original $p_0$ until an actual refresh.
+
+For the one-step guarantee, write $e=A_w^{-1}r_1$ and $P=p_1-Ze$ for the proof-only current exact contrast. Its mismatch energy is at most $E$. With $h=Z^\top W(\rho p_1)$, projection gives $h^\top A_w^{-1}h\le R_2$. Since $A_d\succeq-\zeta A_w$,
+\[
+ \sum_i d_iP_i^2=g-2h^\top e+e^\top A_de\ge G_c.
+\]
+Weighted triangle inequality gives $\sum_iw_i\rho_i^2P_i^2\le B_c$. Substituting these two bounds into the already proved covariance-surrogate argument yields
+\[
+ v(w+td)-v(w)\ge tG_c/2>0.
+\]
+All finite accepted weights remain positive. This proof is a direct classical residual/covariance specialization. The full corrected trajectory changes its scores inside each old-factor epoch and therefore is not covered automatically by the fixed-score global or work theorem above.
+
+A nonzero stale attempt requires at most two old-factor solves and three feature matvec passes. Compared with old-fit $K$, it uses one extra feature pass and scalar work; compared with old-fit $B_{\rm sur}$, its scalar reductions are similar but it adds nuisance-vector products for line minimization. Exact zero residuals avoid unnecessary solves. Refreshes and rejected attempts retain their costs. In scalar nuisance dimension, line minimization reaches the exact current fit; this is a property of one-dimensional quadratics, not a new solver advantage.
+
+Only the three already selected discriminating cases were run, reusing saved offline LP values. At the positive cubic target $0.999999$, correction required 879 updates and 2658 feature passes; fresh half-power required 203 and 406. At the old capped-$K$ budget of 4190 feature passes, correction efficiency was $0.9999999852$, compared with $0.9999101845$ for $K$ and $0.9999093154$ for the uncorrected surrogate. At the difficult boundary's 4130-pass budget, correction gave $0.9997838744$, versus $0.9997690537$ and $0.9997717331$. These finite comparisons match one resource only and preserve all other costs in the evidence files. They do not establish superiority over the fresh methods or globally improved complexity.
+
+\section{Quantitative comparisons with established methods}
+In this comparison, $N$ is the candidate count and $r$ the full regression dimension. Richt\'arik~\cite{richtarik2008}, Algorithm~2 and Theorem~34 (report PDF pages 34--36), assumes nonzero spanning candidate vectors, a nonzero target and a uniform start. With $\psi(w)=\sqrt{c^\top M(w)^{-1}c}$, its guarantee is
+\[
+ \psi(w_{\rm out})\le(1+\delta)\psi_*,\qquad
+ K_{\rm it}\le2\Gamma\,[\log\Gamma+\log\log N+8/\delta].
+\]
+The selected full-matrix leverage must satisfy
+$f_{j_k}^\top M(w_k)^{-1}f_{j_k}\le\Gamma$ throughout the run (Assumption~33). This is not implied by bounded target residuals: nuisance eigenvalues can approach zero. Since $v=\psi^{-2}$, the resulting efficiency is at least $(1+\delta)^{-2}$; the target $1-\epsilon$ uses $\delta=(1-\epsilon)^{-1/2}-1$. The report's Theorem~38 instead concerns the objective bias from a permanent weight floor; it does not remove Assumption~33 for the original feasible problem.
+
+The fresh coordinate update has
+\[
+ w^+=\frac{w+\kappa e_j}{1+\kappa},\qquad
+ M^+=\frac{M+\kappa f_jf_j^\top}{1+\kappa}.
+\]
+Dense factor maintenance and target-solution updating cost $O(r^2)$ per rank-one step, and a full current-sensitivity scan costs $O(Nr)$. Including initialization gives the explicit implementation accounting
+$O(Nr^2+r^3+K_{\rm it}(Nr+r^2))$.
+This arithmetic count follows from the displayed updates, not from treating a fresh factorization as free or asserting numerical stability. An infinite line parameter in the original algorithm is an optimal terminal branch, not a requirement to factor a singular limiting matrix and continue. One-coordinate updates and simultaneous reweighting have different iteration counts. Their common-accuracy total work still needs measurement.
+
+For John ellipsoids, let $A\in\R^{N\times r}$ have full column rank and $\epsilon,\delta\in(0,1)$. Cohen et al.~\cite{cohen2019}, revised preprint Theorem~3.6/C.7, give $O(\epsilon^{-1}\log(N/\delta))$ iterations with $O(\epsilon^{-1})$ current linear systems per iteration and probability at least $1-\delta$. The output is averaged and normalized, with total weight $r$ and maximum leverage at most $1+\epsilon$. Converting it to simplex weights gives maximum leverage at most $r(1+\epsilon)$; this does not imply $1-\epsilon$ efficiency for an arbitrary fixed target $c$. System counts also require solver and matrix-application costs to become arithmetic counts. For $P=\{x:\|Ax\|_\infty\le1\}$, Woodruff and Yasuda~\cite{woodruff2024}, Theorem~1.6, return an ellipsoid $\mathcal E$ with $(1+\epsilon)^{-1/2}\mathcal E\subseteq P\subseteq\sqrt r\,\mathcal E$ with probability at least $1-1/\operatorname{poly}(N)$. Their lazy total-runtime bound involves all of
+\[
+\begin{split}
+ &O(\epsilon^{-1}Nr)[\log(N/r)+\operatorname{polylog}(\epsilon^{-1}\log N)]\\
+ &\quad+O(N)\operatorname{poly}(\epsilon^{-1}\log N)
+ +O(N^{0.1})r^{\omega+1}\epsilon^{-3}(\log N)^2.
+\end{split}
+\]
+Its randomized sketches, matrix multiplication and batched recovery do not describe an unchanged cached $c$-contrast. Dropping the last two terms or equating the two accuracy objectives would misstate this comparison. No unsupported last-iterate conclusion is imported: the cited John algorithms use averaged output.
+
+There is also a standard quantitative use of the present old factor within one fixed current design. This is preconditioned Richardson iteration; see Saad~\cite[Example~4.1, Eq.~(4.33), and Sec.~9.2.1]{saad2003}. Here $[\alpha,\beta]$ is a certified spectral enclosure, so the displayed factor is a valid upper bound without computing the extreme eigenvalues. Since $\alpha A_s\preceq A_w\preceq\beta A_s$, the stationary correction
+\[
+ \theta^{(k+1)}=\theta^{(k)}-\omega A_s^{-1}r(\theta^{(k)}),\qquad
+ \omega=\frac{2}{\alpha+\beta},\quad
+ \chi=\frac{\beta-\alpha}{\beta+\alpha}
+\]
+satisfies, from the symmetric error operator
+$I-\omega A_w^{1/2}A_s^{-1}A_w^{1/2}$,
+\[
+ q_w(\theta^{(k)})-v(w)
+ \le\chi^{2k}[q_w(\theta^{(0)})-v(w)]
+ \le\chi^{2k}Q/\alpha.
+\]
+Each correction uses one old-factor solve and $O(mp)$ feature work. For $0<\chi<1$ and $Q/\alpha>\xi>0$, a sufficient number is
+$\lceil\log((Q/\alpha)/\xi)/(-2\log\chi)\rceil$.
+If the initial bound is already below $\xi$, no correction is needed; if $\alpha=\beta$, one correction is exact. This elementary preconditioned spectral calculation is background, not a separate design contribution. The line-minimized one-correction comparison above spends at most two old solves including its residual certificate. Neither calculation proves that these inner corrections remain inexpensive along every design trajectory.
+
+\input{uncapped_counterexample}
+\input{bsur_counterexample}
+\input{boundary_comparisons}
+\input{surrogate_comparison}
+
+\section{Reproduction, limitations, and provenance}
+The complete internal package contains the main and supplementary \LaTeX{} sources, bibliography, a build script, exact and numerical verification code, machine-readable results, an explicit claim--evidence table, a literature comparison, a failure log, and SHA256 manifests.
+Run the documented experiment entry point to regenerate the diagnostics, and the build script to regenerate both PDFs. Exact rational identities establish only the displayed examples; seeded floating-point stress checks detect implementation inconsistencies but do not prove the theorem or validate roundoff safety.
+
+The scalar statistical target, exact least-squares projection identity, concavity, fresh monotonicity, and feasible-dual reasoning are established background. The unpublished R11 source supplied the delayed-design and tangent-gap starting point. The present proof is self-contained and imports none of the protected spectral-memory, joint-root, or information-budget results from other manuscripts. Detailed internal file-level attribution is kept outside the anonymous manuscript in the source audit.
+
+This draft establishes cached-residual safe steps, global capped convergence and actual failure of the uncapped relative-margin rule. Useful total-work gains and floating-point reliability are not established by these exact-arithmetic results. The general upper bound is too conservative to settle efficiency; the exact cap-cost obstruction and stronger comparators show why factor-count savings alone are insufficient. The model delays computations of deterministic design sensitivities, not experimental outcomes; no new statistical concentration theorem is claimed.
+
+\clearpage
+\input{references}
+\end{document}

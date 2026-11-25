@@ -127,6 +127,19 @@ window.RESEARCH_CONTENT = {
         "periodic-bb",
         "gll-window"
       ]
+    },
+    {
+      "id": "delayed-design",
+      "version": "1.0",
+      "releaseDate": "2026.11.26",
+      "pages": 60,
+      "zh": "滞后乘法更新与实验设计",
+      "en": "Certifying delayed multiplicative updates for linear experimental design",
+      "groupZh": "最优实验设计",
+      "groupEn": "Optimal experimental design",
+      "descriptionZh": "两种复用旧拟合的更新可以严格改进、无限刷新，却仍停在次优值。以刷新次数限制步长可恢复值收敛，并有代价下界。",
+      "descriptionEn": "Two cached-fit rules can improve strictly and refresh infinitely often while converging to a suboptimal design value. The paper proves a convergent capped rule and analyzes its cost.",
+      "related": []
     }
   ],
   "papers": [
