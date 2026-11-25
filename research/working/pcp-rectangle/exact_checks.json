@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "date": "2026-11-25",
+  "python": "3.12.4",
+  "arithmetic": "Python fractions.Fraction; all comparisons exact",
+  "scope": "Finite comparison of four scalar inequalities with closed bright/dark intervals; no infinite-domain or full-matrix proof",
+  "p_and_T": [
+    2,
+    9
+  ],
+  "geometries_with_sign": 2592,
+  "checked_points": 171216,
+  "feasible_points": 18320,
+  "mismatches": 0,
+  "source_sha256": "a21a9f13d45a424c212c345ffbe2570c310d9c64bea6f57a7d185f4b800512ff"
+}

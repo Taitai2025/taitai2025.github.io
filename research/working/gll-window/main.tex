@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper,UTF8,fontset=fandol]{ctexart}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={GLL 线搜索的窗口收缩与全步接受},pdfauthor={}}
+\newtheorem{proposition}{命题}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries GLL 线搜索的窗口收缩与全步接受\par}
+\smallskip
+{\large 对有界试探步长的证明和一个周期反例\par}
+\medskip
+2026 年 11 月 25 日 \quad 版本 0.2.0\\
+\small AI 辅助研究工作稿，尚待作者人工复核。
+\end{center}
+\begin{abstract}
+对 GLL 非单调线搜索，实际接受的迭代点可以几何收敛，而全试探步在固定的参考窗口内仍可能被拒绝。本文在全局光滑、强凸以及试探步长上下有界的条件下，用两条一步不等式得到窗口的几何界。随后构造一个一维二次例子：纯试探轨道在每个完整周期都收缩，但该轨道每周期有一步无法通过 GLL 检查。例子给出了从纯轨道收敛证明全步接受时所欠缺的条件。
+\end{abstract}
+
+\section{问题和记号}
+
+设 \(f:\mathbb{R}^n\to\mathbb{R}\) 可微，梯度全局 \(L\)-Lipschitz，且 \(f\) 是 \(\mu\)-强凸的，其中 \(L,\mu>0\)。唯一极小点记作 \(x^*\)，\(f_*=f(x^*)\)。固定 \(0<\eta,\sigma<1\)、窗口长度参数 \(M\in\mathbb{N}_0\) 以及 \(0<a\le b\)。第 \(k\) 步以 \(\bar\alpha_k\in[a,b]\) 试探，随后用 \(\eta\) 缩短，直至第一次满足 GLL 检查
+\begin{equation}\label{eq:gll}
+ f(x_k-\alpha_k g_k) \le F_k-\sigma\alpha_k\|g_k\|^2,\qquad
+ g_k=\nabla f(x_k),\quad F_k=\max_{\max(0,k-M)\le i\le k}f(x_i).
+\end{equation}
+通过检查后取 \(x_{k+1}=x_k-\alpha_k g_k\)。这里 \(\bar\alpha_k\) 是首次试用的步长，而 \(\alpha_k=\eta^{\ell_k}\bar\alpha_k\) 是实际接受的步长，\(\ell_k\) 为使式\eqref{eq:gll} 成立的最小非负整数。当 \(g_k=0\) 时可令后续点恒为 \(x^*\)。以下记 \(e_k=f(x_k)-f_*\) 及 \(R_k=F_k-f_*\)。试探值可以依赖任意历史；以下证明只使用 \(a,b\) 和沿负梯度方向的回溯规则。GLL 方法及其强凸情形的速率已有经典分析\cite{gll,dai,zh}。
+
+公开的\href{https://taitai2025.github.io/assets/documents/undergraduate-thesis.pdf}{本科毕业论文}算法 4 用 \(M\) 表示窗口中的函数值数量。本稿将该数量另记为 \(M_0\)，用 \(M=M_0-1\) 表示最大回看滞后。全空间 \(L\)-光滑假设强于原稿只在初始水平集邻域控制梯度的假设。
+
+Dai~\cite[Theorem~3.2, pp.~324--325]{dai} 的结果从统一几何收缩、索引间隔有界的子列等条件出发，对给定充分下降参数选择足够大的记忆长度。应用于固定的算法窗口时必须核对该窗长；某条另起的纯轨道已有 \(R\)-线性上界也不直接提供所需的子列条件。Dai 的平方索引反例还见 Zhang--Hager~\cite[p.~1044, Eq.~(1.3)]{zh}。本补记下文的周期例子满足统一有限间隔收缩，单独检验固定窗口的量词。
+
+\section{实际接受的迭代点具有几何界}
+
+\begin{proposition}\label{prop:window}
+令
+\[
+ a_* =\min\{a,\,2\eta(1-\sigma)/L\},\qquad
+ A=1+L^2b^2,\qquad d=2\mu\sigma a_*,\qquad
+ \theta=\frac{A}{A+d}.
+\]
+则 \(0<\theta<1\)，每个实际接受的步长至少为 \(a_*\)，且
+\[
+ R_{k+M+1}\le\theta R_k,\qquad
+ e_k\le \theta^{\lfloor k/(M+1)\rfloor}R_0 .
+\]
+特别地，\(\|x_k-x^*\|\) \(R\)-线性收敛。
+\end{proposition}
+
+\begin{proof}
+下降引理给出
+\[
+ f(x_k-\alpha g_k)\le f(x_k)-\alpha(1-L\alpha/2)\|g_k\|^2 .
+\]
+因此 \(0<\alpha\le2(1-\sigma)/L\) 时，试探直接满足 \eqref{eq:gll}。若发生回溯，最后一个被拒绝的步长必大于该阈值，乘 \(\eta\) 后得到所需下界。若没有回溯，则使用 \(\bar\alpha_k\ge a\)。
+
+强凸性给出
+\[
+ f(x^*)\ge f(x_k)+g_k^\top(x^*-x_k)+\frac{\mu}{2}\|x^*-x_k\|^2
+           \ge f(x_k)-\frac{\|g_k\|^2}{2\mu}.
+\]
+第二个不等式是在位移上取右侧二次式的最小值。因此 \(\|g_k\|^2\ge2\mu e_k\)。反过来，在下降引理中取步长 \(1/L\)，再用 \(f_*\le f(x_k-g_k/L)\)，得到 \(\|g_k\|^2\le2Le_k\)。
+
+只用接受不等式还不能直接得到 \(R_k\) 的固定比例收缩，因为当前的 \(e_k\) 可以远小于参考窗口的最大值 \(R_k\)。为兼顾这一情形，分别使用接受下界和下降引理：
+\begin{align*}
+ e_{k+1}&\le R_k-\sigma a_*\|g_k\|^2 \le R_k-de_k,\\
+ e_{k+1}&\le e_k+\tfrac12Lb^2\|g_k\|^2 \le Ae_k .
+\end{align*}
+第二行舍去了 \(-\alpha_k\|g_k\|^2\) 并利用 \(\alpha_k\le b\)。将第一行乘以 \(A\)，第二行乘以 \(d\)，相加消去 \(e_k\)，即
+\[
+ (A+d)e_{k+1}\le AR_k,\qquad e_{k+1}\le\theta R_k.
+\]
+滑动窗口的旧项本来就不超过 \(R_k\)，新加入的 \(e_{k+1}\) 也不超过 \(R_k\)，故 \(R_{k+1}\le R_k\)。经过 \(M+1\) 步，旧窗口已完全移出：
+\[
+ R_{k+M+1}=\max_{1\le j\le M+1}e_{k+j}
+          \le\theta\max_{0\le j\le M}R_{k+j}=\theta R_k .
+\]
+重复此估计，再用余下不足 \(M+1\) 步的非增性即可得 \(e_k\) 的界。最后 \(e_k\ge\mu\|x_k-x^*\|^2/2\)，所以距离的一个 \(R\)-线性因子是 \(\theta^{1/(2(M+1))}\)。
+\end{proof}
+
+\section{全试探轨道的统一块收缩仍不足够}
+
+取 \(f(x)=x^2/2\)、\(x_0\ne0\)。设一条纯负梯度法的试探步长按周期 \(M+2\) 重复：先一步 \(1/2\)，再依次用 \(M+1\) 步 \(2\)。若全部采用这些试探值，则一步 \(1/2\) 把 \(|x|\) 减半，步长 \(2\) 仅改变符号。因此从任意相位开始，每 \(M+2\) 步都有
+\[
+ |x_{k+M+2}|=\tfrac12 |x_k|.
+\]
+以第一周期为例，减半后 \(x_1=x_0/2\)，接下来的步长 \(2\) 只交替改变符号。最后一次试探从 \(x_{M+1}\) 出发，检查窗口恰好包含 \(x_1,\ldots,x_{M+1}\)，因此所有参考目标值相等。后续周期的窗口有相同的相对位置。故 \(F_k=f(x_k)\)，而试探点的目标值仍为 \(f(x_k)\)。由于 \(g_k\ne0\) 且 \(\sigma>0\)，该试探严格违反 \eqref{eq:gll}。任意小的非零初始化仍有同一现象。
+
+例子采用预先指定的试探步长。对毕业论文的 \(p\)D(S)-BB，若实际算法从某一步起始终满足 \(\bar\alpha_k\le2(1-\sigma)/L\)，下降引理就保证全步接受。若要放宽这个充分条件，需利用谱步长、当前梯度和历史窗口的关系。本稿的有理数脚本复算若干固定窗长下的周期反例，并检查回溯轨道的窗口不等式。重启规则使用另一种接受条件，详见\href{https://taitai2025.github.io/assets/documents/research/restart-projected-bb.pdf}{离散梯度重启工作稿}。
+
+\begin{thebibliography}{9}
+\bibitem{gll} L. Grippo, F. Lampariello, and S. Lucidi. A nonmonotone line search technique for Newton's method. \emph{SIAM J. Numer. Anal.}, 23(4), 1986, 707--716. \href{https://doi.org/10.1137/0723046}{DOI}.
+\bibitem{dai} Y. H. Dai. On the nonmonotone line search. \emph{J. Optim. Theory Appl.}, 112(2), 2002, 315--330. \href{https://doi.org/10.1023/A:1013653923062}{DOI}.
+\bibitem{zh} H. Zhang and W. W. Hager. A nonmonotone line search technique and its application to unconstrained optimization. \emph{SIAM J. Optim.}, 14(4), 2004, 1043--1056. \href{https://doi.org/10.1137/S1052623403428208}{DOI}.
+\end{thebibliography}
+\end{document}

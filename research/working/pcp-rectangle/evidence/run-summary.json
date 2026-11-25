@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-25",
+  "version": "1.0",
+  "new_runs": [
+    "python -B verify.py",
+    "python -B exact_checks.py"
+  ],
+  "synthetic_solves": 9,
+  "all_converged": true,
+  "max_floating_primal_dual_gap": 5.355978771603986e-09,
+  "max_interior_relative_L_error": 1.2874203265492162e-10,
+  "exact_rational_points": 171216,
+  "exact_mismatches": 0,
+  "floating_results_are_not_interval_certificates": true,
+  "lean_rerun_in_public_stage": false,
+  "python": "3.12.4",
+  "numpy": "1.26.4",
+  "verify_source_sha256": "0ffe9136c0c3efbeb213cc4803bfb56a8376a668c211c4c20b7dd327c81d5050",
+  "exact_source_sha256": "a21a9f13d45a424c212c345ffbe2570c310d9c64bea6f57a7d185f4b800512ff"
+}

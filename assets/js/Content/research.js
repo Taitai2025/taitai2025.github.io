@@ -1,5 +1,75 @@
 /* Research entries and reviewed public attachments. */
 window.RESEARCH_CONTENT = {
+  "working": [
+  {
+    "id": "ritz-minimal-face",
+    "version": "0.2.0",
+    "zh": "固定权重 LMSD 在 p+1 个活跃特征值上的收敛率",
+    "en": "Exact Convergence Rates of Fixed-Weight LMSD on p+1 Eigenvalues",
+    "groupZh": "谱梯度与 Ritz",
+    "groupEn": "Spectral gradients and Ritz values",
+    "descriptionZh": "在 p+1 个活跃谱点上证明精确一致收缩因子，给出达到该因子的平衡轨道，并证明非平衡轨道的双指数衰减。",
+    "descriptionEn": "Proves the sharp uniform factor on p+1 active spectral nodes, identifies a balanced orbit attaining it and bounds off-balance decay.",
+    "related": [
+      "ritz-reuse"
+    ],
+    "pages": 5
+  },
+  {
+    "id": "ritz-reuse",
+    "version": "0.2.0",
+    "zh": "历史 Ritz 扫掠重用的精确指数上界",
+    "en": "An Exact Bound for Repeating Historical Ritz Sweeps",
+    "groupZh": "谱梯度与 Ritz",
+    "groupEn": "Spectral gradients and Ritz values",
+    "descriptionZh": "对末尾为完整扫掠的滚动历史给出按实际更新次数计算的指数上界，并证明周期 1、2、1、3 在所述条件下达到该界。",
+    "descriptionEn": "Bounds the decay exponent per gradient update for rolling histories with a complete final sweep, with a sharp periodic pattern and two exact polygon certificates.",
+    "related": [
+      "ritz-minimal-face"
+    ],
+    "pages": 6
+  },
+  {
+    "id": "restart-projected-bb",
+    "version": "0.2.0",
+    "zh": "离散梯度重启的有限返回与投影 BB1 的临界收敛",
+    "en": "Finite Returns for Discrete Gradient Restart and Critical Convergence of Projected BB1",
+    "groupZh": "重启、投影与线搜索",
+    "groupEn": "Restart, projection, and line search",
+    "descriptionZh": "证明固定有限谱下的统一有限返回和闭凸锥上条件数不超过 2 的投影 BB1 收敛，并附精确算例与 Lean 核验边界。",
+    "descriptionEn": "Proves finite return on fixed finite spectra and projected BB1 convergence on closed convex cones when the condition number is at most two.",
+    "related": [
+      "gll-window"
+    ],
+    "pages": 10
+  },
+  {
+    "id": "gll-window",
+    "version": "0.2.0",
+    "zh": "GLL 线搜索的窗口收缩与全步接受",
+    "en": "Window Contraction and Full-Step Acceptance for GLL Line Search",
+    "groupZh": "重启、投影与线搜索",
+    "groupEn": "Restart, projection, and line search",
+    "descriptionZh": "证明带截断试探步长的实际接受轨道具有几何界，并用周期反例说明纯试探轨道收敛为何不足以保证全步接受。",
+    "descriptionEn": "Proves a geometric bound for accepted iterates and gives a periodic example showing why trial-trajectory contraction alone is insufficient for full-step acceptance.",
+    "related": [
+      "restart-projected-bb"
+    ],
+    "pages": 3
+  },
+  {
+    "id": "pcp-rectangle",
+    "version": "1.1",
+    "zh": "PCP 中常数背景与矩形扰动的精确最优性判据",
+    "en": "Exact PCP Optimality Criteria for a Constant Background and Rectangular Perturbation",
+    "groupZh": "低秩分解",
+    "groupEn": "Low-rank decomposition",
+    "descriptionZh": "把公共次梯度证书化成四块条件，给出矩形亮块、暗块的参数区间和严格证书的唯一性判据。实验仅使用合成矩阵。",
+    "descriptionEn": "Reduces the common-subgradient certificate to four blocks and derives parameter intervals and a strict-certificate uniqueness condition.",
+    "related": [],
+    "pages": 9
+  }
+],
   "papers": [
     {
       "id": "2608.07839",

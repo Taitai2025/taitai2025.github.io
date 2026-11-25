@@ -74,6 +74,11 @@ body[data-lang="zh"] .toolkit-heading {
 .research-section h2 { display: flex; align-items: center; gap: 12px; }
 .section-number { font-size: .72em; color: var(--muted); }
 .paper { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 14px; margin: 15px 0; padding: 18px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: linear-gradient(180deg, var(--surface), color-mix(in srgb, var(--surface) 70%, var(--surface-2))); box-shadow: var(--shadow-xs); transition: transform .2s, box-shadow .2s; }
+.paper.paper--unnumbered { grid-template-columns: minmax(0, 1fr); }
+.paper--unnumbered > div { min-width: 0; }
+.paper--unnumbered h3 { overflow-wrap: anywhere; }
+.paper--unnumbered .paper-summary { max-width: 76ch; }
+.paper--unnumbered a.document-link { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
 .paper:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
 .paper-number { color: var(--muted); font-size: .9em; }
 .paper h3 { color: var(--accent); font-size: 1.22em; line-height: 1.45; margin: 0 0 8px; }

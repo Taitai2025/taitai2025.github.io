@@ -1,0 +1,542 @@
+\documentclass[11pt,a4paper,UTF8,fontset=fandol]{ctexart}
+\usepackage[margin=24mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\hypersetup{pdftitle={离散梯度重启的有限返回与投影 BB1 的临界条件数收敛},
+ pdfauthor={匿名},pdfsubject={AI 辅助研究工作稿 v0.2.0，尚待作者人工核阅},
+ pdfkeywords={gradient restart, projected BB1, finite return, AI-assisted working draft}}
+\setlist{nosep}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{说明}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\argmin}{\operatorname{argmin}}
+\title{离散梯度重启的有限返回\\与投影 BB1 的临界条件数收敛\\[3pt]\large AI 辅助研究工作稿：两个齐次二次模型的证明与算例}
+\author{匿名}
+\date{2026 年 11 月 25 日 · v0.2.0 · 尚待作者人工核阅}
+\begin{document}
+\maketitle
+\begin{abstract}
+本文整理两个与优化算法动力系统有关的具体问题。第一部分研究正定二次函数上的离散梯度重启：每段由零动量出发，使用指定的 Nesterov 系数和严格的重启判据，拒绝触发试探后另作一次梯度步。通过 Gegenbauer 残差的 Darboux 渐近、最大活跃谱模态和紧性，证明固定有限谱下存在对所有初值统一的有限返回界；模态数有界且步进谱远离两端时，该界对参数族也统一。第二部分研究闭凸锥上无线性项、无线搜索的投影 BB1。证明条件数不超过 $2$ 时所有合法初始化轨道一致线性收敛；临界值 $2$ 的关键是排除谱范数等号与前一步投影相容性同时成立。文中给出首次重启时刻恰为 $12$ 的有理证书，以及投影 BB1 单步同时增加范数和目标值的精确例子。两个模型均有严格的适用边界；一般非线性重启问题、任意条件数的投影 BB1 和尖锐速率仍未在本文解决。
+\end{abstract}
+
+\noindent\textbf{版本与责任说明。}
+这是 AI 辅助形成的研究工作稿，版本 v0.2.0。文字与证明经 AI 辅助整理和交叉检查，精确算例另有有理数复算及限定范围的 Lean 核验；作者尚未逐项完成\textbf{人工核阅}。本稿未经过期刊同行评审，不能视为全部完成机器形式化的论文。已有公式和文献结论均标明来源，各个组合论证的原创性仍待进一步核查。公开此版本用于记录现阶段推导及其边界，后续修订以版本记录为准。
+
+\section{问题边界与已有工作}
+两个问题的共同点是齐次性：算法在向量放大后沿相同的方向演化，因此可以把非零状态归一化到紧集。不同之处在于，重启问题要先证明每个方向最终出现一个严格事件，而投影 BB1 要先排除某一步的等号。紧性只把已经证明的逐点严格性质变成统一界，不能代替前面的实质证明。相容闭锥上的齐次动力学方法与 Yang--Yuan~\cite{yangyuan} 的无约束 BB 研究相承；本文在投影模型中另行核对相容性与严格下降，不将一般紧性原理视为新结论。
+
+第一部分的残差多项式公式是 Kindermann~\cite{kindermann} 定理 1 在动量参数为 $2$ 时的特例。我们写出代入和渐近运算，使读者无需猜测变量约定。Bao--Chen--Li--Shen~\cite{bao2025} 已证明其梯度重启算法在强凸光滑情形下的全局线性收敛；其关于有界重启间隔的结果还给出进一步速率改善。因此，本文的目标是指定二次模型的\emph{有限返回及精确计步}，不能把它重述成首次解决全局收敛。Bao--Chen--Li--Sun~\cite{bao2026} 给出一般光滑强凸目标上重启不发生的构造。其构造通过非二次的初始部分实现后续相位；这不属于本文从零动量出发、全过程固定同一个正定二次函数的假设。
+
+第二部分的投影 BB1 属于谱梯度法的一种具体用法。Dai--Fletcher~\cite{daifletcher} 已讨论箱约束二次规划的投影 BB 方法及其不收敛现象。一般箱约束模型的反例并不自动成为本文\emph{齐次锥、无线性项、相容初始化}模型的反例。反过来，本文在条件数不超过 $2$ 时的结论，也不能用于替代一般箱约束问题所需的全局化措施。
+
+\section{离散重启：算法、判据与成本}
+设 $H=H^T\succ0$，不同特征值为 $\lambda_1,\ldots,\lambda_m$，正交谱投影为 $P_i$。记
+\[
+ a=\min_i\lambda_i,\qquad b=\max_i\lambda_i,\qquad
+ 0<h<1/b,\qquad A=I-hH,
+\]
+以及 $s_i=1-h\lambda_i\in(0,1)$。重特征值合并在同一投影中，$m$ 指不同谱值的个数。
+
+本节讨论二次函数 \(f(x)=x^THx/2\)。记 \(x\) 为最近一次接受的点，\(y\) 为计算下一次梯度的外推点。每段从 \(x=y=u\) 开始，段内编号置为 \(j=1\)。
+\begin{enumerate}[label=(\arabic*)]
+\item 保存旧点 \(x_{\rm old}=x\)，计算试探点 \(z=y-h\nabla f(y)=Ay\)。若 \(z=0\)，已到达极小点，算法终止。
+\item 计算 \(D=\langle z-x_{\rm old},y-z\rangle\)。若 \(D>0\)，舍弃 \(z\)。从旧点另作一步 \(u^+=x_{\rm old}-h\nabla f(x_{\rm old})=Ax_{\rm old}\)，以 \(x=y=u^+\)、\(j=1\) 开始下一段。
+\item 若 \(D\le0\)，接受 \(z\)。先计算
+\[
+ x_{\rm new}=z,\qquad y_{\rm new}=z+\beta_j(z-x_{\rm old}),\qquad
+ \beta_j=\frac{j-1}{j+2},
+\]
+再用 \(x_{\rm new},y_{\rm new}\) 替换 \(x,y\)，并令 \(j\leftarrow j+1\)。
+\end{enumerate}
+每段的第一次试探给出 \(z_1=Au\)。若进入第二次试探，因为 \(\beta_1=0\)，开始时 \(x=y=Au\)，因此 \(z_2=A^2u\)。这正是下面残差递推的两个起始值。
+
+一次试探需要计算一个梯度。本文采用\emph{拒绝后重算、未缓存梯度}的计费口径：若首次触发发生在段内第 $\tau$ 次试探，前 $\tau-1$ 次已接受试探和本次被拒绝的试探各计算一次梯度。再加上旧点重算，该段有 $\tau+1$ 次梯度调用；最后一次是在旧点 $x_{\rm old}$ 上重算。若先到达零点，则吸收终止，不再计重算。利用已保存梯度消除调用的实现可能有不同成本，本文不将这两种口径混用。
+
+\subsection{未切换残差}
+在第一次触发以前，算法与不执行分支切换的形式轨道相同。记该形式轨道的试探点为 $z_k=p_k(A)u$。初值和递推是
+\begin{equation}\label{eq:rec}
+ p_0(s)=1,\quad p_1(s)=s,\quad
+ (k+2)p_{k+1}(s)
+ =s\bigl[(2k+1)p_k(s)-(k-1)p_{k-1}(s)\bigr],\quad k\ge1.
+\end{equation}
+例如 $p_2=s^2$，因为第一次接受后动量系数为零。公式也可直接由
+$z_{k+1}=A[z_k+\beta_k(z_k-z_{k-1})]$ 得到。
+
+由于 $A$ 可逆，第 $k$ 次试探对应 $y=A^{-1}z_k$、旧点 $x=z_{k-1}$。若 $u\ne0$，令
+\[
+ w_i=\frac{\norm{P_i u}^2}{\norm{u}^2},\qquad
+ w\in\Delta_m:=\{w_i\ge0:\ \sum_iw_i=1\}.
+\]
+对每个分量都有
+\[
+ P_i(z_k-z_{k-1})=(p_k(s_i)-p_{k-1}(s_i))P_i u,\qquad
+ P_i(y-z_k)=\frac{1-s_i}{s_i}p_k(s_i)P_i u .
+\]
+不同特征空间相互正交，所以判据的内积等于各分量内积之和：
+\begin{equation}\label{eq:criterion}
+ \frac{D_k}{\norm{u}^2}=d_k(w):=\sum_{i=1}^m w_i c_k(s_i),
+ \qquad
+ c_k(s)=\frac{1-s}{s}\,p_k(s)\bigl(p_k(s)-p_{k-1}(s)\bigr).
+\end{equation}
+在首次触发以后，右侧仍然是一个定义良好的形式表达式，但已不代表原段的实际轨道。后面的紧性论证只使用首次触发之前的等同性。
+
+\section{Darboux 渐近与统一有限返回}
+\subsection{一个特征分量的判据符号}
+接下来用一族已知多项式表示 \(p_k\)，以便读出 \(k\) 较大时的振荡。下文用到的 Gegenbauer 多项式从 \(C_0^{(3/2)}(x)=1\) 和 \(C_1^{(3/2)}(x)=3x\) 开始，后续各项由证明中的三项递推确定。
+\begin{lemma}[残差的正交多项式表示]\label{lem:gegenbauer}
+对 $s\in(0,1)$、$k\ge1$，有
+\begin{equation}\label{eq:gegenbauer}
+ p_k(s)=s^{(k+1)/2}
+ \frac{C_{k-1}^{(3/2)}(\sqrt{s})}{C_{k-1}^{(3/2)}(1)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Gegenbauer 多项式满足
+\[
+ (n+1)C_{n+1}^{(3/2)}(x)
+ =(2n+3)xC_n^{(3/2)}(x)-(n+2)C_{n-1}^{(3/2)}(x),
+\]
+且 $C_n^{(3/2)}(1)=(n+1)(n+2)/2$。将右侧正规化并取 $n=k-1$，得到式\eqref{eq:rec}；$k=1,2$ 分别给出 $s,s^2$，故归纳成立。这也对应文献~\cite{kindermann} 的同一公式。
+\end{proof}
+
+令 $\theta=\arccos\sqrt{s}\in(0,\pi/2)$，$\phi_k=(k+\tfrac12)\theta-\tfrac{3\pi}{4}$。
+Jacobi 多项式的 Darboux 公式及其与 Gegenbauer 多项式的转换关系~\cite{dlmf} 给出
+\begin{equation}\label{eq:darboux}
+ p_k(s)=A_s s^{(k+1)/2}k^{-3/2}
+ \bigl(\cos\phi_k+O_s(k^{-1})\bigr),\qquad
+ A_s=\sqrt{\frac8\pi}\,(\sin\theta)^{-3/2}>0.
+\end{equation}
+为核对常数，可用
+$C_n^{(3/2)}=(n+2)P_n^{(1,1)}/2$，除以
+$C_n^{(3/2)}(1)$ 后只剩 $P_n^{(1,1)}/(n+1)$；而
+$P_n^{(1,1)}(\cos\theta)$ 的首项振幅为
+$\pi^{-1/2}n^{-1/2}(\sin(\theta/2)\cos(\theta/2))^{-3/2}$。
+式\eqref{eq:darboux} 的误差常数目前只对固定 $s$ 使用，不把它宣称为端点一致估计。
+
+比较相邻两项时，将 $(k-1)^{-3/2}$ 换成 $k^{-3/2}(1+O(k^{-1}))$，并用
+\[
+ \sqrt{s}\cos\phi-\cos(\phi-\theta)
+ =-\sin\theta\sin\phi.
+\]
+提出共同因子后，差值为
+\[
+ p_k(s)-p_{k-1}(s)
+ =-A_s s^{k/2}k^{-3/2}
+   \bigl(\sin\theta\,\sin\phi_k+O_s(k^{-1})\bigr).
+\]
+用式\eqref{eq:darboux} 乘以这条式子，再乘以 \((1-s)/s\)。
+这里 \(s^{(k+1)/2}s^{k/2}/s=s^k/\sqrt{s}\)，而 \(\sin\theta/\sqrt{s}=\tan\theta\)。由 \(2\sin\phi_k\cos\phi_k=\sin(2\phi_k)\)，式\eqref{eq:criterion} 的单模态系数满足
+\begin{equation}\label{eq:c-asymp}
+ c_k(s)=-B_s s^k k^{-3}
+ \bigl(\sin(2\phi_k)+O_s(k^{-1})\bigr),\qquad
+ B_s=\frac{(1-s)A_s^2\tan\theta}{2}>0.
+\end{equation}
+这里相邻相位的相减不可省略；仅知道 $p_k$ 振荡，尚不能确定 $p_k(p_k-p_{k-1})$ 的符号。
+
+\begin{lemma}[严格正子列]\label{lem:positive-subsequence}
+对每个固定 $s\in(0,1)$，存在 $\eta_s>0$ 和无穷多个整数 $k$，使
+$\sin(2\phi_k)\le-\eta_s$。因此沿一个无穷子列，充分大时
+\[
+ c_k(s)\ge\tfrac12 B_s\eta_s s^k k^{-3}>0.
+\]
+\end{lemma}
+\begin{proof}
+若 $\theta/\pi$ 无理，则模 $2\pi$ 的序列
+$2\phi_k=(2k+1)\theta-3\pi/2$ 在圆周上稠密；取正弦严格为负的一个闭弧即可。
+若 $\theta/\pi=p/q$ 已约分，则 $0<p/q<1/2$ 保证 $q\ge3$。一个周期由 $q$ 个等间距点组成，其正弦之和为零，且不可能全部落在仅有的两个正弦零点上。因此至少有一点的正弦严格为负，并在以后每个周期重复。最后将式\eqref{eq:c-asymp} 的误差控制在 $\eta_s/2$ 内。
+\end{proof}
+
+\subsection{从单模态提升到所有初值}
+\begin{theorem}[固定有限谱下的统一有限返回]\label{thm:return}
+固定 $s_1,\ldots,s_m\in(0,1)$。存在有限整数 $K$，使任意
+$w\in\Delta_m$ 都满足 $d_k(w)>0$，对某个 $1\le k\le K$ 成立。
+因此，对前述算法的每个非零零动量段，至迟在第 $K$ 次试探触发，或在此前到达零点终止。
+\end{theorem}
+\begin{proof}
+先固定 $w$，将相同谱值的权重合并，令 $s_*$ 为最大且权重非零的谱值，权重记作 $w_*>0$。由引理\ref{lem:positive-subsequence}，有一个子列使
+\[
+ w_*c_k(s_*)\ge C_*s_*^k k^{-3},\qquad C_*>0.
+\]
+其余活跃谱值满足 $s_i<s_*$，而式\eqref{eq:c-asymp} 给出
+$|c_k(s_i)|\le M_i s_i^k k^{-3}$，对充分大的 $k$ 成立。因此在同一子列上
+\[
+ d_k(w)\ge s_*^k k^{-3}
+ \left[C_*-\sum_{s_i<s_*}w_iM_i(s_i/s_*)^k\right]>0
+\]
+最终成立。此处使用的是有限模态下的严格指数分离；不要求统一的谱隙。
+
+接着定义
+\[
+ E_N=\{w\in\Delta_m:\ d_k(w)\le0\text{ 对 }1\le k\le N\}.
+\]
+每个 $E_N$ 都是紧单纯形中的闭集，且 $E_{N+1}\subset E_N$。
+上一段证明 $\bigcap_{N\ge1}E_N=\varnothing$。若所有 $E_N$ 非空，则紧性和有限交性质会给出非空交集，矛盾。故某个 $E_K$ 已为空。
+
+最后，实际算法在首次触发或终止之前等于形式轨道。若直到 $K$ 次试探既未终止也未触发，则该初值的权重属于 $E_K$，与其为空矛盾。
+\end{proof}
+
+\begin{corollary}[参数族的统一性]\label{cor:family}
+固定整数 $m\ge1$ 和 $0<\sigma<1/2$。对于最多 $m$ 个谱值且所有
+$s_i\in[\sigma,1-\sigma]$ 的模型，存在共同的有限界 $K(m,\sigma)$。
+谱值允许碰撞，不需要额外假设最小谱间距。
+\end{corollary}
+\begin{proof}
+将缺少的谱值补成零权重，在紧空间
+$[\sigma,1-\sigma]^m\times\Delta_m$ 上定义同样的 $E_N$。
+每个有限步系数 $c_k(s)$ 都连续，故 $E_N$ 闭。对于任一参数点，合并重合谱值后，定理\ref{thm:return} 的逐点证明仍然有效。
+再用闭集的有限交性质，即得一个对整个紧参数空间适用的 $K$。
+\end{proof}
+
+这是一项存在性结果。证明不提供 $K(m,\sigma)$ 的数值大小，也不把谱值接近时的渐近常数当作统一常数。
+
+\begin{proposition}[小步长端点不能忽略]\label{prop:small-h}
+固定一个正定矩阵 $H$。对于任意给定整数 $N$，当 $h>0$ 充分小时，每个非零零动量初值的前 $N$ 次形式试探均不触发，也不终止。因此，固定条件数并不足以给出对所有 $0<h<1/b$ 一致的返回上界。
+\end{proposition}
+\begin{proof}
+写 $s=1-\varepsilon$。对于固定的有限 $k$，式\eqref{eq:rec} 给出
+\[
+ p_k(1-\varepsilon)=1-a_k\varepsilon+O(\varepsilon^2),
+ \qquad a_0=0,\ a_1=1.
+\]
+令 $d_k=a_k-a_{k-1}$。从
+$p_{k+1}=s[p_k+\beta_k(p_k-p_{k-1})]$ 比较一次项得到
+\[
+ d_1=1,\qquad d_{k+1}=1+\beta_k d_k>0.
+\]
+因而对每个 $1\le k\le N$，当 $\varepsilon$ 充分小时，$p_k>0$ 且
+$p_k-p_{k-1}<0$。有限个 $k$ 和有限个 $\lambda_i$ 可共用一个足够小的
+$h$，取 $\varepsilon_i=h\lambda_i$ 后便有 $c_k(s_i)<0$。所有加权判据严格为负，而且各模态残差均非零。
+\end{proof}
+
+\section{一个最坏首次触发恰为十二的精确基准}
+取 $s_1=1/2$、$s_2=9/10$。这可由 $h=1$、
+$H=\diag(1/2,1/10)$ 实现，满足 $0<h<1/\lambda_{\max}(H)=2$。
+因此下述权重证书对应真实二次模型，而不只是任意指定的多项式数据。
+
+定义
+\[
+ b_i=\frac{c_5(s_i)+128c_{12}(s_i)}{129}.
+\]
+按式\eqref{eq:rec} 作有理数运算，得到
+\begin{equation}\label{eq:dual}
+ b_1=\frac{3409329}{1477468749824}>0,\qquad
+ b_2=\frac{2366243076860328051781857}
+ {88064000000000000000000000000}>0.
+\end{equation}
+对任何谱权 $w$，有
+\[
+ \frac{d_5(w)+128d_{12}(w)}{129}=w_1b_1+w_2b_2>0.
+\]
+因此 $d_5(w)$ 和 $d_{12}(w)$ 不可能同时非正，前 $12$ 次形式试探中必有严格正判据。这一证书允许实际算法更早触发；它没有假设第 $5$ 次以后仍然沿原段运行。
+
+另一方面，取真实初值 $u=(1,1)^T$，便有 $w=(1/2,1/2)$。相应归一化判据的精确值如下。
+\begin{center}\small
+\begin{tabular}{r@{\qquad}r@{\,/\,}l}
+\toprule
+$k$ & \multicolumn{2}{c}{$d_k((1/2,1/2))$：分子 / 分母}\\
+\midrule
+1 & $-13$ & $100$\\
+2 & $-353$ & $10000$\\
+3 & $-7239$ & $640000$\\
+4 & $-6714157$ & $1600000000$\\
+5 & $-1798218723$ & $640000000000$\\
+6 & $-144061231177$ & $64000000000000$\\
+7 & $-655555371366423$ & $409600000000000000$\\
+8 & $-324665823949857$ & $327680000000000000$\\
+9 & $-8685164253412653523$ & $16384000000000000000000$\\
+10 & $-365046811601145635553$ & $1638400000000000000000000$\\
+11 & $-115709893769684238974807$ & $2621440000000000000000000000$\\
+12 & $9608482294841648693883723$ & $262144000000000000000000000000$\\
+\bottomrule
+\end{tabular}
+\end{center}
+两个节点的 $p_k(1/2)$、$p_k(9/10)$ 在 $0\le k\le12$ 均非零，所以本基准的任何非零初值均不会提前终止。前 $11$ 次严格负，第 $12$ 次严格正，故最坏首次触发时刻确实是 $12$。按本文口径，该最坏段需要 $13$ 次梯度调用。
+
+更一般地，给定有限表 $c_k(s_i)$，一个简单的上界证书是寻找权重，使
+\[
+ \xi_k\ge0,\qquad\sum_{k=1}^N\xi_k=1,\qquad
+ \sum_{k=1}^N\xi_kc_k(s_i)>0\quad\text{对每个谱节点 }i\text{ 成立。}
+\]
+交换两次有限求和可知，若初值非零，则至多试探 $N$ 次即会触发，或在此之前到达零点并终止。寻找这样的
+$\xi$ 是有限线性规划问题；其严格正裕量必须保留。单纯得到非负裕量，不能排除算法始终走等号接受分支。
+
+\subsection{返回时刻与返回映射是两件事}
+设首次触发时刻为 $\tau$。触发试探 $p_\tau(A)u$ 被拒绝，真正保存并用于下一段的端点为
+\begin{equation}\label{eq:accepted-map}
+ u^+=A p_{\tau-1}(A)u,\qquad r_\tau(s)=s p_{\tau-1}(s).
+\end{equation}
+在 $u^+\ne0$ 时，新权重为
+\[
+ w_i^+=\frac{w_i r_\tau(s_i)^2}
+ {\sum_jw_j r_\tau(s_j)^2}.
+\]
+研究按真实梯度调用计算的长期速率时，必须同时处理这个分段返回映射、成本 $\tau+1$、严格判据边界和零点吸收。有限返回定理本身尚不给出这些量的尖锐渐近值。
+
+\section{闭凸锥上的投影 BB1：合法状态}
+本部分使用一个新的模型。设 $C\subset\R^n$ 为非空闭凸锥，
+$H=H^T\succ0$，目标函数为 $f(x)=x^THx/2$，最小点为 $0$。
+仍记 $a=\lambda_{\min}(H)$、$b=\lambda_{\max}(H)$，条件数为
+$\kappa=b/a$。不加入线性项，也不使用线搜索或步长截断。
+
+给定 $u\in C$ 和 $\tau\in[1/b,1/a]$，初始化
+\[
+ v=\Pi_C((I-\tau H)u).
+\]
+BB1 步长由相邻两点的位移确定。取 \(s=v-u\)，则梯度之差为 \(Hs\)，步长和下一点为
+\begin{equation}\label{eq:bb}
+ \alpha=\frac{\norm{s}^2}{s^THs},\qquad
+ w=\Pi_C((I-\alpha H)v).
+\end{equation}
+若 $v=0$，直接吸收终止。为分析成对状态，定义
+\begin{equation}\label{eq:compatible}
+ \Omega_{H,C}=\{(u,v)\in C\times C:\
+ v=\Pi_C((I-\tau H)u)\text{ 对某个 }\tau\in[1/b,1/a]\},
+\end{equation}
+以及 $F(u,v)=(v,w)$，$F(0,0)=(0,0)$。以下所有结论的初始对都属于
+$\Omega_{H,C}$，不允许任意给两个点后直接套用 BB 商。
+
+\begin{lemma}[锥投影的三个基本性质]\label{lem:projection}
+令 $C^\circ=\{r:\ip{r}{c}\le0\ \forall c\in C\}$。则
+$z=\Pi_C(y)$ 当且仅当
+\[
+ z\in C,\qquad r=y-z\in C^\circ,\qquad \ip{r}{z}=0.
+\]
+此外，$\Pi_C$ 非扩张，$\norm{\Pi_C y}\le\norm y$，且
+$\Pi_C(ty)=t\Pi_C(y)$ 对 $t\ge0$ 成立。
+\end{lemma}
+\begin{proof}
+闭凸集上的投影变分不等式为
+$\ip{y-z}{c-z}\le0$ 对所有 $c\in C$。分别取 $c=0$ 和 $c=2z$ 得到
+$\ip{y-z}{z}=0$，其余条件随即等价。对两点的变分不等式相加，得到
+$\norm{z_1-z_2}^2\le\ip{z_1-z_2}{y_1-y_2}$；Cauchy--Schwarz 不等式给出非扩张性。取第二个输入为零得到范数界。最后，将最小化
+$\norm{ty-z}^2$ 中的变量换成 $z=tc$，并使用锥性即可证明正齐次性；$t=0$ 单独显然成立。
+\end{proof}
+
+\begin{lemma}[相邻两点如何确定下一步]\label{lem:well-defined}
+$\Omega_{H,C}$ 是闭锥，且其中 $u=v$ 只可能发生在 $(0,0)$。
+因此 $F$ 定义良好、正齐次、连续，并将 $\Omega_{H,C}$ 映入自身。
+对任意非零相容状态，BB1 步长满足 $\alpha\in[1/b,1/a]$，而
+\begin{equation}\label{eq:stepbound}
+ \norm{w}\le(\kappa-1)\norm{v}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+若 $u=v=\Pi_C((I-\tau H)u)$，投影残差等于 $-\tau Hu$，由引理\ref{lem:projection} 得
+$0=-\tau u^THu$。由于 $\tau>0$ 且 $H$ 正定，必有 $u=0$。
+所以除原点外，割线非零，Rayleigh 商界给出 $\alpha\in[1/b,1/a]$；下一对自然仍相容。
+
+若相容对收敛，则其见证 $\tau$ 可在紧区间内取收敛子列，利用投影连续性可知极限仍相容。这证明闭性；正齐次性由锥投影的正齐次性和 BB 商的零次齐次性得到。
+
+最后，对于 $t\in[1/b,1/a]$，谱定理给出
+\[
+ \norm{I-tH}_{2}\le
+ \max\{1-a/b,\ b/a-1\}=\kappa-1.
+\]
+结合投影范数界得到式\eqref{eq:stepbound}，同一界也适用于初始化
+$v=\Pi_C((I-\tau H)u)$。在非原点，$F$ 的连续性由非零分母和投影连续性得到；在原点，上述界控制 $F(u,v)$ 的两个分量，故连续性仍成立。
+\end{proof}
+
+\section{条件数不超过二：完整收敛证明}
+当 $1\le\kappa<2$ 时，令 $q=\kappa-1<1$，式\eqref{eq:stepbound} 已给出
+$\norm{x_{k+1}}\le q\norm{x_k}$，包括初始化。
+$\kappa=1$ 时第一步直接到达零点。真正需要证明的是临界值 $\kappa=2$；此时范数界只能给出非增。
+
+\begin{lemma}[临界值处的一步严格下降]\label{lem:strict}
+若 $b=2a$ 且 $(u,v)\in\Omega_{H,C}$、$v\ne0$，则式\eqref{eq:bb} 的下一点满足
+$\norm w<\norm v$。
+\end{lemma}
+\begin{proof}
+假设反而 $\norm w=\norm v$。已知
+\[
+ \norm w\le\norm{(I-\alpha H)v}\le\norm v,
+\]
+所以第二个不等式也必须取等。将范数平方之差展开，
+\[
+ 0=\|v\|^2-\|(I-\alpha H)v\|^2
+   =\sum_i[1-(1-\alpha\lambda_i)^2]\|P_i v\|^2.
+\]
+每个求和项均非负，有非零分量的谱项必须单独取等。对 $\lambda\in[a,2a]$、
+$\alpha\in[1/(2a),1/a]$，有 $|1-\alpha\lambda|\le1$；由于
+$\alpha\lambda>0$，等号只能来自 $1-\alpha\lambda=-1$。
+这又迫使 $\alpha=1/a$、$\lambda=2a=b$。谱分解因此给出
+\begin{equation}\label{eq:equality-spectral}
+ Hv=bv,\qquad \alpha=1/a.
+\end{equation}
+另一方面，BB 商等于 \(1/a\) 给出
+\[
+ 0=s^T(H-aI)s=\sum_i(\lambda_i-a)\|P_i s\|^2.
+\]
+各项非负，故 \(s\) 的非零分量只在最小特征空间上，即 \(Hs=as\)。最小与最大特征空间正交，所以
+$\ip{s}{v}=0$，即
+\begin{equation}\label{eq:uv-inner}
+ \ip{u}{v}=\norm v^2.
+\end{equation}
+
+相容性给出某个 $\tau\in[1/b,1/a]$，使
+$v=\Pi_C((I-\tau H)u)$。令 $r=(I-\tau H)u-v$。
+锥投影要求 $\ip r v=0$，但式\eqref{eq:equality-spectral}--\eqref{eq:uv-inner} 同时给出
+\[
+ \ip r v
+ =\ip{u-v}{v}-\tau\ip{Hu}{v}
+ =-\tau\ip{u}{Hv}
+ =-\tau b\norm v^2<0,
+\]
+矛盾。故不可能取等，必须严格下降。
+\end{proof}
+
+\begin{theorem}[临界条件数下的一致线性收敛]\label{thm:bb-convergence}
+设 $C$ 为有限维闭凸锥，$H\succ0$，$\kappa\le2$。从任意相容初始对出发，投影 BB1 轨道收敛到 $0$。
+当 $\kappa=2$ 时，存在只依赖于 $H,C$ 的 $\rho\in(0,1)$，使
+\begin{equation}\label{eq:two-step}
+ V(F^kz)\le\rho^{\lfloor k/2\rfloor}V(z),\qquad
+ V(u,v)=\max\{\norm u,\norm v\},\quad z\in\Omega_{H,C}.
+\end{equation}
+因此每步的 R 线性因子可取 $\sqrt\rho$，前因子可取 $\rho^{-1/2}$。
+\end{theorem}
+\begin{proof}
+只须考虑 $\kappa=2$。式\eqref{eq:stepbound} 表明沿所有相容状态的单个向量范数非增，故 $V(Fz)\le V(z)$。
+若 $z=(u,v)\ne0$ 而 $v=0$，则 $Fz=(0,0)$，两步当然严格下降。
+若 $v\ne0$，设 $Fz=(v,w)$、$F^2z=(w,t)$。
+引理\ref{lem:strict} 和非增性给出
+\[
+ V(F^2z)=\max\{\norm w,\norm t\}=\norm w
+ <\norm v\le V(z).
+\]
+
+当 $C=\{0\}$ 时结论平凡。否则单位截面
+$S=\{z\in\Omega_{H,C}:V(z)=1\}$ 非空，且由闭性与有限维有界性知其紧。$F^2$ 连续，因此
+\[
+ q=\max_{z\in S}V(F^2z)<1.
+\]
+取 $\rho=(1+q)/2\in(0,1)$，正齐次性将 $S$ 上的估计延伸到全体相容状态，得到
+$V(F^2z)\le\rho V(z)$。迭代此式，再对奇数步使用一次非增性，得到式\eqref{eq:two-step}。
+\end{proof}
+
+定理不提供 $\rho$ 的可计算数值，也不要求 $C$ 多面体或具有有限个面。严格不等式是逐个非零相容状态证明的；统一收缩率随后才由紧性得到。
+
+\begin{corollary}[固定锥下的矩阵扰动稳定性]\label{cor:perturbation}
+固定闭凸锥 $C$ 和一个满足 $\kappa(H)=2$ 的矩阵 $H$。
+存在 $H$ 的正定邻域和 $\widehat\rho\in(0,1)$，使该邻域中的每个矩阵
+$\widetilde H$ 在其自身相容状态集上满足
+\[
+ V(F_{\widetilde H}^{2}z)\le\widehat\rho V(z).
+\]
+因而这些邻近模型也一致线性收敛，即使其中部分矩阵的条件数略大于 $2$。
+本文不给出这个邻域的定量半径。
+\end{corollary}
+\begin{proof}
+若 $C=\{0\}$，结论显然。否则仍令 $q=\max_{S}V(F_H^2z)<1$，取 $q<\widehat\rho<1$。
+若结论不成立，则存在 $H_j\to H$ 和 $V(z_j)=1$ 的
+$z_j\in\Omega_{H_j,C}$，使 $V(F_{H_j}^2z_j)>\widehat\rho$。
+取子列使 $z_j\to z$，并将相容性见证 $\tau_j$ 也取为收敛子列。
+特征值连续且附近最小特征值一致远离零，所以 $\tau_j$ 位于一个共同紧区间；其极限属于 $[1/b,1/a]$。故 $z\in S$。
+
+$F_H$ 对 $H$ 和相容状态联合连续：在非零状态，零割线已由引理\ref{lem:well-defined} 排除，可直接使用商的连续性；在趋于零的状态，一致有界的邻近条件数与式\eqref{eq:stepbound} 给出连续性。第二次迭代也如此。
+所以 $V(F_{H_j}^2z_j)\to V(F_H^2z)\le q<\widehat\rho$，矛盾。
+附近矩阵的一步界一致有界，即使不再非增，也足以从两步收缩推出全轨道线性收敛。
+\end{proof}
+
+\section{投影 BB1 可以单步扩张：一个相容精确例子}
+取
+\[
+ C=\R_+^2,\qquad H=\begin{pmatrix}1&-1\\-1&4\end{pmatrix},
+ \qquad u=\binom31,\qquad\tau=1.
+\]
+$H$ 的顺序主子式为 $1,3$，所以正定；两个特征值为
+$a=(5-\sqrt{13})/2$、$b=(5+\sqrt{13})/2$。由于 $a<1<b$，初始化步长
+$\tau=1$ 确实属于 $[1/b,1/a]$，条件数 $b/a>2$。
+
+逐项计算得到
+\[
+ Hu=\binom21,\quad v=\Pi_C(u-Hu)=\binom10,\quad
+ s=v-u=\binom{-2}{-1},\quad Hs=\binom{-1}{-2},
+\]
+所以
+\[
+ \alpha=\frac{\norm s^2}{s^THs}=\frac54,\qquad
+ Hv=\binom1{-1},\qquad
+ v-\alpha Hv=\binom{-1/4}{5/4},\qquad
+ w=\Pi_C(v-\alpha Hv)=\binom0{5/4}.
+\]
+这些点按实际发生次序列出如下。
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+点 & 坐标 & 平方范数 & 目标值 $x^THx/2$\\
+\midrule
+$u$：合法起点 & $(3,1)$ & $10$ & $7/2$\\
+$v$：初始化后 & $(1,0)$ & $1$ & $1/2$\\
+$w$：第一步 BB1 后 & $(0,5/4)$ & $25/16$ & $25/8$\\
+\bottomrule
+\end{tabular}
+\end{center}
+由 $v$ 到 $w$，范数和目标值同时严格增加。此例只否定这两个量的\emph{逐步单调性}，并没有构造周期轨道，也没有证明该轨道不收敛。它与条件数不超过 $2$ 的定理不冲突。
+
+\section{结论的边界、开放问题与核查记录}
+\subsection{仍需推进的数学问题}
+\begin{enumerate}[label=(\arabic*)]
+\item \textbf{返回时间的定量尺度。}
+远离 $s=0,1$ 且模态数有界时已有统一存在性，但本文没有给出可直接计算的通式。$ha\downarrow0$、$hb\uparrow1$ 的端点行为及其与谱碰撞的相互作用仍需单独分析。命题\ref{prop:small-h} 已排除只依赖条件数的全步长统一界；它不提供最优增长阶。
+\item \textbf{按真实调用计的长期速率。}
+应使用式\eqref{eq:accepted-map} 的实际端点、每段成本 $\tau+1$ 和严格分支条件。形式残差 $p_\tau$ 的衰减不能直接当成重启轨道的衰减。有限个数值段或一个周期候选也不足以给出全局尖锐速率。
+\item \textbf{任意条件数下的投影 BB1。}
+二维楔形锥和任意 SPD 矩阵的完整分类仍未由本文解决。若寻找射影周期，必须同时验证投影分支不等式、真实 BB 商、初始相容性及一周期径向乘子。上节的单步扩张只是一项诊断性算例。
+\item \textbf{非齐次与非零动量模型。}
+锥的平移、线性项、任意初始动量都会改变关键结构。特别是将一般约束最小点平移到零点，通常会引入线性项并改变可行域，不能因此套用定理\ref{thm:bb-convergence}。将轨道在某时刻进入二次区域，也不等于该二次轨道从零动量开始。
+\item \textbf{文献归属与可发表性。}
+残差表示、Darboux 公式和投影基本事实均属已有工具。本文给出的是指定假设下的完整研究整理；在检索并逐项对照相同模型以前，不对各定理作首创性声明。
+\end{enumerate}
+
+\subsection{证据与形式化边界}
+两项精确算例已由独立的有理数程序复算。重启证书使用整数和分数进行递推、比较和归零检查；投影例子直接核算两次矩阵乘法、BB 商、坐标截断、范数和目标值。没有用浮点近似决定严格符号。
+
+随文提供可复现的有理数程序、精确结果、Lean 源文件、公理输出和命题覆盖表。版本记录说明这些材料的核验时间与适用范围；这些材料本身不构成作者已经人工审定全文的声明。
+
+Lean 4.8.0 及其配套 mathlib 已实际核验十项有限断言：一般正加权证书推出严格触发，两个有理裕量的确切值与正性，均分权重前十一次严格负、第十二次严格正，两个模态在此前不归零，投影例子的坐标计算，以及等号排除末端的标量矛盾和两步最大值比较。所附 Lean 源文件与 2026 年 11 月 25 日成功验证的文件逐字节一致，本次整理核对了其 SHA-256 与成功日志；没有把哈希复核表述成一次新的 Lean 运行。原验证使用完整内核检查，公理输出只包含标准逻辑基础，不含未完成证明占位或另加的数学公理。精确例子的机器定义与式\eqref{eq:rec} 使用相同编号。
+
+一般 Darboux 渐近、紧性有限返回、矩阵谱等号分析及完整投影动力系统没有在此版本中被整体形式化为 Lean。特别是标量矛盾接口以上一步谱论和投影论给出的等式为假设；它不替代这些等式的数学证明。\emph{一项局部代数证书的通过，不能代替一般数学证明的作者核阅。}
+
+\begin{thebibliography}{9}
+\bibitem{yangyuan}
+S. Yang, Y.-x. Yuan.
+$R$-Linear Convergence of Barzilai--Borwein Methods on Strictly Convex Quadratics via Closed-Cone Homogeneous Dynamics.
+\href{https://arxiv.org/abs/2609.12100v1}{arXiv:2609.12100v1}, 2026.
+\bibitem{kindermann}
+S. Kindermann.
+Optimal-order convergence of Nesterov acceleration for linear ill-posed problems.
+\emph{Inverse Problems}, 2021.
+\href{https://arxiv.org/abs/2101.08168v1}{arXiv:2101.08168v1}, Theorem 1.
+DOI: \href{https://doi.org/10.1088/1361-6420/abf5bc}{10.1088/1361-6420/abf5bc}.
+
+\bibitem{dlmf}
+NIST Digital Library of Mathematical Functions.
+\href{https://dlmf.nist.gov/18.7.E1}{Eq. 18.7.1}
+(Gegenbauer--Jacobi relation) and
+\href{https://dlmf.nist.gov/18.15.E4_5}{Eq. 18.15.4\_5}
+(Jacobi Darboux formula). 查阅日期：2026-11-25.
+
+\bibitem{bao2025}
+C. Bao, L. Chen, J. Li, Z. Shen.
+Accelerated Gradient Methods with Gradient Restart: Global Linear Convergence.
+\href{https://arxiv.org/abs/2401.07672v2}{arXiv:2401.07672v2}, 2025.
+
+\bibitem{bao2026}
+C. Bao, L. Chen, J. Li, D. Sun.
+On the Nonoccurrence of Gradient Restart in Nesterov Accelerated Gradient Method.
+\href{https://arxiv.org/abs/2610.26546v1}{arXiv:2610.26546v1}, 2026.
+
+\bibitem{daifletcher}
+Y.-H. Dai, R. Fletcher.
+Projected Barzilai--Borwein methods for large-scale box-constrained quadratic programming.
+\emph{Numerische Mathematik}, 100 (2005), 21--47.
+DOI: \href{https://doi.org/10.1007/s00211-004-0569-y}{10.1007/s00211-004-0569-y}.
+\end{thebibliography}
+\end{document}

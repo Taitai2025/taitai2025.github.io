@@ -1,0 +1,377 @@
+% !TeX program = xelatex
+\documentclass[UTF8,fontset=none,zihao=-4,a4paper]{ctexart}
+\usepackage[left=25mm,right=25mm,top=24mm,bottom=24mm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\setCJKmainfont{SimSun}[BoldFont=Microsoft YaHei,ItalicFont=KaiTi]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{Microsoft YaHei}
+\setmainfont{Latin Modern Roman}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,booktabs,tabularx,array}
+\usepackage{tikz,xcolor,enumitem,hyperref,bookmark}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\definecolor{navy}{HTML}{173B55}
+\hypersetup{unicode,colorlinks=true,linkcolor=navy,urlcolor=navy,citecolor=navy,pdftitle={PCP 中常数背景与矩形扰动的精确最优性判据},pdfauthor={Anonymous working draft},pdfsubject={AI-assisted research working draft; author review pending; version 1.0, 2026-11-25}}
+\ctexset{section={format=\large\sffamily\bfseries\color{navy}},subsection={format=\normalsize\sffamily\bfseries}}
+\newtheoremstyle{plainzh}{7pt}{7pt}{\normalfont}{}{\bfseries}{。}{.5em}{}
+\theoremstyle{plainzh}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{remark}[theorem]{说明}
+\renewcommand{\proofname}{证明}
+\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\bm 1}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\nuc}[1]{\lVert #1\rVert_*}
+\newcommand{\op}[1]{\lVert #1\rVert_{\mathrm{op}}}
+\newcommand{\fro}[1]{\lVert #1\rVert_F}
+\newcommand{\ellone}[1]{\lVert #1\rVert_1}
+\newcommand{\maxnorm}[1]{\lVert #1\rVert_\infty}
+\newcommand{\sign}{\operatorname{sign}}
+\numberwithin{equation}{section}
+\setlength{\emergencystretch}{2em}
+\linespread{1.12}
+\setlist{itemsep=2pt,topsep=4pt,leftmargin=2em}
+\allowdisplaybreaks[2]
+\makeatletter
+\def\ps@research{%
+\def\@oddhead{\vbox{\hbox to\textwidth{\small PCP 的矩形扰动算例\hfil 工作稿 v1.1 · 待作者复核}\kern3pt\hrule height .3pt}}%
+\let\@evenhead\@oddhead
+\def\@oddfoot{\hfil\thepage\hfil}\let\@evenfoot\@oddfoot}
+\makeatother
+\pagestyle{research}
+
+\title{\vspace{-1.3em}\bfseries PCP 中常数背景与矩形扰动的\par 精确最优性判据}
+\author{匿名整理工作稿}
+\date{版本 1.1 · 2026 年 11 月 25 日}
+
+\begin{document}
+\maketitle
+\noindent\textbf{工作稿状态：} 本稿由 AI 辅助整理、推导核查、编程及文字编辑，尚待原作者独立复核；以可检查的研究工作稿公开，不是同行评审论文或新颖性认证。\par\medskip
+\begin{abstract}
+主成分追踪（PCP）用核范数与逐元素 $\ell_1$ 范数分离低秩背景和稀疏前景。对常数背景上的一个静止矩形目标，本文直接计算真实分解成为 PCP 最优解的精确权重区间。证明先将经典核范数对偶条件写成零行列和的矩阵约束，再利用块内置换平均，化为一个唯一的四块常数证书。由此同时得到亮块、暗块以及超过一半帧数的情形，并说明幅值不进入区间、明暗阈值不同及全程静止时不可唯一分离的原因。严格证书给出区间内部唯一恢复的充分条件，等号边界则只陈述最优性。另给出九组独立小矩阵求解及三个标量 Lean 引理；数值核验和标量形式化均不替代完整矩阵证明。本文将已有对偶理论用于一个可完整计算的确定性实例，不主张新的 PCP 方法或已确立的文献优先权。
+\end{abstract}
+\noindent\textbf{关键词：} 主成分追踪；鲁棒主成分分析；对偶证书；静止目标；正则化参数
+
+\section{问题与结论的范围}
+
+设视频每帧有 $p$ 个像素，共 $T$ 帧。将每帧作为一列，得到矩阵 $M\in\R^{p\times T}$。PCP 问题为
+\begin{equation}\label{eq:pcp}
+ \min_{L+S=M}J_\lambda(L,S),\qquad
+ J_\lambda(L,S)=\nuc L+\lambda\ellone S,\quad \lambda>0.
+\end{equation}
+这里 $\nuc L$ 是奇异值之和，$\ellone S=\sum_{i,j}|S_{ij}|$，$\maxnorm S=\max_{i,j}|S_{ij}|$。$\op S$ 表示谱范数，不能与逐元素最大范数混用。
+
+本文固定一个可以精确分析的真实分解：
+\begin{equation}\label{eq:model}
+ L_0=\beta\one_p\one_T^T,\qquad
+ S_0=c\one_A\one_B^T,\qquad \beta>0,\quad c\ne0.
+\end{equation}
+集合 $A\subset\{1,\ldots,p\}$ 是目标占据的像素，$B\subset\{1,\ldots,T\}$ 是目标出现的帧，记 $|A|=a$、$|B|=b$。除了第 \ref{sec:full} 节，均假设
+\begin{equation}\label{eq:proper}
+ 1\le a<p,\qquad 1\le b<T.
+\end{equation}
+$B$ 不必由连续帧组成；PCP 本身不区分连续停留与多次回到同一位置。$c>0$ 称为亮块，$c<0$ 称为暗块。若要求灰度非负，暗块可另取 $-\beta<c<0$，下文的最优性判据仍不变。
+
+我们问的是：给定 $\lambda$，\emph{指定的} $(L_0,S_0)$ 是否为 \eqref{eq:pcp} 的一个最优解，而非计算任意 $\lambda$ 下全部最优解。这个区别很重要：一个优化问题解得很准，也可能得到不同于真实背景与前景的分解。
+
+PCP 模型及其对偶证书有成熟的理论基础。Chandrasekaran 等\cite[第 4.1 节、Proposition 2]{CSPW}给出共同次梯度的必要充分最优性条件及严格证书的唯一性充分条件；Cand\`es 等\cite[第 2.3 节、Lemma 2.4]{CLMW}在 PCP 分析中明确使用并归属这一框架。本文不把这些原则作为新结果，也不借用随机支撑恢复定理保证下文的确定性矩形实例。
+
+本文的具体工作是对\eqref{eq:model}逐步完成证书的对称约化、四块谱范数计算和明暗参数区间的求解。本主题由课程小组项目引出，静止斑块问题见相应未发表课程报告；本匿名版本所用矩阵均为独立重新生成的合成样例。本文给出完整的独立阅读路径，不要求取得原报告，也不把小组项目的全部工作归于某一个人。已有文献的结构可辨识性与切空间分析覆盖本工作的基本方法；目前的有限先行文献核查不足以确认这组专门公式的首次出现。因此，本稿定位为显式算例与可复核推导，而非新的恢复原理。
+
+\section{从最优性到一个四块矩阵}
+
+\subsection{共同次梯度的条件}
+
+记
+\begin{equation}\label{eq:defs}
+ \ell=\frac1{\sqrt{pT}},\qquad
+ u=\frac{\one_p}{\sqrt p},\qquad v=\frac{\one_T}{\sqrt T},\qquad
+ \omega=\sqrt{\frac{(1-a/p)(1-b/T)}{ab}}.
+\end{equation}
+这里的 \(u,v\) 给出常数背景的左右单位方向，所以 \(L_0=\beta\sqrt{pT}\,uv^T\) 的秩为一。采用矩阵内积 \(\langle X,Y\rangle=\operatorname{tr}(X^TY)\)。若 \(Q\) 是凸函数 \(F\) 在 \(X\) 的一个次梯度，便有 \(F(X+H)\ge F(X)+\langle Q,H\rangle\) 对所有 \(H\) 成立。对于约束 \(L+S=M\)，两部分的任意可行扰动分别为 \(H,-H\)。若同一个 \(Q\) 分别是核范数和 \(\lambda\ell_1\) 范数的次梯度，两条线性项相消：
+\[
+ J_\lambda(L_0+H,S_0-H)-J_\lambda(L_0,S_0)
+ \ge\langle Q,H\rangle-\langle Q,H\rangle=0.
+\]
+所以找出这样的矩阵就能证明指定分解是最优解。下文也给出这项条件为何必要。
+
+\begin{lemma}[公共对偶证书]\label{lem:dual}
+在 \eqref{eq:model}--\eqref{eq:proper} 下，$(L_0,S_0)$ 为 \eqref{eq:pcp} 的最优解，当且仅当存在矩阵 $W$ 满足
+\begin{align}
+ &W\one_T=0,\quad \one_p^TW=0,\quad \op W\le1,\label{eq:W}\\
+ &Q=\ell\one_p\one_T^T+W,\quad
+ Q_{ij}=\lambda\sign(c)\ \ ((i,j)\in A\times B),\label{eq:Q}\\
+ &|Q_{ij}|\le\lambda\ \ ((i,j)\notin A\times B).\notag
+\end{align}
+\end{lemma}
+\begin{proof}
+消去 $S=M-L$ 后，目标是两个处处有限凸函数之和。有限维凸函数的次微分求和法则与最优性条件给出
+\[
+0\in\partial\nuc{L_0}-\lambda\partial\ellone{S_0},
+\]
+即存在公共矩阵 $Q\in\partial\nuc{L_0}\cap\lambda\partial\ellone{S_0}$。后一个次微分逐元素计算：非零位置等于 $\lambda\sign(c)$，零位置落在 $[-\lambda,\lambda]$。
+
+为说明前一个条件，记 \(N^*(Q)=\sup_{N(Y)\le1}\langle Q,Y\rangle\)。任意范数 \(N\) 在非零点 \(X\) 的次梯度满足 \(N^*(Q)\le1\) 与 \(\langle Q,X\rangle=N(X)\)；这由次梯度不等式依次取 $0$、$2X$ 和任意点得到，反向也由对偶范数不等式成立。核范数的对偶范数是谱范数，故此处要求 $\op Q\le1$ 与 $u^TQv=1$。由于 $u,v$ 均为单位向量，等号迫使 $Qv=u$、$Q^Tu=v$。令 $W=Q-uv^T$，即有 $Wv=0$、$W^Tu=0$。在相应正交分解下，$Q$ 是标量块 $1$ 与块 $W$ 的直和，故 $\op Q=\max\{1,\op W\}$。这正是 \eqref{eq:W}--\eqref{eq:Q}。
+\end{proof}
+
+上述证明同时说明，对偶可行集为 $\op Q\le1$、$\maxnorm Q\le\lambda$，对偶目标为 $\ip MQ$。公共证书满足 $\ip MQ=J_\lambda(L_0,S_0)$，从而也能直接用弱对偶验证充分性。
+
+\subsection{块内平均为什么没有丢掉必要性}
+
+令 $s=\sign(c)\in\{1,-1\}$，并记
+\begin{equation}\label{eq:delta}
+ d=s\lambda-\ell.
+\end{equation}
+对 $A$ 与 $A^c$ 内部的行置换、$B$ 与 $B^c$ 内部的列置换分别平均任意可行 $W$。每次置换保持零行列和及谱范数；谱范数的凸性保证平均后仍不超过 $1$。支撑与逐元素限制也不变。因此，只要存在某个证书，就存在四个区域各为常数的证书。
+
+在平均后的 \(W\) 中，写第一块的常数为 \(d\)，其余三块的常数为 \(w_{12},w_{21},w_{22}\)。一条 \(A\) 内的行有 \(b\) 项为 \(d\) 和 \(T-b\) 项为 \(w_{12}\)，故 \(bd+(T-b)w_{12}=0\)。一条 \(B\) 内的列同理给出 \(ad+(p-a)w_{21}=0\)。最后用一条 \(A^c\) 内的行，得到 \(bw_{21}+(T-b)w_{22}=0\)。解这三式即得
+\begin{equation}\label{eq:fourblocks}
+ W_d=\begin{pmatrix}
+ d&-\dfrac{db}{T-b}\\[4pt]
+ -\dfrac{da}{p-a}&\dfrac{dab}{(p-a)(T-b)}
+ \end{pmatrix}_{\!\text{按 }(A,A^c)\times(B,B^c)\text{ 分块}}.
+\end{equation}
+这里每一个标量表示相应整块的共同元素，不是一个普通 $2\times2$ 矩阵的谱范数问题。
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[font=\small,x=1cm,y=1cm]
+\fill[gray!18] (0,1.5) rectangle (2.6,2.8);
+\draw (0,0) rectangle (6,2.8);
+\draw (2.6,0)--(2.6,2.8);\draw (0,1.5)--(6,1.5);
+\node at (1.3,2.15) {$d$};
+\node at (4.3,2.15) {$-db/(T-b)$};
+\node at (1.3,.75) {$-da/(p-a)$};
+\node at (4.3,.75) {$dab/[(p-a)(T-b)]$};
+\node[above] at (1.3,2.9) {$B$：$b$ 列};
+\node[above] at (4.3,2.9) {$B^c$：$T-b$ 列};
+\node[left] at (-.15,2.15) {$A$：$a$ 行};
+\node[left] at (-.15,.75) {$A^c$：$p-a$ 行};
+\node[below,align=center] at (3,-.15) {阴影块固定支撑上的值；其余三块由零行列和确定。};
+\end{tikzpicture}
+\caption{证书 $W_d$ 的四块结构。谱范数必须计入每块的实际行列数。}
+\end{figure}
+
+设 $x=\one_A-(a/p)\one_p$、$y=\one_B-(b/T)\one_T$，则
+\begin{equation}\label{eq:rankone}
+ W_d=\frac{d}{(1-a/p)(1-b/T)}xy^T,\qquad
+ \op{W_d}=\frac{|d|}{\omega},
+\end{equation}
+因为 $\|x\|^2=a(1-a/p)$、$\|y\|^2=b(1-b/T)$。
+
+\begin{theorem}[统一的精确判据]\label{thm:unified}
+在 \eqref{eq:model}--\eqref{eq:proper} 下，指定分解 $(L_0,S_0)$ 为 PCP 最优解，当且仅当
+\begin{align}
+ |d|&\le\omega,\label{eq:test1}\\
+ \left|\ell-\frac{db}{T-b}\right|&\le\lambda,\label{eq:test2}\\
+ \left|\ell-\frac{da}{p-a}\right|&\le\lambda,\label{eq:test3}\\
+ \left|\ell+\frac{dab}{(p-a)(T-b)}\right|&\le\lambda.\label{eq:test4}
+\end{align}
+\end{theorem}
+\begin{proof}
+必要性由平均化和 \eqref{eq:fourblocks}--\eqref{eq:rankone} 得到。反之，取显式 $W_d$，它的行列和为零，\eqref{eq:test1} 保证谱范数条件，其余三式恰是支撑外限制。支撑内 $\ell+d=s\lambda$，故引理 \ref{lem:dual} 适用。
+\end{proof}
+
+\section{亮块的临界权重}
+
+\begin{theorem}[不超过一半的亮块]\label{thm:bright}
+若 $c>0$、$a\le p/2$、$b\le T/2$，则 $(L_0,S_0)$ 为 PCP 最优解，当且仅当
+\begin{equation}\label{eq:bright}
+ \boxed{\quad\ell\le\lambda\le\ell+\omega.\quad}
+\end{equation}
+\end{theorem}
+\begin{proof}
+证书 $Q$ 的每行平均值是 $\ell$。取一行 $i\notin A$，它的元素均不超过 $\lambda$，所以 $\lambda\ge\ell$。于是 $d=\lambda-\ell\ge0$，谱范数条件给出 $\lambda\le\ell+\omega$。
+
+反之，设 $0\le d\le\omega$。由于 $a/(p-a)\le1$、$b/(T-b)\le1$，两个负块的绝对值不超过 $d$，正的右下块也不超过 $d$。因而支撑外的 $Q=\ell+W_d$ 落在 $[\ell-d,\ell+d]$ 内；$\ell-d=2\ell-\lambda\ge-\lambda$，$\ell+d=\lambda$。统一判据的四项均成立。
+\end{proof}
+
+阈值与 $\beta$、$|c|$ 无关，因为核范数次微分只看非零奇异空间，$\ell_1$ 次微分只看支撑和符号。这个结论限于指定的秩一常数背景模型；它没有说任意复杂视频的恢复阈值都与对比度无关。
+
+\subsection{超过一半帧数时的附加限制}
+
+若 $T/2<b<T$，支撑行的非支撑部分需要满足
+\[
+ \ell-(\lambda-\ell)\frac{b}{T-b}\ge-\lambda
+ \quad\Longleftrightarrow\quad
+ \lambda(2b-T)\le\ell T.
+\]
+同理，$a>p/2$ 时须有 $\lambda(2a-p)\le\ell p$。右下块还要求
+\begin{equation}\label{eq:corner}
+ (\lambda-\ell)\left(\frac{ab}{(p-a)(T-b)}-1\right)\le0.
+\end{equation}
+
+\begin{corollary}[任意真矩形的亮块区间]\label{cor:generalbright}
+设 $c>0$。若 $a/p+b/T\le1$，令
+\[
+ U_a=\begin{cases}+\infty,&2a\le p,\\ \ell p/(2a-p),&2a>p,\end{cases}
+ \qquad
+ U_b=\begin{cases}+\infty,&2b\le T,\\ \ell T/(2b-T),&2b>T.\end{cases}
+\]
+则最优性当且仅当 $\ell\le\lambda\le\min\{\ell+\omega,U_a,U_b\}$。
+若 $a/p+b/T>1$，则最优性当且仅当 $\lambda=\ell$。
+\end{corollary}
+\begin{proof}
+$\lambda\ge\ell$ 仍必要。此时两个负块的上界自动成立，下界分别给出 $U_a,U_b$；右下块为正，其上界正是 \eqref{eq:corner}。当 $a/p+b/T\le1$ 时，$ab\le(p-a)(T-b)$，该项自动成立。反之，它迫使 $\lambda-\ell=0$。$\lambda=\ell$ 时 $W=0$ 本身总是一个可行证书。
+\end{proof}
+
+常用的长停留设定对应 $a\le p/2$ 与 $T/2<b\le(1-a/p)T$，所以只需在 \eqref{eq:bright} 的上界再取 $\ell T/(2b-T)$。这里保留 $a/p+b/T$ 的限制；去掉它就会漏掉右下块约束。
+
+\subsection{面积与停留时间怎样相互制约}
+
+把 \eqref{eq:bright} 的谱范数约束平方、整理，在 $\lambda\ge\ell$ 时得到
+\begin{equation}\label{eq:bmax}
+ b\le b_{\max}:=
+ \frac{T}{1+Ta(\lambda-\ell)^2/(1-a/p)}.
+\end{equation}
+式 \eqref{eq:bmax} 是上界 $\lambda\le\ell+\omega$ 的等价改写。只有同时保留本节的其它条件，它才是完整最优性判据。例如 $b>T/2$ 时还须检查 $U_b$，不能单独使用 $b_{\max}$。
+
+还有一个不依赖常数背景的必要条件。若 $(L_*,S_*)$ 是任意 PCP 最优解，$R$ 由 $S_*$ 的某些元素保留、其余置零得到，则
+\begin{equation}\label{eq:price}
+ \lambda\ellone R\le\nuc R.
+\end{equation}
+事实上，$(L_*+R,S_*-R)$ 可行，$\ellone{S_*-R}=\ellone{S_*}-\ellone R$，且 $\nuc{L_*+R}\le\nuc{L_*}+\nuc R$；若 \eqref{eq:price} 不成立就得到更小目标值。对 $R=c\one_A\one_B^T$，两范数分别为 $|c|ab$、$|c|\sqrt{ab}$，故
+\begin{equation}\label{eq:budget}
+ \lambda\sqrt{ab}\le1\quad\Longleftrightarrow\quad ab\le\lambda^{-2}.
+\end{equation}
+这个面积乘帧数的预算是必要条件。它没有包含背景切空间的限制，不能替代精确区间。
+
+\section{暗块的区间与明暗不对称}
+
+\begin{theorem}[暗块的精确区间]\label{thm:dark}
+设 $c<0$。若 $a\ge p/2$ 或 $b\ge T/2$，不存在使指定分解最优的正权重。若 $a<p/2$、$b<T/2$，则最优性当且仅当
+\begin{equation}\label{eq:dark}
+ \boxed{\quad
+ \ell\max\left\{\frac{T}{T-2b},\frac{p}{p-2a}\right\}
+ \le\lambda\le\omega-\ell.
+ \quad}
+\end{equation}
+若左端大于右端，该区间为空。
+\end{theorem}
+\begin{proof}
+此时 $d=-(\lambda+\ell)$。记 $t=\lambda+\ell>0$，谱范数条件等价于 $\lambda\le\omega-\ell$。支撑行在非支撑列上的证书值为 $\ell+tb/(T-b)>0$，上界要求
+\[
+ \ell+\frac{(\lambda+\ell)b}{T-b}\le\lambda
+ \quad\Longleftrightarrow\quad
+ \ell T\le\lambda(T-2b).
+\]
+左端严格为正，因此 $b<T/2$ 必要，随后得到第一个下界。支撑列的同一计算给出 $a<p/2$ 及第二个下界。
+
+反之，若 \eqref{eq:dark} 成立，前两块限制和谱范数限制已经满足。令 $r=ab/[(p-a)(T-b)]$，由严格半数条件得 $0<r<1$。右下块 $Q_{22}=\ell-tr$ 满足 $Q_{22}>\ell-t=-\lambda$；下界还给出 $\lambda>\ell$，所以 $Q_{22}<\ell<\lambda$。统一判据成立。
+\end{proof}
+
+亮块与暗块的差别不是计算误差。背景奇异向量对应的基本证书为正矩阵 $\ell\one\one^T$。亮块只需把支撑值从 $\ell$ 移到 $\lambda$，幅度为 $\lambda-\ell$；暗块要移到 $-\lambda$，幅度为 $\lambda+\ell$，并在其它位置补偿零行列和。所以暗块的上界比相同 $a,b$ 的亮块少 $2\ell$，下界也更高。
+
+\section{最优性何时能够升级为唯一恢复}
+
+令 $\Omega$ 为支撑在 $A\times B$ 上的矩阵空间，$\mathcal T$ 为秩一矩阵 $L_0$ 的切空间：
+\[
+ \mathcal T=\{u z^T+w v^T:z\in\R^T,\ w\in\R^p\}.
+\]
+这个空间由秩一矩阵的一阶变化得到：若 \(\sigma=\beta\sqrt{pT}\)，则
+\((\sigma u+\varepsilon w)(v+\varepsilon z)^T\) 的一次项为 \(wv^T+\sigma uz^T\)。其正交补由 \(Wv=0\)、\(W^Tu=0\) 刻画，因而
+\[
+ P_{\mathcal T^\perp}H=(I-uu^T)H(I-vv^T).
+\]
+\(P_{\Omega^\perp}H\) 则保留支撑外的元素，并将支撑内置零。前一个投影为零恰好表示 \(H\in\mathcal T\)，后一个为零恰好表示 \(H\in\Omega\)。因为 \(u,v\) 均为常向量，\(H\in\mathcal T\) 等价于 \(H_{ij}=r_i+t_j\)。
+
+\begin{lemma}\label{lem:intersection}
+在 \eqref{eq:proper} 下，$\mathcal T\cap\Omega=\{0\}$。
+\end{lemma}
+\begin{proof}
+取 $i_0\notin A$、$j_0\notin B$。若 $H\in\mathcal T\cap\Omega$，则对任意 $i,j$，
+\[
+ H_{ij}=H_{i j_0}+H_{i_0 j}-H_{i_0j_0}=0,
+\]
+因为右侧三项均在支撑外。
+\end{proof}
+
+\begin{proposition}[严格证书的唯一性]\label{prop:unique}
+若定理 \ref{thm:unified} 的四个不等式全为严格不等式，则 $(L_0,S_0)$ 是唯一最优解。
+\end{proposition}
+\begin{proof}
+这是经典严格对偶证书的论证\cite[Proposition 2]{CSPW}\cite[Lemma 2.4]{CLMW}，在此写出所需步骤。令 $W=W_d$、$Q=uv^T+W$，并置
+\[
+ \eta=1-\op W>0,\qquad
+ \xi=\lambda-\maxnorm{P_{\Omega^\perp}Q}>0.
+\]
+对任意可行扰动 $(L_0+H,S_0-H)$，利用核范数与谱范数对偶性，在 $\mathcal T^\perp$ 中选取谱范数不超过 $1$ 的 $Z$，使
+$\ip ZH=\nuc{P_{\mathcal T^\perp}H}$。具体地，取 $P_{\mathcal T^\perp}H$ 的紧致奇异值分解（只保留非零奇异值） $U_H\Sigma_HV_H^T$，令 $Z=U_HV_H^T$；其列、行空间分别正交于 $u,v$。零矩阵时取 $Z=0$。于是 $W+\eta Z\in\mathcal T^\perp$ 且谱范数不超过 $1$，仍给出核范数次梯度。故
+\[
+ \nuc{L_0+H}\ge\nuc{L_0}+\ip QH+
+ \eta\nuc{P_{\mathcal T^\perp}H}.
+\]
+在支撑内，$\lambda\ellone{S_0-H}$ 的次梯度下界为 $-\ip{P_\Omega Q}H$；支撑外 $S_0=0$，并有
+$\lambda\ellone{P_{\Omega^\perp}H}\ge-\ip{P_{\Omega^\perp}Q}H+\xi\ellone{P_{\Omega^\perp}H}$。两式相加得到
+\begin{equation}\label{eq:uniquegap}
+ J_\lambda(L_0+H,S_0-H)-J_\lambda(L_0,S_0)
+ \ge\eta\nuc{P_{\mathcal T^\perp}H}+\xi\ellone{P_{\Omega^\perp}H}.
+\end{equation}
+若 $H\ne0$，引理 \ref{lem:intersection} 保证右侧至少一项严格为正，因而唯一。
+\end{proof}
+
+因此，亮块在 $a/p+b/T<1$ 且 $\ell<\lambda<\min\{\ell+\omega,U_a,U_b\}$ 时唯一恢复；暗块在 \eqref{eq:dark} 的严格内部唯一恢复。端点处存在证书仍保证最优，但本命题不给出唯一性。特别是亮块 $\lambda=\ell$ 时，$M$ 逐元素为正，另一个分解 $(0,M)$ 满足
+\[
+ \ell\ellone M=\beta\sqrt{pT}+\ell cab=J_\ell(L_0,S_0),
+\]
+所以这个下端点一定不是唯一恢复。其它端点不在本文中统一分类。
+
+\subsection{全程不动的目标}\label{sec:full}
+
+若 $1\le a\le p$ 且 $b=T$，对于 $i\in A$，证书 $Q$ 的整行都等于 $s\lambda$，但该行平均值仍须为 $\ell$。亮块因而只可能 $\lambda=\ell$，此时 $W=0$ 可行，而 $(0,M)$ 同样最优；暗块则要求 $-\lambda=\ell$，对 $\lambda>0$ 不可能。故在这个模型中，全程不动的目标不能由 PCP 唯一识别为给定前景。这个结论不是所有背景分离模型的不可识别性定理：已知空背景、时间先验或其它观测可以改变问题。
+
+\subsection{把判据用于一个 \(4\times4\) 矩阵}
+取 \(p=T=4\)，\(A,B\) 各含一个位置，且 \(c>0\)。此时 \(\ell=1/4\)，取 \(\lambda=1/2\) 得 \(d=\lambda-\ell=1/4\)。式\eqref{eq:fourblocks} 给出的 \(W_d\) 四块值依次为 \(1/4,-1/12,-1/12,1/36\)。向每个元素加上 \(\ell\) 得证书 \(Q\)：支撑内为 \(1/2\)，支撑外为 \(1/6\) 或 \(5/18\)，均严格小于 \(\lambda\)。由于 \(\omega=3/4\)，\(W_d\) 的谱范数为 \(|d|/\omega=1/3<1\)。又有 \(a/p+b/T=1/2<1\)，因此满足本文的严格证书条件，指定的 \((L_0,S_0)\) 在该 \(\lambda\) 下是唯一最优解。这个例子逐项使用了证书的条件，矩形的幅值大小无需代入这些计算。
+
+\section{独立数值核验与复现范围}
+
+本版本重新运行的合成验证使用 $p=24,T=20,\beta=0.5,c=\pm0.25$ 的小矩阵，分别取亮块 $(a,b)=(4,6)$、长停留亮块 $(4,16)$ 与暗块 $(2,4)$。每个区间测试下界的 $0.98$ 倍、区间中点及上界的 $1.02$ 倍。程序使用独立写出的两块 ADMM、完整 SVD 与 $\rho=1$，两种残差均低于 $10^{-10}\max\{1,\fro M\}$ 时停止，预算为 50000 步。
+
+表 \ref{tab:verify} 的 $F_0$ 是指定分解目标值，$F_{\mathrm{feas}}$ 将求得的 $L$ 配上 $S=M-L$ 后按浮点精度构造的可行目标。区间外 $F_0-F_{\mathrm{feas}}>0$ 给出目标值更小的数值候选分解；这些数值差未通过区间算术认证，其作用是核对解析判据，而非另作严格数值证明。
+
+\input{verification_rows.tex}
+\begin{table}[htbp]
+\centering\small
+\caption{本次九组独立小矩阵求解。科学记数法中的 e 表示 10 的幂。}\label{tab:verify}
+\begin{tabular}{@{}cccrrrr@{}}\toprule
+符号 & $(a,b)$ & 权重位置 & $\lambda$ & 步数 & 相对背景误差 & $F_0-F_{\rm feas}$\\\midrule
+\verificationRows
+\bottomrule\end{tabular}
+\end{table}
+
+本版本的九次求解均达到停止条件。三个区间内部的背景相对误差最大为 $1.29\times10^{-10}$。表中内部点约 $10^{-9}$ 量级的负差表示计算得到的可行目标略高于精确目标，符合停止误差。将最终乘子变号并缩放至 $\op Q\le1$、$\maxnorm Q\le\lambda$ 后，得到对偶下界；九组可行原始目标与该下界的最大间隙为 $5.36\times10^{-9}$。显式证书的四块值、实际谱范数及零行列和也逐项核对。另检查了 $a/p+b/T>1$ 的亮块：在 $\lambda=\ell$ 可行，邻近两侧违反支撑外约束。
+
+这些验证只检查公式、实现及所选尺寸的对应，不证明所有尺寸的定理，也不支持真实视频上的普适性能结论。全部输入由代码中的常数和矩形指标直接生成，没有真实视频、合作数据或身份信息。浮点谱范数、对偶缩放和目标间隙未作向外舍入；它们是数值诊断，不是经过区间认证的上下界。
+
+附带 \texttt{exact\_checks.py} 用 Python 有理数分别实现统一四项判据与亮暗区间判据。在 $2\le p,T\le9$、所有真矩形、两种符号及离散正权重上逐项比较，还加入 $\lambda/\ell=1$ 及存在的有理半数边界。谱范数限制通过平方转成有理数不等式，因而这部分比较不受浮点误差影响。有限枚举仍不能替代符号证明；实际用例数与结果见 \texttt{exact\_checks.json}。
+
+\clearpage
+\section{标量形式化与进一步问题}
+
+随文的 \texttt{ScalarThreshold.lean} 使用 Lean 4.8.0 与锁定版本的 Mathlib，陈述并证明三项标量事实：非负 $a,b,\lambda$ 下 $\lambda\sqrt{ab}\le1$ 与 $\lambda^2ab\le1$ 等价；$\lambda>0$ 时与 $ab\le\lambda^{-2}$ 等价；若 $T\le2b$、$\ell,T,\lambda>0$，则不可能有 $\ell T\le\lambda(T-2b)$。最后一项正是暗块半数障碍的代数部分。
+
+该文件没有形式化核范数、次微分、置换平均、切空间或完整矩阵最优性。同日准备私有前稿时的成功检查记录及源码哈希单独保存；本公开整理阶段未重建已清理的 Mathlib 缓存，故不另称新完成一次 Lean 构建。不能据三个标量引理称整篇文章已经机器验证。
+
+本文的精确区间只解决一个结构明确的确定性模型。下一步可考虑多个矩形、常数背景的扰动、严格证书余量对误差的控制，以及等号边界的唯一性分类。若要把本文作为独立研究工作推进，还需系统比对已有结构稀疏 PCP、参数敏感性与可辨识性文献。当前结论定位为显式对偶证书的可检查整理；没有确立文献优先权，也没有声称已经通过独立人工审查或同行评审。
+
+\section*{可复现性、来源与 AI 辅助说明}
+本稿包中的 \texttt{verify.py} 生成九组小矩阵结果与论文表格；\texttt{exact\_checks.py} 生成有限有理数枚举；\texttt{ScalarThreshold.lean} 为三项标量事实的源文件。软件版本、输入、输出身份和执行记录随包保存。已有公共对偶理论的归属见下列原始论文；课程小组项目及其未发表报告仅作为问题来源，原组员身份保留在私人来源记录；公开包不附原组代码、真实视频、历史实验数据或个人材料。合成 ADMM 是归档整理阶段的独立实现，不复制小组原实验程序。
+
+本次整理使用 AI 协助检索、对照公式、编写检查程序及编辑正文。AI 辅助核查与有限实验不是原作者的独立复核。稿件尚待作者检查数学语义、来源归属与表述；版本号和状态在封面保留。任何后续更正应以新版本记录，不覆盖原始验证证据。
+
+\begin{thebibliography}{9}
+\bibitem{CSPW}
+V. Chandrasekaran, S. Sanghavi, P. A. Parrilo, A. S. Willsky.
+Rank-Sparsity Incoherence for Matrix Decomposition.
+\emph{SIAM Journal on Optimization}, 21(2):572--596, 2011.
+\href{https://doi.org/10.1137/090761793}{doi:10.1137/090761793}.
+第 4.1 节、Proposition 2；\href{https://willsky.lids.mit.edu/publ_pdfs/206_pub_SIAMonline.pdf}{作者公开全文}。
+\bibitem{CLMW}
+E. J. Cand\`es, X. Li, Y. Ma, J. Wright.
+Robust Principal Component Analysis? \emph{Journal of the ACM}, 58(3), Article 11, 2011.
+\href{https://doi.org/10.1145/1970392.1970395}{doi:10.1145/1970392.1970395}.
+公开预印本 \href{https://arxiv.org/abs/0912.3599v1}{arXiv:0912.3599v1}，第 2.3 节及 Lemma 2.4。
+\end{thebibliography}
+\end{document}

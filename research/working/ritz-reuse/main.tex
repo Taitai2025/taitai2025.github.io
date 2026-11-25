@@ -1,0 +1,268 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,booktabs,microtype,xcolor}
+\usepackage[colorlinks,linkcolor=blue!50!black,citecolor=blue!50!black,urlcolor=blue!60!black]{hyperref}
+\hypersetup{pdftitle={An exact bound for repeating historical Ritz sweeps},pdfauthor={}}
+\newtheorem{theorem}{Theorem}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\title{An Exact Bound for Repeating\\ Historical Ritz Sweeps}
+\author{}
+\date{25 November 2026 \quad\textbullet\quad Version 0.2.0}
+\begin{document}
+\maketitle
+\begin{center}
+\small AI-assisted research working paper. Author review is pending.\\
+The release is anonymous and draws on joint research.
+\end{center}
+\begin{abstract}
+A sequence of historical Ritz values can be used more than once before refreshing the gradient history. On \(p+1\) distinct active eigenvalues, with memory \(p\), we analyze the rule in which the last \(p\) steps of a cycle use each Ritz value exactly once. The actual rolling history leads to a forced two-step recurrence in logarithmic spectral coordinates. For a prescribed periodic repetition pattern and a bounded prescribed weight sequence, the exponential growth rate of this recurrence gives the gradient's double-logarithmic decay exponent per gradient update, except at at most one initial energy shape. An invariant polygon bounds this exponent for bounded adaptive controls. The repeating counts \(1,2,1,3\) attain this bound for prescribed bounded weights, except at at most one initial energy shape.
+\end{abstract}
+
+\section{Rolling history and the count of updates}
+A gradient step on a positive definite quadratic with Hessian \(H\) replaces \(g\) by \((I-sH)g\). For an integer \(p\ge1\), restrict \(H\) to the eigenspaces associated with \(p+1\) distinct positive eigenvalues \(\lambda_0<\cdots<\lambda_p\), with spectral projections \(E_i\). Assume \(E_i g_0\ne0\) for every \(i\). The multiplicities of these eigenvalues may be arbitrary.
+
+Start with \(p\) updates of a prescribed size \(\alpha>0\), with \(1-\alpha\lambda_i\ne0\). Write \(d(t)=(1-\alpha t)^p\). Cycle \(k\) uses a positive integer count \(\ell_k\), with \(1\le \ell_k\le L<\infty\), and a weight \(W_k=\sum_i\omega_{i,k}E_i\), where \(\omega_{i,k}>0\) and \(\max_i\omega_{i,k}/\min_i\omega_{i,k}\le\chi<\infty\). Let
+\[
+ s_k=p\sum_{j<k}\ell_j,\qquad t_k=p+s_k,\qquad
+ h_k=g_{s_k},\qquad G_k=g_{t_k}.
+\]
+At \(G_k\), extract the \(p\) Ritz values of the \(W_k\)-compression of \(H\) to the span of \(g_{t_k-p},\ldots,g_{t_k-1}\). This span is \(\mathcal K_p(H,h_k)\), since the \(p\) consecutive gradients involve polynomials of degrees \(0,\ldots,p-1\) with nonzero leading coefficients. Apply each reciprocal Ritz value \(\ell_k\) times. The final \(p\) steps of the cycle contain each reciprocal once, and the preceding steps can be ordered arbitrarily. For example, if \(p=2\) and \(\ell_k=3\), the cycle takes six steps from \(g_{t_k}\). Its last two steps start at \(g_{t_k+4}\) and \(g_{t_k+5}\). The former is \(h_{k+1}\), the starting gradient of the history at the next refresh. Thus the four steps leading to \(h_{k+1}\) have used each reciprocal twice.
+
+The polynomial \(\psi_k\) is the product of one linear factor per Ritz value, normalized by \(\psi_k(0)=1\). The products commute, so the full cycle has filter \(\psi_k^{\ell_k}\) and its last complete sweep has filter \(\psi_k\). The two different endpoints satisfy
+\begin{align}
+ G_0&=d(H)h_0,\qquad G_k=\psi_{k-1}(H)h_k\quad(k\ge1),\notag\\
+ h_1&=\psi_0(H)^{\ell_0-1}d(H)h_0,\notag\\
+ h_{k+1}&=\psi_k(H)^{\ell_k-1}\psi_{k-1}(H)h_k\quad(k\ge1).
+ \label{eq:anchors}
+\end{align}
+The first line of \eqref{eq:anchors} records the final sweep leading from \(h_k\) to \(G_k\). The next two lines propagate from \(G_k\) to \(h_{k+1}\) without using the last \(p\) steps of cycle \(k\). This distinction accounts for both filters in the last line. Through \(G_k\) exactly \(t_k\) updates have taken place. The refresh uses existing gradients, so there is no separate set of updates to create a new history at a cycle boundary.
+
+Fletcher introduced LMSD \cite{Fletcher}, and cyclic reuse of its Ritz values appears in the LMSD with retards method of Zou and Magoul\`es \cite{Zou}. Gu distinguishes a rolling history and a newly sampled history and gives superlinear convergence results for both \cite{Gu}. We use the rolling history. The analysis depends on the location of its anchor and on the final complete sweep. For one sweep per refresh with a fixed weight, a \href{https://taitai2025.github.io/assets/documents/research/ritz-minimal-face.pdf}{companion working paper} studies the balanced orbit and the sharp linear factor.
+
+\section{The two-step recurrence}
+
+Put \(D_i=\prod_{j\ne i}(\lambda_i-\lambda_j)\) and \(b_i=\abs{L_i(0)}\), where \(L_i(t)\) is the \(i\)-th Lagrange cardinal polynomial on these nodes. Fix a reference index \(r\) and use coordinates
+\[
+ \zeta_{i,k}=\log\frac{\norm{E_i h_k}^2\abs{D_i}}
+                      {\norm{E_r h_k}^2\abs{D_r}},
+ \qquad v_{i,k}=\log\frac{\omega_{i,k}}{\omega_{r,k}},
+ \qquad \xi_{i,k}=\zeta_{i,k}+v_{i,k}.
+\]
+The reference coordinates are zero. Multiplying every \(\omega_{i,k}\) by the same number does not change the Ritz values. The condition number bound controls the relative weights: \(\abs{v_{i,k}}\le\log\chi\). Hence changes of weight give a bounded term in the logarithmic recurrence, even when the weights do not converge. A positive initial energy shape is the collection of component squared norms up to a common positive factor, or equivalently \(\zeta_0\). Orthogonality of the Ritz polynomial to all lower-degree polynomials means that the vector with entries \(\omega_{i,k}\norm{E_i h_k}^2\psi_k(\lambda_i)\) is in the nullspace of the rectangular Vandermonde matrix for \(1,t,\ldots,t^{p-1}\). The nullspace is spanned by \(1/D_i\), by the leading coefficient in Lagrange interpolation. Evaluation at zero fixes the scale:
+\begin{equation}\label{eq:filter}
+ \psi_k(\lambda_i)=\frac{(-1)^i e^{-\xi_{i,k}}}
+                         {\sum_j b_j e^{-\xi_{j,k}}}.
+\end{equation}
+The nonzero alternating nodal values put one Ritz root in every gap. Thus no individual Ritz step loses a component. This also justifies the full dimension \(p\) at each refresh. The same nodal formula underlies Gu's component analysis \cite[Sec.~3]{Gu}.
+
+Define the virtual vector \(\eta_i=-\log\abs{d(\lambda_i)/d(\lambda_r)}\) and set \(\xi_{-1}=\eta\). From \eqref{eq:anchors}, taking component ratios of squared norms gives, for all \(k\ge0\),
+\begin{equation}\label{eq:forced}
+ \xi_{k+1}=(3-2\ell_k)\xi_k-2\xi_{k-1}+v_{k+1}-v_k .
+\end{equation}
+For \(k\ge1\), the log ratio of the squared \(\psi_k\)-factors is \(-2\xi_k\); the first filter in \eqref{eq:anchors} uses it \(\ell_k-1\) times and the second uses \(-2\xi_{k-1}\) once. At \(k=0\) the squared warm-up ratio contributes \(2\log\abs{d(\lambda_i)/d(\lambda_r)}=-2\eta_i\), giving exactly the same formula. With a fixed count and no weight forcing, it reduces to Gu's recurrence, including its virtual initial coordinate \cite[Lemma~3.1]{Gu}.
+
+A large ratio between two spectral components does not yet tell us how fast either component decreases. To make this connection for every component, use the cumulative loss in Gu's fixed-count analysis \cite[Lemma~3.3]{Gu}. The following estimate keeps the changing repetition counts and the weight differences.
+\[
+ \mathcal L_{i,k}=\log\sum_j\exp(\xi_{i,k}-\xi_{j,k})\ge0,\qquad
+ S_{i,N}=\sum_{k=0}^{N-1}\mathcal L_{i,k}.
+\]
+Formula \eqref{eq:filter} gives
+\[
+ \log\abs{\psi_k(\lambda_i)}=-\mathcal L_{i,k}-\varepsilon_k,\qquad
+ \log\min_j b_j\le\varepsilon_k\le\log\max_j b_j .
+\]
+With \(i\) as reference, \(\xi^{(i)}_{j,k}=\mathcal L_{j,k}-\mathcal L_{i,k}\ge-\mathcal L_{i,k}\). For one coordinate with reference \(i\), write \(z_k=\xi^{(i)}_{j,k}\) and \(v_k=v^{(i)}_{j,k}\). Summing \eqref{eq:forced} in increment form gives for \(k\ge1\)
+\[
+ z_k=z_0-2z_{-1}-2\sum_{q=0}^{k-2}\ell_qz_q
+       -2(\ell_{k-1}-1)z_{k-1}+(v_k-v_0).
+\]
+Each coefficient of \(-z_q\) is between \(0\) and \(2L\). Since \(-z_q\le\mathcal L_{i,q}\), the sum contributes at most \(2LS_{i,N}\) when \(k<N\). The virtual coordinate and the telescoping weight term are bounded independently of \(k\). This proves
+\begin{equation}\label{eq:box}
+ -S_{i,N}\le \xi^{(i)}_{j,k}\le C_i+2L S_{i,N}.
+\end{equation}
+The reverse upper estimate on a cumulative loss follows from \(\mathcal L_{i,k}\le\log(p+1)+\max_j(\xi_{i,k}-\xi_{j,k})\). Multiplying \eqref{eq:anchors} gives
+\begin{equation}\label{eq:radial}
+ -\log\norm{E_i h_N}
+ = \sum_{k<N}(\ell_k-1)\mathcal L_{i,k}+S_{i,N-1}+O(N+1).
+\end{equation}
+The fixed warm-up and the bounded \(\varepsilon_k\) account for the additive term. The nonnegative loss sum on the right lies between \(S_{i,N-1}\) and \(L S_{i,N}\).
+
+Every Ritz value lies in \([\lambda_0,\lambda_p]\). Put \(K=\max(1,\lambda_p/\lambda_0-1)\). For \(s_N\le t<s_{N+1}\) and \(N\ge1\), forward propagation within the anchor interval bounds each nodal component by
+\begin{equation}\label{eq:sandwich}
+ K^{-pL}\norm{E_i h_{N+1}}\le\norm{E_i g_t}\le K^{pL}\norm{E_i h_N}.
+\end{equation}
+The lower bound follows by propagating from \(g_t\) to the next anchor using at most \(pL\) steps, all with scalar factors bounded above by \(K\). Starting at \(N=1\) avoids including the prescribed warm-up in this bound.
+
+\section{Periodic counts and prescribed weights}
+
+\begin{theorem}\label{thm:period}
+Let the counts be prescribed with period \((\ell_0,\ldots,\ell_{R-1})\), and let \((W_k)\) be prescribed independently of the initial gradient. The weight sequence need not be periodic. Put
+\[
+ M_\ell=\begin{pmatrix}3-2\ell&-2\\1&0\end{pmatrix},\quad
+ T=M_{\ell_{R-1}}\cdots M_{\ell_0},\quad
+ C=\sum_{j=0}^{R-1}\ell_j.
+\]
+Except at at most one initial energy shape, the limit
+\[
+   \lim_{t\to\infty}\frac{\log(-\log\norm{E_i g_t})}{t}
+       =\frac{\log\rho(T)}{pC}
+\]
+holds for every active component. The limit also holds for the gradient norm, iterate error and objective gap.
+\end{theorem}
+
+\begin{proof}
+Writing \(Z_k=(\xi_k,\xi_{k-1})^\top\), the one-period dynamics is \(Z_{(n+1)R}=TZ_{nR}+U_n\), where \(U_n\) is a sum of fixed trailing products of the \(M_\ell\) applied to the bounded forcing vectors \((v_{k+1}-v_k,0)^\top\). In this expression the matrices multiply vector-valued coordinates componentwise. Thus \(U_n\) is bounded and independent of the initial energy. Modulo two each \(M_\ell\) is the same idempotent matrix with rows \((1,0),(1,0)\). Consequently \(\operatorname{tr}T\) and \(T_{21}\) are odd, while \(\det T=2^R\). The discriminant is nonzero, the eigenvalues are distinct, and \(\rho(T)\ge 2^{R/2}>1\).
+
+Choose \(\mu\) with \(|\mu|=\rho(T)\), and normalize its left eigenvector \(l\) to have first coordinate one. Such a normalization is possible since \(T_{21}\ne0\). Iteration yields
+\[
+ lZ_{nR}=\mu^n\left(lZ_0+\sum_{q\ge0}\mu^{-q-1}lU_q\right)+O(1).
+\]
+The series converges absolutely. Its bracket has coefficient one in \(\zeta_0\), with all other terms prescribed, so it vanishes for at most one real initial energy shape. If the bracket is nonzero, projection onto \(l\) gives the lower bound \(\norm{Z_{nR}}\ge c\rho(T)^n\) on a tail. Diagonalization and the geometric bound on the sum of bounded forcings give the upper bound. Finite invertible products within a period transfer the two-sided estimates to every phase, and changing the reference node is also invertible on the space of ratios.
+
+Fix one component \(i\) and use it as reference. Applying \eqref{eq:box} at times \(N-1,N-2\) gives \(\norm{Z_{N-1}^{(i)}}\le C_i(1+S_{i,N})\). The lower bound on the logarithmic state then bounds \(S_{i,N}\) below by a positive constant times \(\rho(T)^{\lfloor N/R\rfloor}\) on a tail. In the other direction, the upper bound on the state bounds each \(\mathcal L_{i,k}\) by a constant times \(\rho(T)^{\lfloor k/R\rfloor}\). Its geometric sum has the same order as the last term.
+
+By \eqref{eq:radial}, the nonnegative loss sum is between \(S_{i,N-1}\) and \(L S_{i,N}\). The additive \(O(N+1)\) term is of smaller order. Thus \(-\log\norm{E_i h_{nR}}\) is between positive constant multiples of \(\rho(T)^n\). But \(h_{nR}=g_{npC}\), since each period takes \(pC\) gradient updates. Taking one more logarithm gives \(n\log\rho(T)+O(1)\), which yields the asserted exponent. Equation \eqref{eq:sandwich} controls the gradients between anchors, whose indices differ by at most \(pL\). The norm of the error is comparable to that of the gradient, and the objective gap is comparable to the squared error norm. Neither change affects the limit after taking the two logarithms.
+\end{proof}
+
+For the period \((1,2,1,3)\), multiplication gives
+\[
+ T=\begin{pmatrix}21&-22\\-5&6\end{pmatrix},\qquad
+ \rho_*=\frac{27+\sqrt{665}}2,\qquad
+ \theta_*=\rho_*^{1/7}.
+\]
+Its exponent per gradient update is \(\log(\theta_*)/p\). An exceptional shape may still converge doubly exponentially with a smaller exponent if the subdominant eigenvalue has modulus larger than one; Theorem~\ref{thm:period} makes no assertion about that shape.
+
+\section{A ceiling for bounded adaptive controls}
+
+\begin{theorem}\label{thm:ceiling}
+Let \(L,\chi<\infty\) and fix the initial gradient and warm-up. Allow the counts and weights to depend on the generated history, subject to the bounds above. Then for every active component there is a constant \(C_i>0\), uniform over these controls, for which
+\[
+ \norm{E_i g_t}\ge \exp(-C_i\theta_*^{t/p})
+\]
+on a tail. Thus for trajectories converging to zero the upper double-logarithmic exponent is at most \(\log(\theta_*)/p\). If \(L\ge3\), the periodic rule \((1,2,1,3)\) attains that exponent for prescribed bounded weights and every initial energy shape outside the exceptional set of Theorem~\ref{thm:period}.
+\end{theorem}
+
+\begin{proof}
+The certificate in Appendix~\ref{app:certificate} gives a symmetric convex polygon \(P\) containing the origin in its interior with \(\theta_*^{-\ell}M_\ell P\subseteq P\) for every positive integer \(\ell\). To use the polygon as a bound, define
+\[
+ \norm z_P=\inf\{a>0:z\in aP\}.
+\]
+Symmetry, convexity and an interior origin make this a norm. The inclusion gives \(\norm{M_\ell z}_P\le\theta_*^\ell\norm z_P\). Applying it successively, a product with counts \(\ell_0,\ldots,\ell_{k-1}\) increases this norm by at most \(\theta_*^{\sum_{j<k}\ell_j}\), in any order. Apply the bound to each of the two-dimensional coordinate pairs of \(Z_k\), taking the maximum over node coordinates. If \(c_k=\sum_{j<k}\ell_j\), variation of constants in \eqref{eq:forced} gives
+\[
+ \norm{Z_k}_{P,\infty}
+ \le \theta_*^{c_k}\!\left(\norm{Z_0}_{P,\infty}
+               + F\sum_{j<k}\theta_*^{-c_{j+1}}\right)
+ \le \theta_*^{c_k}\!\left(\norm{Z_0}_{P,\infty}+F/(\theta_*-1)\right).
+\]
+Here \(F\) bounds the forcing uniformly because the condition numbers are bounded. The initial state is also bounded uniformly for the fixed initial gradient. This argument holds for each realized adaptive sequence and does not use independence.
+
+The loss \(\mathcal L_{i,k}\) is then bounded above by a constant times \(\theta_*^{c_k}\). Since \(c_{k+1}-c_k\ge1\), the loss sum up to anchor \(N\) is bounded by a geometric sum of order \(\theta_*^{c_N}\). Equation \eqref{eq:radial} bounds \(-\log\norm{E_i h_N}\) by the same order, since \(\ell_k\le L\). The lower bound of \eqref{eq:sandwich} and \(c_{N+1}\le t/p+L\) prove the result for all sufficiently late gradients. Theorem~\ref{thm:period} proves attainment.
+\end{proof}
+
+The upper bound concerns the complete-tail rolling rule on a minimal support. If the last \(p\) steps do not contain each reciprocal exactly once, the new anchor is generated by a different partial product, and \eqref{eq:anchors} and \eqref{eq:forced} change. The exponent compares asymptotic decay per gradient update. It does not give a finite-accuracy performance guarantee.
+
+\appendix
+\section{An exact invariant-polygon certificate}\label{app:certificate}
+
+Put \(A_\ell=\theta_*^{-\ell}M_\ell\). The pattern \((1,2,1,3)\) has total cost seven in units of one sweep. Its product, after scaling by \(\theta_*^{-7}\), has eigenvalue one. The resulting cycle of vertices is \(v_0\to v_1\to v_2\to v_3\to v_0\), using \(A_1,A_2,A_1,A_3\). The extra vertices account for other orders of repetition. For \(\ell=1,2,3\), symmetry and linearity reduce the task to 27 images: nine go to vertices and eighteen lie in specified triangles inside the polygon. The final rectangle estimate treats all \(\ell\ge4\) at once. The tables use the exact algebraic number \(\theta_*\), with rational enclosures to verify the inequalities.
+
+Define nine vectors by
+\[
+ v_j=\frac{(a_j+b_j\rho_*,\,c_j+d_j\rho_*)}
+              {22\theta_*^{n_j}},
+ \qquad P=\operatorname{conv}\{\pm v_0,\ldots,\pm v_8\},
+\]
+with the integer data
+\[
+\begin{array}{c|rrrrr}
+ j&n_j&a_j&b_j&c_j&d_j\\\hline
+ 0&0&22&0&21&-1\\
+ 1&1&-20&2&22&0\\
+ 2&3&-24&-2&-20&2\\
+ 3&4&16&-6&-24&-2\\
+ 4&6&32&10&16&-6\\
+ 5&7&0&22&32&10\\
+ 6&8&-64&2&0&22\\
+ 7&2&-64&2&-20&2\\
+ 8&5&64&-2&16&-6
+\end{array}
+\]
+Here \(\rho_*^2-27\rho_*+16=0\). Direct multiplication gives nine vertex images:
+\[
+\begin{array}{lll}
+ A_1v_0=v_1,&A_1v_1=v_7,&A_2v_1=v_2,\\
+ A_1v_2=v_3,&A_1v_3=v_8,&A_2v_3=v_4,\\
+ A_3v_3=v_0,&A_1v_4=v_5,&A_1v_5=v_6.
+\end{array}
+\]
+For the other eighteen images, the table below specifies
+\(A_\ell v_i=\alpha u+\beta w\).
+The last two columns mean
+\(10^4\alpha\in[a,a+1]\) and \(10^4\beta\in[b,b+1]\).
+Every row has \(a,b>0\) and \(a+b+2<10^4\), proving that the image lies in
+\(\operatorname{conv}\{0,u,w\}\subset P\).
+\begin{center}
+\small
+\begin{tabular}{ccccrr}
+\toprule
+\(i\)&\(\ell\)&\(u\)&\(w\)&\(a\)&\(b\)\\
+\midrule
+0&2&\(v_7\)&\(-v_4\)&6062&968\\
+0&3&\(v_2\)&\(-v_0\)&6062&968\\
+1&3&\(-v_0\)&\(-v_5\)&9773&196\\
+2&2&\(v_8\)&\(-v_7\)&4015&1471\\
+2&3&\(v_4\)&\(-v_2\)&4015&1471\\
+4&2&\(v_6\)&\(-v_8\)&3503&1597\\
+4&3&\(v_7\)&\(-v_4\)&80&4991\\
+5&2&\(v_7\)&\(-v_4\)&229&9686\\
+5&3&\(v_2\)&\(-v_0\)&229&9686\\
+6&1&\(-v_0\)&\(-v_5\)&5251&2674\\
+6&2&\(-v_0\)&\(-v_5\)&3225&1644\\
+6&3&\(-v_0\)&\(-v_5\)&1980&1011\\
+7&1&\(-v_0\)&\(-v_5\)&4134&4448\\
+7&2&\(-v_0\)&\(-v_5\)&1530&2276\\
+7&3&\(-v_0\)&\(-v_5\)&294&1106\\
+8&1&\(v_0\)&\(v_5\)&5084&3050\\
+8&2&\(v_0\)&\(v_5\)&2924&1785\\
+8&3&\(v_0\)&\(v_5\)&1668&1040\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All interval statements can be checked using rational arithmetic. The root isolation is
+\[
+\begin{split}
+1.596142626220053845095031259714
+ <\theta_*<
+1.596142626220053845095031259715.
+\end{split}
+\]
+The polynomial \(z^{14}-27z^7+16\) has opposite signs at these rational endpoints and positive derivative on the interval. For a row of the table, use the indicated \(u,w\), put \(z=A_\ell v_i\), and evaluate
+\[
+ \alpha=\frac{\det(z,w)}{\det(u,w)},\qquad
+ \beta=\frac{\det(u,z)}{\det(u,w)}
+\]
+by rational interval arithmetic. The denominators are strictly positive, and the resulting enclosures lie in the displayed intervals.
+
+The same root interval verifies \(|(v_j)_1|\le1\) and \(|(v_j)_2|<2/3\).
+In particular,
+\[
+ (v_0)_1=(v_5)_1=1,\qquad
+ (v_0)_2<-6/25,\qquad (v_5)_2>6/25.
+\]
+The segments joining \(v_0\) to \(v_5\) and their negatives contain the vertical sides of the inner rectangle used below. This also proves that the origin is an interior point.
+
+
+These checks imply that \(A_1,A_2,A_3\) send the polygon into itself. The vertex bounds give
+\[
+ [-1,1]\times[-6/25,6/25]\subset P\subset[-1,1]\times[-2/3,2/3].
+\]
+For \(\ell\ge4\), the two coordinate bounds on \(A_\ell P\) are \((2\ell-3+4/3)/\theta_*^\ell\) and \(\theta_*^{-\ell}\). Since \(\theta_*>159/100\), at \(\ell=4\) these are less than \(1\) and \(6/25\). The bounds decrease with \(\ell\), the first because the ratio of successive numerators is at most \(25/19<159/100\). This proves the inclusion for every positive integer count. The accompanying standard-library Python programs independently check the finite part, by interval-enclosed triangles and by exact arithmetic against the polygon supporting lines.
+
+\begin{thebibliography}{9}
+\bibitem{Fletcher} R. Fletcher, A limited memory steepest descent method, \emph{Math. Program.} 135 (2012), 413--436. \href{https://doi.org/10.1007/s10107-011-0479-6}{doi:10.1007/s10107-011-0479-6}.
+\bibitem{Zou} Q. Zou and F. Magoulès, On extensions of limited memory steepest descent method, 2019. \href{https://arxiv.org/abs/1912.01222}{arXiv:1912.01222}.
+\bibitem{Gu} R. Gu, Superlinear convergence of cyclic gradient methods with historical Ritz step sizes, 2026. \href{https://arxiv.org/abs/2610.32705v2}{arXiv:2610.32705v2}.
+\end{thebibliography}
+\end{document}
