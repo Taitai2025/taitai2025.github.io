@@ -1,0 +1,25 @@
+{
+  "verification_date": "2026-11-25",
+  "lean_version": "4.8.0",
+  "platform": "Windows",
+  "mathlib_commit": "b5eba595428809e96f3ed113bc7ba776c5f801ac",
+  "reference_manuscript_sha256": "29f317b4a75982e5b9d4867b0ff9445ee3fbe93d769fd77a0b79a744816951e5",
+  "source_hashes_matched_to_release": 140,
+  "clean_built_math_modules": 139,
+  "aggregate_entry_built": true,
+  "theorem_names_matched_to_release": 1940,
+  "namespace_omissions": 0,
+  "distinct_mapped_declarations_resolved": 247,
+  "numbered_paper_results": 35,
+  "substantive_paper_remarks": 1,
+  "foundational_interfaces": 9,
+  "axiom_union": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "axiom_check_command": "lake env lean --trust=0 PublicAudit.lean",
+  "axiom_check_method": "Lean's built-in dependency collector, with shared visited nodes across every theorem in the BB modules, computes one transitive union. Per-theorem axiom sets are available in the original release report.",
+  "scope": "The coverage map connects the corresponding manuscript version to formal declarations.",
+  "audit_source_sha256": "23aba7ffd725c4ac4a7c19d0c3cb345159cf1945bbcb1c3de06ce3f6ec980b38"
+}

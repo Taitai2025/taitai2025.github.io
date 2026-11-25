@@ -5,3 +5,5 @@
 固定正谱权、精确算术和相容初始历史。保留最小谱上的精确有理算例与平衡轨道，正文说明同 Gu v2 的重合。全文 Lean 形式化仍待完成。
 
 [阅读 PDF](https://taitai2025.github.io/assets/documents/research/ritz-minimal-face.pdf) · [LaTeX 源](main.tex)
+
+[Lean 有限证书与核查记录](../ritz-certificates/)保留了这两篇稿件中的精确代数推导。

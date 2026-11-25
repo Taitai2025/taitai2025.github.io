@@ -5,3 +5,5 @@
 按实际更新次数计算指数。预设计数和权重与可依历史选择的情形分开。精确支持线与三角包含脚本复核的是有限证书，全文 Lean 形式化仍待完成。
 
 [阅读 PDF](https://taitai2025.github.io/assets/documents/research/ritz-reuse.pdf) · [LaTeX 源](main.tex)
+
+[Lean 有限证书与核查记录](../ritz-certificates/)保留了这两篇稿件中的精确代数推导。
