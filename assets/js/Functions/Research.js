@@ -49,68 +49,76 @@
       <h2>${heading}</h2><p class="source-note">${esc(disclosure)}</p>${items}
     </section>`;
   }
-  function manuscriptPapers(zh, manuscripts) {
-    if (!manuscripts.length) return '';
-    const repo = 'https://github.com/Taitai2025/taitai2025.github.io/tree/main/research/manuscripts';
-    const notice = zh
-      ? '四份原稿保留证明、附录和原页码。公开整理版移除了私人信息，附 AI 辅助与待作者核阅说明。'
-      : 'These copies retain the proofs, appendices, and original pagination. Private details were removed, and a note records AI assistance and pending author review.';
-    const cards = manuscripts.map(paper => {
-      const pdf = 'assets/documents/research/' + paper.id + '.pdf';
-      const details = [
-        zh ? paper.groupZh : paper.groupEn,
-        zh ? '2026 年 11 月' : 'November 2026',
-        zh ? paper.pages + ' 页正文，加版本说明' : paper.pages + ' manuscript pages, plus a cover note'
-      ].map(esc).join(' · ');
-      const links = link(pdf, zh ? '阅读全文 PDF' : 'Read full PDF') +
-        (paper.arxiv ? link(paper.arxiv, zh ? '对应 arXiv 版本' : 'Related arXiv version') : '') +
-        (paper.formal ? link(repo + '/' + paper.formal, zh ? '形式化与复现' : 'Formalization and checks') : link(repo, zh ? '版本与来源' : 'Versions and sources')) +
-        (paper.guide ? link('assets/documents/research/' + paper.guide, zh ? paper.guideZh : paper.guideEn) : '');
-      return '<article class="paper paper--unnumbered" id="manuscript-' + esc(paper.id) + '"><div>' +
-        '<h3>' + esc(zh ? paper.zh : paper.en) + '</h3><p class="paper-meta">' + details + '</p>' +
-        '<p class="paper-summary">' + esc(zh ? paper.descriptionZh : paper.descriptionEn) + '</p>' +
-        links + '</div></article>';
-    }).join('');
-    const heading = zh ? '十一月论文全文' : 'November manuscripts';
-    return '<section id="research-manuscripts" class="research-section"><h2>' + heading +
-      '</h2><p class="source-note">' + esc(notice) + '</p>' + cards + '</section>';
-  }
-  function workingPapers(zh, notes) {
-    if (!notes.length) return '';
-    const repo = 'https://github.com/Taitai2025/taitai2025.github.io/tree/main/research/working';
+  function workingPapers(zh, notes, manuscripts) {
+    if (!notes.length && !manuscripts.length) return '';
+    const base = 'https://github.com/Taitai2025/taitai2025.github.io/tree/main/research';
+    const repo = base + '/working';
     const byId = new Map(notes.map(note => [note.id, note]));
+    const topics = [
+      {id:'spectral', zh:'BB、LMSD 与 Ritz', en:'BB, LMSD, and Ritz values',
+       groups:['BB 谱步长','LMSD 与 Ritz 重用','谱梯度与 Ritz','谱梯度与周期切换']},
+      {id:'stepsizes', zh:'曲率信息、线搜索与停止', en:'Curvature information, line search, and stopping',
+       groups:['曲率信息与步长','重启、投影与线搜索','步长设计与停止条件']},
+      {id:'low-rank', zh:'低秩分解与 ADMM', en:'Low-rank decomposition and ADMM',
+       groups:['低秩分解','ADMM 与参数选择']},
+      {id:'design', zh:'最优实验设计', en:'Optimal experimental design', groups:['最优实验设计']}
+    ];
     const heading = zh ? 'AI 辅助研究工作稿' : 'AI-assisted research working papers';
     const notice = zh
-      ? '以下工作稿尚待作者人工复核。PDF 保留发布日期、版本和证明范围，GitHub 提供源稿、校验及可复现附件。'
-      : 'Author review is pending. The PDFs record the release date, version and scope of proof. GitHub holds source, checks and reproducibility files.';
-    const cards = notes.map(note => {
-      const file = 'assets/documents/research/' + note.id + '.pdf';
-      const related = note.related.map(id => {
+      ? '稿件经 AI 辅助整理，待作者人工核阅。全文整理版保留原证明和附录。各条目附 PDF、来源及可用的形式化或复现材料。'
+      : 'These manuscripts used AI assistance and are pending author review. Archived full texts retain their original proofs and appendices. Each entry links to its PDF, sources, and available formalization or reproducibility files.';
+
+    function card(paper, archived) {
+      const pdf = 'assets/documents/research/' + paper.id + '.pdf';
+      const title = esc(zh ? paper.zh : paper.en);
+      const pages = zh ? paper.pages + ' 页' : paper.pages + ' pages';
+      const meta = archived
+        ? [zh ? '全文整理版' : 'Archived full text', zh ? '2026 年 11 月' : 'November 2026',
+           pages + (zh ? '正文，加版本说明' : ' of manuscript, plus a cover note')]
+        : [paper.releaseDate || '2026.11.25', 'v' + paper.version, pages];
+      const manuscriptRepo = base + '/manuscripts';
+      const source = archived
+        ? paper.formal
+          ? link(manuscriptRepo + '/' + paper.formal, zh ? '形式化与复现' : 'Formalization and checks')
+          : link(manuscriptRepo, zh ? '版本与来源' : 'Versions and sources')
+        : link(repo + '/' + paper.id, zh ? '源码与证据' : 'Source and evidence');
+      const related = (paper.related || []).map(id => {
         const target = byId.get(id);
         if (!target) return '';
-        const label = zh ? target.zh : target.en;
-        return '<a class="document-link" href="#working-' + esc(id) + '">' + esc(label) + '</a>';
+        return '<a class="document-link" href="#working-' + esc(id) + '">' +
+          esc(zh ? target.zh : target.en) + '</a>';
       }).join('');
-      const meta = [
-        zh ? note.groupZh : note.groupEn,
-        note.releaseDate || '2026.11.25',
-        'v' + note.version,
-        zh ? note.pages + ' 页' : note.pages + ' pages'
-      ].map(esc).join(' · ');
-      const title = esc(zh ? note.zh : note.en);
-      const desc = esc(zh ? note.descriptionZh : note.descriptionEn);
-      const links = link(file, zh ? '论文 PDF' : 'Paper PDF') +
-        link(repo + '/' + note.id, zh ? '源码与证据' : 'Source and evidence');
-      const cross = related
+      const attachments = link(pdf, zh ? '论文 PDF' : 'Paper PDF') + source +
+        (paper.arxiv ? link(paper.arxiv, zh ? '对应 arXiv 版本' : 'Related arXiv version') : '') +
+        (paper.guide ? link('assets/documents/research/' + paper.guide, zh ? paper.guideZh : paper.guideEn) : '');
+      const articleId = (archived ? 'manuscript-' : 'working-') + paper.id;
+      const crossLinks = related
         ? '<p class="source-note">' + (zh ? '相关工作稿 ' : 'Related working papers ') + related + '</p>'
         : '';
-      return '<article class="paper paper--unnumbered" id="working-' + esc(note.id) + '"><div>' +
-        '<h3>' + title + '</h3><p class="paper-meta">' + meta + '</p>' +
-        '<p class="paper-summary">' + desc + '</p>' + links + cross + '</div></article>';
-    }).join('');
-    return '<section id="research-working" class="research-section"><h2>' + heading +
-      '</h2><p class="source-note">' + notice + '</p><p>' +
-      link(repo, zh ? 'GitHub 工作稿目录' : 'Working paper repository') + '</p>' + cards + '</section>';
+      return '<article class="paper paper--unnumbered" id="' + esc(articleId) + '"><div>' +
+        '<h4>' + title + '</h4><p class="paper-meta">' + meta.map(esc).join(' · ') + '</p>' +
+        '<p class="paper-summary">' + esc(zh ? paper.descriptionZh : paper.descriptionEn) + '</p>' +
+        attachments + crossLinks + '</div></article>';
+    }
+
+    const entries = manuscripts.map(paper => ({paper, archived:true}))
+      .concat(notes.map(paper => ({paper, archived:false})));
+    const section = (id, label, items) => items.length
+      ? '<section class="research-work-group" aria-labelledby="research-topic-' + id + '">' +
+        '<h3 id="research-topic-' + id + '">' + esc(label) + '</h3>' +
+        items.map(({paper, archived}) => card(paper, archived)).join('') + '</section>'
+      : '';
+    const categorized = new Set(topics.flatMap(topic => topic.groups));
+    const grouped = topics.map(topic => section(
+      topic.id, zh ? topic.zh : topic.en, entries.filter(({paper}) => topic.groups.includes(paper.groupZh))
+    )).join('');
+    const additional = section('other', zh ? '其他研究' : 'Other research',
+      entries.filter(({paper}) => !categorized.has(paper.groupZh)));
+    return '<section id="research-working" class="research-section">' +
+      (manuscripts.length ? '<span id="research-manuscripts" class="research-section-anchor" aria-hidden="true"></span>' : '') +
+      '<h2>' + heading + '</h2><p class="source-note">' + esc(notice) + '</p><p>' +
+      link(base, zh ? 'GitHub 研究资料' : 'Research files on GitHub') + '</p>' +
+      grouped + additional + '</section>';
   }
   function render(lang){
     const zh=lang==='zh',data=window.RESEARCH_CONTENT;
@@ -119,20 +127,14 @@
     const papers=data.papers.map((p,i)=>'<article class="paper"><div class="paper-number">'+String(i+1).padStart(2,'0')+'</div><div><h3>'+esc(p.title)+'</h3><p class="paper-meta">'+esc(p.authors)+' · '+esc(p.date)+' · arXiv:'+esc(p.id)+'</p><p class="paper-meta">'+esc(zh?(p.venueZh||p.venue):p.venue)+'</p><p class="paper-summary">'+esc(zh?p.zh:p.en)+'</p>'+link('https://arxiv.org/abs/'+p.id,'arXiv')+attachments(p,zh)+'<details><summary>'+(zh?'引用信息':'Citation')+'</summary><p>'+esc(p.authors)+'. '+esc(p.title)+'. arXiv:'+esc(p.id)+' (2026).</p></details></div></article>').join('');
     root.innerHTML='<div class="research-heading">RESEARCH & WRITING · 2026</div><header class="research-top"><div><h1 class="research-title">'+(zh?'在谱结构与收敛之间':'Spectral structure.<br>Convergence theory.')+'</h1><p class="research-lead">'+(zh?'从 Barzilai–Borwein 方法到加权 LMSD，探索优化算法的动力学结构、收敛机制与最紧渐近速率。':'Exploring the dynamics, convergence mechanisms and sharp asymptotic rates of optimization algorithms, from Barzilai–Borwein methods to weighted LMSD.')+'</p><div class="research-topics"><span>Numerical optimization</span><span>Spectral gradient methods</span><span>Homogeneous dynamics</span></div></div><div class="research-count">04<small>ARXIV PREPRINTS</small></div></header><nav class="toc" aria-label="Research contents"><button data-scroll="research-papers">'+(zh?'01 预印本':'01 Preprints')+'</button><button data-scroll="research-articles">'+(zh?'02 发表文章':'02 Articles')+'</button><button data-scroll="research-talks">'+(zh?'03 学位论文与报告':'03 Thesis & talks')+'</button></nav><section id="research-papers" class="research-section"><h2><span class="section-number">01</span>'+(zh?'研究论文与预印本':'Research papers & preprints')+'</h2><p class="source-note">'+(zh?'以下四篇为与袁亚湘院士共同署名的 arXiv 预印本。各条目链接原始预印本及可获取的归档作者稿。以 arXiv 页面为准查看公开版本记录。':'These four arXiv preprints are coauthored with Academician Ya-xiang Yuan. The entries link to the original preprints and archived author manuscripts where available. See arXiv for the public version history.')+'</p>'+papers+'</section><section id="research-articles" class="research-section"><h2><span class="section-number">02</span>'+(zh?'发表文章与早期探索':'Articles & early explorations')+'</h2>'+list(data.articles,zh)+'</section><section id="research-talks" class="research-section"><h2><span class="section-number">03</span>'+(zh?'学位论文、报告与发言':'Thesis, reports & speeches')+'</h2>'+list(data.talks,zh)+'</section><footer class="site-footer">'+(zh?'欢迎交流数值优化、计算数学与相关问题。':'I welcome discussions on numerical optimization, computational mathematics and related topics.')+' <a href="mailto:yangshutai26@mails.ucas.ac.cn">yangshutai26@mails.ucas.ac.cn</a><br>2026.11.07 · Shutai Yang</footer>';
     const researchArticles=root.querySelector('#research-articles');
-    if(researchArticles)researchArticles.insertAdjacentHTML('beforebegin',manuscriptPapers(zh, data.manuscripts || [])+workingPapers(zh, data.working || [])+readingNote(zh));
+    if(researchArticles)researchArticles.insertAdjacentHTML('beforebegin',workingPapers(zh, data.working || [], data.manuscripts || [])+readingNote(zh));
     const nav=root.querySelector('nav.toc');
     if(nav){
       const button=document.createElement('button');
       button.dataset.scroll='research-reading';
       button.textContent=zh?'导读与复现':'Reading note & checks';
       nav.insertBefore(button,nav.children[1]||null);
-      if (data.manuscripts?.length) {
-        const manuscripts = document.createElement('button');
-        manuscripts.dataset.scroll = 'research-manuscripts';
-        manuscripts.textContent = zh ? '十一月论文' : 'November manuscripts';
-        nav.insertBefore(manuscripts, button);
-      }
-      if (data.working?.length) {
+      if (data.working?.length || data.manuscripts?.length) {
         const working = document.createElement('button');
         working.dataset.scroll = 'research-working';
         working.textContent = zh ? '工作稿' : 'Working papers';

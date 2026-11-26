@@ -187,6 +187,22 @@ window.RESEARCH_CONTENT = {
         "trial-firsthit",
         "gll-window"
       ]
+    },
+    {
+      "id": "cold-window",
+      "version": "1.0",
+      "releaseDate": "2026.11.26",
+      "pages": 5,
+      "zh": "较好的首步为何可能延迟停止",
+      "en": "A better first step can delay stopping in a spectral gradient method",
+      "groupZh": "步长设计与停止条件",
+      "groupEn": "Stepsizes and stopping criteria",
+      "descriptionZh": "在一个精确算例中，整段首步长度都能降低下一点的梯度范数，但旧割线仍控制 ABBmin1 的窗口。较严容差下，参考法先停止。",
+      "descriptionEn": "For a fixed example an interval of replacement steps improves the next gradient norm. The retained secant controls the ABBmin1 window, and the reference reaches a stricter tolerance first.",
+      "related": [
+        "trial-firsthit",
+        "certified-chord"
+      ]
     }
   ],
   "papers": [
