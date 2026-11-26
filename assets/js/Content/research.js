@@ -140,6 +140,37 @@ window.RESEARCH_CONTENT = {
       "descriptionZh": "两种复用旧拟合的更新可以严格改进、无限刷新，却仍停在次优值。以刷新次数限制步长可恢复值收敛，并有代价下界。",
       "descriptionEn": "Two cached-fit rules can improve strictly and refresh infinitely often while converging to a suboptimal design value. The paper proves a convergent capped rule and analyzes its cost.",
       "related": []
+    },
+    {
+      "id": "smooth-ritz",
+      "version": "1.0",
+      "releaseDate": "2026.11.26",
+      "pages": 5,
+      "zh": "周期 Ritz 步长的光滑非二次实现",
+      "en": "Smooth nonquadratic objectives with periodically repeating Ritz steps",
+      "groupZh": "谱梯度与 Ritz",
+      "groupEn": "Spectral gradients and Ritz values",
+      "descriptionZh": "构造全局强凸的非二次目标，使指定的延迟 Ritz 六周期和每个正缩放都精确重现。给出已访问点上的全阶光滑一致与有限阶实解析版本。",
+      "descriptionEn": "Constructs globally strongly convex nonquadratic objectives that preserve a delayed six-sweep Ritz trajectory at every positive scale. Includes a smooth construction matching all derivatives and an analytic finite-order variant.",
+      "related": [
+        "ritz-minimal-face",
+        "ritz-reuse"
+      ]
+    },
+    {
+      "id": "coordinate-query",
+      "version": "1.0",
+      "releaseDate": "2026.11.26",
+      "pages": 5,
+      "zh": "一次曲率查询如何决定坐标步长",
+      "en": "Choosing a coordinate step with one Hessian-vector query",
+      "groupZh": "曲率信息与步长",
+      "groupEn": "Curvature information and stepsizes",
+      "descriptionZh": "在二维二次模型中，一次矩阵向量查询后选择一个坐标和步长。求出最优保证与平衡查询，并推导只沿坐标轴查询时的精确值。",
+      "descriptionEn": "Finds the sharp deterministic decrease guarantee for choosing one coordinate and step after one Hessian-vector query. It also gives the exact value when the query is restricted to a coordinate axis.",
+      "related": [
+        "trial-firsthit"
+      ]
     }
   ],
   "papers": [

@@ -1,0 +1,369 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Smooth nonquadratic objectives with periodically repeating Ritz steps},pdfauthor={},pdfsubject={AI-assisted research working paper, pending author review}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{Smooth nonquadratic objectives with periodically repeating Ritz steps}
+\author{}
+\date{November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A delayed Ritz gradient method can repeat a sequence of step sizes after its
+spectral weights return, even if its gradient does not return to its
+original direction. We show how to realize such a trajectory exactly on
+a smooth, globally strongly convex, nonquadratic objective. The construction
+uses the fact that, after an entire period, each spectral component is
+multiplied by the same positive number, up to a sign. All iterates therefore
+lie on finitely many lines. A smooth perturbation can vanish with its
+derivatives on those lines while remaining nonzero arbitrarily close to
+the minimizer. We apply the construction to a known six-sweep orbit of
+memory-two limited-memory steepest descent and obtain the same local
+lower bound on the gradient decay factor, measured per scalar step.
+\end{abstract}
+
+\section{A periodic orbit supplies a finite set of lines}
+
+Consider \(f_A(x)=\tfrac12 x^\top A x\) with \(A\) real symmetric and
+positive definite on \(\R^d\), \(d\ge 2\). We number scalar gradient steps
+starting at the beginning of a documented, compatible prefix. Let
+\(g_k=Ax_k\) and \(x_{k+1}=x_k-\alpha_k g_k\), where \(\alpha_k>0\).
+In memory-two limited-memory steepest descent (LMSD), two step sizes
+are computed from the preceding block of two scalar updates. Each
+block of two updates is called a sweep. The steps are the reciprocals
+of the two Ritz values obtained by projecting the Hessian onto the
+span of the two gradients used in that preceding block. In the
+application the prefix occupies the first two steps. At its end the
+method has the three stored points, their gradients, and the two
+ordered reciprocal Ritz steps to apply next. By a compatible prefix
+we mean that the stored samples were produced by the displayed scalar
+steps and that the next Ritz values were computed by the prescribed
+history rule. Any data from before the displayed prefix that are needed to
+start the method are part of the specified initialization.
+
+Assume \(g_0\ne0\) and the step sizes repeat with integer period \(T\ge1\)
+along the quadratic
+trajectory. Define the period polynomial by
+\[
+ q(t)=\prod_{k=0}^{T-1}(1-\alpha_k t).
+\]
+Suppose each eigenvalue \(\lambda\) with a nonzero component in \(g_0\)
+satisfies \(|q(\lambda)|=G\), for a common number \(0<G<1\). Denote by
+\(E\) the sum of the corresponding eigenspaces. Each \(g_k\) and \(x_k\)
+belongs to \(E\). The restriction \(S=q(A)|_E/G\) is symmetric,
+commutes with \(A|_E\), and satisfies \(S^2=I_E\). In particular
+it is an isometry on \(E\).
+
+For \(0\le r<T\), take the first \(r\) scalar factors in the period.
+They commute with \(q(A)\), so for \(n\in\N=\{0,1,\ldots\}\)
+\begin{equation}
+ g_{nT+r}=G^n S^n g_r,\qquad
+ x_{nT+r}=G^n S^n x_r .
+ \label{eq:period}
+\end{equation}
+An active component can never be killed within the period. Killing it
+would give \(q(\lambda)=0\), contrary to \(G>0\). Thus \(x_r\ne0\), and
+every \(x_k\) belongs to one of the at most \(2T\) lines
+\begin{equation}
+ \mathcal L=\{\operatorname{span}(x_r),\operatorname{span}(Sx_r)
+                 :0\le r<T\}.
+ \label{eq:lines}
+\end{equation}
+The signs in \(S\) explain why both lines per phase may be needed.
+The formula also gives a uniform bound on the entire set of iterates
+and on its positive rescalings with scale at most one.
+
+\section{A smooth perturbation that preserves the visited data}
+
+\begin{lemma}\label{lem:flat}
+Given a finite nonempty collection of lines through the origin in
+\(\R^d\), \(d\ge2\), there is a nonnegative smooth function \(\psi\)
+of compact support whose derivatives of every order vanish on the
+union of the lines. The function is positive at some point in every
+neighborhood of the origin.
+\end{lemma}
+
+\begin{proof}
+Let \(R_L\) be the orthogonal projection onto the orthogonal complement
+of \(L\). Define \(b(0)=0\) and \(b(t)=\exp(-1/t)\) for \(t>0\).
+Extend \(b\) by zero to \(t<0\). For \(t>0\), every derivative of \(b\)
+is a finite sum of multiples of \(t^{-j}\exp(-1/t)\), as follows by
+differentiating and increasing \(j\). Each such term tends to zero
+as \(t\downarrow0\), even after division by any positive power of \(t\).
+Induction using the difference quotient at zero proves that the
+extension is smooth with \(b^{(k)}(0)=0\) for every \(k\ge0\).
+
+The function \(x\mapsto b(\norm{R_Lx}^2)\) is smooth. Its value is
+zero on \(L\), and every term in its differentiated chain rule has a
+factor \(b^{(j)}(0)\) there. Let \(\chi\) be a smooth nonnegative
+compactly supported function equal to one near zero and put
+\[
+ \psi(x)=\chi(x)\prod_{L\in\mathcal L} b(\norm{R_Lx}^2).
+\]
+The product rule retains the vanishing derivatives on each \(L\).
+A finite union of proper linear subspaces has empty interior. For
+example, each subspace has zero \(d\)-dimensional Lebesgue measure,
+so the union cannot contain a ball. In every sufficiently small
+ball there is a point off all lines where all factors are positive.
+\end{proof}
+
+Only agreement of the function, gradient, and Hessian is needed for
+the basic Ritz application. For agreement through order two a
+polynomial factor \(\norm{R_Lx}^4\) suffices. Writing \(v=R_Lx\), its
+gradient is \(4\norm{v}^2v\) and its Hessian is
+\(8vv^\top+4\norm{v}^2R_L\). The smooth factor used above also covers a
+rule that reads a finite number of higher derivatives at visited
+points.
+
+\begin{theorem}\label{thm:lift}
+Assume the quadratic orbit and its period satisfy the conditions
+of Section~1. Fix a deterministic exact-arithmetic implementation
+that uses only derivatives and values at generated iterates. Suppose a
+fixed finite initialization specifies its starting phase, and
+rescaling that initialization on the quadratic by \(s>0\) gives
+the trajectory \(s x_k\) with the same sequence of step sizes.
+Any further observations used to produce the starting phase must
+come from finitely many points whose locations scale by \(s\). There is a globally strongly convex
+\(F\in C^\infty(\R^d)\) with unique minimizer \(0\) and
+\(\nabla^2 F(0)=A\) that agrees with \(f_A\) to every derivative order
+at \(0\) and is nonquadratic on every neighborhood of \(0\). For
+every \(s>0\), this implementation on \(F\), with the corresponding
+scaled matching prefix and the same deterministic conventions,
+reproduces \(s x_k\) at every subsequent step.
+\end{theorem}
+
+\begin{proof}
+Add to \(\mathcal L\) in \eqref{eq:lines} the lines through any
+nonzero points used in the fixed finite initialization. This is
+still a finite set, and it contains all their positive rescalings.
+Use Lemma~\ref{lem:flat} with that set, and let
+\(M=\sup_x\norm{\nabla^2\psi(x)}_2\). Compact support and smoothness
+give \(M<\infty\). If \(M=0\), then \(\psi\) is affine, which together
+with compact support makes it zero. Choose \(0<\eta<\lambda_{\min}(A)/M\)
+and put \(F=f_A+\eta\psi\). For each \(z\in\R^d\),
+\[
+ z^\top\nabla^2F(x)z
+ \ge (\lambda_{\min}(A)-\eta M)\norm{z}^2 .
+\]
+This gives global strong convexity. The gradient at zero vanishes
+and every derivative at zero matches the quadratic. If \(F\) were
+quadratic on a neighborhood of zero, its value, gradient and Hessian
+there would determine that polynomial as \(f_A\), contradicting
+Lemma~\ref{lem:flat}.
+
+Fix \(s>0\). Every point \(sx_k\) belongs to the same set of lines.
+By scale equivariance, running on \(f_A\) from the scaled quadratic
+prefix produces \(sx_k\). Every observation on that prefix is equal
+for \(F\) and \(f_A\), which initializes the same stored state,
+including the steps already computed for the next sweep. If the
+two states agree before a step, the same rule computes the same
+step size from the same inputs. Both move to the same next point
+using the same gradient. The new observation again agrees, so the
+stored states after that step agree. This proves the claim by
+induction.
+\end{proof}
+
+The data condition in the theorem includes pure, unweighted
+memory-two LMSD with a deterministic order of Ritz values and an
+exact rank rule. Equality of the stored iterates and gradients makes
+the gradient differences, projected pencil, rank decision and root
+order identical. Scale equivariance in the quadratic follows because
+scaling all history vectors preserves their span. An absolute
+stopping tolerance, rejected trial evaluations, or other off-orbit
+queries can change the run and need separate analysis.
+
+\section{The six-sweep example for memory two}
+
+Take a sufficiently small \(\varepsilon>0\) and set
+\[
+ A_\varepsilon=\operatorname{diag}(1/2,\ 1/2+\varepsilon,\
+                                  1-\varepsilon,\ 1).
+\]
+The six-sweep construction of \cite[Theorem 8.1 and Appendix R]{sharp} gives a full-support quadratic orbit and a
+compatible entry \(u_1=P_5(A_\varepsilon)u_0\).
+The six sweep polynomials are \(P_0,\ldots,P_5\), with each
+\(P_i(t)=(1-t/\vartheta_{i,1})(1-t/\vartheta_{i,2})\).
+The displayed prefix starts at \(g_0=u_0\). Apply the steps
+\(1/\vartheta_{5,1}\) and \(1/\vartheta_{5,2}\) in that order to
+obtain \(g_1\) and \(g_2=u_1\). To see what the pure
+method observes, let \(B=[g_0,g_1]\), and let \(\alpha_0,\alpha_1\)
+be the two prefix steps. The two columns of \(AB\) are exactly
+\((g_0-g_1)/\alpha_0\) and \((g_1-g_2)/\alpha_1\). If \(B=VR\)
+is a reduced QR factorization of this rank-two history, the symmetric
+matrix whose eigenvalues yield the next steps is
+\(V^\top(AB)R^{-1}=V^\top A V\). The three sampled gradients and the
+two steps therefore determine this projected problem. It produces
+\(P_0\) on the prescribed branch. The ordered sequence from the start
+of this prefix uses \(P_5\)
+followed by \(P_0,\ldots,P_4\), and repeats. The choice of order
+within each sweep affects intermediate points but leaves the
+polynomial product unchanged.
+
+Write \(Q=\prod_{i=0}^{5}P_i\). If \(g\) is the gradient
+at the start of a period, its spectral weights are
+\(w_i=|\langle g,e_i\rangle|^2/\norm{g}^2>0\), where \(e_i\)
+is the \(i\)th coordinate eigenvector. Applying \(Q(A_\varepsilon)\) changes
+the weights to
+\[
+ \frac{w_i Q(\lambda_i)^2}{G^2},\qquad
+ G^2=\sum_j w_j Q(\lambda_j)^2 .
+\]
+The weights return to their original values by the six-cycle
+construction. Cancelling \(w_i\) therefore gives
+\(Q(\lambda_i)^2=G^2\) at all four nodes. The six-sweep construction gives
+\begin{equation}
+ G^{1/12}
+   = 2^{-1/2}\varepsilon^{3/8}
+       \bigl(1+O(\sqrt\varepsilon)\bigr).
+ \label{eq:factor}
+\end{equation}
+Here is the initialization and time count used below. Choose
+\(u_0\) with the four normalized squared components prescribed by
+the phase-zero solution in \cite[Appendix R]{sharp}. In the diagonal
+model one can take the positive square roots as its coordinates.
+Set \(x_0=A_\varepsilon^{-1}u_0\) and take the two ordered reciprocal
+Ritz steps from \(P_5\). The pair \((u_0,u_1)\), together with these
+two scalar steps, is the compatible entry. The three measured
+gradients now determine the two Ritz values defining \(P_0\) as above.
+Start the lower-bound clock at \(g_2=u_1\), so its time
+\(\ell\) corresponds to \(k=\ell+2\) on the clock of
+\eqref{eq:period}. The next twelve scalar updates consume
+\(P_0,\ldots,P_5\) in this order. The six-cycle construction gives all six of these
+polynomials by recomputing the history at each boundary, not by
+preassigning the subsequent updates to the nonlinear run.
+For each \(\varepsilon\), Theorem~\ref{thm:lift} keeps that rule and
+its entire trajectory on one nonlinear objective at every positive
+scale.
+
+\begin{corollary}\label{cor:local}
+Fix that nonlinear objective and any neighborhood \(U\) of zero.
+Let \(H_-=(h_0,h_1,h_2)\) be the three stored gradients at the end
+of a compatible prefix, and let \(\widehat x_\ell\) denote the
+iterates counted from that phase. For \(0<\gamma<G^{1/12}\), no
+finite \(C\), independent of the phase state and \(\ell\), makes
+\[
+ \norm{\nabla F(\widehat x_\ell)}
+ \ \le\ C\gamma^\ell \max_{0\le j\le2}\norm{h_j}
+ \qquad(\ell\ge0)
+\]
+hold for all such initialized trajectories whose stored points
+and future iterates lie in \(U\).
+\end{corollary}
+
+\begin{proof}
+The unscaled iterates are bounded by \eqref{eq:period}. Hence a
+single small \(s>0\) places the entire run and the three stored
+points in \(U\). Set \(H_-^{(s)}=(s g_0,s g_1,s g_2)\). At time
+\(\ell=12n\), the isometry of \(S\) and \eqref{eq:period} give
+\(\norm{\nabla F(\widehat x_{12n})}=s G^n \norm{g_2}\).
+The proposed estimate would force
+\[
+ C\ \ge\
+ \frac{\norm{g_2}}{\max_{0\le j\le2}\norm{g_j}}
+ \left(\frac{G}{\gamma^{12}}\right)^n
+\]
+for every \(n\). The prefactor is positive and the base exceeds
+one. This contradiction already holds for the single scaled phase
+state selected above.
+\end{proof}
+
+\section{A real-analytic variant for finitely many derivatives}
+
+The orbit can also be preserved by a real-analytic objective if
+the implementation requires agreement only through a fixed derivative
+order \(m\). Take an integer \(k\) with \(2k>\max(m,2)\).
+In the proof of
+Theorem~\ref{thm:lift}, one may use
+\[
+ \psi_{\mathrm{an}}(x)
+ = e^{-\norm{x}^2}\prod_{L\in\mathcal L}\norm{R_Lx}^{2k}.
+\]
+To verify the required vanishing, expand the \(L\)-factor at a point
+\(x_0\in L\). It is the homogeneous polynomial
+\(\norm{R_L(x-x_0)}^{2k}\) in the increment, so every derivative of
+order below \(2k\) is zero there. The product rule proves the same
+vanishing for \(\psi_{\mathrm{an}}\). Every second derivative is a
+polynomial times \(e^{-\norm{x}^2}\), hence bounded on \(\R^d\).
+The Hessian estimate in Theorem~\ref{thm:lift} now gives a globally
+strongly convex, real-analytic \(F\) that is nonquadratic in every
+neighborhood of zero and preserves the same trajectory. For the
+plain first- and second-derivative version of the method, \(k=2\)
+suffices. The construction from Lemma~\ref{lem:flat} is needed for
+agreement through every derivative order.
+
+\section{Scope and relation to earlier work}
+
+The lower bound concerns a prescribed compatible history and a
+pure visited-point implementation. A procedure that starts from a
+single point with two ordinary steepest-descent line searches may
+generate a different history. The argument establishes neither
+a basin of initial histories nor persistence under perturbation of
+step sizes, function evaluations, or roundoff. Equation
+\eqref{eq:factor} concerns the specified six-cycle. It gives a
+lower witness and leaves the nonlinear worst-case upper rate open.
+
+Ritz sweeps for nonquadratic problems are studied in
+\cite{fletcher,ferrandi}. The pure realization used here omits the
+line-search and safeguard mechanisms used in implementations of such
+methods. Smooth strongly convex interpolation \cite{taylor} supplies
+finite-data constructions for performance estimation. Our
+perturbation prescribes data on the finitely many lines that contain
+an infinite trajectory and all its positive rescalings. The result
+depends on the complete delayed-state return proved for the chosen
+quadratic branch. Gu \cite{gu} studies convergence under cyclic
+reuse of historical Ritz values on quadratics. The orbit used here
+repeats the sweep \emph{pattern} after six sweeps of the usual
+memory-two rule, which consumes each computed Ritz pair once.
+
+The general lifting criterion can be applied to another periodic
+quadratic history once its full return, finite matching initialization,
+and scalar step count have been proved for that history. The quadratic six-cycle is the one proved in \cite{sharp}.
+The associated nonlinear six-cycle with matching derivatives
+through order two was derived in an earlier unpublished version
+of this work. This paper presents that derivation in a
+cycle-independent form and adds perturbations that either match
+derivatives of all orders or are real-analytic and match any
+prescribed finite order.
+
+\paragraph{Status and AI disclosure.}
+This is an AI-assisted research working paper based on an existing
+research derivation. It is pending human author review. The companion
+formalization checks state replay and the discrete return recursion
+under explicit hypotheses. The analytic construction, the quadratic
+orbit, and its asymptotic rate are proved or cited in the manuscript
+and are outside that machine-checked scope.
+
+\begin{thebibliography}{9}
+\bibitem{sharp}
+\emph{Sharp spectral bounds and regeneration in limited-memory steepest
+descent}, anonymized research working paper, November 2026.
+\href{https://taitai2025.github.io/assets/documents/research/lmsd-spectral.pdf}
+{Archived version with proof appendices}.
+\bibitem{fletcher}
+R. Fletcher,
+A limited memory steepest descent method,
+\emph{Mathematical Programming}, 135 (2012), pp.\ 413--436,
+\href{https://doi.org/10.1007/s10107-011-0479-6}{doi:10.1007/s10107-011-0479-6}.
+\bibitem{ferrandi}
+G. Ferrandi and M.~E. Hochstenbach,
+Limited memory gradient methods for unconstrained optimization,
+\href{https://arxiv.org/abs/2308.15145}{arXiv:2308.15145}, 2023.
+\bibitem{taylor}
+A.~B. Taylor, J.~M. Hendrickx, and F. Glineur,
+Smooth strongly convex interpolation and exact worst-case performance
+of first-order methods,
+\href{https://arxiv.org/abs/1502.05666}{arXiv:1502.05666}.
+\bibitem{gu}
+R. Gu, Superlinear convergence of cyclic gradient methods with
+historical Ritz step sizes,
+\href{https://arxiv.org/abs/2610.32705v2}{arXiv:2610.32705v2}, 2026.
+\end{thebibliography}
+\end{document}
