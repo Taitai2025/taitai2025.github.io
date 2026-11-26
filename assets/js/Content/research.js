@@ -171,6 +171,22 @@ window.RESEARCH_CONTENT = {
       "related": [
         "trial-firsthit"
       ]
+    },
+    {
+      "id": "certified-chord",
+      "version": "1.0",
+      "releaseDate": "2026.11.26",
+      "pages": 5,
+      "zh": "用两个梯度样本判定弦点可停止",
+      "en": "A certified stopping point from two gradient samples",
+      "groupZh": "步长设计与停止条件",
+      "groupEn": "Stepsizes and stopping criteria",
+      "descriptionZh": "从已通过值检验的试探点及当前点的梯度构造终止证书。一个精确算例少提交一步，两条轨道各付四次函数值和四次梯度请求。",
+      "descriptionEn": "Certifies a terminal interior point using the endpoint gradients of a value-accepted segment. In an exact example one commit is saved while both runs make four requests of each type.",
+      "related": [
+        "trial-firsthit",
+        "gll-window"
+      ]
     }
   ],
   "papers": [

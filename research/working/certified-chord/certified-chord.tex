@@ -1,0 +1,324 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={A certified stopping point from two gradient samples},pdfauthor={},pdfsubject={AI-assisted research working paper, pending author review}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\R}{\mathbb R}
+\title{A certified stopping point from two gradient samples}
+\author{}
+\date{November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A line search can accept the value at a point while its gradient
+remains above a prescribed stopping tolerance. We use the gradients
+at the current and accepted trial points to certify an interior
+point on the same search line. The modification makes an extra
+gradient query only when that query is guaranteed to end the run.
+In an exact, separated value-and-gradient model, the modification
+uses at most as many requests of either type as its reference run.
+An exact one-dimensional example ends in two committed steps instead
+of three and uses four requests of each type in both runs. It shows
+why an earlier stopping step need not save oracle requests.
+\end{abstract}
+
+\section{Reference line search and the decision to stop}
+
+Let \(f\in C^2(\R^n)\) satisfy
+\[
+ \tfrac12 I\preceq\nabla^2 f(x)\preceq 4I,\qquad
+ \norm{\nabla^2 f(x)-\nabla^2 f(y)}_2\le\norm{x-y}.
+\]
+Put \(g(x)=\nabla f(x)\). At the initial point \(x_0\) request \(f(x_0)\)
+and \(g(x_0)\) and set the tolerance \(\theta=2^{-20}\norm{g(x_0)}\).
+A run stops at the first \emph{committed} point where
+\(\norm{g(x)}\le\theta\). The oracle replies are exact and deterministic.
+A value request and a gradient request at the same point are recorded
+separately, and an uncommitted trial cannot serve as a previous iterate
+in the step-selection rule.
+
+The reference \(R\) first proposes the cold step \(1/4\). At subsequent
+nonterminal points it uses the most recent committed difference
+\(s=x_k-x_{k-1}\) and \(y=g(x_k)-g(x_{k-1})\) to compute
+\[
+ b_1=\frac{s^\top s}{s^\top y},\qquad
+ b_2=\frac{s^\top y}{y^\top y}.
+\]
+The proposal is \(b_1\) if \(b_2/b_1\ge 4/5\); otherwise it is the
+minimum of the last ten computed \(b_2\) values, including the
+current one. Clip the proposal to \([1/4,2]\). This fixes an
+ABBmin1-type reference \cite{abb} for the comparison, including its memory.
+For the Grippo--Lampariello--Lucidi test \cite{gll}, let
+\(F_k=\max_{\max(0,k-9)\le j\le k}f(x_j)\).
+At its current trial point \(p=x-a g(x)\), take the first step satisfying
+\begin{equation}
+ f(p)\le F_k-\tfrac14 a\norm{g(x)}^2.
+ \label{eq:accept}
+\end{equation}
+It halves \(a\) after every failed value test. Rejected points
+have no gradient request. At the first passing \(p\), the reference
+requests \(g(p)\) and commits \(p\).
+
+The modification \(C\) runs the same reference proposal and value
+tests. It also requests \(g(p)\) at the first passing point. At the
+cold step, or when \(p\) already meets the tolerance, it commits
+\(p\). At other steps it may use those two gradients to certify a
+point between \(x\) and \(p\). Only a certified terminal point may
+replace \(p\).
+
+\section{A certificate for a point inside the accepted segment}
+
+\begin{lemma}\label{lem:interpolation}
+Suppose the Hessian of \(f\) is \(M\)-Lipschitz in operator norm.
+For \(0\le t\le 1\) and \(d=p-x\),
+\begin{equation}
+ \norm{g(x+td)-(1-t)g(x)-tg(p)}
+ \le \tfrac12 M t(1-t)\norm{d}^2.
+ \label{eq:interpolation}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let \(h(s)=g(x+s d)\), so
+\(h'(s)=\nabla^2f(x+sd)d\) is Lipschitz with constant
+\(M\norm{d}^2\). The interpolation error equals
+\[
+ (1-t)\int_0^t h'(s)\,ds
+      -t\int_t^1 h'(s)\,ds .
+\]
+Subtract \(h'(t)\) inside both integrals. The constant terms cancel,
+and bounding the two integrals by the Lipschitz estimate gives
+\[
+ M\norm{d}^2\left((1-t)\frac{t^2}{2}
+                  +t\frac{(1-t)^2}{2}\right).
+\]
+This is the right side of \eqref{eq:interpolation}.
+\end{proof}
+
+Write \(g=g(x)\), \(g_p=g(p)\), and \(v=g_p-g\).
+If \(v\ne0\), let \(t\) be \(-g^\top v/(v^\top v)\) clipped to
+\([0,1]\). This choice minimizes \(\norm{g+t v}\) over the segment
+parameter. At an endpoint value of \(t\), or when \(v=0\), keep \(p\).
+For \(0<t<1\), define
+\begin{equation}
+ q=x-ta g,\qquad
+ U=\norm{g+tv}+\tfrac12 t(1-t)a^2\norm{g}^2 .
+ \label{eq:certificate}
+\end{equation}
+If \(U>\theta\), the modification keeps \(p\) without a request at
+\(q\). If \(U\le\theta\), it constructs \(q\), requests \(g(q)\)
+and checks the stopping tolerance, then requests \(f(q)\) and commits
+\(q\). The supplied Hessian Lipschitz constant is one, including when
+the actual constant is smaller. The bound in Lemma~\ref{lem:interpolation}
+holds for every \(t\), so it applies also to this choice from measured
+endpoint gradients. Consequently the extra gradient check always
+succeeds in the stated model.
+
+The new step still satisfies the value acceptance condition with step
+size \(ta\). Convexity and \(f(x)\le F_k\) give
+\[
+ f(q)\le (1-t)f(x)+t f(p)
+       \le F_k-\tfrac14 ta\norm{g}^2.
+\]
+This guarantee does not change the protocol's request for the actual
+terminal function value. The clipping rule minimizes the norm of the
+linear interpolant. The certificate adds a separate error term, and
+the rule need not minimize that sum over \(t\).
+
+\section{Stopping and request counts}
+
+\begin{theorem}\label{thm:counts}
+The reference \(R\) terminates in finitely many committed steps.
+The modification \(C\) also terminates. If \(N_R,N_C\) count
+committed steps and \(J_R,J_C\) count rejected value trials, let
+\(T\) be one if a certified interior point is committed and zero
+otherwise. Then
+\[
+ N_R-N_C\ge T,\qquad J_R-J_C\ge0 .
+\]
+Counting requests including the initial point, the differences
+(reference minus modification) are
+\begin{align}
+ N_f^R-N_f^C&=(N_R-N_C)-T+(J_R-J_C), \label{eq:countf}\\
+ N_g^R-N_g^C&=(N_R-N_C)-T. \label{eq:countg}
+\end{align}
+Both differences are nonnegative.
+\end{theorem}
+
+\begin{proof}
+If the initial point is already terminal both runs stop with one
+request of each type. Otherwise \(\theta>0\). Along a nonterminal
+run, a committed step has \(s\ne0\). Strong convexity gives
+\(s^\top y\ge \tfrac12\norm{s}^2>0\), so both reference proposals
+are defined. For every trial
+\(a\le 2(1-1/4)/4=3/8\), the smoothness estimate at \(x-a g(x)\)
+implies \eqref{eq:accept}. With the clipped proposals and
+halving, each line search therefore accepts a step at least
+\(3/16\). Indeed a proposal passing immediately is at least \(1/4\),
+whereas a final halving from a rejected trial comes from a step
+larger than \(3/8\).
+
+If the reference never stopped, every post-search value would be at
+most \(F_k-c\), where \(c=(3/64)\theta^2>0\), and the window maxima
+\(F_k\) could only decrease. After ten new committed values, each
+value in the window is bounded by its old maximum minus \(c\).
+It follows that \(F_{k+10}\le F_k-c\). Iterating this inequality
+contradicts the lower bound of a strongly convex function.
+
+For the coupled runs, suppose the committed prefixes are equal.
+The proposal, the window maximum, the sequence of rejected value
+tests and the first passing point \(p\) then agree. Without an
+interior replacement the runs commit the same point. With one,
+\(C\) stops at \(q\) while \(R\) commits the same nonterminal \(p\)
+and needs at least one further step. Lemma~\ref{lem:interpolation}
+rules out a failed extra gradient check. Thus there is at most one
+interior replacement, and until it occurs the two committed
+histories are identical. The inequalities for \(N\) and \(J\)
+follow, as all rejected trials up to the replacing transaction
+are included in both runs.
+
+Each transaction requests one value and one gradient at its first
+passing point, and each rejected trial costs one value request.
+An interior replacement also costs one value and one gradient at
+\(q\). Thus \(N_f^C=1+N_C+J_C+T\) and
+\(N_g^C=1+N_C+T\), with \(T=0\) in the corresponding reference
+expressions. Subtraction gives \eqref{eq:countf} and \eqref{eq:countg}.
+\end{proof}
+
+\clearpage
+\section{A run with earlier stopping and equal requests}
+
+Use the following fixed one-dimensional example. The piecewise
+function and the initial point come from an earlier fixed construction.
+The earlier derivation did not complete the reference comparison
+beyond its second committed step. The current
+calculation checks the third step separately, with the same fixed
+function, initial point and tolerance. The input was selected for the
+construction.
+\[
+ f(x)=
+ \begin{cases}
+ x^2/2, & x\le0,\\
+ x^2/2-x^3/6, & 0\le x\le 1/2,\\
+ 5/48+\tfrac38(x-1/2)+\tfrac14(x-1/2)^2, & x\ge1/2 ,
+ \end{cases}
+ \qquad x_0=2^{-12}.
+\]
+The pieces agree in value and the first two derivatives at the
+junctions. The second derivative is \(1\), \(1-x\) and \(1/2\)
+on the three pieces. It is globally Lipschitz with constant one,
+and the minimizer is \(0\).
+
+Both runs take the cold step \(a_0=1/4\) to
+\(x_1=24577/134217728\). The initial tolerance is
+\(\theta=8191/35184372088832\). In one dimension the two BB
+step formulas coincide whenever the previous secant is nonzero.
+Between \(x_0\) and \(x_1\) the secant slope is
+\(1-(x_0+x_1)/2\). Therefore the second proposal and its trial
+point are
+\[
+ a=\frac{268435456}{268378111},\qquad
+ p=-\frac{24577}{1099276742656}.
+\]
+The proposal lies inside the clipping interval, the first value
+trial passes, and \(g(p)=p\). In particular \(p\) has not met
+the stop condition. The affine interpolant of the endpoint gradients changes
+sign, so its minimizing parameter is
+\(t=g(x_1)/(g(x_1)-p)\in(0,1)\) and \(g(x_1)+t(g(p)-g(x_1))=0\).
+The point and certificate simplify to
+\begin{equation}
+ q=\frac{p(g(x_1)-x_1)}{g(x_1)-p}
+   =\frac{604028929}{295093865557572718592},
+ \qquad U=\frac{t(1-t)a^2g(x_1)^2}{2}.
+ \label{eq:explicitq}
+\end{equation}
+Exact rational comparison gives
+\[
+ \frac{g(x_1)}{\theta}>10^5,\qquad
+ 96<\frac{-p}{\theta}<97,\qquad
+ 0<\frac{U}{\theta}<\frac9{1000},\qquad
+ 0<\frac{g(q)}{\theta}<\frac9{1000}.
+\]
+Thus \(C\) commits \(q\) and stops on its second step. For the
+reference, the secant between \(x_1\) and \(p\) produces
+\[
+ b=\frac{x_1-p}{g(x_1)-p}
+   =\frac{72050996699725824}{72044400770891777}.
+\]
+It is also inside the clipping interval. Its first trial is
+\(p-bg(p)=p(1-b)=q\), which is terminal. The remaining acceptance
+checks can be written using one common value, \(f(x_0)\), because
+each passing value is below it and the window still contains
+\(x_0\). Direct substitution gives
+\begin{align*}
+ f(x_0)-\tfrac1{16}g(x_0)^2-f(x_1)&>9\cdot10^{-9},\\
+ f(x_0)-\tfrac14 a g(x_1)^2-f(p)&>2\cdot10^{-8},\\
+ f(x_0)-\tfrac14 b p^2-f(q)&>2\cdot10^{-8}.
+\end{align*}
+These comparisons also show that none of the three reference
+transactions rejects its first value trial. The step table is
+\[
+\begin{array}{c|c|c|c|c}
+  &\text{committed points after }x_0 &\text{rejected trials}
+           &\text{value requests}&\text{gradient requests}\\ \hline
+ R &x_1,\ p,\ q &0&4&4\\
+ C &x_1,\ q     &0&4&4
+\end{array}
+\]
+In the modified run, the requests at the uncommitted point \(p\)
+account for the equality. This identity of the two runs' final
+points is a property of the one-dimensional exact secants and
+the verified first-trial acceptance in this example.
+
+\section{What is being counted}
+
+The theorem compares exact requests of each type. The work needed
+to form the interpolation certificate is incurred every time it is
+tested, even when no interior gradient is requested. If a value
+request costs the same fixed \(\phi\) and a gradient request the
+same fixed \(\gamma\) in both runs, the difference in oracle
+charges is
+\[
+ (\phi+\gamma)(N_R-N_C-T)+\phi(J_R-J_C).
+\]
+Timing, memory, arithmetic, evaluation fusion and precision have
+additional costs. The example has no oracle saving to offset that
+extra arithmetic. The earlier trial-value rule in \cite{trial} can change the
+committed history before stopping. The modification here preserves
+the reference's preceding commits. Its guarantee concerns exact
+separated requests. A finite-precision implementation would have to
+bound the error in \(U\), the constructed point \(q\), and the
+comparison with \(\theta\).
+
+\paragraph{Status and AI disclosure.}
+This AI-assisted research working paper consolidates the earlier
+certified-chord derivation and completes an exact comparison for its
+stored, deliberately selected test. It is pending human author review.
+The companion Lean source checks the fixed rational identities,
+stopping and acceptance inequalities, and arithmetic equalities for
+the request counts. The execution ledger and the general coupling
+are justified in the written proofs.
+\begin{thebibliography}{9}
+\bibitem{abb}
+G. Frassoldati, L. Zanni, and G. Zanghirati,
+New adaptive stepsize selections in gradient methods,
+\emph{Journal of Industrial and Management Optimization},
+4 (2008), pp.\ 299--312.
+\href{https://doi.org/10.3934/jimo.2008.4.299}{doi:10.3934/jimo.2008.4.299}.
+\bibitem{gll}
+L. Grippo, F. Lampariello, and S. Lucidi,
+A nonmonotone line search technique for Newton's method,
+\emph{SIAM Journal on Numerical Analysis}, 23 (1986), pp.\ 707--716.
+\href{https://doi.org/10.1137/0723046}{doi:10.1137/0723046}.
+\bibitem{trial}
+Choosing a shorter step from a line-search trial value,
+anonymized working paper, 2026.
+\href{https://taitai2025.github.io/assets/documents/research/trial-firsthit.pdf}
+{Archived version}.
+\end{thebibliography}
+\end{document}
