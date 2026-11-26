@@ -16,34 +16,35 @@
 \date{November 2026}
 \begin{document}
 \maketitle
+\begin{center}\small\emph{AI-assisted working paper. Author verification pending.}\end{center}
 \begin{abstract}
-A delayed Ritz gradient method can repeat a sequence of step sizes after its
-spectral weights return, even if its gradient does not return to its
-original direction. We show how to realize such a trajectory exactly on
-a smooth, globally strongly convex, nonquadratic objective. The construction
-uses the fact that, after an entire period, each spectral component is
-multiplied by the same positive number, up to a sign. All iterates therefore
-lie on finitely many lines. A smooth perturbation can vanish with its
-derivatives on those lines while remaining nonzero arbitrarily close to
-the minimizer. We apply the construction to a known six-sweep orbit of
-memory-two limited-memory steepest descent and obtain the same local
-lower bound on the gradient decay factor, measured per scalar step.
+A delayed Ritz gradient method on a positive definite quadratic can
+repeat its step sizes even when its gradient direction does not return
+after one period. Suppose the active spectral components have the same absolute
+multiplier over one period. The iterates then lie on finitely many
+lines. We construct a smooth perturbation that vanishes along those
+lines with all its derivatives, while remaining nonzero arbitrarily
+close to the minimizer. Adding it produces a globally strongly convex
+nonquadratic objective. For a specified compatible history, a method
+that uses only data at visited points then generates the same stored
+gradients, step sizes, and iterates. We apply the construction to a six-sweep orbit of
+limited-memory steepest descent with memory two and preserve its local
+lower bound on the gradient decay factor per scalar step.
 \end{abstract}
 
 \section{A periodic orbit supplies a finite set of lines}
 
 Consider \(f_A(x)=\tfrac12 x^\top A x\) with \(A\) real symmetric and
 positive definite on \(\R^d\), \(d\ge 2\). We number scalar gradient steps
-starting at the beginning of a documented, compatible prefix. Let
+starting at the beginning of a specified compatible prefix. Let
 \(g_k=Ax_k\) and \(x_{k+1}=x_k-\alpha_k g_k\), where \(\alpha_k>0\).
 In memory-two limited-memory steepest descent (LMSD), two step sizes
 are computed from the preceding block of two scalar updates. Each
 block of two updates is called a sweep. The steps are the reciprocals
 of the two Ritz values obtained by projecting the Hessian onto the
-span of the two gradients used in that preceding block. In the
-application the prefix occupies the first two steps. At its end the
-method has the three stored points, their gradients, and the two
-ordered reciprocal Ritz steps to apply next. By a compatible prefix
+span of the two gradients used in that preceding block. In the six-sweep example, the prefix consists of the first two
+steps. At its end, the method has three iterates, their gradients,
+and the two reciprocal Ritz values for the next sweep. By a compatible prefix
 we mean that the stored samples were produced by the displayed scalar
 steps and that the next Ritz values were computed by the prescribed
 history rule. Any data from before the displayed prefix that are needed to

@@ -14,3 +14,5 @@ The proofs give phase compatibility, strict gaps, and exact local coefficients. 
 [Related working paper on line-search trial values](../trial-firsthit/)
 
 The November 26 Windows rerun matches all ten experiment CSVs and all five pattern-analysis CSVs byte for byte, including 145,858 trace rows. [Replay comparison](experiment-replay.json).
+
+Version 1.1 moves the human-review status onto the first page of the full PDF. The proof and supplementary pages retain their text and page order. To add the notice to a rebuilt PDF, use paper/mark_public_copy.py with different input and output filenames.

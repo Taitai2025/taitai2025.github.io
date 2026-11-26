@@ -15,17 +15,19 @@
 \date{November 2026}
 \begin{document}
 \maketitle
+\begin{center}\small\emph{AI-assisted working paper. Author verification pending.}\end{center}
 \begin{abstract}
-A line search can accept the value at a point while its gradient
-remains above a prescribed stopping tolerance. We use the gradients
-at the current and accepted trial points to certify an interior
-point on the same search line. The modification makes an extra
-gradient query only when that query is guaranteed to end the run.
-In an exact, separated value-and-gradient model, the modification
-uses at most as many requests of either type as its reference run.
-An exact one-dimensional example ends in two committed steps instead
-of three and uses four requests of each type in both runs. It shows
-why an earlier stopping step need not save oracle requests.
+A line search can accept a point whose gradient norm still exceeds
+the stopping tolerance. For an ABBmin1-type reference method with a
+known Lipschitz bound on the Hessian, we use the gradients at the
+current and accepted points to bound the gradient norm at an interior
+point of the segment. The modification requests the interior gradient
+and function value only if this bound certifies stopping there. In
+exact arithmetic it uses no more function or gradient requests than
+the reference, with the two types of request counted separately.
+In a one-dimensional example, the modification stops after two
+committed updates and the reference after three. Both stop at the
+same point and use four function values and four gradients each.
 \end{abstract}
 
 \section{Reference line search and the decision to stop}
@@ -37,13 +39,14 @@ Let \(f\in C^2(\R^n)\) satisfy
 \]
 Put \(g(x)=\nabla f(x)\). At the initial point \(x_0\) request \(f(x_0)\)
 and \(g(x_0)\) and set the tolerance \(\theta=2^{-20}\norm{g(x_0)}\).
-A run stops at the first \emph{committed} point where
-\(\norm{g(x)}\le\theta\). The oracle replies are exact and deterministic.
-A value request and a gradient request at the same point are recorded
-separately, and an uncommitted trial cannot serve as a previous iterate
-in the step-selection rule.
+A point is \emph{committed} when the method takes it as the next
+iterate. Counting \(x_0\), a run stops at the first committed point
+where \(\norm{g(x)}\le\theta\). The stepsize rule and value window use
+the committed history. Replies are exact and deterministic. We count
+the function and gradient requests at \(x_0\), and count the two
+types separately throughout the run.
 
-The reference \(R\) first proposes the cold step \(1/4\). At subsequent
+The reference \(R\) first proposes the initialization step \(1/4\). At subsequent
 nonterminal points it uses the most recent committed difference
 \(s=x_k-x_{k-1}\) and \(y=g(x_k)-g(x_{k-1})\) to compute
 \[
@@ -67,12 +70,15 @@ requests \(g(p)\) and commits \(p\).
 
 The modification \(C\) runs the same reference proposal and value
 tests. It also requests \(g(p)\) at the first passing point. At the
-cold step, or when \(p\) already meets the tolerance, it commits
+initialization step, or when \(p\) already meets the tolerance, it commits
 \(p\). At other steps it may use those two gradients to certify a
 point between \(x\) and \(p\). Only a certified terminal point may
 replace \(p\).
 
 \section{A certificate for a point inside the accepted segment}
+
+We bound the gradient inside the segment using the affine
+interpolant of the endpoint gradients and a bound on its error.
 
 \begin{lemma}\label{lem:interpolation}
 Suppose the Hessian of \(f\) is \(M\)-Lipschitz in operator norm.
@@ -125,8 +131,8 @@ size \(ta\). Convexity and \(f(x)\le F_k\) give
  f(q)\le (1-t)f(x)+t f(p)
        \le F_k-\tfrac14 ta\norm{g}^2.
 \]
-This guarantee does not change the protocol's request for the actual
-terminal function value. The clipping rule minimizes the norm of the
+The protocol still records the actual function value at the final
+iterate. The clipping rule minimizes the norm of the
 linear interpolant. The certificate adds a separate error term, and
 the rule need not minimize that sum over \(t\).
 
@@ -190,16 +196,13 @@ An interior replacement also costs one value and one gradient at
 expressions. Subtraction gives \eqref{eq:countf} and \eqref{eq:countg}.
 \end{proof}
 
-\clearpage
 \section{A run with earlier stopping and equal requests}
 
-Use the following fixed one-dimensional example. The piecewise
-function and the initial point come from an earlier fixed construction.
-The earlier derivation did not complete the reference comparison
-beyond its second committed step. The current
-calculation checks the third step separately, with the same fixed
-function, initial point and tolerance. The input was selected for the
-construction.
+On the following one-dimensional objective, both methods stop at the
+same point \(q\). The modified run commits \(q\) at its second update.
+The reference first accepts \(p\) and reaches \(q\) at its third update.
+The function and initial point are chosen to make the full comparison
+possible in exact rational arithmetic.
 \[
  f(x)=
  \begin{cases}
@@ -214,7 +217,7 @@ junctions. The second derivative is \(1\), \(1-x\) and \(1/2\)
 on the three pieces. It is globally Lipschitz with constant one,
 and the minimizer is \(0\).
 
-Both runs take the cold step \(a_0=1/4\) to
+Both runs take the initialization step \(a_0=1/4\) to
 \(x_1=24577/134217728\). The initial tolerance is
 \(\theta=8191/35184372088832\). In one dimension the two BB
 step formulas coincide whenever the previous secant is nonzero.
@@ -260,8 +263,9 @@ each passing value is below it and the window still contains
  f(x_0)-\tfrac14 a g(x_1)^2-f(p)&>2\cdot10^{-8},\\
  f(x_0)-\tfrac14 b p^2-f(q)&>2\cdot10^{-8}.
 \end{align*}
-These comparisons also show that none of the three reference
-transactions rejects its first value trial. The step table is
+At all three reference updates, the first trial passes the value
+test. The table counts the initial requests as well as the requests
+made during the run.
 \[
 \begin{array}{c|c|c|c|c}
   &\text{committed points after }x_0 &\text{rejected trials}
@@ -295,14 +299,12 @@ separated requests. A finite-precision implementation would have to
 bound the error in \(U\), the constructed point \(q\), and the
 comparison with \(\theta\).
 
-\paragraph{Status and AI disclosure.}
-This AI-assisted research working paper consolidates the earlier
-certified-chord derivation and completes an exact comparison for its
-stored, deliberately selected test. It is pending human author review.
-The companion Lean source checks the fixed rational identities,
+\paragraph{Source and verification.}
+The example retains the objective and initial point of a previous
+construction, and includes the third reference update. The companion
+Lean source checks the fixed rational identities,
 stopping and acceptance inequalities, and arithmetic equalities for
-the request counts. The execution ledger and the general coupling
-are justified in the written proofs.
+the request counts. The written proof establishes the correspondence between the two runs.
 \begin{thebibliography}{9}
 \bibitem{abb}
 G. Frassoldati, L. Zanni, and G. Zanghirati,

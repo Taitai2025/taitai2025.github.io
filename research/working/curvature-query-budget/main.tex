@@ -1,0 +1,497 @@
+\documentclass[UTF8,11pt,fontset=windows]{ctexart}
+\usepackage[a4paper,top=25mm,bottom=24mm,left=25mm,right=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={固定方向的曲率查询预算},pdfauthor={},pdfsubject={AI 辅助研究工作稿，待作者逐项人工核阅}}
+\urlstyle{same}
+\newtheorem{theorem}{定理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\renewcommand{\proofname}{证明}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Hcal}{\mathcal H}
+\newcommand{\Tcal}{\mathcal T}
+\newcommand{\mcal}{\mathcal M}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\title{固定方向的曲率查询预算}
+\author{\small AI 辅助研究工作稿\quad 待作者逐项人工核阅}
+\date{2026 年 11 月 26 日 \quad v0.1}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+已知 Hessian 的谱带和它在一个子空间上的作用。预先固定若干方向及其权重，
+本文求确定性策略在至多 \(k\) 次完整、精确的 Hessian--向量积后，
+能保证的最坏曲率区间宽度。各方向加权宽度之和的最优值等于一个 Gram 矩阵的尾谱和。它由初始补全区间与带权方向构成。最大单向加权宽度的最优值
+由一组有限向量的最佳子空间逼近给出。两者均可用非自适应查询
+达到，所需查询方向可以不同。若 Hessian 的谱值只取谱带两端
+且重数已知，设初始回复留下一个维数为 \(m\) 的未知空间，剩余
+投影秩严格介于 \(0\) 与 \(m\) 之间。在 \(k\le m-2\) 时，两种最优
+宽度与给定同一初始回复、只知谱带时相等。确定整个 Hessian 的
+最小最坏预算为 \(m-1\)。
+\end{abstract}
+
+\section{观测与记分}
+
+给定实对称矩阵的谱带 \(\mu I\preceq H\preceq LI\)，其中
+\(\mu\le L\) 均已知。初始信息是 \(HU=Y\)，\(U\in\R^{n\times p}\)
+的列正交归一，\(0\le p\le n\)。假定与谱带及初始信息相容的集合
+\(\Hcal_0\) 非空。谱带当作独立给定的先验。
+在常 Hessian 的二次函数上，固定起点的梯度差可提供这类作用信息。
+
+方向 \(d_1,\ldots,d_s\in\R^n\) 和权重 \(\omega_j\ge0\) 在额外查询前
+固定，\(s\ge1\)。它们可以根据初始信息确定。每次查询选择非零 \(v\)
+并获得完整向量 \(Hv\)。对确定性策略 \(\pi\)，第 \(i\) 个向量以及是否
+续查，只依赖初始信息与前 \(i-1\) 个回复。对每条路径，额外查询次数
+至多为预先给定的非负整数 \(k\)。记在 \(H\) 上得到的实际记录为
+\(\Tcal_\pi(H)\)，其相容矩阵集合为 \(\Hcal(\Tcal_\pi(H))\subseteq\Hcal_0\)。
+方向宽度和两种记分定义为
+\begin{align}
+ w_{\Tcal}(d)
+ &=\max_{H'\in\Hcal(\Tcal)} d^\top H'd
+   -\min_{H'\in\Hcal(\Tcal)} d^\top H'd,\\
+ L_{\rm sum}(\Tcal)&=\sum_{j=1}^s\omega_j w_{\Tcal}(d_j),
+ &L_{\rm max}(\Tcal)&=\max_{1\le j\le s}\omega_j w_{\Tcal}(d_j).
+\end{align}
+上述集合均紧，端点存在。令 \(V_{\rm sum}(k)\) 和 \(V_{\rm max}(k)\)
+分别为 \(\inf_\pi\sup_{H\in\Hcal_0} L_{\rm sum}(\Tcal_\pi(H))\)
+和 \(\inf_\pi\sup_{H\in\Hcal_0} L_{\rm max}(\Tcal_\pi(H))\)。
+
+\section{从补全到归一化作用}
+
+以 \([U,V]\) 为正交坐标，其中 \(V\) 取 \(U^\perp\) 的基。
+观察确定块 \(A=U^\top Y\)、\(E=V^\top Y\)，只有右下块 \(D\) 未知。
+记 \(\dagger\) 为 Moore--Penrose 逆。广义 Schur 补给出
+\begin{align}
+ D_- &= \mu I+E(A-\mu I)^\dagger E^\top,\\
+ D_+ &= LI-E(LI-A)^\dagger E^\top.
+\end{align}
+对应的完整矩阵记为 \(H_-,H_+\)。整个相容集恰为
+\(\{H:H_-\preceq H\preceq H_+\}\)。
+
+为说明奇异端点的范围，对块矩阵
+\(\left(\begin{smallmatrix}B&F^\top\\ F&D\end{smallmatrix}\right)\)
+检验半正定，首先需要 \(B\succeq0\)。对 \(u\in\ker B\) 测试向量
+\((t u,y)\) 且令 \(t\) 遍历实数，得到 \(Fu=0\)。满足此条件时配方
+\[
+ (x+B^\dagger F^\top y)^\top B(x+B^\dagger F^\top y)
+     +y^\top(D-FB^\dagger F^\top)y
+\]
+就是原二次型，故剩余条件等价于 \(D\succeq FB^\dagger F^\top\)。
+对 \(H-\mu I\) 和 \(LI-H\) 分别套用，初始可行性保证两个核条件以及
+\(D_-\preceq D_+\)。每个介于两块之间的 \(D\) 都相容。反过来，在
+完整矩阵区间内，\(0\preceq H-H_-\preceq H_+-H_-\) 强制 \(H-H_-\)
+消去 \(U\) 的每列，因为半正定二次型为零的向量在其核内。因此
+完整矩阵区间内的每个矩阵也满足 \(HU=Y\)。
+这个补全步骤属于经典的自伴扩张与矩阵补全理论
+\cite{DavisKahanWeinberger,ArlinskiiHassiDeSnoo}。
+
+记 \(M=H_+-H_-\succeq0\) 及 \(\mathcal R=\ran M\)。每个相容矩阵唯一
+写成
+\begin{equation}
+ H=H_-+M^{1/2}K M^{1/2},\qquad 0\preceq K\preceq I_{\mathcal R}.
+ \label{eq:normalize}
+\end{equation}
+事实上 \(H-H_-\) 消去 \(\ker M\)。在 \(\mathcal R\) 上，两侧乘
+\(M^{-1/2}\) 即得唯一的 \(K\)，且保持半正定序。反向代入
+\eqref{eq:normalize} 得到原区间内的一个矩阵。\(M=0\) 时此表示使用
+零维空间。若 \(\mu=L\) 或初始信息已经确定 \(H\)，两种记分均为零。
+
+用 \(z=M^{1/2}v\) 表示归一化查询。回复 \(Hv-H_-v=M^{1/2}Kz\)
+等价于 \(Kz\)，因为可在 \(\mathcal R\) 上应用 \(M^{-1/2}\)。
+任意 \(z\in\mathcal R\) 均可由一个实向量 \(v\) 实现。若 \(z=0\)，
+这一次查询只能重复已知信息。
+
+\section{给定查询预算的最优宽度}
+
+对固定的 \(k\) 定义
+\[
+ x_j=\sqrt{\omega_j} M^{1/2}d_j,\qquad
+ X=[x_1,\ldots,x_s],\qquad
+ D_\omega=[\sqrt{\omega_1}d_1,\ldots,\sqrt{\omega_s}d_s],\qquad
+ J=X^\top X.
+\]
+若 \(S\subseteq\mathcal R\)，用 \(P_S\) 表示其正交投影。特征值按
+\(\lambda_1(J)\ge\cdots\ge\lambda_s(J)\ge0\) 排列，超出 \(s\) 的项取零。
+
+\begin{theorem}[固定方向的总宽度与最大宽度]\label{thm:main}
+在上述信息模型下，
+\begin{align}
+ V_{\rm sum}(k)&=\sum_{i>k}\lambda_i(J),\label{eq:sum}\\
+ V_{\rm max}(k)&=\min_{\substack{S\subseteq\ran X\\\dim S\le k}}
+          \max_{1\le j\le s}\|(I_{\mathcal R}-P_S)x_j\|^2.\label{eq:max}
+\end{align}
+两式的值都由非自适应查询达到。对总宽度，令 \(a_i\) 是 \(J\) 的
+前 \(\min\{k,\rank J\}\) 个正特征值对应的正交归一特征向量，可
+直接查询 \(v_i=D_\omega a_i\)。总宽度为零的最小预算为 \(\rank J\)。
+\end{theorem}
+
+\begin{proof}
+固定一条实际记录，令 \(S\) 为其归一化查询向量的张成空间。
+两种相容的归一化矩阵 \(K_1,K_2\) 在 \(S\) 上作用相同。其对称差
+\(\Delta\) 因而满足
+\[
+ \Delta=P_{S^\perp}\Delta P_{S^\perp},\qquad
+ -I_{\mathcal R}\preceq\Delta\preceq I_{\mathcal R}.
+\]
+这里 \(S^\perp\) 在 \(\mathcal R\) 中取。它给出每个方向的
+\(\omega_j w_{\Tcal}(d_j)\le\|P_{S^\perp}x_j\|^2\)。非自适应地查询
+生成某个 \(S\) 的至多 \(k\) 个向量，两种分数分别不超过这些平方范数
+的和与最大值。这个上界适用于该组查询的所有可能回复。
+
+对任意确定性自适应策略，把同一个矩阵 \(H_c=H_-+M/2\) 作为实际
+输入。按它的真实回复运行到停止，此时得到的 \(S\) 满足
+\(\dim S\le k\)。在这条记录上取
+\[
+ K_-^S=\tfrac12 P_S,\qquad K_+^S=\tfrac12 P_S+P_{S^\perp}.
+\]
+二者都在 \([0,I_{\mathcal R}]\)，故由 \eqref{eq:normalize} 产生的
+两个矩阵与 \(H_c\) 处于同一初始谱带并有相同初始作用。第一个查询
+只依赖初始信息。两者与 \(I_{\mathcal R}/2\) 在第一个真实查询向量
+上作用相同。若前 \(i-1\) 个问题及回复相同，停止判断相同。若继续，
+第 \(i\) 个查询也相同，且在 \(S\) 中，故回复相同。由归纳法，
+两个替代矩阵均与整条实际记录相容，包括提前停止的情形。它们的差
+恰是 \(M^{1/2}P_{S^\perp} M^{1/2}\)。结合前面的上界，同一对矩阵
+同时实现所有 \(d_j\) 的左右端点，每条加权宽度恰为
+\(\|P_{S^\perp}x_j\|^2\)。因此最坏回复给出相应的子空间逼近问题，
+自适应顺序无法改善最坏值。该中点路径论证沿用经典信息直径
+方法 \cite{Bakhvalov,TraubWozniakowski}。
+
+两种优化都可令 \(S\subseteq\ran X\)。对 \(x\in\ran X\)，把
+\(S\) 投影到 \(\ran X\) 得到 \(S'\)，其维数不增。对任意单位
+\(u\in S\)，有
+\(\lvert u^\top x\rvert\le\|P_{S'}x\|\|P_{\ran X}u\|\le\|P_{S'}x\|\)，
+故 \(\|P_S x\|\le\|P_{S'}x\|\)。在固定维数的正交投影紧集上，
+连续的有限最大值取得最小值，得到 \eqref{eq:max}。
+
+对平方和，有 \(\sum_j\|P_{S^\perp}x_j\|^2=\tr(XX^\top)-
+\tr(P_S XX^\top)\)。在 \(XX^\top\) 的正交特征基 \(b_i\) 中，
+后一个迹为 \(\sum_i\lambda_i(XX^\top)\|P_S b_i\|^2\)。
+系数属于 \([0,1]\)，且其和至多为 \(k\)。因此最大的迹由前
+\(k\) 个特征方向取得 \cite{Fan}。\(XX^\top\) 和 \(J\) 的正谱
+相同，且 \(M^{1/2}D_\omega a_i=Xa_i\) 是对应的非零左奇异方向。
+这给出 \eqref{eq:sum} 及查询向量 \(v_i\)。
+\end{proof}
+
+\paragraph{任意回复后共用一对端点。}
+对非中点记录，按 \(S\oplus S^\perp\) 分块，在 \([0,I_{\mathcal R}]\)
+中再次应用广义 Schur 补。回复固定 \(K\) 的 \(S\) 列。记已知的
+对角块为 \(A_S\)、耦合为 \(E_S\)，则未知对角块的端点是
+\(E_S A_S^\dagger E_S^\top\) 和
+\(I-E_S(I-A_S)^\dagger E_S^\top\)。实际回复使二者可行。同一对
+完整矩阵是序区间的极小和极大元，故所有方向的下端点由前者共同
+取得，上端点由后者共同取得。该回复的宽度可小于最坏记录中
+的投影残差平方。
+
+\paragraph{从已有作用计算 \(J\)。}
+令 \(P=I-UU^\top\)、\(C=Y-UA\)、\(R=PD_\omega\) 和 \(Z=C^\top R\)。
+由两端点之差可直接计算
+\[
+ J=(L-\mu)R^\top R-
+    Z^\top\big[(A-\mu I)^\dagger+(LI-A)^\dagger\big]Z .
+\]
+实际查询不需要形成环境维数的 \(M\)、它的平方根或其逆。若从
+\(D_\omega a_i\) 去掉已知空间 \(U\) 的分量，只需用原有 \(HU=Y\)
+加回其已知作用。相对零预算的宽度减少量为
+\(\sum_{i\le k}\lambda_i(J)\)。权重为零的方向不计入这两种分数。
+
+式 \eqref{eq:max} 是经典的有限点集 \(\operatorname{Subspace}(k,\infty)\) 问题的残差平方，见 \cite{DTV}。在二维情形，对称凸包 \(\operatorname{conv}\{\pm x_j\}\) 的最小宽度等于命题 \ref{prop:plane} 中最优值平方根的两倍。经典平面算法见 \cite{HouleToussaint}。下文枚举可以直接转换成查询的候选。
+
+\begin{proposition}[秩二族的单次查询]\label{prop:plane}
+若 \(\rank X=2\)，预算为一次，则 \eqref{eq:max} 可通过下列
+有限候选求得。令 \(u\) 是 \(\ran X\) 中垂直于查询直线的单位向量。
+候选为平行或垂直于非零 \(x_j\) 的 \(u\)，以及垂直于非零
+\(x_i-x_j\) 或 \(x_i+x_j\) 的 \(u\)。在候选中最小化
+\(\max_j(u^\top x_j)^2\)。
+\end{proposition}
+
+\begin{proof}
+在 \(\ran X\) 中选择正交坐标，视 \(u\) 为以角度为参数的单位向量。
+每个 \(f_j(u)=(u^\top x_j)^2\) 为光滑函数。合并完全相同的
+\(f_j\)，删去零函数。若某处最小点只有一项达到最大值，该项在
+邻域内保持有效。其角度导数为零，故 \(u\) 平行或垂直于该
+\(x_j\)。若多项并列，取两个不同的活跃函数，其相等条件为
+\((u^\top(x_i-x_j))(u^\top(x_i+x_j))=0\)。不同函数保证两向量
+均非零。这覆盖所有最小点。每条候选法向对应 \(\ran X\) 中
+的一条查询直线，而每条这样的直线都对应某次物理作用。
+\end{proof}
+
+\section{同一个谱带下两种查询目标}
+
+取 \(\mu=1,L=5\)，\(U=e_1\)，初始作用 \(He_1=(3,1,0)^\top\)。
+两个补全端点的右下块分别是
+\(\diag(3/2,1)\) 与 \(\diag(9/2,5)\)，所以
+\(M=\diag(0,3,4)\)。对 \(d_1=e_2,d_2=e_3\) 取等单位权。
+零预算的宽度是 \(3,4\)。令 \(k=1\)，三种查询的最坏宽度在
+各自的中点记录上取得，如表所示。
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+查询向量 \(v\) & \(w(e_2)\) & \(w(e_3)\) & 总宽度 & 最大宽度\\
+\midrule
+\(e_2\) & \(0\) & \(4\) & \(4\) & \(4\)\\
+\(e_3\) & \(3\) & \(0\) & \(3\) & \(3\)\\
+\(e_2+e_3\) & \(12/7\) & \(12/7\) & \(24/7\) & \(12/7\)\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+这里 \(J=\diag(3,4)\)。查询 \(e_3\) 对总宽度最优。只查询当前
+一个方向 \(e_2\) 会使另一方向保留宽度 \(4\)。若保护最不确定的
+单个方向，记 \(q\) 为归一化坐标中的单位查询方向，
+令 \(t=|q^\top e_2|^2\)。两宽度分别为 \(3(1-t)\) 和 \(4t\)。令它们相等给出
+\(t=3/7\)，最坏最大值为 \(12/7\)，查询向量为 \(e_2+e_3\)。
+因此两个分数的最优查询不同。若把方向集进一步扩大到
+\(\{a e_2+b e_3:a^2+b^2\le1\}\)，单次查询的最坏宽度最优值又是
+\(3\)，即椭球方向族的次大特征值。它所保护的方向集合更大。
+
+实际回复可能使宽度小于最坏值。例如在二维谱带 \([1,5]\) 上，
+没有初始作用时查询 \(e_1\)。回复 \((3,0)^\top\) 使第二坐标的
+曲率仍可在 \([1,5]\) 内变化。回复 \((3,2)^\top\) 的两个 Schur
+端点同为 \(3\)，完全确定第二坐标曲率。该回复可由
+\(\left(\begin{smallmatrix}3&2\\2&3\end{smallmatrix}\right)\) 产生，
+其两个特征值正好是 \(1,5\)。
+
+
+\section{正交方向的最大宽度}
+
+设去掉所有 \(x_j=0\) 后，\(x_1,\ldots,x_r\) 两两正交。
+令 \(a_j=\|x_j\|^2>0\)，按 \(a_1\ge\cdots\ge a_r\) 排列。
+这里的正交性属于经过 \(M^{1/2}\) 变换的向量，原方向 \(d_j\)
+本身可以不正交。任取查询子空间 \(S\)，设
+\(p_j=\|P_Sx_j\|^2/a_j\)。第 \(j\) 个最坏宽度为
+\(a_j(1-p_j)\)。因此若要求所有宽度不超过 \(\tau\)，就须给第
+\(j\) 个方向至少 \((1-\tau/a_j)_+\) 的投影份额。
+
+\begin{proposition}\label{prop:orthogonal}
+在 \(0<k<r\) 时，\(V_{\rm max}(k)\) 等于方程
+\[
+ \sum_{j=1}^r (1-\tau/a_j)_+=k
+\]
+在 \([0,a_1]\) 上的唯一解。等价地，
+\[
+ V_{\rm max}(k)=
+   \max_{k<m\le r}\frac{m-k}{\sum_{j=1}^m 1/a_j}.
+\]
+\(k=0\) 时结果是 \(a_1\)，\(k\ge r\) 时是零。
+若 \(a_k>a_{k+1}\)，使总宽度达到最小的查询子空间
+不能使最大宽度达到最小。
+\end{proposition}
+
+\begin{proof}
+在基 \(x_j/\sqrt{a_j}\) 下，投影对角 \(p\) 满足
+\(0\le p_j\le1\) 且 \(\sum_jp_j=k\)；取秩恰为 \(k\) 即可。
+反之，每个满足这些条件的 \(p\) 都是某个实正交投影的对角。
+可以按分数分量个数归纳。若有两个分数分量 \(p_i,p_j\)，把它们
+合并为 \((p_i+p_j,0)\) 或 \((1,p_i+p_j-1)\)，分别对应总和
+至多或大于 \(1\)。合并后用归纳假设。所得投影在这一对坐标上的
+非对角元为零，因为对角元 \(0\) 或 \(1\) 对应一条零空间或像空间
+的坐标轴。于是可在这两个坐标间施加实平面旋转，将两对角元改回
+\(p_i,p_j\)，并保持其余对角和秩。若无分数分量，取对角投影。
+
+宽度上界 \(\tau\) 可达，当且仅当所需份额之和不超过 \(k\)。
+其和从 \(r\) 连续严格降至零，故方程的解唯一。
+因 \(a_j\) 已排序，正部之和等于
+\(\max_{0\le m\le r}(m-\tau\sum_{j=1}^m 1/a_j)\)，得到第二式。
+在 \(\tau=a_{k+1}\) 时，此和严格小于 \(k\)，所以最优最大宽度
+严格小于 \(a_{k+1}\)。只查询坐标轴时，至少一条前 \(k+1\) 的
+坐标轴未被查询，最大宽度至少为 \(a_{k+1}\)。谱隙
+\(a_k>a_{k+1}\) 使总宽度最优子空间唯一，即前 \(k\) 条坐标轴。
+\end{proof}
+
+这两个公式是 Sofman~\cite{Sofman} 的正交八面体宽度结果
+在当前问题中的形式。事实上，\(V_{\rm max}^{1/2}\) 是
+\(\operatorname{conv}\{\pm x_j\}\) 的 Kolmogorov \(k\)-宽度。
+投影给出实际查询。若其像空间的正交基在上述坐标下为 \(b_i\)，
+就查询 \(\sum_j (b_i)_j\sqrt{\omega_j/a_j}\,d_j\)。
+例如 \(a=(9,4,1)\) 时，一次查询得到 \(\tau=36/13\) 和
+\(p=(9/13,4/13,0)\)，两次查询得到 \(\tau=36/49\)。
+后者的投影可取 \(I-uu^\top\)，其中 \(u=(2,3,6)^\top/7\)。
+
+\section{Hessian 只有两个谱值时}
+
+再考虑一类较窄的先验。在本节中 \(\mu<L\)，且已知
+\(H=\mu I+(L-\mu)P\)，其中 \(P\) 为已知秩的未知正交投影。
+一次查询等价于获得 \(Pv\)。每对已有作用 \(u_i\mapsto Pu_i\)
+给出像空间中的 \(Pu_i\) 和核中的 \(u_i-Pu_i\)。记二者分别
+生成 \(S_1,S_0\)，并记 \(D=(S_1\oplus S_0)^\perp\)。在 \(D\)
+上，未知量是一个秩为
+\[
+ r=\rank P-\dim S_1
+\]
+的投影。令 \(m=\dim D\)。若 \(r=0\) 或 \(r=m\)，初始信息已
+决定 \(H\)。以下设 \(0<r<m\)，并置
+\(x_j=\sqrt{(L-\mu)\omega_j}\,P_Dd_j\)。
+
+下面比较同一批初始回复下的两个模型。将只知谱带时的矩阵归一化为 \(K=(H-\mu I)/(L-\mu)\)。此时 \(0\preceq K\preceq I\)
+且 \(Ku_i=Pu_i\)，记 \(y_i=Pu_i\)。由于 \(P\) 是正交投影，
+\(\langle u_i,y_i\rangle=\|y_i\|^2\)，故
+\(u_i^\top(K-K^2)u_i=0\)。由 \(K-K^2\succeq0\) 得
+\(K^2u_i=Ku_i=y_i\)，即 \(Ky_i=y_i\) 且 \(K(u_i-y_i)=0\)。
+所以只知谱带时，\(S_1\) 上仍为恒等、\(S_0\) 上仍为零，而 \(D\)
+上的自伴作用可在零和恒等之间变化。换回 \(H\) 的尺度，
+该谱带补全的两个端点相差 \((L-\mu)P_D\)。
+
+\begin{theorem}[已知重数的两个谱值]\label{thm:projector}
+若 \(0\le k\le m-2\)，在已知秩的投影类中，最坏加权总宽度与
+最大宽度仍分别等于式 \eqref{eq:sum} 和 \eqref{eq:max}，其中
+\(J=[x_i^\top x_j]\)。若 \(k\ge m-1\)，两种宽度均为零。
+以确定完整 Hessian 为任务，最少的最坏查询数为 \(m-1\)。
+若只要求给定方向的宽度都为零，最小最坏预算为 \(\min\{\rank J,m-1\}\)。
+\end{theorem}
+
+\begin{proof}
+任一新观测再确定一对像、核分量，原来已知的两个子空间随之扩大。
+在剩余空间 \(D'\) 上，如剩余秩严格介于零与 \(\dim D'\) 之间，
+某个方向能投影至全长或零长，分别由含有该方向或垂直于该方向的
+相容像空间实现。因此该方向的宽度为
+\((L-\mu)\|P_{D'}d_j\|^2\)。这里的端点按方向分别选择相容投影。
+如果剩余秩为零或满秩，宽度为零。
+
+预先固定查询向量，令它们在初始空间 \(D\) 中的投影张成 \(S\)。
+每个查询向量都是最终已知的像分量与核分量之和，
+所以 \(D'\subseteq D\cap S^\perp\)。这给出式 \eqref{eq:sum} 和
+\eqref{eq:max} 的上界。
+
+为证 \(k\le m-2\) 时的下界，给定任一确定性策略，我们逐次构造
+相容的回复，再用一个实际投影复现整段记录。
+将新查询分解在当前已知像空间、已知核空间和剩余空间中。
+前两项给出已确定的作用。若第三项非零，选择把它全部划入像，
+或全部划入核，扩展对应子空间一维。始终预留一维给未知的像，
+也预留一维给未知的核，因此这两个子空间有
+\((r-1)+(m-r-1)=m-2\) 个可用的新增维数。这里新增维数至多
+等于查询数，所以每次都能作合法选择并产生完整记录。
+答复终止后，在剩余空间任取所需秩的投影补全，就得到一个
+能够产生这条整路径的实际矩阵。对此记录，查询只确定了其在
+初始 \(D\) 中张成的空间 \(S\)，剩余空间恰为 \(D\cap S^\perp\)，
+且余下投影既非零也非满秩。因此每一方向仍可分别达到上述两个端点。上段的宽度公式在所有方向上
+均成立，完成两种分数的下界。
+
+若查询初始 \(D\) 中 \(m-1\) 个正交方向，已知这些列的
+完整作用。由对称性，未知仅余最后一个对角元，它由已知迹
+\(r\) 决定。另一方面，上述作答在至多 \(m-2\) 次时留有
+非零的剩余像和核，可以在剩余空间改变投影。
+因此完整辨识至少需要 \(m-1\) 次查询。
+对给定的方向族，式 \eqref{eq:sum} 在预算
+\(k\le m-2\) 时为零，当且仅当 \(\rank J\le k\)。
+所有宽度非负，故总宽度与最大宽度同时为零。结合 \(m-1\)
+次完整辨识的结果，得到所述零宽度预算。
+\end{proof}
+
+例如 \(m=3,r=1\)，关注三个正交坐标并给相同的单位权，
+宽度按 \(L-\mu\) 归一化。一次查询后，最优总宽度为 \(2\)，
+最优最大宽度为 \(2/3\)，与只知谱带时相同。
+两次查询后，已知秩的情形两种宽度都变为零；
+只知谱带时最优总宽度仍为 \(1\)，最优最大宽度为 \(1/3\)。
+
+下面区分各坐标曲率的区间宽度之和与对角和的区间宽度。取 \(\mu=1,L=5\)，
+查询 \(u=(1,1,1)^\top\) 并收到 \(Hu=u\)，已知 \(P\) 的秩为 \(1\)。
+取 \(P\) 为沿 \((0,1,-1)^\top\) 或 \((2,-1,-1)^\top\) 的正交投影，
+即分别达到第一对角元 \(1\) 和 \(11/3\)。对其他坐标作相应置换，
+故三个坐标各有宽度 \(8/3\)，宽度之和为 \(8\)。
+对角和始终等于迹 \(7\)，它的区间宽度为零。
+
+\section{与已有结果的关系}
+
+此前的曲率观测研究拟稿已使用中点回复来证明系数单位球所张椭球
+的最大宽度公式。2026 年 9 月 9 日 Ritz-DAT 研究拟稿已给出
+精确作用信息下的方向曲率补全。本文沿用这两项推导的出发点。
+
+单次曲率查询稿~\cite{coordinate} 研究查询后选择一个坐标和步长的
+最坏下降比，并在无先验作用、等权二维坐标模型中给出最大宽度的
+平衡查询。本文处理固定有限方向、已有作用和加权总宽度，并明确
+总宽度与最大宽度何时需要不同查询。有限集的子空间宽度及其正交
+特例沿用经典结果~\cite{DTV,HouleToussaint,Sofman}。所给补全定理将
+这些几何量转化为精确 Hessian 查询的实际最坏宽度。定理
+\ref{thm:projector} 另行处理已知两个谱值的重数所带来的约束。
+
+Swartworth 和 Woodruff~\cite{SwartworthWoodruff} 用两类随机正交投影证明
+未知秩判别的矩阵向量查询下界，Halikias 和 Townsend~\cite{HalikiasTownsend}
+研究不同结构的矩阵如何通过矩阵向量积恢复。定理 \ref{thm:projector}
+在已知秩下量化确定性查询后，事先指定方向的曲率区间还能有多宽。
+
+这里的预算单位是完整、精确的 Hessian--向量积。选取方向、处理回
+复和形成最终区间仍有计算开销。标量曲率观测、带噪回复、或在
+查询后才选定所关注的方向，需要各自的模型。本文中的数值为有理
+算例或从定理直接求出的几何量。
+
+
+\paragraph{生成式 AI 使用说明。}
+生成式 AI 辅助了来源核对、推导、撰写和算例检查。稿件待作者逐项人工核阅。
+
+{\small
+\begin{thebibliography}{99}
+\bibitem{DavisKahanWeinberger}
+C.~Davis, W.~M. Kahan, and H.~F. Weinberger.
+\newblock Norm-preserving dilations and their applications to optimal error bounds.
+\newblock \emph{SIAM Journal on Numerical Analysis}, 19(3), 445--469, 1982.
+\newblock \href{https://doi.org/10.1137/0719029}{doi:10.1137/0719029}.
+
+\bibitem{ArlinskiiHassiDeSnoo}
+Y.~Arlinskii, S.~Hassi, and H.~de Snoo.
+\newblock Q-functions of Hermitian contractions of Krein--Ovcharenko type.
+\newblock University of Vaasa preprint, 2003, \S3.2, (3.6)--(3.8).
+\newblock \href{https://osuva.uwasa.fi/server/api/core/bitstreams/a4d9c302-1a66-49d6-bbdc-987489c4ecd5/content}{机构库原文}.
+
+\bibitem{Bakhvalov}
+N.~S. Bakhvalov.
+\newblock On the optimality of linear methods for operator approximation in convex classes of functions.
+\newblock \emph{USSR Computational Mathematics and Mathematical Physics}, 11(4), 244--249, 1971.
+\newblock \href{https://doi.org/10.1016/0041-5553(71)90017-6}{doi:10.1016/0041-5553(71)90017-6}.
+
+\bibitem{TraubWozniakowski}
+J.~F. Traub and H.~Wo\'zniakowski.
+\newblock \emph{Information, Uncertainty, Complexity}.
+\newblock 1980 年 9 月草稿，第 4 章 \S3。
+\newblock \href{https://iiif.library.cmu.edu/file/Traub_box00013_fld00023_bdl0003_doc0001/Traub_box00013_fld00023_bdl0003_doc0001.pdf}{卡内基梅隆大学原档}.
+
+\bibitem{Fan}
+K.~Fan.
+\newblock On a theorem of Weyl concerning eigenvalues of linear transformations I.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 35(11), 652--655, 1949.
+\newblock \href{https://doi.org/10.1073/pnas.35.11.652}{doi:10.1073/pnas.35.11.652}.
+
+\bibitem{DTV}
+A.~Deshpande, K.~Varadarajan, M.~Tulsiani, and N.~K. Vishnoi.
+\newblock Algorithms and hardness for subspace approximation.
+\newblock \href{https://arxiv.org/abs/0912.1403}{arXiv:0912.1403}.
+
+\bibitem{HouleToussaint}
+M.~E. Houle and G.~T. Toussaint.
+\newblock Computing the Width of a Set.
+\newblock \emph{IEEE Trans. Pattern Anal. Mach. Intell.}, 10(5), 761--765, 1988.
+\newblock \href{https://cgm.cs.mcgill.ca/~godfried/publications/width.pdf}{作者存档}.
+
+\bibitem{Sofman}
+L.~B. Sofman.
+\newblock Diameters of octahedra.
+\newblock \emph{Mathematical Notes}, 5, 258--262, 1969.
+\newblock \href{https://doi.org/10.1007/BF01410793}{DOI: 10.1007/BF01410793}.
+
+\bibitem{SwartworthWoodruff}
+W.~Swartworth and D.~P. Woodruff.
+\newblock Optimal eigenvalue approximation via sketching.
+\newblock STOC, 2023, Appendix A.
+\newblock \href{https://arxiv.org/abs/2304.09281}{arXiv:2304.09281}.
+
+\bibitem{HalikiasTownsend}
+D.~Halikias and A.~Townsend.
+\newblock Structured matrix recovery from matrix-vector products.
+\newblock \S2.1, \href{https://arxiv.org/abs/2212.09841}{arXiv:2212.09841}.
+
+\bibitem{coordinate}
+\emph{Choosing a coordinate step with one Hessian--vector query}.
+\newblock AI 辅助工作稿，2026 年 11 月。
+\newblock \href{https://taitai2025.github.io/assets/documents/research/coordinate-query.pdf}{公开版本}.
+\end{thebibliography}
+}
+
+
+\end{document}

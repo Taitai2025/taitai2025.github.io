@@ -13,7 +13,9 @@ window.RESEARCH_CONTENT = {
       "related": [
         "ritz-reuse"
       ],
-      "pages": 7
+      "pages": 7,
+      "scopeZh": "精确速率对应恰有 p+1 个活跃谱点的二次模型。",
+      "scopeEn": "The exact rate concerns quadratics with exactly p+1 active spectral points."
     },
     {
       "id": "ritz-reuse",
@@ -27,7 +29,9 @@ window.RESEARCH_CONTENT = {
       "related": [
         "ritz-minimal-face"
       ],
-      "pages": 10
+      "pages": 10,
+      "scopeZh": "按一次梯度更新计速率，覆盖特定重用序列和规定的初始历史。",
+      "scopeEn": "Rates are per gradient update, under specified reuse patterns and initial histories."
     },
     {
       "id": "restart-projected-bb",
@@ -39,9 +43,29 @@ window.RESEARCH_CONTENT = {
       "descriptionZh": "分析固定正定二次模型中的首次触发时刻，并证明闭凸锥上的投影 BB1 在条件数不超过 2 时的 R 线性界。",
       "descriptionEn": "Analyzes the first trigger on fixed positive quadratics and proves an R-linear bound for projected BB1 on closed convex cones when the condition number is at most two.",
       "related": [
-        "gll-window"
+        "gll-window",
+        "gradient-restart-return"
       ],
-      "pages": 10
+      "pages": 10,
+      "scopeZh": "第一部分使用固定正定二次模型。锥投影结论要求条件数不超过 2。",
+      "scopeEn": "The restart analysis uses a fixed positive-definite quadratic. The cone result assumes condition number at most 2."
+    },
+    {
+      "id": "gradient-restart-return",
+      "version": "0.1",
+      "releaseDate": "2026.11.26",
+      "zh": "单一弱曲率谱值下的梯度重启时间",
+      "en": "Gradient restart near a single weak-curvature eigenvalue",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection, and line search",
+      "descriptionZh": "只有一个步进谱值趋于 1 时，最坏的首次重启或归零最多比单模态晚一步。给出额外一步出现的参数区间与精确算例。",
+      "descriptionEn": "The worst first restart or exact termination is at most one trial later than the scalar crossing. The paper locates the extra trial and verifies exact examples.",
+      "related": [
+        "restart-projected-bb"
+      ],
+      "scopeZh": "有限维正定二次函数。其余谱值固定在远离 0 和 1 的紧区间内。",
+      "scopeEn": "Finite-dimensional positive definite quadratics with all other step eigenvalues in a fixed interior interval.",
+      "pages": 7
     },
     {
       "id": "gll-window",
@@ -55,7 +79,9 @@ window.RESEARCH_CONTENT = {
       "related": [
         "restart-projected-bb"
       ],
-      "pages": 3
+      "pages": 3,
+      "scopeZh": "收缩结论针对实际接受序列。反例使用特定窗口与回溯参数。",
+      "scopeEn": "The contraction concerns accepted iterates. The example uses specified window and backtracking parameters."
     },
     {
       "id": "pcp-rectangle",
@@ -69,7 +95,9 @@ window.RESEARCH_CONTENT = {
       "related": [
         "pcp-computation"
       ],
-      "pages": 9
+      "pages": 9,
+      "scopeZh": "对偶证书分别刻画最优性与唯一恢复，模型为常数背景与静止矩形。",
+      "scopeEn": "The certificates distinguish optimality from unique recovery in a constant-background, static-rectangle model."
     },
     {
       "id": "pcp-computation",
@@ -83,7 +111,9 @@ window.RESEARCH_CONTENT = {
       "descriptionEn": "Works through Gram-based thresholding, over-relaxed residuals, a Huber reduction, and replication scaling. Includes synthetic checks and anonymous results without releasing the source video.",
       "related": [
         "pcp-rectangle"
-      ]
+      ],
+      "scopeZh": "复现使用合成数据和匿名汇总，公开包未附原始视频。",
+      "scopeEn": "The reproducibility material uses synthetic data and anonymized summaries."
     },
     {
       "id": "admm-alternating",
@@ -95,11 +125,13 @@ window.RESEARCH_CONTENT = {
       "groupEn": "ADMM and parameter choice",
       "descriptionZh": "同谱二维二次问题中，固定使用两个端点罚参数各自收敛，交替使用则在一个可精确计算的条件数阈值后出现发散初值。",
       "descriptionEn": "In a two-dimensional family, each fixed endpoint penalty converges, while the alternating sequence has divergent initial states above an explicit condition-number threshold.",
-      "related": []
+      "related": [],
+      "scopeZh": "阈值由二维同谱二次例得到。",
+      "scopeEn": "The threshold is derived for a two-dimensional quadratic example."
     },
     {
       "id": "periodic-bb",
-      "version": "1.0",
+      "version": "1.1",
       "releaseDate": "2026.11.26",
       "pages": 46,
       "zh": "周期 BB 切换的相位平衡与精确局部速率",
@@ -110,7 +142,9 @@ window.RESEARCH_CONTENT = {
       "descriptionEn": "Mixed BB1–BB2 patterns break common endpoint balance and strictly improve the worst uniform threshold. Includes the supplementary proofs, finite-budget evidence and Lean certificates for three patterns.",
       "related": [
         "trial-firsthit"
-      ]
+      ],
+      "scopeZh": "精确局部率按梯度更新计。附有限预算实验与三组固定有理证书。",
+      "scopeEn": "The exact local rates are measured per gradient update. Includes finite-budget experiments and rational checks for three cases."
     },
     {
       "id": "trial-firsthit",
@@ -126,7 +160,9 @@ window.RESEARCH_CONTENT = {
       "related": [
         "periodic-bb",
         "gll-window"
-      ]
+      ],
+      "scopeZh": "两个固定算例给出相反的首停顺序，并分开计算函数与梯度请求。",
+      "scopeEn": "Two fixed examples give opposite stopping orders, with separate function and gradient request counts."
     },
     {
       "id": "delayed-design",
@@ -139,11 +175,13 @@ window.RESEARCH_CONTENT = {
       "groupEn": "Optimal experimental design",
       "descriptionZh": "两种复用旧拟合的更新可以严格改进、无限刷新，却仍停在次优值。以刷新次数限制步长可恢复值收敛，并有代价下界。",
       "descriptionEn": "Two cached-fit rules can improve strictly and refresh infinitely often while converging to a suboptimal design value. The paper proves a convergent capped rule and analyzes its cost.",
-      "related": []
+      "related": [],
+      "scopeZh": "反例、修复及成本结论针对有限 c-最优实验设计中的指定更新。",
+      "scopeEn": "The counterexamples, repair, and cost estimates concern specified updates for finite c-optimal design."
     },
     {
       "id": "smooth-ritz",
-      "version": "1.0",
+      "version": "1.1",
       "releaseDate": "2026.11.26",
       "pages": 5,
       "zh": "周期 Ritz 步长的光滑非二次实现",
@@ -155,11 +193,13 @@ window.RESEARCH_CONTENT = {
       "related": [
         "ritz-minimal-face",
         "ritz-reuse"
-      ]
+      ],
+      "scopeZh": "构造由已给定的相容初始历史启动。",
+      "scopeEn": "The construction starts from a specified compatible history."
     },
     {
       "id": "coordinate-query",
-      "version": "1.0",
+      "version": "1.1",
       "releaseDate": "2026.11.26",
       "pages": 5,
       "zh": "一次曲率查询如何决定坐标步长",
@@ -169,12 +209,32 @@ window.RESEARCH_CONTENT = {
       "descriptionZh": "在二维二次模型中，一次矩阵向量查询后选择一个坐标和步长。求出最优保证与平衡查询，并推导只沿坐标轴查询时的精确值。",
       "descriptionEn": "Finds the sharp deterministic decrease guarantee for choosing one coordinate and step after one Hessian-vector query. It also gives the exact value when the query is restricted to a coordinate axis.",
       "related": [
-        "trial-firsthit"
-      ]
+        "trial-firsthit",
+        "curvature-query-budget"
+      ],
+      "scopeZh": "最坏保证针对一次完整查询后的确定性策略。",
+      "scopeEn": "The worst-case guarantee concerns deterministic policies using one full query."
+    },
+    {
+      "id": "curvature-query-budget",
+      "version": "0.1",
+      "releaseDate": "2026.11.26",
+      "zh": "固定方向的曲率查询预算",
+      "en": "Query budgets for directional curvature",
+      "groupZh": "曲率信息与步长",
+      "groupEn": "Curvature information and stepsizes",
+      "descriptionZh": "计算固定方向的最坏总宽度与最大单向宽度。重数已知且剩余谱中两种特征值都存在时，确定 Hessian 的最坏查询数比剩余空间维数少一。",
+      "descriptionEn": "Derives two exact worst-case measures of directional uncertainty. When both eigenvalues remain in the unresolved space and their multiplicities are known, full recovery takes one query fewer than the remaining dimension.",
+      "related": [
+        "coordinate-query"
+      ],
+      "scopeZh": "固定方向、确定性策略和完整精确的 Hessian–向量积。",
+      "scopeEn": "Fixed target directions and deterministic policies with exact Hessian–vector products.",
+      "pages": 7
     },
     {
       "id": "certified-chord",
-      "version": "1.0",
+      "version": "1.1",
       "releaseDate": "2026.11.26",
       "pages": 5,
       "zh": "用两个梯度样本判定弦点可停止",
@@ -186,15 +246,17 @@ window.RESEARCH_CONTENT = {
       "related": [
         "trial-firsthit",
         "gll-window"
-      ]
+      ],
+      "scopeZh": "结论计精确、分离的函数值与梯度请求。有限精度判定仍需误差控制。",
+      "scopeEn": "The result counts exact, separately billed value and gradient requests. Finite-precision certification needs error bounds."
     },
     {
       "id": "cold-window",
-      "version": "1.0",
+      "version": "1.1",
       "releaseDate": "2026.11.26",
       "pages": 5,
-      "zh": "较好的首步为何可能延迟停止",
-      "en": "A better first step can delay stopping in a spectral gradient method",
+      "zh": "下一步梯度更小，ABBmin1 为何反而晚停",
+      "en": "A smaller next gradient norm can delay stopping in ABBmin1",
       "groupZh": "步长设计与停止条件",
       "groupEn": "Stepsizes and stopping criteria",
       "descriptionZh": "在一个精确算例中，整段首步长度都能降低下一点的梯度范数，但旧割线仍控制 ABBmin1 的窗口。较严容差下，参考法先停止。",
@@ -202,7 +264,9 @@ window.RESEARCH_CONTENT = {
       "related": [
         "trial-firsthit",
         "certified-chord"
-      ]
+      ],
+      "scopeZh": "停止顺序反转出现在同一个固定算例，费用比较按完整梯度请求计。",
+      "scopeEn": "The stopping order reverses on a fixed example. The comparison counts full-gradient requests."
     }
   ],
   "papers": [
@@ -352,7 +416,9 @@ window.RESEARCH_CONTENT = {
       "descriptionZh": "11 月修订稿。证明有限维与 Hilbert 空间二次问题的尖锐根因子，区分初始梯度的活动谱端点、连续谱与精确达到的轨道，并给出局部非线性结论。",
       "descriptionEn": "November revision. Establishes sharp root factors for quadratic problems in finite dimensions and Hilbert spaces, with separate treatments of active spectral endpoints, continuous spectra, attainment, and the local nonlinear problem.",
       "arxiv": "https://arxiv.org/abs/2608.07839",
-      "formal": "bb-asymptotic"
+      "formal": "bb-asymptotic",
+      "scopeZh": "涉及有限维与 Hilbert 空间正定二次问题。局部非二次结论另有假设。",
+      "scopeEn": "The quadratic results cover finite-dimensional and Hilbert-space settings. The nonlinear result uses additional local assumptions."
     },
     {
       "id": "bb-uniform",
@@ -366,7 +432,9 @@ window.RESEARCH_CONTENT = {
       "formal": "bb-uniform",
       "guide": "bb-uniform-guide.pdf",
       "guideZh": "中文证明导读",
-      "guideEn": "Proof guide in Chinese"
+      "guideEn": "Proof guide in Chinese",
+      "scopeZh": "共同临界因子已在有限谱设置下证明，Dini 条件用于非二次局部结论。",
+      "scopeEn": "The common critical factor is proved for finite spectra. The local nonlinear result uses a Dini condition."
     },
     {
       "id": "lmsd-spectral",
@@ -376,7 +444,9 @@ window.RESEARCH_CONTENT = {
       "groupEn": "LMSD and Ritz reuse",
       "pages": 115,
       "descriptionZh": "论文 A。研究固定权 LMSD 的可实现历史、最小活跃谱的精确速率和相位，并分析实际六周期与双簇谱下界。正文与全部证明附录同载。",
-      "descriptionEn": "Paper A concerns fixed-weight LMSD: compatible histories, exact rates and phases on the smallest active spectra, a realizable six-cycle, and a two-cluster lower bound. Includes the main text and all proof appendices."
+      "descriptionEn": "Paper A concerns fixed-weight LMSD: compatible histories, exact rates and phases on the smallest active spectra, a realizable six-cycle, and a two-cluster lower bound. Includes the main text and all proof appendices.",
+      "scopeZh": "正文和附录保留十一月版本。统一上界和具体轨道的达到例分别陈述。",
+      "scopeEn": "The November text and appendix are preserved. Uniform upper bounds and attaining examples are stated separately."
     },
     {
       "id": "lmsd-reuse",
@@ -386,7 +456,9 @@ window.RESEARCH_CONTENT = {
       "groupEn": "LMSD and Ritz reuse",
       "pages": 37,
       "descriptionZh": "论文 B。研究受控变权、历史 Ritz 值重用和允许改变的排序，给出共同收敛界、达到构造和特定重用模式的最优性条件。",
-      "descriptionEn": "Paper B treats controlled changes of weights, reuse of historical Ritz values, and varying orderings. It proves common rate bounds, gives attaining constructions, and analyzes optimal reuse under explicitly stated conditions."
+      "descriptionEn": "Paper B treats controlled changes of weights, reuse of historical Ritz values, and varying orderings. It proves common rate bounds, gives attaining constructions, and analyzes optimal reuse under explicitly stated conditions.",
+      "scopeZh": "区分固定算法的轨道、受控历史下的一致界，以及可变谱权达到界的条件。",
+      "scopeEn": "The analysis distinguishes a fixed algorithm, uniform bounds under controlled histories, and attainment with varying weights."
     }
   ]
 };

@@ -14,18 +14,19 @@
 \date{November 2026}
 \begin{document}
 \maketitle
+\begin{center}\small\emph{AI-assisted working paper. Author verification pending.}\end{center}
 \begin{abstract}
-Consider a two-dimensional quadratic with known gradient \((1,1)\)
-and unknown Hessian between \(I\) and \(\kappa I\). We ask how much of
-the best exact coordinate line-search decrease can be guaranteed after
-one Hessian-vector query. The exact deterministic guarantee is
-\(8(\kappa+1)/(\kappa+3)^2\), attained precisely by query lines with
-equal component magnitudes for \(\kappa>1\). A balanced query
-identifies the best coordinate. Its curvature nevertheless ranges over
-an interval, and the interval is responsible for the minimax loss.
-We give the sharp interval, a finite rule for an arbitrary reply, and
-the exact guarantee when the query itself is restricted to a coordinate
-axis.
+Let a two-dimensional quadratic have current gradient \((1,1)\) and
+an unknown Hessian \(H\) with \(I\preceq H\preceq\kappa I\). After one
+exact Hessian--vector product, a deterministic method chooses a coordinate and
+a step size. We measure its decrease relative to the best exact
+coordinate step for the actual \(H\). The best worst-case ratio is
+\(8(\kappa+1)/(\kappa+3)^2\). For \(\kappa>1\), a query line attains this
+value exactly when the magnitudes of its two components are equal.
+Such a query identifies a best coordinate and leaves an interval of
+possible curvatures along that coordinate. We characterize that interval, give
+a finite decision rule for a general reply, and compute the optimum
+when the query is restricted to a coordinate axis.
 \end{abstract}
 
 \section{The decision and its information}
@@ -36,16 +37,14 @@ At the current point, translated to \(0\), write
 \]
 A deterministic procedure first chooses a nonzero \(v\) and observes
 the vector \(Hv\). It then chooses a coordinate \(j\in\{1,2\}\) and a
-step \(\eta\ge0\), and moves to \(-\eta e_j\). Exactly one full
-Hessian-vector product is supplied. No additional function value,
-directional curvature, or gradient is supplied before the move.
+step \(\eta\ge0\), and moves to \(-\eta e_j\). The full product \(Hv\) is the only new observation before the
+move.
 The query direction \(v\) can differ from the executed coordinate.
 
 Write \(q_j=H_{jj}\) and \(m=\min(q_1,q_2)\). The decrease is
 \(\Delta_H(j,\eta)=\eta-\eta^2 q_j/2\). The benchmark chooses the
 better of the two coordinates and minimizes the quadratic along that
-coordinate, so its decrease is \(1/(2m)\). Thus the payoff we aim
-to guarantee for every feasible Hessian is
+coordinate, so its decrease is \(1/(2m)\). For a feasible \(H\), the relative decrease is
 \begin{equation}
  R_H(j,\eta)=m(2\eta-q_j\eta^2).
  \label{eq:payoff}

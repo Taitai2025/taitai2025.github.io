@@ -4,33 +4,33 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm,booktabs}
 \usepackage[hidelinks]{hyperref}
-\hypersetup{pdftitle={A better first step can delay stopping in a spectral gradient method},pdfauthor={},pdfsubject={AI-assisted working paper, pending author review}}
+\hypersetup{pdftitle={A smaller next gradient norm can delay stopping in ABBmin1},pdfauthor={},pdfsubject={AI-assisted working paper, pending author review}}
 \newtheorem{theorem}{Theorem}
 \newcommand{\R}{\mathbb R}
 \newcommand{\norm}[1]{\lVert#1\rVert}
 \newcommand{\bb}{\mathrm{ABBmin1}}
-\title{A better first step can delay stopping in a spectral gradient method}
+\title{A smaller next gradient norm can delay stopping in ABBmin1}
 \author{}
 \date{November 2026}
 \begin{document}
 \maketitle
+\begin{center}\small\emph{AI-assisted working paper. Author verification pending.}\end{center}
 \begin{abstract}
-A spectral gradient method can retain an old secant after the associated
-eigenmode has vanished from the current gradient. We give an exact example
-for an ABBmin1 rule with a ten-secant window. An interval of alternative
-first steps makes the gradient at the next point smaller than the
-reference gradient. At the prescribed tolerance equal to half the common
-post-initialization gradient norm, the reference stops at point five
-and every alternative in the interval remains above tolerance through point five.
-Three closed-form first steps lie within the interval. Two of them
-stop earlier at a wider tolerance on the same objective.
-The proof uses the original delayed secant to identify the precise
-step-selection decisions. The result concerns gradient requests at a
-fixed tolerance, with physical timing left open.
+In an adaptive Barzilai--Borwein method, a secant may affect the step
+selection after its associated eigenmode has disappeared from the
+current gradient. We analyze this effect for ABBmin1 with a window of
+ten secants. After a common initialization, we replace the first
+adaptive step by a step chosen from an explicit interval and then
+resume ABBmin1. Every replacement in that interval reduces the next
+gradient norm relative to the reference run. At half the common
+post-initialization norm, the reference first meets the tolerance at
+\(k=5\), and every replacement run remains above it through \(k=5\).
+Three closed-form steps lie in the interval. At a wider tolerance, two
+of these runs meet the criterion before the reference. The analysis
+compares stopping indices and gradient requests on this fixed example.
 \end{abstract}
 
-\noindent\emph{Research note.} This AI-assisted write-up reconstructs a
-previously archived exact analysis \cite{source} and remains pending author review.
+This example is based on the exact analysis in \cite{source}.
 
 \section{Step rule and the experiment}
 
@@ -79,7 +79,7 @@ The fourth coordinate is stationary on the entire visited trajectory.
 
 \begin{theorem}\label{thm:main}
 At the tolerance \(\epsilon=G/2=499899/400\), the reference first
-stops at point \(5\), whereas
+meets the criterion at \(k=5\), and
 \[
  \tau_{P_\alpha}(G/2)>5\qquad
        \text{for every }\alpha\in(3/25,7/50).
@@ -110,9 +110,9 @@ For the last inequality, cross-multiplication gives
 \(3L^2-30cL+11c^2>0\), which follows from \(L>10c\).
 The reference accordingly takes \(\delta\) at \(k=1\).
 
-Let \(w=(0,z_2,z_3)^\top/\sqrt{z_2^2+z_3^2}\). From point 1 on,
-the gradients lie in the invariant plane with orthonormal basis
-\((u,w)\), where \(H\) has matrix
+Let \(w_\perp=(0,z_2,z_3)^\top/\sqrt{z_2^2+z_3^2}\).
+For \(k\ge1\), the gradients lie in the invariant plane with
+orthonormal basis \((u,w_\perp)\), where \(H\) has matrix
 \[
  K=\begin{pmatrix}q&-b_K\\-b_K&d\end{pmatrix},\qquad
  q=\frac{201}{200},\quad b_K^2=\frac{749851}{120000},\quad
@@ -124,7 +124,7 @@ this direction, even though every gradient from \(g_1\) onward
 has zero projection there. Let \(\lambda_-<\lambda_+\) be the
 eigenvalues of \(K\). Because \(H-I\succ0\) and \(b_K\ne0\),
 the Rayleigh quotient at \(u\) gives \(1<\lambda_-<q<101/100\).
-The Rayleigh quotient at \(w\) gives \(\lambda_+>d>3750\),
+The Rayleigh quotient at \(w_\perp\) gives \(\lambda_+>d>3750\),
 and the trace then gives \(\lambda_+<3751\).
 
 Every post-initialization secant has an \(a^2\) value at least
@@ -247,8 +247,11 @@ looser than \(1/100\) for this instance, and set
  C_A(r)=\int_0^r\min\{L,A+Mb\}\,db,\qquad
  \mathcal R_A=C_A^{-1},\qquad \rho=\mathcal R_{H_0}(G).
 \]
-These definitions come from the curvature envelope along the current
-negative-gradient ray after the common initialization step \(1/L\).
+The derivative of \(f\) along the negative-gradient ray starts at
+\(-G\). A curvature upper bound yields an upper bound on the increase
+of this derivative. We choose a radius at which the integral of that
+upper bound equals \(G\). The candidate step size is the radius divided
+by \(G\).
 The angle cosine between \(e\) and \(-u\) is \(1/2\), the old chord length is \(1\), and
 \(1/100\) is an upper bound on the chord-average excess curvature
 in direction \(u\). The active
@@ -256,8 +259,8 @@ conditions \(1/100<M(1/2)(1)/2\) and \(H_0+M\rho/2<L\) hold.
 Indeed, \(1<H_0<103/100\), the cap is inactive for \(r\le330\),
 and \(C_{H_0}(300)<2184<G<10395/4<C_{H_0}(330)\).
 Thus \(300<\rho<330\). On the uncapped branch, solving
-\(Ar+Mr^2/2=z\) gives
-\(\mathcal R_A(z)=2z/(A+\sqrt{A^2+2Mz})\).
+\(Ar+Mr^2/2=\xi\) gives
+\(\mathcal R_A(\xi)=2\xi/(A+\sqrt{A^2+2M\xi})\).
 
 For \(b\ge0\), let
 \[
@@ -272,7 +275,8 @@ For completeness, let \(q_f(b)\) be the curvature along \(u\) at
 the future point \((-bu,0)\). On the old chord \((-te,0)\),
 \(0\le t\le1\), the average curvature along \(u\) is \(q\)
 in this objective, so its excess over 1 is at most \(a=1/100\).
-The same upper bound follows using the two gradients alone.
+The endpoint gradients, the initialization step, and the known upper
+Hessian bound \(L\) give the same upper bound.
 The chord Hessian average \(\overline H\) satisfies
 \((LI-\overline H)e=-Gu\) after the common \(1/L\) step.
 Cauchy--Schwarz for \(LI-\overline H\succeq0\) then gives
@@ -328,11 +332,10 @@ As \(0<G\delta<1<r_B<r_C<r_E<330\), we have
  n_E<n_C<\epsilon_0<n_B<\norm{g_2(\delta)}<G<L .
 \]
 Thus \(C\) and \(E\) first stop at point \(2\) on this fixed
-wider tolerance, and \(R,B\) have not stopped there.
-The tolerance is defined by this fixed instance. In contrast, in
-Theorem~\ref{thm:main} the tolerance \(G/2\) is fixed from
-the common gradient before any of the branches. The two
-tolerances yield opposite orders on the same objective.
+wider tolerance \(\epsilon_0\), while \(R\) and \(B\) have yet to stop.
+At the tighter tolerance \(G/2\), both \(C\) and \(E\) require more updates
+than \(R\). The tighter tolerance depends only on the common
+post-initialization gradient norm.
 
 \section{Costs and scope}
 
