@@ -379,7 +379,7 @@
 <span class="subheading-title"><strong>Youth League Secretary, 12th Youth League Branch, Beijing National Day School</strong></span>
 <span style="font-size: 0.9em; color: #666;">2018–2022 academic years (former)</span>
 </div></div><div class="section"><h2>Music Arrangements and Original Works</h2>
-<p><a href="./scores/">Chinese numbered scores</a> (password required)</p>
+<p><a href="./scores/">Guoyue Puhui · Chinese orchestra scores</a></p>
 <p><strong>For me, performance is a way of interpreting another person's inner voice, while arrangement and composition are ways of reshaping and expressing my own. At present I focus mainly on arranging and orchestrating Chinese chamber music, and I also hope to develop original works of my own in the future.</strong></p>
 <h3 style="margin-top: 20px; color: #444;">🎼 Arrangements for Chinese instrumental ensemble</h3>
 <div class="subheading">

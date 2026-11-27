@@ -1,0 +1,131 @@
+.guides-page {
+  --guide-soft: color-mix(in srgb, var(--accent, #a0392e) 7%, var(--surface, #fffdf9));
+}
+.guides-page .guide-hero {
+  margin-block-end: clamp(1rem, 3vw, 2rem);
+}
+.guides-page .guide-hero h1 {
+  max-width: 22ch;
+}
+.guides-page .guide-hero p:last-child {
+  max-width: 58ch;
+}
+.guide-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+}
+.guide-grid > .card {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+.guide-grid .card h2,
+.guide-grid .card p {
+  margin: 0;
+}
+.guide-grid .button {
+  margin-block-start: auto;
+  align-self: start;
+}
+.guide-layout {
+  display: grid;
+  gap: clamp(1.25rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 15rem);
+  align-items: start;
+}
+.guide-body {
+  min-width: 0;
+}
+.guide-body section {
+  scroll-margin-top: 5rem;
+}
+.guide-body section + section {
+  margin-block-start: clamp(1.5rem, 4vw, 2.75rem);
+}
+.guide-body h2,
+.guide-body h3 {
+  margin-block: 0 .6em;
+}
+.guide-body p {
+  max-width: 62ch;
+}
+.guide-body li + li {
+  margin-block-start: .45rem;
+}
+.guide-aside {
+  position: sticky;
+  top: 5rem;
+}
+.guide-aside h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.guide-aside ul {
+  list-style: none;
+  padding: 0;
+  margin: .8rem 0 0;
+}
+.guide-aside li + li {
+  margin-block-start: .55rem;
+}
+.guide-tip {
+  padding: .6rem .95rem;
+  border-inline-start: .2rem solid var(--accent, #a0392e);
+  border-radius: .25rem;
+  background: var(--guide-soft);
+}
+.guide-tip p {
+  margin-block: .35rem;
+}
+.guide-table {
+  overflow-x: auto;
+  border: 1px solid var(--line, #ded8cd);
+  border-radius: .6rem;
+}
+.guide-table table {
+  width: 100%;
+  min-width: 37rem;
+  border-collapse: collapse;
+  text-align: start;
+}
+.guide-table :is(th, td) {
+  padding: .7rem .9rem;
+  text-align: start;
+  vertical-align: top;
+  border-block-end: 1px solid var(--line, #ded8cd);
+}
+.guide-table tr:last-child td {
+  border-block-end: 0;
+}
+.guide-table th {
+  background: var(--guide-soft);
+}
+.guide-table td:first-child {
+  width: 25%;
+}
+.guides-page .guide-utility {
+  margin-block: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem 1rem;
+}
+@media (max-width: 49rem) {
+  .guide-layout {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.15rem;
+  }
+  .guide-aside {
+    position: static;
+    width: 100%;
+  }
+  .guide-aside ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem .85rem;
+  }
+  .guide-aside li + li {
+    margin-block-start: 0;
+  }
+}

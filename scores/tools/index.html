@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>民乐乐团编制适配工具｜国乐谱汇</title>
+  <meta name="description" content="按实际可用乐器比较民乐团队的现有谱件，查找缺席声部、待核的兼奏任务和可供排练验证的替代思路。">
+  <link rel="canonical" href="https://taitai2025.github.io/scores/tools/">
+  <link rel="stylesheet" href="/scores/style.css">
+  <link rel="stylesheet" href="./tools.css">
+  <script src="./instrumentation.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到编制工具</a>
+  <header class="site-header">
+    <div class="frame">
+      <a class="tool-brand" href="/scores/">国乐谱汇</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="/scores/">首页</a><a href="/scores/open/">开放谱库</a><a href="/scores/sources/">总谱导航</a><a href="/scores/guides/">排练指南</a><a href="/scores/tools/" aria-current="page">编制工具</a><a href="/scores/tools/cooperation/">高校共建</a>
+      </nav>
+    </div>
+  </header>
+  <main class="shell tool-shell" id="main">
+    <section class="hero tool-hero">
+      <p class="eyebrow">高校乐团排练工具</p>
+      <h1>编制适配</h1>
+      <p>勾选本次能到场的乐器，查看各版本在谱件索引中有哪些声部可以直接覆盖、哪些需要另作安排。</p>
+      <div class="actions"><a class="button primary" href="./arrange/">打开自适应编配</a><a class="button" href="./rehearsal/">查看排练验收清单</a></div>
+    </section>
+    <noscript><p class="tool-message">编制比较需要浏览器启用 JavaScript。排练清单和高校共建说明仍可直接查看。</p></noscript>
+    <section class="tool-layout">
+      <section class="tool-panel" aria-labelledby="available-title">
+        <h2 id="available-title">本次可用乐器</h2>
+        <div class="tool-actions">
+          <button class="button tool-button" type="button" id="load-sample">载入示例编制</button>
+          <button class="button tool-button tool-secondary" type="button" id="clear-instruments">清空</button>
+        </div>
+        <p class="muted tool-help">从第一声部到双声部分工，都请以当次到场名单为准。选择保存在本浏览器。</p>
+        <label class="tool-field">
+          <span>查找乐器</span>
+          <input type="search" id="instrument-search" placeholder="如 长笛、中胡、定音鼓">
+        </label>
+        <div id="instrument-groups" class="instrument-groups" aria-busy="true"></div>
+        <p class="tool-message muted" id="selection-count" aria-live="polite">正在载入编制索引。</p>
+      </section>
+      <section class="tool-panel" aria-labelledby="result-title">
+        <h2 id="result-title">谱件编制对照</h2>
+        <p class="muted tool-help">依据已发布分谱的文件名提取乐器名称。文件索引的覆盖结果只用于选谱，不能替代分乐章编制与并发人数核对。</p>
+        <div class="tool-filters">
+          <label class="tool-field">
+            <span>查找曲目</span>
+            <input type="search" id="work-search" placeholder="曲名或乐器">
+          </label>
+          <label class="tool-field">
+            <span>覆盖情况</span>
+            <select id="match-filter">
+              <option value="all">全部曲目</option>
+              <option value="clear">名称均能匹配</option>
+              <option value="missing">有缺席或待核声部</option>
+            </select>
+          </label>
+        </div>
+        <p id="result-count" class="tool-message muted" aria-live="polite"></p>
+        <div id="fit-results" class="fit-results"></div>
+      </section>
+    </section>
+    <section class="tool-panel tool-footnote" aria-labelledby="rules-title">
+      <h2 id="rules-title">怎样使用结果</h2>
+      <ul>
+        <li><strong>名称覆盖。</strong>索引中出现的乐器名称全部可在名单中找到时，仍需核对笛种调性、移调标记及多声部同时演奏的人员安排。</li>
+        <li><strong>兼奏与打击乐。</strong>同一谱件写明兼奏或列出多件打击乐时，工具会分别核对器材。换乐器的时间与打击乐是否同时出现，需从总谱核对。</li>
+        <li><strong>候选替代。</strong>只在已选乐器中提示可试排的方案。先核对实际音高、音域、力度与音色，再检查候选者是否还有本声部。</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="tool-footer shell"><a href="/scores/">返回国乐谱汇</a> <a href="./cooperation/">反馈谱目或编制遗漏</a></footer>
+</body>
+</html>

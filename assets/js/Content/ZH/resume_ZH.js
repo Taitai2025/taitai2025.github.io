@@ -450,7 +450,7 @@ window.RESUME_ZH_INNER_HTML = `
 </div>
 <div class="section">
 <h2>音乐创作与改编作品</h2>
-<p><a href="./scores/">民乐简谱资料</a>（需密码）</p>
+<p><a href="./scores/">国乐谱汇 · 民乐总谱与简谱</a></p>
 <p><strong>对我而言，演奏是演绎他人的心声，而编配与创作则是表达自我的重塑。目前我主要致力于民族室内乐的改编与配器，未来也希望能孕育出属于自己的原创作品。</strong></p>
 <h3 style="margin-top: 20px; color: #444;">🎼 民族器乐改编作品</h3>
 <div class="subheading">

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高校民乐团排练与谱件验收清单｜国乐谱汇</title>
+  <meta name="description" content="面向高校民乐团指挥与谱务的曲目入库、独立校谱、首次排练、版本交付清单。">
+  <link rel="canonical" href="https://taitai2025.github.io/scores/tools/rehearsal/">
+  <link rel="stylesheet" href="/scores/style.css">
+  <link rel="stylesheet" href="../tools.css">
+  <script src="../rehearsal.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到排练清单</a>
+  <header class="site-header"><div class="frame">
+    <a class="tool-brand" href="/scores/">国乐谱汇</a>
+    <nav class="nav" aria-label="主导航">
+      <a href="/scores/">首页</a><a href="/scores/open/">开放谱库</a><a href="/scores/sources/">总谱导航</a><a href="/scores/guides/" aria-current="page">排练指南</a><a href="/scores/tools/">编制工具</a><a href="/scores/tools/cooperation/">高校共建</a>
+    </nav>
+  </div></header>
+  <main class="shell tool-shell" id="main">
+    <section class="hero tool-hero">
+      <p class="eyebrow">乐团工作清单</p>
+      <h1>排练与谱件验收</h1>
+      <p>按一次具体排练使用。把谱本已经通过的检查和仍待确认的段落一同记在版本记录里。</p>
+      <div class="tool-actions"><button class="button tool-button" type="button" id="print-checklist">打印清单</button><button class="button tool-button tool-secondary" type="button" id="reset-checklist">清空勾选</button></div>
+      <p class="tool-message muted" id="checklist-count" aria-live="polite"></p>
+    </section>
+    <div class="tool-guide-grid" id="rehearsal-checklist">
+      <section class="tool-panel" aria-labelledby="source-verify">
+        <h2 id="source-verify">领谱与版本核对</h2>
+        <div class="checklist">
+          <label class="checklist-option"><input type="checkbox" name="source-edition"> 记录作曲者、编曲者、所用版本和来源链接。总谱和分谱属于同一编配版。</label>
+          <label class="checklist-option"><input type="checkbox" name="source-usage"> 查明本次排练、演出和团内分发的范围。保留许可原文或授权凭证。</label>
+          <label class="checklist-option"><input type="checkbox" name="parts-roster"> 清点到场乐器与人数。兼奏、多声部同时演奏和打击乐器材分别核对。</label>
+          <label class="checklist-option"><input type="checkbox" name="notation"> 标清首调或固定调、提示旋律、实音或记谱音，以及移调参照。</label>
+        </div>
+      </section>
+      <section class="tool-panel" aria-labelledby="proofread-title">
+        <h2 id="proofread-title">独立校谱</h2>
+        <div class="checklist">
+          <label class="checklist-option"><input type="checkbox" name="rhythm-bars"> 对照总谱核算拍号、小节时值、连音组、倚音、休止和反复跳转。</label>
+          <label class="checklist-option"><input type="checkbox" name="pitch-staves"> 检查音高、八度点、调号、临时变音、同音异名及跨小节延音。</label>
+          <label class="checklist-option"><input type="checkbox" name="part-symbols"> 复核演奏法、力度、装饰音与原谱归属。疑点标出小节和位置。</label>
+          <label class="checklist-option"><input type="checkbox" name="version-same"> 核对提示版与无提示版的本声部一致，首调与固定调转换后实音一致。</label>
+        </div>
+      </section>
+      <section class="tool-panel" aria-labelledby="rehearse-title">
+        <h2 id="rehearse-title">首次排练</h2>
+        <div class="checklist">
+          <label class="checklist-option"><input type="checkbox" name="rehearsal-questions"> 先排最难合奏的段落，核对独奏交接、速度变化、起拍和强弱平衡。</label>
+          <label class="checklist-option"><input type="checkbox" name="page-turn"> 按演出计划试翻页。关键音符前至少留出实际演奏者认可的换页窗口。</label>
+          <label class="checklist-option"><input type="checkbox" name="doubles-check"> 核对同一演奏者兼奏、展开摆位和设备切换。候选替代要实奏比较。</label>
+          <label class="checklist-option"><input type="checkbox" name="preview-mark"> 记录确实排练过的乐章、小节和编制，注明其余段落的核验阶段。</label>
+        </div>
+      </section>
+      <section class="tool-panel" aria-labelledby="delivery-title">
+        <h2 id="delivery-title">版本交付与修订</h2>
+        <div class="checklist">
+          <label class="checklist-option"><input type="checkbox" name="delivery-types"> 总谱、分谱合订本、独立分谱分别命名，标明调式、提示版本和日期。</label>
+          <label class="checklist-option"><input type="checkbox" name="download-open"> 检查链接、页数、打开权限与实际下载后的文件。</label>
+          <label class="checklist-option"><input type="checkbox" name="closed-issues"> 问题记录含谱名、版本、声部、小节、修订前后和独立复验结论。</label>
+          <label class="checklist-option"><input type="checkbox" name="publish-scope"> 维护修订日志，说明旧版差异和替换范围。把通过机器校验、独立校勘、实际试排的结论分别登记。</label>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="tool-footer shell"><a href="/scores/tools/">编制适配</a> <a href="/scores/tools/cooperation/">生成校谱反馈草稿</a></footer>
+</body>
+</html>

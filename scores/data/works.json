@@ -1,0 +1,627 @@
+[
+  {
+    "title": "秦兵马俑",
+    "version": "2026-11-27 紧凑终版",
+    "slug": "qin-bingmayong",
+    "note": "紧凑终版，包含终审清单核验的各声部与简谱版本。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 49770689,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/qin-bingmayong-combined.pdf",
+        "pages": 1206
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 54871778,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/qin-bingmayong-parts-01.zip",
+        "count": 108
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "彭修文",
+    "ensemble": "大型民族管弦乐",
+    "tags": [
+      "秦·兵马俑",
+      "秦兵马俑简谱分谱",
+      "高音笙简谱",
+      "梆笛分谱",
+      "编钟"
+    ],
+    "summary": "全团大型作品，可先按独立分谱核编制，合订本适合谱务统一存档。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 108,
+    "priority": 0
+  },
+  {
+    "title": "太阳颂",
+    "version": "2026-11-27 紧凑终版",
+    "slug": "taiyang-song",
+    "note": "紧凑终版，含分乐章分谱及整曲分谱。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 242792230,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/taiyang-song-combined.pdf",
+        "pages": 6280
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 291000493,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/taiyang-song-parts-01.zip",
+        "count": 560
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "大型民族管弦乐",
+    "tags": [
+      "分乐章",
+      "整曲分谱",
+      "首调",
+      "固定调"
+    ],
+    "summary": "提供紧凑排版的整曲和分乐章简谱，适合分组排练以及合排用谱核对。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 560,
+    "priority": 1
+  },
+  {
+    "title": "四季组曲",
+    "version": "2026-11-27 紧凑终版",
+    "slug": "siji-zuqu",
+    "note": "紧凑终版，含分乐章分谱及整曲分谱。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 309885733,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/siji-zuqu-combined.pdf",
+        "pages": 7611
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 422511227,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/siji-zuqu-parts-01.zip",
+        "count": 560
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "大型民族管弦乐",
+    "tags": [
+      "分乐章",
+      "首调",
+      "固定调",
+      "四季组曲民族管弦乐"
+    ],
+    "summary": "按各乐章查阅独立分谱，也可使用全曲合订本。此条对应民族管弦乐套谱。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 560,
+    "priority": 2
+  },
+  {
+    "title": "干将莫邪幻想曲",
+    "version": "r20 终审版",
+    "slug": "ganjiang-moye",
+    "note": "原交付版包括全曲及四章的独立分谱。合订本保留原来的双面打印留白。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 162626497,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/ganjiang-moye-combined.pdf",
+        "pages": 4170
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 157237324,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/ganjiang-moye-parts-01.zip",
+        "count": 600
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "大型民族管弦乐",
+    "tags": [
+      "干将·莫邪幻想曲",
+      "分乐章",
+      "幻想曲",
+      "首调",
+      "固定调"
+    ],
+    "summary": "四章与全曲各有固定调及首调分谱。正式合订本兼顾双面打印。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 600,
+    "priority": 3
+  },
+  {
+    "title": "五声组曲",
+    "version": "2026-11-26 修订1成品",
+    "slug": "wusheng-zuqu",
+    "note": "含五章及全曲分谱。原谱待辨的记号保留在修订说明与相应谱面。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 70773240,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/wusheng-zuqu-combined.pdf",
+        "pages": 3008
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 326778443,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/wusheng-zuqu-parts-01.zip",
+        "count": 592
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "大型民族管弦乐",
+    "tags": [
+      "宫",
+      "商",
+      "角",
+      "徵",
+      "羽",
+      "五声组曲简谱"
+    ],
+    "summary": "含宫、商、角、徵、羽分章及全曲分谱。现行修订版保留原谱疑点编号作校勘。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 592,
+    "priority": 4
+  },
+  {
+    "title": "草原狂想",
+    "version": "2026-11-27 表达修订与紧凑排版终审版",
+    "slug": "caoyuan-kuangxiang",
+    "note": "",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 8681042,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/caoyuan-kuangxiang-combined.pdf",
+        "pages": 283
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 18062442,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/caoyuan-kuangxiang-parts-01.zip",
+        "count": 88
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "民族管弦乐",
+    "tags": [
+      "草原狂想简谱",
+      "合奏",
+      "首调",
+      "固定调"
+    ],
+    "summary": "可查四种简谱的独立分谱与现行合订本。检索原谱时须另核原版与简化版。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 88,
+    "priority": 5
+  },
+  {
+    "title": "国风",
+    "version": "2026-11-26 独立内容与排版终审版",
+    "slug": "guofeng",
+    "note": "",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 17731194,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/guofeng-combined.pdf",
+        "pages": 629
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 30387038,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/guofeng-parts-01.zip",
+        "count": 112
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "民族管弦乐",
+    "tags": [
+      "国风简谱分谱",
+      "固定调",
+      "首调",
+      "主旋律提示"
+    ],
+    "summary": "含28个声部、四种简谱。按实际编制和四种谱面查找。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 112,
+    "priority": 6
+  },
+  {
+    "title": "永恒的东风",
+    "version": "2026-11-26 终审版",
+    "slug": "yongheng-de-dongfeng",
+    "note": "全曲 22 个声部、四种简谱版本。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 18890832,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/yongheng-de-dongfeng-combined.pdf",
+        "pages": 136
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 13357838,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/yongheng-de-dongfeng-parts-01.zip",
+        "count": 88
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "民族管弦乐",
+    "tags": [
+      "永恒的东风简谱",
+      "22个声部",
+      "首调"
+    ],
+    "summary": "全曲四种简谱，结合包内版本说明核对移调与延音。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 88,
+    "priority": 7
+  },
+  {
+    "title": "大东北我的家乡（民乐合奏）",
+    "version": "2026-11-20 · R3 独立终审",
+    "slug": "dongbei-ensemble",
+    "note": "合订本汇编终审简谱分谱，A3 拼版在分谱包内另列。首调指挥总谱单独提供。",
+    "combined": [
+      {
+        "label": "终审分谱合订本",
+        "bytes": 10152623,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/dongbei-ensemble-combined.pdf",
+        "pages": 235
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 19915487,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/dongbei-ensemble-parts-01.zip",
+        "count": 100
+      }
+    ],
+    "fullScores": [
+      {
+        "label": "首调简谱指挥总谱",
+        "bytes": 631902,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/dongbei-ensemble-full-score-01.pdf",
+        "pages": 32
+      }
+    ],
+    "kind": "编配版本",
+    "composer": "",
+    "ensemble": "民乐合奏",
+    "tags": [],
+    "summary": "合订本汇编终审简谱分谱，A3 拼版在分谱包内另列。首调指挥总谱单独提供。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 100,
+    "priority": 999
+  },
+  {
+    "title": "大东北我的家乡（民族管弦乐）",
+    "version": "2026-11-20 · R3 独立终审",
+    "slug": "dongbei-orchestra",
+    "note": "合订本汇编终审简谱分谱，A3 拼版在分谱包内另列。首调指挥总谱单独提供。",
+    "combined": [
+      {
+        "label": "终审分谱合订本",
+        "bytes": 17850961,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/dongbei-orchestra-combined.pdf",
+        "pages": 415
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 34944925,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/dongbei-orchestra-parts-01.zip",
+        "count": 172
+      }
+    ],
+    "fullScores": [
+      {
+        "label": "首调简谱指挥总谱",
+        "bytes": 1058411,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/dongbei-orchestra-full-score-01.pdf",
+        "pages": 43
+      }
+    ],
+    "kind": "编配版本",
+    "composer": "",
+    "ensemble": "民族管弦乐",
+    "tags": [],
+    "summary": "合订本汇编终审简谱分谱，A3 拼版在分谱包内另列。首调指挥总谱单独提供。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 172,
+    "priority": 999
+  },
+  {
+    "title": "大东北我的家乡（混编民族管弦乐）",
+    "version": "2026-11-20 · R3 独立终审",
+    "slug": "dongbei-mixed",
+    "note": "合订本汇编终审简谱分谱，A3 拼版在分谱包内另列。首调指挥总谱单独提供。",
+    "combined": [
+      {
+        "label": "终审分谱合订本",
+        "bytes": 20992229,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/dongbei-mixed-combined.pdf",
+        "pages": 449
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 41751766,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/dongbei-mixed-parts-01.zip",
+        "count": 210
+      }
+    ],
+    "fullScores": [
+      {
+        "label": "首调简谱指挥总谱",
+        "bytes": 971618,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/dongbei-mixed-full-score-01.pdf",
+        "pages": 36
+      }
+    ],
+    "kind": "编配版本",
+    "composer": "",
+    "ensemble": "中西混编",
+    "tags": [],
+    "summary": "合订本汇编终审简谱分谱，A3 拼版在分谱包内另列。首调指挥总谱单独提供。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 210,
+    "priority": 999
+  },
+  {
+    "title": "La La Land",
+    "version": "2026-11-05 · V4",
+    "slug": "la-la-land",
+    "note": "汇编最终简谱分谱。带提示与不带提示分别保留。",
+    "combined": [
+      {
+        "label": "终审分谱合订本",
+        "bytes": 17627152,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/la-la-land-combined.pdf",
+        "pages": 455
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 17721720,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/la-la-land-parts-01.zip",
+        "count": 64
+      }
+    ],
+    "fullScores": [],
+    "kind": "编配版本",
+    "composer": "",
+    "ensemble": "中西混编",
+    "tags": [],
+    "summary": "汇编最终简谱分谱。带提示与不带提示分别保留。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 64,
+    "priority": 999
+  },
+  {
+    "title": "赶街",
+    "version": "2026-11-27 修订交付版",
+    "slug": "ganjie",
+    "note": "终审版保留原谱中无法唯一解析的局部记号。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 11818174,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/ganjie-combined.pdf",
+        "pages": 351
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 22102001,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/ganjie-parts-01.zip",
+        "count": 88
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "编制详见分谱",
+    "tags": [],
+    "summary": "终审版保留原谱中无法唯一解析的局部记号。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 88,
+    "priority": 999
+  },
+  {
+    "title": "好汉歌",
+    "version": "2026-11-27 紧凑终审版",
+    "slug": "haohange",
+    "note": "终审版保留了来源中未能唯一确认的记号及其说明。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 4201194,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/haohange-combined.pdf",
+        "pages": 122
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 11851004,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/haohange-parts-01.zip",
+        "count": 88
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "编制详见分谱",
+    "tags": [],
+    "summary": "终审版保留了来源中未能唯一确认的记号及其说明。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 88,
+    "priority": 999
+  },
+  {
+    "title": "花好月圆",
+    "version": "2026-11-26 独立排版终审版",
+    "slug": "huahaoyueyuan",
+    "note": "含固定调与首调，各分带提示、不带提示。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 4110840,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/huahaoyueyuan-combined.pdf",
+        "pages": 100
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 9613086,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/huahaoyueyuan-parts-01.zip",
+        "count": 60
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "黄贻钧作曲，彭修文编曲",
+    "ensemble": "民族管弦乐",
+    "tags": [],
+    "summary": "含固定调与首调，各分带提示、不带提示。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 60,
+    "priority": 999
+  },
+  {
+    "title": "茉莉花",
+    "version": "2026-11-27 紧凑终版",
+    "slug": "molihua",
+    "note": "紧凑终版，包含终审清单核验的各声部与简谱版本。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 31320862,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/molihua-combined.pdf",
+        "pages": 865
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 36052111,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/molihua-parts-01.zip",
+        "count": 124
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "编制详见分谱",
+    "tags": [],
+    "summary": "紧凑终版，包含终审清单核验的各声部与简谱版本。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 124,
+    "priority": 999
+  },
+  {
+    "title": "若雪临枝",
+    "version": "2026-11-27 完整修订版",
+    "slug": "ruoxuelinzhi",
+    "note": "终审版保留少数原谱记号的校勘说明。",
+    "combined": [
+      {
+        "label": "整曲合订本",
+        "bytes": 18627238,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/ruoxuelinzhi-combined.pdf",
+        "pages": 665
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 31924921,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/ruoxuelinzhi-parts-01.zip",
+        "count": 120
+      }
+    ],
+    "fullScores": [],
+    "kind": "专业制谱",
+    "composer": "",
+    "ensemble": "编制详见分谱",
+    "tags": [],
+    "summary": "终审版保留少数原谱记号的校勘说明。",
+    "quality": "定版文件已核对",
+    "rights": "本站制谱版本权利由负责人确认",
+    "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
+    "partCount": 120,
+    "priority": 999
+  }
+]

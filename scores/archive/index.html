@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>既有口令资料 | 国乐谱汇</title>
+<style>
+:root{color-scheme:light;--ink:#203935;--muted:#50706a;--paper:#f7f4e9;--panel:#fffdf7;--line:#d4dcd0;--deep:#153932;--light:#f3ecdb;--link:#174f45;--accent:#bf8253;font:1rem/1.65 system-ui,-apple-system,"Noto Sans SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink)}
+a{color:var(--link);text-underline-offset:.24em}
+button,input{font:inherit}
+:focus-visible{outline:3px solid #8f4b21;outline-offset:3px}
+.wrap{width:min(100% - 2rem,67rem);margin:auto}
+.header{padding:1rem 0;background:var(--deep);color:var(--light)}
+.header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.header a{color:inherit}
+.hero{padding:clamp(2.75rem,7vw,5.5rem) 0 2.7rem;border-bottom:1px solid var(--line);background:repeating-linear-gradient(0deg,transparent,transparent 19px,#d4dcd04d 20px,#d4dcd04d 21px),linear-gradient(120deg,#e9eddc,var(--paper) 70%)}
+h1,h2,h3,p{margin-top:0}
+h1{margin-bottom:.6rem;font:700 clamp(2.5rem,8vw,4.5rem)/1.08 Georgia,"Noto Serif SC","Songti SC",serif;letter-spacing:.05em}
+h2{font-size:1.55rem;line-height:1.3;margin-bottom:.5rem}
+h3{font-size:.97rem;margin-bottom:.4rem}
+.lead{max-width:43rem;margin:0;color:var(--muted);font-size:1.05rem}
+main{padding:2rem 0 4rem}
+.bar{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:1.4rem}
+.search{display:grid;gap:.25rem;width:min(100%,25rem)}
+.search span{font-weight:650}
+.search input{min-width:0;padding:.55rem .75rem;border:1px solid #a0b4aa;border-radius:.3rem;background:var(--panel);color:var(--ink)}
+.count{margin:0;color:var(--muted);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.score{min-width:0;padding:1.3rem;border-top:3px solid var(--accent);border-radius:.35rem;background:var(--panel);box-shadow:0 0 0 1px var(--line)}
+.score__version,.score__note,.file__meta,.file-empty{color:var(--muted);font-size:.93rem}
+.score__note{overflow-wrap:anywhere;margin-bottom:.8rem}
+.group{border-top:1px solid var(--line);margin:.8rem 0 0;padding-top:.7rem}
+.files{display:grid;gap:.43rem;list-style:none;margin:0;padding:0}
+.file a{display:block;font-weight:650;overflow-wrap:anywhere}
+.file__meta{display:block}
+.file-empty{margin:0}
+.part-index{margin-top:.8rem;border-top:1px solid var(--line);padding-top:.7rem}
+.part-index summary{font-weight:650;cursor:pointer}
+.part-index .part-search{display:grid;max-width:22rem;gap:.25rem;margin:.7rem 0}
+.part-index .part-search input{padding:.45rem .6rem;border:1px solid #a0b4aa;border-radius:.25rem;background:var(--panel);min-width:0}
+.part-index-list{list-style:none;padding:0;max-height:20rem;overflow:auto;margin-bottom:.4rem}
+.part-index-list li{border-bottom:1px solid var(--line);padding:.25rem 0;overflow-wrap:anywhere}
+.info{background:#e9eddc;border-left:.25rem solid var(--accent);padding:.8rem 1rem;margin:1.2rem 0 0}
+footer{border-top:1px solid var(--line);padding:1rem 0;color:var(--muted)}
+@media(max-width:42rem){.grid{grid-template-columns:1fr}.bar{align-items:stretch;flex-direction:column}.search{width:100%}}
+</style>
+<script src="/scores/catalog.js" defer></script>
+<script src="/scores/parts-index.js" defer></script>
+</head>
+<body>
+<header class="header"><div class="wrap"><span>杨书泰 · 曲谱资料</span><a href="/scores/">返回国乐谱汇</a></div></header>
+<div class="hero"><div class="wrap">
+<h1>既有口令资料</h1>
+<p class="lead">既有排练资料的版本存档。每首曲目分别列出合订 PDF、独立分谱，以及可取得的正式总谱。技术复核和使用授权分别记录。</p>
+<p class="info">文件存放在 GitHub Releases。分谱 ZIP 解压后，每份 PDF 和合订本一样，需要用另行提供的密码打开。</p>
+</div></div>
+<main class="wrap">
+<div class="bar"><label class="search"><span>查找曲目</span><input id="search" type="search" placeholder="曲名、版本或分谱名称" autocomplete="off"></label><p class="count" id="count" aria-live="polite"></p></div>
+<div class="grid" id="scores"></div>
+<noscript>启用 JavaScript 后可查看曲目清单。</noscript>
+</main>
+<footer><div class="wrap">合订 PDF 汇编各份谱件。总谱单独标注。</div></footer>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const items = Array.isArray(window.SCORE_CATALOG) ? window.SCORE_CATALOG : [];
+  const container = document.getElementById('scores');
+  const search = document.getElementById('search');
+  const count = document.getElementById('count');
+  const make = (tag, className, text) => {
+    const node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  };
+
+  const downloadUrl = (value) => {
+    try {
+      const url = new URL(value);
+      if (url.protocol === 'https:' && url.hostname === 'github.com' &&
+        /^\/taitai2025\/[^/]+\/releases\/download\//i.test(url.pathname)) return url.href;
+    } catch {
+      return '';
+    }
+    return '';
+  };
+
+  const sizeLabel = (bytes) => {
+    if (!Number.isFinite(bytes) || bytes <= 0) return '';
+    return bytes >= 1048576 ? (bytes / 1048576).toFixed(1) + ' MiB' : Math.ceil(bytes / 1024) + ' KiB';
+  };
+
+  const group = (title, files) => {
+    const section = make('section', 'group');
+    section.append(make('h3', '', title));
+    const entries = Array.isArray(files) ? files.filter(file => downloadUrl(file.url)) : [];
+    if (!entries.length) {
+      section.append(make('p', 'file-empty', '暂未收录'));
+      return section;
+    }
+    const list = make('ul', 'files');
+    entries.forEach((file) => {
+      const li = make('li', 'file');
+      const link = make('a', '', file.label || title);
+      link.href = downloadUrl(file.url);
+      const meta = [
+        Number.isFinite(file.pages) && file.pages > 0 ? file.pages + ' 页' : '',
+        Number.isFinite(file.count) && file.count > 0 ? file.count + ' 份分谱' : '',
+        sizeLabel(file.bytes),
+        '需密码',
+      ].filter(Boolean).join(' · ');
+      li.append(link, make('span', 'file__meta', meta));
+      list.append(li);
+    });
+    section.append(list);
+    return section;
+  };
+
+  const partIndex = (slug) => {
+    const all = (window.SCORE_PARTS || {})[slug] || [];
+    if (!all.length) return document.createDocumentFragment();
+    const detail = make('details', 'part-index');
+    const input = make('input');
+    input.type = 'search';
+    input.placeholder = '乐器、乐章、固定调或首调';
+    const label = make('label', 'part-search');
+    label.append(make('span', '', '搜索包内分谱文件'), input);
+    const counter = make('p', 'file__meta');
+    counter.setAttribute('aria-live', 'polite');
+    const list = make('ul', 'part-index-list');
+    const more = make('button', '', '显示更多');
+    more.type = 'button';
+    let limit = 50;
+    const update = () => {
+      const terms = input.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+      const visible = all.filter(part => terms.every(term => part.filename.toLocaleLowerCase().includes(term)));
+      list.replaceChildren(...visible.slice(0, limit).map(part => make('li','',part.filename + ' · ' + part.pages + ' 页')));
+      counter.textContent = '显示 ' + Math.min(visible.length, limit) + ' / ' + visible.length + ' 份。请在下载的 ZIP 内按文件名查找。';
+      more.hidden = visible.length <= limit;
+    };
+    input.addEventListener('input', () => { limit=50; update(); });
+    more.addEventListener('click', () => { limit+=50; update(); });
+    detail.addEventListener('toggle', () => { if (detail.open && !list.childNodes.length) update(); });
+    detail.append(make('summary', '', '查找 ' + all.length + ' 份包内分谱'), label, counter, list, more);
+    return detail;
+  };
+
+  const render = () => {
+    const keyword = search.value.trim().toLocaleLowerCase();
+    const shown = items.filter((item) => {
+      const names = [item.title, item.version, ...(item.parts || []).map(file => file.label)];
+      return names.some(name => typeof name === 'string' && name.toLocaleLowerCase().includes(keyword))
+        || ((window.SCORE_PARTS || {})[item.slug] || []).some(part => part.filename.toLocaleLowerCase().includes(keyword));
+    });
+    count.textContent = shown.length + ' 首';
+    const fragment = document.createDocumentFragment();
+    shown.forEach((item) => {
+      const article = make('article', 'score');
+      if (typeof item.slug === 'string' && /^[a-z0-9-]+$/.test(item.slug)) article.id = item.slug;
+      article.append(make('h2', '', item.title));
+      if (item.version) article.append(make('div', 'score__version', item.version));
+      if (item.note) article.append(make('p', 'score__note', item.note));
+      article.append(
+        group('合订版 PDF', item.combined),
+        group('独立分谱包', item.parts),
+        group('总谱 PDF', item.fullScores),
+        partIndex(item.slug)
+      );
+      fragment.append(article);
+    });
+    if (!shown.length) fragment.append(make('p', '', items.length ? '没有匹配的曲目。' : '曲目清单暂不可用。'));
+    container.replaceChildren(fragment);
+  };
+
+  search.addEventListener('input', render);
+  render();
+});
+</script>
+</body>
+</html>

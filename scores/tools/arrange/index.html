@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>自适应编配工作台｜MusicXML 声部分配与实音核对｜国乐谱汇</title>
+  <meta name="description" content="面向高校民乐团和中西混编的本地 MusicXML 工具。自定义实际编制和音域，全局匹配旋律、和声与低音声部，导出可复核的编配草稿。">
+  <link rel="canonical" href="https://taitai2025.github.io/scores/tools/arrange/">
+  <link rel="stylesheet" href="/scores/style.css">
+  <link rel="stylesheet" href="./arrange.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳至正文</a>
+<header class="site-header"><div class="frame">
+  <a class="brand" href="/scores/"><span class="seal" aria-hidden="true">谱</span>国乐谱汇</a>
+  <nav class="nav" aria-label="主导航">
+    <a href="/scores/">谱库</a><a href="/scores/open/">开放谱本</a><a href="/scores/sources/">谱源导航</a>
+    <a href="/scores/guides/">排练指南</a><a href="/scores/tools/" aria-current="true">编制工具</a><a href="/scores/archive/">口令资料</a>
+  </nav>
+</div></header>
+<section class="hero">
+  <div class="shell">
+    <p class="eyebrow"><a href="/scores/tools/">编制工具</a></p>
+    <h1>自适应编配工作台</h1>
+    <p>录入乐团到场乐器，检测原谱各声部的实音音域、谱表与最大同时发声数。系统优先匹配必保留声部，再在可用席位中选择整体代价较低的方案。</p>
+    <p>支持未压缩的 <strong>MusicXML 按声部总谱</strong>。乐谱在浏览器内处理，导出文件保存到你的设备。</p>
+  </div>
+</section>
+<main id="main" class="shell stack">
+  <section class="card stack" aria-labelledby="source-heading">
+    <div>
+      <h2 id="source-heading">原谱与声部优先级</h2>
+      <p class="muted">优先级可按旋律、和声与低音骨架设置。只有确认可暂时不分配的声部才选「可选」。</p>
+    </div>
+    <div class="actions score-input">
+      <label class="field" for="source-file"><span>选择 .musicxml 或 .xml 文件</span><input id="source-file" type="file" accept=".musicxml,.xml,application/vnd.recordare.musicxml+xml,text/xml"></label>
+      <button id="demo" class="button" type="button">载入三声部演示</button>
+    </div>
+    <p id="source-status" class="meta" role="status">等待选择原谱。</p>
+    <div id="source-table-wrap" class="table-wrap" hidden>
+      <table class="arrange-table">
+        <caption id="source-caption" class="visually-hidden">源谱声部分析</caption>
+        <thead><tr><th scope="col">声部</th><th scope="col">读谱统计</th><th scope="col">作用</th><th scope="col">优先级</th></tr></thead>
+        <tbody id="source-rows"></tbody>
+      </table>
+    </div>
+  </section>
+  <section class="card stack" aria-labelledby="target-heading">
+    <div>
+      <h2 id="target-heading">可用席位</h2>
+      <p class="muted">同一乐器有两位独立演奏员时，可以添加两个席位。音域用实音填写，支持 C4、B♭3 或 MIDI 数字。请按乐器型号、定调与演奏员水平调整默认范围。</p>
+    </div>
+    <div class="actions" id="preset-actions">
+      <button id="preset-mixed" class="button" type="button">中西室内合奏</button>
+      <button id="preset-chinese" class="button" type="button">民乐小合奏</button>
+      <button id="preset-western" class="button" type="button">西洋室内合奏</button>
+      <button id="add-seat" class="button" type="button">添加席位</button>
+    </div>
+    <div class="seat-list" id="seats"></div>
+  </section>
+  <section class="card stack" aria-labelledby="results-heading">
+    <div class="results-heading">
+      <div>
+        <h2 id="results-heading">编配结果</h2>
+        <p id="result-status" class="muted" role="status">载入原谱并设置席位后，开始匹配。</p>
+      </div>
+      <button id="solve" type="button" class="button primary" disabled>计算编制匹配</button>
+    </div>
+    <div id="result-wrap" hidden>
+      <div class="table-wrap"><table class="arrange-table">
+        <caption class="visually-hidden">声部匹配及复核项</caption>
+        <thead><tr><th scope="col">原声部</th><th scope="col">目标席位</th><th scope="col">复核结论</th></tr></thead>
+        <tbody id="result-rows"></tbody>
+      </table></div>
+      <div class="exports">
+        <button class="button" id="export-csv" type="button">下载 CSV 校勘表</button>
+        <button class="button" id="export-json" type="button">下载 JSON 配置与方案</button>
+        <button class="button primary" id="export-xml" type="button">下载 MusicXML 草稿</button>
+      </div>
+      <p id="export-status" class="meta" role="status"></p>
+    </div>
+  </section>
+  <section class="card prose" aria-labelledby="checks-heading">
+    <h2 id="checks-heading">输出与核对</h2>
+    <ul>
+      <li>一个演奏席位承接一个原谱声部。必保留声部先匹配，随后匹配可选声部。匹配代价由作用差异、音域余量、记谱移调和建议复核项组成。</li>
+      <li>MusicXML 草稿只改写通过安全检查的声部。无法分配或需要手工核对的原声部继续出现在总谱里，校勘表记录原因。</li>
+      <li>简单单声部支持移调乐器所需的调号与写音转换。导出后重新解析，核对所有声部的实音、拍位和时值。复杂移调、调外音重拼、无固定音高打击与兼奏需要手工处理。</li>
+      <li>草稿保留原谱谱号和组序。排练前请检查谱号、奏法、换气、指法、平衡、音色和翻页。通用 MIDI 音色用于打样。</li>
+    </ul>
+    <p><a href="https://www.w3.org/2021/06/musicxml40/musicxml-reference/elements/transpose/" rel="noopener">MusicXML 移调字段规范</a>　<a href="/scores/tools/rehearsal/">排练验收清单</a></p>
+  </section>
+</main>
+<footer class="site-footer"><div class="frame"><span>国乐谱汇</span><a href="/scores/tools/cooperation/">反馈校谱或编制问题</a></div></footer>
+</body>
+</html>
