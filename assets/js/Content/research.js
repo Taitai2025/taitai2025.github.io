@@ -488,6 +488,38 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 9,
       "archive": true
+    },
+    {
+      "id": "restart-three-interval-exchange",
+      "zh": "三种梯度重启间隔的区间交换与临界速率",
+      "en": "Three restart intervals and failure of the critical prefactor",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection and line search",
+      "related": [
+        "two-point-restart-rotation",
+        "separated-mode-restart",
+        "continuous-spectrum-restart"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 6,
+      "archive": true
+    },
+    {
+      "id": "pcp-growth-noise-classification",
+      "zh": "矩形 PCP 唯一分解的增长阶与噪声稳定性",
+      "en": "Growth exponents and sharp noise rates in rectangular PCP",
+      "groupZh": "分裂法与矩阵分解",
+      "groupEn": "Splitting and matrix decomposition",
+      "related": [
+        "pcp-rectangle-sharp-stability",
+        "pcp-rectangle",
+        "admm-residual-feedback"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 9,
+      "archive": true
     }
   ],
   "papers": [

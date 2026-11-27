@@ -39,3 +39,5 @@
 - [齐次凸锥约束下投影 Barzilai–Borwein 法的收缩与两步回归](./projected-bb-sharp-two-step/)
 - [两点谱梯度重启的无理旋转与精确调用速率](./two-point-restart-rotation/)
 - [有界滞后谱步长的尖锐收敛界](./bounded-delay-bb-sharp-rate/)
+- [三种梯度重启间隔的区间交换与临界速率](./restart-three-interval-exchange/)
+- [矩形 PCP 唯一分解的增长阶与噪声稳定性](./pcp-growth-noise-classification/)
