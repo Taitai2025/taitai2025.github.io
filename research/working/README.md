@@ -24,3 +24,6 @@
 - [阈值选择后的条件曲率估计](./threshold-curvature-risk/)
 - [带误差的梯度历史与 Ritz 整轮更新](./noisy-ritz-history/)
 - [已知谱重数时未查询方向的曲率误差](./noisy-missing-curvature/)
+- [两模态二次目标的梯度重启时间](./two-weak-mode-restart/)
+- [固定谱带下的梯度重启与维数](./continuous-spectrum-restart/)
+- [周期 BB 切换的最优三次改进系数](./periodic-bb-optimal-word/)

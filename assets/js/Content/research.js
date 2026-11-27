@@ -259,6 +259,50 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 4,
       "archive": true
+    },
+    {
+      "id": "two-weak-mode-restart",
+      "zh": "两模态二次目标的梯度重启时间",
+      "en": "Gradient restart times for two-mode quadratics",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection, and line search",
+      "related": [
+        "gradient-restart-return",
+        "continuous-spectrum-restart"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 6,
+      "archive": true
+    },
+    {
+      "id": "continuous-spectrum-restart",
+      "zh": "固定谱带下的梯度重启与维数",
+      "en": "Gradient restart with a fixed spectral band",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection, and line search",
+      "related": [
+        "gradient-restart-return",
+        "two-weak-mode-restart"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 7,
+      "archive": true
+    },
+    {
+      "id": "periodic-bb-optimal-word",
+      "zh": "周期 BB 切换的最优三次改进系数",
+      "en": "The optimal cubic coefficient for periodic BB switching",
+      "groupZh": "谱梯度与周期切换",
+      "groupEn": "Spectral gradients and periodic switching",
+      "related": [
+        "periodic-bb"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 4,
+      "archive": true
     }
   ],
   "papers": [
