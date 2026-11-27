@@ -41,3 +41,4 @@
 - [有界滞后谱步长的尖锐收敛界](./bounded-delay-bb-sharp-rate/)
 - [三种梯度重启间隔的区间交换与临界速率](./restart-three-interval-exchange/)
 - [矩形 PCP 唯一分解的增长阶与噪声稳定性](./pcp-growth-noise-classification/)
+- [无滞后上限谱步长的尖锐最坏界](./unlimited-lag-bb-sharp-envelope/)

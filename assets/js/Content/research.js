@@ -520,6 +520,22 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 9,
       "archive": true
+    },
+    {
+      "id": "unlimited-lag-bb-sharp-envelope",
+      "zh": "无滞后上限谱步长的尖锐最坏界",
+      "en": "Sharp worst-case bounds for spectral steps with unlimited lag",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "bounded-delay-bb-sharp-rate",
+        "bb-two-point-first-hitting",
+        "noisy-ritz-history"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 5,
+      "archive": true
     }
   ],
   "papers": [
