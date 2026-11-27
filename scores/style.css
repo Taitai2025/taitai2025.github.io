@@ -1,4 +1,6 @@
-:root{font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.65;color:var(--ink);background:var(--paper);--ink:#182d2a;--muted:#4c625b;--paper:#f6f5ed;--surface:#fffefa;--line:#d3dbd2;--accent:#a7452d;--pine:#19443b;--leaf:#e5ede3;--serif:"Noto Serif SC","Songti SC","STSong","SimSun",Georgia,serif;scroll-padding-top:1rem}
+@font-face{font-family:"Guoyue Sans";src:url("/scores/fonts/guoyue-sans-regular.woff2") format("woff2");font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:"Guoyue Serif";src:url("/scores/fonts/guoyue-serif-bold.woff2") format("woff2");font-style:normal;font-weight:750;font-display:swap}
+:root{font-family:"Guoyue Sans",Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.65;color:var(--ink);background:var(--paper);--ink:#182d2a;--muted:#4c625b;--paper:#f6f5ed;--surface:#fffefa;--line:#d3dbd2;--accent:#a7452d;--pine:#19443b;--leaf:#e5ede3;--serif:"Guoyue Serif","Noto Serif SC","Songti SC","STSong","SimSun",Georgia,serif;scroll-padding-top:1rem}
 *{box-sizing:border-box}
 body{margin:0;font-size:1rem}
 a{color:var(--pine);text-underline-offset:.2em}

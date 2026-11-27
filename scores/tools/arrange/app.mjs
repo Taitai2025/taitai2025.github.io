@@ -76,6 +76,12 @@ function showSource() {
   table.replaceChildren(body);
   el('source-table-wrap').hidden=!state.analysis;
 }
+function clearSource() {
+  state.analysis=null;
+  state.parts=[];
+  showSource();
+  flagStale();
+}
 function receive(xml) {
   try {
     const analysis=parseMusicXML(xml);
@@ -83,8 +89,9 @@ function receive(xml) {
     state.parts=analysis.parts.map(part=>({...part,priority:'required'}));
     status('source-status',`已读取《${analysis.title}》 · ${analysis.parts.length} 个声部 · ${analysis.totalNotes.toLocaleString('zh-CN')} 个记谱事件`,'ok');
   } catch(error) {
-    state.analysis=null; state.parts=[];
+    clearSource();
     status('source-status',error.message,'error');
+    return;
   }
   showSource();
   flagStale();
@@ -251,13 +258,15 @@ el('export-xml').addEventListener('click',()=>{
   }
 });
 el('source-file').addEventListener('change',async(event)=>{
-  const requested=++state.sourceLoaded;
   const file=event.target.files[0];
   if (!file) return;
+  const requested=++state.sourceLoaded;
+  clearSource();
   if (file.size>12000000||!/\.(?:musicxml|xml)$/i.test(file.name)) {
     status('source-status','请选择 12 MB 以内的 .musicxml 或 .xml 文件。','error');
     return;
   }
+  status('source-status','正在读取原谱。');
   try {
     const xml=await file.text();
     if (requested===state.sourceLoaded) receive(xml);

@@ -64,13 +64,17 @@
     {
       "slug": "taiyang-song",
       "title": "太阳颂",
-      "composer": "",
+      "composer": "王丹红",
       "ensemble": "大型民族管弦乐",
       "tags": [
         "分乐章",
         "整曲分谱",
         "首调",
         "固定调",
+        "踏江",
+        "挑山",
+        "思念",
+        "太阳颂",
         "梆笛",
         "曲笛",
         "高音笙",
@@ -123,13 +127,17 @@
     {
       "slug": "siji-zuqu",
       "title": "四季组曲",
-      "composer": "",
+      "composer": "卢亮辉",
       "ensemble": "大型民族管弦乐",
       "tags": [
         "分乐章",
         "首调",
         "固定调",
         "四季组曲民族管弦乐",
+        "春",
+        "夏",
+        "秋",
+        "冬",
         "高笛兼小笛",
         "高笛",
         "小笛",
@@ -207,7 +215,7 @@
     {
       "slug": "ganjiang-moye",
       "title": "干将莫邪幻想曲",
-      "composer": "",
+      "composer": "张朝",
       "ensemble": "大型民族管弦乐",
       "tags": [
         "干将·莫邪幻想曲",
@@ -215,6 +223,10 @@
         "幻想曲",
         "首调",
         "固定调",
+        "誓言",
+        "山雪",
+        "烈火",
+        "涅槃",
         "梆笛",
         "曲笛",
         "新笛",
@@ -344,7 +356,7 @@
     {
       "slug": "caoyuan-kuangxiang",
       "title": "草原狂想",
-      "composer": "",
+      "composer": "罗伟伦、陈家荣作曲，罗伟伦编曲",
       "ensemble": "民族管弦乐",
       "tags": [
         "草原狂想简谱",
@@ -606,7 +618,7 @@
     {
       "slug": "la-la-land",
       "title": "La La Land",
-      "composer": "",
+      "composer": "Justin Hurwitz",
       "ensemble": "中西混编",
       "tags": [
         "梆笛",
@@ -671,7 +683,7 @@
     {
       "slug": "haohange",
       "title": "好汉歌",
-      "composer": "",
+      "composer": "赵季平作曲，曹文工编曲",
       "ensemble": "编制详见分谱",
       "tags": [
         "梆笛",
@@ -734,7 +746,7 @@
     {
       "slug": "molihua",
       "title": "茉莉花",
-      "composer": "",
+      "composer": "刘文金",
       "ensemble": "编制详见分谱",
       "tags": [
         "短膜笛",

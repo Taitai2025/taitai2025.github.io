@@ -121,7 +121,7 @@ def work_pages(works):
         for term in ['首调','固定调','带主旋律','不带主旋律','A3']:
             flag = re.search(r'(?<![不无])带主旋律',names) if term=='带主旋律' else (term in names or term=='不带主旋律' and '无主旋律' in names)
             if flag: versions.append(term)
-        detail=f'<section class="shell"><div class="cards two"><article class="card"><h2>谱件信息</h2>{fact_list([("曲目",w["title"]),("作曲与编曲",w["composer"]),("编制",w["ensemble"]),("现行版本",w["version"]),("分谱",str(w["partCount"])+" 份"),("谱面", "、".join(versions))])}</article><article class="card"><h2>制谱与使用</h2>{fact_list([("文件核验",w["quality"]),("制谱权利",w["rights"]),("实际排练", "公开条目尚未登记试奏记录"),("修订说明",w["note"])])}<p class="meta">合订本与指挥总谱分别标注。下载后用已有口令打开 PDF。</p></article></div></section>'
+        detail=f'<section class="shell"><div class="cards two"><article class="card"><h2>谱件信息</h2>{fact_list([("曲目",w["title"]),("作曲与编曲",w["composer"]),("编制",w["ensemble"]),("现行版本",w["version"]),("乐章", "、".join(w.get("movements",[]))),("分谱",str(w["partCount"])+" 份"),("谱面", "、".join(versions))])}</article><article class="card"><h2>制谱与使用</h2>{fact_list([("文件核验",w["quality"]),("制谱权利",w["rights"]),("实际排练", "公开条目尚未登记试奏记录"),("修订说明",w["note"])])}<p class="meta">合订本与指挥总谱分别标注。下载后用已有口令打开 PDF。</p></article></div></section>'
         tagged=''.join(badge(tag,'neutral') for tag in w.get('instruments',[])[:18])
         roster=f'<section class="shell"><h2>声部索引</h2><div class="tags">{tagged}</div><p class="meta">按现有文件名登记。分章、兼奏和完整乐器列表见 {anchor("/scores/archive/#"+w["slug"],"分谱索引")}。</p></section>' if tagged else ''
         files=f'<section class="shell" id="files"><h2>乐谱版本与下载</h2>{file_section(w)}<p class="meta">ZIP 解压后，每份分谱 PDF 都有打开密码。演出、公开再发行和其他使用范围请按对应授权确认。</p></section>'
@@ -136,18 +136,19 @@ def open_pages(opens):
         route=get_open(w)
         card_copy=w['edition']
         search=' '.join([w['title'],w['composer'],w.get('composerEn',''),w['edition'],w['provider']])
-        cards.append(card(w['title'],card_copy,route,badges=(w['rightsStatus'],),meta=f'{w["pages"]} 页 · {w["provider"]}',attrs=filter_attr(search,w['rightsStatus'])))
-        desc=f'{w["title"]}，{w["composer"]}。{w["edition"]}，{w["pages"]}页。查看出处、许可和五线谱总谱下载。'
+        cards.append(card(w['title'],card_copy,route,badges=(w['rightsStatus'],w.get('format','五线谱总谱')),meta=f'{w["pages"]} 页 · {w["provider"]}',attrs=filter_attr(search,w['rightsStatus'])))
+        music_format=w.get('format','五线谱总谱')
+        desc=f'{w["title"]}，{w["composer"]}。{w["edition"]}。查看{music_format}的出处、许可和原谱下载。'
         links=f'<div class="hero-actions">{anchor(w["source"],"查看原版来源","button primary")}'
         if w['download'] != w['source']: links+=anchor(w['download'],'获取原站 PDF','button')
         links+='</div>'
         d=hero('免费谱库 · 原谱',w['title'],w['details'],links)
-        d+=f'<section class="shell"><div class="cards two"><article class="card"><h2>版本与编制</h2>{fact_list([("作曲",w["composer"]),("版本",w["edition"]),("来源",w["provider"]),("页数",str(w["pages"])+" 页")])}</article><article class="card"><h2>许可依据</h2><p>{escape(w["license"])}</p><p class="meta">按此谱本的标注及适用地区核对后使用。衍生谱、演出录音与现代改编需另看对应条款。</p>'
+        d+=f'<section class="shell"><div class="cards two"><article class="card"><h2>版本与编制</h2>{fact_list([("作曲",w["composer"]),("版本",w["edition"]),("谱种",music_format),("来源",w["provider"]),("收录范围",str(w["pages"])+" 页")])}</article><article class="card"><h2>许可依据</h2><p>{escape(w["license"])}</p><p class="meta">按此谱本的标注及适用地区核对后使用。衍生谱、演出录音与现代改编需另看对应条款。</p>'
         if w.get('licenseUrl'): d+=anchor(w['licenseUrl'],'查看许可全文')
         d+='</article></div></section>'
-        output(route,w['title']+'五线谱总谱',desc,d,active='/scores/open/')
+        output(route,w['title']+' '+music_format,desc,d,active='/scores/open/')
     desc='从 IMSLP、Sibley 音乐图书馆和 Mutopia 等来源筛选公版或开放许可的古典总谱。逐谱提供版次、总谱下载与许可说明。'
-    output('/scores/open/','免费总谱和开放乐谱',desc,hero('开放曲谱和公版来源','免费谱库','用于选曲、研究与配器的五线谱总谱。逐份登记具体版次与许可，并保留原站入口。')+filtered(cards,[w['rightsStatus'] for w in opens]),script='/scores/filters.js')
+    output('/scores/open/','免费总谱和开放乐谱',desc,hero('开放曲谱和公版来源','免费谱库','用于选曲、研究与配器的五线谱总谱与历史谱本。逐份登记版次、谱种和许可，并保留原站入口。')+filtered(cards,[w['rightsStatus'] for w in opens]),script='/scores/filters.js')
 
 def source_page(sources):
     cards=[]

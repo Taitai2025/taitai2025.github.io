@@ -61,20 +61,31 @@
     ],
     "fullScores": [],
     "kind": "专业制谱",
-    "composer": "",
+    "composer": "王丹红",
     "ensemble": "大型民族管弦乐",
     "tags": [
       "分乐章",
       "整曲分谱",
       "首调",
-      "固定调"
+      "固定调",
+      "踏江",
+      "挑山",
+      "思念",
+      "太阳颂"
     ],
     "summary": "提供紧凑排版的整曲和分乐章简谱，适合分组排练以及合排用谱核对。",
     "quality": "定版文件已核对",
     "rights": "本站制谱版本权利由负责人确认",
     "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
     "partCount": 560,
-    "priority": 1
+    "priority": 1,
+    "creditSource": "已发布合订本实际署名",
+    "movements": [
+      "踏江",
+      "挑山",
+      "思念",
+      "太阳颂"
+    ]
   },
   {
     "title": "四季组曲",
@@ -99,20 +110,31 @@
     ],
     "fullScores": [],
     "kind": "专业制谱",
-    "composer": "",
+    "composer": "卢亮辉",
     "ensemble": "大型民族管弦乐",
     "tags": [
       "分乐章",
       "首调",
       "固定调",
-      "四季组曲民族管弦乐"
+      "四季组曲民族管弦乐",
+      "春",
+      "夏",
+      "秋",
+      "冬"
     ],
     "summary": "按各乐章查阅独立分谱，也可使用全曲合订本。此条对应民族管弦乐套谱。",
     "quality": "定版文件已核对",
     "rights": "本站制谱版本权利由负责人确认",
     "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
     "partCount": 560,
-    "priority": 2
+    "priority": 2,
+    "creditSource": "已发布合订本实际署名",
+    "movements": [
+      "春",
+      "夏",
+      "秋",
+      "冬"
+    ]
   },
   {
     "title": "干将莫邪幻想曲",
@@ -137,21 +159,32 @@
     ],
     "fullScores": [],
     "kind": "专业制谱",
-    "composer": "",
+    "composer": "张朝",
     "ensemble": "大型民族管弦乐",
     "tags": [
       "干将·莫邪幻想曲",
       "分乐章",
       "幻想曲",
       "首调",
-      "固定调"
+      "固定调",
+      "誓言",
+      "山雪",
+      "烈火",
+      "涅槃"
     ],
     "summary": "四章与全曲各有固定调及首调分谱。正式合订本兼顾双面打印。",
     "quality": "定版文件已核对",
     "rights": "本站制谱版本权利由负责人确认",
     "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
     "partCount": 600,
-    "priority": 3
+    "priority": 3,
+    "creditSource": "已发布合订本实际署名",
+    "movements": [
+      "誓言",
+      "山雪",
+      "烈火",
+      "涅槃"
+    ]
   },
   {
     "title": "五声组曲",
@@ -191,7 +224,14 @@
     "rights": "本站制谱版本权利由负责人确认",
     "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
     "partCount": 592,
-    "priority": 4
+    "priority": 4,
+    "movements": [
+      "宫",
+      "商",
+      "角",
+      "徵",
+      "羽"
+    ]
   },
   {
     "title": "草原狂想",
@@ -216,7 +256,7 @@
     ],
     "fullScores": [],
     "kind": "专业制谱",
-    "composer": "",
+    "composer": "罗伟伦、陈家荣作曲，罗伟伦编曲",
     "ensemble": "民族管弦乐",
     "tags": [
       "草原狂想简谱",
@@ -229,7 +269,8 @@
     "rights": "本站制谱版本权利由负责人确认",
     "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
     "partCount": 88,
-    "priority": 5
+    "priority": 5,
+    "creditSource": "已发布合订本实际署名"
   },
   {
     "title": "国风",
@@ -449,7 +490,7 @@
     ],
     "fullScores": [],
     "kind": "编配版本",
-    "composer": "",
+    "composer": "Justin Hurwitz",
     "ensemble": "中西混编",
     "tags": [],
     "summary": "汇编最终简谱分谱。带提示与不带提示分别保留。",
@@ -457,7 +498,8 @@
     "rights": "本站制谱版本权利由负责人确认",
     "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
     "partCount": 64,
-    "priority": 999
+    "priority": 999,
+    "creditSource": "已发布合订本实际署名"
   },
   {
     "title": "赶街",
@@ -515,7 +557,7 @@
     ],
     "fullScores": [],
     "kind": "专业制谱",
-    "composer": "",
+    "composer": "赵季平作曲，曹文工编曲",
     "ensemble": "编制详见分谱",
     "tags": [],
     "summary": "终审版保留了来源中未能唯一确认的记号及其说明。",
@@ -523,7 +565,8 @@
     "rights": "本站制谱版本权利由负责人确认",
     "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
     "partCount": 88,
-    "priority": 999
+    "priority": 999,
+    "creditSource": "已发布合订本实际署名"
   },
   {
     "title": "花好月圆",
@@ -581,7 +624,7 @@
     ],
     "fullScores": [],
     "kind": "专业制谱",
-    "composer": "",
+    "composer": "刘文金",
     "ensemble": "编制详见分谱",
     "tags": [],
     "summary": "紧凑终版，包含终审清单核验的各声部与简谱版本。",
@@ -589,7 +632,8 @@
     "rights": "本站制谱版本权利由负责人确认",
     "rightsBasis": "2026-11-28 负责人确认持有本人翻谱版本的版权",
     "partCount": 124,
-    "priority": 999
+    "priority": 999,
+    "creditSource": "已发布合订本实际署名"
   },
   {
     "title": "若雪临枝",

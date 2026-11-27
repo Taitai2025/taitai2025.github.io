@@ -86,8 +86,8 @@ function peakPolyphony(intervals) {
   return peak;
 }
 
-function roleFor(name, bounds) {
-  if (/鼓|锣|鑼|钹|鈸|梆子|木鱼|木魚|打击|打擊|percuss|drum|gong/i.test(name)) return 'perc';
+function roleFor(name, bounds, type) {
+  if (type==='unpitched') return 'perc';
   if (/低音|低胡|革胡|大提琴|bass|cello|tuba/i.test(name) || (bounds!==null&&bounds[1]<60)) return 'bass';
   if (/中阮|大阮|中胡|中音笙|中音唢呐|viola|horn|伴奏|accomp|harmony/i.test(name)) return 'inner';
   if (/高音|梆笛|曲笛|笛子|主旋律|flute|violin|clarinet|oboe|trumpet/i.test(name)) return 'lead';
@@ -98,7 +98,7 @@ function inspectPart(part, header, isConcertScore, countNotes) {
   let divisions=null, meter=null, baseShift=zero(), currentFifths=0;
   const perStaff=new Map();
   const noteEvents=[], offsets=new Map(), instrumentIds=new Set();
-  const melodicPitches=[], cuePitches=[], staves=new Set(), voices=new Set();
+  const melodicPitches=[], cuePitches=[], voices=new Set();
   const warnings=[], unsafeFeatures=new Set(), keyChanges=new Set([0]);
   let numberedShift=false, polyphony=0, unpitched=0, pitched=0, ambiguousPitch=0, rests=0;
   const sig=part.getAttribute('id');
@@ -106,7 +106,7 @@ function inspectPart(part, header, isConcertScore, countNotes) {
   if (header.querySelector('player')) unsafeFeatures.add('多个演奏身份');
   if (children(header,'score-instrument').length>1) unsafeFeatures.add('多个音色或兼奏标识');
   const partMeasures=children(part,'measure');
-  let maxBar=0;
+  let maxBar=0, staffCount=1;
   for (const [index,measure] of partMeasures.entries()) {
     let cursor=0, high=0, lastStart=0, lastValid=false;
     const intervals=[];
@@ -131,8 +131,10 @@ function inspectPart(part, header, isConcertScore, countNotes) {
           }
           if (child(node,'for-part')) unsafeFeatures.add('实音总谱的独立分谱移调');
           if (child(node,'staff-details')) unsafeFeatures.add('自定义谱表');
-          if (number(node,'staves',1)>1) unsafeFeatures.add('多谱表');
+          const declaredStaves=number(node,'staves',1);
+          if (Number.isSafeInteger(declaredStaves)) staffCount=Math.max(staffCount,declaredStaves);
           for (const key of children(node,'key')) {
+            if (child(key,'cancel')) unsafeFeatures.add('调号取消记号');
             const fifths=number(key,'fifths');
             if (!Number.isInteger(fifths)||Math.abs(fifths)>7||key.getAttribute('number')||child(key,'key-octave')) {
               unsafeFeatures.add('非标准或分谱表调号');
@@ -165,6 +167,11 @@ function inspectPart(part, header, isConcertScore, countNotes) {
         }
         case 'note': {
           countNotes();
+          const noteMarks=children(node).filter(el=>['pitch','rest','unpitched'].includes(el.localName));
+          if (noteMarks.length!==1) {
+            throw new Error(`${name} 第 ${label} 小节的音符必须且只能包含音高、休止或无固定音高记谱中的一种。`);
+          }
+          const [mark]=noteMarks;
           const grace=Boolean(child(node,'grace')), cue=Boolean(child(node,'cue')), chord=Boolean(child(node,'chord'));
           const raw=number(node,'duration');
           const duration=grace?0:divisions && Number.isFinite(raw) && raw>0?raw/divisions:null;
@@ -179,16 +186,17 @@ function inspectPart(part, header, isConcertScore, countNotes) {
           high=Math.max(high,cursor,onset+(duration??0));
           const staff=value(node,'staff')||'1';
           const voice=value(node,'voice')||'1';
-          staves.add(staff); voices.add(voice);
+          const staffNumber=Number(staff);
+          if (Number.isSafeInteger(staffNumber)) staffCount=Math.max(staffCount,staffNumber);
+          voices.add(voice);
           for (const n of children(node,'instrument')) instrumentIds.add(n.getAttribute('id'));
           const shift=perStaff.get(staff)||baseShift;
-          const pitch=child(node,'pitch');
-          const pitchData=pitch?readPitch(pitch):null;
+          const pitchData=mark.localName==='pitch'?readPitch(mark):null;
           let sounding=null, type='unknown';
-          if (child(node,'rest')) {
+          if (mark.localName==='rest') {
             rests++;
             type='rest';
-          } else if (child(node,'unpitched')) {
+          } else if (mark.localName==='unpitched') {
             unpitched++;
             type='unpitched';
           } else if (!pitchData||!shift.known) {
@@ -223,13 +231,13 @@ function inspectPart(part, header, isConcertScore, countNotes) {
   if (instrumentIds.size>1) unsafeFeatures.add('多个演奏乐器');
   if (isConcertScore) unsafeFeatures.add('MusicXML 实音总谱');
   if (voices.size>1) unsafeFeatures.add('同谱不同声部');
-  if (staves.size>1) unsafeFeatures.add('多谱表');
+  if (staffCount>1) unsafeFeatures.add('多谱表');
+  const type=unpitched>0&&pitched>0?'mixed':unpitched>0?'unpitched':pitched>0?'pitched':'unknown';
   return {
     id:sig,name,bounds,shift,offsets:[...offsets.values()], measures:partMeasures.length,noteEvents,
-    notes:pitched,unpitched,rests,ambiguousPitch,cueNotes:cuePitches.length,polyphony,maxBar,role:roleFor(name,bounds),
-    staves:staves.size,voices:voices.size,keyChanges:[...keyChanges],warnings:[...new Set(warnings)].slice(0,25),
-    unsafeFeatures:[...unsafeFeatures],
-    type:unpitched>0&&pitched>0?'mixed':unpitched>0?'unpitched':pitched>0?'pitched':'unknown',
+    notes:pitched,unpitched,rests,ambiguousPitch,cueNotes:cuePitches.length,polyphony,maxBar,role:roleFor(name,bounds,type),
+    staves:staffCount,voices:voices.size,keyChanges:[...keyChanges],warnings:[...new Set(warnings)].slice(0,25),
+    unsafeFeatures:[...unsafeFeatures],type,
   };
 }
 
@@ -305,6 +313,9 @@ export function evaluateMapping(part,target,role) {
   if (part.warnings.length) review.push('源谱存在需复核的时值或小节警报。');
   if (changing && (part.shift?.diatonic===null || part.staves!==1 || part.voices!==1 || part.polyphony>1 || reasonsToReview.length)) {
     review.push('该声部超出安全移调范围，需人工转写。');
+  }
+  if (reasonsToReview.includes('实音总谱的独立分谱移调')) {
+    review.push('原谱含独立分谱移调，改变乐器前须人工核对。');
   }
   if (changing&&part.shift&&part.shift.diatonic!==null && !review.length) {
     const delta=writtenShift(part.shift,target);
