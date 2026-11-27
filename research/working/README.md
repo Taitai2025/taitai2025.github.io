@@ -30,3 +30,7 @@
 - [两点谱上 BB1/BB2 切换的最优五步序列](./two-point-bb-optimal-selector/)
 - [三记忆 LMSD 中五点固定线的不可达性](./memory-three-five-point/)
 - [二项阈值选择后的条件信息](./threshold-binomial-information/)
+- [大谱宽下两点谱 BB 切换的最优指数](./large-spectrum-bb-switching/)
+- [分离曲率尺度下的梯度重启时间](./separated-mode-restart/)
+- [两特征值 BB 法单调回溯中的吸引四周期](./bb-armijo-attracting-cycle/)
+- [两特征值下 BB 法的首次达标步数与最速下降法的比较](./bb-two-point-first-hitting/)

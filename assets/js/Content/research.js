@@ -349,6 +349,68 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 7,
       "archive": true
+    },
+    {
+      "id": "large-spectrum-bb-switching",
+      "zh": "大谱宽下两点谱 BB 切换的最优指数",
+      "en": "The optimal wide-spectrum exponent for two-point BB switching",
+      "groupZh": "谱梯度与周期切换",
+      "groupEn": "Spectral gradients and periodic switching",
+      "related": [
+        "two-point-bb-optimal-selector",
+        "periodic-bb-optimal-word"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 8,
+      "archive": true
+    },
+    {
+      "id": "separated-mode-restart",
+      "zh": "分离曲率尺度下的梯度重启时间",
+      "en": "Gradient restart with separated curvature scales",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection and line search",
+      "related": [
+        "two-weak-mode-restart",
+        "continuous-spectrum-restart"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 12,
+      "archive": true
+    },
+    {
+      "id": "bb-armijo-attracting-cycle",
+      "zh": "两特征值 BB 法单调回溯中的吸引四周期",
+      "en": "An attracting four-cycle in two-point BB with Armijo backtracking",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection and line search",
+      "related": [
+        "gll-window",
+        "smooth-ritz",
+        "two-point-bb-optimal-selector"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 8,
+      "archive": true
+    },
+    {
+      "id": "bb-two-point-first-hitting",
+      "zh": "两特征值下 BB 法的首次达标步数与最速下降法的比较",
+      "en": "First hitting times of BB and steepest descent on two-point spectra",
+      "groupZh": "谱梯度与周期切换",
+      "groupEn": "Spectral gradients and periodic switching",
+      "related": [
+        "two-point-bb-optimal-selector",
+        "large-spectrum-bb-switching",
+        "trial-firsthit"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 10,
+      "archive": true
     }
   ],
   "papers": [
