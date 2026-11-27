@@ -229,6 +229,36 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 5,
       "archive": true
+    },
+    {
+      "id": "noisy-ritz-history",
+      "zh": "带误差的梯度历史与 Ritz 整轮更新",
+      "en": "Ritz sweeps from inexact gradient histories",
+      "groupZh": "谱梯度与 Ritz",
+      "groupEn": "Spectral gradients and Ritz values",
+      "related": [
+        "ritz-reuse",
+        "ritz-minimal-face"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 11,
+      "archive": true
+    },
+    {
+      "id": "noisy-missing-curvature",
+      "zh": "已知谱重数时未查询方向的曲率误差",
+      "en": "Error in unqueried curvature with known spectral multiplicities",
+      "groupZh": "曲率信息与步长",
+      "groupEn": "Curvature information and stepsizes",
+      "related": [
+        "curvature-query-budget",
+        "coordinate-query"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 4,
+      "archive": true
     }
   ],
   "papers": [

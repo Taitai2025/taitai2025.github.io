@@ -22,3 +22,5 @@
 ## 2026 年 11 月 28 日续研
 - [有限实验设计中的滞后拟合与误差证书](./cached-design-certificate/)
 - [阈值选择后的条件曲率估计](./threshold-curvature-risk/)
+- [带误差的梯度历史与 Ritz 整轮更新](./noisy-ritz-history/)
+- [已知谱重数时未查询方向的曲率误差](./noisy-missing-curvature/)
