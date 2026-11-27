@@ -28,3 +28,5 @@
 - [固定谱带下的梯度重启与维数](./continuous-spectrum-restart/)
 - [周期 BB 切换的最优三次改进系数](./periodic-bb-optimal-word/)
 - [两点谱上 BB1/BB2 切换的最优五步序列](./two-point-bb-optimal-selector/)
+- [三记忆 LMSD 中五点固定线的不可达性](./memory-three-five-point/)
+- [二项阈值选择后的条件信息](./threshold-binomial-information/)

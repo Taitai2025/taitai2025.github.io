@@ -318,6 +318,37 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 12,
       "archive": true
+    },
+    {
+      "id": "memory-three-five-point",
+      "zh": "三记忆 LMSD 中五点固定线的不可达性",
+      "en": "Inaccessibility of a five-point fixed line in three-memory LMSD",
+      "groupZh": "谱梯度与 Ritz",
+      "groupEn": "Spectral gradients and Ritz",
+      "related": [
+        "ritz-minimal-face",
+        "ritz-reuse",
+        "smooth-ritz"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 5,
+      "archive": true
+    },
+    {
+      "id": "threshold-binomial-information",
+      "zh": "二项阈值选择后的条件信息",
+      "en": "Conditional information after binomial threshold selection",
+      "groupZh": "步长设计与停止条件",
+      "groupEn": "Step design and stopping criteria",
+      "related": [
+        "threshold-curvature-risk",
+        "cold-window"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 7,
+      "archive": true
     }
   ],
   "papers": [
