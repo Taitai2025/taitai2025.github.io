@@ -18,3 +18,7 @@
 - [固定方向的曲率查询预算](https://taitai2025.github.io/research/#working-curvature-query-budget)
 - [用两个梯度样本判定弦点可停止](https://taitai2025.github.io/research/#working-certified-chord)
 - [下一步梯度更小，ABBmin1 为何反而晚停](https://taitai2025.github.io/research/#working-cold-window)
+
+## 2026 年 11 月 28 日续研
+- [有限实验设计中的滞后拟合与误差证书](./cached-design-certificate/)
+- [阈值选择后的条件曲率估计](./threshold-curvature-risk/)

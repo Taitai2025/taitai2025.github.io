@@ -203,6 +203,32 @@ window.RESEARCH_CONTENT = {
         "trial-firsthit",
         "certified-chord"
       ]
+    },
+    {
+      "id": "cached-design-certificate",
+      "zh": "有限实验设计中的滞后拟合与误差证书",
+      "en": "An error certificate for cached fits in finite experimental design",
+      "groupZh": "最优实验设计",
+      "groupEn": "Optimal experimental design",
+      "related": [
+        "delayed-design"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 6,
+      "archive": true
+    },
+    {
+      "id": "threshold-curvature-risk",
+      "zh": "阈值选择后的条件曲率估计",
+      "en": "Conditional curvature estimation after threshold selection",
+      "groupZh": "步长设计与停止条件",
+      "groupEn": "Stepsizes and stopping criteria",
+      "related": [],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 5,
+      "archive": true
     }
   ],
   "papers": [

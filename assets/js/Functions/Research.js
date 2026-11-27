@@ -51,8 +51,8 @@
   }
 
   const readPdf = (url, zh) => link(url, zh ? '阅览 PDF' : 'Read PDF', {primary:true});
-  function protectedPdf(id, zh, label, title) {
-    return `<button type="button" class="document-link research-pdf research-protected" data-protected-document="${esc(id)}" data-document-lang="${zh ? 'zh' : 'en'}" data-document-title="${esc(title || label || '')}" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> ${esc(label || (zh ? '密码阅览 PDF' : 'Unlock PDF'))}</button>`;
+  function protectedPdf(id, zh, label, title, kind = 'pdf') {
+    return `<button type="button" class="document-link research-pdf research-protected" data-protected-document="${esc(id)}" data-document-kind="${esc(kind)}" data-document-lang="${zh ? 'zh' : 'en'}" data-document-title="${esc(title || label || '')}" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> ${esc(label || (zh ? '密码阅览 PDF' : 'Unlock PDF'))}</button>`;
   }
 
   // The public site contains only encrypted bytes. Passwords stay in this browser
@@ -63,7 +63,7 @@
   let unlockedUrl;
   let unlockTrigger;
 
-  function releaseUnlockedPdf() {
+  function releaseUnlockedFile() {
     if (unlockedUrl) {
       window.URL.revokeObjectURL(unlockedUrl);
       unlockedUrl = undefined;
@@ -73,7 +73,7 @@
   function closeUnlock() {
     unlockAttempt += 1;
     if (unlockRequest) unlockRequest.abort();
-    releaseUnlockedPdf();
+    releaseUnlockedFile();
     if (unlockDialog) {
       unlockDialog.querySelector('input').value = '';
       unlockDialog.querySelector('.research-unlock-result').hidden = true;
@@ -85,6 +85,9 @@
     const id = trigger.dataset.protectedDocument;
     if (!/^[a-z0-9-]+$/.test(id || '')) return;
     const zh = trigger.dataset.documentLang === 'zh';
+    const isArchive = trigger.dataset.documentKind === 'zip';
+    const extension = isArchive ? 'zip' : 'pdf';
+    const magic = isArchive ? 'RZIP1' : 'RPDF1';
     closeUnlock();
     unlockTrigger = trigger;
     if (!unlockDialog) {
@@ -100,20 +103,24 @@
     }
     unlockDialog.lang = zh ? 'zh-CN' : 'en';
     unlockDialog.innerHTML = `<form class="research-unlock-form">
-      <h2 id="research-unlock-title">${zh ? '密码阅览' : 'Unlock this paper'}</h2>
+      <h2 id="research-unlock-title">${zh ? '密码阅览' : 'Unlock this file'}</h2>
       <p class="research-unlock-document">${esc(trigger.dataset.documentTitle)}</p>
-      <p id="research-unlock-explanation">${zh ? '这份 AI 辅助稿件尚待作者人工核阅。输入密码后可在本机解密并打开 PDF。' : 'This AI-assisted draft awaits the author’s review. Enter the password to decrypt and open the PDF on this device.'}</p>
+      <p id="research-unlock-explanation">${isArchive
+        ? (zh ? '输入阅读密码，在本机解密并下载源码与核验附件。' : 'Enter the reading password to decrypt and download the source and verification files on this device.')
+        : (zh ? '这份 AI 辅助稿件尚待作者人工核阅。输入密码后可在本机解密并打开 PDF。' : 'This AI-assisted draft awaits the author’s review. Enter the password to decrypt and open the PDF on this device.')}</p>
       <label for="research-unlock-password">${zh ? '阅览密码' : 'Reading password'}</label>
       <input id="research-unlock-password" name="password" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="research-unlock-status">
       <div class="research-unlock-actions">
         <button type="button" class="research-unlock-close">${zh ? '关闭' : 'Close'}</button>
-        <button type="submit" class="research-unlock-submit">${zh ? '解锁 PDF' : 'Unlock PDF'}</button>
+        <button type="submit" class="research-unlock-submit">${isArchive ? (zh ? '解锁附件' : 'Unlock archive') : (zh ? '解锁 PDF' : 'Unlock PDF')}</button>
       </div>
       <p id="research-unlock-status" class="research-unlock-status" role="status" aria-live="polite" aria-atomic="true"></p>
       <div class="research-unlock-result" hidden>
-        <a class="document-link research-unlock-open" target="_blank" rel="noopener">${zh ? '打开 PDF ↗' : 'Open PDF ↗'}</a>
-        <a class="document-link research-unlock-download" download="${esc(id)}.pdf">${zh ? '下载 PDF ↓' : 'Download PDF ↓'}</a>
-        <p>${zh ? '若浏览器无法预览，请下载后在 PDF 阅读器中打开。关闭此窗口会清除本次解锁；已保存的副本仍可读取，请妥善保管。' : 'If preview is unavailable, download the file and open it in a PDF reader. Closing this dialog clears this unlock; saved copies remain readable, so keep them private.'}</p>
+        ${isArchive ? '' : `<a class="document-link research-unlock-open" target="_blank" rel="noopener">${zh ? '打开 PDF ↗' : 'Open PDF ↗'}</a>`}
+        <a class="document-link research-unlock-download" download="${esc(id)}.${extension}">${isArchive ? (zh ? '下载附件 ZIP ↓' : 'Download ZIP ↓') : (zh ? '下载 PDF ↓' : 'Download PDF ↓')}</a>
+        <p>${isArchive
+          ? (zh ? '下载后可在本机解压。已保存的副本可直接读取。' : 'Extract the downloaded archive on this device. Saved copies remain readable.')
+          : (zh ? '若浏览器无法预览，请下载后在 PDF 阅读器中打开。关闭此窗口会清除本次解锁；已保存的副本仍可读取。' : 'If preview is unavailable, download the file and open it in a PDF reader. Closing this dialog clears this unlock; saved copies remain readable.')}</p>
       </div>
     </form>`;
     const input = unlockDialog.querySelector('input');
@@ -132,16 +139,16 @@
       status.textContent = zh ? '正在解锁，请稍候……' : 'Unlocking, please wait…';
       submit.disabled = true;
       form.setAttribute('aria-busy', 'true');
-      releaseUnlockedPdf();
+      releaseUnlockedFile();
       unlockDialog.querySelector('.research-unlock-result').hidden = true;
       unlockRequest = new AbortController();
       let passwordBytes;
       try {
         if (!window.crypto?.subtle || !window.TextEncoder) throw new Error('unsupported');
-        const response = await fetch('assets/documents/protected/' + id + '.rpdf', {signal: unlockRequest.signal, cache: 'no-store'});
+        const response = await fetch('assets/documents/protected/' + id + '.r' + extension, {signal: unlockRequest.signal, cache: 'no-store'});
         if (!response.ok) throw new Error('download');
         const packet = new Uint8Array(await response.arrayBuffer());
-        if (packet.length < 54 || String.fromCharCode(...packet.subarray(0, 5)) !== 'RPDF1') throw new Error('format');
+        if (packet.length < 54 || String.fromCharCode(...packet.subarray(0, 5)) !== magic) throw new Error('format');
         passwordBytes = new TextEncoder().encode(password);
         const material = await window.crypto.subtle.importKey('raw', passwordBytes, 'PBKDF2', false, ['deriveKey']);
         const key = await window.crypto.subtle.deriveKey(
@@ -152,14 +159,21 @@
           {name: 'AES-GCM', iv: packet.slice(21, 33), tagLength: 128}, key, packet.slice(33)
         ));
         if (attempt !== unlockAttempt || !unlockDialog.open) { plaintext.fill(0); return; }
-        if (String.fromCharCode(...plaintext.subarray(0, 5)) !== '%PDF-') { plaintext.fill(0); throw new Error('format'); }
-        unlockedUrl = window.URL.createObjectURL(new Blob([plaintext], {type: 'application/pdf'}));
+        const signature = isArchive ? 'PK\x03\x04' : '%PDF-';
+        if (String.fromCharCode(...plaintext.subarray(0, signature.length)) !== signature) {
+          plaintext.fill(0);
+          throw new Error('format');
+        }
+        const type = isArchive ? 'application/zip' : 'application/pdf';
+        unlockedUrl = window.URL.createObjectURL(new Blob([plaintext], {type}));
         plaintext.fill(0);
         unlockDialog.querySelectorAll('.research-unlock-result a').forEach(a => { a.href = unlockedUrl; });
         unlockDialog.querySelector('.research-unlock-result').hidden = false;
         status.dataset.state = 'success';
-        status.textContent = zh ? '已解锁。请选择打开或下载 PDF。' : 'Unlocked. Choose Open PDF or Download PDF below.';
-        unlockDialog.querySelector('.research-unlock-open').focus();
+        status.textContent = isArchive
+          ? (zh ? '已解锁。可以下载附件。' : 'Unlocked. The archive is ready to download.')
+          : (zh ? '已解锁。请选择打开或下载 PDF。' : 'Unlocked. Choose Open PDF or Download PDF below.');
+        unlockDialog.querySelector(isArchive ? '.research-unlock-download' : '.research-unlock-open').focus();
       } catch (error) {
         if (attempt !== unlockAttempt || error.name === 'AbortError') return;
         status.dataset.state = 'error';
@@ -217,7 +231,8 @@
     const cards = ({p, full}) => {
       const links = protectedPdf(p.id, zh, undefined, zh ? p.zh : p.en) +
         (p.arxiv ? link(p.arxiv, zh ? '相关 arXiv 版本' : 'Related arXiv version') : '') +
-        (p.guide ? protectedPdf(p.guide.replace(/\.pdf$/i, ''), zh, zh ? p.guideZh : p.guideEn, zh ? p.guideZh : p.guideEn) : '');
+        (p.guide ? protectedPdf(p.guide.replace(/\.pdf$/i, ''), zh, zh ? p.guideZh : p.guideEn, zh ? p.guideZh : p.guideEn) : '') +
+        (p.archive ? protectedPdf(p.id, zh, zh ? '密码下载附件' : 'Unlock source archive', zh ? p.zh : p.en, 'zip') : '');
       const related = (p.related || []).filter(id => byId.has(id)).map(id =>
         `<a href="#working-${esc(id)}">${esc(zh ? byId.get(id).zh : byId.get(id).en)}</a>`).join(' · ');
       const pages = zh ? `${p.pages} 页` : `${p.pages} pages`;
