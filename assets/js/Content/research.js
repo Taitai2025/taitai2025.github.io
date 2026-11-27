@@ -536,6 +536,21 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 5,
       "archive": true
+    },
+    {
+      "id": "two-spectrum-fixed-orbit-envelope",
+      "zh": "两点谱固定轨道的尖锐对数衰减",
+      "en": "Sharp logarithmic decay of fixed two-point spectral orbits",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "unlimited-lag-bb-sharp-envelope",
+        "bounded-delay-bb-sharp-rate"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 2,
+      "archive": true
     }
   ],
   "papers": [
