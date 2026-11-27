@@ -109,7 +109,7 @@ function inspectPart(part, header, isConcertScore, countNotes) {
   let maxBar=0, staffCount=1;
   for (const [index,measure] of partMeasures.entries()) {
     let cursor=0, high=0, lastStart=0, lastValid=false;
-    const intervals=[];
+    const intervals=[], transposeChanges=[], pitchedEvents=[];
     const label=measure.getAttribute('number') || String(index+1);
     for (const node of children(measure)) {
       switch(node.localName) {
@@ -119,15 +119,9 @@ function inspectPart(part, header, isConcertScore, countNotes) {
             divisions=Number.isFinite(durationUnits)&&durationUnits>0?durationUnits:null;
           }
           for (const shift of children(node,'transpose')) {
-            const read=readTranspose(shift);
-            const staff=shift.getAttribute('number');
-            if (staff) {
-              numberedShift=true;
-              perStaff.set(staff,read);
-            } else {
-              baseShift=read;
-              perStaff.clear();
-            }
+            const staff=shift.hasAttribute('number')?Number(shift.getAttribute('number')):null;
+            if (staff!==null) numberedShift=true;
+            transposeChanges.push({onset:cursor, staff, shift:readTranspose(shift)});
           }
           if (child(node,'for-part')) unsafeFeatures.add('实音总谱的独立分谱移调');
           if (child(node,'staff-details')) unsafeFeatures.add('自定义谱表');
@@ -190,33 +184,60 @@ function inspectPart(part, header, isConcertScore, countNotes) {
           if (Number.isSafeInteger(staffNumber)) staffCount=Math.max(staffCount,staffNumber);
           voices.add(voice);
           for (const n of children(node,'instrument')) instrumentIds.add(n.getAttribute('id'));
-          const shift=perStaff.get(staff)||baseShift;
           const pitchData=mark.localName==='pitch'?readPitch(mark):null;
-          let sounding=null, type='unknown';
+          let type='unknown';
           if (mark.localName==='rest') {
             rests++;
             type='rest';
           } else if (mark.localName==='unpitched') {
             unpitched++;
             type='unpitched';
-          } else if (!pitchData||!shift.known) {
+          } else if (!pitchData) {
             ambiguousPitch++;
             unsafeFeatures.add('微分音、不完整音高或八度叠奏');
           } else {
-            sounding=pitchData.midi+shift.chromatic;
             type='pitched';
-            if (!cue) { pitched++; melodicPitches.push(sounding); }
-            else cuePitches.push(sounding);
-            offsets.set(signature(shift),shift);
-            if (!grace&&!cue&&duration>0) intervals.push([onset,onset+duration]);
           }
           recordNoteFeatures(node,unsafeFeatures);
           if (cue) unsafeFeatures.add('提示音');
-          noteEvents.push({measure:index,onset,duration,sounding,type,chord,cue,grace,voice,staff,fifths:currentFifths,written:pitchData});
+          const event={measure:index,onset,duration,sounding:null,type,chord,cue,grace,voice,staff,fifths:currentFifths,written:pitchData};
+          noteEvents.push(event);
+          if (type==='pitched') pitchedEvents.push(event);
           break;
         }
       }
     }
+    // Later voices can rewind the cursor. Mid-measure changes apply in score order.
+    transposeChanges.sort((a,b)=>a.onset-b.onset);
+    let nextChange=0;
+    const applyTransposeThrough=(onset)=>{
+      while (nextChange<transposeChanges.length && transposeChanges[nextChange].onset<=onset+EPS) {
+        const {staff,shift}=transposeChanges[nextChange++];
+        if (staff===null) {
+          baseShift=shift;
+          perStaff.clear();
+        } else {
+          perStaff.set(staff,shift);
+        }
+      }
+    };
+    for (const event of pitchedEvents.sort((a,b)=>a.onset-b.onset)) {
+      const {onset,duration,staff,written,cue,grace}=event;
+      applyTransposeThrough(onset);
+      const shift=perStaff.get(Number(staff))||baseShift;
+      if (!shift.known) {
+        event.type='unknown';
+        ambiguousPitch++;
+        unsafeFeatures.add('微分音、不完整音高或八度叠奏');
+        continue;
+      }
+      event.sounding=written.midi+shift.chromatic;
+      if (!cue) { pitched++; melodicPitches.push(event.sounding); }
+      else cuePitches.push(event.sounding);
+      offsets.set(signature(shift),shift);
+      if (!grace&&!cue&&duration>0) intervals.push([onset,onset+duration]);
+    }
+    applyTransposeThrough(Infinity);
     const poly=peakPolyphony(intervals);
     polyphony=Math.max(polyphony,poly);
     maxBar=Math.max(maxBar,high);
@@ -297,9 +318,9 @@ function modalAccidental(fifths, letter) {
 export function evaluateMapping(part,target,role) {
   const reasons=[], review=[];
   const reasonsToReview=part.unsafeFeatures.filter(f=>!['同谱不同声部','多谱表'].includes(f));
-  if (role==='perc' && target.role!=='perc') reasons.push('打击声部需要对应的无固定音高席位。');
-  if (part.type==='unpitched' && target.role!=='perc') reasons.push('原谱含无固定音高记谱。');
-  if (part.type==='pitched' && target.role==='perc') reasons.push('目标席位无法承接有固定音高的声部。');
+  const targetUnpitched=target.unpitched??(target.role==='perc');
+  if (part.type==='unpitched'&&!targetUnpitched) reasons.push('原谱含无固定音高记谱，需要对应席位。');
+  if (part.type==='pitched'&&targetUnpitched) reasons.push('目标席位无法承接有固定音高的声部。');
   if (part.type==='mixed') reasons.push('存在有音高与无音高混合，须人工分配。');
   if (part.type==='unknown'||part.ambiguousPitch>0) reasons.push('无法从原谱可靠识别全声部的实音。');
   if (part.bounds&&(part.bounds[0]<target.low||part.bounds[1]>target.high)) reasons.push(`实音 ${midiName(part.bounds[0])}–${midiName(part.bounds[1])} 超过目标音域。`);
@@ -366,8 +387,10 @@ function putKey(doc,attr,fifths) {
 }
 function putTranspose(doc,attr,target) {
   const t=doc.createElement('transpose');
-  setNode(doc,t,'diatonic',target.diatonic);
-  setNode(doc,t,'chromatic',target.chromatic);
+  const octaveChange=Math.trunc(target.chromatic/12);
+  setNode(doc,t,'diatonic',target.diatonic-7*octaveChange);
+  setNode(doc,t,'chromatic',target.chromatic-12*octaveChange);
+  if (octaveChange) setNode(doc,t,'octave-change',octaveChange);
   const next=children(attr).find(el=>['for-part','directive','measure-style'].includes(el.localName));
   attr.insertBefore(t,next||null);
 }

@@ -83,3 +83,10 @@ thead{background:var(--leaf)}
 .site-search .button{flex-shrink:0}
 .card>.tags{margin-bottom:.5rem}
 .card>.tags:empty{display:none}
+.voice-index{display:grid;gap:.45rem}
+.voice-list{padding:.55rem .85rem;background:var(--surface);border:1px solid var(--line);border-radius:.4rem}
+.voice-list summary{cursor:pointer;font-weight:650}
+.voice-list summary small{margin-left:.35rem;font-weight:400}
+.voice-list ul,.compact-list{margin:.5rem 0 0;padding-left:1.45rem;overflow-wrap:anywhere}
+.voice-list li{padding:.25rem 0}
+.voice-list li+li{border-top:1px solid var(--line)}

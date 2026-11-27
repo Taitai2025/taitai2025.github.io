@@ -2,6 +2,7 @@
 // values under concert-pitch notation; edit them against your actual players.
 const defined = (label, family, role, low, high, program, short, chromatic=0, diatonic=0, poly=1, staves=1, sound='') => ({
   name:label, label, family, role, low, high, program, short, chromatic, diatonic, poly, staves,sound,
+  unpitched:role==='perc',
 });
 export const profiles = {
   bangdi: defined('梆笛','吹管','lead',74,95,74,'梆笛'),

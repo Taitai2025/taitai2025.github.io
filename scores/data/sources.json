@@ -1,6 +1,326 @@
 {
   "openScores": [
     {
+      "slug": "shiliuban-xiansuo-beikao",
+      "title": "十六板（弦索备考）",
+      "composer": "传统乐曲，清荣斋（为光）辑",
+      "provider": "北京大学图书馆／CADAL／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/Category:%E7%B5%83%E7%B4%A2%E5%82%99%E8%80%83",
+      "download": "https://archive.org/download/02095095.cn/02095095.cn.pdf",
+      "edition": "清嘉庆十九年（1814）荣斋辑《弦索备考》，北京大学藏本，CADAL 扫描",
+      "license": "公版（Wikimedia Commons Public Domain Mark 1.0）",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "rightsStatus": "公版历史谱本",
+      "pages": 113,
+      "volumes": [
+        {
+          "volume": 2,
+          "label": "琵琶谱",
+          "scanPages": [
+            4,
+            31
+          ],
+          "source": "https://commons.wikimedia.org/wiki/File:CADAL02095095_%E7%B5%83%E7%B4%A2%E5%82%99%E8%80%83%EF%BC%88%E4%BA%8C%EF%BC%89.djvu",
+          "download": "https://archive.org/download/02095095.cn/02095095.cn.pdf"
+        },
+        {
+          "volume": 3,
+          "label": "三弦谱（弦子谱）",
+          "scanPages": [
+            4,
+            24
+          ],
+          "source": "https://commons.wikimedia.org/wiki/File:CADAL02095096_%E7%B5%83%E7%B4%A2%E5%82%99%E8%80%83%EF%BC%88%E4%B8%89%EF%BC%89.djvu",
+          "download": "https://archive.org/download/02095096.cn/02095096.cn.pdf"
+        },
+        {
+          "volume": 4,
+          "label": "胡琴谱",
+          "scanPages": [
+            4,
+            21
+          ],
+          "source": "https://commons.wikimedia.org/wiki/File:CADAL02095097_%E7%B5%83%E7%B4%A2%E5%82%99%E8%80%83%EF%BC%88%E5%9B%9B%EF%BC%89.djvu",
+          "download": "https://archive.org/download/02095097.cn/02095097.cn.pdf"
+        },
+        {
+          "volume": 5,
+          "label": "筝谱",
+          "scanPages": [
+            12,
+            34
+          ],
+          "source": "https://commons.wikimedia.org/wiki/File:CADAL02095098_%E7%B5%83%E7%B4%A2%E5%82%99%E8%80%83%EF%BC%88%E4%BA%94%EF%BC%89.djvu",
+          "download": "https://archive.org/download/02095098.cn/02095098.cn.pdf"
+        },
+        {
+          "volume": 6,
+          "label": "工尺谱（骨谱）",
+          "scanPages": [
+            14,
+            36
+          ],
+          "source": "https://commons.wikimedia.org/wiki/File:CADAL02095099_%E7%B5%83%E7%B4%A2%E5%82%99%E8%80%83%EF%BC%88%E5%85%AD%EF%BC%89.djvu",
+          "download": "https://archive.org/download/02095099.cn/02095099.cn.pdf"
+        }
+      ],
+      "format": "弦索合奏分谱与工尺骨谱",
+      "details": "《弦索十三套》中的一套，收录琵琶、三弦、胡琴、筝四件乐器的独立原谱和工尺骨谱，共 113 页。原扫描题《拾陆板》。"
+    },
+    {
+      "slug": "mei-hua-san-nong-shenqi",
+      "title": "梅花三弄",
+      "composer": "传统古曲",
+      "provider": "台湾国家图书馆／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NCL-06794_%E8%87%9E%E4%BB%99%E7%A5%9E%E5%A5%87%E7%A7%98%E8%AD%9C.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/e/ef/NCL-06794_%E8%87%9E%E4%BB%99%E7%A5%9E%E5%A5%87%E7%A7%98%E8%AD%9C.pdf",
+      "edition": "朱权辑《臞仙神奇秘谱》，明初刊黑口本，台湾国家图书馆索书号 6794",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版古籍谱本",
+      "pages": 4,
+      "format": "古琴减字谱",
+      "details": "《神奇秘谱》中卷古琴独奏谱，十段。原档 PDF 第61–64页，边页与前后曲目同版。 原站 PDF 为整册扫描，按所列页码查看。",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "slug": "liu-shui-shenqi",
+      "title": "流水",
+      "composer": "传统古曲",
+      "provider": "台湾国家图书馆／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NCL-06794_%E8%87%9E%E4%BB%99%E7%A5%9E%E5%A5%87%E7%A7%98%E8%AD%9C.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/e/ef/NCL-06794_%E8%87%9E%E4%BB%99%E7%A5%9E%E5%A5%87%E7%A7%98%E8%AD%9C.pdf",
+      "edition": "朱权辑《臞仙神奇秘谱》，明初刊黑口本，台湾国家图书馆索书号 6794",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版古籍谱本",
+      "pages": 5,
+      "format": "古琴减字谱",
+      "details": "《神奇秘谱》上卷古琴独奏谱。原档 PDF 第33–37页，由“流水”至“曲终”；边页与《高山》《阳春》同版。 原站 PDF 为整册扫描，按所列页码查看。",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "slug": "guang-ling-san-shenqi",
+      "title": "广陵散",
+      "composer": "传统古曲",
+      "provider": "台湾国家图书馆／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NCL-06794_%E8%87%9E%E4%BB%99%E7%A5%9E%E5%A5%87%E7%A7%98%E8%AD%9C.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/e/ef/NCL-06794_%E8%87%9E%E4%BB%99%E7%A5%9E%E5%A5%87%E7%A7%98%E8%AD%9C.pdf",
+      "edition": "朱权辑《臞仙神奇秘谱》，明初刊黑口本，台湾国家图书馆索书号 6794",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版古籍谱本",
+      "pages": 15,
+      "format": "古琴减字谱",
+      "details": "《神奇秘谱》上卷古琴独奏谱。原档 PDF 第13–27页，含开指、小序、大序、正声、乱声、后序。 原站 PDF 为整册扫描，按所列页码查看。",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "slug": "gao-shan-shenqi",
+      "title": "高山",
+      "composer": "传统古曲",
+      "provider": "台湾国家图书馆／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NCL-06794_%E8%87%9E%E4%BB%99%E7%A5%9E%E5%A5%87%E7%A7%98%E8%AD%9C.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/e/ef/NCL-06794_%E8%87%9E%E4%BB%99%E7%A5%9E%E5%A5%87%E7%A7%98%E8%AD%9C.pdf",
+      "edition": "朱权辑《臞仙神奇秘谱》，明初刊黑口本，台湾国家图书馆索书号 6794",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版古籍谱本",
+      "pages": 4,
+      "format": "古琴减字谱",
+      "details": "《神奇秘谱》上卷的独立古琴曲。原档 PDF 第30–33页。首尾与前曲及《流水》同版。 原站 PDF 为整册扫描，按所列页码查看。",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "slug": "ping-sha-luo-yan-qinxue",
+      "title": "平沙落雁",
+      "composer": "传统古曲",
+      "provider": "天津图书馆／中国国家图书馆／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC892-GBZX0301011349-256656_%E7%90%B4%E5%AD%B8%E5%85%A5%E9%96%80_%E4%BA%8C%E5%8D%B7_%E7%AC%AC4%E5%86%8A.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/5/5f/NLC892-GBZX0301011349-256656_%E7%90%B4%E5%AD%B8%E5%85%A5%E9%96%80_%E4%BA%8C%E5%8D%B7_%E7%AC%AC4%E5%86%8A.pdf",
+      "edition": "张鹤辑《琴学入门》，清同治六年（1867）刻本，第4册",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版古籍谱本",
+      "pages": 3,
+      "format": "古琴减字谱附工尺",
+      "details": "《琴学入门》下卷中吕均古琴谱。原档第4册 PDF 第8–10页，曲谱至第10页完结。 原站 PDF 为整册扫描，按所列页码查看。",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "slug": "yang-guan-san-die-qinxue",
+      "title": "阳关三叠",
+      "composer": "传统古曲",
+      "provider": "天津图书馆／中国国家图书馆／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC892-GBZX0301011349-256658_%E7%90%B4%E5%AD%B8%E5%85%A5%E9%96%80_%E4%BA%8C%E5%8D%B7_%E7%AC%AC6%E5%86%8A.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/7/76/NLC892-GBZX0301011349-256658_%E7%90%B4%E5%AD%B8%E5%85%A5%E9%96%80_%E4%BA%8C%E5%8D%B7_%E7%AC%AC6%E5%86%8A.pdf",
+      "edition": "张鹤辑《琴学入门》，清同治六年（1867）刻本，第6册",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版古籍谱本",
+      "pages": 2,
+      "format": "古琴减字谱附工尺",
+      "details": "《琴学入门》下卷无射均古琴谱。原档第6册 PDF 第12–13页，含三叠。 原站 PDF 为整册扫描，按所列页码查看。",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "slug": "yu-qiao-wen-da-qinxue",
+      "title": "渔樵问答",
+      "composer": "传统古曲",
+      "provider": "天津图书馆／中国国家图书馆／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC892-GBZX0301011349-256656_%E7%90%B4%E5%AD%B8%E5%85%A5%E9%96%80_%E4%BA%8C%E5%8D%B7_%E7%AC%AC4%E5%86%8A.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/5/5f/NLC892-GBZX0301011349-256656_%E7%90%B4%E5%AD%B8%E5%85%A5%E9%96%80_%E4%BA%8C%E5%8D%B7_%E7%AC%AC4%E5%86%8A.pdf",
+      "edition": "张鹤辑《琴学入门》，清同治六年（1867）刻本，第4册",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版古籍谱本",
+      "pages": 4,
+      "format": "古琴减字谱附工尺",
+      "details": "《琴学入门》下卷中吕均古琴谱。原档第4册 PDF 第14–17页，含全十段。 原站 PDF 为整册扫描，按所列页码查看。",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "slug": "shi-mian-mai-fu-hua",
+      "title": "十面埋伏",
+      "composer": "传统古曲",
+      "provider": "湖北省图书馆底本／北京大学图书馆藏影印本／CADAL",
+      "source": "https://commons.wikimedia.org/wiki/File:CADAL02095100_%E7%90%B5%E7%90%B6%E8%AD%9C%EF%BC%88%E4%B8%80%EF%BC%89.djvu",
+      "download": "https://archive.org/download/02095100.cn/02095100.cn.pdf",
+      "edition": "华文桂辑《琵琶谱》卷上，湖北省图书馆藏清嘉庆刻本影印，CADAL 02095100",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版古籍谱本",
+      "pages": 14,
+      "format": "琵琶工尺谱",
+      "details": "华氏琵琶谱原题《十面十三段》。Internet Archive 同扫描 PDF 第75–88页，曲谱正文共14页。 原站 PDF 为整册扫描，按所列页码查看。",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+    },
+    {
+      "slug": "ping-sha-luo-yan-li-1920",
+      "title": "平沙落雁（李荣寿五线谱译本）",
+      "composer": "传统古曲",
+      "provider": "中国国家图书馆／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC404-01J000035-76003_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1920%E5%B9%B41%E5%8D%B73%E6%9C%9F.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NLC404-01J000035-76003_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1920%E5%B9%B41%E5%8D%B73%E6%9C%9F.pdf",
+      "edition": "北京大学音乐研究会《音乐杂志》第1卷第3号，1920年5月31日",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版标注历史原刊扫描",
+      "pages": 3,
+      "format": "五线谱",
+      "details": "李荣寿译古琴谱，六段加尾声。原档 PDF 第50–52页。 原站 PDF 为整册扫描，按所列页码查看。"
+    },
+    {
+      "slug": "yang-guan-san-die-1920",
+      "title": "阳关三叠（1920年简谱本）",
+      "composer": "传统古曲",
+      "provider": "中国国家图书馆／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC404-01J000035-76003_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1920%E5%B9%B41%E5%8D%B73%E6%9C%9F.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/c/c6/NLC404-01J000035-76003_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1920%E5%B9%B41%E5%8D%B73%E6%9C%9F.pdf",
+      "edition": "北京大学音乐研究会《音乐杂志》第1卷第3号，1920年5月31日",
+      "license": "公版（Wikimedia Commons 版本标注）",
+      "rightsStatus": "公版标注历史原刊扫描",
+      "pages": 2,
+      "format": "简谱及歌词",
+      "details": "原档第54页为题名与首段，第53页为三叠续谱、尾声及作者附注。摘录按曲谱顺序排列。 原站 PDF 为整册扫描，按所列页码查看。"
+    },
+    {
+      "slug": "liangxiao-liu-tianhua-early",
+      "title": "良宵（除夜小唱）",
+      "composer": "刘天华",
+      "composerEn": "Liu Tianhua",
+      "provider": "中国国家图书馆馆藏／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC404-01J000090-73086_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B72%E6%9C%9F.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/0/00/NLC404-01J000090-73086_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B72%E6%9C%9F.pdf",
+      "edition": "《音乐杂志》第1卷第2号，国乐改进社，1928年2月。原题《除夜小唱》。",
+      "license": "公版（馆藏扫描，Wikimedia Commons 标注）",
+      "rightsStatus": "公版历史谱本",
+      "pages": 2,
+      "format": "二胡独奏工尺谱与五线谱",
+      "details": "二胡独奏全谱。原 PDF 第39页为工尺谱，第40页为五线谱；扫描谱面署名刘天华，Op.9。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+    },
+    {
+      "slug": "yueye-liu-tianhua-early",
+      "title": "月夜",
+      "composer": "刘天华",
+      "composerEn": "Liu Tianhua",
+      "provider": "中国国家图书馆馆藏／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC404-01J000090-73086_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B72%E6%9C%9F.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/0/00/NLC404-01J000090-73086_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B72%E6%9C%9F.pdf",
+      "edition": "《音乐杂志》第1卷第2号，国乐改进社，1928年2月。",
+      "license": "公版（馆藏扫描，Wikimedia Commons 标注）",
+      "rightsStatus": "公版历史谱本",
+      "pages": 4,
+      "format": "二胡独奏工尺谱与五线谱",
+      "details": "二胡独奏全谱。原 PDF 第35–36页为工尺谱，第37–38页为五线谱。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+    },
+    {
+      "slug": "xianjuyin-liu-tianhua-early",
+      "title": "闲居吟",
+      "composer": "刘天华",
+      "composerEn": "Liu Tianhua",
+      "provider": "中国国家图书馆馆藏／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC404-01J000090-5243_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B74%E6%9C%9F.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/c/cd/NLC404-01J000090-5243_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B74%E6%9C%9F.pdf",
+      "edition": "《音乐杂志》第1卷第4号，国乐改进社。",
+      "license": "公版（馆藏扫描，Wikimedia Commons 标注）",
+      "rightsStatus": "公版历史谱本",
+      "pages": 7,
+      "format": "二胡独奏工尺谱与五线谱",
+      "details": "二胡独奏全谱。五线谱按原标题及五段顺序排列（原 PDF 第17、16、15、14页），附第11–13页工尺谱。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+    },
+    {
+      "slug": "bingzhongyin-liu-tianhua-early",
+      "title": "病中吟（安适）",
+      "composer": "刘天华",
+      "composerEn": "Liu Tianhua",
+      "provider": "中国国家图书馆馆藏／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC404-01J000090-23137_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B78%E6%9C%9F.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/6/6e/NLC404-01J000090-23137_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B78%E6%9C%9F.pdf",
+      "edition": "《音乐杂志》第1卷第8号，国乐改进社，1930年刊谱。",
+      "license": "公版（馆藏扫描，Wikimedia Commons 标注）",
+      "rightsStatus": "公版历史谱本",
+      "pages": 3,
+      "format": "二胡独奏工尺谱",
+      "details": "二胡独奏工尺全谱。原 PDF 第3–5页；第6页是版本异同比较表。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+    },
+    {
+      "slug": "gaijincao-liu-tianhua-early",
+      "title": "改进操",
+      "composer": "刘天华",
+      "composerEn": "Liu Tianhua",
+      "provider": "中国国家图书馆馆藏／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC404-01J000090-5221_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B71%E6%9C%9F.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/c/c5/NLC404-01J000090-5221_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B71%E6%9C%9F.pdf",
+      "edition": "《音乐杂志》第1卷第1号，国乐改进社，1928年创刊号。",
+      "license": "公版（馆藏扫描，Wikimedia Commons 标注）",
+      "rightsStatus": "公版历史谱本",
+      "pages": 12,
+      "format": "琵琶独奏工尺谱与五线谱",
+      "details": "琵琶独奏全谱。原 PDF 第7–12页为工尺谱，第13–18页为五线谱。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+    },
+    {
+      "slug": "gewuyin-liu-tianhua-early",
+      "title": "歌舞引",
+      "composer": "刘天华",
+      "composerEn": "Liu Tianhua",
+      "provider": "中国国家图书馆馆藏／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC404-01J000090-5244_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B79%E6%9C%9F.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/0/06/NLC404-01J000090-5244_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B79%E6%9C%9F.pdf",
+      "edition": "《音乐杂志》第1卷第9号，国乐改进社。",
+      "license": "公版（馆藏扫描，Wikimedia Commons 标注）",
+      "rightsStatus": "公版历史谱本",
+      "pages": 8,
+      "format": "琵琶独奏工尺谱",
+      "details": "琵琶独奏工尺全谱，从原 PDF 第3–10页摘录，末段标《尾声》。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+    },
+    {
+      "slug": "yulunpao-bawangxiejia-sanxian",
+      "title": "霸王卸甲（郁轮袍）",
+      "composer": "传统曲，陈凤威等传谱",
+      "composerEn": "",
+      "provider": "中国国家图书馆馆藏／Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:NLC404-01J000090-23137_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B78%E6%9C%9F.pdf",
+      "download": "https://upload.wikimedia.org/wikipedia/commons/6/6e/NLC404-01J000090-23137_%E9%9F%B3%E6%A8%82%E9%9B%9C%E8%AA%8C_1928%E5%B9%B41%E5%8D%B78%E6%9C%9F.pdf",
+      "edition": "《音乐杂志》第1卷第8号，国乐改进社，1930年刊谱。",
+      "license": "公版（馆藏扫描，Wikimedia Commons 标注）",
+      "rightsStatus": "公版历史谱本",
+      "pages": 9,
+      "format": "三弦独奏工尺谱",
+      "details": "历史三弦独奏全谱。原 PDF 第7–15页，谱面题《郁轮袍·霸王卸甲》，目录署陈凤威等，末页标全曲完。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+    },
+    {
       "slug": "radetzky-march-weninger-historic",
       "title": "拉德茨基进行曲",
       "composer": "老约翰·施特劳斯",
@@ -1129,6 +1449,51 @@
       "notes": "核对《春节序曲》《瑶族舞曲》等具体编制，尤其注意西洋管弦乐总谱与民族乐队配器的差异。"
     },
     {
+      "title": "春节序曲｜西洋管弦乐总谱",
+      "composer": "李焕之",
+      "source": "https://publishing.naxos.com/collections/li-huanzhi-sheet-music/products/li-huanzhi-spring-festival-overture-sheet-music",
+      "provider": "Naxos 乐谱出版",
+      "edition": "NXP042",
+      "pages": 18,
+      "access": "购买总谱，分谱另询",
+      "notes": "出版页列明西洋管弦乐编制。演出材料另向出版方询价。"
+    },
+    {
+      "title": "瑶族舞曲｜西洋管弦乐总谱",
+      "composer": "茅沅、刘铁山",
+      "source": "https://publishing.naxos.com/collections/mao-yuan-sheet-music/products/mao-yuan-liu-tieshan-dance-of-the-yao-tribe-sheet-music",
+      "provider": "Naxos 乐谱出版",
+      "edition": "NXP043",
+      "pages": 19,
+      "access": "购买总谱，分谱另询",
+      "notes": "西洋管弦乐出版版。演出材料另向出版方询价。"
+    },
+    {
+      "title": "瑶族舞曲｜彭修文民族管弦乐总谱",
+      "composer": "茅沅、刘铁山；彭修文移植",
+      "source": "https://books.google.com/books/about/%E7%91%B6%E6%97%8F%E8%88%9E%E6%9B%B2.html?id=yDYKngEACAAJ",
+      "provider": "人民音乐出版社",
+      "edition": "1980 年书目",
+      "pages": 31,
+      "access": "查书目信息",
+      "notes": "由西洋管弦乐移植的民族管弦乐版本。书目用于确认版次和馆藏。"
+    },
+    {
+      "title": "彭修文作品集｜中央音乐学院馆藏",
+      "source": "https://library.ccom.edu.cn/info/1131/3301.htm",
+      "provider": "中央音乐学院图书馆",
+      "edition": "现代出版社 2019 年十卷本",
+      "access": "馆藏查阅",
+      "notes": "总谱、乐器表和编制说明。馆藏索书号 J648.61/P398/P3。按曲目查看收录情况及馆方阅览要求。"
+    },
+    {
+      "title": "正风琅嬛｜香港浸会大学中乐合奏谱",
+      "source": "https://www.hkbu.edu.hk/zh_cn/whats-new/discover-hkbu/2023/apr-2023/resounding-the-scores.html",
+      "provider": "香港浸会大学图书馆、香港音乐事务处",
+      "access": "馆藏原站查阅",
+      "notes": "从项目说明进入数字化曲库，查部分或完整乐谱。展示范围及使用条件以具体馆藏为准。"
+    },
+    {
       "title": "MuseScore·在线乐谱社区",
       "source": "https://musescore.com/",
       "provider": "机构目录",
@@ -1176,6 +1541,14 @@
       "provider": "IMSLP",
       "access": "原机构查阅",
       "notes": "按具体作曲、编配、版次以及地区判断权利。"
+    },
+    {
+      "title": "弦索备考｜清代弦索合奏分卷谱",
+      "source": "https://commons.wikimedia.org/wiki/Category:%E7%B5%83%E7%B4%A2%E5%82%99%E8%80%83",
+      "provider": "北京大学图书馆藏、CADAL",
+      "edition": "荣斋辑，嘉庆十九年（1814）",
+      "access": "馆藏原件查阅",
+      "notes": "按指法、琵琶、三弦、胡琴、筝与工尺骨谱分卷。曲目在各卷的保存范围以原刊为准。"
     }
   ]
 }

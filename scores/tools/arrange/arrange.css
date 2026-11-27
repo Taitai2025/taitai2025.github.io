@@ -20,3 +20,5 @@
 @media(max-width:48rem){.seat{grid-template-columns:repeat(2,minmax(0,1fr));padding-top:.6rem}.seat .button{justify-self:start}}
 @media(max-width:34rem){.score-input .field,.score-input .button{width:100%}}
 @media print{.site-header,.site-footer,.hero,.button,input,select,.score-input{display:none!important}.shell{width:100%}.card{break-inside:avoid;padding:.5rem}.arrange-table{min-width:0}}
+.score-input .field,#source-file{min-width:0;max-width:100%}
+#source-file{width:100%}
