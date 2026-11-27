@@ -411,6 +411,83 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 10,
       "archive": true
+    },
+    {
+      "id": "admm-residual-feedback",
+      "zh": "二次 ADMM 的周期罚参数与残差反馈发散",
+      "en": "Periodic penalties and residual-feedback divergence in quadratic ADMM",
+      "groupZh": "分裂法与矩阵分解",
+      "groupEn": "Splitting and matrix decomposition",
+      "related": [
+        "admm-alternating",
+        "pcp-computation"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 9,
+      "archive": true
+    },
+    {
+      "id": "pcp-rectangle-sharp-stability",
+      "zh": "静止矩形 PCP 的最优性端点与唯一恢复",
+      "en": "Endpoint optimality, uniqueness and sharp stability for rectangular PCP",
+      "groupZh": "分裂法与矩阵分解",
+      "groupEn": "Splitting and matrix decomposition",
+      "related": [
+        "pcp-rectangle",
+        "pcp-computation",
+        "admm-residual-feedback"
+      ],
+      "version": "0.4",
+      "releaseDate": "2026.11.28",
+      "pages": 12,
+      "archive": true
+    },
+    {
+      "id": "projected-bb-sharp-two-step",
+      "zh": "齐次凸锥约束下投影 Barzilai–Borwein 法的收缩与两步回归",
+      "en": "Uniform contraction and two-step returns for projected BB",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection and line search",
+      "related": [
+        "restart-projected-bb",
+        "bb-armijo-attracting-cycle"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 5,
+      "archive": true
+    },
+    {
+      "id": "two-point-restart-rotation",
+      "zh": "两点谱梯度重启的无理旋转与精确调用速率",
+      "en": "Irrational rotation and gradient-call rates for two-point restart",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection and line search",
+      "related": [
+        "two-weak-mode-restart",
+        "continuous-spectrum-restart",
+        "separated-mode-restart"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 5,
+      "archive": true
+    },
+    {
+      "id": "bounded-delay-bb-sharp-rate",
+      "zh": "有界滞后谱步长的尖锐收敛界",
+      "en": "Sharp convergence rates for bounded-delay spectral steps",
+      "groupZh": "谱梯度与周期切换",
+      "groupEn": "Spectral gradients and periodic switching",
+      "related": [
+        "two-point-bb-optimal-selector",
+        "large-spectrum-bb-switching"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.28",
+      "pages": 9,
+      "archive": true
     }
   ],
   "papers": [

@@ -34,3 +34,8 @@
 - [分离曲率尺度下的梯度重启时间](./separated-mode-restart/)
 - [两特征值 BB 法单调回溯中的吸引四周期](./bb-armijo-attracting-cycle/)
 - [两特征值下 BB 法的首次达标步数与最速下降法的比较](./bb-two-point-first-hitting/)
+- [二次 ADMM 的周期罚参数与残差反馈发散](./admm-residual-feedback/)
+- [静止矩形 PCP 的最优性端点与唯一恢复](./pcp-rectangle-sharp-stability/)
+- [齐次凸锥约束下投影 Barzilai–Borwein 法的收缩与两步回归](./projected-bb-sharp-two-step/)
+- [两点谱梯度重启的无理旋转与精确调用速率](./two-point-restart-rotation/)
+- [有界滞后谱步长的尖锐收敛界](./bounded-delay-bb-sharp-rate/)
