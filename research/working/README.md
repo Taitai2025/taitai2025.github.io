@@ -27,3 +27,4 @@
 - [两模态二次目标的梯度重启时间](./two-weak-mode-restart/)
 - [固定谱带下的梯度重启与维数](./continuous-spectrum-restart/)
 - [周期 BB 切换的最优三次改进系数](./periodic-bb-optimal-word/)
+- [两点谱上 BB1/BB2 切换的最优五步序列](./two-point-bb-optimal-selector/)

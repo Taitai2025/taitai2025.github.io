@@ -303,6 +303,21 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 4,
       "archive": true
+    },
+    {
+      "id": "two-point-bb-optimal-selector",
+      "zh": "两点谱上 BB1/BB2 切换的最优五步序列",
+      "en": "The optimal five-step BB switching schedule on two-point spectra",
+      "groupZh": "谱梯度与周期切换",
+      "groupEn": "Spectral gradients and periodic switching",
+      "related": [
+        "periodic-bb-optimal-word",
+        "periodic-bb"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 12,
+      "archive": true
     }
   ],
   "papers": [
