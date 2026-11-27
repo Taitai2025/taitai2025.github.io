@@ -1,9 +1,5 @@
 # 历史谱梯度法的共同 Lyapunov 界与最优 Ritz 重用
 
-[全文 PDF](https://taitai2025.github.io/assets/documents/research/lmsd-reuse.pdf) · [相关短稿与复算](../../working/ritz-reuse/) · [十一月全文目录](../)
+AI 辅助研究工作稿，待作者逐项人工核阅。
 
-论文 B。研究受控变权、历史 Ritz 值重用和允许改变的排序，给出共同收敛界、达到构造和特定重用模式的最优性条件。
-
-区分固定算法的轨道、受控历史下的一致界，以及可变谱权达到界的条件。
-
-该版保留 37 页原稿以及单独的版本说明。公开整理经 AI 辅助，待作者逐项人工核阅。此目录提供具体版本的阅读入口，有限复算与形式化材料见所引目录。
+[前往主页密码阅读](https://taitai2025.github.io/research/#manuscript-lmsd-reuse)

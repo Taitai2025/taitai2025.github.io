@@ -1,7 +1,0 @@
-{
-  "toolchain": "Lean 4.8.0",
-  "trust": 0,
-  "result": "27 declarations checked",
-  "source_sha256": "6e6a1cfb8dc930e0a0063c35ca6559c987fe57f06d02d927a96f8b7d98a8233b",
-  "scope": "Exact rational normalized cycles for arbitrary window lengths and integer phase indices."
-}

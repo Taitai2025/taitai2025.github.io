@@ -10,8 +10,6 @@
       id: 'lmsd-sweep-proof-note',
       zh: '秩压缩 LMSD 的整轮收敛',
       en: 'Convergence of rank-compressed LMSD sweeps',
-      descriptionZh: '从行列式公式推导整轮乘子，解释秩下降时为何能终止，以及如何得到统一的指数界。',
-      descriptionEn: 'Derives the full-sweep multiplier from a determinant identity, then explains termination at rank loss and the uniform rate.',
       source: 'lmsd',
       pages: 14
     },
@@ -19,8 +17,6 @@
       id: 'spectral-reading-note',
       zh: '谱梯度法的端点动力学',
       en: 'Endpoint dynamics of spectral gradient methods',
-      descriptionZh: '从四篇预印本提取可单独阅读的推导，串联双端点轨道、Lyapunov 能量和 Ritz 扫掠。',
-      descriptionEn: 'Works through endpoint orbits, Lyapunov energy, and Ritz sweeps using results from four related preprints.',
       source: 'spectral',
       pages: 6
     }
@@ -55,7 +51,142 @@
   }
 
   const readPdf = (url, zh) => link(url, zh ? '阅览 PDF' : 'Read PDF', {primary:true});
-  const notePdf = id => 'assets/documents/research/' + id + '.pdf';
+  function protectedPdf(id, zh, label, title) {
+    return `<button type="button" class="document-link research-pdf research-protected" data-protected-document="${esc(id)}" data-document-lang="${zh ? 'zh' : 'en'}" data-document-title="${esc(title || label || '')}" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> ${esc(label || (zh ? '密码阅览 PDF' : 'Unlock PDF'))}</button>`;
+  }
+
+  // The public site contains only encrypted bytes. Passwords stay in this browser
+  // for the current unlock attempt and are never stored or sent to a server.
+  let unlockDialog;
+  let unlockAttempt = 0;
+  let unlockRequest;
+  let unlockedUrl;
+  let unlockTrigger;
+
+  function releaseUnlockedPdf() {
+    if (unlockedUrl) {
+      window.URL.revokeObjectURL(unlockedUrl);
+      unlockedUrl = undefined;
+    }
+  }
+
+  function closeUnlock() {
+    unlockAttempt += 1;
+    if (unlockRequest) unlockRequest.abort();
+    releaseUnlockedPdf();
+    if (unlockDialog) {
+      unlockDialog.querySelector('input').value = '';
+      unlockDialog.querySelector('.research-unlock-result').hidden = true;
+      unlockDialog.querySelectorAll('.research-unlock-result a').forEach(a => a.removeAttribute('href'));
+    }
+  }
+
+  function openUnlock(trigger) {
+    const id = trigger.dataset.protectedDocument;
+    if (!/^[a-z0-9-]+$/.test(id || '')) return;
+    const zh = trigger.dataset.documentLang === 'zh';
+    closeUnlock();
+    unlockTrigger = trigger;
+    if (!unlockDialog) {
+      unlockDialog = document.createElement('dialog');
+      unlockDialog.className = 'research-unlock-dialog';
+      unlockDialog.setAttribute('aria-labelledby', 'research-unlock-title');
+      unlockDialog.setAttribute('aria-describedby', 'research-unlock-explanation');
+      unlockDialog.addEventListener('close', () => {
+        closeUnlock();
+        if (unlockTrigger && unlockTrigger.isConnected) unlockTrigger.focus();
+      });
+      document.body.appendChild(unlockDialog);
+    }
+    unlockDialog.lang = zh ? 'zh-CN' : 'en';
+    unlockDialog.innerHTML = `<form class="research-unlock-form">
+      <h2 id="research-unlock-title">${zh ? '密码阅览' : 'Unlock this paper'}</h2>
+      <p class="research-unlock-document">${esc(trigger.dataset.documentTitle)}</p>
+      <p id="research-unlock-explanation">${zh ? '这份 AI 辅助稿件尚待作者人工核阅。输入密码后可在本机解密并打开 PDF。' : 'This AI-assisted draft awaits the author’s review. Enter the password to decrypt and open the PDF on this device.'}</p>
+      <label for="research-unlock-password">${zh ? '阅览密码' : 'Reading password'}</label>
+      <input id="research-unlock-password" name="password" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="research-unlock-status">
+      <div class="research-unlock-actions">
+        <button type="button" class="research-unlock-close">${zh ? '关闭' : 'Close'}</button>
+        <button type="submit" class="research-unlock-submit">${zh ? '解锁 PDF' : 'Unlock PDF'}</button>
+      </div>
+      <p id="research-unlock-status" class="research-unlock-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      <div class="research-unlock-result" hidden>
+        <a class="document-link research-unlock-open" target="_blank" rel="noopener">${zh ? '打开 PDF ↗' : 'Open PDF ↗'}</a>
+        <a class="document-link research-unlock-download" download="${esc(id)}.pdf">${zh ? '下载 PDF ↓' : 'Download PDF ↓'}</a>
+        <p>${zh ? '若浏览器无法预览，请下载后在 PDF 阅读器中打开。关闭此窗口会清除本次解锁；已保存的副本仍可读取，请妥善保管。' : 'If preview is unavailable, download the file and open it in a PDF reader. Closing this dialog clears this unlock; saved copies remain readable, so keep them private.'}</p>
+      </div>
+    </form>`;
+    const input = unlockDialog.querySelector('input');
+    const form = unlockDialog.querySelector('form');
+    const status = unlockDialog.querySelector('.research-unlock-status');
+    const submit = unlockDialog.querySelector('[type="submit"]');
+    unlockDialog.querySelector('.research-unlock-close').addEventListener('click', () => unlockDialog.close());
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (submit.disabled || !input.value) return;
+      const attempt = ++unlockAttempt;
+      const password = input.value;
+      input.value = '';
+      input.removeAttribute('aria-invalid');
+      status.dataset.state = 'busy';
+      status.textContent = zh ? '正在解锁，请稍候……' : 'Unlocking, please wait…';
+      submit.disabled = true;
+      form.setAttribute('aria-busy', 'true');
+      releaseUnlockedPdf();
+      unlockDialog.querySelector('.research-unlock-result').hidden = true;
+      unlockRequest = new AbortController();
+      let passwordBytes;
+      try {
+        if (!window.crypto?.subtle || !window.TextEncoder) throw new Error('unsupported');
+        const response = await fetch('assets/documents/protected/' + id + '.rpdf', {signal: unlockRequest.signal, cache: 'no-store'});
+        if (!response.ok) throw new Error('download');
+        const packet = new Uint8Array(await response.arrayBuffer());
+        if (packet.length < 54 || String.fromCharCode(...packet.subarray(0, 5)) !== 'RPDF1') throw new Error('format');
+        passwordBytes = new TextEncoder().encode(password);
+        const material = await window.crypto.subtle.importKey('raw', passwordBytes, 'PBKDF2', false, ['deriveKey']);
+        const key = await window.crypto.subtle.deriveKey(
+          {name: 'PBKDF2', salt: packet.slice(5, 21), iterations: 600000, hash: 'SHA-256'},
+          material, {name: 'AES-GCM', length: 256}, false, ['decrypt']
+        );
+        const plaintext = new Uint8Array(await window.crypto.subtle.decrypt(
+          {name: 'AES-GCM', iv: packet.slice(21, 33), tagLength: 128}, key, packet.slice(33)
+        ));
+        if (attempt !== unlockAttempt || !unlockDialog.open) { plaintext.fill(0); return; }
+        if (String.fromCharCode(...plaintext.subarray(0, 5)) !== '%PDF-') { plaintext.fill(0); throw new Error('format'); }
+        unlockedUrl = window.URL.createObjectURL(new Blob([plaintext], {type: 'application/pdf'}));
+        plaintext.fill(0);
+        unlockDialog.querySelectorAll('.research-unlock-result a').forEach(a => { a.href = unlockedUrl; });
+        unlockDialog.querySelector('.research-unlock-result').hidden = false;
+        status.dataset.state = 'success';
+        status.textContent = zh ? '已解锁。请选择打开或下载 PDF。' : 'Unlocked. Choose Open PDF or Download PDF below.';
+        unlockDialog.querySelector('.research-unlock-open').focus();
+      } catch (error) {
+        if (attempt !== unlockAttempt || error.name === 'AbortError') return;
+        status.dataset.state = 'error';
+        if (error.message === 'unsupported') {
+          status.textContent = zh ? '此浏览器无法安全解密。请用较新版本的浏览器通过 HTTPS 打开本页。' : 'Secure decryption is unavailable. Open this page over HTTPS in a current browser.';
+        } else if (error.message === 'download' || error instanceof TypeError) {
+          status.textContent = zh ? '文件暂时无法下载，请检查网络后重试。' : 'The file could not be downloaded. Check your connection and try again.';
+        } else if (error.message === 'format') {
+          status.textContent = zh ? '文件格式有误，暂时无法打开。请联系作者。' : 'This file could not be opened. Please contact the author.';
+        } else {
+          status.textContent = zh ? '密码不正确，或文件校验未通过。请重新输入密码。' : 'The password is incorrect, or the file could not be verified. Please try again.';
+          input.setAttribute('aria-invalid', 'true');
+        }
+        input.focus();
+      } finally {
+        if (passwordBytes) passwordBytes.fill(0);
+        if (attempt === unlockAttempt) {
+          submit.disabled = false;
+          form.removeAttribute('aria-busy');
+        }
+      }
+    });
+    unlockDialog.showModal();
+    input.focus();
+  }
+
+  window.addEventListener('pagehide', closeUnlock);
 
   function papersSection(data, zh) {
     const cards = data.papers.map(p => {
@@ -84,10 +215,9 @@
     const entries = fullTexts.map(p => ({p, full:true})).concat(drafts.map(p => ({p, full:false})));
     const byId = new Map(drafts.map(p => [p.id, p]));
     const cards = ({p, full}) => {
-      const links = readPdf(notePdf(p.id), zh) +
-        link(`${repo}/${full ? 'manuscripts' : 'working'}/${p.source || p.formal || p.id}`, zh ? '源码与说明' : 'Source and notes') +
+      const links = protectedPdf(p.id, zh, undefined, zh ? p.zh : p.en) +
         (p.arxiv ? link(p.arxiv, zh ? '相关 arXiv 版本' : 'Related arXiv version') : '') +
-        (p.guide ? link('assets/documents/research/' + p.guide, zh ? p.guideZh : p.guideEn) : '');
+        (p.guide ? protectedPdf(p.guide.replace(/\.pdf$/i, ''), zh, zh ? p.guideZh : p.guideEn, zh ? p.guideZh : p.guideEn) : '');
       const related = (p.related || []).filter(id => byId.has(id)).map(id =>
         `<a href="#working-${esc(id)}">${esc(zh ? byId.get(id).zh : byId.get(id).en)}</a>`).join(' · ');
       const pages = zh ? `${p.pages} 页` : `${p.pages} pages`;
@@ -98,8 +228,7 @@
         id: (full ? 'manuscript-' : 'working-') + p.id,
         title: zh ? p.zh : p.en,
         meta: meta.join(' · '),
-        description: zh ? p.descriptionZh : p.descriptionEn,
-        scope: zh ? p.scopeZh : p.scopeEn,
+        description: '',
         links,
         heading: 'h4',
         related: related ? `<p class="research-related">${zh ? '相关稿件' : 'Related papers'} · ${related}</p>` : ''
@@ -118,8 +247,8 @@
     const other = section('other', zh ? '其他研究' : 'Other research',
       entries.filter(({p}) => !categorized.has(p.groupZh)));
     const notice = zh
-      ? '以下是经 AI 辅助整理的公开工作稿，待作者逐项人工核阅。引用时请注明所用版本。'
-      : 'These public working papers were prepared with AI assistance and await the author’s review. Please cite the version you use.';
+      ? '以下工作稿经 AI 辅助整理，尚待作者逐项人工核阅。标题与版本信息公开保留，全文需输入密码阅览。'
+      : 'These AI-assisted working papers await the author’s review. Titles and version details remain public; a password is required to read the full text.';
     return `<section id="research-working" class="research-section">
       ${fullTexts.length ? '<span id="research-manuscripts" class="research-section-anchor" aria-hidden="true"></span>' : ''}
       <h2>${zh ? 'AI 辅助研究工作稿' : 'AI-assisted research working papers'}</h2>
@@ -135,14 +264,14 @@
     return `<section id="research-reading" class="research-section">
       <h2>${zh ? '研究导读与复现' : 'Reading notes and reproducibility'}</h2>
       <p class="research-section-note">${zh
-        ? '导读经 AI 辅助整理，待作者核阅。原始结论以条目所引预印本为准。'
-        : 'The reading notes are AI-assisted and await author review. Cite the original preprints for research results.'}</p>
+        ? '导读经 AI 辅助整理，待作者核阅。全文需输入密码阅览；研究结论请引用原始预印本。'
+        : 'These AI-assisted reading notes await author review and require a password. Cite the original preprints for research results.'}</p>
       ${notes.map(n => entry({
         id: 'reading-' + n.id,
         title: zh ? n.zh : n.en,
-        description: zh ? n.descriptionZh : n.descriptionEn,
+        description: '',
         meta: zh ? `中文导读 · ${n.pages} 页` : `Reading note in Chinese · ${n.pages} pages`,
-        links: readPdf(notePdf(n.id), zh) + link(`${repo}/${n.source}`, zh ? '源码与校验' : 'Source and checks')
+        links: protectedPdf(n.id, zh, undefined, zh ? n.zh : n.en)
       })).join('')}
     </section>`;
   }
@@ -214,6 +343,8 @@
   }
 
   document.addEventListener('click', e => {
+    const protectedButton = e.target.closest('[data-protected-document]');
+    if (protectedButton) openUnlock(protectedButton);
     const button = e.target.closest('[data-scroll]');
     if (button) document.getElementById(button.dataset.scroll)?.scrollIntoView({
       behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'

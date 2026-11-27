@@ -348,3 +348,93 @@ body[data-lang="zh"] .research-introduction h1 {
   .research-entry-links .document-link { min-height: 36px; }
 }
 
+
+/* Password-protected drafts: metadata stays public; PDFs unlock locally. */
+.research-entry-links button.research-protected {
+  appearance: none;
+  border: 0;
+  font-family: inherit;
+  color: var(--accent);
+  text-align: start;
+  cursor: pointer;
+}
+.research-protected:focus-visible,
+.research-unlock-dialog :is(button,a,input):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.research-unlock-dialog {
+  box-sizing: border-box;
+  width: min(520px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  overflow: auto;
+  margin: auto;
+  padding: clamp(20px, 5vw, 32px);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--text);
+  background: var(--surface, #fff);
+  box-shadow: 0 20px 80px #0004;
+  font: 1rem/1.65 "Inter", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+.research-unlock-dialog::backdrop { background: #13233699; }
+.research-unlock-dialog h2 {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 1.45rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+.research-unlock-dialog p { margin: 0 0 16px; }
+.research-unlock-document { font-weight: 650; overflow-wrap: anywhere; }
+#research-unlock-explanation { color: var(--muted); font-size: .9rem; }
+.research-unlock-dialog label { display: block; margin-bottom: 7px; font-weight: 620; }
+.research-unlock-dialog input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: 9px 12px;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font: 1rem/1.5 system-ui, sans-serif;
+}
+.research-unlock-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 17px; }
+.research-unlock-actions button {
+  min-height: 43px;
+  padding: 8px 15px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  background: var(--surface-2);
+  font: inherit;
+  font-size: .92rem;
+  cursor: pointer;
+}
+.research-unlock-actions .research-unlock-submit { color: var(--accent); background: var(--accent-weak); font-weight: 650; }
+.research-unlock-actions button:disabled { opacity: .65; cursor: wait; }
+.research-unlock-dialog .research-unlock-status { margin: 15px 0 0; font-size: .9rem; }
+.research-unlock-status:empty { display: none; }
+.research-unlock-status[data-state="error"] { color: #b13336; }
+.research-unlock-status[data-state="success"] { color: var(--accent); }
+.research-unlock-result { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 12px; }
+.research-unlock-result[hidden] { display: none !important; }
+.research-unlock-result a {
+  min-height: 42px;
+  padding: 6px 10px;
+  color: var(--accent);
+  border-radius: 5px;
+  background: var(--accent-weak);
+  font-size: .95rem;
+  font-weight: 650;
+}
+.research-unlock-result p { flex-basis: 100%; margin: 4px 0 0; color: var(--muted); font-size: .8rem; }
+@media (max-width: 550px) {
+  .research-unlock-dialog { max-height: calc(100dvh - 24px); width: calc(100vw - 24px); }
+  .research-unlock-actions button { min-height: 46px; }
+}

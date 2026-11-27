@@ -1,3 +1,0 @@
-'RPCAStaticPatch.price_squared_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
-'RPCAStaticPatch.area_budget_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
-'RPCAStaticPatch.dark_half_obstruction' depends on axioms: [propext, Classical.choice, Quot.sound]

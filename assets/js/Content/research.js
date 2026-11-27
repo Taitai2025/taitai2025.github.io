@@ -8,14 +8,10 @@ window.RESEARCH_CONTENT = {
       "en": "Exact rates of LMSD on the smallest active spectra",
       "groupZh": "谱梯度与 Ritz",
       "groupEn": "Spectral gradients and Ritz values",
-      "descriptionZh": "从历史梯度怎样产生下一轮 Ritz 步长入手，推导 p+1 个活跃谱点上的最佳一致因子和非平衡迭代的双指数衰减。",
-      "descriptionEn": "Derives the optimal uniform factor on p+1 active spectral nodes and the double-exponential decay of unbalanced histories.",
       "related": [
         "ritz-reuse"
       ],
-      "pages": 7,
-      "scopeZh": "精确速率对应恰有 p+1 个活跃谱点的二次模型。",
-      "scopeEn": "The exact rate concerns quadratics with exactly p+1 active spectral points."
+      "pages": 7
     },
     {
       "id": "ritz-reuse",
@@ -24,14 +20,10 @@ window.RESEARCH_CONTENT = {
       "en": "How often should historical Ritz values be reused?",
       "groupZh": "谱梯度与 Ritz",
       "groupEn": "Spectral gradients and Ritz values",
-      "descriptionZh": "比较固定重复次数与周期重复，写出滚动历史的实际更新递推，并保留周期 1、2、1、3 达到指数上界的条件。",
-      "descriptionEn": "Compares constant and periodic reuse using the recurrence for actual rolling histories, including the conditions under which the cycle 1, 2, 1, 3 attains the exponent bound.",
       "related": [
         "ritz-minimal-face"
       ],
-      "pages": 10,
-      "scopeZh": "按一次梯度更新计速率，覆盖特定重用序列和规定的初始历史。",
-      "scopeEn": "Rates are per gradient update, under specified reuse patterns and initial histories."
+      "pages": 10
     },
     {
       "id": "restart-projected-bb",
@@ -40,15 +32,11 @@ window.RESEARCH_CONTENT = {
       "en": "Gradient restart and projected BB1 on quadratic models",
       "groupZh": "重启、投影与线搜索",
       "groupEn": "Restart, projection, and line search",
-      "descriptionZh": "分析固定正定二次模型中的首次触发时刻，并证明闭凸锥上的投影 BB1 在条件数不超过 2 时的 R 线性界。",
-      "descriptionEn": "Analyzes the first trigger on fixed positive quadratics and proves an R-linear bound for projected BB1 on closed convex cones when the condition number is at most two.",
       "related": [
         "gll-window",
         "gradient-restart-return"
       ],
-      "pages": 10,
-      "scopeZh": "第一部分使用固定正定二次模型。锥投影结论要求条件数不超过 2。",
-      "scopeEn": "The restart analysis uses a fixed positive-definite quadratic. The cone result assumes condition number at most 2."
+      "pages": 10
     },
     {
       "id": "gradient-restart-return",
@@ -58,13 +46,9 @@ window.RESEARCH_CONTENT = {
       "en": "Gradient restart near a single weak-curvature eigenvalue",
       "groupZh": "重启、投影与线搜索",
       "groupEn": "Restart, projection, and line search",
-      "descriptionZh": "只有一个步进谱值趋于 1 时，最坏的首次重启或归零最多比单模态晚一步。给出额外一步出现的参数区间与精确算例。",
-      "descriptionEn": "The worst first restart or exact termination is at most one trial later than the scalar crossing. The paper locates the extra trial and verifies exact examples.",
       "related": [
         "restart-projected-bb"
       ],
-      "scopeZh": "有限维正定二次函数。其余谱值固定在远离 0 和 1 的紧区间内。",
-      "scopeEn": "Finite-dimensional positive definite quadratics with all other step eigenvalues in a fixed interior interval.",
       "pages": 7
     },
     {
@@ -74,14 +58,10 @@ window.RESEARCH_CONTENT = {
       "en": "Convergence bounds and persistent backtracking for GLL line search",
       "groupZh": "重启、投影与线搜索",
       "groupEn": "Restart, projection, and line search",
-      "descriptionZh": "给出实际接受迭代的窗口收缩，并构造一维二次例，其中真实搜索收敛但每周期恰好回溯一次。",
-      "descriptionEn": "Derives a window contraction for accepted iterates and gives a scalar quadratic on which the actual line search converges while backtracking once per period.",
       "related": [
         "restart-projected-bb"
       ],
-      "pages": 3,
-      "scopeZh": "收缩结论针对实际接受序列。反例使用特定窗口与回溯参数。",
-      "scopeEn": "The contraction concerns accepted iterates. The example uses specified window and backtracking parameters."
+      "pages": 3
     },
     {
       "id": "pcp-rectangle",
@@ -90,14 +70,10 @@ window.RESEARCH_CONTENT = {
       "en": "Exact PCP optimality for a stationary rectangle on a constant background",
       "groupZh": "低秩分解",
       "groupEn": "Low-rank decomposition",
-      "descriptionZh": "用四块对偶证书计算亮块与暗块的精确参数区间，区分最优性与唯一恢复，并给出相同目标尺寸下的明暗对照。",
-      "descriptionEn": "Computes exact parameter intervals for bright and dark rectangles using a four-block certificate and distinguishes optimality from unique recovery.",
       "related": [
         "pcp-computation"
       ],
-      "pages": 9,
-      "scopeZh": "对偶证书分别刻画最优性与唯一恢复，模型为常数背景与静止矩形。",
-      "scopeEn": "The certificates distinguish optimality from unique recovery in a constant-background, static-rectangle model."
+      "pages": 9
     },
     {
       "id": "pcp-computation",
@@ -107,13 +83,9 @@ window.RESEARCH_CONTENT = {
       "en": "Equivalent computations, optimality checks, and replication in PCP",
       "groupZh": "低秩分解",
       "groupEn": "Low-rank decomposition",
-      "descriptionZh": "从实际求解流程出发解释 Gram-SVT、过松弛残差、Huber 约化和重复列的参数换算。附合成检验和匿名结果，不发布课程原始视频。",
-      "descriptionEn": "Works through Gram-based thresholding, over-relaxed residuals, a Huber reduction, and replication scaling. Includes synthetic checks and anonymous results without releasing the source video.",
       "related": [
         "pcp-rectangle"
-      ],
-      "scopeZh": "复现使用合成数据和匿名汇总，公开包未附原始视频。",
-      "scopeEn": "The reproducibility material uses synthetic data and anonymized summaries."
+      ]
     },
     {
       "id": "admm-alternating",
@@ -123,11 +95,7 @@ window.RESEARCH_CONTENT = {
       "en": "Quadratic ADMM with alternating penalty parameters",
       "groupZh": "ADMM 与参数选择",
       "groupEn": "ADMM and parameter choice",
-      "descriptionZh": "同谱二维二次问题中，固定使用两个端点罚参数各自收敛，交替使用则在一个可精确计算的条件数阈值后出现发散初值。",
-      "descriptionEn": "In a two-dimensional family, each fixed endpoint penalty converges, while the alternating sequence has divergent initial states above an explicit condition-number threshold.",
-      "related": [],
-      "scopeZh": "阈值由二维同谱二次例得到。",
-      "scopeEn": "The threshold is derived for a two-dimensional quadratic example."
+      "related": []
     },
     {
       "id": "periodic-bb",
@@ -138,13 +106,9 @@ window.RESEARCH_CONTENT = {
       "en": "Periodic Barzilai–Borwein switching: phase balance and exact local gaps",
       "groupZh": "谱梯度与周期切换",
       "groupEn": "Spectral gradients and periodic switching",
-      "descriptionZh": "BB1 与 BB2 的混合周期打破共同端点平衡，因而严格改善最坏一致速率。全文含完整证明、有限预算实验与周期系数的 Lean 证书。",
-      "descriptionEn": "Mixed BB1–BB2 patterns break common endpoint balance and strictly improve the worst uniform threshold. Includes the supplementary proofs, finite-budget evidence and Lean certificates for three patterns.",
       "related": [
         "trial-firsthit"
-      ],
-      "scopeZh": "精确局部率按梯度更新计。附有限预算实验与三组固定有理证书。",
-      "scopeEn": "The exact local rates are measured per gradient update. Includes finite-budget experiments and rational checks for three cases."
+      ]
     },
     {
       "id": "trial-firsthit",
@@ -155,14 +119,10 @@ window.RESEARCH_CONTENT = {
       "en": "Choosing a shorter step from a line-search trial value",
       "groupZh": "步长设计与停止条件",
       "groupEn": "Stepsizes and stopping criteria",
-      "descriptionZh": "在试探点已通过 GLL 检验、尚未取得梯度时重选步长。两个精确反例给出相反的首次达标顺序与分项查询费用。",
-      "descriptionEn": "Reconsiders a step after its value passes the GLL test and before querying its gradient. Two exact examples give opposite first-hit and separately priced query comparisons.",
       "related": [
         "periodic-bb",
         "gll-window"
-      ],
-      "scopeZh": "两个固定算例给出相反的首停顺序，并分开计算函数与梯度请求。",
-      "scopeEn": "Two fixed examples give opposite stopping orders, with separate function and gradient request counts."
+      ]
     },
     {
       "id": "delayed-design",
@@ -173,11 +133,7 @@ window.RESEARCH_CONTENT = {
       "en": "Certifying delayed multiplicative updates for linear experimental design",
       "groupZh": "最优实验设计",
       "groupEn": "Optimal experimental design",
-      "descriptionZh": "两种复用旧拟合的更新可以严格改进、无限刷新，却仍停在次优值。以刷新次数限制步长可恢复值收敛，并有代价下界。",
-      "descriptionEn": "Two cached-fit rules can improve strictly and refresh infinitely often while converging to a suboptimal design value. The paper proves a convergent capped rule and analyzes its cost.",
-      "related": [],
-      "scopeZh": "反例、修复及成本结论针对有限 c-最优实验设计中的指定更新。",
-      "scopeEn": "The counterexamples, repair, and cost estimates concern specified updates for finite c-optimal design."
+      "related": []
     },
     {
       "id": "smooth-ritz",
@@ -188,14 +144,10 @@ window.RESEARCH_CONTENT = {
       "en": "Smooth nonquadratic objectives with periodically repeating Ritz steps",
       "groupZh": "谱梯度与 Ritz",
       "groupEn": "Spectral gradients and Ritz values",
-      "descriptionZh": "构造全局强凸的非二次目标，使指定的延迟 Ritz 六周期和每个正缩放都精确重现。给出已访问点上的全阶光滑一致与有限阶实解析版本。",
-      "descriptionEn": "Constructs globally strongly convex nonquadratic objectives that preserve a delayed six-sweep Ritz trajectory at every positive scale. Includes a smooth construction matching all derivatives and an analytic finite-order variant.",
       "related": [
         "ritz-minimal-face",
         "ritz-reuse"
-      ],
-      "scopeZh": "构造由已给定的相容初始历史启动。",
-      "scopeEn": "The construction starts from a specified compatible history."
+      ]
     },
     {
       "id": "coordinate-query",
@@ -206,14 +158,10 @@ window.RESEARCH_CONTENT = {
       "en": "Choosing a coordinate step with one Hessian-vector query",
       "groupZh": "曲率信息与步长",
       "groupEn": "Curvature information and stepsizes",
-      "descriptionZh": "在二维二次模型中，一次矩阵向量查询后选择一个坐标和步长。求出最优保证与平衡查询，并推导只沿坐标轴查询时的精确值。",
-      "descriptionEn": "Finds the sharp deterministic decrease guarantee for choosing one coordinate and step after one Hessian-vector query. It also gives the exact value when the query is restricted to a coordinate axis.",
       "related": [
         "trial-firsthit",
         "curvature-query-budget"
-      ],
-      "scopeZh": "最坏保证针对一次完整查询后的确定性策略。",
-      "scopeEn": "The worst-case guarantee concerns deterministic policies using one full query."
+      ]
     },
     {
       "id": "curvature-query-budget",
@@ -223,13 +171,9 @@ window.RESEARCH_CONTENT = {
       "en": "Query budgets for directional curvature",
       "groupZh": "曲率信息与步长",
       "groupEn": "Curvature information and stepsizes",
-      "descriptionZh": "计算固定方向的最坏总宽度与最大单向宽度。重数已知且剩余谱中两种特征值都存在时，确定 Hessian 的最坏查询数比剩余空间维数少一。",
-      "descriptionEn": "Derives two exact worst-case measures of directional uncertainty. When both eigenvalues remain in the unresolved space and their multiplicities are known, full recovery takes one query fewer than the remaining dimension.",
       "related": [
         "coordinate-query"
       ],
-      "scopeZh": "固定方向、确定性策略和完整精确的 Hessian–向量积。",
-      "scopeEn": "Fixed target directions and deterministic policies with exact Hessian–vector products.",
       "pages": 7
     },
     {
@@ -241,14 +185,10 @@ window.RESEARCH_CONTENT = {
       "en": "A certified stopping point from two gradient samples",
       "groupZh": "步长设计与停止条件",
       "groupEn": "Stepsizes and stopping criteria",
-      "descriptionZh": "从已通过值检验的试探点及当前点的梯度构造终止证书。一个精确算例少提交一步，两条轨道各付四次函数值和四次梯度请求。",
-      "descriptionEn": "Certifies a terminal interior point using the endpoint gradients of a value-accepted segment. In an exact example one commit is saved while both runs make four requests of each type.",
       "related": [
         "trial-firsthit",
         "gll-window"
-      ],
-      "scopeZh": "结论计精确、分离的函数值与梯度请求。有限精度判定仍需误差控制。",
-      "scopeEn": "The result counts exact, separately billed value and gradient requests. Finite-precision certification needs error bounds."
+      ]
     },
     {
       "id": "cold-window",
@@ -259,14 +199,10 @@ window.RESEARCH_CONTENT = {
       "en": "A smaller next gradient norm can delay stopping in ABBmin1",
       "groupZh": "步长设计与停止条件",
       "groupEn": "Stepsizes and stopping criteria",
-      "descriptionZh": "在一个精确算例中，整段首步长度都能降低下一点的梯度范数，但旧割线仍控制 ABBmin1 的窗口。较严容差下，参考法先停止。",
-      "descriptionEn": "For a fixed example an interval of replacement steps improves the next gradient norm. The retained secant controls the ABBmin1 window, and the reference reaches a stricter tolerance first.",
       "related": [
         "trial-firsthit",
         "certified-chord"
-      ],
-      "scopeZh": "停止顺序反转出现在同一个固定算例，费用比较按完整梯度请求计。",
-      "scopeEn": "The stopping order reverses on a fixed example. The comparison counts full-gradient requests."
+      ]
     }
   ],
   "papers": [
@@ -413,12 +349,8 @@ window.RESEARCH_CONTENT = {
       "groupZh": "BB 谱步长",
       "groupEn": "Barzilai–Borwein steps",
       "pages": 38,
-      "descriptionZh": "11 月修订稿。证明有限维与 Hilbert 空间二次问题的尖锐根因子，区分初始梯度的活动谱端点、连续谱与精确达到的轨道，并给出局部非线性结论。",
-      "descriptionEn": "November revision. Establishes sharp root factors for quadratic problems in finite dimensions and Hilbert spaces, with separate treatments of active spectral endpoints, continuous spectra, attainment, and the local nonlinear problem.",
       "arxiv": "https://arxiv.org/abs/2608.07839",
-      "formal": "bb-asymptotic",
-      "scopeZh": "涉及有限维与 Hilbert 空间正定二次问题。局部非二次结论另有假设。",
-      "scopeEn": "The quadratic results cover finite-dimensional and Hilbert-space settings. The nonlinear result uses additional local assumptions."
+      "formal": "bb-asymptotic"
     },
     {
       "id": "bb-uniform",
@@ -427,14 +359,10 @@ window.RESEARCH_CONTENT = {
       "groupZh": "BB 谱步长",
       "groupEn": "Barzilai–Borwein steps",
       "pages": 13,
-      "descriptionZh": "在有限谱上构造共同 Lyapunov 函数，使 BB2 到 BB1 的任意区间选择共享临界因子。非线性部分给出 Dini 条件和一个 C² 反例。",
-      "descriptionEn": "Constructs a common Lyapunov function at the critical factor for finite spectra and arbitrary choices between the BB2 and BB1 steps. The nonlinear section gives a Dini condition and a twice continuously differentiable example.",
       "formal": "bb-uniform",
       "guide": "bb-uniform-guide.pdf",
       "guideZh": "中文证明导读",
-      "guideEn": "Proof guide in Chinese",
-      "scopeZh": "共同临界因子已在有限谱设置下证明，Dini 条件用于非二次局部结论。",
-      "scopeEn": "The common critical factor is proved for finite spectra. The local nonlinear result uses a Dini condition."
+      "guideEn": "Proof guide in Chinese"
     },
     {
       "id": "lmsd-spectral",
@@ -442,11 +370,7 @@ window.RESEARCH_CONTENT = {
       "en": "Sharp spectral bounds and regeneration in limited-memory steepest descent",
       "groupZh": "LMSD 与 Ritz 重用",
       "groupEn": "LMSD and Ritz reuse",
-      "pages": 115,
-      "descriptionZh": "论文 A。研究固定权 LMSD 的可实现历史、最小活跃谱的精确速率和相位，并分析实际六周期与双簇谱下界。正文与全部证明附录同载。",
-      "descriptionEn": "Paper A concerns fixed-weight LMSD: compatible histories, exact rates and phases on the smallest active spectra, a realizable six-cycle, and a two-cluster lower bound. Includes the main text and all proof appendices.",
-      "scopeZh": "正文和附录保留十一月版本。统一上界和具体轨道的达到例分别陈述。",
-      "scopeEn": "The November text and appendix are preserved. Uniform upper bounds and attaining examples are stated separately."
+      "pages": 115
     },
     {
       "id": "lmsd-reuse",
@@ -454,11 +378,7 @@ window.RESEARCH_CONTENT = {
       "en": "Common Lyapunov bounds and optimal Ritz reuse in spectral gradient methods",
       "groupZh": "LMSD 与 Ritz 重用",
       "groupEn": "LMSD and Ritz reuse",
-      "pages": 37,
-      "descriptionZh": "论文 B。研究受控变权、历史 Ritz 值重用和允许改变的排序，给出共同收敛界、达到构造和特定重用模式的最优性条件。",
-      "descriptionEn": "Paper B treats controlled changes of weights, reuse of historical Ritz values, and varying orderings. It proves common rate bounds, gives attaining constructions, and analyzes optimal reuse under explicitly stated conditions.",
-      "scopeZh": "区分固定算法的轨道、受控历史下的一致界，以及可变谱权达到界的条件。",
-      "scopeEn": "The analysis distinguishes a fixed algorithm, uniform bounds under controlled histories, and attainment with varying weights."
+      "pages": 37
     }
   ]
 };

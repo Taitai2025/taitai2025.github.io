@@ -1,18 +1,5 @@
-# Periodic Barzilai–Borwein switching
+# 周期 BB 切换的相位平衡与精确局部速率
 
-[Read the paper and supplementary proofs](https://taitai2025.github.io/assets/documents/research/periodic-bb.pdf)
+AI 辅助研究工作稿，待作者逐项人工核阅。
 
-This public working manuscript follows the E01 version. AI assisted with preparation and independent checks. Author verification is pending.
-
-The proofs give phase compatibility, strict gaps, and exact local coefficients. The finite-dimensional trajectory factor and the threshold for a uniform envelope are tracked separately. The finite-budget results include all 1,080 runs and 43 timeouts. ABBmin1 was faster by median update count in the displayed cells. The data do not measure wall time.
-
-- **paper/** contains the LaTeX for the main manuscript and full supplement.
-- **experiments/** contains generation code, initial conditions, results and the compressed historical trace. Unpack the trace in output/ before using the replot script. Re-running to a new output directory preserves the archived tables.
-- **word_analysis/** contains the exact coefficient computations and archived tables.
-- **P06Exact.lean** checks 15 rational and integer facts for three explicit patterns. The all-spectrum convergence theorem and uniform remainder remain at the paper-proof level. See [the Lean receipt](lean-verification.json).
-
-[Related working paper on line-search trial values](../trial-firsthit/)
-
-The November 26 Windows rerun matches all ten experiment CSVs and all five pattern-analysis CSVs byte for byte, including 145,858 trace rows. [Replay comparison](experiment-replay.json).
-
-Version 1.1 moves the human-review status onto the first page of the full PDF. The proof and supplementary pages retain their text and page order. To add the notice to a rebuilt PDF, use paper/mark_public_copy.py with different input and output filenames.
+[前往主页密码阅读](https://taitai2025.github.io/research/#working-periodic-bb)

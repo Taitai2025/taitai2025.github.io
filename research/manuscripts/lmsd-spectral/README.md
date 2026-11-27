@@ -1,9 +1,5 @@
 # 固定权 LMSD 的谱界与再生
 
-[全文 PDF](https://taitai2025.github.io/assets/documents/research/lmsd-spectral.pdf) · [相关短稿与复算](../../working/ritz-minimal-face/) · [十一月全文目录](../)
+AI 辅助研究工作稿，待作者逐项人工核阅。
 
-论文 A。研究固定权 LMSD 的可实现历史、最小活跃谱的精确速率和相位，并分析实际六周期与双簇谱下界。正文与全部证明附录同载。
-
-正文和附录保留十一月版本。统一上界和具体轨道的达到例分别陈述。
-
-该版保留 115 页原稿以及单独的版本说明。公开整理经 AI 辅助，待作者逐项人工核阅。此目录提供具体版本的阅读入口，有限复算与形式化材料见所引目录。
+[前往主页密码阅读](https://taitai2025.github.io/research/#manuscript-lmsd-spectral)
