@@ -53,3 +53,9 @@
 - [投影 BB 在约束驻点附近的局部收缩](./projected-bb-critical-cone/)
 - [圆盘凸帽的共形半径](./convex-cap-conformal-radius/)
 - [三步 BB 谱前缀的端点极值](./bb-three-step-endpoint-extremizers/)
+
+## 2026 年 11 月 29 日续研
+- [BB 割线区间法的临界渐近率与可指定前因子](./bb-critical-dini-prefactor/)
+- [交替 BB 谱动力学的任意谱统一前缀界](./bb-arbitrary-spectrum-prefix/)
+- [圆盘函数演算的标量与完全范数分离](./disk-calculus-scalar-complete-separation/)
+- [Ritz 多项式在谱支撑退化时的极限](./ritz-vanishing-spectral-support/)

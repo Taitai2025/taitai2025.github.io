@@ -698,6 +698,64 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 6,
       "archive": true
+    },
+    {
+      "id": "bb-critical-dini-prefactor",
+      "zh": "BB 割线区间法的临界渐近率与可指定前因子",
+      "en": "Critical rate and realizable prefactors for BB interval selection",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "continuous-spectrum-sublinear-delay",
+        "bounded-delay-bb-sharp-rate"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.29",
+      "pages": 8,
+      "archive": true
+    },
+    {
+      "id": "bb-arbitrary-spectrum-prefix",
+      "zh": "交替 BB 谱动力学的任意谱统一前缀界",
+      "en": "A uniform prefix bound for alternating BB spectral dynamics",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "alternating-bb-fixed-score-potential"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.29",
+      "pages": 10,
+      "archive": true
+    },
+    {
+      "id": "disk-calculus-scalar-complete-separation",
+      "zh": "圆盘函数演算的标量与完全范数分离",
+      "en": "Scalar and complete norm separation for a disk functional calculus",
+      "groupZh": "数值域与共形映射",
+      "groupEn": "Numerical ranges and conformal maps",
+      "related": [
+        "convex-cap-conformal-radius"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.29",
+      "pages": 8,
+      "archive": true
+    },
+    {
+      "id": "ritz-vanishing-spectral-support",
+      "zh": "Ritz 多项式在谱支撑退化时的极限",
+      "en": "Ritz polynomials near loss of spectral support",
+      "groupZh": "延迟记忆与 Ritz",
+      "groupEn": "Delayed memory and Ritz sweeps",
+      "related": [
+        "narrow-ritz-slow-block",
+        "variable-reuse-spectral-gradient"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.29",
+      "pages": 10,
+      "archive": true
     }
   ],
   "papers": [
