@@ -628,6 +628,49 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 11,
       "archive": true
+    },
+    {
+      "id": "accepted-chord-stopping-certificates",
+      "zh": "已接受梯度步内的停止证书",
+      "en": "Stopping certificates inside accepted gradient steps",
+      "groupZh": "步长设计与停止条件",
+      "groupEn": "Stepsizes and stopping criteria",
+      "related": [
+        "certified-chord"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 9,
+      "archive": true
+    },
+    {
+      "id": "exact-isospectral-query-recovery",
+      "zh": "已知谱时实对称矩阵的精确查询恢复",
+      "en": "Exact recovery of symmetric matrices from queries with a known spectrum",
+      "groupZh": "曲率信息与步长",
+      "groupEn": "Curvature information and stepsizes",
+      "related": [
+        "curvature-query-budget"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 11,
+      "archive": true
+    },
+    {
+      "id": "projected-bb-critical-cone",
+      "zh": "投影 BB 在约束驻点附近的局部收缩",
+      "en": "Local contraction of projected BB near a constrained stationary point",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection and line search",
+      "related": [
+        "projected-bb-sharp-two-step",
+        "restart-projected-bb"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 6,
+      "archive": true
     }
   ],
   "papers": [

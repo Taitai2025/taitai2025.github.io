@@ -48,3 +48,6 @@
 - [交替 BB 固定谱分数的两点势与三点约化](./alternating-bb-fixed-score-potential/)
 - [四点谱延迟 Ritz 迭代的慢块概率与局部驻留](./narrow-ritz-slow-block/)
 - [高阶谱步长的可变复用与端点渐近](./variable-reuse-spectral-gradient/)
+- [已接受梯度步内的停止证书](./accepted-chord-stopping-certificates/)
+- [已知谱时实对称矩阵的精确查询恢复](./exact-isospectral-query-recovery/)
+- [投影 BB 在约束驻点附近的局部收缩](./projected-bb-critical-cone/)
