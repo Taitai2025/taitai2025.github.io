@@ -586,17 +586,18 @@ window.RESEARCH_CONTENT = {
     },
     {
       "id": "alternating-bb-fixed-score-potential",
-      "zh": "交替 BB 固定谱分数的两点势与三点约化",
-      "en": "A two-point potential and a three-point reduction for an alternating BB score",
+      "zh": "交替 BB 固定谱分数在四点当前谱上的统一势",
+      "en": "A uniform potential for an alternating BB score on up to four current spectral points",
       "groupZh": "谱步长与 BB 方法",
       "groupEn": "Spectral steps and BB methods",
       "related": [
         "two-point-bb-optimal-selector",
-        "bounded-delay-bb-sharp-rate"
+        "bounded-delay-bb-sharp-rate",
+        "bb-three-step-endpoint-extremizers"
       ],
-      "version": "0.1",
+      "version": "0.3",
       "releaseDate": "2026.11.28",
-      "pages": 13,
+      "pages": 21,
       "archive": true
     },
     {
@@ -666,6 +667,32 @@ window.RESEARCH_CONTENT = {
       "related": [
         "projected-bb-sharp-two-step",
         "restart-projected-bb"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 6,
+      "archive": true
+    },
+    {
+      "id": "convex-cap-conformal-radius",
+      "zh": "圆盘凸帽的共形半径",
+      "en": "The conformal radius of the unit disk with a convex cap",
+      "groupZh": "数值域与共形映射",
+      "groupEn": "Numerical ranges and conformal maps",
+      "related": [],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 6,
+      "archive": true
+    },
+    {
+      "id": "bb-three-step-endpoint-extremizers",
+      "zh": "三步 BB 谱前缀的端点极值",
+      "en": "Endpoint extremizers for a three-step Barzilai–Borwein prefix",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "alternating-bb-fixed-score-potential"
       ],
       "version": "0.1",
       "releaseDate": "2026.11.28",
