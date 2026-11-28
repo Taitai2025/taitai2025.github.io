@@ -137,23 +137,25 @@ window.SCORE_CATALOG = [
   },
   {
     "title": "干将莫邪幻想曲",
-    "version": "r20 终审版",
+    "version": "r26-gb20261128 国标修订终版",
     "slug": "ganjiang-moye",
-    "note": "原交付版包括全曲及四章的独立分谱。合订本保留原来的双面打印留白。",
+    "note": "适用简谱国标条款、内容、版式和合订本已完成独立复核。含全曲及四个乐章的分谱，合订本保留双面打印留白。",
     "combined": [
       {
         "label": "整曲合订本",
-        "bytes": 162626497,
-        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/ganjiang-moye-combined.pdf",
-        "pages": 4170
+        "bytes": 94702005,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261128/ganjiang-moye-combined.pdf",
+        "pages": 4484,
+        "sha256": "caecae006e1a6e6f14fc818f93273f0488751cfaf1cd7d01d999e0a32215292c"
       }
     ],
     "parts": [
       {
         "label": "独立分谱 ZIP · 第 1 包",
-        "bytes": 157237324,
-        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/ganjiang-moye-parts-01.zip",
-        "count": 600
+        "bytes": 174828021,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261128/ganjiang-moye-parts-01.zip",
+        "count": 600,
+        "sha256": "b63dc5756d69e12104bdd60b1bc672da235ab9722f7552ba6af31ea94c0d56f6"
       }
     ],
     "fullScores": []
@@ -407,6 +409,56 @@ window.SCORE_CATALOG = [
         "bytes": 13357838,
         "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261127/yongheng-de-dongfeng-parts-01.zip",
         "count": 88
+      }
+    ],
+    "fullScores": []
+  },
+  {
+    "title": "云南印象",
+    "version": "2026-11-27 V27 独立终审版",
+    "slug": "yunnan-yinxiang",
+    "note": "独立内容与排版终审均通过。全曲连续540小节，原谱未定记号和原始留空按成品说明保留。",
+    "combined": [
+      {
+        "label": "整曲分谱合订本",
+        "bytes": 27863443,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261128/yunnan-yinxiang-combined.pdf",
+        "pages": 802,
+        "sha256": "272535a0dd9efb1bd4b6d183dd1fe3b2d4dfc215454a57566fbc10a0dc267a35"
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 41227981,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261128/yunnan-yinxiang-parts-01.zip",
+        "count": 104,
+        "sha256": "af5907070a30959a2a1839799c2a8dfdf30836533f44afe7a94e8980fa96062f"
+      }
+    ],
+    "fullScores": []
+  },
+  {
+    "title": "古槐寻根",
+    "version": "2026-11-27 修订 C 终审版",
+    "slug": "guhuai-xungen",
+    "note": "修订 C 的独立内容与排版终审均通过。原谱连续166小节，最终版收紧中胡带提示分谱的分页。",
+    "combined": [
+      {
+        "label": "整曲分谱合订本",
+        "bytes": 10228859,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261128/guhuai-xungen-combined.pdf",
+        "pages": 333,
+        "sha256": "c85cd8ddd10cbfe6038a28f62bf63a26a7f0712e2a38d893a41264735d0536ba"
+      }
+    ],
+    "parts": [
+      {
+        "label": "独立分谱 ZIP · 第 1 包",
+        "bytes": 21918526,
+        "url": "https://github.com/Taitai2025/taitai2025.github.io/releases/download/minyue-jianpu-20261128/guhuai-xungen-parts-01.zip",
+        "count": 100,
+        "sha256": "b084441d1f09de44847db0b0c4f82106083994194fe8c638646c4ca78ca2a548"
       }
     ],
     "fullScores": []
