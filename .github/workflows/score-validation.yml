@@ -9,8 +9,14 @@ on:
       - 'scripts/test-arrange-*.mjs'
       - 'scripts/test-catalogue.py'
       - 'scripts/test-experience.mjs'
+      - 'scripts/test-part-pdf.mjs'
+      - 'scripts/*orchestra*'
+      - 'scripts/test-global-*'
+      - 'scripts/test-notation-*'
+      - 'scripts/test-score-*'
       - 'scripts/build-static.cjs'
       - 'package.json'
+      - 'package-lock.json'
       - 'index.html'
       - 'robots.txt'
       - 'sitemap.xml'
@@ -24,8 +30,14 @@ on:
       - 'scripts/test-arrange-*.mjs'
       - 'scripts/test-catalogue.py'
       - 'scripts/test-experience.mjs'
+      - 'scripts/test-part-pdf.mjs'
+      - 'scripts/*orchestra*'
+      - 'scripts/test-global-*'
+      - 'scripts/test-notation-*'
+      - 'scripts/test-score-*'
       - 'scripts/build-static.cjs'
       - 'package.json'
+      - 'package-lock.json'
       - 'index.html'
       - 'robots.txt'
       - 'sitemap.xml'
@@ -50,11 +62,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate committed pages and data
+      - name: Install pinned test dependencies
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Validate committed pages, music constraints and output equivalence
         run: npm run check:scores
+      - name: Check catalogue and orchestra interactions
+        run: npm run check:scores:ui
       - name: Confirm generated score pages are current
         run: |
           npm run build:scores
