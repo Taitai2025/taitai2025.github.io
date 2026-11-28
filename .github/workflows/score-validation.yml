@@ -1,0 +1,79 @@
+name: Validate score catalogue
+
+on:
+  pull_request:
+    paths:
+      - 'scores/**'
+      - 'scripts/*score*'
+      - 'scripts/score_experience.py'
+      - 'scripts/test-arrange-*.mjs'
+      - 'scripts/test-catalogue.py'
+      - 'scripts/test-experience.mjs'
+      - 'scripts/build-static.cjs'
+      - 'package.json'
+      - 'index.html'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - '.github/workflows/score-validation.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scores/**'
+      - 'scripts/*score*'
+      - 'scripts/score_experience.py'
+      - 'scripts/test-arrange-*.mjs'
+      - 'scripts/test-catalogue.py'
+      - 'scripts/test-experience.mjs'
+      - 'scripts/build-static.cjs'
+      - 'package.json'
+      - 'index.html'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - '.github/workflows/score-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: score-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate committed pages and data
+        run: npm run check:scores
+      - name: Confirm generated score pages are current
+        run: |
+          npm run build:scores
+          git diff --exit-code -- scores sitemap.xml
+          python3 - <<'PY'
+          import subprocess
+          result = subprocess.run(
+              ['git', 'ls-files', '--others', '--exclude-standard', '--', 'scores'],
+              check=True, text=True, capture_output=True,
+          )
+          if result.stdout.strip():
+              raise SystemExit('Generated files are missing from this commit:\n' + result.stdout)
+          PY
+      - name: Check score JavaScript syntax
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import subprocess
+          for path in sorted(Path('scores').rglob('*')):
+              if path.suffix in {'.js', '.mjs'}:
+                  subprocess.run(['node', '--check', str(path)], check=True)
+          PY
