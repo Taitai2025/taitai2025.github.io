@@ -65,3 +65,4 @@
 - [四点延迟 Ritz 的有限谱宽与长驻留共同极限](./ritz-finite-width-residence/)
 - [严格凸二次函数上 BB1 与 GLL 的反复回溯](./gll-bb1-persistent-backtracking/)
 - [满秩双割线谱梯度法的持续 GLL 回溯](./gll-two-secant-persistent-backtracking/)
+- [两点谱上五步 BB 切换的首次失效界](./two-point-bb-five-word-boundary/)

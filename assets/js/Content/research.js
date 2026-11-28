@@ -848,6 +848,22 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.29",
       "pages": 4,
       "archive": true
+    },
+    {
+      "id": "two-point-bb-five-word-boundary",
+      "zh": "两点谱上五步 BB 切换的首次失效界",
+      "en": "Bounds on the first loss of optimality of the five-step BB schedule on two-point spectra",
+      "groupZh": "谱梯度与周期切换",
+      "groupEn": "Spectral gradients and periodic switching",
+      "related": [
+        "two-point-bb-optimal-selector",
+        "alternating-bb-four-phase-sharp-bound",
+        "large-spectrum-bb-switching"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.29",
+      "pages": 10,
+      "archive": true
     }
   ],
   "papers": [
