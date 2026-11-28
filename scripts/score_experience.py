@@ -1,5 +1,6 @@
 """Public-facing catalogue experience. All data passed here is already public."""
 from html import escape
+from hashlib import sha256
 import json
 import re
 from urllib.parse import urlencode
@@ -94,6 +95,13 @@ def build_experience(api, works, opens, sources):
     <section class="shell"><div class="cooperation-panel"><div><p class="eyebrow">把一次排练，变成下一版的进步</p><h2>一起把谱库做得更好</h2><p>记录小节、声部与版本，分享可复现的校谱问题；也欢迎原创编配与高校试用合作。</p></div><div class="actions">{link('/scores/tools/cooperation/', '准备反馈与合作资料', 'button primary')}{link('/scores/guides/rehearsal/', '查看排练指南', 'button')}</div></div></section>'''
     api.output('/scores/', '高校民乐简谱与民族管弦乐总谱', '国乐谱汇：高校民族乐团简谱、总谱与分谱资源。按曲名、乐器和编制查找固定调与首调版本，比较选曲，使用 MusicXML 编配和排练工具。', home,
                script='/scores/legacy-links.js', schema={'@context':'https://schema.org','@type':'WebSite','name':'国乐谱汇','url':api.BASE+'/scores/'})
+    # Refresh cached homepage styles whenever their content changes.
+    home_path = api.SCORES / 'index.html'
+    css_version = sha256((api.SCORES / 'experience.css').read_bytes()).hexdigest()[:12]
+    home_path.write_text(home_path.read_text(encoding='utf-8').replace(
+        'href="/scores/experience.css"',
+        f'href="/scores/experience.css?v={css_version}"', 1,
+    ), encoding='utf-8')
 
     planner = api.hero('选曲与排练', '我的选曲单', '把候选曲目放在一起，比较谱式与编制，再整理曲序和排练备注。')
     planner += '''<section class="shell planner-shell" id="programme-app"><noscript><p class="callout">选曲单使用浏览器本地保存，需要启用 JavaScript。曲目详情和下载入口仍可直接访问。</p></noscript>
