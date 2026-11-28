@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "orchestras": [
+    {
+      "slug": "ustc-nmou",
+      "name": "中国科学技术大学学生民族乐团",
+      "shortName": "NMOU",
+      "nickname": "小乐",
+      "englishName": "Nationalities Music Orchestra of USTC",
+      "university": "中国科学技术大学",
+      "country": "中国",
+      "countryCode": "CN",
+      "city": "合肥",
+      "province": "安徽",
+      "founded": "2002-12",
+      "foundedLabel": "2002 年 12 月",
+      "aliases": ["中科大", "中国科大", "科大民乐", "中科大民乐团", "中国科大民乐团", "USTC", "NMOU", "小乐", "Chinese orchestra", "University of Science and Technology of China"],
+      "summary": "从排练室到音乐厅，来自不同院系的科大学子因民族音乐相聚。五大声部共同奏响校园里的中国声音，也让零基础的同学有机会走近民族乐器。",
+      "intro": [
+        "2002 年 12 月，中国科学技术大学学生民族乐团诞生。它的英文名称是 Nationalities Music Orchestra of USTC，简称 NMOU，团员们也亲切地称它为“小乐”。",
+        "本科生、硕士生与博士生从全校不同院系来到这里，把对中国传统民族音乐的热爱带进共同的排练与演出。推广民族音乐、营造校园古典音乐氛围，是这支学生乐团一路延续的心愿。",
+        "吹管、拉弦、弹拨、打击与低音构成乐团的五大声部。这里既有全团合作的舞台，也有独奏、小合奏、器乐教学与幕后制作的位置，让不同的音乐经验都能找到参与的方式。"
+      ],
+      "sections": [
+        {"name": "吹管", "line": "气息与旋律"},
+        {"name": "拉弦", "line": "弓弦与歌唱"},
+        {"name": "弹拨", "line": "指尖与回响"},
+        {"name": "打击", "line": "节奏与色彩"},
+        {"name": "低音", "line": "合奏的根基"}
+      ],
+      "life": [
+        {"title": "在排练室，学会听见彼此", "label": "排练与成长", "copy": "每周全团排练，配合各声部的小排与独奏教学，从自己的旋律走向整支乐团的呼吸。年度专场之外，金秋十一月前后的独奏与小合奏音乐会，也给更小的编制留下舞台。"},
+        {"title": "从第一声开始，走近民族乐器", "label": "中华音韵", "copy": "“中华音韵”美育课程由乐团演奏员授课，为零基础同学提供民族器乐的系统教学。教学、练习与交流，让学习乐器成为可以迈出的第一步。"},
+        {"title": "在舞台之外，也成为同伴", "label": "校园日常", "copy": "桌游、聚餐、大蜀山徒步与集体复习，连接起排练以外的大学生活。宣传团队用视频、音频、海报与文创记录乐团，让台前与幕后的热爱都被看见。"}
+      ],
+      "timeline": [
+        {"date": "2002.12", "title": "小乐诞生", "copy": "中国科学技术大学学生民族乐团成立。", "source": "article"},
+        {"date": "2003 · 中秋", "title": "民乐千里寄相思", "copy": "举办首场专场音乐会，把民族音乐带到校园舞台。", "source": "article"},
+        {"date": "2023", "title": "二十周年的回声", "copy": "“岁影辰辉”二十周年专场与“贺廿迎春”纪念演出，留下团员共同的音乐记忆。", "source": "anniversary"},
+        {"date": "2025", "title": "从夏日专场到金秋独奏", "copy": "夏季专场在东区大礼堂举行，秋季独奏音乐会走进西区大礼堂。", "source": "article"}
+      ],
+      "hero": {
+        "src": "/assets/images/music/qingfeng-2025-curtain-call.webp",
+        "alt": "青风抚乐专场结束后，NMOU 团员持乐器在舞台上合影",
+        "caption": "“青风抚乐”专场 · 谢幕合影",
+        "dateLabel": "2025.06.15",
+        "width": 1600,
+        "height": 1067,
+        "sourceUrl": "/#activity-nmou-2025-qingfeng"
+      },
+      "cover": {
+        "src": "/assets/images/music/nmou-orchestra-concert.webp",
+        "alt": "NMOU 民族管弦乐团在舞台上演奏，指挥面对各乐器声部",
+        "caption": "NMOU 民族管弦乐演出",
+        "dateLabel": "原图未标注日期",
+        "width": 1269,
+        "height": 846,
+        "sourceUrl": "/#resume"
+      },
+      "gallery": [
+        {"src": "/assets/images/music/qingfeng-2025-curtain-call.webp", "alt": "青风抚乐专场结束后，NMOU 团员持乐器在舞台上合影", "caption": "“青风抚乐”专场 · 谢幕合影", "dateLabel": "2025.06.15", "width": 1600, "height": 1067, "sourceUrl": "/#activity-nmou-2025-qingfeng"},
+        {"src": "/assets/images/music/weekly-rehearsal-spring-ensemble.webp", "alt": "排练室中，扬琴与笙等声部的团员跟随指挥合奏", "caption": "扬琴与笙声部的合奏排练", "dateLabel": "2025 春季学期", "width": 1268, "height": 951, "sourceUrl": "/#activity-nmou-winds-2025-spring"},
+        {"src": "/assets/images/music/dizi-class-spring-2025.webp", "alt": "同学们在教室中持竹笛练习，有人示范，有人跟奏", "caption": "竹笛基础与进阶教学", "dateLabel": "2025 春季学期", "width": 1268, "height": 666, "sourceUrl": "/#activity-nmou-teaching-2024-2026"},
+        {"src": "/assets/images/music/sufeng-music-experience.webp", "alt": "溯风传统文化月的校园摊位前，同学们体验竹笛、琵琶等民族乐器", "caption": "溯风传统文化月 · 民族乐器体验", "dateLabel": "2025.03.30", "width": 1600, "height": 1200, "sourceUrl": "/#activity-nmou-2025-sufeng"},
+        {"src": "/assets/images/music/members-meeting-autumn-2025.webp", "alt": "NMOU 团员在排练室参加秋季学期全员大会后合影", "caption": "秋季学期全员大会合影", "dateLabel": "2025 秋季学期", "width": 1440, "height": 1080, "sourceUrl": "/#activity-nmou-2025-autumn-meeting"},
+        {"src": "/assets/images/music/nmou-orchestra-concert.webp", "alt": "NMOU 民族管弦乐团在舞台上演奏，指挥面对各乐器声部", "caption": "NMOU 民族管弦乐演出", "dateLabel": "原图未标注日期", "width": 1269, "height": 846, "sourceUrl": "/#resume"}
+      ],
+      "videos": [
+        {"year": 2025, "title": "独奏音乐会", "kind": "独奏与小合奏", "url": "https://www.bilibili.com/video/BV1QGrkBzEH7/"},
+        {"year": 2025, "title": "青风抚乐", "kind": "专场音乐会", "url": "https://www.bilibili.com/video/BV1eYgBz6EZa/"},
+        {"year": 2024, "title": "浮梦沉音", "kind": "专场音乐会", "url": "https://www.bilibili.com/video/BV1ST42167FL/"},
+        {"year": 2023, "title": "岁影辰辉", "kind": "二十周年专场", "url": "https://www.bilibili.com/video/BV1P8411Q7aQ/"},
+        {"year": 2023, "title": "贺廿迎春", "kind": "二十周年纪念演出", "url": "https://www.bilibili.com/video/BV1fL411Y7Fx/"},
+        {"year": 2023, "title": "独奏音乐会", "kind": "独奏与小合奏", "url": "https://www.bilibili.com/video/BV1bZ421z75e/"},
+        {"year": 2022, "title": "专场音乐会", "kind": "专场音乐会", "url": "https://www.bilibili.com/video/BV1xB4y177cx/"},
+        {"year": 2021, "title": "独奏音乐会", "kind": "独奏与小合奏", "url": "https://www.bilibili.com/video/BV133411t7r7/"},
+        {"year": 2021, "title": "玄黄律", "kind": "音乐会回看", "url": "https://www.bilibili.com/video/BV1Qo4y1X7uf/"},
+        {"year": 2021, "title": "ACG 音乐会", "kind": "ACG 主题", "url": "https://www.bilibili.com/video/BV1Yh411a7s9/"},
+        {"year": 2021, "title": "时之砂", "kind": "音乐会回看", "url": "https://www.bilibili.com/video/BV1sV411E7hk/"},
+        {"year": 2021, "title": "和鸣", "kind": "音乐会回看", "url": "https://www.bilibili.com/video/BV1kK4y157Yu/"}
+      ],
+      "sources": {
+        "article": {"url": "https://mp.weixin.qq.com/s/nQa5HAllEHAMS0UdmtmK8g", "label": "乐团介绍原文（微信公众号）", "editor": "杨书泰", "publicationDate": null},
+        "officialBilibili": {"url": "https://space.bilibili.com/64643274", "label": "NMOU 官方 B 站"},
+        "imageArchive": {"url": "/#resume", "label": "个人主页中的乐团活动记录"},
+        "note": "正文依据乐团介绍原稿整理，原稿编辑为杨书泰；演出链接由资料提供者整理。原文发布日期尚未确认，其中“70 余位正式演奏员”“23 届专场音乐会”均为原文时点的记录，不代表当前人数或累计届数。图片沿用本站个人主页已公开的活动记录，图注与日期按原有记录整理。",
+        "outlook": "乐团以“传承经典、创新未来”为方向，在校学生社团管理指导委员会指导下持续开展活动。招新、排练时间与当前组织信息，请以乐团官方渠道的最新发布为准。"
+      }
+    }
+  ]
+}

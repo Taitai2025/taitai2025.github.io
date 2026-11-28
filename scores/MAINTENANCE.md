@@ -13,6 +13,7 @@
 | 具体开放谱本与官方资源入口 | `scores/data/sources.json` | 免费谱库与总谱导航 |
 | 公共页面模板 | `scripts/build-score-site.py`、`scripts/score_experience.py` | 静态 HTML、公开检索索引和地图 |
 | 整曲、分段试配 | `scores/tools/arrange/` | 浏览器内 MusicXML/MXL 导入、席位与换页分析 |
+| 高校乐团风采 | `scores/orchestras/data.json`、`scripts/orchestra_showcase.py` | 乐团目录、带出处的介绍与图集；增加资料前核对来源与展示授权 |
 | 独立检查 | `scripts/verify-score-site.py`、`scripts/check-score-discovery.py`、`scripts/test-score-turn-scope.mjs` | 离线一致性及可选上线检查 |
 
 不要只改生成的曲目 HTML；下次构建会覆盖。新增文件索引不等于音乐内容已校勘。声部索引来自实际文件名，不能据此推断每个乐章的到场人数或确认可兼奏。

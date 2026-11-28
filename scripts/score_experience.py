@@ -88,6 +88,9 @@ def build_experience(api, works, opens, sources):
         <a href="/scores/open/"><span class="resource-monogram">典</span><div><h3>开放与历史谱本</h3><p>按原站许可和具体谱种取用</p></div></a>
       </div>
     </section>
+    <section class="shell home-section"><div class="section-heading"><div><p class="eyebrow">认识演奏这些作品的人</p><h2>校园里，民乐正在发生</h2></div>{link('/scores/orchestras/', '高校乐团风采', 'text-link')}</div>
+      <article class="orchestra-home-feature"><a class="orchestra-home-image" href="/scores/orchestras/ustc-nmou/"><img src="/assets/images/music/qingfeng-2025-curtain-call.webp" width="1600" height="1067" loading="lazy" decoding="async" alt="中国科大学生民族乐团在2025年青风抚乐专场音乐会谢幕合影"></a><div><p class="eyebrow">中国 · 合肥 · USTC</p><h3>中国科大学生民族乐团</h3><p class="orchestra-home-name">NMOU · 小乐</p><p>从每周的排练，到走上专场音乐会的舞台。认识这支创立于 2002 年的学生民族乐团，看看属于他们的音乐与青春。</p><div class="actions">{link('/scores/orchestras/ustc-nmou/', '走进 NMOU', 'button primary')}{link('/scores/orchestras/', '浏览乐团风采', 'text-link')}</div></div></article>
+    </section>
     <section class="shell"><div class="cooperation-panel"><div><p class="eyebrow">把一次排练，变成下一版的进步</p><h2>一起把谱库做得更好</h2><p>记录小节、声部与版本，分享可复现的校谱问题；也欢迎原创编配与高校试用合作。</p></div><div class="actions">{link('/scores/tools/cooperation/', '准备反馈与合作资料', 'button primary')}{link('/scores/guides/rehearsal/', '查看排练指南', 'button')}</div></div></section>'''
     api.output('/scores/', '高校民乐简谱与民族管弦乐总谱', '国乐谱汇：高校民族乐团简谱、总谱与分谱资源。按曲名、乐器和编制查找固定调与首调版本，比较选曲，使用 MusicXML 编配和排练工具。', home,
                script='/scores/legacy-links.js', schema={'@context':'https://schema.org','@type':'WebSite','name':'国乐谱汇','url':api.BASE+'/scores/'})
