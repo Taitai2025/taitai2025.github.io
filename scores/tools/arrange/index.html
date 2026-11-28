@@ -9,35 +9,35 @@
   <link rel="stylesheet" href="/scores/style.css">
   <link rel="stylesheet" href="./arrange.css">
   <script type="module" src="./app.mjs"></script>
+<link rel="stylesheet" href="/scores/experience.css">
+<script src="/scores/experience.js" defer></script>
+<link rel="icon" type="image/svg+xml" href="/scores/mark.svg">
 </head>
 <body>
 <a class="skip" href="#main">跳至正文</a>
-<header class="site-header"><div class="frame">
-  <a class="brand" href="/scores/"><span class="seal" aria-hidden="true">谱</span>国乐谱汇</a>
-  <nav class="nav" aria-label="主导航">
-    <a href="/scores/">谱库</a><a href="/scores/open/">开放谱本</a><a href="/scores/sources/">谱源导航</a>
-    <a href="/scores/guides/">排练指南</a><a href="/scores/tools/" aria-current="true">编制工具</a><a href="/scores/archive/">口令资料</a>
-  </nav>
-</div></header>
+<header class="site-header"><div class="frame"><a class="brand" href="/scores/"><span class="brand-seal" aria-hidden="true">谱</span><span>国乐谱汇</span></a><nav class="nav" aria-label="主导航"><a href="/scores/">首页</a><a href="/scores/library/">专业谱库</a><a href="/scores/open/">免费谱库</a><a href="/scores/arrangements/">编配案例</a><a href="/scores/sources/">总谱导航</a><a href="/scores/guides/">排练指南</a><a href="/scores/tools/">编制工具</a></nav><a class="header-action" href="/scores/planner/">我的选曲单</a></div></header>
 <section class="hero">
   <div class="shell">
     <p class="eyebrow"><a href="/scores/tools/">编制工具</a></p>
     <h1>自适应编配工作台</h1>
     <p>录入乐团到场乐器，检测原谱各声部的实音音域、谱表与最大同时发声数。系统优先匹配必保留声部，再在可用席位中选择整体代价较低的方案。</p>
-    <p>支持未压缩的 <strong>MusicXML 按声部总谱</strong>。乐谱在浏览器内处理，导出文件保存到你的设备。</p>
+    <p>支持 <strong>MusicXML 按声部总谱</strong>和压缩 MXL。乐谱在浏览器内处理，导出文件保存到你的设备。</p>
+    <p class="actions"><a class="button" href="./sections/">按段落分工，核对各席位分页</a></p>
   </div>
 </section>
 <main id="main" class="shell stack">
+  <noscript><p class="callout">启用 JavaScript 后可读取总谱、恢复项目和计算编制匹配。</p></noscript>
   <section class="card stack" aria-labelledby="source-heading">
     <div>
       <h2 id="source-heading">原谱与声部优先级</h2>
       <p class="muted">优先级可按旋律、和声与低音骨架设置。只有确认可暂时不分配的声部才选「可选」。</p>
     </div>
     <div class="actions score-input">
-      <label class="field" for="source-file"><span>选择 .musicxml 或 .xml 文件</span><input id="source-file" type="file" accept=".musicxml,.xml,application/vnd.recordare.musicxml+xml,text/xml"></label>
+      <label class="field" for="source-file"><span>选择 .musicxml、.mxl 或 .xml 文件</span><input id="source-file" type="file" accept=".musicxml,.mxl,.xml,application/vnd.recordare.musicxml+xml,application/vnd.recordare.musicxml,text/xml"></label>
       <button id="demo" class="button" type="button">载入三声部演示</button>
     </div>
     <p id="source-status" class="meta" role="status">等待选择原谱。</p>
+    <p id="score-identity" class="score-identity meta"></p>
     <div id="source-table-wrap" class="table-wrap" hidden>
       <table class="arrange-table">
         <caption id="source-caption" class="visually-hidden">源谱声部分析</caption>
@@ -46,10 +46,22 @@
       </table>
     </div>
   </section>
+  <section class="card stack project-panel" aria-labelledby="project-heading">
+    <div>
+      <h2 id="project-heading">保存与继续编配</h2>
+      <p class="muted">项目设置记录席位、音域、声部作用与优先级。下次导入设置，再打开同一份原谱，即可继续。项目文件不包含乐谱音符。</p>
+    </div>
+    <div class="actions project-actions">
+      <button id="save-project" class="button" type="button" disabled>下载项目设置</button>
+      <label class="field" for="load-project"><span>导入整曲项目 JSON</span><input id="load-project" type="file" accept=".json,application/json" aria-describedby="project-status"></label>
+      <button id="cancel-project" class="button" type="button" hidden>取消等待恢复</button>
+    </div>
+    <p id="project-status" class="meta" role="status">先载入原谱，或先导入之前下载的项目设置。</p>
+  </section>
   <section class="card stack" aria-labelledby="target-heading">
     <div>
       <h2 id="target-heading">可用席位</h2>
-      <p class="muted">同一乐器有两位独立演奏员时，可以添加两个席位。音域用实音填写，支持 C4、B♭3 或 MIDI 数字。请按乐器型号、定调与演奏员水平调整默认范围。</p>
+      <p class="muted">同一乐器有两位独立演奏员时，可以添加两个席位。席位编号在项目内保持不变。音域用实音填写，支持 C4、B♭3 或 MIDI 数字。请按乐器型号、定调与演奏员水平调整默认范围。</p>
     </div>
     <div class="actions" id="preset-actions">
       <button id="preset-mixed" class="button" type="button">中西室内合奏</button>
@@ -75,7 +87,7 @@
       </table></div>
       <div class="exports">
         <button class="button" id="export-csv" type="button">下载 CSV 校勘表</button>
-        <button class="button" id="export-json" type="button">下载 JSON 配置与方案</button>
+        <button class="button" id="export-json" type="button">下载 JSON 结果报告</button>
         <button class="button primary" id="export-xml" type="button">下载 MusicXML 草稿</button>
       </div>
       <p id="export-status" class="meta" role="status"></p>

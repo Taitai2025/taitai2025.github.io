@@ -79,6 +79,7 @@
   margin-block: .35rem;
 }
 .guide-table {
+  max-inline-size: 100%;
   overflow-x: auto;
   border: 1px solid var(--line, #ded8cd);
   border-radius: .6rem;
@@ -112,13 +113,12 @@
 }
 @media (max-width: 49rem) {
   .guide-layout {
-    display: flex;
-    flex-direction: column-reverse;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.15rem;
   }
   .guide-aside {
+    grid-row: 1;
     position: static;
-    width: 100%;
   }
   .guide-aside ul {
     display: flex;
@@ -127,5 +127,48 @@
   }
   .guide-aside li + li {
     margin-block-start: 0;
+  }
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 15mm;
+  }
+  :root {
+    background: white;
+  }
+  .guides-page .site-header,
+  .guides-page .guide-aside,
+  .guides-page .guide-utility,
+  .guides-page .guide-actions {
+    display: none;
+  }
+  .guides-page main.shell {
+    width: 100%;
+    padding: 0;
+  }
+  .guides-page .guide-layout {
+    display: block;
+  }
+  .guides-page .guide-hero {
+    padding: 0 0 .7rem;
+    background: none;
+  }
+  .guides-page h1 {
+    font-size: 24pt;
+  }
+  .guides-page h2,
+  .guides-page h3 {
+    break-after: avoid;
+  }
+  .guide-table {
+    overflow: visible;
+  }
+  .guide-table table {
+    min-width: 0;
+  }
+  .guide-table tr,
+  .guide-grid > .card {
+    break-inside: avoid;
   }
 }

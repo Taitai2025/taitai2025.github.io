@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>分段编配与换页检查｜国乐谱汇</title>
+  <meta name="description" content="按 MusicXML 小节安排民乐排练的声部和实际席位，检查缺席、延音、兼奏和翻页。支持排练分工 CSV、JSON 与打印。">
+  <link rel="canonical" href="https://taitai2025.github.io/scores/tools/arrange/sections/">
+  <link rel="stylesheet" href="/scores/style.css">
+  <link rel="stylesheet" href="./sections.css">
+  <script type="module" src="./app.mjs"></script>
+<link rel="stylesheet" href="/scores/experience.css">
+<script src="/scores/experience.js" defer></script>
+<link rel="icon" type="image/svg+xml" href="/scores/mark.svg">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="site-header"><div class="frame"><a class="brand" href="/scores/"><span class="brand-seal" aria-hidden="true">谱</span><span>国乐谱汇</span></a><nav class="nav" aria-label="主导航"><a href="/scores/">首页</a><a href="/scores/library/">专业谱库</a><a href="/scores/open/">免费谱库</a><a href="/scores/arrangements/">编配案例</a><a href="/scores/sources/">总谱导航</a><a href="/scores/guides/">排练指南</a><a href="/scores/tools/">编制工具</a></nav><a class="header-action" href="/scores/planner/">我的选曲单</a></div></header>
+<section class="hero"><div class="frame">
+  <p class="eyebrow">排练工具</p>
+  <h1>分段编配与换页检查</h1>
+  <p>用实际到场的演奏员安排声部，检查同一人能否兼奏、延音能否接续、哪里有时间翻页。总谱在当前浏览器内处理。</p>
+</div></section>
+<main id="main" class="shell stack">
+  <noscript><p class="callout">启用 JavaScript 后可读取总谱和计算排练方案。</p></noscript>
+  <section class="card stack setup" aria-labelledby="score-heading">
+    <h2 id="score-heading">原谱与分段</h2>
+    <div class="actions segment-input">
+      <label class="field">选择 MusicXML 按声部总谱<input id="load-score" type="file" accept=".musicxml,.mxl,.xml,application/vnd.recordare.musicxml+xml,application/vnd.recordare.musicxml,text/xml"></label>
+      <button id="load-demo" class="button" type="button">载入八小节示例</button>
+    </div>
+    <p id="score-status" role="status" class="meta">支持 .musicxml、.mxl 和 .xml。</p>
+    <div id="loaded-score" class="stack" hidden>
+      <div class="segment-fields">
+        <label class="field">各段开始的小节顺序<input id="segment-starts" type="text" value="1" placeholder="如 1, 9, 17" maxlength="350" aria-describedby="segment-help"></label>
+        <button id="use-rehearsals" class="button" type="button">采用谱中排练标记</button>
+      </div>
+      <p class="meta" id="segment-help">按文件里的小节位置填写，从 1 开始。多个小节用逗号分隔。结果会同时显示原谱编号。</p>
+      <details><summary>设定声部功能和优先级</summary><p class="meta">只有已经确认可以留空的声部才标成可选。</p><div id="part-settings"></div></details>
+    </div>
+  </section>
+  <section class="card stack setup" aria-labelledby="roster-heading">
+    <h2 id="roster-heading">到场与兼奏</h2>
+    <p class="meta">每行代表一位演奏员。先载入总谱，再填缺席范围和该席位的实际分页。兼奏栏只选本人能演奏的乐器。</p>
+    <div class="actions"><button id="add-player" class="button" type="button">添加演奏员</button><button id="save-config" class="button" type="button">下载设置</button></div>
+    <label class="field config-upload">导入本工具的设置 JSON<input id="load-config" type="file" accept=".json,application/json"></label>
+    <p id="roster-status" role="status" class="meta"></p>
+    <div id="player-settings" class="stack"></div>
+  </section>
+  <section class="card stack setup" aria-labelledby="turn-heading">
+    <h2 id="turn-heading">换乐器与翻页</h2>
+    <div class="segment-fields">
+      <label class="field">换乐器需要几拍<input id="switch-beats" type="number" min="0" max="64" step="0.5" value="2"></label>
+      <label class="field">翻页需要几秒<input id="turn-seconds" type="number" min="0.5" max="60" step="0.5" value="3"></label>
+      <label class="field">默认分页的小节顺序<input id="page-starts" type="text" placeholder="如 17, 33" maxlength="350" aria-describedby="page-help"></label>
+      <label class="field">确认的恒定速度（四分音符／分钟）<input id="turn-tempo" type="number" min="20" max="400" step="1" placeholder="可留空"></label>
+    </div>
+    <label class="checkline"><input id="page-hints" type="checkbox"> 未指定分页的席位查看原谱提示</label>
+    <p class="meta" id="page-help">填写打印谱每张新页的起始小节。已填实际分页的席位按自己的分页核对，其余席位使用这里的默认值。速度留空时只显示拍数。原谱分页提示需要对照打印版。</p>
+  </section>
+  <section class="card stack" id="rehearsal-result" aria-labelledby="result-heading">
+    <div class="actions result-heading"><h2 id="result-heading">排练分工</h2><button id="run-plan" class="button primary" type="button" disabled>计算分段方案</button></div>
+    <p id="plan-status" role="status" class="meta">载入总谱并添加演奏员后即可计算。</p>
+    <div id="plan-result" class="stack" hidden>
+      <p id="plan-identity" class="plan-identity"></p>
+      <p class="meta">分工按书面小节顺序生成。翻页与兼奏安排须结合实际打印谱和排练速度核对。</p>
+      <div class="actions hide-print">
+        <button id="export-csv" class="button" type="button">下载 CSV 分工表</button>
+        <button id="export-json" class="button" type="button">下载 JSON 方案</button>
+        <button id="print-plan" class="button" type="button">打印分工</button>
+        <button id="compare-plans" class="button" type="button">比较跨段可选层取舍</button>
+        <label class="checkline"><input id="issue-only" type="checkbox"> 只看缺口与待核</label>
+      </div>
+      <section id="comparison-result" class="comparison-panel stack" aria-labelledby="comparison-heading" hidden>
+        <h3 id="comparison-heading">跨段取舍比较</h3>
+        <p id="comparison-status" class="meta" role="status"></p>
+        <div id="comparison-summary"></div>
+        <p id="comparison-notes" class="meta"></p>
+        <div class="actions hide-print"><button id="apply-comparison" class="button" type="button" hidden>采用比较候选</button><button id="restore-baseline" class="button" type="button" hidden>恢复逐段基线</button></div>
+      </section>
+      <div id="section-results" class="stack"></div>
+      <div id="turn-results" class="stack"></div>
+      <details class="hide-print"><summary>如何核对方案</summary><ul id="plan-limitations"></ul></details>
+    </div>
+  </section>
+  <p class="hide-print"><a href="/scores/tools/arrange/">整曲试配与 MusicXML 草稿</a> · <a href="/scores/tools/rehearsal/">排练验收清单</a></p>
+</main>
+<footer class="site-footer"><div class="frame"><span>国乐谱汇</span><a href="/scores/tools/cooperation/">校谱与编制反馈</a></div></footer>
+</body>
+</html>

@@ -22,3 +22,11 @@
 @media print{.site-header,.site-footer,.hero,.button,input,select,.score-input{display:none!important}.shell{width:100%}.card{break-inside:avoid;padding:.5rem}.arrange-table{min-width:0}}
 .score-input .field,#source-file{min-width:0;max-width:100%}
 #source-file{width:100%}
+.project-actions{align-items:end}
+.project-actions .field,.project-actions input{min-width:0;max-width:100%}
+.project-actions input{width:100%}
+.score-identity{overflow-wrap:anywhere;font-variant-numeric:tabular-nums;margin-top:-.35rem}
+.score-identity:empty{display:none}
+.project-panel [hidden]{display:none!important}
+@media(max-width:34rem){.project-actions .field,.project-actions>.button{width:100%}}
+@media print{.project-panel,.score-identity{display:none!important}}
