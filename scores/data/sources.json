@@ -919,7 +919,7 @@
       "accessDetail": "原机构查阅"
     },
     {
-      "title": "如愿",
+      "title": "如愿（曾叶发）",
       "composer": "曾叶发",
       "provider": "香港中乐团",
       "source": "https://www.hkco.org/sc/Others/Scores-Wish.html",
@@ -930,11 +930,11 @@
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
       "access": "原站下载",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "notes": "曾叶发为香港国际青年中乐节创作的委约作品。与王菲演唱的同名歌曲不同。官网提供教育与音乐推广用乐谱，使用条件以此版谱面说明为准。",
       "accessDetail": "原机构查阅"
     },
     {
-      "title": "如愿",
+      "title": "如愿（曾叶发）",
       "composer": "曾叶发",
       "provider": "香港中乐团",
       "source": "https://www.hkco.org/sc/Others/Scores-Wish2.html",
@@ -945,7 +945,7 @@
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
       "access": "原站下载",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "notes": "曾叶发为香港国际青年中乐节创作的委约作品。与王菲演唱的同名歌曲不同。官网提供教育与音乐推广用乐谱，使用条件以此版谱面说明为准。",
       "accessDetail": "原机构查阅"
     },
     {
@@ -1610,6 +1610,396 @@
       "access": "登记申请",
       "notes": "版权人授权教育、研究和推广；机构或团体按流程登记，乐团邮件发放。",
       "accessDetail": "原机构查阅"
+    },
+    {
+      "title": "柳摇金｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/liu-yao-jin",
+      "edition": "唱片复刻与当代演绎 · 3个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共3份总谱：1924年大中华唱片、1937年歌林唱片、竹韵小集2024演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《柳搖金》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 3,
+      "scoreVersions": [
+        {
+          "label": "1924年大中华唱片",
+          "pages": 10,
+          "scorePages": "3–10",
+          "source": "https://www.hkwindpipe.org/s/011924-Full-Scorev11.pdf"
+        },
+        {
+          "label": "1937年歌林唱片",
+          "pages": 17,
+          "scorePages": "3–17",
+          "source": "https://www.hkwindpipe.org/s/021937-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2024演奏版",
+          "pages": 17,
+          "scorePages": "3–17",
+          "source": "https://www.hkwindpipe.org/s/032024-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "连环扣｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/united-we-go",
+      "edition": "唱片复刻与当代演绎 · 3个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共3份总谱：1930年新月唱片、1936年百代唱片、竹韵小集2018演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《連環扣》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 3,
+      "scoreVersions": [
+        {
+          "label": "1930年新月唱片",
+          "pages": 7,
+          "scorePages": "3–7",
+          "source": "https://www.hkwindpipe.org/s/041930-Full-Scorev11.pdf"
+        },
+        {
+          "label": "1936年百代唱片",
+          "pages": 11,
+          "scorePages": "3–11",
+          "source": "https://www.hkwindpipe.org/s/051936-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2018演奏版",
+          "pages": 17,
+          "scorePages": "3–17",
+          "source": "https://www.hkwindpipe.org/s/062018-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "昭君怨｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/the-lament-of-lady-zhaojun",
+      "edition": "唱片复刻与当代演绎 · 2个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共2份总谱：1931年新月唱片、竹韵小集2018演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《昭君怨》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 2,
+      "scoreVersions": [
+        {
+          "label": "1931年新月唱片",
+          "pages": 15,
+          "scorePages": "3–15",
+          "source": "https://www.hkwindpipe.org/s/071931-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2018演奏版",
+          "pages": 17,
+          "scorePages": "3–17",
+          "source": "https://www.hkwindpipe.org/s/082018-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "赛龙夺锦｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/the-dragon-boat-race",
+      "edition": "唱片复刻与当代演绎 · 3个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共3份总谱：1932年百代唱片、1935年歌林唱片、竹韵小集2024演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《賽龍奪錦》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 3,
+      "scoreVersions": [
+        {
+          "label": "1932年百代唱片",
+          "pages": 9,
+          "scorePages": "3–9",
+          "source": "https://www.hkwindpipe.org/s/091932-Full-Scorev11.pdf"
+        },
+        {
+          "label": "1935年歌林唱片",
+          "pages": 12,
+          "scorePages": "3–12",
+          "source": "https://www.hkwindpipe.org/s/101935-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2024演奏版",
+          "pages": 14,
+          "scorePages": "3–14",
+          "source": "https://www.hkwindpipe.org/s/112024-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "孔雀开屏｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/the-peacock-in-its-full-glory",
+      "edition": "唱片复刻与当代演绎 · 3个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共3份总谱：1934年百代唱片、1936年歌林唱片、竹韵小集2024演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《孔雀開屏》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 3,
+      "scoreVersions": [
+        {
+          "label": "1934年百代唱片",
+          "pages": 9,
+          "scorePages": "3–9",
+          "source": "https://www.hkwindpipe.org/s/121934-Full-Scorev11.pdf"
+        },
+        {
+          "label": "1936年歌林唱片",
+          "pages": 8,
+          "scorePages": "3–8",
+          "source": "https://www.hkwindpipe.org/s/131936-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2024演奏版",
+          "pages": 11,
+          "scorePages": "3–11",
+          "source": "https://www.hkwindpipe.org/s/142024-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "倒垂帘｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/rolling-down-the-beaded-blind",
+      "edition": "唱片复刻与当代演绎 · 3个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共3份总谱：1935年新月唱片、1936年歌林唱片、竹韵小集2024演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《倒垂簾》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 3,
+      "scoreVersions": [
+        {
+          "label": "1935年新月唱片",
+          "pages": 6,
+          "scorePages": "3–6",
+          "source": "https://www.hkwindpipe.org/s/151935-Full-Scorev11.pdf"
+        },
+        {
+          "label": "1936年歌林唱片",
+          "pages": 7,
+          "scorePages": "3–7",
+          "source": "https://www.hkwindpipe.org/s/161936-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2024演奏版",
+          "pages": 6,
+          "scorePages": "3–6",
+          "source": "https://www.hkwindpipe.org/s/172024-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "步步高｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/stepping-high",
+      "edition": "唱片复刻与当代演绎 · 3个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共3份总谱：1936年百代唱片、1967年和声唱片、竹韵小集2024演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《步步高》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 3,
+      "scoreVersions": [
+        {
+          "label": "1936年百代唱片",
+          "pages": 8,
+          "scorePages": "3–8",
+          "source": "https://www.hkwindpipe.org/s/181936-Full-Scorev11.pdf"
+        },
+        {
+          "label": "1967年和声唱片",
+          "pages": 10,
+          "scorePages": "3–10",
+          "source": "https://www.hkwindpipe.org/s/191967-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2024演奏版",
+          "pages": 13,
+          "scorePages": "3–13",
+          "source": "https://www.hkwindpipe.org/s/202024-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "汉宫秋月｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/autumn-moon-in-the-han-palace",
+      "edition": "唱片复刻与当代演绎 · 3个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共3份总谱：1930年胜利唱片、1937年歌林唱片、竹韵小集2024演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《漢宮秋月》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 3,
+      "scoreVersions": [
+        {
+          "label": "1930年胜利唱片",
+          "pages": 5,
+          "scorePages": "3–5",
+          "source": "https://www.hkwindpipe.org/s/211930-Full-Scorev11.pdf"
+        },
+        {
+          "label": "1937年歌林唱片",
+          "pages": 8,
+          "scorePages": "3–8",
+          "source": "https://www.hkwindpipe.org/s/221937-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2024演奏版",
+          "pages": 14,
+          "scorePages": "3–14",
+          "source": "https://www.hkwindpipe.org/s/23-2024-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "双声恨｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/lovers-sorrow",
+      "edition": "唱片复刻与当代演绎 · 3个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共3份总谱：1931年歌林唱片、1935年歌林唱片、竹韵小集2018演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《雙聲恨》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 3,
+      "scoreVersions": [
+        {
+          "label": "1931年歌林唱片",
+          "pages": 9,
+          "scorePages": "3–9",
+          "source": "https://www.hkwindpipe.org/s/241931-Full-Scorev11.pdf"
+        },
+        {
+          "label": "1935年歌林唱片",
+          "pages": 10,
+          "scorePages": "3–10",
+          "source": "https://www.hkwindpipe.org/s/251935-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2018演奏版",
+          "pages": 15,
+          "scorePages": "3–15",
+          "source": "https://www.hkwindpipe.org/s/262018-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "雨打芭蕉｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/rain-lashing-on-the-plantain",
+      "edition": "唱片复刻与当代演绎 · 3个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共3份总谱：1935年歌林唱片、1951年歌林唱片、竹韵小集2018演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《雨打芭蕉》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 3,
+      "scoreVersions": [
+        {
+          "label": "1935年歌林唱片",
+          "pages": 11,
+          "scorePages": "3–11",
+          "source": "https://www.hkwindpipe.org/s/271935-Full-Scorev11.pdf"
+        },
+        {
+          "label": "1951年歌林唱片",
+          "pages": 8,
+          "scorePages": "3–8",
+          "source": "https://www.hkwindpipe.org/s/281951-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2018演奏版",
+          "pages": 10,
+          "scorePages": "3–10",
+          "source": "https://www.hkwindpipe.org/s/292018-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "平湖秋月｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/autumn-moon-over-a-placid-lake",
+      "edition": "唱片复刻与当代演绎 · 2个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共2份总谱：1946年香港和声歌林唱片、竹韵小集2018演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《平湖秋月》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 2,
+      "scoreVersions": [
+        {
+          "label": "1946年香港和声歌林唱片",
+          "pages": 6,
+          "scorePages": "3–6",
+          "source": "https://www.hkwindpipe.org/s/301946-Full-Scorev11.pdf"
+        },
+        {
+          "label": "竹韵小集2018演奏版",
+          "pages": 7,
+          "scorePages": "3–7",
+          "source": "https://www.hkwindpipe.org/s/312018-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
+    },
+    {
+      "title": "秋水龙吟｜竹韵小集《絃歌不绝》",
+      "provider": "竹韵小集",
+      "source": "https://www.hkwindpipe.org/dragons-roar-on-the-autumn-river",
+      "edition": "唱片复刻与当代演绎 · 2个总谱版本",
+      "category": "粤乐",
+      "access": "原站下载",
+      "accessDetail": "总谱原站下载；分谱登记申请",
+      "notes": "《絃歌不绝》项目，共2份总谱：年份待考；胜利唱片、竹韵小集2024演奏版。总谱在原站下载；分谱需填写原站表格。教育、研究、推广及演出鸣谢条件请见谱面，本站未确认再分发或商业使用授权。",
+      "details": "原站曲名《秋水龍吟》。各版本的编制、记谱者、原件页数和总谱正文范围分别登记；部分复刻版本为中西混编或独奏，请按实际谱面选用。",
+      "license": "原机构提供下载。用途依每份谱面说明；未确认本站再分发、商业改编或转售权限。",
+      "versionCount": 2,
+      "scoreVersions": [
+        {
+          "label": "年份待考；胜利唱片",
+          "pages": 6,
+          "scorePages": "3–6",
+          "source": "https://www.hkwindpipe.org/s/32-Full-Scorev12.pdf"
+        },
+        {
+          "label": "竹韵小集2024演奏版",
+          "pages": 8,
+          "scorePages": "3–8",
+          "source": "https://www.hkwindpipe.org/s/332024-Full-Scorev11.pdf"
+        }
+      ],
+      "checkedAt": "2026-11-29"
     },
     {
       "title": "新加坡华乐团南洋曲目租谱",

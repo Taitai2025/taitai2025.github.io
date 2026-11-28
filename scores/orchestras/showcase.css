@@ -63,6 +63,8 @@ section.orchestra-section{padding-block:4rem}
 .orchestra-monogram{padding:1rem 0 1rem 3rem;border-left:1px solid #d7c58c55;text-align:right;flex-shrink:0}
 .orchestra-monogram>span{font-family:Georgia,serif;font-size:clamp(2.2rem,4vw,3.8rem);letter-spacing:.08em;color:var(--orch-gold)}
 .orchestra-monogram p{color:#d2dfcf;font-family:var(--serif);font-size:1.1rem;letter-spacing:.24em;margin-top:.45rem}
+.orchestra-monogram-long>span{font-family:var(--serif);font-size:clamp(1.4rem,2.3vw,2.1rem);letter-spacing:.04em}
+.orchestra-monogram-long p{font-size:.85rem;letter-spacing:.06em}
 .orchestra-detail-lede{font-size:1.05rem;line-height:1.85;color:#d7e2d6;margin:1.5rem 0 1.3rem}
 .orchestra-detail-hero .button{color:#e9efdf;background:transparent;border-color:#8cac9b;font-size:.9rem}
 .orchestra-detail-hero .button:hover{background:#2c5446;border-color:#c9d9c6}
@@ -78,7 +80,7 @@ section.orchestra-section{padding-block:4rem}
 .orchestra-story-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr);gap:4.7rem}
 .orchestra-story-copy h2{font-size:clamp(1.8rem,3.4vw,2.7rem);line-height:1.45;margin-bottom:1.6rem}
 .orchestra-story-copy>p:not(.eyebrow){line-height:1.95;font-size:.97rem;color:#476357;margin-bottom:1.15rem}
-.orchestra-voices{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;padding:1.2rem 0 0;margin:1.5rem 0 0;border-top:1px solid var(--line);gap:.5rem}
+.orchestra-voices{display:grid;grid-template-columns:repeat(var(--voice-count,5),minmax(0,1fr));list-style:none;padding:1.2rem 0 0;margin:1.5rem 0 0;border-top:1px solid var(--line);gap:.5rem}
 .orchestra-voices li{display:flex;flex-direction:column;gap:.4rem}
 .orchestra-voices strong{font-family:var(--serif);font-size:1.2rem;font-weight:650;color:var(--pine)}
 .orchestra-voices span{font-size:.7rem;color:var(--muted)}
@@ -99,6 +101,27 @@ section.orchestra-section{padding-block:4rem}
 .orchestra-life-grid .eyebrow{font-size:.75rem;color:#6c826d;margin-bottom:.5rem}
 .orchestra-life-grid h3{font-size:1.2rem;line-height:1.5;font-family:var(--serif);font-weight:650;margin-bottom:.8rem}
 .orchestra-life-grid p:not(.eyebrow){font-size:.9rem;line-height:1.9;color:var(--muted)}
+.orchestra-yearbook{border-top:1px solid var(--line)}
+.orchestra-yearbook-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.orchestra-yearbook-card{display:flex;flex-direction:column;align-items:flex-start;padding:1.5rem 1.65rem;background:#fff;border:1px solid var(--line);border-radius:.65rem;min-width:0}
+.orchestra-yearbook-card .orchestra-record-date{font-size:.875rem;color:#56705d;letter-spacing:.025em;margin:0 0 .8rem}
+.orchestra-yearbook-card h3,.orchestra-honor h3,.orchestra-reading h3{font-family:var(--serif);font-size:1.3rem;line-height:1.55;margin:0 0 .8rem}
+.orchestra-yearbook-card>p:not(.orchestra-record-date),.orchestra-honor>p:not(.eyebrow),.orchestra-reading>p{font-size:1rem;line-height:1.9;color:var(--muted);margin:0 0 1rem}
+.orchestra-record-source{font-size:.875rem;line-height:1.7;text-underline-offset:.2em;color:var(--pine)}
+.orchestra-yearbook-card .orchestra-record-source{margin-top:auto;padding-top:.3rem}
+.orchestra-archive-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:2rem;margin-top:2rem;align-items:start}
+.orchestra-honor{background:#edf2eb;border-left:3px solid #8ca88d;border-radius:0 .65rem .65rem 0;padding:1.7rem 1.8rem}
+.orchestra-honor .eyebrow{font-size:.875rem;color:#526e58}
+.orchestra-reading{padding:1rem 0}
+.orchestra-reading ul{list-style:none;padding:0;margin:0}
+.orchestra-reading li+li{margin-top:.8rem}
+.orchestra-reading li a{display:block;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:.5rem;color:var(--ink);text-decoration:none;background:#fff}
+.orchestra-reading li a:hover{border-color:#91b09c;background:#f0f5ef}
+.orchestra-reading strong,.orchestra-reading span,.orchestra-reading small{display:block}
+.orchestra-reading strong{font-size:1rem;line-height:1.6;margin-bottom:.5rem}
+.orchestra-reading span{font-size:.95rem;color:var(--muted);line-height:1.8}
+.orchestra-reading small{font-size:.875rem;color:#56705d;margin-top:.5rem}
+.orchestra-contribute .orchestra-fine a{color:inherit;text-underline-offset:.2em;overflow-wrap:anywhere}
 .orchestra-gallery-section{background:#eaf1eb;padding-block:3.8rem}
 .orchestra-gallery-track{display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#99b19f #dae6db;padding:0 0 .8rem;outline-offset:4px}
 .orchestra-gallery-track:focus-visible{outline:3px solid #ad542c}
@@ -136,6 +159,7 @@ section.orchestra-section{padding-block:4rem}
 .orchestra-video h3 a:focus-visible::after{outline:3px solid #ad542c;outline-offset:3px}
 .orchestra-video>p{font-size:.75rem;color:#57765e;display:flex;align-items:center;gap:.4rem;margin:0}
 .orchestra-video>p>span:last-child{margin-left:auto}
+.orchestra-video>p.orchestra-video-note{display:block;font-size:.8rem;line-height:1.75;margin:-.45rem 0 1.1rem;color:var(--muted)}
 .orchestra-play{display:inline-grid;place-items:center;width:1.6rem;height:1.6rem;border:1px solid #b2c8b8;border-radius:50%;padding-left:.12rem;font-size:.8rem}
 .orchestra-fine{font-size:.75rem;line-height:1.85;color:#64776b;margin-top:1.2rem}
 .orchestra-source-section{padding-block:3.8rem;background:#edf2eb;border-top:1px solid var(--line)}
@@ -151,6 +175,12 @@ section.orchestra-section{padding-block:4rem}
 .orchestra-source-note dd{margin:0;min-width:0}
 .orchestra-source-note dd a{color:inherit;text-underline-offset:.2em}
 .orchestra-source-note .orchestra-inline-link{font-size:inherit}
+.orchestra-public-sources{margin-top:1.7rem}
+.orchestra-public-sources h3{font-family:var(--serif);font-size:1.1rem;line-height:1.5;margin:0 0 .8rem}
+.orchestra-public-sources ul{list-style:none;padding:0;margin:0}
+.orchestra-public-sources li+li{margin-top:.8rem}
+.orchestra-public-sources a{font-size:.9rem;line-height:1.7;text-underline-offset:.2em}
+.orchestra-public-sources span{display:block;font-size:.75rem;line-height:1.65;color:var(--muted);margin-top:.2rem}
 .orchestra-contribute{background:#173f36;color:#fff8e8;padding-block:3.8rem}
 .orchestra-contribute .eyebrow{color:var(--orch-gold)}
 .orchestra-contribute .orchestra-section-heading>p{color:#c2d5c7;max-width:29rem;font-size:.85rem}
@@ -173,6 +203,7 @@ section.orchestra-section{padding-block:4rem}
   .orchestra-gallery-status{max-width:12rem}.orchestra-gallery-dots{gap:0}.orchestra-gallery-dots button{min-width:2.6rem}
 }
 @media(max-width:47rem){
+  .orchestra-yearbook-grid,.orchestra-archive-grid{grid-template-columns:1fr}.orchestra-yearbook-card{padding:1.3rem}.orchestra-archive-grid{gap:1.2rem;margin-top:1.5rem}.orchestra-honor{padding:1.3rem}.orchestra-reading{padding:.5rem 0}
   .orchestra-directory-intro{grid-template-columns:1fr;gap:2rem;padding-block:1.5rem 2.5rem}.orchestra-directory-photo img{aspect-ratio:1.7;object-position:50% 63%}
   .orchestra-directory-intro h1{font-size:1.1rem}.orchestra-hero-line{font-size:clamp(2rem,6.7vw,3.1rem)}
   .orchestra-section-heading{align-items:flex-start;gap:1rem;flex-direction:column;margin-bottom:1.4rem}.orchestra-section-heading>p{max-width:100%}
@@ -210,6 +241,7 @@ section.orchestra-section{padding-block:4rem}
   .orchestra-card-image:hover img{transform:none}
 }
 @media print{
+  .orchestra-yearbook-grid{grid-template-columns:1fr 1fr}.orchestra-yearbook-card,.orchestra-honor,.orchestra-reading li{break-inside:avoid}.orchestra-yearbook-card,.orchestra-honor{padding:.7rem;background:#fff;border:1px solid #ccc}.orchestra-archive-grid{gap:1rem;margin-top:1rem}.orchestra-reading li a{padding:.6rem}
   .orchestra-showcase{color:#111;background:#fff;font-size:10pt}
   .orchestra-showcase .shell{width:100%}.orchestra-showcase section{padding-block:1.1rem!important;scroll-margin:0}
   .orchestra-directory-hero,.orchestra-detail-hero,.orchestra-gallery-section,.orchestra-source-section,.orchestra-contribute{background:#fff;color:#111;border:0}

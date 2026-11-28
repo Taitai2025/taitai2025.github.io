@@ -29,7 +29,11 @@ EXACT_PATHS = {
     'scripts/prepare-score-release.py', 'scripts/score_experience.py',
     'scripts/test-arrange-comparison.mjs', 'scripts/test-arrange-project.mjs',
     'scripts/test-catalogue.py', 'scripts/test-experience.mjs',
+    'scripts/build-orchestra-showcase.py', 'scripts/orchestra_showcase.py',
+    'scripts/test-orchestra-showcase.mjs', 'scripts/score_community.py',
+    'scores/orchestras/intake-template.txt',
 }
+MUSIC_IMAGE_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.webp', '.avif'}
 PUBLIC_EXTENSIONS = {
     '.html', '.css', '.js', '.mjs', '.json', '.svg', '.xml', '.md',
     '.woff', '.woff2', '.png', '.jpg', '.jpeg', '.webp', '.avif', '.ico',
@@ -51,6 +55,8 @@ def allowed(path):
         return True
     if path.startswith('scripts/test-score-') and parsed.suffix in {'.mjs', '.py'}:
         return True
+    if path.startswith('assets/images/music/') and parsed.suffix in MUSIC_IMAGE_EXTENSIONS:
+        return not any(part.startswith('.') for part in parsed.parts)
     return path.startswith('scores/') and parsed.suffix in PUBLIC_EXTENSIONS and not any(part.startswith('.') for part in parsed.parts)
 
 
@@ -62,6 +68,7 @@ def working_fingerprint():
     paths = set(EXACT_PATHS)
     paths.update(str(path.relative_to(ROOT)) for path in (ROOT / 'scores').rglob('*') if path.is_file())
     paths.update(str(path.relative_to(ROOT)) for path in (ROOT / 'scripts').glob('test-score-*'))
+    paths.update(str(path.relative_to(ROOT)) for path in (ROOT / 'assets/images/music').rglob('*') if path.is_file() and path.suffix in MUSIC_IMAGE_EXTENSIONS)
     result = {}
     for name in sorted(paths):
         path = ROOT / name

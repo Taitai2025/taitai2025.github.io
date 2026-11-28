@@ -11,6 +11,12 @@ body{color:var(--ink);background:var(--paper)}
 .orchestra-home-feature h3{font-size:1.9rem;line-height:1.4;margin:.6rem 0 .2rem;font-family:var(--serif)}
 .orchestra-home-feature p{line-height:1.85}
 .orchestra-home-name{font-size:.9rem;color:var(--pine);letter-spacing:.12em;margin:0 0 .9rem}
+.orchestra-home-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem}
+.orchestra-home-grid .orchestra-home-feature{grid-template-columns:1fr;align-content:start}
+.orchestra-home-grid .orchestra-home-image{min-height:0;aspect-ratio:16/10}
+.orchestra-home-grid .orchestra-home-feature>div{align-self:start;padding:1.5rem 1.7rem}
+.orchestra-home-grid .orchestra-home-feature h3{font-size:1.55rem}
+@media(max-width:48rem){.orchestra-home-grid{grid-template-columns:1fr}}
 @media(max-width:48rem){.orchestra-home-feature{grid-template-columns:1fr}.orchestra-home-image{min-height:0;aspect-ratio:16/10}.orchestra-home-feature>div{padding:1.35rem}.orchestra-home-feature h3{font-size:1.55rem}}
 @media(prefers-reduced-motion:reduce){.orchestra-home-image img{transition:none}.orchestra-home-image:hover img{transform:none}}
 .site-header .frame{min-height:5rem;gap:1rem}

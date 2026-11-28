@@ -4,6 +4,7 @@ from hashlib import sha256
 import json
 import re
 from urllib.parse import urlencode
+import score_community
 
 
 def build_experience(api, works, opens, sources):
@@ -16,7 +17,7 @@ def build_experience(api, works, opens, sources):
             'version': work['version'], 'partCount': work['partCount'],
             'instruments': list(dict.fromkeys(n for line in work['roster'] for n in line['instruments'])),
             'movements': work.get('movements', []), 'summary': work['summary'],
-            'access': '已有口令下载', 'quality': work['quality'],
+            'access': '需密码 · 联系维护者', 'quality': work['quality'],
             'rehearsal': '尚未登记实际试奏', 'variants': work['variants'],
         })
     for work in opens:
@@ -50,6 +51,14 @@ def build_experience(api, works, opens, sources):
     spotlight = works[0]
     if featured:
         spotlight = featured[0]
+    orchestras = json.loads((api.SCORES / 'orchestras/data.json').read_text(encoding='utf-8'))['orchestras']
+    orchestra_tiles = []
+    for orchestra in orchestras[:2]:
+        route = '/scores/orchestras/' + orchestra['slug'] + '/'
+        photo = orchestra['hero']
+        name = ' · '.join(value for value in (orchestra.get('shortName'), orchestra.get('nickname')) if value)
+        region = ' · '.join(value for value in (orchestra.get('country'), orchestra.get('city')) if value)
+        orchestra_tiles.append(f'''<article class="orchestra-home-feature"><a class="orchestra-home-image" href="{escape(route)}"><img src="{escape(photo['src'])}" width="{photo['width']}" height="{photo['height']}" loading="lazy" decoding="async" alt="{escape(photo['alt'])}"></a><div><p class="eyebrow">{escape(region)}</p><h3>{escape(orchestra['name'])}</h3><p class="orchestra-home-name">{escape(name)}</p><p>{escape(orchestra['summary'])}</p><div class="actions">{link(route, '走进 ' + orchestra['shortName'], 'button primary')}</div></div></article>''')
     home = f'''<section class="home-hero"><div class="frame home-grid">
       <div class="home-intro"><p class="eyebrow"><span class="small-rule"></span>为高校民族乐团而建</p>
         <h1>好作品，<br>从一份好谱开始。</h1>
@@ -90,9 +99,10 @@ def build_experience(api, works, opens, sources):
       </div>
     </section>
     <section class="shell home-section"><div class="section-heading"><div><p class="eyebrow">认识演奏这些作品的人</p><h2>校园里，民乐正在发生</h2></div>{link('/scores/orchestras/', '高校乐团风采', 'text-link')}</div>
-      <article class="orchestra-home-feature"><a class="orchestra-home-image" href="/scores/orchestras/ustc-nmou/"><img src="/assets/images/music/qingfeng-2025-curtain-call.webp" width="1600" height="1067" loading="lazy" decoding="async" alt="中国科大学生民族乐团在2025年青风抚乐专场音乐会谢幕合影"></a><div><p class="eyebrow">中国 · 合肥 · USTC</p><h3>中国科大学生民族乐团</h3><p class="orchestra-home-name">NMOU · 小乐</p><p>从每周的排练，到走上专场音乐会的舞台。认识这支创立于 2002 年的学生民族乐团，看看属于他们的音乐与青春。</p><div class="actions">{link('/scores/orchestras/ustc-nmou/', '走进 NMOU', 'button primary')}{link('/scores/orchestras/', '浏览乐团风采', 'text-link')}</div></div></article>
+      <div class="orchestra-home-grid">{''.join(orchestra_tiles)}</div><p class="section-caption">当前收录 {len(orchestras)} 支高校乐团。介绍、照片与演出入口分别保留来源，也欢迎分享你们的校园故事。</p>
     </section>
     <section class="shell"><div class="cooperation-panel"><div><p class="eyebrow">把一次排练，变成下一版的进步</p><h2>一起把谱库做得更好</h2><p>记录小节、声部与版本，分享可复现的校谱问题；也欢迎原创编配与高校试用合作。</p></div><div class="actions">{link('/scores/tools/cooperation/', '准备反馈与合作资料', 'button primary')}{link('/scores/guides/rehearsal/', '查看排练指南', 'button')}</div></div></section>'''
+    home += score_community.support_strip()
     api.output('/scores/', '高校民乐简谱与民族管弦乐总谱', '国乐谱汇：高校民族乐团简谱、总谱与分谱资源。按曲名、乐器和编制查找固定调与首调版本，比较选曲，使用 MusicXML 编配和排练工具。', home,
                script='/scores/legacy-links.js', schema={'@context':'https://schema.org','@type':'WebSite','name':'国乐谱汇','url':api.BASE+'/scores/'})
     # Refresh cached homepage styles whenever their content changes.
@@ -127,8 +137,8 @@ def build_experience(api, works, opens, sources):
       <tr><th>实际排练</th><td>只记录已有依据的试奏情况。</td><td>未登记不等于没有任何人演过，也不等于已经通过验收。</td></tr>
     </tbody></table></div></section>
     <section class="shell"><div class="cards two"><article class="card"><h2>发现错音或下载问题</h2><p>记录曲名、版本、乐章、小节、声部和问题描述。下载异常请保留文件名与错误提示。反馈工具会生成可检查的草稿，使用者发送后才算提交。</p><div class="actions"><a class="button" href="/scores/tools/cooperation/">准备反馈草稿</a><a class="button" href="/scores/tools/rehearsal/">排练验收清单</a></div></article>
-      <article class="card"><h2>数据与隐私</h2><p>本站的选曲、排练清单和本地编配设置在浏览器内保存；MusicXML/MXL 编配在本机处理。公开站没有收款表单，也不要求填写团员个人资料。</p><p>原机构链接会打开相应网站，按其说明使用。公开目录、私有谱务记录和真实交易授权分别维护。</p></article></div></section>
-    <section class="shell"><div class="callout"><h2>本轮更新 · 2026 年 11 月 28 日</h2><p>重整首页与资源导航，补齐目录筛选和分谱搜索，增加选曲单及版本比较，接续 MusicXML/MXL 编配工具与维护校验。新的功能以实际可操作入口为准。</p><p><a href="/scores/guides/">继续阅读选曲、排练与许可指南</a></p></div></section>'''
+      <article class="card"><h2>数据与隐私</h2><p>本站的选曲、排练清单和本地编配设置在浏览器内保存；MusicXML/MXL 编配在本机处理。联系与乐团投稿表单只在当前页面生成草稿，不会自动上传或保存。</p><p>自愿打赏通过微信支付、支付宝收款码完成，本站不收集支付凭证，也不会自动发放谱件或密码。原机构链接按对应网站说明使用。</p></article></div></section>
+    <section class="shell"><div class="callout"><h2>本轮更新 · 2026 年 11 月 29 日</h2><p>新增专门的高校乐团投稿、邮箱与微信/QQ联系、谱件查阅说明和自愿打赏入口；收录西北工业大学民乐队，补充 NMOU 年度活动与公开档案，并区分已发布谱件和正在复核的版本。</p><div class="actions"><a href="/scores/orchestras/">走进高校乐团</a><a href="/scores/updates/">查看版本动态</a><a href="/scores/contact/">联系维护者</a><a href="/scores/support/">支持本站</a></div></div></section>'''
     api.output('/scores/about/', '使用说明、版本与质量信息', '国乐谱汇使用说明：怎样找总谱与简谱、筛选声部、比较版本、备份选曲单、使用编配工具与反馈校谱问题。', about)
 
     # Hand-authored tool/guide pages use the same navigation and local planner.
@@ -148,4 +158,19 @@ def build_experience(api, works, opens, sources):
         if additions:
             text = text.replace('</head>', '\n'.join(additions) + '\n</head>')
         text = re.sub(r'<header\b[^>]*class="site-header"[^>]*>.*?</header>', lambda m: api.head_links(route), text, count=1, flags=re.S)
+        # Authored tools retain their specialised footer while gaining real contacts.
+        if '/scores/contact/' not in text.split('</main>')[-1]:
+            footer_links = '<nav class="shell community-footer-links" aria-label="联系与支持"><a href="/scores/contact/">联系与查阅</a><a href="/scores/orchestras/submit/">乐团投稿</a><a href="/scores/updates/">版本动态</a><a href="/scores/support/">支持本站</a></nav>'
+            text = text.replace('</body>', footer_links + '</body>')
+        if route == '/scores/tools/cooperation/':
+            public_email = escape(score_community.config()['email'], quote=True)
+            text = re.sub(r'data-draft="([^"]+)"(?: data-recipient="[^"]*")?', lambda match: f'data-draft="{match.group(1)}" data-recipient="{public_email}"', text)
+            text = re.sub(r'<section class="tool-panel" aria-labelledby="direct-contact-title">.*?</section>', lambda match: score_community.cooperation_contacts(), text, count=1, flags=re.S)
+            draft_version = sha256((api.SCORES / 'tools/drafts.js').read_bytes()).hexdigest()[:12]
+            text = re.sub(r'src="(?:\.\./drafts\.js|/scores/tools/drafts\.js)(?:\?[^\"]*)?"', f'src="/scores/tools/drafts.js?v={draft_version}"', text)
+        community_style = score_community.asset_url('community.css')
+        if '/scores/community/community.css' in text:
+            text = re.sub(r'href="/scores/community/community\.css(?:\?[^\"]*)?"', f'href="{community_style}"', text)
+        else:
+            text = text.replace('</head>', f'<link rel="stylesheet" href="{community_style}"></head>')
         path.write_text(text, encoding='utf-8')

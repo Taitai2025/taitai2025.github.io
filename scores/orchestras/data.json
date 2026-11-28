@@ -14,7 +14,18 @@
       "province": "安徽",
       "founded": "2002-12",
       "foundedLabel": "2002 年 12 月",
-      "aliases": ["中科大", "中国科大", "科大民乐", "中科大民乐团", "中国科大民乐团", "USTC", "NMOU", "小乐", "Chinese orchestra", "University of Science and Technology of China"],
+      "aliases": [
+        "中科大",
+        "中国科大",
+        "科大民乐",
+        "中科大民乐团",
+        "中国科大民乐团",
+        "USTC",
+        "NMOU",
+        "小乐",
+        "Chinese orchestra",
+        "University of Science and Technology of China"
+      ],
       "summary": "从排练室到音乐厅，来自不同院系的科大学子因民族音乐相聚。五大声部共同奏响校园里的中国声音，也让零基础的同学有机会走近民族乐器。",
       "intro": [
         "2002 年 12 月，中国科学技术大学学生民族乐团诞生。它的英文名称是 Nationalities Music Orchestra of USTC，简称 NMOU，团员们也亲切地称它为“小乐”。",
@@ -22,22 +33,69 @@
         "吹管、拉弦、弹拨、打击与低音构成乐团的五大声部。这里既有全团合作的舞台，也有独奏、小合奏、器乐教学与幕后制作的位置，让不同的音乐经验都能找到参与的方式。"
       ],
       "sections": [
-        {"name": "吹管", "line": "气息与旋律"},
-        {"name": "拉弦", "line": "弓弦与歌唱"},
-        {"name": "弹拨", "line": "指尖与回响"},
-        {"name": "打击", "line": "节奏与色彩"},
-        {"name": "低音", "line": "合奏的根基"}
+        {
+          "name": "吹管",
+          "line": "气息与旋律"
+        },
+        {
+          "name": "拉弦",
+          "line": "弓弦与歌唱"
+        },
+        {
+          "name": "弹拨",
+          "line": "指尖与回响"
+        },
+        {
+          "name": "打击",
+          "line": "节奏与色彩"
+        },
+        {
+          "name": "低音",
+          "line": "合奏的根基"
+        }
       ],
       "life": [
-        {"title": "在排练室，学会听见彼此", "label": "排练与成长", "copy": "每周全团排练，配合各声部的小排与独奏教学，从自己的旋律走向整支乐团的呼吸。年度专场之外，金秋十一月前后的独奏与小合奏音乐会，也给更小的编制留下舞台。"},
-        {"title": "从第一声开始，走近民族乐器", "label": "中华音韵", "copy": "“中华音韵”美育课程由乐团演奏员授课，为零基础同学提供民族器乐的系统教学。教学、练习与交流，让学习乐器成为可以迈出的第一步。"},
-        {"title": "在舞台之外，也成为同伴", "label": "校园日常", "copy": "桌游、聚餐、大蜀山徒步与集体复习，连接起排练以外的大学生活。宣传团队用视频、音频、海报与文创记录乐团，让台前与幕后的热爱都被看见。"}
+        {
+          "title": "在排练室，学会听见彼此",
+          "label": "排练与成长",
+          "copy": "每周全团排练，配合各声部的小排与独奏教学，从自己的旋律走向整支乐团的呼吸。年度专场之外，独奏与小合奏音乐会也给更小的编制留下舞台；2025 年的“盛世国乐”独奏音乐会于 12 月举行。"
+        },
+        {
+          "title": "从第一声开始，走近民族乐器",
+          "label": "中华音韵",
+          "copy": "“中华音韵”把器乐体验、基础训练、乐理学习和舞台实践连接起来。乐团的教学分部统筹课程，面向不同基础的同学开展竹笛、笙、古筝、二胡与民族打击乐等教学，让学习民族乐器成为可以迈出的第一步。"
+        },
+        {
+          "title": "在舞台之外，也成为同伴",
+          "label": "校园日常",
+          "copy": "桌游、聚餐、大蜀山徒步与集体复习，连接起排练以外的大学生活。宣传团队用视频、音频、海报与文创记录乐团，让台前与幕后的热爱都被看见。"
+        }
       ],
       "timeline": [
-        {"date": "2002.12", "title": "小乐诞生", "copy": "中国科学技术大学学生民族乐团成立。", "source": "article"},
-        {"date": "2003 · 中秋", "title": "民乐千里寄相思", "copy": "举办首场专场音乐会，把民族音乐带到校园舞台。", "source": "article"},
-        {"date": "2023", "title": "二十周年的回声", "copy": "“岁影辰辉”二十周年专场与“贺廿迎春”纪念演出，留下团员共同的音乐记忆。", "source": "anniversary"},
-        {"date": "2025", "title": "从夏日专场到金秋独奏", "copy": "夏季专场在东区大礼堂举行，秋季独奏音乐会走进西区大礼堂。", "source": "article"}
+        {
+          "date": "2002.12",
+          "title": "小乐诞生",
+          "copy": "中国科学技术大学学生民族乐团成立。",
+          "source": "article"
+        },
+        {
+          "date": "2003 · 中秋",
+          "title": "民乐千里寄相思",
+          "copy": "举办首场专场音乐会，把民族音乐带到校园舞台。",
+          "source": "article"
+        },
+        {
+          "date": "2023",
+          "title": "二十周年的回声",
+          "copy": "“岁影辰辉”二十周年专场与“贺廿迎春”纪念演出，留下团员共同的音乐记忆。",
+          "source": "anniversary"
+        },
+        {
+          "date": "2025",
+          "title": "夏日专场与岁末独奏",
+          "copy": "6 月 15 日“青风抚乐”专场在东区大礼堂举行，12 月 14 日“盛世国乐”独奏音乐会走进西区大礼堂。",
+          "source": "annualReport"
+        }
       ],
       "hero": {
         "src": "/assets/images/music/qingfeng-2025-curtain-call.webp",
@@ -58,34 +116,504 @@
         "sourceUrl": "/#resume"
       },
       "gallery": [
-        {"src": "/assets/images/music/qingfeng-2025-curtain-call.webp", "alt": "青风抚乐专场结束后，NMOU 团员持乐器在舞台上合影", "caption": "“青风抚乐”专场 · 谢幕合影", "dateLabel": "2025.06.15", "width": 1600, "height": 1067, "sourceUrl": "/#activity-nmou-2025-qingfeng"},
-        {"src": "/assets/images/music/weekly-rehearsal-spring-ensemble.webp", "alt": "排练室中，扬琴与笙等声部的团员跟随指挥合奏", "caption": "扬琴与笙声部的合奏排练", "dateLabel": "2025 春季学期", "width": 1268, "height": 951, "sourceUrl": "/#activity-nmou-winds-2025-spring"},
-        {"src": "/assets/images/music/dizi-class-spring-2025.webp", "alt": "同学们在教室中持竹笛练习，有人示范，有人跟奏", "caption": "竹笛基础与进阶教学", "dateLabel": "2025 春季学期", "width": 1268, "height": 666, "sourceUrl": "/#activity-nmou-teaching-2024-2026"},
-        {"src": "/assets/images/music/sufeng-music-experience.webp", "alt": "溯风传统文化月的校园摊位前，同学们体验竹笛、琵琶等民族乐器", "caption": "溯风传统文化月 · 民族乐器体验", "dateLabel": "2025.03.30", "width": 1600, "height": 1200, "sourceUrl": "/#activity-nmou-2025-sufeng"},
-        {"src": "/assets/images/music/members-meeting-autumn-2025.webp", "alt": "NMOU 团员在排练室参加秋季学期全员大会后合影", "caption": "秋季学期全员大会合影", "dateLabel": "2025 秋季学期", "width": 1440, "height": 1080, "sourceUrl": "/#activity-nmou-2025-autumn-meeting"},
-        {"src": "/assets/images/music/nmou-orchestra-concert.webp", "alt": "NMOU 民族管弦乐团在舞台上演奏，指挥面对各乐器声部", "caption": "NMOU 民族管弦乐演出", "dateLabel": "原图未标注日期", "width": 1269, "height": 846, "sourceUrl": "/#resume"}
+        {
+          "src": "/assets/images/music/qingfeng-2025-curtain-call.webp",
+          "alt": "青风抚乐专场结束后，NMOU 团员持乐器在舞台上合影",
+          "caption": "“青风抚乐”专场 · 谢幕合影",
+          "dateLabel": "2025.06.15",
+          "width": 1600,
+          "height": 1067,
+          "sourceUrl": "/#activity-nmou-2025-qingfeng"
+        },
+        {
+          "src": "/assets/images/music/weekly-rehearsal-spring-ensemble.webp",
+          "alt": "排练室中，扬琴与笙等声部的团员跟随指挥合奏",
+          "caption": "扬琴与笙声部的合奏排练",
+          "dateLabel": "2025 春季学期",
+          "width": 1268,
+          "height": 951,
+          "sourceUrl": "/#activity-nmou-winds-2025-spring"
+        },
+        {
+          "src": "/assets/images/music/dizi-class-spring-2025.webp",
+          "alt": "同学们在教室中持竹笛练习，有人示范，有人跟奏",
+          "caption": "竹笛基础与进阶教学",
+          "dateLabel": "2025 春季学期",
+          "width": 1268,
+          "height": 666,
+          "sourceUrl": "/#activity-nmou-teaching-2024-2026"
+        },
+        {
+          "src": "/assets/images/music/sufeng-music-experience.webp",
+          "alt": "溯风传统文化月的校园摊位前，同学们体验竹笛、琵琶等民族乐器",
+          "caption": "溯风传统文化月 · 民族乐器体验",
+          "dateLabel": "2025.03.30",
+          "width": 1600,
+          "height": 1200,
+          "sourceUrl": "/#activity-nmou-2025-sufeng"
+        },
+        {
+          "src": "/assets/images/music/members-meeting-autumn-2025.webp",
+          "alt": "NMOU 团员在排练室参加秋季学期全员大会后合影",
+          "caption": "秋季学期全员大会合影",
+          "dateLabel": "2025 秋季学期",
+          "width": 1440,
+          "height": 1080,
+          "sourceUrl": "/#activity-nmou-2025-autumn-meeting"
+        },
+        {
+          "src": "/assets/images/music/acg-2025-orchestra.webp",
+          "alt": "第四届 ACG 音乐会现场，民族管乐与西洋弦乐共同演奏，背景为游戏画面",
+          "caption": "第四届 ACG 音乐会 ·《原神交响组曲》",
+          "dateLabel": "2025.05.25",
+          "width": 1600,
+          "height": 887,
+          "sourceUrl": "/#activity-nmou-2025-acg"
+        },
+        {
+          "src": "/assets/images/music/rhythm-lecture-teaching.webp",
+          "alt": "乐理课堂上，授课同学结合投影上的谱例讲解节奏与节拍",
+          "caption": "“中华音韵”乐理课堂 · 节奏与节拍",
+          "dateLabel": "2025.10.12",
+          "width": 873,
+          "height": 582,
+          "sourceUrl": "/#activity-nmou-2025-rhythm-class"
+        },
+        {
+          "src": "/assets/images/music/wufushaohua-2025-orchestra.webp",
+          "alt": "勿负韶华迎新晚会舞台上，NMOU 团员在指挥带领下演奏印象国乐大曲",
+          "caption": "“勿负韶华”迎新晚会 ·《印象国乐·大曲》",
+          "dateLabel": "2025 秋季学期",
+          "width": 1267,
+          "height": 845,
+          "sourceUrl": "/#activity-nmou-2025-wufushaohua"
+        },
+        {
+          "src": "/assets/images/music/nmou-orchestra-concert.webp",
+          "alt": "NMOU 民族管弦乐团在舞台上演奏，指挥面对各乐器声部",
+          "caption": "NMOU 民族管弦乐演出",
+          "dateLabel": "原图未标注日期",
+          "width": 1269,
+          "height": 846,
+          "sourceUrl": "/#resume"
+        }
       ],
       "videos": [
-        {"year": 2025, "title": "独奏音乐会", "kind": "独奏与小合奏", "url": "https://www.bilibili.com/video/BV1QGrkBzEH7/"},
-        {"year": 2025, "title": "青风抚乐", "kind": "专场音乐会", "url": "https://www.bilibili.com/video/BV1eYgBz6EZa/"},
-        {"year": 2024, "title": "浮梦沉音", "kind": "专场音乐会", "url": "https://www.bilibili.com/video/BV1ST42167FL/"},
-        {"year": 2023, "title": "岁影辰辉", "kind": "二十周年专场", "url": "https://www.bilibili.com/video/BV1P8411Q7aQ/"},
-        {"year": 2023, "title": "贺廿迎春", "kind": "二十周年纪念演出", "url": "https://www.bilibili.com/video/BV1fL411Y7Fx/"},
-        {"year": 2023, "title": "独奏音乐会", "kind": "独奏与小合奏", "url": "https://www.bilibili.com/video/BV1bZ421z75e/"},
-        {"year": 2022, "title": "专场音乐会", "kind": "专场音乐会", "url": "https://www.bilibili.com/video/BV1xB4y177cx/"},
-        {"year": 2021, "title": "独奏音乐会", "kind": "独奏与小合奏", "url": "https://www.bilibili.com/video/BV133411t7r7/"},
-        {"year": 2021, "title": "玄黄律", "kind": "音乐会回看", "url": "https://www.bilibili.com/video/BV1Qo4y1X7uf/"},
-        {"year": 2021, "title": "ACG 音乐会", "kind": "ACG 主题", "url": "https://www.bilibili.com/video/BV1Yh411a7s9/"},
-        {"year": 2021, "title": "时之砂", "kind": "音乐会回看", "url": "https://www.bilibili.com/video/BV1sV411E7hk/"},
-        {"year": 2021, "title": "和鸣", "kind": "音乐会回看", "url": "https://www.bilibili.com/video/BV1kK4y157Yu/"}
+        {
+          "year": 2025,
+          "title": "独奏音乐会",
+          "kind": "独奏与小合奏",
+          "url": "https://www.bilibili.com/video/BV1QGrkBzEH7/"
+        },
+        {
+          "year": 2025,
+          "title": "青风抚乐",
+          "kind": "专场音乐会",
+          "url": "https://www.bilibili.com/video/BV1eYgBz6EZa/"
+        },
+        {
+          "year": 2024,
+          "title": "浮梦沉音",
+          "kind": "专场音乐会",
+          "url": "https://www.bilibili.com/video/BV1ST42167FL/"
+        },
+        {
+          "year": 2023,
+          "title": "岁影辰辉",
+          "kind": "二十周年专场",
+          "url": "https://www.bilibili.com/video/BV1P8411Q7aQ/"
+        },
+        {
+          "year": 2023,
+          "title": "贺廿迎春",
+          "kind": "二十周年纪念演出",
+          "url": "https://www.bilibili.com/video/BV1fL411Y7Fx/"
+        },
+        {
+          "year": 2023,
+          "title": "独奏音乐会",
+          "kind": "独奏与小合奏",
+          "url": "https://www.bilibili.com/video/BV1bZ421z75e/"
+        },
+        {
+          "year": 2022,
+          "title": "专场音乐会",
+          "kind": "专场音乐会",
+          "url": "https://www.bilibili.com/video/BV1xB4y177cx/"
+        },
+        {
+          "year": 2021,
+          "title": "独奏音乐会",
+          "kind": "独奏与小合奏",
+          "url": "https://www.bilibili.com/video/BV133411t7r7/"
+        },
+        {
+          "year": 2021,
+          "title": "玄黄律",
+          "kind": "音乐会回看",
+          "url": "https://www.bilibili.com/video/BV1Qo4y1X7uf/"
+        },
+        {
+          "year": 2021,
+          "title": "ACG 音乐会",
+          "kind": "ACG 主题",
+          "url": "https://www.bilibili.com/video/BV1Yh411a7s9/"
+        },
+        {
+          "year": 2021,
+          "title": "时之砂",
+          "kind": "音乐会回看",
+          "url": "https://www.bilibili.com/video/BV1sV411E7hk/"
+        },
+        {
+          "year": 2021,
+          "title": "和鸣",
+          "kind": "音乐会回看",
+          "url": "https://www.bilibili.com/video/BV1kK4y157Yu/"
+        }
       ],
       "sources": {
-        "article": {"url": "https://mp.weixin.qq.com/s/nQa5HAllEHAMS0UdmtmK8g", "label": "乐团介绍原文（微信公众号）", "editor": "杨书泰", "publicationDate": null},
-        "officialBilibili": {"url": "https://space.bilibili.com/64643274", "label": "NMOU 官方 B 站"},
-        "imageArchive": {"url": "/#resume", "label": "个人主页中的乐团活动记录"},
-        "note": "正文依据乐团介绍原稿整理，原稿编辑为杨书泰；演出链接由资料提供者整理。原文发布日期尚未确认，其中“70 余位正式演奏员”“23 届专场音乐会”均为原文时点的记录，不代表当前人数或累计届数。图片沿用本站个人主页已公开的活动记录，图注与日期按原有记录整理。",
+        "article": {
+          "url": "https://mp.weixin.qq.com/s/nQa5HAllEHAMS0UdmtmK8g",
+          "label": "乐团介绍原文（微信公众号）",
+          "editor": "杨书泰",
+          "publicationDate": null
+        },
+        "officialBilibili": {
+          "url": "https://space.bilibili.com/64643274",
+          "label": "NMOU 官方 B 站"
+        },
+        "imageArchive": {
+          "url": "/#resume",
+          "label": "个人主页中的乐团活动记录"
+        },
+        "note": "乐团基本介绍依据微信公众号原稿整理，原稿编辑为杨书泰，原文发布日期尚未确认。年度活动另据 2026 年 5 月 8 日工作总结摘录，团体荣誉附公开名单节选。原介绍的“70 余位正式演奏员”“23 届专场音乐会”和年度报告中的人数均为各自文稿时点的记录，不代表当前人数或累计届数。照片沿用本站个人主页已公开的活动记录，图注与日期按原有记录整理。",
         "outlook": "乐团以“传承经典、创新未来”为方向，在校学生社团管理指导委员会指导下持续开展活动。招新、排练时间与当前组织信息，请以乐团官方渠道的最新发布为准。"
-      }
+      },
+      "updatedAt": "2026-11-29",
+      "documents": {
+        "annualReport": {
+          "title": "2025—2026 学年工作总结",
+          "description": "演出、周常排练、美育教学与社区服务的年度记录。报告日期：2026.05.08。",
+          "url": "https://taitai2025.github.io/assets/documents/honors/nmou-annual-report-2025-2026.pdf",
+          "pages": 8,
+          "sizeLabel": "295 KB",
+          "sha256": "d24ffee60f81c66671359208e62715ed09f3e3d69ec0a66ed31b8bc76188f12e",
+          "reading": true
+        },
+        "teachingHandbook": {
+          "title": "“中华音韵”教学与美育实践资料集",
+          "description": "课程规划、分层器乐教学与实践记录的公开整理版。可供高校乐团建设教学项目时参考。",
+          "url": "https://taitai2025.github.io/assets/documents/zhonghua-yinyun-teaching-handbook.pdf",
+          "pages": 142,
+          "sizeLabel": "16.6 MB",
+          "sha256": "f0dc4c025aa3c93b95cdaceed0341e653233f05064602f259a254924c3658cbf",
+          "reading": true
+        },
+        "anhuiArtsAward": {
+          "title": "安徽省第八届大学生艺术展演获奖名单节选",
+          "description": "《我的祖国》列入器乐甲组一等奖，参演学校为中国科学技术大学。",
+          "url": "https://taitai2025.github.io/assets/documents/honors/anhui-university-arts-orchestra-first-prize-2026-excerpt.pdf",
+          "pages": 1,
+          "sizeLabel": "203 KB",
+          "sha256": "572677fd1c7afb93437e729a214777d1ed536c87c71d1df3350ca9f6dab34400",
+          "reading": false
+        }
+      },
+      "yearbook": [
+        {
+          "dateLabel": "2025.06.15",
+          "title": "“青风抚乐”专场音乐会",
+          "copy": "在东区大礼堂，民族管弦乐与小编制节目交错呈现。《湘西风情》《山雪》《印象国乐·大曲》等作品，记录这一学年的合奏积累。",
+          "document": "annualReport",
+          "page": 1,
+          "sourceLabel": "工作总结 · 第 1—2 页"
+        },
+        {
+          "dateLabel": "2025.12.14",
+          "title": "“盛世国乐”独奏音乐会",
+          "copy": "独奏、重奏与合奏在西区大礼堂相遇。从二胡与竹笛，到古琴、笙与中胡，多种编制为团员提供展示与交流的机会。",
+          "document": "annualReport",
+          "page": 2,
+          "sourceLabel": "工作总结 · 第 2 页"
+        },
+        {
+          "dateLabel": "2025 春、秋学期",
+          "title": "让教学成为乐团的日常",
+          "copy": "“中华音韵”教学分部统筹课程大纲与授课计划，把器乐基础、乐曲练习和乐理学习衔接起来，也让初学者有机会走近合奏。",
+          "document": "annualReport",
+          "page": 4,
+          "sourceLabel": "工作总结 · 第 4 页"
+        },
+        {
+          "dateLabel": "2025.12.28",
+          "title": "把音乐带到天乐社区",
+          "copy": "乐团成员走进合肥高新区天乐社区，为儿童与家长带来公益演出，并通过乐器介绍和现场互动，让民族音乐成为可以亲近的日常体验。",
+          "document": "annualReport",
+          "page": 5,
+          "sourceLabel": "工作总结 · 第 5 页"
+        }
+      ],
+      "honors": [
+        {
+          "title": "《我的祖国》获器乐甲组一等奖",
+          "copy": "安徽省第八届大学生艺术展演活动艺术表演奖名单中，中国科学技术大学的《我的祖国》列入器乐甲组一等奖。这里记录乐团的集体成果，详细信息可查公开名单节选。",
+          "document": "anhuiArtsAward"
+        }
+      ],
+      "galleryTitle": "让照片说说小乐的日常"
+    },
+    {
+      "slug": "npu-folk-orchestra",
+      "name": "西北工业大学大学生艺术团民乐队",
+      "shortName": "西工大民乐队",
+      "englishName": null,
+      "nickname": null,
+      "university": "西北工业大学",
+      "country": "中国",
+      "countryCode": "CN",
+      "city": "西安",
+      "province": "陕西",
+      "groupType": "高校学生民族乐队",
+      "aliases": [
+        "西工大",
+        "西工大民乐",
+        "西北工业大学民乐队",
+        "西工大大艺团",
+        "西安",
+        "陕西"
+      ],
+      "summary": "来自各个学院的民乐爱好者在西安相聚，让弹拨、弦乐、管乐与打击在同一舞台交汇。从新年音乐会到草坪与室内乐，记录校园里的国乐时光。",
+      "heroLine": "在校园的舞台，奏响青春的国乐。",
+      "historyTitle": "从音乐会里，认识这支队伍",
+      "galleryTitle": "在舞台与校园之间",
+      "galleryNote": "九张照片由资料提供者授权展示，来源为西工大大艺团新媒体队及乐队成员个人摄影；逐张摄影者未提供。图注按投稿资料整理。新年音乐会的标题年份与实际拍摄日期分别保留，未标拍摄日的照片不推定具体日期。",
+      "intro": [
+        "西北工业大学大学生艺术团民乐队，常被称作“西工大民乐队”。来自不同学院的民乐爱好者因对民族乐器的共同热爱相聚，把学习、排练与演出连接成一段共同的大学生活。",
+        "弹拨、弦乐、管乐与打击构成四个声部。新年音乐会、草坪音乐会与室内乐活动，让民族音乐既能在舞台上完整展开，也能走近校园里的日常相聚。",
+        "据乐队于 2026 年 11 月提供的介绍，张进军担任艺术顾问，专业教师参与日常教学指导，乐队亦与专业乐团共建中国乐器演奏传承基地。学校公开报道记载，2025“樂见南山”新年音乐会由民乐队与交响乐队联袂登台，指挥为张进军。"
+      ],
+      "sections": [
+        {
+          "name": "弹拨",
+          "line": "指尖与回响"
+        },
+        {
+          "name": "弦乐",
+          "line": "弓弦与旋律"
+        },
+        {
+          "name": "管乐",
+          "line": "气息与共鸣"
+        },
+        {
+          "name": "打击",
+          "line": "节奏与色彩"
+        }
+      ],
+      "life": [
+        {
+          "label": "新年音乐会",
+          "title": "用一场合奏，迎接新的一年",
+          "copy": "从“樂见南山”到“山语新音”，新年音乐会留下不同学年的舞台记录。这里收录音乐会视频与《大曲》演出片段，也保留谢幕与幕后的合影。"
+        },
+        {
+          "label": "室内乐与校园",
+          "title": "从音乐厅，走向草坪与排练室",
+          "copy": "研究生毕业草坪音乐会与春季学期结束时的室内乐合影，记录了乐队另一面的日常。照片中的相聚，是大型舞台之外同样值得留下的校园记忆。"
+        },
+        {
+          "label": "交流与实践",
+          "title": "把一次次排练，带到新的舞台",
+          "copy": "2026 年 11 月 20 日的投稿照片记录了陕西省大学生艺术展演现场赛。合影与演奏现场呈现同一支队伍的准备与登台，也为这份校园档案补上新的时刻。"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2024.12 · 学校报道",
+          "title": "“樂见南山”2025 新年音乐会",
+          "copy": "学校艺术教育中心主办，民乐队与交响乐队在南山艺堂登台。学校于 2024 年 12 月 29 日发布报道；音乐会名称使用 2025 新年。",
+          "source": "news2025"
+        },
+        {
+          "date": "2025.12.25",
+          "title": "“山语新音”2026 新年音乐会",
+          "copy": "投稿将这一组舞台照片标记为 2026 新年音乐会，并注明拍摄日期为 2025 年 12 月 25 日；《大曲》视频为其中的演出回看入口。",
+          "source": "submission"
+        },
+        {
+          "date": "2026.03",
+          "title": "研究生毕业草坪音乐会",
+          "copy": "乐队提供的校园合影记录了这一场草坪音乐会，原资料注明时间为 2026 年三月。",
+          "source": "submission"
+        },
+        {
+          "date": "2026.11.20",
+          "title": "陕西省大学生艺术展演现场赛",
+          "copy": "舞台合影与演奏现场记录了乐队在陕西省大学生艺术展演现场赛的参与时刻。",
+          "source": "submission"
+        }
+      ],
+      "hero": {
+        "src": "/assets/images/music/npu-2026-new-year-group.webp",
+        "alt": "西工大民乐队成员与指挥在紫色幕布前合影，前排身着红色礼服",
+        "caption": "2026 新年音乐会 · 舞台合影",
+        "dateLabel": "2025.12.25",
+        "width": 1090,
+        "height": 614,
+        "sourceUrl": "#sources",
+        "sourceLabel": "投稿与图注说明"
+      },
+      "cover": {
+        "src": "/assets/images/music/npu-2026-new-year-performance.webp",
+        "alt": "指挥带领西工大民乐队演出，舞台上可见弹拨、弦乐、管乐和打击乐",
+        "caption": "2026 新年音乐会 · 合奏现场",
+        "dateLabel": "2025.12.25",
+        "width": 1090,
+        "height": 727,
+        "sourceUrl": "#sources",
+        "sourceLabel": "投稿与图注说明"
+      },
+      "gallery": [
+        {
+          "src": "/assets/images/music/npu-2026-new-year-group.webp",
+          "alt": "西工大民乐队成员与指挥在紫色幕布前合影，前排身着红色礼服",
+          "caption": "2026 新年音乐会 · 舞台合影",
+          "dateLabel": "2025.12.25",
+          "width": 1090,
+          "height": 614,
+          "sourceUrl": "#sources",
+          "sourceLabel": "投稿与图注说明"
+        },
+        {
+          "src": "/assets/images/music/npu-2026-new-year-performance.webp",
+          "alt": "指挥带领西工大民乐队演出，舞台上可见弹拨、弦乐、管乐和打击乐",
+          "caption": "2026 新年音乐会 · 合奏现场",
+          "dateLabel": "2025.12.25",
+          "width": 1090,
+          "height": 727,
+          "sourceUrl": "#sources",
+          "sourceLabel": "投稿与图注说明"
+        },
+        {
+          "src": "/assets/images/music/npu-2025-new-year-group.webp",
+          "alt": "穿着红白演出服与深色礼服的西工大民乐队成员在舞台上合影",
+          "caption": "2025 新年音乐会 · 舞台合影",
+          "dateLabel": "2025 新年音乐会 · 原图未标拍摄日",
+          "width": 1090,
+          "height": 614,
+          "sourceUrl": "#sources",
+          "sourceLabel": "投稿与图注说明"
+        },
+        {
+          "src": "/assets/images/music/npu-2025-new-year-performance.webp",
+          "alt": "指挥面向西工大民乐队，管乐、弦乐、弹拨和打击乐共同演奏",
+          "caption": "2025 新年音乐会 · 合奏现场",
+          "dateLabel": "2025 新年音乐会 · 原图未标拍摄日",
+          "width": 1090,
+          "height": 614,
+          "sourceUrl": "#sources",
+          "sourceLabel": "投稿与图注说明"
+        },
+        {
+          "src": "/assets/images/music/npu-2026-new-year-backstage.webp",
+          "alt": "身着红色演出服的乐队成员在走廊中合影，一位成员手捧鲜花",
+          "caption": "2026 新年音乐会 · 幕后合影",
+          "dateLabel": "2026 新年音乐会 · 原图未另标拍摄日",
+          "width": 1090,
+          "height": 728,
+          "sourceUrl": "#sources",
+          "sourceLabel": "投稿与图注说明"
+        },
+        {
+          "src": "/assets/images/music/npu-2026-lawn-concert.webp",
+          "alt": "身着传统服饰的乐队成员在草坪与柳树旁相聚合影",
+          "caption": "研究生毕业草坪音乐会 · 校园合影",
+          "dateLabel": "2026.03",
+          "width": 1090,
+          "height": 730,
+          "sourceUrl": "#sources",
+          "sourceLabel": "投稿与图注说明"
+        },
+        {
+          "src": "/assets/images/music/npu-2026-dunhuang-chamber-group.webp",
+          "alt": "室内乐成员在排练室中手持竹笛与打击乐器合影",
+          "caption": "室内乐“敦煌” · 学期结束合影",
+          "dateLabel": "2026 春季学期结束",
+          "width": 1090,
+          "height": 723,
+          "sourceUrl": "#sources",
+          "sourceLabel": "投稿与图注说明"
+        },
+        {
+          "src": "/assets/images/music/npu-2026-shaanxi-arts-group.webp",
+          "alt": "身穿白绿演出服的乐队成员在陕西省第八届大学生艺术展演标志前合影",
+          "caption": "陕西省大学生艺术展演 · 现场合影",
+          "dateLabel": "2026.11.20",
+          "width": 1090,
+          "height": 727,
+          "sourceUrl": "#sources",
+          "sourceLabel": "投稿与图注说明"
+        },
+        {
+          "src": "/assets/images/music/npu-2026-shaanxi-arts-performance.webp",
+          "alt": "西工大民乐队成员在陕西省第八届大学生艺术展演舞台上演奏二胡、琵琶、扬琴、阮与管乐",
+          "caption": "陕西省大学生艺术展演 · 现场演奏",
+          "dateLabel": "2026.11.20",
+          "width": 1090,
+          "height": 727,
+          "sourceUrl": "#sources",
+          "sourceLabel": "投稿与图注说明"
+        }
+      ],
+      "videos": [
+        {
+          "year": 2026,
+          "title": "山语新音 ·《大曲》",
+          "kind": "新年音乐会片段",
+          "url": "https://www.bilibili.com/video/BV1eWBeBEE1J/",
+          "note": "2026 新年音乐会；投稿标注实际演出日期为 2025.12.25。"
+        },
+        {
+          "year": 2025,
+          "title": "樂见南山",
+          "kind": "新年音乐会",
+          "url": "https://www.bilibili.com/video/BV1sPCFYpEi3/",
+          "note": "2025 新年音乐会；学校相关报道发表于 2024.12.29。"
+        }
+      ],
+      "videoNote": "年份按音乐会名称中的标示年份整理，不等同于实际演出日或视频上传日。两条视频由投稿者提供，短链已核对并整理为 B 站直接入口；《大曲》为演出片段。未将上传账号认定为乐团官方账号，播放与可用性以原平台为准。",
+      "sources": {
+        "submission": {
+          "label": "西工大民乐队收录资料（2026 年 11 月）",
+          "dateLabel": "2026 年 11 月",
+          "textCredit": "乐队提供的高校乐团收录资料；介绍文字据西工大大艺团春招文案整理。",
+          "imageCredit": "西工大大艺团新媒体队与乐队成员个人摄影；逐张摄影者未提供。",
+          "displayNote": "文字与照片由资料提供者提交并允许在本站介绍中展示；本站不另行宣称采用开放许可。"
+        },
+        "institution": {
+          "url": "https://ysjyzx.nwpu.edu.cn/",
+          "label": "西工大艺术教育中心"
+        },
+        "references": [
+          {
+            "id": "news2025",
+            "url": "https://www.nwpu.edu.cn/info/1198/98368.htm",
+            "label": "学校举办 2025“樂见南山”新年音乐会",
+            "publicationDate": "2024-12-29"
+          },
+          {
+            "id": "news2024",
+            "url": "https://ysjyzx.nwpu.edu.cn/info/1064/7012.htm",
+            "label": "2024“南山之声”新年音乐会圆满落幕",
+            "publicationDate": "2024-01-03"
+          }
+        ],
+        "headline": "让校园里的国乐，被更多人听见。",
+        "outlook": "这份档案从乐队提供的文字、照片与视频开始，配合学校公开报道整理。了解学校艺术活动可访问艺术教育中心；乐队独立的官方主页或账号尚未提供，招新与活动安排请以学校后续发布为准。",
+        "note": "本页以 2026 年 11 月提供的收录资料为主要来源。资料将成立年份口述为 2005 年，并说明暂无可核对团史，因此不将其作为已核实成立日期。英文名称、独立官方账号与逐张摄影者未提供。照片图注按原资料保留；2026 陕西省大艺展仅记录现场参演，未据此填写奖项。新年音乐会标题年份与实际日期分开展示。"
+      },
+      "updatedAt": "2026-11-29"
     }
   ]
 }

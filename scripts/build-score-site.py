@@ -12,6 +12,7 @@ SCORES = REPO / 'scores'
 sys.path.insert(0, str(SCORES / 'tools'))
 sys.dont_write_bytecode = True
 from build_rosters import ALIASES, observed_label, window_json
+import score_community
 
 BASE = 'https://taitai2025.github.io'
 TITLE = '国乐谱汇'
@@ -72,18 +73,18 @@ def output(route, title, desc, body, *, active='', script='', extra_script='', s
     metadata = f'<meta property="og:type" content="website"><meta property="og:site_name" content="{TITLE}"><meta property="og:title" content="{escape(final_title,quote=True)}"><meta property="og:description" content="{escape(desc,quote=True)}"><meta property="og:url" content="{canonical}">'
     html = f"""<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{escape(final_title)}</title>
-<meta name="description" content="{escape(desc,quote=True)}"><link rel="canonical" href="{canonical}">{metadata}{robots}<link rel="icon" href="/scores/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/scores/style.css"><link rel="stylesheet" href="/scores/experience.css">{data}{js}<script src="/scores/experience.js" defer></script></head>
+<meta name="description" content="{escape(desc,quote=True)}"><link rel="canonical" href="{canonical}">{metadata}{robots}<link rel="icon" href="/scores/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/scores/style.css"><link rel="stylesheet" href="/scores/experience.css"><link rel="stylesheet" href="{score_community.asset_url('community.css')}">{data}{js}<script src="/scores/experience.js" defer></script></head>
 <body><a class="skip" href="#main">跳到正文</a>{head_links(active or route)}<main id="main">{body}</main>
-<footer class="site-footer"><div class="frame"><span>{TITLE} · 高校民乐团资源目录</span><nav class="actions" aria-label="页脚"><a href="/scores/about/">使用说明</a><a href="/scores/tools/cooperation/">校谱反馈与共建</a><a href="/scores/archive/">既有口令资料</a><a href="/#resume">个人主页</a></nav></div></footer></body></html>
+<footer class="site-footer"><div class="frame"><span>{TITLE} · 高校民乐团资源目录</span><nav class="actions" aria-label="页脚"><a href="/scores/about/">使用说明</a><a href="/scores/contact/">联系与查阅</a><a href="/scores/orchestras/submit/">乐团投稿</a><a href="/scores/updates/">版本动态</a><a href="/scores/support/">支持本站</a><a href="/#resume">个人主页</a></nav></div></footer></body></html>
 """
     path = REPO / route.strip('/') / 'index.html'
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(html,encoding='utf-8')
 
-def card(title, copy, url, *, badges=(), meta='', attrs=''):
+def card(title, copy, url, *, badges=(), meta='', attrs='', extra=''):
     shown = ''.join(badge(x) for x in badges)
     stat = f'<p class="meta">{escape(meta)}</p>' if meta else ''
-    return f'<article class="card"{attrs}><div class="tags">{shown}</div><h3>{anchor(url,title)}</h3><p>{escape(copy)}</p>{stat}</article>'
+    return f'<article class="card"{attrs}><div class="tags">{shown}</div><h3>{anchor(url,title)}</h3><p>{escape(copy)}</p>{stat}{extra}</article>'
 
 def grid(cards):
     return '<div class="cards">'+''.join(cards)+'</div>'
@@ -253,7 +254,7 @@ def work_pages(works, parts):
         assets='独立简谱分谱与合订本'+('，另附简谱指挥总谱' if w['fullScores'] else '')
         desc=f'{w["title"]} {w["ensemble"]}。{w["partCount"]} 份{assets}。查看谱面、版次、声部搜索和发布范围。'
         schema={'@context':'https://schema.org','@type':'WebPage','name':w['title']+'简谱分谱','url':BASE+route,'description':desc}
-        output(route,w['title']+'简谱分谱 '+w['ensemble'],desc,h+detail+files+roster+feedback,active='/scores/library/',script='/scores/filters.js',extra_script='/scores/part-pdf.js',schema=schema)
+        output(route,w['title']+'简谱分谱 '+w['ensemble'],desc,h+score_community.access_notice(w['title'],w['version'])+detail+files+roster+feedback,active='/scores/library/',script='/scores/filters.js',extra_script='/scores/part-pdf.js',schema=schema)
 
 def open_metadata(w):
     music_format=w.get('format','五线谱总谱')
@@ -320,7 +321,11 @@ def source_card(w, group=''):
         formats.append('总谱')
     if re.search(r'分谱|总分谱',score_evidence):
         formats.append('分谱')
-    return card(title,desc,w['source'],badges=(w['access'],),meta=meta,attrs=filter_attr(search,group or w['access'],title=title,formats=formats,facets={'provider':[provider or '综合资源']}))
+    version_links = ''
+    if w.get('scoreVersions'):
+        rows = ''.join(f'<li>{anchor(version["source"],version["label"]+" · PDF")}<small>文件 {version["pages"]} 页 · 总谱正文第 {escape(version["scorePages"])} 页</small></li>' for version in w['scoreVersions'])
+        version_links = f'<details class="source-versions"><summary>展开 {len(w["scoreVersions"])} 个官方总谱版本</summary><ul class="source-version-list">{rows}</ul><p class="meta">原站核对：<time datetime="{escape(w["checkedAt"])}">{escape(w["checkedAt"])}</time>。分谱申请与使用条件请查看上方原机构页面。</p></details>'
+    return card(title,desc,w['source'],badges=(w['access'],),meta=meta,extra=version_links,attrs=filter_attr(search,group or w['access'],title=title,formats=formats,facets={'provider':[provider or '综合资源']}))
 
 def source_page(sources):
     intro=hero('官方谱源与出版入口','民族管弦乐总谱导航','从原机构下载、申请、租借或购买。按曲名、出版社、乐团及获取方式查找。')
@@ -416,10 +421,11 @@ def main():
     for key,title,copy,subset in [('/scores/library/','专业谱库','查找已发布简谱，按曲名、乐器、编制或谱面版本筛选。',works),
                                  ('/scores/arrangements/','民乐与中西混编案例','按同一作品的不同编制比较谱件数量和交付形式。', [w for w in works if w['kind']=='编配版本'])]:
         link=f'<div class="hero-actions">{anchor("/scores/instruments/","按乐器找分谱","button")}</div>' if key=='/scores/library/' else ''
-        output(key,title,copy+' 包含固定调和首调分谱、合订本及实际登记的指挥简谱总谱。',hero('曲目与版本',title,copy,link)+
+        output(key,title,copy+' 包含固定调和首调分谱、合订本及实际登记的指挥简谱总谱。',hero('曲目与版本',title,copy,link)+score_community.access_notice()+
             filtered([work_card(w) for w in subset],[w['kind'] for w in subset],[w['ensemble'] for w in subset],extra_filters=[('format','谱面版本',[v for w in subset for v in w['variants']]+(['简谱指挥总谱'] if any(w['fullScores'] for w in subset) else []))]),script='/scores/filters.js')
     import orchestra_showcase
     orchestra_showcase.build_showcase(sys.modules[__name__])
+    score_community.build_community(sys.modules[__name__])
     import score_experience
     score_experience.build_experience(sys.modules[__name__],works,opens,sources)
     write_sitemap()

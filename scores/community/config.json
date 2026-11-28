@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "name": "杨书泰",
+  "email": "yangshutai26@mails.ucas.ac.cn",
+  "backupEmail": "yangshutai51@gmail.com",
+  "wechat": "taitai_2026",
+  "qq": "2592255858",
+  "verifiedOn": "2026-11-29",
+  "source": "https://taitai2025.github.io/#resume",
+  "assets": {
+    "wechat-friend.jpg": {
+      "src": "/scores/community/wechat-friend.jpg",
+      "width": 888,
+      "height": 1131,
+      "sha256": "534195798e685af42ecce25d7d496dd8a59714ebbeedce14fdfc745b98b709e0"
+    },
+    "alipay-support.jpg": {
+      "src": "/scores/community/alipay-support.jpg",
+      "width": 1366,
+      "height": 2048,
+      "sha256": "77aa79c57b6e5e5e0772e6ed895885f2fa11104d4d260b66aa235a71e58e849b"
+    },
+    "wechat-support.jpg": {
+      "src": "/scores/community/wechat-support.jpg",
+      "width": 828,
+      "height": 1124,
+      "sha256": "dda327c5aefed9234ed66dfeea400eecbb8c4969c6f3828958b461c9fe6dcb1d"
+    }
+  }
+}

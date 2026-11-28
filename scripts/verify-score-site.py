@@ -7,6 +7,7 @@ ownership, search-engine indexing, or whether a deployment has succeeded.
 from __future__ import annotations
 
 from collections import Counter
+from datetime import date
 from html.parser import HTMLParser
 import importlib.util
 import json
@@ -51,7 +52,12 @@ SOURCE_FIELDS = {
     'title', 'composer', 'composerEn', 'provider', 'source', 'edition', 'license',
     'licenseUrl', 'rightsStatus', 'pages', 'format', 'details', 'category',
     'access', 'accessDetail', 'evidence', 'notes', 'downloadType', 'instruments',
+    'checkedAt', 'versionCount', 'scoreVersions',
 }
+SOURCE_VERSION_FIELDS = {'label', 'pages', 'scorePages', 'source'}
+# Version-level downloads are reviewed separately from generic catalogue links.
+# Adding a provider requires checking its official delivery domain first.
+SOURCE_VERSION_HOSTS = {'竹韵小集': 'www.hkwindpipe.org'}
 COLLECTION_FIELDS = {
     'id', 'slug', 'kind', 'title', 'url', 'composer', 'ensemble', 'format',
     'version', 'partCount', 'instruments', 'movements', 'summary', 'access',
@@ -140,6 +146,63 @@ def check_private_data(value, label):
                 f'{label}: local or private file reference is not a public URL')
         if value.startswith(('https://', 'http://', '//')):
             safe_url(value, label, external=True)
+
+
+def verify_source_versions(source, label):
+    metadata_fields = {'checkedAt', 'versionCount', 'scoreVersions'}
+    if not (metadata_fields & source.keys()):
+        return
+    require(metadata_fields <= source.keys(),
+            f'{label}: version metadata needs checkedAt, versionCount and scoreVersions together')
+    checked_at = source['checkedAt']
+    require(isinstance(checked_at, str) and re.fullmatch(r'[0-9]{4}-[0-9]{2}-[0-9]{2}', checked_at),
+            f'{label}: checkedAt must be a calendar date in YYYY-MM-DD format')
+    try:
+        date.fromisoformat(checked_at)
+    except ValueError as error:
+        raise ValueError(f'{label}: checkedAt is not a valid calendar date') from error
+    versions = source['scoreVersions']
+    require(isinstance(versions, list) and positive(source['versionCount'])
+            and source['versionCount'] == len(versions),
+            f'{label}: versionCount must equal the nonempty scoreVersions list length')
+    host = SOURCE_VERSION_HOSTS.get(source.get('provider'))
+    require(host is not None, f'{label}: version downloads need a reviewed official provider')
+    safe_url(source.get('source'), f'{label}/source', external=True)
+    require(urlsplit(source['source']).netloc == host,
+            f'{label}: provider page does not use its reviewed official host')
+    require(source.get('access') == '原站下载',
+            f'{label}: scoreVersions describes original-provider downloads only')
+    seen_labels, seen_urls = set(), set()
+    for index, version in enumerate(versions):
+        version_label = f'{label}/scoreVersions[{index}]'
+        fields(version, SOURCE_VERSION_FIELDS, version_label)
+        require(set(version) == SOURCE_VERSION_FIELDS,
+                f'{version_label}: label, pages, scorePages and source are required')
+        title = version['label']
+        require(nonempty(title) and title == title.strip() and len(title) <= 160
+                and not any(ord(char) < 32 for char in title) and '<' not in title and '>' not in title,
+                f'{version_label}: invalid plain-text version label')
+        normalized_title = ' '.join(title.split()).casefold()
+        require(normalized_title not in seen_labels, f'{version_label}: duplicate version label')
+        seen_labels.add(normalized_title)
+        require(positive(version['pages']), f'{version_label}: invalid physical PDF page count')
+        page_range = version['scorePages']
+        bounds = re.fullmatch(r'([1-9][0-9]*)(?:[–-]([1-9][0-9]*))?', page_range) if isinstance(page_range, str) else None
+        require(bounds is not None, f'{version_label}: scorePages must be a page or inclusive page range')
+        start = int(bounds.group(1))
+        end = int(bounds.group(2) or bounds.group(1))
+        require(start <= end <= version['pages'],
+                f'{version_label}: score page range is reversed or exceeds the physical PDF')
+        url = version['source']
+        safe_url(url, f'{version_label}/source', external=True)
+        parsed = urlsplit(url)
+        path = unquote(parsed.path)
+        require(parsed.netloc == host and re.fullmatch(r'/s/[^/]+\.pdf', path, re.I)
+                and '\\' not in path and not any(ord(char) < 32 for char in path)
+                and not parsed.query and not parsed.fragment,
+                f'{version_label}: expected a direct PDF on the reviewed official host')
+        require(path not in seen_urls, f'{version_label}: duplicate PDF cannot count as another version')
+        seen_urls.add(path)
 
 
 def keyed(records, label, field='slug'):
@@ -239,6 +302,7 @@ def verify_catalogue():
         for key in ('title', 'access'):
             require(nonempty(source.get(key)), f'{label}: missing {key}')
         safe_url(source.get('source'), label, external=True)
+        verify_source_versions(source, label)
     for label, data in [('catalogue', catalog), ('parts', parts), ('rosters', rosters)]:
         check_private_data(data, label)
     collection_path = SCORES / 'collection-index.json'

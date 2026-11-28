@@ -8,6 +8,7 @@
     "check:scores": "python3 scripts/verify-score-site.py && python3 scripts/test-catalogue.py && node --test scripts/test-score-turn-scope.mjs scripts/test-arrange-project.mjs scripts/test-arrange-comparison.mjs",
     "check:scores:ui": "node --test scripts/test-experience.mjs",
     "check:scores:orchestras": "python3 scripts/build-orchestra-showcase.py --check && node scripts/test-orchestra-showcase.mjs",
+    "check:scores:community": "node --test scripts/test-score-community.mjs",
     "check:scores:live": "python3 scripts/check-score-discovery.py --live"
   },
   "devDependencies": { "jsdom": "30.1.3" }
