@@ -1,6 +1,8 @@
 import { solveAssignment } from './assignment.mjs';
 import { parseMusicXML, readRange, midiName, evaluateMapping, exportMusicXML } from './musicxml.mjs';
+import { readScoreFile } from './score-file.mjs';
 import { profiles, presets, roles, sampleXML } from './instruments.mjs';
+import { createProject, readProject, restoreProject, scoreFingerprint, projectSizeLimit } from './project.mjs';
 
 const el=(id)=>document.getElementById(id);
 const create=(tag,text='',classes='')=>{
@@ -9,7 +11,7 @@ const create=(tag,text='',classes='')=>{
   if (classes) node.className=classes;
   return node;
 };
-const state = {analysis:null,parts:[],seats:[],mappings:null,sourceLoaded:0,seatId:0};
+const state = {analysis:null,scoreKey:'',parts:[],seats:[],mappings:null,sourceLoaded:0,seatId:0,projectLoaded:0,pendingProject:null};
 
 function status(id,message,type='') {
   const node=el(id);
@@ -78,17 +80,55 @@ function showSource() {
 }
 function clearSource() {
   state.analysis=null;
+  state.scoreKey='';
   state.parts=[];
+  el('save-project').disabled=true;
+  el('score-identity').textContent='';
   showSource();
   flagStale();
 }
-function receive(xml) {
+function useProject(project) {
+  const restored=restoreProject(project,state.scoreKey,state.parts);
+  state.parts=restored.parts;
+  state.seats=restored.seats;
+  state.seatId=restored.lastSeatId;
+  state.pendingProject=null;
+  el('cancel-project').hidden=true;
+  showSource();showSeats();flagStale();
+  status('project-status','已恢复同一份原谱的席位、音域、角色和优先级。请重新计算匹配。','ok');
+}
+async function loadSource(read) {
+  const requested=++state.sourceLoaded;
+  const previousKey=state.scoreKey;
+  const previousParts=new Map(state.parts.map(part=>[part.id,{role:part.role,priority:part.priority}]));
+  clearSource();
+  status('source-status','正在读取原谱。');
   try {
+    const xml=await read();
+    if(requested!==state.sourceLoaded) return;
     const analysis=parseMusicXML(xml);
+    let scoreKey='',fingerprintError='';
+    try { scoreKey=await scoreFingerprint(xml); } catch(error) { fingerprintError=error.message; }
+    if(requested!==state.sourceLoaded) return;
     state.analysis=analysis;
-    state.parts=analysis.parts.map(part=>({...part,priority:'required'}));
+    state.scoreKey=scoreKey;
+    const sameSource=Boolean(scoreKey&&scoreKey===previousKey);
+    state.parts=analysis.parts.map(part=>({...part,priority:'required',...(sameSource?previousParts.get(part.id):{})}));
+    el('save-project').disabled=!scoreKey;
+    el('score-identity').textContent=scoreKey?'谱件指纹 SHA-256：'+scoreKey:'';
     status('source-status',`已读取《${analysis.title}》 · ${analysis.parts.length} 个声部 · ${analysis.totalNotes.toLocaleString('zh-CN')} 个记谱事件`,'ok');
+    if(fingerprintError) status('project-status',fingerprintError+' 编制匹配仍可使用，项目恢复暂不可用。','error');
+    else if(state.pendingProject) {
+      if(state.pendingProject.source.sha256===scoreKey) {
+        try { useProject(state.pendingProject); } catch(error) { status('project-status',error.message,'error'); }
+      } else {
+        status('project-status',`待恢复项目《${state.pendingProject.source.title}》与这份谱不同，未套用项目设置。`,'error');
+      }
+    } else {
+      status('project-status',sameSource?'已重新载入同一份原谱并保留声部设置。':'可下载项目设置，下次连同原谱一起打开。更换原谱后重新设定声部优先级。');
+    }
   } catch(error) {
+    if(requested!==state.sourceLoaded) return;
     clearSource();
     status('source-status',error.message,'error');
     return;
@@ -110,14 +150,14 @@ function showSeats() {
   const opts=Object.fromEntries(Object.entries(profiles).map(([key,p])=>[key,`${p.name} · ${p.family}`]));
   state.seats.forEach((seat,index)=>{
     const row=create('div','','seat');
-    row.append(create('p',`席位 ${index+1}`,'seat-heading'));
-    const instrument=selector(opts,seat.profile,`席位 ${index+1} 乐器`);
+    row.append(create('p',`席位 ${seat.id}`,'seat-heading'));
+    const instrument=selector(opts,seat.profile,`席位 ${seat.id} 乐器`);
     const low=create('input'),high=create('input');
     low.value=seat.low;high.value=seat.high;
-    const role=selector(roles,seat.role,`席位 ${index+1} 作用`);
+    const role=selector(roles,seat.role,`席位 ${seat.id} 作用`);
     const remove=create('button','移除','button');
     remove.type='button';
-    remove.setAttribute('aria-label',`移除席位 ${index+1}`);
+    remove.setAttribute('aria-label',`移除席位 ${seat.id}`);
     instrument.addEventListener('change',()=>{
       seat.profile=instrument.value;
       const profile=profiles[seat.profile];
@@ -144,9 +184,9 @@ function buildTargets() {
   state.seats.forEach(seat=>{totals[seat.profile]=(totals[seat.profile]||0)+1;});
   return state.seats.map((seat,index)=>{
     const profile=profiles[seat.profile], low=readRange(seat.low),high=readRange(seat.high);
-    if (low===null||high===null||low>high) throw new Error(`第 ${index+1} 个席位的实音音域无效。`);
+    if (low===null||high===null||low>high) throw new Error(`席位 ${seat.id} 的实音音域无效。`);
     used[seat.profile]=(used[seat.profile]||0)+1;
-    return {...profile,seat:index+1,low,high,role:seat.role,
+    return {...profile,id:'seat-'+seat.id,seat:seat.id,low,high,role:seat.role,
       label:totals[seat.profile]>1?`${profile.name} ${used[seat.profile]}`:profile.name};
   });
 }
@@ -244,7 +284,7 @@ el('export-csv').addEventListener('click',()=>{
 });
 el('export-json').addEventListener('click',()=>{
   if (!state.mappings) return;
-  download(JSON.stringify({score:state.analysis.title, targets:buildTargets(), assignments:rowsForExport()},null,2),
+  download(JSON.stringify({kind:'guoyue-arrange-report',version:1,score:state.analysis.title,sourceSha256:state.scoreKey,targets:buildTargets(),assignments:rowsForExport()},null,2),
     fileName('编配方案.json'),'application/json;charset=utf-8');
 });
 el('export-xml').addEventListener('click',()=>{
@@ -257,26 +297,48 @@ el('export-xml').addEventListener('click',()=>{
     status('export-status',error.message,'error');
   }
 });
-el('source-file').addEventListener('change',async(event)=>{
+el('source-file').addEventListener('change',event=>{
   const file=event.target.files[0];
   if (!file) return;
-  const requested=++state.sourceLoaded;
-  clearSource();
-  if (file.size>12000000||!/\.(?:musicxml|xml)$/i.test(file.name)) {
-    status('source-status','请选择 12 MB 以内的 .musicxml 或 .xml 文件。','error');
-    return;
-  }
-  status('source-status','正在读取原谱。');
-  try {
-    const xml=await file.text();
-    if (requested===state.sourceLoaded) receive(xml);
-  } catch {
-    if (requested===state.sourceLoaded) status('source-status','文件当前无法读取，请重新选择。','error');
-  }
+  loadSource(()=>readScoreFile(file));
 });
 el('demo').addEventListener('click',()=>{
-  state.sourceLoaded++;el('source-file').value='';
-  receive(sampleXML);
+  el('source-file').value='';
+  loadSource(()=>sampleXML);
+});
+el('save-project').addEventListener('click',()=>{
+  if(!state.analysis||!state.scoreKey) return;
+  try {
+    const project=createProject({scoreKey:state.scoreKey,title:state.analysis.title,parts:state.parts,seats:state.seats,lastSeatId:state.seatId});
+    download(JSON.stringify(project,null,2),fileName('项目设置.json'),'application/json;charset=utf-8');
+    status('project-status','项目设置已下载。文件不包含音符，下次请同时准备原来的 MusicXML 或 MXL。','ok');
+  } catch(error) {status('project-status',error.message,'error');}
+});
+el('load-project').addEventListener('change',async event=>{
+  const field=event.currentTarget,file=field.files[0];
+  if(!file) return;
+  const requested=++state.projectLoaded;
+  try {
+    if(file.size>projectSizeLimit) throw new Error('项目文件过大，请选择 250 KB 以内的设置文件。');
+    const project=readProject(await file.text());
+    if(requested!==state.projectLoaded) return;
+    if(state.analysis&&state.scoreKey===project.source.sha256) useProject(project);
+    else {
+      state.pendingProject=project;
+      el('cancel-project').hidden=false;
+      status('project-status',`已暂存项目《${project.source.title}》。请选择对应的原始 MusicXML/MXL，指纹一致后恢复设置。当前设置保持不变。`);
+    }
+  } catch(error) {
+    if(requested===state.projectLoaded) status('project-status',error.message,'error');
+  } finally {
+    if(requested===state.projectLoaded) field.value='';
+  }
+});
+el('cancel-project').addEventListener('click',()=>{
+  state.projectLoaded++;
+  state.pendingProject=null;
+  el('cancel-project').hidden=true;
+  status('project-status','已取消等待恢复的项目。当前设置保持不变。');
 });
 for(const preset of Object.keys(presets)) el(`preset-${preset}`).addEventListener('click',()=>applyPreset(preset));
 el('add-seat').addEventListener('click',()=>{

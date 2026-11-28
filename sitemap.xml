@@ -2,22 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://taitai2025.github.io/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
   <url>
     <loc>https://taitai2025.github.io/about/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
   <url>
     <loc>https://taitai2025.github.io/research/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
   <url>
     <loc>https://taitai2025.github.io/notes/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
   <url>
     <loc>https://taitai2025.github.io/scores/</loc>
+  </url>
+  <url>
+    <loc>https://taitai2025.github.io/scores/about/</loc>
   </url>
   <url>
     <loc>https://taitai2025.github.io/scores/arrangements/</loc>
@@ -152,6 +155,9 @@
     <loc>https://taitai2025.github.io/scores/open/yulunpao-bawangxiejia-sanxian/</loc>
   </url>
   <url>
+    <loc>https://taitai2025.github.io/scores/planner/</loc>
+  </url>
+  <url>
     <loc>https://taitai2025.github.io/scores/sources/</loc>
   </url>
   <url>
@@ -159,6 +165,9 @@
   </url>
   <url>
     <loc>https://taitai2025.github.io/scores/tools/arrange/</loc>
+  </url>
+  <url>
+    <loc>https://taitai2025.github.io/scores/tools/arrange/sections/</loc>
   </url>
   <url>
     <loc>https://taitai2025.github.io/scores/tools/cooperation/</loc>

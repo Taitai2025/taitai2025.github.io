@@ -65,7 +65,14 @@
         }
       ],
       "format": "弦索合奏分谱与工尺骨谱",
-      "details": "《弦索十三套》中的一套，收录琵琶、三弦、胡琴、筝四件乐器的独立原谱和工尺骨谱，共 113 页。原扫描题《拾陆板》。"
+      "details": "《弦索十三套》中的一套，收录琵琶、三弦、胡琴、筝四件乐器的独立原谱和工尺骨谱，共 113 页。原扫描题《拾陆板》。",
+      "instruments": [
+        "琵琶",
+        "三弦",
+        "胡琴",
+        "古筝"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "mei-hua-san-nong-shenqi",
@@ -80,7 +87,11 @@
       "pages": 4,
       "format": "古琴减字谱",
       "details": "《神奇秘谱》中卷古琴独奏谱，十段。原档 PDF 第61–64页，边页与前后曲目同版。 原站 PDF 为整册扫描，按所列页码查看。",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "instruments": [
+        "古琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "liu-shui-shenqi",
@@ -95,7 +106,11 @@
       "pages": 5,
       "format": "古琴减字谱",
       "details": "《神奇秘谱》上卷古琴独奏谱。原档 PDF 第33–37页，由“流水”至“曲终”；边页与《高山》《阳春》同版。 原站 PDF 为整册扫描，按所列页码查看。",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "instruments": [
+        "古琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "guang-ling-san-shenqi",
@@ -110,7 +125,11 @@
       "pages": 15,
       "format": "古琴减字谱",
       "details": "《神奇秘谱》上卷古琴独奏谱。原档 PDF 第13–27页，含开指、小序、大序、正声、乱声、后序。 原站 PDF 为整册扫描，按所列页码查看。",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "instruments": [
+        "古琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "gao-shan-shenqi",
@@ -125,7 +144,11 @@
       "pages": 4,
       "format": "古琴减字谱",
       "details": "《神奇秘谱》上卷的独立古琴曲。原档 PDF 第30–33页。首尾与前曲及《流水》同版。 原站 PDF 为整册扫描，按所列页码查看。",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "instruments": [
+        "古琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "ping-sha-luo-yan-qinxue",
@@ -140,7 +163,11 @@
       "pages": 3,
       "format": "古琴减字谱附工尺",
       "details": "《琴学入门》下卷中吕均古琴谱。原档第4册 PDF 第8–10页，曲谱至第10页完结。 原站 PDF 为整册扫描，按所列页码查看。",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "instruments": [
+        "古琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "yang-guan-san-die-qinxue",
@@ -155,7 +182,11 @@
       "pages": 2,
       "format": "古琴减字谱附工尺",
       "details": "《琴学入门》下卷无射均古琴谱。原档第6册 PDF 第12–13页，含三叠。 原站 PDF 为整册扫描，按所列页码查看。",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "instruments": [
+        "古琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "yu-qiao-wen-da-qinxue",
@@ -170,7 +201,11 @@
       "pages": 4,
       "format": "古琴减字谱附工尺",
       "details": "《琴学入门》下卷中吕均古琴谱。原档第4册 PDF 第14–17页，含全十段。 原站 PDF 为整册扫描，按所列页码查看。",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "instruments": [
+        "古琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "shi-mian-mai-fu-hua",
@@ -185,7 +220,11 @@
       "pages": 14,
       "format": "琵琶工尺谱",
       "details": "华氏琵琶谱原题《十面十三段》。Internet Archive 同扫描 PDF 第75–88页，曲谱正文共14页。 原站 PDF 为整册扫描，按所列页码查看。",
-      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "instruments": [
+        "琵琶"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "ping-sha-luo-yan-li-1920",
@@ -199,7 +238,11 @@
       "rightsStatus": "公版标注历史原刊扫描",
       "pages": 3,
       "format": "五线谱",
-      "details": "李荣寿译古琴谱，六段加尾声。原档 PDF 第50–52页。 原站 PDF 为整册扫描，按所列页码查看。"
+      "details": "李荣寿译古琴谱，六段加尾声。原档 PDF 第50–52页。 原站 PDF 为整册扫描，按所列页码查看。",
+      "instruments": [
+        "古琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "yang-guan-san-die-1920",
@@ -213,7 +256,11 @@
       "rightsStatus": "公版标注历史原刊扫描",
       "pages": 2,
       "format": "简谱及歌词",
-      "details": "原档第54页为题名与首段，第53页为三叠续谱、尾声及作者附注。摘录按曲谱顺序排列。 原站 PDF 为整册扫描，按所列页码查看。"
+      "details": "原档第54页为题名与首段，第53页为三叠续谱、尾声及作者附注。摘录按曲谱顺序排列。 原站 PDF 为整册扫描，按所列页码查看。",
+      "instruments": [
+        "声乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "liangxiao-liu-tianhua-early",
@@ -228,7 +275,11 @@
       "rightsStatus": "公版历史谱本",
       "pages": 2,
       "format": "二胡独奏工尺谱与五线谱",
-      "details": "二胡独奏全谱。原 PDF 第39页为工尺谱，第40页为五线谱；扫描谱面署名刘天华，Op.9。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+      "details": "二胡独奏全谱。原 PDF 第39页为工尺谱，第40页为五线谱；扫描谱面署名刘天华，Op.9。 原站 PDF 为《音乐杂志》整期，按所列页码查看。",
+      "instruments": [
+        "二胡"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "yueye-liu-tianhua-early",
@@ -243,7 +294,11 @@
       "rightsStatus": "公版历史谱本",
       "pages": 4,
       "format": "二胡独奏工尺谱与五线谱",
-      "details": "二胡独奏全谱。原 PDF 第35–36页为工尺谱，第37–38页为五线谱。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+      "details": "二胡独奏全谱。原 PDF 第35–36页为工尺谱，第37–38页为五线谱。 原站 PDF 为《音乐杂志》整期，按所列页码查看。",
+      "instruments": [
+        "二胡"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "xianjuyin-liu-tianhua-early",
@@ -258,7 +313,11 @@
       "rightsStatus": "公版历史谱本",
       "pages": 7,
       "format": "二胡独奏工尺谱与五线谱",
-      "details": "二胡独奏全谱。五线谱按原标题及五段顺序排列（原 PDF 第17、16、15、14页），附第11–13页工尺谱。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+      "details": "二胡独奏全谱。五线谱按原标题及五段顺序排列（原 PDF 第17、16、15、14页），附第11–13页工尺谱。 原站 PDF 为《音乐杂志》整期，按所列页码查看。",
+      "instruments": [
+        "二胡"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "bingzhongyin-liu-tianhua-early",
@@ -273,7 +332,11 @@
       "rightsStatus": "公版历史谱本",
       "pages": 3,
       "format": "二胡独奏工尺谱",
-      "details": "二胡独奏工尺全谱。原 PDF 第3–5页；第6页是版本异同比较表。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+      "details": "二胡独奏工尺全谱。原 PDF 第3–5页；第6页是版本异同比较表。 原站 PDF 为《音乐杂志》整期，按所列页码查看。",
+      "instruments": [
+        "二胡"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "gaijincao-liu-tianhua-early",
@@ -288,7 +351,11 @@
       "rightsStatus": "公版历史谱本",
       "pages": 12,
       "format": "琵琶独奏工尺谱与五线谱",
-      "details": "琵琶独奏全谱。原 PDF 第7–12页为工尺谱，第13–18页为五线谱。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+      "details": "琵琶独奏全谱。原 PDF 第7–12页为工尺谱，第13–18页为五线谱。 原站 PDF 为《音乐杂志》整期，按所列页码查看。",
+      "instruments": [
+        "琵琶"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "gewuyin-liu-tianhua-early",
@@ -303,7 +370,11 @@
       "rightsStatus": "公版历史谱本",
       "pages": 8,
       "format": "琵琶独奏工尺谱",
-      "details": "琵琶独奏工尺全谱，从原 PDF 第3–10页摘录，末段标《尾声》。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+      "details": "琵琶独奏工尺全谱，从原 PDF 第3–10页摘录，末段标《尾声》。 原站 PDF 为《音乐杂志》整期，按所列页码查看。",
+      "instruments": [
+        "琵琶"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "yulunpao-bawangxiejia-sanxian",
@@ -318,7 +389,11 @@
       "rightsStatus": "公版历史谱本",
       "pages": 9,
       "format": "三弦独奏工尺谱",
-      "details": "历史三弦独奏全谱。原 PDF 第7–15页，谱面题《郁轮袍·霸王卸甲》，目录署陈凤威等，末页标全曲完。 原站 PDF 为《音乐杂志》整期，按所列页码查看。"
+      "details": "历史三弦独奏全谱。原 PDF 第7–15页，谱面题《郁轮袍·霸王卸甲》，目录署陈凤威等，末页标全曲完。 原站 PDF 为《音乐杂志》整期，按所列页码查看。",
+      "instruments": [
+        "三弦"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "radetzky-march-weninger-historic",
@@ -334,7 +409,11 @@
       "category": "西方古典谱源",
       "pages": 9,
       "format": "西洋管弦乐总谱",
-      "details": "Op.228 西洋管弦乐完整总谱。Space 备查件摘取原 PDF 第 3–11 页乐谱正文，共 9 页。"
+      "details": "Op.228 西洋管弦乐完整总谱。乐谱正文位于原 PDF 第 3–11 页，共 9 页；原站下载提供完整文件。",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "mozart-turkish-march",
@@ -350,7 +429,11 @@
       "category": "西方古典谱源",
       "pages": 3,
       "format": "钢琴独奏谱",
-      "details": "K.331 钢琴独奏第三乐章 Alla Turca。Space 备查件摘取原 PDF 第 20–22 页（印刷页 22–24），共 3 页。"
+      "details": "K.331 钢琴独奏第三乐章 Alla Turca。本乐章位于原 PDF 第 20–22 页（印刷页 22–24），共 3 页；原站下载提供完整文件。",
+      "instruments": [
+        "钢琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "offenbach-galop-infernal",
@@ -366,7 +449,12 @@
       "category": "西方古典谱源",
       "pages": 5,
       "format": "声乐与钢琴谱",
-      "details": "轻歌剧《地狱中的奥菲欧》第二幕第 15b 曲，法德双语声乐钢琴谱，开头附上曲衔接小节。"
+      "details": "轻歌剧《地狱中的奥菲欧》第二幕第 15b 曲，法德双语声乐钢琴谱，开头附上曲衔接小节。",
+      "instruments": [
+        "声乐",
+        "钢琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "thunder-and-lightning-polka",
@@ -382,7 +470,11 @@
       "category": "西方古典谱源",
       "pages": 20,
       "format": "西洋管弦乐总谱",
-      "details": "Op.324 西洋管弦乐完整总谱，包含打击乐声部。"
+      "details": "Op.324 西洋管弦乐完整总谱，包含打击乐声部。",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "flight-of-the-bumblebee",
@@ -398,7 +490,12 @@
       "category": "西方古典谱源",
       "pages": 4,
       "format": "声乐与钢琴缩谱",
-      "details": "歌剧《萨尔坦沙皇的故事》第三幕第一场选段，含原声乐线和钢琴缩谱。"
+      "details": "歌剧《萨尔坦沙皇的故事》第三幕第一场选段，含原声乐线和钢琴缩谱。",
+      "instruments": [
+        "声乐",
+        "钢琴"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "peer-gynt-suite-1",
@@ -414,7 +511,11 @@
       "category": "西方古典谱源",
       "pages": 37,
       "format": "西洋管弦乐总谱",
-      "details": "Op.46 西洋管弦乐四乐章完整总谱，含《晨景》和《在山魔王的宫殿里》。"
+      "details": "Op.46 西洋管弦乐四乐章完整总谱，含《晨景》和《在山魔王的宫殿里》。",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "slug": "slavonic-dance-op46-no8",
@@ -430,7 +531,11 @@
       "category": "西方古典谱源",
       "pages": 35,
       "format": "西洋管弦乐总谱",
-      "details": "Op.46 第 8 首（Presto），B.83 西洋管弦乐完整总谱。Space 备查件摘取第二册原 PDF 第 102–136 页，共 35 页。"
+      "details": "Op.46 第 8 首（Presto），B.83 西洋管弦乐完整总谱。本曲位于第二册原 PDF 第 102–136 页，共 35 页；原站下载提供完整文件。",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "title": "卡门第一组曲",
@@ -445,7 +550,11 @@
       "pages": 45,
       "details": "西洋管弦乐第一组曲完整总谱。曲名通常也指歌剧中的序曲选段，当前文件为整部组曲。",
       "download": "https://vmirror.imslp.org/files/imglnks/usimg/8/85/IMSLP569254-PMLP64163-Suite1FSbh.pdf",
-      "slug": "carmen-suite-1"
+      "slug": "carmen-suite-1",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "title": "胡桃夹子组曲",
@@ -460,7 +569,11 @@
       "pages": 120,
       "details": "Op.71a 西洋管弦乐组曲完整总谱。馆藏目录 119 个印刷页，PDF 120 页含封页。",
       "download": "https://urresearch.rochester.edu/fileDownloadForInstitutionalItem.action?itemFileId=62057&itemId=18269",
-      "slug": "nutcracker-suite"
+      "slug": "nutcracker-suite",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "title": "匈牙利舞曲第5、6首",
@@ -475,7 +588,11 @@
       "pages": 32,
       "details": "西洋管弦乐第5、6首完整总谱。第5首为 G 小调管弦版，和钢琴四手联弹源谱须分版本记。",
       "download": "https://urresearch.rochester.edu/fileDownloadForInstitutionalItem.action?itemFileId=69991&itemId=21602",
-      "slug": "hungarian-dances-5-6"
+      "slug": "hungarian-dances-5-6",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "title": "蓝色多瑙河",
@@ -490,7 +607,11 @@
       "pages": 34,
       "details": "Op.314 西洋管弦乐完整总谱。",
       "download": "https://vmirror.imslp.org/files/imglnks/usimg/b/bb/IMSLP17764-Strauss_Jr_Op.314_Full_Score.pdf",
-      "slug": "blue-danube"
+      "slug": "blue-danube",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "title": "威廉·退尔序曲",
@@ -506,7 +627,11 @@
       "pages": 47,
       "details": "歌剧序曲的西洋管弦乐完整总谱。按许可保留作曲、制谱署名并注明改动。",
       "download": "https://vmirror.imslp.org/files/imglnks/usimg/4/4a/IMSLP22579-PMLP07234-WilliamTellOvertureIMSLPa.pdf",
-      "slug": "william-tell-overture"
+      "slug": "william-tell-overture",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "title": "轻骑兵序曲",
@@ -521,7 +646,11 @@
       "pages": 34,
       "details": "西洋管弦乐完整序曲总谱。",
       "download": "https://vmirror.imslp.org/files/imglnks/usimg/8/8b/IMSLP18865-PMLP44579-Suppe_CavalryOv.pdf",
-      "slug": "light-cavalry-overture"
+      "slug": "light-cavalry-overture",
+      "instruments": [
+        "西洋管弦乐"
+      ],
+      "downloadType": "pdf"
     },
     {
       "title": "D大调卡农与吉格",
@@ -536,7 +665,12 @@
       "pages": 5,
       "details": "完整手稿谱，3 把小提琴与通奏低音。供小型合奏和后续自主编配参考。",
       "download": "https://vmirror.imslp.org/files/imglnks/usimg/5/54/IMSLP346264-PMLP04611-pachelbel_canone_e_giga.pdf",
-      "slug": "canon-and-gigue"
+      "slug": "canon-and-gigue",
+      "instruments": [
+        "小提琴",
+        "通奏低音"
+      ],
+      "downloadType": "pdf"
     },
     {
       "title": "维瓦尔第《四季》·春",
@@ -552,7 +686,12 @@
       "pages": 27,
       "details": "RV 269 小提琴与弦乐完整总谱（从 A4 PDF 压缩包中选取总谱）。沿用署名，衍生版本采用相容许可。",
       "download": "https://www.mutopiaproject.org/ftp/VivaldiA/O8/spring/spring-a4-pdfs.zip",
-      "slug": "vivaldi-spring"
+      "slug": "vivaldi-spring",
+      "instruments": [
+        "小提琴",
+        "弦乐"
+      ],
+      "downloadType": "zip"
     },
     {
       "title": "维瓦尔第《四季》·夏",
@@ -568,7 +707,12 @@
       "pages": 28,
       "details": "RV 315 小提琴与弦乐完整总谱（从 A4 PDF 压缩包中选取总谱）。沿用署名，衍生版本采用相容许可。",
       "download": "https://www.mutopiaproject.org/ftp/VivaldiA/O8/summer/summer-a4-pdfs.zip",
-      "slug": "vivaldi-summer"
+      "slug": "vivaldi-summer",
+      "instruments": [
+        "小提琴",
+        "弦乐"
+      ],
+      "downloadType": "zip"
     },
     {
       "title": "维瓦尔第《四季》·秋",
@@ -584,7 +728,12 @@
       "pages": 22,
       "details": "RV 293 小提琴与弦乐完整总谱（从 A4 PDF 压缩包中选取总谱）。沿用署名，衍生版本采用相容许可。下载页项目号 350，原 PDF 页脚误沿用 301，乐章和文件均为《秋》。",
       "download": "https://www.mutopiaproject.org/ftp/VivaldiA/O8/autumn/autumn-a4-pdfs.zip",
-      "slug": "vivaldi-autumn"
+      "slug": "vivaldi-autumn",
+      "instruments": [
+        "小提琴",
+        "弦乐"
+      ],
+      "downloadType": "zip"
     },
     {
       "title": "维瓦尔第《四季》·冬",
@@ -600,39 +749,54 @@
       "pages": 24,
       "details": "RV 297 小提琴与弦乐完整总谱（从 A4 PDF 压缩包中选取总谱）。沿用署名，衍生版本采用相容许可。",
       "download": "https://www.mutopiaproject.org/ftp/VivaldiA/O8/winter/winter-a4-pdfs.zip",
-      "slug": "vivaldi-winter"
+      "slug": "vivaldi-winter",
+      "instruments": [
+        "小提琴",
+        "弦乐"
+      ],
+      "downloadType": "zip"
     }
   ],
   "sources": [
     {
       "title": "香港中乐团乐器音域与记谱",
       "source": "https://www.hkco.org/uploads/docs/682542db204771.pdf",
-      "access": "配器参考",
-      "notes": "机构技术资料。首调固定调换算之外，仍须确认实际音高和最低可用音。"
+      "access": "参考资料",
+      "notes": "机构技术资料。首调固定调换算之外，仍须确认实际音高和最低可用音。",
+      "accessDetail": "配器参考",
+      "provider": "香港中乐团"
     },
     {
       "title": "Musopen",
       "source": "https://musopen.org/music/",
-      "access": "原机构查阅",
-      "notes": "有西洋古典公开乐谱与录音，谱件和录音许可分别核对。"
+      "access": "原站下载",
+      "notes": "有西洋古典公开乐谱与录音，谱件和录音许可分别核对。",
+      "accessDetail": "原机构查阅",
+      "provider": "Musopen"
     },
     {
       "title": "IMSLP 国际乐谱库",
       "source": "https://imslp.org/",
-      "access": "公版与开放许可",
-      "notes": "以每一笔谱本的授权、地区说明为准。"
+      "access": "原站下载",
+      "notes": "以每一笔谱本的授权、地区说明为准。",
+      "accessDetail": "公版与开放许可",
+      "provider": "IMSLP"
     },
     {
       "title": "新加坡华乐团教学乐谱",
       "source": "https://sco.com.sg/zh/resources/music-scores/",
-      "access": "原机构下载",
-      "notes": "简化版总谱可从官网获取，分谱遵循官网申请方式。"
+      "access": "原站下载",
+      "notes": "简化版总谱可从官网获取，分谱遵循官网申请方式。",
+      "accessDetail": "原机构下载",
+      "provider": "新加坡华乐团"
     },
     {
       "title": "香港中乐团免费乐谱",
       "source": "https://www.hkco.org/sc/Community/Free-Score.html",
-      "access": "原机构下载",
-      "notes": "分为青年中乐教学谱和其他经典，演出与再分发条件依谱本通知。"
+      "access": "原站下载",
+      "notes": "分为青年中乐教学谱和其他经典，演出与再分发条件依谱本通知。",
+      "accessDetail": "原机构下载",
+      "provider": "香港中乐团"
     },
     {
       "title": "将军令",
@@ -645,8 +809,9 @@
       "pages": 8,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "将军令",
@@ -659,8 +824,9 @@
       "pages": 19,
       "evidence": "PDF 第 1 页页脚目视；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "三寸金莲",
@@ -673,8 +839,9 @@
       "pages": 18,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "三寸金莲",
@@ -687,8 +854,9 @@
       "pages": 18,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "庆典序曲",
@@ -701,8 +869,9 @@
       "pages": 24,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "庆典序曲",
@@ -715,8 +884,9 @@
       "pages": 32,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "八仙过海",
@@ -729,8 +899,9 @@
       "pages": 19,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "八仙过海",
@@ -743,8 +914,9 @@
       "pages": 29,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "如愿",
@@ -757,8 +929,9 @@
       "pages": 21,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "如愿",
@@ -771,8 +944,9 @@
       "pages": 24,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "骏马奔驰",
@@ -785,8 +959,9 @@
       "pages": 25,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "骏马奔驰",
@@ -799,8 +974,9 @@
       "pages": 24,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "丰年祭",
@@ -813,8 +989,9 @@
       "pages": 24,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "秦·兵马俑",
@@ -827,8 +1004,9 @@
       "pages": 29,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "秦·兵马俑",
@@ -841,8 +1019,9 @@
       "pages": 31,
       "evidence": "PDF 第 1 页署注；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "十面埋伏",
@@ -855,8 +1034,9 @@
       "pages": 40,
       "evidence": "PDF 第 1 页页脚目视；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "十面埋伏",
@@ -869,8 +1049,9 @@
       "pages": 28,
       "evidence": "PDF 第 1 页页脚目视；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "太平山下不夜城",
@@ -883,8 +1064,9 @@
       "pages": 25,
       "evidence": "PDF 第 1 页页脚目视；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "太平山下不夜城",
@@ -897,8 +1079,9 @@
       "pages": 18,
       "evidence": "PDF 第 1 页页脚目视；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "唐响",
@@ -911,8 +1094,9 @@
       "pages": 62,
       "evidence": "PDF 第 1 页页脚目视；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "唐响",
@@ -925,8 +1109,9 @@
       "pages": 16,
       "evidence": "PDF 第 1 页页脚目视；香港中乐团官方目录。",
       "details": "仅供用户私有教育/备查。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。"
+      "access": "原站下载",
+      "notes": "官网教育与音乐推广用乐谱，保留原有谱本说明。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "海上第一人——郑和：海路",
@@ -939,8 +1124,9 @@
       "pages": 41,
       "evidence": "PDF 第 4 页；https://sco.com.sg/zh/resources/music-scores/",
       "details": "官网免费总谱面向学校及非专业团体；仅供用户私有教育备查。分谱须联系原机构。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。"
+      "access": "原站下载",
+      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "同乐会",
@@ -953,8 +1139,9 @@
       "pages": 41,
       "evidence": "PDF 第 4 页；https://sco.com.sg/zh/resources/music-scores/",
       "details": "官网免费总谱面向学校及非专业团体；仅供用户私有教育备查。分谱须联系原机构。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。"
+      "access": "原站下载",
+      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "草原狂想",
@@ -967,8 +1154,9 @@
       "pages": 33,
       "evidence": "PDF 第 4 页；https://sco.com.sg/zh/resources/music-scores/",
       "details": "官网免费总谱面向学校及非专业团体；仅供用户私有教育备查。分谱须联系原机构。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。"
+      "access": "原站下载",
+      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "青年序曲",
@@ -981,8 +1169,9 @@
       "pages": 53,
       "evidence": "PDF 第 4 页；https://sco.com.sg/zh/resources/music-scores/",
       "details": "官网免费总谱面向学校及非专业团体；仅供用户私有教育备查。分谱须联系原机构。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。"
+      "access": "原站下载",
+      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "王子与狮子",
@@ -995,8 +1184,9 @@
       "pages": 34,
       "evidence": "PDF 第 4 页；https://sco.com.sg/zh/resources/music-scores/",
       "details": "官网免费总谱面向学校及非专业团体；仅供用户私有教育备查。分谱须联系原机构。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。"
+      "access": "原站下载",
+      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "芬芳的交响",
@@ -1009,8 +1199,9 @@
       "pages": 30,
       "evidence": "PDF 第 4 页；https://sco.com.sg/zh/resources/music-scores/",
       "details": "官网免费总谱面向学校及非专业团体；仅供用户私有教育备查。分谱须联系原机构。公开仓库、商业制谱和转售权限待另行授权。",
-      "access": "原机构查阅",
-      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。"
+      "access": "原站下载",
+      "notes": "权利保留；仅限教育使用，未经明确授权禁止发行或作其他用途。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "金蛇迎春",
@@ -1021,8 +1212,9 @@
       "category": "民族管乐合奏｜总分谱",
       "pages": 53,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "庙埕的鼓吹声（大乐队版）",
@@ -1033,8 +1225,9 @@
       "category": "唢呐与民族管弦乐｜总分谱",
       "pages": 64,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "七字调随想（2009 修订）",
@@ -1045,8 +1238,9 @@
       "category": "唢呐独奏与伴奏｜含总谱",
       "pages": 46,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "桃花过渡",
@@ -1057,8 +1251,9 @@
       "category": "吹打乐｜总分谱",
       "pages": 25,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "草螟弄鸡公（孙沛元六重奏版）",
@@ -1069,8 +1264,9 @@
       "category": "丝竹六重奏｜总分谱",
       "pages": 37,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "山地歌舞",
@@ -1081,8 +1277,9 @@
       "category": "吹打乐｜总谱及五线谱分谱",
       "pages": 30,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "丢丢铜",
@@ -1093,8 +1290,9 @@
       "category": "吹打乐｜总分谱",
       "pages": 50,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "凤阳花鼓",
@@ -1105,8 +1303,9 @@
       "category": "唢呐二重奏｜总谱",
       "pages": 27,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "光·河·夜：爱河夜景印象（v3）",
@@ -1117,8 +1316,9 @@
       "category": "丝竹室内乐｜含总谱",
       "pages": 61,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "凌晨两点（2.1 版）",
@@ -1129,8 +1329,9 @@
       "category": "丝竹六重奏｜含总谱",
       "pages": 36,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "红尘菩提（2.0 版）",
@@ -1141,8 +1342,9 @@
       "category": "丝竹六重奏｜含总谱",
       "pages": 20,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "行星组曲·木星（丝竹七重奏 v3）",
@@ -1153,8 +1355,9 @@
       "category": "丝竹七重奏｜含总谱",
       "pages": 42,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "台湾民谣幻想组曲",
@@ -1165,8 +1368,9 @@
       "category": "民族管弦乐｜总分谱",
       "pages": 151,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "五更鼓（六重奏）",
@@ -1177,8 +1381,9 @@
       "category": "丝竹六重奏｜总分谱",
       "pages": 23,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "阿里山的日出",
@@ -1189,8 +1394,9 @@
       "category": "丝竹室内乐｜含总谱",
       "pages": 92,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "山吟（暢想室内乐团缩编）",
@@ -1201,8 +1407,9 @@
       "category": "丝竹室内乐｜缩编总谱",
       "pages": 19,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "山吟（原版）",
@@ -1213,8 +1420,9 @@
       "category": "丝竹室内乐｜原版总分谱",
       "pages": 90,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "茉莉花（于磊三重奏版）",
@@ -1225,8 +1433,9 @@
       "category": "二胡、琵琶与古筝｜总分谱",
       "pages": 9,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "卡门序曲（于磊民族管弦乐版）",
@@ -1237,8 +1446,9 @@
       "category": "民族管弦乐｜总分谱",
       "pages": 48,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "八月桂花遍地开",
@@ -1249,8 +1459,9 @@
       "category": "小合奏｜总分谱",
       "pages": 15,
       "details": "限个人制谱参考；改编、公开再分发与售卖未获核实",
-      "access": "原机构查阅",
-      "notes": "原资源页主动提供公开下载，未列出开放再分发许可"
+      "access": "原站下载",
+      "notes": "原资源页主动提供公开下载，未列出开放再分发许可",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "西北雨幻想曲·笛子主奏谱",
@@ -1261,8 +1472,9 @@
       "category": "双笛主奏分谱",
       "pages": 6,
       "details": "同一用户非商业排练研究；版权归出版方",
-      "access": "原机构查阅",
-      "notes": "出版方明确允许此笛子主奏谱免费下载、影印、流传等非商业使用"
+      "access": "原站样张",
+      "notes": "出版方明确允许此笛子主奏谱免费下载、影印、流传等非商业使用",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "新阕胡笳十八拍·古琴分谱",
@@ -1273,8 +1485,9 @@
       "category": "古琴分谱样张",
       "pages": 4,
       "details": "同一用户非商业排练研究；版权归出版方",
-      "access": "原机构查阅",
-      "notes": "出版方明确标明此古琴分谱样张可复制流传；商业使用未明确"
+      "access": "原站样张",
+      "notes": "出版方明确标明此古琴分谱样张可复制流传；商业使用未明确",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "拉德茨基进行曲",
@@ -1289,8 +1502,9 @@
       "category": "西方古典谱源",
       "pages": 14,
       "details": "西洋管弦乐完整总谱，反复段展开。可在非商业条件下复制及私用备份，注明编配、制谱和出处，衍生版本须采用相容许可。",
-      "access": "原机构查阅",
-      "notes": "CC BY-NC-SA 4.0"
+      "access": "原站下载",
+      "notes": "CC BY-NC-SA 4.0",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "康康舞曲（铜管四重奏）",
@@ -1305,148 +1519,169 @@
       "category": "西方古典谱源",
       "pages": 9,
       "details": "圆号、小号、长号及大号四重奏总谱。仅非商业使用，保留署名与许可证。",
-      "access": "原机构查阅",
-      "notes": "CC BY-NC 4.0"
+      "access": "原站下载",
+      "notes": "CC BY-NC 4.0",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "秦·兵马俑",
       "source": "https://www.hkco.org/sc/Others/The-Terra-Cotta-Warriors.html",
       "provider": "香港中乐团",
-      "access": "原机构查阅",
-      "notes": "本谱标明仅供香港国际青年中乐节活动使用。"
+      "access": "原站下载",
+      "notes": "本谱标明仅供香港国际青年中乐节活动使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "春江花月夜",
       "source": "https://www.hkco.org/sc/Others/Moonlight-On-The-Spring-River.html",
       "provider": "香港中乐团",
-      "access": "原机构查阅",
-      "notes": "本谱标明仅供香港国际青年中乐节活动使用。"
+      "access": "原站下载",
+      "notes": "本谱标明仅供香港国际青年中乐节活动使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "十面埋伏",
       "source": "https://www.hkco.org/sc/Others/Ambush-From-All-Sides.html",
       "provider": "香港中乐团",
-      "access": "原机构查阅",
-      "notes": "本谱标明仅供香港国际青年中乐节活动使用。"
+      "access": "原站下载",
+      "notes": "本谱标明仅供香港国际青年中乐节活动使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "月儿高",
       "source": "https://www.hkco.org/sc/Others/As-The-Moon-Rises.html",
       "provider": "香港中乐团",
-      "access": "原机构查阅",
-      "notes": "本谱标明仅供香港国际青年中乐节活动使用。"
+      "access": "原站下载",
+      "notes": "本谱标明仅供香港国际青年中乐节活动使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "维港夜曲",
       "source": "https://www.hkco.org/sc/Others/Nocturne-To-The-Victoria-Harbour.html",
       "provider": "香港中乐团",
-      "access": "原机构查阅",
-      "notes": "本谱标明仅供香港国际青年中乐节活动使用。"
+      "access": "原站下载",
+      "notes": "本谱标明仅供香港国际青年中乐节活动使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "唐响",
       "source": "https://www.hkco.org/sc/Others/Tang-Resonating.html",
       "provider": "香港中乐团",
-      "access": "原机构查阅",
-      "notes": "本谱标明仅供香港国际青年中乐节活动使用。"
+      "access": "原站下载",
+      "notes": "本谱标明仅供香港国际青年中乐节活动使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "步步高",
       "source": "https://www.hkco.org/sc/Others/Stepping-High.html",
       "provider": "香港中乐团",
-      "access": "原机构查阅",
-      "notes": "本谱标明仅供香港国际青年中乐节活动使用。"
+      "access": "原站下载",
+      "notes": "本谱标明仅供香港国际青年中乐节活动使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "花好月圆",
       "source": "https://www.hkco.org/sc/Others/Full-Moon-And-Blossoming-Flower.html",
       "provider": "香港中乐团",
-      "access": "原机构查阅",
-      "notes": "本谱标明仅供香港国际青年中乐节活动使用。"
+      "access": "原站下载",
+      "notes": "本谱标明仅供香港国际青年中乐节活动使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "大宅门写意—芦沟晓月",
       "source": "https://www.hkco.org/sc/Others/The-Family-Legend---The-Moon-At-Dawn-Over-Lugou-Bridge.html",
       "provider": "香港中乐团",
-      "access": "原机构查阅",
-      "notes": "本谱标明仅供香港国际青年中乐节活动使用。"
+      "access": "原站下载",
+      "notes": "本谱标明仅供香港国际青年中乐节活动使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "竹韵小集《未来的传统》2024 年乐谱共享",
       "source": "https://www.hkwindpipe.org/future-classics-score2024",
       "provider": "竹韵小集",
-      "access": "原机构查阅",
-      "notes": "版权人授权教育、研究和推广；机构或团体按流程登记，乐团邮件发放。"
+      "access": "登记申请",
+      "notes": "版权人授权教育、研究和推广；机构或团体按流程登记，乐团邮件发放。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "竹韵小集《未来的传统》2025 年乐谱共享",
       "source": "https://www.hkwindpipe.org/future-classics-score2025",
       "provider": "竹韵小集",
-      "access": "原机构查阅",
-      "notes": "版权人授权教育、研究和推广；机构或团体按流程登记，乐团邮件发放。"
+      "access": "登记申请",
+      "notes": "版权人授权教育、研究和推广；机构或团体按流程登记，乐团邮件发放。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "新加坡华乐团南洋曲目租谱",
       "source": "https://sco.com.sg/resources/music-scores/",
       "provider": "新加坡华乐团",
-      "access": "原机构查阅",
-      "notes": "付费租借，按原机构协议使用。"
+      "access": "付费租借",
+      "notes": "付费租借，按原机构协议使用。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "吹鼓吹小站·国乐电子乐谱中心",
       "source": "https://sites.google.com/view/suona-cc/",
-      "provider": "机构目录",
-      "access": "原站下载 ZIP",
-      "notes": "民族管乐、吹打乐、室内乐及民乐移植。具体曲目下载由作者站提供。乐谱作参考，开放再分发范围未列出。"
+      "provider": "吹鼓吹小站",
+      "access": "原站下载",
+      "notes": "民族管乐、吹打乐、室内乐及民乐移植。具体曲目下载由作者站提供。乐谱作参考，开放再分发范围未列出。",
+      "accessDetail": "原站下载 ZIP"
     },
     {
       "title": "台湾国乐团·传艺典藏 曲谱复印",
       "source": "https://collections.ncfta.gov.tw/pages/print/list.aspx",
-      "provider": "机构目录",
-      "access": "申请并付费",
-      "notes": "查目录后在线或签署申请表，批准并缴费后电邮交付。申请用途及授权条件以机构流程为准。"
+      "provider": "台湾国乐团／传艺中心",
+      "access": "登记申请",
+      "notes": "按传艺典藏流程申请曲谱复印并付费，费用与使用范围以机构回复为准。",
+      "accessDetail": "申请并付费"
     },
     {
       "title": "台北市立国乐团·乐谱出版",
       "source": "https://www.tco.gov.taipei/News.aspx?n=BB40E237A2400090&sms=F8145F0F09396E39",
-      "provider": "机构目录",
-      "access": "购买出版谱",
-      "notes": "从机构出版目录确认确切总谱版本、配器和购买方式。"
+      "provider": "台北市立国乐团",
+      "access": "购买乐谱",
+      "notes": "从机构出版目录确认确切总谱版本、配器和购买方式。",
+      "accessDetail": "购买出版谱"
     },
     {
       "title": "台北市立国乐团·乐谱借阅",
       "source": "https://www.tco.gov.taipei/cp.aspx?n=F9D32A74EA1BDC0C",
-      "provider": "机构目录",
-      "access": "提交借阅申请",
-      "notes": "机构有总谱及分谱借阅流程。确认授权同意及实际对外演出用途。"
+      "provider": "台北市立国乐团",
+      "access": "登记申请",
+      "notes": "机构有总谱及分谱借阅流程。确认授权同意及实际对外演出用途。",
+      "accessDetail": "提交借阅申请"
     },
     {
       "title": "钟耀光·学习总谱",
       "source": "https://www.yiukwongchung.com/c/categories/study-score",
-      "provider": "机构目录",
-      "access": "购买",
-      "notes": "作曲者官方商店。含民族管弦乐、协奏曲和混编版本。指挥总谱与全套谱分开列。"
+      "provider": "钟耀光",
+      "access": "购买乐谱",
+      "notes": "作曲者官方商店。含民族管弦乐、协奏曲和混编版本。指挥总谱与全套谱分开列。",
+      "accessDetail": "购买"
     },
     {
       "title": "香港音乐事务处资源中心",
       "source": "https://www.lcsd.gov.hk/sc/mo/morc.html",
-      "provider": "机构目录",
-      "access": "目录检索及到访咨询",
-      "notes": "香港官方馆藏，含中西乐团、室乐和委约作品。页面提供资源中心目录及团体到访途径。"
+      "provider": "香港音乐事务处",
+      "access": "馆藏查阅",
+      "notes": "香港官方馆藏，含中西乐团、室乐和委约作品。页面提供资源中心目录及团体到访途径。",
+      "accessDetail": "目录检索及到访咨询"
     },
     {
       "title": "牧民音乐·国乐制谱及出版",
       "source": "https://muminmusic2020.wordpress.com/author/muminmusic2020/",
-      "provider": "机构目录",
-      "access": "个别开放样张及付费套谱",
-      "notes": "具体版本为编创者拥有。免费笛子分谱与收费总分谱分开处理。"
+      "provider": "牧民音乐",
+      "access": "目录检索",
+      "notes": "具体版本为编创者拥有。免费笛子分谱与收费总分谱分开处理。",
+      "accessDetail": "个别开放样张及付费套谱"
     },
     {
       "title": "Naxos 乐谱出版·中国管弦乐",
       "source": "https://publishing.naxos.com/collections/chinese-music-sheet-music",
-      "provider": "机构目录",
-      "access": "按版购买或租借",
-      "notes": "核对《春节序曲》《瑶族舞曲》等具体编制，尤其注意西洋管弦乐总谱与民族乐队配器的差异。"
+      "provider": "Naxos 乐谱出版",
+      "access": "购买乐谱",
+      "notes": "按具体版次购买或租借；先核对民乐、西洋管弦乐编制和总谱、分谱的供给方式。",
+      "accessDetail": "按版购买或租借"
     },
     {
       "title": "春节序曲｜西洋管弦乐总谱",
@@ -1455,8 +1690,9 @@
       "provider": "Naxos 乐谱出版",
       "edition": "NXP042",
       "pages": 18,
-      "access": "购买总谱，分谱另询",
-      "notes": "出版页列明西洋管弦乐编制。演出材料另向出版方询价。"
+      "access": "购买乐谱",
+      "notes": "出版页列明西洋管弦乐编制。演出材料另向出版方询价。",
+      "accessDetail": "购买总谱，分谱另询"
     },
     {
       "title": "瑶族舞曲｜西洋管弦乐总谱",
@@ -1465,8 +1701,9 @@
       "provider": "Naxos 乐谱出版",
       "edition": "NXP043",
       "pages": 19,
-      "access": "购买总谱，分谱另询",
-      "notes": "西洋管弦乐出版版。演出材料另向出版方询价。"
+      "access": "购买乐谱",
+      "notes": "西洋管弦乐出版版。演出材料另向出版方询价。",
+      "accessDetail": "购买总谱，分谱另询"
     },
     {
       "title": "瑶族舞曲｜彭修文民族管弦乐总谱",
@@ -1475,8 +1712,9 @@
       "provider": "人民音乐出版社",
       "edition": "1980 年书目",
       "pages": 31,
-      "access": "查书目信息",
-      "notes": "由西洋管弦乐移植的民族管弦乐版本。书目用于确认版次和馆藏。"
+      "access": "目录检索",
+      "notes": "由西洋管弦乐移植的民族管弦乐版本。书目用于确认版次和馆藏。",
+      "accessDetail": "查书目信息"
     },
     {
       "title": "彭修文作品集｜中央音乐学院馆藏",
@@ -1484,71 +1722,81 @@
       "provider": "中央音乐学院图书馆",
       "edition": "现代出版社 2019 年十卷本",
       "access": "馆藏查阅",
-      "notes": "总谱、乐器表和编制说明。馆藏索书号 J648.61/P398/P3。按曲目查看收录情况及馆方阅览要求。"
+      "notes": "总谱、乐器表和编制说明。馆藏索书号 J648.61/P398/P3。按曲目查看收录情况及馆方阅览要求。",
+      "accessDetail": "馆藏查阅"
     },
     {
       "title": "正风琅嬛｜香港浸会大学中乐合奏谱",
       "source": "https://www.hkbu.edu.hk/zh_cn/whats-new/discover-hkbu/2023/apr-2023/resounding-the-scores.html",
       "provider": "香港浸会大学图书馆、香港音乐事务处",
-      "access": "馆藏原站查阅",
-      "notes": "从项目说明进入数字化曲库，查部分或完整乐谱。展示范围及使用条件以具体馆藏为准。"
+      "access": "馆藏查阅",
+      "notes": "从项目说明进入数字化曲库，查部分或完整乐谱。展示范围及使用条件以具体馆藏为准。",
+      "accessDetail": "馆藏原站查阅"
     },
     {
       "title": "MuseScore·在线乐谱社区",
       "source": "https://musescore.com/",
-      "provider": "机构目录",
-      "access": "在线浏览，下载按作品与账户条件",
-      "notes": "按具体谱本的权利和平台的下载规则处理，适合查流行曲、游戏和影视音乐编配。"
+      "provider": "MuseScore",
+      "access": "目录检索",
+      "notes": "按具体谱本的权利和平台的下载规则处理，适合查流行曲、游戏和影视音乐编配。",
+      "accessDetail": "在线浏览，下载按作品与账户条件"
     },
     {
       "title": "ArrangeMe·授权编曲出版",
       "source": "https://www.arrangeme.com/",
-      "provider": "机构目录",
-      "access": "授权出版平台",
-      "notes": "可检索其曲库并申请出版；平台覆盖的编配使用条件和平台外使用要分别核对。"
+      "provider": "ArrangeMe",
+      "access": "参考资料",
+      "notes": "可检索其曲库并申请出版；平台覆盖的编配使用条件和平台外使用要分别核对。",
+      "accessDetail": "授权出版平台"
     },
     {
       "title": "Sheet Music Plus",
       "source": "https://www.sheetmusicplus.com/",
-      "provider": "机构目录",
-      "access": "购买数字谱或纸质谱",
-      "notes": "采购时核对确切编制、套谱内容和取得的使用范围。"
+      "provider": "Sheet Music Plus",
+      "access": "购买乐谱",
+      "notes": "采购时核对确切编制、套谱内容和取得的使用范围。",
+      "accessDetail": "购买数字谱或纸质谱"
     },
     {
       "title": "Sheet Music Direct",
       "source": "https://www.sheetmusicdirect.com/",
-      "provider": "机构目录",
-      "access": "购买数字谱",
-      "notes": "Hal Leonard 的官方数字谱服务；按作品确定谱项与可用权利。"
+      "provider": "Sheet Music Direct",
+      "access": "购买乐谱",
+      "notes": "Hal Leonard 的官方数字谱服务；按作品确定谱项与可用权利。",
+      "accessDetail": "购买数字谱"
     },
     {
       "title": "Musopen 免费古典谱库",
       "source": "https://musopen.org/sheetmusic/",
       "provider": "Musopen",
-      "access": "原机构查阅",
-      "notes": "官方曲目入口。多个网站 PDF 下载返回访问拒绝，未归档该站文件。使用时核对此具体版本。"
+      "access": "原站下载",
+      "notes": "官方曲目入口。多个网站 PDF 下载返回访问拒绝，未归档该站文件。使用时核对此具体版本。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "Mutopia Project 许可说明",
       "source": "https://www.mutopiaproject.org/legal.html",
       "provider": "Mutopia Project",
-      "access": "原机构查阅",
-      "notes": "按具体 PDF 或乐谱页保留署名及许可。"
+      "access": "参考资料",
+      "notes": "按具体 PDF 或乐谱页保留署名及许可。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "IMSLP 版权说明",
       "source": "https://imslp.org/wiki/IMSLP:Copyright_Made_Simple",
       "provider": "IMSLP",
-      "access": "原机构查阅",
-      "notes": "按具体作曲、编配、版次以及地区判断权利。"
+      "access": "参考资料",
+      "notes": "按具体作曲、编配、版次以及地区判断权利。",
+      "accessDetail": "原机构查阅"
     },
     {
       "title": "弦索备考｜清代弦索合奏分卷谱",
       "source": "https://commons.wikimedia.org/wiki/Category:%E7%B5%83%E7%B4%A2%E5%82%99%E8%80%83",
       "provider": "北京大学图书馆藏、CADAL",
       "edition": "荣斋辑，嘉庆十九年（1814）",
-      "access": "馆藏原件查阅",
-      "notes": "按指法、琵琶、三弦、胡琴、筝与工尺骨谱分卷。曲目在各卷的保存范围以原刊为准。"
+      "access": "原站下载",
+      "notes": "按指法、琵琶、三弦、胡琴、筝与工尺骨谱分卷。曲目在各卷的保存范围以原刊为准。",
+      "accessDetail": "馆藏原件查阅"
     }
   ]
 }

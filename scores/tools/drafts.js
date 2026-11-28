@@ -1,6 +1,13 @@
 'use strict';
 
 const CONTACT = 'taitai@mail.ustc.edu.cn';
+const contextParams = new URLSearchParams(location.search);
+const contextWork = (contextParams.get('work') || '').slice(0, 80);
+const contextVersion = (contextParams.get('version') || '').slice(0, 100);
+const scoreField = document.querySelector('[data-draft="校谱反馈"] [name="谱件版本"]');
+if (scoreField && !scoreField.value && contextWork) {
+  scoreField.value = [contextWork, contextVersion].filter(Boolean).join(' · ').slice(0, scoreField.maxLength);
+}
 for (const form of document.querySelectorAll('[data-draft]')) {
   const preview = form.querySelector('.generated-draft');
   const status = form.querySelector('output');

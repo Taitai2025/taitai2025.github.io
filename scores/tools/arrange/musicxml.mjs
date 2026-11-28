@@ -1,3 +1,5 @@
+import { assembleScoreClock } from './score-clock.mjs';
+
 const steps = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
 const stepPitch = [0, 2, 4, 5, 7, 9, 11];
 const accidentalNames = new Map([
@@ -14,6 +16,15 @@ const EPS = 1e-8;
 const MAX_NOTES = 120000;
 const specialized = new Set(['accidental-mark','harmonic','bends','bend','tablature','scordatura','instrument-change','string']);
 const sustained = new Set(['tie','tied']);
+const quarterUnits = new Map([
+  ['maxima',32],['long',16],['breve',8],['whole',4],['half',2],['quarter',1],
+  ['eighth',1/2],['16th',1/4],['32nd',1/8],['64th',1/16],['128th',1/32],
+  ['256th',1/64],['512th',1/128],['1024th',1/256],
+]);
+const flowWords = /\bd\s*\.\s*[cs](?:\s*\.|\b)|\b(?:da\s+capo|dal\s+segno|to\s+coda|al\s+fine|al\s+coda)\b|^\s*(?:fine|coda|segno)\s*[.!]?\s*$|从头反复|到尾声|跳至|跳到|返回记号|返回开头/iu;
+const tempoWords = /\b(?:rit(?:ardando|enuto)?|rall(?:entando)?|accel(?:erando)?|allarg(?:ando)?|rubato|stringendo|smorz(?:ando)?|meno\s+mosso|pi[uù]\s+mosso|a\s+tempo|tempo\s+(?:primo|i))(?=[\s.,;]|$)|渐快|渐慢|自由速度|回原速|恢复原速/iu;
+const tempoLabel = /^(?:grave|largo|larghetto|lento|adagio|adagietto|andante|andantino|moderato|allegretto|allegro|vivace|vivacissimo|presto|prestissimo)(?=[\s.,;]|$)|庄板|广板|慢板|柔板|行板|中板|小快板|快板|急板/iu;
+
 function recordNoteFeatures(note, features) {
   const todo=children(note);
   while(todo.length) {
@@ -22,6 +33,146 @@ function recordNoteFeatures(note, features) {
     if(sustained.has(node.localName)) features.add('跨音保持线');
     if(node.localName==='notations'||node.localName==='ornaments'||node.localName==='technical') todo.push(...children(node));
   }
+}
+
+function timingIssue(bar, onset, kind, reason, sustained=false) {
+  bar.timingIssues.push({onset,kind,reason,sustained});
+}
+
+function offsetQ(element,divisions) {
+  if (!element) return 0;
+  const raw=element.textContent.trim();
+  const offset=Number(raw)/divisions;
+  return divisions && raw!=='' && Number.isFinite(offset) ? offset : null;
+}
+
+function metronomeTempo(node) {
+  if (child(node,'metronome-note')||child(node,'beat-unit-tied')||children(node,'beat-unit').length!==1) return null;
+  const unit=quarterUnits.get(value(node,'beat-unit'));
+  const raw=value(node,'per-minute');
+  const bpm=unit*(2-2**-children(node,'beat-unit-dot').length)*Number(raw);
+  return /^\d+(?:\.\d+)?$/.test(raw) && Number.isFinite(bpm) && bpm>0 ? bpm : null;
+}
+
+function readSound(node,cursor,divisions,directionOffset,bar) {
+  if (['dacapo','dalsegno','tocoda','segno','coda','fine','forward-repeat'].some(attribute=>{
+    const mark=node.getAttribute(attribute);
+    return mark!==null && mark!=='no';
+  })) bar.flowIssues.push('含返始、返记号、尾声、终止点或未写出的反复指令');
+  if (node.hasAttribute('time-only')) bar.flowIssues.push('含只适用于指定反复遍次的播放指令');
+  const ownOffset=child(node,'offset');
+  const offset=offsetQ(ownOffset??directionOffset,divisions);
+  const onset=cursor+(offset??0);
+  const swing=child(node,'swing');
+  if (swing) bar.swingMarks.push({onset:offset===null ? 0 : onset,swung:offset===null || !child(swing,'straight')});
+  if (!node.hasAttribute('tempo')) return null;
+  const bpm=Number(node.getAttribute('tempo'));
+  if (offset===null || !Number.isFinite(bpm) || bpm<=0 || node.hasAttribute('time-only')) {
+    timingIssue(bar,onset,'tempo','缺少可用的固定速度',true);
+    return null;
+  }
+  const mark={onset,bpm,source:'sound'};
+  bar.tempoMarks.push(mark);
+  return mark;
+}
+
+function readDirection(node,cursor,divisions,bar) {
+  const offset=child(node,'offset');
+  const delta=offsetQ(offset,divisions);
+  const onset=cursor+(delta??0);
+  const sounds=children(node,'sound');
+  const playbackMarks=sounds.map(sound=>readSound(sound,cursor,divisions,offset?.getAttribute('sound')==='yes'?offset:null,bar)).filter(Boolean);
+  const hasPlaybackTempo=sounds.some(sound=>sound.hasAttribute('tempo'));
+  for (const type of children(node,'direction-type')) {
+    for (const mark of children(type)) {
+      switch (mark.localName) {
+        case 'rehearsal': {
+          const label=mark.textContent.trim();
+          if (label) bar.rehearsalMarks.push({label,onset});
+          break;
+        }
+        case 'segno':
+        case 'coda':
+          bar.flowIssues.push('含返记号或尾声标记');
+          break;
+        case 'words': {
+          const words=mark.textContent.trim().normalize('NFKC');
+          if (!words.includes('已展开') && flowWords.test(words)) bar.flowIssues.push('含文字跳转指令');
+          if (tempoWords.test(words)) timingIssue(bar,onset,'tempo-variation','文字速度变化需要排练确认',true);
+          else if (tempoLabel.test(words)) bar.timingIssues.push({
+            onset,kind:'tempo',reason:'速度术语缺少可确认的数值',sustained:true,coveredByTempoMark:true,
+          });
+          break;
+        }
+        case 'metronome': {
+          const bpm=metronomeTempo(mark);
+          if (delta===null || bpm===null) {
+            timingIssue(bar,onset,'tempo-variation','节拍器标记的速度或拍位需要确认',true);
+          } else if (!hasPlaybackTempo) {
+            bar.tempoMarks.push({onset,bpm,source:'metronome'});
+          } else if (playbackMarks.some(playback=>Math.abs(playback.bpm-bpm)>EPS)) {
+            timingIssue(bar,Math.min(onset,...playbackMarks.map(playback=>playback.onset)),'tempo','谱面与播放速度互相冲突',true);
+          }
+          break;
+        }
+      }
+    }
+  }
+}
+
+function readBarline(node,cursor,bar) {
+  const location=node.getAttribute('location')||'right';
+  const repeat=child(node,'repeat');
+  if (repeat) {
+    const direction=repeat.getAttribute('direction');
+    if (repeat.getAttribute('after-jump')==='yes') bar.flowIssues.push('含仅在跳转后生效的反复指令');
+    if (direction==='forward' && location==='left') bar.repeatForward=true;
+    else if (direction==='backward' && location==='right') {
+      const raw=repeat.getAttribute('times');
+      const times=raw===null ? 2 : Number(raw);
+      if (!Number.isSafeInteger(times) || times<1) bar.flowIssues.push('反复次数无法识别');
+      else if (bar.repeatBackward && bar.repeatBackward.times!==times) bar.flowIssues.push('同小节的反复次数不一致');
+      else bar.repeatBackward={times};
+    } else {
+      bar.flowIssues.push('反复线不在预期的小节边界');
+    }
+  }
+  const ending=child(node,'ending');
+  if (ending) {
+    const type=ending.getAttribute('type');
+    const number=ending.getAttribute('number')??'';
+    if (type==='start' && location==='left' || ['stop','discontinue'].includes(type) && location==='right') {
+      bar.endings.push({type,number,location});
+    } else {
+      bar.flowIssues.push('一、二房标记不在预期的小节边界');
+    }
+  }
+  if (child(node,'segno')||child(node,'coda')||node.hasAttribute('segno')||node.hasAttribute('coda')) {
+    bar.flowIssues.push('含返记号或尾声标记');
+  }
+  if (child(node,'fermata')) timingIssue(bar,location==='left'?0:cursor,'played-timing','延长号改变实际时长');
+}
+
+function noteTiming(note,mark,onset,duration,bar) {
+  const ties=children(note,'tie');
+  const tied=children(note,'notations').flatMap(notation=>children(notation,'tied'));
+  const tieTypes=new Set([...ties,...tied].map(item=>item.getAttribute('type')));
+  const tieConditional=ties.some(item=>item.hasAttribute('time-only'));
+  if (tieConditional || note.hasAttribute('time-only')) bar.flowIssues.push('含只适用于指定反复遍次的音符或延音线');
+  const grace=child(note,'grace');
+  const performanceModified=['attack','release'].some(attribute=>note.hasAttribute(attribute)) ||
+    Boolean(grace && ['steal-time-previous','steal-time-following','make-time'].some(attribute=>grace.hasAttribute(attribute)));
+  if (performanceModified) timingIssue(bar,onset,'played-timing','演奏起音或收音位置需复核');
+  const fermata=children(note,'notations').some(notation=>child(notation,'fermata'));
+  if (fermata) timingIssue(bar,onset+(duration??0),'played-timing','延长号改变实际时长');
+  let pitchKey=null;
+  if (mark.localName==='unpitched') {
+    const displayStep=value(mark,'display-step'), displayOctave=value(mark,'display-octave');
+    const instrument=children(note,'instrument').map(item=>item.getAttribute('id')).filter(Boolean).sort().join(',');
+    if (instrument || displayStep && displayOctave) pitchKey=`u:${instrument}:${displayStep}:${displayOctave}`;
+  }
+  return {tieStart:tieTypes.has('start')||tieTypes.has('continue'),tieStop:tieTypes.has('stop')||tieTypes.has('continue'),
+    tieConditional,letRing:tieTypes.has('let-ring'),pitchKey,performanceModified,fermata,rest:mark.localName==='rest'};
 }
 
 export function midiName(midi) {
@@ -97,7 +248,8 @@ function roleFor(name, bounds, type) {
 function inspectPart(part, header, isConcertScore, countNotes) {
   let divisions=null, meter=null, baseShift=zero(), currentFifths=0;
   const perStaff=new Map();
-  const noteEvents=[], offsets=new Map(), instrumentIds=new Set();
+  const noteEvents=[], measureDetails=[], offsets=new Map(), instrumentIds=new Set();
+  const repeatStyles=new Set(), slashStaves=new Set();
   const melodicPitches=[], cuePitches=[], voices=new Set();
   const warnings=[], unsafeFeatures=new Set(), keyChanges=new Set([0]);
   let numberedShift=false, polyphony=0, unpitched=0, pitched=0, ambiguousPitch=0, rests=0;
@@ -108,9 +260,19 @@ function inspectPart(part, header, isConcertScore, countNotes) {
   const partMeasures=children(part,'measure');
   let maxBar=0, staffCount=1;
   for (const [index,measure] of partMeasures.entries()) {
-    let cursor=0, high=0, lastStart=0, lastValid=false;
+    let cursor=0, high=0, lastStart=0, lastValid=false, multiRest=0;
     const intervals=[], transposeChanges=[], pitchedEvents=[];
     const label=measure.getAttribute('number') || String(index+1);
+    const bar={
+      index,number:label,implicit:measure.getAttribute('implicit')==='yes',
+      events:[],rehearsalMarks:[],tempoMarks:[],swingMarks:[],timingIssues:[],rhythmIssues:[],flowIssues:[],
+      repeatForward:false,repeatBackward:null,endings:[],newPage:false,pageNumber:null,hasExplicitTiming:false,
+    };
+    if (measure.getAttribute('non-controlling')==='yes') bar.rhythmIssues.push('含无法与其他声部对齐的小节线');
+    const rhythmWarning=message=>{
+      warnings.push(`第 ${label} 小节${message}。`);
+      bar.rhythmIssues.push(message);
+    };
     for (const node of children(measure)) {
       switch(node.localName) {
         case 'attributes': {
@@ -137,24 +299,61 @@ function inspectPart(part, header, isConcertScore, countNotes) {
               keyChanges.add(fifths);
             }
           }
-          if (child(node,'time')) meter=timingMeter(child(node,'time'));
+          const timeSignatures=children(node,'time');
+          if (timeSignatures.length) {
+            meter=timingMeter(timeSignatures[0]);
+            if (timeSignatures.some(time=>timingMeter(time)!==meter)) bar.rhythmIssues.push('各谱表的拍号时值不一致');
+          }
+          for (const style of children(node,'measure-style')) {
+            const staff=style.getAttribute('number')||'all';
+            for (const mark of children(style)) {
+              if (mark.localName==='measure-repeat' || mark.localName==='beat-repeat') {
+                const key=`${mark.localName}:${staff}`;
+                if (mark.getAttribute('type')==='stop') repeatStyles.delete(key);
+                else repeatStyles.add(key);
+              }
+              if (mark.localName==='slash') {
+                if (mark.getAttribute('type')==='stop' && cursor<=EPS) slashStaves.delete(staff);
+                if (slashStaves.size) bar.rhythmIssues.push('斜线记谱的实际音符需要确认');
+                if (mark.getAttribute('type')==='stop') slashStaves.delete(staff);
+                else slashStaves.add(staff);
+              }
+            }
+            multiRest=Math.max(multiRest,number(style,'multiple-rest',0));
+          }
           break;
         }
         case 'direction':
           if (node.querySelector('octave-shift')) unsafeFeatures.add('八度线');
+          readDirection(node,cursor,divisions,bar);
           break;
         case 'harmony':
           unsafeFeatures.add('和弦符号');
           break;
+        case 'barline':
+          readBarline(node,cursor,bar);
+          break;
+        case 'print':
+          if (node.getAttribute('new-page')==='yes') {
+            bar.newPage=true;
+            bar.pageNumber=node.getAttribute('page-number');
+          }
+          break;
         case 'sound':
           if (node.querySelector('instrument-change')) unsafeFeatures.add('中途换奏乐器');
+          readSound(node,cursor,divisions,null,bar);
           break;
         case 'backup':
         case 'forward': {
           const raw=number(node,'duration');
-          if (!divisions || !Number.isFinite(raw) || raw < 0) warnings.push(`第 ${label} 小节拍位存在未识别时值。`);
-          else cursor+=(node.localName==='backup'?-1:1)*raw/divisions;
-          if (cursor < -EPS) warnings.push(`第 ${label} 小节的声部游标退到了小节起点之前。`);
+          const duration=raw/divisions;
+          if (!divisions || !Number.isFinite(duration) || raw<0) rhythmWarning('拍位存在未识别时值');
+          else {
+            const backup=node.localName==='backup';
+            cursor+=(backup?-1:1)*duration;
+            if (!backup && duration>EPS) bar.hasExplicitTiming=true;
+          }
+          if (cursor < -EPS) rhythmWarning('的声部游标退到了小节起点之前');
           high=Math.max(high,cursor);
           lastValid=false;
           break;
@@ -168,10 +367,12 @@ function inspectPart(part, header, isConcertScore, countNotes) {
           const [mark]=noteMarks;
           const grace=Boolean(child(node,'grace')), cue=Boolean(child(node,'cue')), chord=Boolean(child(node,'chord'));
           const raw=number(node,'duration');
-          const duration=grace?0:divisions && Number.isFinite(raw) && raw>0?raw/divisions:null;
+          const length=raw/divisions;
+          const duration=grace?0:divisions && Number.isFinite(length) && length>0?length:null;
           const onset=chord&&lastValid ? lastStart : cursor;
-          if (chord&&!lastValid) warnings.push(`第 ${label} 小节有缺少起始音的和弦成员。`);
-          if (duration===null) warnings.push(`第 ${label} 小节存在无法确定拍位的音符。`);
+          if (chord&&!lastValid) rhythmWarning('有缺少起始音的和弦成员');
+          if (duration===null) rhythmWarning('存在无法确定拍位的音符');
+          if (duration>EPS) bar.hasExplicitTiming=true;
           if (!chord) {
             lastStart=onset;
             lastValid=true;
@@ -200,8 +401,10 @@ function inspectPart(part, header, isConcertScore, countNotes) {
           }
           recordNoteFeatures(node,unsafeFeatures);
           if (cue) unsafeFeatures.add('提示音');
-          const event={measure:index,onset,duration,sounding:null,type,chord,cue,grace,voice,staff,fifths:currentFifths,written:pitchData};
+          const event={measure:index,onset,duration,sounding:null,type,chord,cue,grace,voice,staff,fifths:currentFifths,written:pitchData,
+            ...noteTiming(node,mark,onset,duration,bar)};
           noteEvents.push(event);
+          bar.events.push(event);
           if (type==='pitched') pitchedEvents.push(event);
           break;
         }
@@ -231,6 +434,7 @@ function inspectPart(part, header, isConcertScore, countNotes) {
         unsafeFeatures.add('微分音、不完整音高或八度叠奏');
         continue;
       }
+      event.transpose=shift;
       event.sounding=written.midi+shift.chromatic;
       if (!cue) { pitched++; melodicPitches.push(event.sounding); }
       else cuePitches.push(event.sounding);
@@ -242,6 +446,13 @@ function inspectPart(part, header, isConcertScore, countNotes) {
     polyphony=Math.max(polyphony,poly);
     maxBar=Math.max(maxBar,high);
     if (meter!==null && high-meter>EPS) warnings.push(`第 ${label} 小节音乐时长超过拍号（${high.toFixed(2)} / ${meter.toFixed(2)} 四分拍）。`);
+    if (slashStaves.size && !bar.rhythmIssues.includes('斜线记谱的实际音符需要确认')) {
+      bar.rhythmIssues.push('斜线记谱的实际音符需要确认');
+    }
+    if ((repeatStyles.size || multiRest>1) && !bar.hasExplicitTiming) bar.rhythmIssues.push('缩写记谱的小节缺少完整时值');
+    bar.meterQ=meter;
+    bar.actualDurationQ=high;
+    measureDetails.push(bar);
   }
   if (part.querySelector('instrument-change')) unsafeFeatures.add('中途换奏乐器');
   const p=melodicPitches.length?melodicPitches:cuePitches;
@@ -255,7 +466,7 @@ function inspectPart(part, header, isConcertScore, countNotes) {
   if (staffCount>1) unsafeFeatures.add('多谱表');
   const type=unpitched>0&&pitched>0?'mixed':unpitched>0?'unpitched':pitched>0?'pitched':'unknown';
   return {
-    id:sig,name,bounds,shift,offsets:[...offsets.values()], measures:partMeasures.length,noteEvents,
+    id:sig,name,bounds,shift,offsets:[...offsets.values()], measures:partMeasures.length,noteEvents,measureDetails,
     notes:pitched,unpitched,rests,ambiguousPitch,cueNotes:cuePitches.length,polyphony,maxBar,role:roleFor(name,bounds,type),
     staves:staffCount,voices:voices.size,keyChanges:[...keyChanges],warnings:[...new Set(warnings)].slice(0,25),
     unsafeFeatures:[...unsafeFeatures],type,
@@ -264,14 +475,14 @@ function inspectPart(part, header, isConcertScore, countNotes) {
 
 export function parseMusicXML(xml) {
   if (typeof xml!=='string'||!xml.trim()) throw new Error('乐谱内容为空。');
-  if (xml.length>12000000) throw new Error('请选择不超过 12 MB 的未压缩 MusicXML。');
+  if (xml.length>12000000) throw new Error('主谱件超过 1,200 万字符，请按乐章导出。');
   if (/<!ENTITY/i.test(xml)) throw new Error('这个文件包含自定义 XML 实体，无法安全读取。');
   const stripped=xml.replace(/<!DOCTYPE\s+score-partwise(?:\s+PUBLIC\s+"[^"\r\n]*"\s+"[^"\r\n]*"|\s+SYSTEM\s+"[^"\r\n]*")?\s*>/ig,'');
   if (/<!DOCTYPE/i.test(stripped)||/<\?(?!xml\s|xml\?>)/i.test(stripped)) throw new Error('这个文件含有未支持的 XML 声明或处理指令。');
   const doc=new DOMParser().parseFromString(stripped,'application/xml');
   if (doc.querySelector('parsererror')) throw new Error('XML 无法解析，请从制谱软件重新导出。');
   const root=doc.documentElement;
-  if (root.localName!=='score-partwise'||root.namespaceURI) throw new Error('请上传未压缩、按声部分组的 MusicXML（score-partwise）。');
+  if (root.localName!=='score-partwise'||root.namespaceURI) throw new Error('请选择按声部分组的 MusicXML（score-partwise）。');
   const headers=children(child(root,'part-list'),'score-part');
   const headerMap=new Map(headers.map(h=>[h.getAttribute('id'),h]));
   const parts=children(root,'part');
@@ -283,10 +494,10 @@ export function parseMusicXML(xml) {
   let totalNotes=0;
   const count=()=>{ if (++totalNotes>MAX_NOTES) throw new Error('分析上限为 120,000 个记谱事件。请按乐章拆分后再试。'); };
   const concert=child(child(root,'defaults'),'concert-score')||root.querySelector('concert-score');
+  const analysis=parts.map(part=>inspectPart(part,headerMap.get(part.getAttribute('id')),Boolean(concert),count));
   return {
     doc,title:value(root,'movement-title')||value(child(root,'work'),'work-title')||'未命名总谱',
-    parts:parts.map(part=>inspectPart(part,headerMap.get(part.getAttribute('id')),Boolean(concert),count)),
-    totalNotes,
+    parts:analysis,totalNotes,...assembleScoreClock(analysis),
   };
 }
 
@@ -454,7 +665,7 @@ function renamePart(doc,header,target) {
   }
 }
 function musicalSignature(part) {
-  return part.noteEvents.map(({fifths,written,...timing})=>timing);
+  return part.noteEvents.map(({fifths,written,transpose,...timing})=>timing);
 }
 export function exportMusicXML(analysis, mappings) {
   const doc=analysis.doc.cloneNode(true),root=doc.documentElement;
