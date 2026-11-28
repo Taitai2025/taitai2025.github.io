@@ -786,6 +786,68 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.29",
       "pages": 6,
       "archive": true
+    },
+    {
+      "id": "bb1-three-spectrum-root-superlinear",
+      "zh": "三谱二次型上真实 BB1 的满支撑根超线性轨道",
+      "en": "Full-support root-superlinear trajectories of matched BB1 on a three-eigenvalue quadratic",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "bb-three-step-endpoint-extremizers",
+        "alternating-bb-four-phase-sharp-bound"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.29",
+      "pages": 10,
+      "archive": true
+    },
+    {
+      "id": "ritz-finite-width-residence",
+      "zh": "四点延迟 Ritz 的有限谱宽与长驻留共同极限",
+      "en": "A joint finite-width and long-residence limit for delayed four-node Ritz iterations",
+      "groupZh": "LMSD 与 Ritz 方法",
+      "groupEn": "LMSD and Ritz methods",
+      "related": [
+        "four-node-ritz-residence-law",
+        "narrow-ritz-slow-block",
+        "ritz-vanishing-spectral-support"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.29",
+      "pages": 6,
+      "archive": true
+    },
+    {
+      "id": "gll-bb1-persistent-backtracking",
+      "zh": "严格凸二次函数上 BB1 与 GLL 的反复回溯",
+      "en": "Persistent GLL backtracking of BB1 on strictly convex quadratics",
+      "groupZh": "重启、投影与线搜索",
+      "groupEn": "Restart, projection and line search",
+      "related": [
+        "gll-window",
+        "gll-two-secant-persistent-backtracking"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.29",
+      "pages": 6,
+      "archive": true
+    },
+    {
+      "id": "gll-two-secant-persistent-backtracking",
+      "zh": "满秩双割线谱梯度法的持续 GLL 回溯",
+      "en": "Persistent GLL backtracking for a full-rank two-secant spectral gradient method",
+      "groupZh": "LMSD 与 Ritz 方法",
+      "groupEn": "LMSD and Ritz methods",
+      "related": [
+        "gll-window",
+        "gll-bb1-persistent-backtracking",
+        "ritz-minimal-face"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.29",
+      "pages": 4,
+      "archive": true
     }
   ],
   "papers": [

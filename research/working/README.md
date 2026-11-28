@@ -61,3 +61,7 @@
 - [Ritz 多项式在谱支撑退化时的极限](./ritz-vanishing-spectral-support/)
 - [四点谱延迟 Ritz 慢块的概率与驻留时间](./four-node-ritz-residence-law/)
 - [交替 BB 在大谱宽下的四相位尖锐上界](./alternating-bb-four-phase-sharp-bound/)
+- [三谱二次型上真实 BB1 的满支撑根超线性轨道](./bb1-three-spectrum-root-superlinear/)
+- [四点延迟 Ritz 的有限谱宽与长驻留共同极限](./ritz-finite-width-residence/)
+- [严格凸二次函数上 BB1 与 GLL 的反复回溯](./gll-bb1-persistent-backtracking/)
+- [满秩双割线谱梯度法的持续 GLL 回溯](./gll-two-secant-persistent-backtracking/)
