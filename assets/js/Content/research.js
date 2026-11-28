@@ -551,6 +551,22 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 2,
       "archive": true
+    },
+    {
+      "id": "nested-log-delay-envelope",
+      "zh": "两点谱无界滞后的迭代对数收敛界",
+      "en": "Iterated-log decay for two-point spectral steps with unbounded delays",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "two-spectrum-fixed-orbit-envelope",
+        "unlimited-lag-bb-sharp-envelope",
+        "bounded-delay-bb-sharp-rate"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 6,
+      "archive": true
     }
   ],
   "papers": [
