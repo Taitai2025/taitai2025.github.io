@@ -44,3 +44,5 @@
 - [无滞后上限谱步长的尖锐最坏界](./unlimited-lag-bb-sharp-envelope/)
 - [两点谱固定轨道的尖锐对数衰减](./two-spectrum-fixed-orbit-envelope/)
 - [两点谱无界滞后的迭代对数收敛界](./nested-log-delay-envelope/)
+- [连续谱滞后梯度法及两点谱的尖锐年龄常数](./continuous-spectrum-sublinear-delay/)
+- [交替 BB 固定谱分数的两点势与三点约化](./alternating-bb-fixed-score-potential/)

@@ -567,6 +567,37 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 6,
       "archive": true
+    },
+    {
+      "id": "continuous-spectrum-sublinear-delay",
+      "zh": "连续谱滞后梯度法及两点谱的尖锐年龄常数",
+      "en": "Delayed spectral gradients in Hilbert space and sharp two-point age constants",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "bounded-delay-bb-sharp-rate",
+        "unlimited-lag-bb-sharp-envelope",
+        "nested-log-delay-envelope"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 8,
+      "archive": true
+    },
+    {
+      "id": "alternating-bb-fixed-score-potential",
+      "zh": "交替 BB 固定谱分数的两点势与三点约化",
+      "en": "A two-point potential and a three-point reduction for an alternating BB score",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "two-point-bb-optimal-selector",
+        "bounded-delay-bb-sharp-rate"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 13,
+      "archive": true
     }
   ],
   "papers": [
