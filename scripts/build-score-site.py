@@ -59,12 +59,12 @@ def head_links(active):
     planner = '<a class="header-action" href="/scores/planner/">我的选曲单</a>'
     return f'<header class="site-header"><div class="frame">{brand}<nav class="nav" aria-label="主导航">{links}</nav>{planner}</div></header>'
 
-def output(route, title, desc, body, *, active='', script='', schema=None, index=True):
+def output(route, title, desc, body, *, active='', script='', extra_script='', schema=None, index=True):
     assert route.startswith('/scores/') and route.endswith('/')
     if index:
         GENERATED_PAGES.add(route)
     canonical = BASE + route
-    js = f'<script src="{script}" defer></script>' if script else ''
+    js = ''.join(f'<script src="{path}" defer></script>' for path in (script, extra_script) if path)
     robots = '' if index else '<meta name="robots" content="noindex, follow">'
     data = f'<script type="application/ld+json">{json.dumps(schema,ensure_ascii=False).replace("<",chr(92)+"u003c")}</script>' if schema else ''
     final_title=title+'｜'+TITLE
@@ -194,12 +194,25 @@ def voice_section(w, variants):
             continue
         lookup=' '.join([label,*instrument_terms(entry['instruments'])])
         optional=' · 可选' if entry['kind']=='optional' else ' · 备用' if entry['kind']=='reserve' else ''
-        items=''.join(f'<li data-filename="{escape(p["filename"],quote=True)}" data-melody="{w["melody"][p["filename"]]}">{escape(p["filename"])} <small>· {p["pages"]} 页</small></li>' for p in files)
+        items=''.join(
+            f'<li data-filename="{escape(p["filename"],quote=True)}" data-melody="{w["melody"][p["filename"]]}" '
+            f'data-part-pages="{p["pages"]}">{escape(p["filename"])} <small>· {p["pages"]} 页</small></li>'
+            for p in files
+        )
         lines.append(f'<details class="voice-list"{filter_attr(lookup)}><summary>{escape(label)} <small><span data-voice-count>{len(files)}</span> 份{optional}</small></summary><ul>{items}</ul></details>')
     assert not grouped, f'Rebuild scores/tools/rosters.json for {w["slug"]}'
     search='<form hidden class="tools" data-filters><label class="field">筛选文件<input type="search" maxlength="180" placeholder="如高音笙 首调，多个关键词用空格分开"></label><p class="filtered-count" data-filter-status role="status"></p></form>'
     links=anchor('/scores/instruments/','全库乐器索引')+' · '+anchor(get_details(w)+'#files','下载本曲全集')
-    return f'<section class="shell" id="voices"><h2>分谱文件索引</h2><p class="meta">展开声部可核对 ZIP 内的文件名和实际页数。索引按文件登记，兼奏、备用和不同谱式会分别显示。电子文件使用同版下载口令。</p>{search}<div class="voice-index">{"".join(lines)}</div><p hidden data-filter-empty class="callout">没有匹配文件。试试乐器原名、简谱版本或乐章。</p><p class="actions">{links}</p></section>'
+    release_tags=escape(' '.join(dict.fromkeys(urlparse(p['url']).path.split('/')[-2] for p in w['parts'])),quote=True)
+    preview='''<template data-part-pdf-preview>
+<dialog class="part-pdf-dialog" aria-labelledby="part-pdf-title" aria-describedby="part-pdf-status">
+<div class="dialog-heading"><h2 id="part-pdf-title">分谱 PDF</h2><form method="dialog"><button class="button">关闭</button></form></div>
+<p id="part-pdf-status" class="meta" role="status">正在读取 PDF…</p>
+<div class="actions"><a class="button" data-part-pdf-download>下载此 PDF</a><a class="button" data-part-pdf-new-tab target="_blank" rel="noopener" hidden>在新标签页打开</a></div>
+<iframe title="分谱 PDF 预览" hidden></iframe>
+</dialog>
+</template>'''
+    return f'<section class="shell" id="voices" data-part-work="{escape(w["slug"],quote=True)}" data-part-tags="{release_tags}"><h2>分谱文件索引</h2><p class="meta">展开声部可核对文件名和实际页数。已发布单件链接的分谱可直接打开 PDF。兼奏、备用和不同谱式分别显示，PDF 使用该版本原有口令。</p>{search}<div class="voice-index">{"".join(lines)}</div><p hidden data-filter-empty class="callout">没有匹配文件。试试乐器原名、简谱版本或乐章。</p><p class="actions">{links}</p>{preview}</section>'
 
 def instruments_page(works, families):
     library={}
@@ -239,7 +252,7 @@ def work_pages(works, parts):
         assets='独立简谱分谱与合订本'+('，另附简谱指挥总谱' if w['fullScores'] else '')
         desc=f'{w["title"]} {w["ensemble"]}。{w["partCount"]} 份{assets}。查看谱面、版次、声部搜索和发布范围。'
         schema={'@context':'https://schema.org','@type':'WebPage','name':w['title']+'简谱分谱','url':BASE+route,'description':desc}
-        output(route,w['title']+'简谱分谱 '+w['ensemble'],desc,h+detail+files+roster+feedback,active='/scores/library/',script='/scores/filters.js',schema=schema)
+        output(route,w['title']+'简谱分谱 '+w['ensemble'],desc,h+detail+files+roster+feedback,active='/scores/library/',script='/scores/filters.js',extra_script='/scores/part-pdf.js',schema=schema)
 
 def open_metadata(w):
     music_format=w.get('format','五线谱总谱')
