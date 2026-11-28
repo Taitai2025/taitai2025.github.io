@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createRequire} from 'node:module';
+import {createHash} from 'node:crypto';
 
 const require = createRequire(import.meta.url);
 const {JSDOM, VirtualConsole} = require('jsdom');
@@ -12,8 +13,14 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const script = fs.readFileSync(path.join(root, 'scores/orchestras/showcase.js'), 'utf8');
 const css = fs.readFileSync(path.join(root, 'scores/orchestras/showcase.css'), 'utf8');
 const data = JSON.parse(fs.readFileSync(path.join(root, 'scores/orchestras/data.json'), 'utf8'));
+const nmou = data.orchestras.find(entry => entry.slug === 'ustc-nmou');
+const photoCount = nmou.gallery.length;
+const videoCount = nmou.videos.length;
+const galleryStatus = (current, total = photoCount) => new RegExp(`^${current} / ${total}(?:\\s|$)`);
 const directory = '/scores/orchestras/';
 const detail = `${directory}ustc-nmou/`;
+const routes = [directory, ...data.orchestras.map(entry => `${directory}${entry.slug}/`)];
+const entryFor = route => data.orchestras.find(entry => route === `${directory}${entry.slug}/`);
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 function surface(route = directory, {query = '', run = true, reduced = false} = {}) {
@@ -69,62 +76,80 @@ async function check(name, task) {
 }
 
 await check('static pages remain useful without JavaScript or a data fetch', () => {
-  for (const route of [directory, detail]) {
+  for (const route of routes) {
     const s = surface(route, {run: false});
     try {
+      const entry = entryFor(route);
       assert.equal(s.all('h1').length, 1);
       assert.equal(s.all('[data-showcase-entry][hidden]').length, 0);
-      assert.equal(s.q('[data-showcase-form]').hidden, true);
-      if (route === detail) {
-        assert.equal(s.all('[data-gallery-slide]').length, 6);
-        assert.equal(s.all('.orchestra-video').length, 12);
-        assert.match(s.q('#story').textContent, /2002 年 12 月/);
-        assert.match(s.q('#story').textContent, /中华音韵/);
-        assert.match(s.q('#sources').textContent, /不代表当前人数或累计届数/);
-        assert.match(s.q('#sources').textContent, /原文发布日期尚未确认/);
-        assert.doesNotMatch(s.q('.orchestra-detail-hero').textContent, /70\s*余|23\s*届/);
+      if (s.q('[data-showcase-form]')) assert.equal(s.q('[data-showcase-form]').hidden, true);
+      if (entry) {
+        assert.equal(s.all('[data-gallery-slide]').length, entry.gallery.length);
+        assert.equal(s.all('.orchestra-video').length, entry.videos.length);
+        assert.ok(s.q('#sources').textContent.trim().length > 20, 'Each orchestra identifies its own source');
+        if (route === detail) {
+          assert.match(s.q('#story').textContent, /2002 年 12 月/);
+          assert.match(s.q('#story').textContent, /中华音韵/);
+          assert.match(s.q('#sources').textContent, /不代表当前人数或累计届数/);
+          assert.match(s.q('#sources').textContent, /原文发布日期尚未确认/);
+          assert.doesNotMatch(s.q('.orchestra-detail-hero').textContent, /70\s*余|23\s*届/);
+        }
       } else {
         assert.equal(s.all('.orchestra-directory-card').length, data.orchestras.length);
-        assert.match(s.q('.orchestra-collection-note').textContent, /当前收录 1 支乐团/);
+        assert.ok(s.q('.orchestra-collection-note').textContent.includes(`当前收录 ${data.orchestras.length} 支乐团`));
       }
     } finally { s.close(); }
   }
 });
 
 await check('SEO describes real entries and uses real local photographs', () => {
-  for (const route of [directory, detail]) {
+  for (const route of routes) {
     const s = surface(route, {run: false});
     try {
+      const entry = entryFor(route);
       assert.equal(s.q('link[rel=canonical]').href, `https://taitai2025.github.io${route}`);
       assert.ok(s.q('meta[name=description]').content.length >= 30);
-      assert.ok(s.q('meta[property="og:image"]').content.startsWith('https://taitai2025.github.io/assets/images/music/'));
+      const socialImage = new URL(s.q('meta[property="og:image"]').content);
+      assert.equal(socialImage.origin, 'https://taitai2025.github.io');
+      assert.ok(fs.existsSync(path.join(root, socialImage.pathname)));
       assert.ok(s.q('meta[property="og:image:alt"]').content.length > 10);
       const schema = JSON.parse(s.q('script[type="application/ld+json"]').textContent);
       assert.ok(schema['@graph'].some(node => node['@type'] === 'BreadcrumbList'));
-      if (route === detail) {
+      if (entry) {
         const group = schema['@graph'].find(node => node['@type'] === 'MusicGroup');
-        assert.equal(group.name, data.orchestras[0].name);
-        assert.equal(group.foundingDate, '2002-12');
-        assert.deepEqual(group.sameAs, ['https://space.bilibili.com/64643274']);
+        assert.equal(group.name, entry.name);
+        if (entry.founded) assert.equal(group.foundingDate, entry.founded);
+        else assert.equal(group.foundingDate, undefined, 'Unknown founding dates are not invented for search engines');
+        const official = Object.entries(entry.sources).filter(([key, value]) => key.startsWith('official') && value?.url).map(([, value]) => value.url);
+        assert.deepEqual(group.sameAs || [], official);
         assert.ok(!JSON.stringify(schema).includes('datePublished'));
         assert.ok(!JSON.stringify(schema).includes('numberOfEmployees'));
       } else {
         const collection = schema['@graph'].find(node => node['@type'] === 'CollectionPage');
-        assert.equal(collection.mainEntity.numberOfItems, 1);
-        assert.equal(collection.mainEntity.itemListElement[0].url, `https://taitai2025.github.io${detail}`);
+        assert.equal(collection.mainEntity.numberOfItems, data.orchestras.length);
+        assert.deepEqual(collection.mainEntity.itemListElement.map(item => item.url), data.orchestras.map(entry => `https://taitai2025.github.io${directory}${entry.slug}/`));
       }
       for (const img of s.all('img')) {
         assert.ok(img.alt.length > 10);
         assert.ok(Number(img.width) > 0 && Number(img.height) > 0);
         assert.ok(fs.existsSync(path.join(root, img.getAttribute('src'))));
       }
-      assert.equal(s.q('link[href="/scores/orchestras/showcase.css"]').rel, 'stylesheet');
+      for (const [selector, attribute, asset] of [
+        ['link[rel=stylesheet]', 'href', '/scores/orchestras/showcase.css'],
+        ['script[src]', 'src', '/scores/orchestras/showcase.js'],
+      ]) {
+        const matches = s.all(selector).filter(node => new URL(node.getAttribute(attribute), s.w.location.href).pathname === asset);
+        assert.equal(matches.length, 1, `One current ${asset} reference`);
+        const url = new URL(matches[0].getAttribute(attribute), s.w.location.href);
+        const fingerprint = createHash('sha256').update(fs.readFileSync(path.join(root, asset))).digest('hex').slice(0, 12);
+        assert.equal(url.searchParams.get('v'), fingerprint, `Cache fingerprint for ${asset}`);
+      }
     } finally { s.close(); }
   }
 });
 
 await check('every source, internal jump and downloaded intake template resolves', () => {
-  for (const route of [directory, detail]) {
+  for (const route of routes) {
     const s = surface(route, {run: false});
     try {
       const ids = s.all('[id]').map(node => node.id);
@@ -137,6 +162,9 @@ await check('every source, internal jump and downloaded intake template resolves
           const target = path.join(root, url.pathname, url.pathname.endsWith('/') ? 'index.html' : '');
           assert.ok(fs.existsSync(target), `Missing local file ${target}`);
           if (url.hash) assert.ok(fs.readFileSync(target, 'utf8').includes(`id="${url.hash.slice(1)}"`), `Missing source anchor ${url.href}`);
+        } else if (href.startsWith('mailto:')) {
+          assert.equal(new URL(href).pathname, 'yangshutai26@mails.ucas.ac.cn');
+          assert.ok(new URL(href).searchParams.get('subject'), 'Submission email has a useful subject');
         } else {
           assert.ok(href.startsWith('https://'));
           if (a.target === '_blank') assert.ok(a.rel.includes('noopener') && a.rel.includes('noreferrer'));
@@ -144,6 +172,8 @@ await check('every source, internal jump and downloaded intake template resolves
       }
       const intake = s.q('a[download]');
       assert.ok(intake.href.endsWith('/scores/orchestras/intake-template.txt'));
+      assert.ok(s.q('#contribute a[href="/scores/orchestras/submit/"]'), 'The orchestra call to action opens its dedicated intake');
+      assert.equal(s.q('#contribute a[href="/scores/tools/cooperation/#cooperation"]'), null);
       assert.match(s.q('#contribute').textContent, /点击或下载不会自动提交资料/);
     } finally { s.close(); }
   }
@@ -167,11 +197,11 @@ await check('empty results explain the next step; reset restores results and foc
     s.type('[data-showcase-search]', '尚未收录的另一所学校');
     assert.equal(s.all('[data-showcase-entry]:not([hidden])').length, 0);
     assert.equal(s.q('[data-showcase-empty]').hidden, false);
-    assert.match(s.q('[data-showcase-status]').textContent, /0 \/ 1/);
+    assert.ok(s.q('[data-showcase-status]').textContent.includes(`0 / ${data.orchestras.length}`));
     assert.equal(new URL(s.w.location.href).searchParams.get('from'), 'homepage');
     assert.equal(s.w.location.hash, '#orchestra-list');
     s.q('[data-showcase-reset]').click();
-    assert.equal(s.all('[data-showcase-entry]:not([hidden])').length, 1);
+    assert.equal(s.all('[data-showcase-entry]:not([hidden])').length, data.orchestras.length);
     assert.equal(s.q('[data-showcase-empty]').hidden, true);
     assert.equal(s.doc.activeElement, s.q('[data-showcase-search]'));
     assert.equal(new URL(s.w.location.href).searchParams.get('q'), null);
@@ -203,7 +233,7 @@ await check('shareable search URLs and back navigation restore filters without H
 await check('performance title and year filters compose and retain the full static archive', () => {
   const s = surface(detail, {query: '?year=2025'});
   try {
-    assert.equal(s.all('.orchestra-video:not([hidden])').length, 2);
+    assert.equal(s.all('.orchestra-video:not([hidden])').length, nmou.videos.filter(video => video.year === 2025).length);
     s.type('[data-showcase-select]', '2021', 'change');
     s.type('[data-showcase-search]', 'acg');
     assert.equal(s.all('.orchestra-video:not([hidden])').length, 1);
@@ -212,9 +242,75 @@ await check('performance title and year filters compose and retain the full stat
     assert.equal(s.all('.orchestra-video:not([hidden])').length, 0);
     assert.equal(s.q('[data-showcase-empty]').hidden, false);
     s.q('[data-showcase-form]').reset();
-    assert.equal(s.all('.orchestra-video:not([hidden])').length, 12);
+    assert.equal(s.all('.orchestra-video:not([hidden])').length, videoCount);
     assert.equal(s.q('[data-showcase-empty]').hidden, true);
     assert.equal(s.fetches, 0);
+  } finally { s.close(); }
+});
+
+await check('every listed orchestra opens its own static detail, gallery and performance filters', async () => {
+  const listing = surface(directory);
+  try {
+    for (const entry of data.orchestras) {
+      listing.type('[data-showcase-search]', entry.name);
+      const visible = listing.all('[data-showcase-entry]:not([hidden])');
+      assert.equal(visible.length, 1, entry.slug);
+      assert.equal(visible[0].querySelector('h3 a').getAttribute('href'), `${directory}${entry.slug}/`);
+      const s = surface(`${directory}${entry.slug}/`);
+      try {
+        const photos = entry.gallery.length;
+        assert.equal(s.all('[data-gallery-slide]').length, photos);
+        assert.equal(s.all('[data-gallery-to]').length, photos);
+        assert.match(s.q('[data-gallery-status]').textContent, galleryStatus(1, photos));
+        s.q(`[data-gallery-to="${photos - 1}"]`).click();
+        await sleep(160);
+        assert.match(s.q('[data-gallery-status]').textContent, galleryStatus(photos, photos));
+        assert.equal(s.q('[data-gallery-next]').disabled, true);
+        const years = [...new Set(entry.videos.map(video => video.year))];
+        for (const year of years) {
+          s.type('[data-showcase-select]', String(year), 'change');
+          assert.equal(s.all('.orchestra-video:not([hidden])').length, entry.videos.filter(video => video.year === year).length, `${entry.slug} ${year}`);
+        }
+        s.q('[data-showcase-form]').reset();
+        assert.equal(s.all('.orchestra-video:not([hidden])').length, entry.videos.length);
+        assert.deepEqual(s.errors, []);
+        assert.equal(s.fetches, 0);
+      } finally { s.close(); }
+    }
+    listing.q('[data-showcase-reset]').click();
+    assert.equal(listing.all('[data-showcase-entry]:not([hidden])').length, data.orchestras.length);
+  } finally { listing.close(); }
+});
+
+await check('NPU submission keeps its provenance, uncertain founding date and event-label years separate from NMOU facts', () => {
+  const entry = data.orchestras.find(orchestra => orchestra.slug === 'npu-folk-orchestra');
+  assert.ok(entry, 'The user-supplied NPU orchestra is included');
+  const s = surface(`${directory}${entry.slug}/`, {run: false});
+  try {
+    assert.ok(s.q('h1').textContent.replace(/\s+/g, '').includes(entry.name));
+    assert.equal(s.all('.orchestra-voices li').length, 4);
+    assert.doesNotMatch(s.q('#story').textContent, /2002 年 12 月|中华音韵|中国科学技术大学/);
+    const note = s.q('.orchestra-source-note').textContent;
+    assert.match(note, /2005/);
+    assert.match(note, /口述/);
+    assert.match(note, /不将其作为已核实成立日期/);
+    assert.match(note, /2026 年 11 月/);
+    assert.match(note, /(?:允许|授权).*展示/);
+    const graph = JSON.parse(s.q('script[type="application/ld+json"]').textContent)['@graph'];
+    const group = graph.find(item => item['@type'] === 'MusicGroup');
+    assert.equal(group.foundingDate, undefined);
+    assert.equal(group.sameAs, undefined);
+    assert.equal(s.q('a[href="https://space.bilibili.com/64643274"]'), null, 'NPU must not inherit NMOU official-account links');
+    assert.equal(s.all('.orchestra-honor').length, 0, 'Participation must not become an unverified award');
+    const performances = s.q('#performances');
+    assert.match(performances.textContent, /不等同于实际演出日/);
+    assert.match(performances.textContent, /2025\.12\.25/);
+    assert.match(performances.textContent, /未将上传账号认定为乐团官方账号/);
+    for (const card of s.all('.orchestra-video')) {
+      const url = new URL(card.querySelector('h3 a').href);
+      assert.equal(url.search, '');
+    }
+    for (const link of s.all('a[href]')) assert.doesNotMatch(link.getAttribute('href'), /\.docx?(?:$|\?)/i, 'The original editable submission is not a public download');
   } finally { s.close(); }
 });
 
@@ -227,11 +323,11 @@ await check('gallery controls stop at either boundary and reveal the selected ph
     assert.equal(s.scrolls.length, 0, 'The gallery must not auto-play');
     s.q('[data-gallery-next]').click();
     assert.equal(s.scrolls.at(-1).left, 810);
-    assert.match(s.q('[data-gallery-status]').textContent, /^2 \/ 6/);
+    assert.match(s.q('[data-gallery-status]').textContent, galleryStatus(2));
     assert.equal(s.q('[data-gallery-to="1"]').getAttribute('aria-current'), 'true');
-    s.q('[data-gallery-to="5"]').click();
+    s.q(`[data-gallery-to="${photoCount - 1}"]`).click();
     await sleep(160);
-    assert.match(s.q('[data-gallery-status]').textContent, /^6 \/ 6/);
+    assert.match(s.q('[data-gallery-status]').textContent, galleryStatus(photoCount));
     assert.equal(s.q('[data-gallery-next]').disabled, true);
     s.q('[data-gallery-to="0"]').click();
     assert.equal(s.q('[data-gallery-prev]').disabled, true);
@@ -247,11 +343,11 @@ await check('keyboard navigation works on the gallery without stealing keys from
     track.focus();
     assert.equal(track.tabIndex, 0);
     assert.ok(s.key(track, 'ArrowRight').defaultPrevented);
-    assert.match(s.q('[data-gallery-status]').textContent, /^2 \/ 6/);
+    assert.match(s.q('[data-gallery-status]').textContent, galleryStatus(2));
     assert.ok(s.key(track, 'End').defaultPrevented);
-    assert.match(s.q('[data-gallery-status]').textContent, /^6 \/ 6/);
+    assert.match(s.q('[data-gallery-status]').textContent, galleryStatus(photoCount));
     s.key(track, 'Home');
-    assert.match(s.q('[data-gallery-status]').textContent, /^1 \/ 6/);
+    assert.match(s.q('[data-gallery-status]').textContent, galleryStatus(1));
     const before = s.scrolls.length;
     assert.equal(s.key(s.q('.orchestra-gallery-image'), 'ArrowRight').defaultPrevented, false);
     assert.equal(s.key(track, 'ArrowRight', {ctrlKey: true}).defaultPrevented, false);
@@ -266,7 +362,7 @@ await check('touch or scrollbar movement updates controls after scrolling stops'
     track.scrollLeft = 2430;
     track.dispatchEvent(new s.w.Event('scroll'));
     await sleep(160);
-    assert.match(s.q('[data-gallery-status]').textContent, /^4 \/ 6/);
+    assert.match(s.q('[data-gallery-status]').textContent, galleryStatus(4));
     assert.equal(s.q('[data-gallery-to="3"]').getAttribute('aria-current'), 'true');
     assert.equal(s.q('[data-gallery-prev]').disabled, false);
   } finally { s.close(); }
@@ -293,7 +389,7 @@ await check('failed images retain their captions and explain the failure without
     assert.equal(slide.querySelector('[data-image-error]').hidden, false);
     assert.ok(img.classList.contains('is-unavailable'));
     assert.match(slide.querySelector('h3').textContent, /青风抚乐/);
-    assert.equal(s.all('.orchestra-video:not([hidden])').length, 12);
+    assert.equal(s.all('.orchestra-video:not([hidden])').length, videoCount);
     img.dispatchEvent(new s.w.Event('load'));
     assert.equal(slide.querySelector('[data-image-error]').hidden, true);
     assert.equal(s.fetches, 0);

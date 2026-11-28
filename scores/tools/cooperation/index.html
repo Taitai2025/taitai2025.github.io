@@ -8,11 +8,11 @@
   <link rel="canonical" href="https://taitai2025.github.io/scores/tools/cooperation/">
   <link rel="stylesheet" href="/scores/style.css">
   <link rel="stylesheet" href="../tools.css">
-  <script src="../drafts.js" defer></script>
+  <script src="/scores/tools/drafts.js?v=c9c8dab75ecd" defer></script>
 <link rel="stylesheet" href="/scores/experience.css">
 <script src="/scores/experience.js" defer></script>
 <link rel="icon" type="image/svg+xml" href="/scores/mark.svg">
-</head>
+<link rel="stylesheet" href="/scores/community/community.css?v=4f810dc124ad"></head>
 <body>
   <a class="skip" href="#main">跳到共建表单</a>
   <header class="site-header"><div class="frame"><a class="brand" href="/scores/"><span class="brand-seal" aria-hidden="true">谱</span><span>国乐谱汇</span></a><nav class="nav" aria-label="主导航"><a href="/scores/">首页</a><a href="/scores/library/">专业谱库</a><a href="/scores/open/">免费谱库</a><a href="/scores/arrangements/">编配案例</a><a href="/scores/sources/">总谱导航</a><a href="/scores/guides/">排练指南</a><a href="/scores/tools/">编制工具</a><a href="/scores/orchestras/">乐团风采</a></nav><a class="header-action" href="/scores/planner/">我的选曲单</a></div></header>
@@ -23,18 +23,21 @@
       <p>欢迎谱务负责人、指挥、声部长及编曲者补充摆位、翻页和实际试奏记录，也可交流首调、固定调、移调及缩扩编需求。</p>
       <div class="tool-actions"><a class="button tool-button" href="#feedback">写校谱反馈</a><a class="button tool-button tool-secondary" href="#cooperation">整理合作或制谱需求</a></div>
     </section>
-    <noscript><p class="tool-message">草稿工具需要 JavaScript。你也可以用自己的邮件应用联系维护者。</p></noscript>
+    <section class="tool-panel" aria-labelledby="direct-contact-title"><h2 id="direct-contact-title">资料可以直接发给我</h2><p>邮箱：<a href="mailto:yangshutai26@mails.ucas.ac.cn">yangshutai26@mails.ucas.ac.cn</a>；微信：taitai_2026；QQ：2592255858。</p><div class="tool-actions"><a class="button tool-button" href="/scores/contact/">查看联系与查阅方式</a><a class="button tool-button tool-secondary" href="/scores/orchestras/submit/">提交高校乐团介绍</a></div><p>乐团收录请使用专门投稿页；下面的表单用于校谱、试奏和制谱需求。</p></section>
+    <noscript><p class="tool-message">草稿工具需要 JavaScript。请使用上方邮箱、微信或QQ直接联系。</p></noscript>
     <section class="tool-guide-grid">
       <section class="tool-panel" id="feedback" aria-labelledby="feedback-title">
         <h2 id="feedback-title">错谱与排版反馈</h2>
         <p class="muted tool-help">尽量同时写下版本和小节。截图请只保留需说明的问题位置，提交前先核对使用范围。</p>
-        <form class="tool-form" data-draft="校谱反馈">
+        <form class="tool-form" data-draft="校谱反馈" data-recipient="yangshutai26@mails.ucas.ac.cn">
+          <fieldset disabled><legend class="sr-only">校谱反馈资料</legend>
           <label class="tool-field"><span>曲名与谱件版本</span><input name="谱件版本" required maxlength="120" placeholder="如 秦兵马俑 · 首调 · 2026-11-27 紧凑终版"></label>
           <label class="tool-field"><span>乐章、声部、小节或页码</span><input name="问题位置" required maxlength="130" placeholder="如 第一乐章中音笙，第 32 小节"></label>
           <label class="tool-field"><span>问题类型</span><select name="问题类型"><option>音高、八度或变音</option><option>节奏或反复</option><option>奏法或动态记号</option><option>排版、翻页或打印</option><option>下载或版本错误</option><option>其他</option></select></label>
           <label class="tool-field"><span>看到的问题与建议</span><textarea name="问题与建议" required rows="4" maxlength="1000" placeholder="写明你看见什么、依据是什么，以及修改后该怎样复验。"></textarea></label>
           <label class="tool-field"><span>出处或说明链接（可选）</span><input type="url" name="核对链接" maxlength="300" placeholder="https://"></label>
-          <div class="tool-actions"><button class="button tool-button" type="submit">生成本地草稿</button></div>
+          <div class="tool-actions"><button class="button tool-button" type="submit" hidden>生成本地草稿</button></div>
+          </fieldset>
           <output aria-live="polite"></output>
           <pre class="generated-draft" hidden></pre>
           <div class="tool-actions" data-ready hidden><button class="button tool-button tool-secondary" type="button" data-save>下载草稿</button><a class="button tool-button tool-secondary" data-mail>在邮件应用中打开</a></div>
@@ -43,12 +46,14 @@
       <section class="tool-panel" id="cooperation" aria-labelledby="cooperation-title">
         <h2 id="cooperation-title">共建与制谱需求</h2>
         <p class="muted tool-help">共建包括原创或获授权谱件、曲目需求、试奏回馈与校勘协作。请先说明你希望合作的范围。</p>
-        <form class="tool-form" data-draft="共建与制谱交流">
+        <form class="tool-form" data-draft="共建与制谱交流" data-recipient="yangshutai26@mails.ucas.ac.cn">
+          <fieldset disabled><legend class="sr-only">共建与制谱需求资料</legend>
           <label class="tool-field"><span>交流方向</span><select name="交流方向"><option>提交原创或获授权谱件</option><option>独立校谱或排练试用</option><option>翻谱或移调</option><option>缩编、扩编或混编</option><option>推荐开放谱源及其他合作</option></select></label>
           <label class="tool-field"><span>机构、曲目或项目名称</span><input name="项目" required maxlength="135" placeholder="如 某高校民乐团的迎新音乐会"></label>
           <label class="tool-field"><span>预计编制、使用场景和时间</span><textarea name="使用场景与编制" required rows="3" maxlength="700" placeholder="例如 可到场的乐器、是否需兼奏、排练或演出日期。"></textarea></label>
           <label class="tool-field"><span>谱件与可用范围</span><textarea name="已有谱件与可用范围" rows="3" maxlength="700" placeholder="例如 源谱出处、作者是否授权、需要的总分谱及版本。"></textarea></label>
-          <div class="tool-actions"><button class="button tool-button" type="submit">生成本地草稿</button></div>
+          <div class="tool-actions"><button class="button tool-button" type="submit" hidden>生成本地草稿</button></div>
+          </fieldset>
           <output aria-live="polite"></output>
           <pre class="generated-draft" hidden></pre>
           <div class="tool-actions" data-ready hidden><button class="button tool-button tool-secondary" type="button" data-save>下载草稿</button><a class="button tool-button tool-secondary" data-mail>在邮件应用中打开</a></div>
@@ -63,9 +68,9 @@
         <li>定版同步更新总谱、分谱目录、授权说明和勘误记录。还需要修订的谱件留在制作台账。</li>
       </ol>
       <p>草稿内容只在本页生成。下载后可自行修改，或在邮件应用中检查收件人和正文。</p>
-      <a class="tool-inline" href="mailto:taitai@mail.ustc.edu.cn">联系维护者</a>
+      <a class="tool-inline" href="/scores/contact/">邮箱、微信与 QQ 联系方式</a>
     </section>
   </main>
   <footer class="tool-footer shell"><a href="/scores/">返回国乐谱汇</a> <a href="../rehearsal/">排练与验收清单</a></footer>
-</body>
+<nav class="shell community-footer-links" aria-label="联系与支持"><a href="/scores/contact/">联系与查阅</a><a href="/scores/orchestras/submit/">乐团投稿</a><a href="/scores/updates/">版本动态</a><a href="/scores/support/">支持本站</a></nav></body>
 </html>

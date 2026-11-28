@@ -34,7 +34,7 @@ class Article(HTMLParser):
 records = {
     'works': [{'id': w['slug'], 'attrs': Article(build.work_card(w)).attrs} for w in works],
     'open': [{'id': w['slug'], 'attrs': Article(build.open_card(w)).attrs} for w in sources['openScores']],
-    'sources': [{'id': str(i), 'attrs': Article(build.source_card(w)).attrs} for i, w in enumerate(sources['sources'])],
+    'sources': [{'id': w['source'], 'attrs': Article(build.source_card(w)).attrs} for w in sources['sources']],
 }
 cases = [
     {'group': 'works', 'q': '秦兵马俑 固定调', 'expected': ['qin-bingmayong']},
@@ -49,8 +49,10 @@ cases = [
     {'group': 'open', 'q': '', 'facets': {'notation': '简谱'}, 'expected': ['yang-guan-san-die-1920']},
     {'group': 'open', 'q': '', 'facets': {'notation': '五线谱', 'instrument': '二胡'}, 'expected': ['liangxiao-liu-tianhua-early', 'yueye-liu-tianhua-early', 'xianjuyin-liu-tianhua-early']},
     {'group': 'open', 'q': '土耳其进行曲总谱', 'expected': []},
-    {'group': 'sources', 'q': '', 'facets': {'scope': '付费租借'}, 'expected': ['67']},
-    {'group': 'sources', 'q': '', 'facets': {'scope': '登记申请', 'provider': '竹韵小集'}, 'expected': ['65', '66']},
+    {'group': 'sources', 'q': '', 'facets': {'scope': '付费租借'}, 'expected': ['https://sco.com.sg/resources/music-scores/']},
+    {'group': 'sources', 'q': '', 'facets': {'scope': '登记申请', 'provider': '竹韵小集'}, 'expected': ['https://www.hkwindpipe.org/future-classics-score2024', 'https://www.hkwindpipe.org/future-classics-score2025']},
+    {'group': 'sources', 'q': '柳摇金', 'facets': {'provider': '竹韵小集'}, 'expected': ['https://www.hkwindpipe.org/liu-yao-jin']},
+    {'group': 'sources', 'q': '如愿 曾叶发', 'expected': ['https://www.hkco.org/sc/Others/Scores-Wish.html', 'https://www.hkco.org/sc/Others/Scores-Wish2.html']},
 ]
 
 # Exercise the actual browser filter script with a small DOM adapter. No rendered
@@ -108,7 +110,9 @@ assert all('ZIP' in build.open_download_label(w) for w in zip_scores)
 assert all('Space' not in w['details'] for w in open_scores)
 assert all('总谱' not in Article(build.work_card(w)).attrs['data-formats'].split('|') for w in works if not w['fullScores'])
 assert all(w['access'] != '原机构查阅' for w in sources['sources'])
-assert '曾叶发' in build.source_card(sources['sources'][13])
+wish_editions = [w for w in sources['sources'] if w['source'] in {'https://www.hkco.org/sc/Others/Scores-Wish.html', 'https://www.hkco.org/sc/Others/Scores-Wish2.html'}]
+assert len(wish_editions) == 2
+assert all('如愿（曾叶发）' in build.source_card(w) for w in wish_editions)
 
 captured = {}
 original_output = build.output
