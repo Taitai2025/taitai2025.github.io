@@ -19,6 +19,7 @@ NAV = [
     ('/scores/', '首页'), ('/scores/library/', '专业谱库'), ('/scores/open/', '免费谱库'),
     ('/scores/arrangements/', '编配案例'), ('/scores/sources/', '总谱导航'),
     ('/scores/guides/', '排练指南'), ('/scores/tools/', '编制工具'),
+    ('/scores/orchestras/', '乐团风采'),
 ]
 GENERATED_PAGES = set()
 SEARCH_ALIASES = ('高笙', '中笙', '低笙', '高唢', '中唢', '次中音唢', '低唢', '低革胡', '筝', '贝司', '吊钹')
@@ -341,7 +342,7 @@ def write_sitemap():
         loc=row.findtext(f'{{{namespace}}}loc','')
         if loc.startswith(BASE+'/scores/'): root.remove(row)
     # Include authored static guides and helpers with canonical URLs and no noindex marker.
-    for folder in ('guides','tools'):
+    for folder in ('guides','tools','orchestras'):
         for file in sorted((SCORES/folder).rglob('index.html')):
             rel='/' + file.parent.relative_to(REPO).as_posix() + '/'
             expected=f'<link rel="canonical" href="{BASE}{rel}"'
@@ -417,6 +418,8 @@ def main():
         link=f'<div class="hero-actions">{anchor("/scores/instruments/","按乐器找分谱","button")}</div>' if key=='/scores/library/' else ''
         output(key,title,copy+' 包含固定调和首调分谱、合订本及实际登记的指挥简谱总谱。',hero('曲目与版本',title,copy,link)+
             filtered([work_card(w) for w in subset],[w['kind'] for w in subset],[w['ensemble'] for w in subset],extra_filters=[('format','谱面版本',[v for w in subset for v in w['variants']]+(['简谱指挥总谱'] if any(w['fullScores'] for w in subset) else []))]),script='/scores/filters.js')
+    import orchestra_showcase
+    orchestra_showcase.build_showcase(sys.modules[__name__])
     import score_experience
     score_experience.build_experience(sys.modules[__name__],works,opens,sources)
     write_sitemap()
