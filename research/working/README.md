@@ -59,3 +59,5 @@
 - [交替 BB 谱动力学的任意谱统一前缀界](./bb-arbitrary-spectrum-prefix/)
 - [圆盘函数演算的标量与完全范数分离](./disk-calculus-scalar-complete-separation/)
 - [Ritz 多项式在谱支撑退化时的极限](./ritz-vanishing-spectral-support/)
+- [四点谱延迟 Ritz 慢块的概率与驻留时间](./four-node-ritz-residence-law/)
+- [交替 BB 在大谱宽下的四相位尖锐上界](./alternating-bb-four-phase-sharp-bound/)

@@ -756,6 +756,36 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.29",
       "pages": 10,
       "archive": true
+    },
+    {
+      "id": "four-node-ritz-residence-law",
+      "zh": "四点谱延迟 Ritz 慢块的概率与驻留时间",
+      "en": "Slow-block probability and residence time for delayed four-node Ritz iterations",
+      "groupZh": "LMSD 与 Ritz 方法",
+      "groupEn": "LMSD and Ritz methods",
+      "related": [
+        "narrow-ritz-slow-block",
+        "ritz-vanishing-spectral-support"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.29",
+      "pages": 9,
+      "archive": true
+    },
+    {
+      "id": "alternating-bb-four-phase-sharp-bound",
+      "zh": "交替 BB 在大谱宽下的四相位尖锐上界",
+      "en": "A sharp bound for period-dividing-four alternating BB at large spectral width",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "bb-three-step-endpoint-extremizers",
+        "alternating-bb-fixed-score-potential"
+      ],
+      "version": "0.2",
+      "releaseDate": "2026.11.29",
+      "pages": 6,
+      "archive": true
     }
   ],
   "papers": [

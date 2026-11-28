@@ -869,10 +869,10 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
       <h2>AI 辅助研究工作稿</h2>
       <p class="research-disclosure">以下工作稿经 AI 辅助整理，尚待作者逐项人工核阅。标题与版本信息公开保留，全文需输入密码阅览。</p>
       <nav class="research-topic-links" aria-label="工作稿主题">
-        <a href="#research-topic-spectral">谱梯度与 Ritz</a><a href="#research-topic-stepsizes">步长、线搜索与停止</a><a href="#research-topic-low-rank">低秩分解与 ADMM</a><a href="#research-topic-design">最优实验设计</a>
+        <a href="#research-topic-spectral">谱步长与 BB 方法</a><a href="#research-topic-ritz">LMSD 与 Ritz 方法</a><a href="#research-topic-stepsizes">曲率、线搜索与停止</a><a href="#research-topic-low-rank">矩阵分解与 ADMM</a><a href="#research-topic-numerical-range">数值域与共形映射</a><a href="#research-topic-design">最优实验设计</a>
       </nav>
       <section class="research-work-group" aria-labelledby="research-topic-spectral">
-          <h3 id="research-topic-spectral">谱梯度与 Ritz</h3><article class="research-entry" id="manuscript-bb-asymptotic">
+          <h3 id="research-topic-spectral">谱步长与 BB 方法</h3><article class="research-entry" id="manuscript-bb-asymptotic">
       <div class="research-entry-main">
         <h4>BB 方法的最紧渐近速率</h4>
         <p class="research-meta">全文整理版 · 38 页正文，另附版本说明</p>
@@ -890,7 +890,153 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
 
       </div>
       <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-uniform" data-document-kind="pdf" data-document-lang="zh" data-document-title="BB 方法的有限维临界一致率" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-uniform-guide" data-document-kind="pdf" data-document-lang="zh" data-document-title="中文证明导读" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 中文证明导读</button></div>
-    </article><article class="research-entry" id="manuscript-lmsd-spectral">
+    </article><article class="research-entry" id="working-periodic-bb">
+      <div class="research-entry-main">
+        <h4>周期 BB 切换的相位平衡与精确局部速率</h4>
+        <p class="research-meta">v1.1 · 2026.11.26 · 46 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-trial-firsthit">用线搜索试探值重选步长</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="periodic-bb" data-document-kind="pdf" data-document-lang="zh" data-document-title="周期 BB 切换的相位平衡与精确局部速率" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button></div>
+    </article><article class="research-entry" id="working-periodic-bb-optimal-word">
+      <div class="research-entry-main">
+        <h4>周期 BB 切换的最优三次改进系数</h4>
+        <p class="research-meta">v0.1 · 2026.11.28 · 4 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-periodic-bb">周期 BB 切换的相位平衡与精确局部速率</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="periodic-bb-optimal-word" data-document-kind="pdf" data-document-lang="zh" data-document-title="周期 BB 切换的最优三次改进系数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="periodic-bb-optimal-word" data-document-kind="zip" data-document-lang="zh" data-document-title="周期 BB 切换的最优三次改进系数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-two-point-bb-optimal-selector">
+      <div class="research-entry-main">
+        <h4>两点谱上 BB1/BB2 切换的最优五步序列</h4>
+        <p class="research-meta">v0.1 · 2026.11.28 · 12 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-periodic-bb-optimal-word">周期 BB 切换的最优三次改进系数</a> · <a href="#working-periodic-bb">周期 BB 切换的相位平衡与精确局部速率</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="two-point-bb-optimal-selector" data-document-kind="pdf" data-document-lang="zh" data-document-title="两点谱上 BB1/BB2 切换的最优五步序列" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="two-point-bb-optimal-selector" data-document-kind="zip" data-document-lang="zh" data-document-title="两点谱上 BB1/BB2 切换的最优五步序列" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-large-spectrum-bb-switching">
+      <div class="research-entry-main">
+        <h4>大谱宽下两点谱 BB 切换的最优指数</h4>
+        <p class="research-meta">v0.1 · 2026.11.28 · 8 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-two-point-bb-optimal-selector">两点谱上 BB1/BB2 切换的最优五步序列</a> · <a href="#working-periodic-bb-optimal-word">周期 BB 切换的最优三次改进系数</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="large-spectrum-bb-switching" data-document-kind="pdf" data-document-lang="zh" data-document-title="大谱宽下两点谱 BB 切换的最优指数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="large-spectrum-bb-switching" data-document-kind="zip" data-document-lang="zh" data-document-title="大谱宽下两点谱 BB 切换的最优指数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-bb-two-point-first-hitting">
+      <div class="research-entry-main">
+        <h4>两特征值下 BB 法的首次达标步数与最速下降法的比较</h4>
+        <p class="research-meta">v0.2 · 2026.11.28 · 10 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-two-point-bb-optimal-selector">两点谱上 BB1/BB2 切换的最优五步序列</a> · <a href="#working-large-spectrum-bb-switching">大谱宽下两点谱 BB 切换的最优指数</a> · <a href="#working-trial-firsthit">用线搜索试探值重选步长</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-two-point-first-hitting" data-document-kind="pdf" data-document-lang="zh" data-document-title="两特征值下 BB 法的首次达标步数与最速下降法的比较" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-two-point-first-hitting" data-document-kind="zip" data-document-lang="zh" data-document-title="两特征值下 BB 法的首次达标步数与最速下降法的比较" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-bounded-delay-bb-sharp-rate">
+      <div class="research-entry-main">
+        <h4>有界滞后谱步长的尖锐收敛界</h4>
+        <p class="research-meta">v0.2 · 2026.11.28 · 9 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-two-point-bb-optimal-selector">两点谱上 BB1/BB2 切换的最优五步序列</a> · <a href="#working-large-spectrum-bb-switching">大谱宽下两点谱 BB 切换的最优指数</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bounded-delay-bb-sharp-rate" data-document-kind="pdf" data-document-lang="zh" data-document-title="有界滞后谱步长的尖锐收敛界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bounded-delay-bb-sharp-rate" data-document-kind="zip" data-document-lang="zh" data-document-title="有界滞后谱步长的尖锐收敛界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-unlimited-lag-bb-sharp-envelope">
+      <div class="research-entry-main">
+        <h4>无滞后上限谱步长的尖锐最坏界</h4>
+        <p class="research-meta">v0.2 · 2026.11.28 · 5 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a> · <a href="#working-bb-two-point-first-hitting">两特征值下 BB 法的首次达标步数与最速下降法的比较</a> · <a href="#working-noisy-ritz-history">带误差的梯度历史与 Ritz 整轮更新</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="unlimited-lag-bb-sharp-envelope" data-document-kind="pdf" data-document-lang="zh" data-document-title="无滞后上限谱步长的尖锐最坏界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="unlimited-lag-bb-sharp-envelope" data-document-kind="zip" data-document-lang="zh" data-document-title="无滞后上限谱步长的尖锐最坏界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-two-spectrum-fixed-orbit-envelope">
+      <div class="research-entry-main">
+        <h4>两点谱固定轨道的尖锐对数衰减</h4>
+        <p class="research-meta">v0.1 · 2026.11.28 · 2 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-unlimited-lag-bb-sharp-envelope">无滞后上限谱步长的尖锐最坏界</a> · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="two-spectrum-fixed-orbit-envelope" data-document-kind="pdf" data-document-lang="zh" data-document-title="两点谱固定轨道的尖锐对数衰减" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="two-spectrum-fixed-orbit-envelope" data-document-kind="zip" data-document-lang="zh" data-document-title="两点谱固定轨道的尖锐对数衰减" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-nested-log-delay-envelope">
+      <div class="research-entry-main">
+        <h4>两点谱无界滞后的迭代对数收敛界</h4>
+        <p class="research-meta">v0.1 · 2026.11.28 · 6 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-two-spectrum-fixed-orbit-envelope">两点谱固定轨道的尖锐对数衰减</a> · <a href="#working-unlimited-lag-bb-sharp-envelope">无滞后上限谱步长的尖锐最坏界</a> · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="nested-log-delay-envelope" data-document-kind="pdf" data-document-lang="zh" data-document-title="两点谱无界滞后的迭代对数收敛界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="nested-log-delay-envelope" data-document-kind="zip" data-document-lang="zh" data-document-title="两点谱无界滞后的迭代对数收敛界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-continuous-spectrum-sublinear-delay">
+      <div class="research-entry-main">
+        <h4>连续谱滞后梯度法及两点谱的尖锐年龄常数</h4>
+        <p class="research-meta">v0.1 · 2026.11.28 · 8 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a> · <a href="#working-unlimited-lag-bb-sharp-envelope">无滞后上限谱步长的尖锐最坏界</a> · <a href="#working-nested-log-delay-envelope">两点谱无界滞后的迭代对数收敛界</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="continuous-spectrum-sublinear-delay" data-document-kind="pdf" data-document-lang="zh" data-document-title="连续谱滞后梯度法及两点谱的尖锐年龄常数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="continuous-spectrum-sublinear-delay" data-document-kind="zip" data-document-lang="zh" data-document-title="连续谱滞后梯度法及两点谱的尖锐年龄常数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-alternating-bb-fixed-score-potential">
+      <div class="research-entry-main">
+        <h4>交替 BB 固定谱分数在四点当前谱上的统一势</h4>
+        <p class="research-meta">v0.3 · 2026.11.28 · 21 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-two-point-bb-optimal-selector">两点谱上 BB1/BB2 切换的最优五步序列</a> · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a> · <a href="#working-bb-three-step-endpoint-extremizers">三步 BB 谱前缀的端点极值</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="alternating-bb-fixed-score-potential" data-document-kind="pdf" data-document-lang="zh" data-document-title="交替 BB 固定谱分数在四点当前谱上的统一势" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="alternating-bb-fixed-score-potential" data-document-kind="zip" data-document-lang="zh" data-document-title="交替 BB 固定谱分数在四点当前谱上的统一势" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-variable-reuse-spectral-gradient">
+      <div class="research-entry-main">
+        <h4>高阶谱步长的可变复用与端点渐近</h4>
+        <p class="research-meta">v0.1 · 2026.11.28 · 11 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-continuous-spectrum-sublinear-delay">连续谱滞后梯度法及两点谱的尖锐年龄常数</a> · <a href="#working-unlimited-lag-bb-sharp-envelope">无滞后上限谱步长的尖锐最坏界</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="variable-reuse-spectral-gradient" data-document-kind="pdf" data-document-lang="zh" data-document-title="高阶谱步长的可变复用与端点渐近" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="variable-reuse-spectral-gradient" data-document-kind="zip" data-document-lang="zh" data-document-title="高阶谱步长的可变复用与端点渐近" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-bb-three-step-endpoint-extremizers">
+      <div class="research-entry-main">
+        <h4>三步 BB 谱前缀的端点极值</h4>
+        <p class="research-meta">v0.1 · 2026.11.28 · 6 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-alternating-bb-fixed-score-potential">交替 BB 固定谱分数在四点当前谱上的统一势</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-three-step-endpoint-extremizers" data-document-kind="pdf" data-document-lang="zh" data-document-title="三步 BB 谱前缀的端点极值" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-three-step-endpoint-extremizers" data-document-kind="zip" data-document-lang="zh" data-document-title="三步 BB 谱前缀的端点极值" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-bb-critical-dini-prefactor">
+      <div class="research-entry-main">
+        <h4>BB 割线区间法的临界渐近率与可指定前因子</h4>
+        <p class="research-meta">v0.2 · 2026.11.29 · 8 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-continuous-spectrum-sublinear-delay">连续谱滞后梯度法及两点谱的尖锐年龄常数</a> · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-critical-dini-prefactor" data-document-kind="pdf" data-document-lang="zh" data-document-title="BB 割线区间法的临界渐近率与可指定前因子" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-critical-dini-prefactor" data-document-kind="zip" data-document-lang="zh" data-document-title="BB 割线区间法的临界渐近率与可指定前因子" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-bb-arbitrary-spectrum-prefix">
+      <div class="research-entry-main">
+        <h4>交替 BB 谱动力学的任意谱统一前缀界</h4>
+        <p class="research-meta">v0.2 · 2026.11.29 · 10 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-alternating-bb-fixed-score-potential">交替 BB 固定谱分数在四点当前谱上的统一势</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-arbitrary-spectrum-prefix" data-document-kind="pdf" data-document-lang="zh" data-document-title="交替 BB 谱动力学的任意谱统一前缀界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-arbitrary-spectrum-prefix" data-document-kind="zip" data-document-lang="zh" data-document-title="交替 BB 谱动力学的任意谱统一前缀界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-alternating-bb-four-phase-sharp-bound">
+      <div class="research-entry-main">
+        <h4>交替 BB 在大谱宽下的四相位尖锐上界</h4>
+        <p class="research-meta">v0.2 · 2026.11.29 · 6 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-bb-three-step-endpoint-extremizers">三步 BB 谱前缀的端点极值</a> · <a href="#working-alternating-bb-fixed-score-potential">交替 BB 固定谱分数在四点当前谱上的统一势</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="alternating-bb-four-phase-sharp-bound" data-document-kind="pdf" data-document-lang="zh" data-document-title="交替 BB 在大谱宽下的四相位尖锐上界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="alternating-bb-four-phase-sharp-bound" data-document-kind="zip" data-document-lang="zh" data-document-title="交替 BB 在大谱宽下的四相位尖锐上界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article>
+         </section><section class="research-work-group" aria-labelledby="research-topic-ritz">
+          <h3 id="research-topic-ritz">LMSD 与 Ritz 方法</h3><article class="research-entry" id="manuscript-lmsd-spectral">
       <div class="research-entry-main">
         <h4>固定权 LMSD 的谱界与再生</h4>
         <p class="research-meta">全文整理版 · 115 页正文，另附版本说明</p>
@@ -926,15 +1072,6 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
         <p class="research-related">相关稿件 · <a href="#working-ritz-minimal-face">LMSD 在最小活跃谱上的精确速率</a></p>
       </div>
       <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="ritz-reuse" data-document-kind="pdf" data-document-lang="zh" data-document-title="历史 Ritz 值怎样重用才更快" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button></div>
-    </article><article class="research-entry" id="working-periodic-bb">
-      <div class="research-entry-main">
-        <h4>周期 BB 切换的相位平衡与精确局部速率</h4>
-        <p class="research-meta">v1.1 · 2026.11.26 · 46 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-trial-firsthit">用线搜索试探值重选步长</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="periodic-bb" data-document-kind="pdf" data-document-lang="zh" data-document-title="周期 BB 切换的相位平衡与精确局部速率" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button></div>
     </article><article class="research-entry" id="working-smooth-ritz">
       <div class="research-entry-main">
         <h4>周期 Ritz 步长的光滑非二次实现</h4>
@@ -953,24 +1090,6 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
         <p class="research-related">相关稿件 · <a href="#working-ritz-reuse">历史 Ritz 值怎样重用才更快</a> · <a href="#working-ritz-minimal-face">LMSD 在最小活跃谱上的精确速率</a></p>
       </div>
       <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="noisy-ritz-history" data-document-kind="pdf" data-document-lang="zh" data-document-title="带误差的梯度历史与 Ritz 整轮更新" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="noisy-ritz-history" data-document-kind="zip" data-document-lang="zh" data-document-title="带误差的梯度历史与 Ritz 整轮更新" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-periodic-bb-optimal-word">
-      <div class="research-entry-main">
-        <h4>周期 BB 切换的最优三次改进系数</h4>
-        <p class="research-meta">v0.1 · 2026.11.28 · 4 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-periodic-bb">周期 BB 切换的相位平衡与精确局部速率</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="periodic-bb-optimal-word" data-document-kind="pdf" data-document-lang="zh" data-document-title="周期 BB 切换的最优三次改进系数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="periodic-bb-optimal-word" data-document-kind="zip" data-document-lang="zh" data-document-title="周期 BB 切换的最优三次改进系数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-two-point-bb-optimal-selector">
-      <div class="research-entry-main">
-        <h4>两点谱上 BB1/BB2 切换的最优五步序列</h4>
-        <p class="research-meta">v0.1 · 2026.11.28 · 12 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-periodic-bb-optimal-word">周期 BB 切换的最优三次改进系数</a> · <a href="#working-periodic-bb">周期 BB 切换的相位平衡与精确局部速率</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="two-point-bb-optimal-selector" data-document-kind="pdf" data-document-lang="zh" data-document-title="两点谱上 BB1/BB2 切换的最优五步序列" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="two-point-bb-optimal-selector" data-document-kind="zip" data-document-lang="zh" data-document-title="两点谱上 BB1/BB2 切换的最优五步序列" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
     </article><article class="research-entry" id="working-memory-three-five-point">
       <div class="research-entry-main">
         <h4>三记忆 LMSD 中五点固定线的不可达性</h4>
@@ -980,36 +1099,36 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
         <p class="research-related">相关稿件 · <a href="#working-ritz-minimal-face">LMSD 在最小活跃谱上的精确速率</a> · <a href="#working-ritz-reuse">历史 Ritz 值怎样重用才更快</a> · <a href="#working-smooth-ritz">周期 Ritz 步长的光滑非二次实现</a></p>
       </div>
       <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="memory-three-five-point" data-document-kind="pdf" data-document-lang="zh" data-document-title="三记忆 LMSD 中五点固定线的不可达性" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="memory-three-five-point" data-document-kind="zip" data-document-lang="zh" data-document-title="三记忆 LMSD 中五点固定线的不可达性" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-large-spectrum-bb-switching">
+    </article><article class="research-entry" id="working-narrow-ritz-slow-block">
       <div class="research-entry-main">
-        <h4>大谱宽下两点谱 BB 切换的最优指数</h4>
+        <h4>四点谱延迟 Ritz 迭代的慢块概率与局部驻留</h4>
         <p class="research-meta">v0.1 · 2026.11.28 · 8 页</p>
 
 
-        <p class="research-related">相关稿件 · <a href="#working-two-point-bb-optimal-selector">两点谱上 BB1/BB2 切换的最优五步序列</a> · <a href="#working-periodic-bb-optimal-word">周期 BB 切换的最优三次改进系数</a></p>
+        <p class="research-related">相关稿件 · <a href="#working-ritz-minimal-face">LMSD 在最小活跃谱上的精确速率</a> · <a href="#working-noisy-ritz-history">带误差的梯度历史与 Ritz 整轮更新</a></p>
       </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="large-spectrum-bb-switching" data-document-kind="pdf" data-document-lang="zh" data-document-title="大谱宽下两点谱 BB 切换的最优指数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="large-spectrum-bb-switching" data-document-kind="zip" data-document-lang="zh" data-document-title="大谱宽下两点谱 BB 切换的最优指数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-bb-two-point-first-hitting">
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="narrow-ritz-slow-block" data-document-kind="pdf" data-document-lang="zh" data-document-title="四点谱延迟 Ritz 迭代的慢块概率与局部驻留" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="narrow-ritz-slow-block" data-document-kind="zip" data-document-lang="zh" data-document-title="四点谱延迟 Ritz 迭代的慢块概率与局部驻留" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-ritz-vanishing-spectral-support">
       <div class="research-entry-main">
-        <h4>两特征值下 BB 法的首次达标步数与最速下降法的比较</h4>
-        <p class="research-meta">v0.2 · 2026.11.28 · 10 页</p>
+        <h4>Ritz 多项式在谱支撑退化时的极限</h4>
+        <p class="research-meta">v0.1 · 2026.11.29 · 10 页</p>
 
 
-        <p class="research-related">相关稿件 · <a href="#working-two-point-bb-optimal-selector">两点谱上 BB1/BB2 切换的最优五步序列</a> · <a href="#working-large-spectrum-bb-switching">大谱宽下两点谱 BB 切换的最优指数</a> · <a href="#working-trial-firsthit">用线搜索试探值重选步长</a></p>
+        <p class="research-related">相关稿件 · <a href="#working-narrow-ritz-slow-block">四点谱延迟 Ritz 迭代的慢块概率与局部驻留</a> · <a href="#working-variable-reuse-spectral-gradient">高阶谱步长的可变复用与端点渐近</a></p>
       </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-two-point-first-hitting" data-document-kind="pdf" data-document-lang="zh" data-document-title="两特征值下 BB 法的首次达标步数与最速下降法的比较" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-two-point-first-hitting" data-document-kind="zip" data-document-lang="zh" data-document-title="两特征值下 BB 法的首次达标步数与最速下降法的比较" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-bounded-delay-bb-sharp-rate">
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="ritz-vanishing-spectral-support" data-document-kind="pdf" data-document-lang="zh" data-document-title="Ritz 多项式在谱支撑退化时的极限" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="ritz-vanishing-spectral-support" data-document-kind="zip" data-document-lang="zh" data-document-title="Ritz 多项式在谱支撑退化时的极限" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+    </article><article class="research-entry" id="working-four-node-ritz-residence-law">
       <div class="research-entry-main">
-        <h4>有界滞后谱步长的尖锐收敛界</h4>
-        <p class="research-meta">v0.2 · 2026.11.28 · 9 页</p>
+        <h4>四点谱延迟 Ritz 慢块的概率与驻留时间</h4>
+        <p class="research-meta">v0.1 · 2026.11.29 · 9 页</p>
 
 
-        <p class="research-related">相关稿件 · <a href="#working-two-point-bb-optimal-selector">两点谱上 BB1/BB2 切换的最优五步序列</a> · <a href="#working-large-spectrum-bb-switching">大谱宽下两点谱 BB 切换的最优指数</a></p>
+        <p class="research-related">相关稿件 · <a href="#working-narrow-ritz-slow-block">四点谱延迟 Ritz 迭代的慢块概率与局部驻留</a> · <a href="#working-ritz-vanishing-spectral-support">Ritz 多项式在谱支撑退化时的极限</a></p>
       </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bounded-delay-bb-sharp-rate" data-document-kind="pdf" data-document-lang="zh" data-document-title="有界滞后谱步长的尖锐收敛界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bounded-delay-bb-sharp-rate" data-document-kind="zip" data-document-lang="zh" data-document-title="有界滞后谱步长的尖锐收敛界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="four-node-ritz-residence-law" data-document-kind="pdf" data-document-lang="zh" data-document-title="四点谱延迟 Ritz 慢块的概率与驻留时间" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="four-node-ritz-residence-law" data-document-kind="zip" data-document-lang="zh" data-document-title="四点谱延迟 Ritz 慢块的概率与驻留时间" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
     </article>
          </section><section class="research-work-group" aria-labelledby="research-topic-stepsizes">
-          <h3 id="research-topic-stepsizes">步长、线搜索与停止</h3><article class="research-entry" id="working-restart-projected-bb">
+          <h3 id="research-topic-stepsizes">曲率、线搜索与停止</h3><article class="research-entry" id="working-restart-projected-bb">
       <div class="research-entry-main">
         <h4>二次模型上的梯度重启与投影 BB1</h4>
         <p class="research-meta">v0.3.0 · 2026.11.25 · 10 页</p>
@@ -1200,7 +1319,7 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
       <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="projected-bb-critical-cone" data-document-kind="pdf" data-document-lang="zh" data-document-title="投影 BB 在约束驻点附近的局部收缩" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="projected-bb-critical-cone" data-document-kind="zip" data-document-lang="zh" data-document-title="投影 BB 在约束驻点附近的局部收缩" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
     </article>
          </section><section class="research-work-group" aria-labelledby="research-topic-low-rank">
-          <h3 id="research-topic-low-rank">低秩分解与 ADMM</h3><article class="research-entry" id="working-pcp-rectangle">
+          <h3 id="research-topic-low-rank">矩阵分解与 ADMM</h3><article class="research-entry" id="working-pcp-rectangle">
       <div class="research-entry-main">
         <h4>常数背景上静止矩形目标的 PCP 最优性判据</h4>
         <p class="research-meta">v1.2 · 2026.11.25 · 9 页</p>
@@ -1227,29 +1346,7 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
 
       </div>
       <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="admm-alternating" data-document-kind="pdf" data-document-lang="zh" data-document-title="交替罚参数下的二次 ADMM" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button></div>
-    </article>
-         </section><section class="research-work-group" aria-labelledby="research-topic-design">
-          <h3 id="research-topic-design">最优实验设计</h3><article class="research-entry" id="working-delayed-design">
-      <div class="research-entry-main">
-        <h4>滞后乘法更新与实验设计</h4>
-        <p class="research-meta">v1.0 · 2026.11.26 · 60 页</p>
-
-
-
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="delayed-design" data-document-kind="pdf" data-document-lang="zh" data-document-title="滞后乘法更新与实验设计" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button></div>
-    </article><article class="research-entry" id="working-cached-design-certificate">
-      <div class="research-entry-main">
-        <h4>有限实验设计中的滞后拟合与误差证书</h4>
-        <p class="research-meta">v0.1 · 2026.11.28 · 6 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-delayed-design">滞后乘法更新与实验设计</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="cached-design-certificate" data-document-kind="pdf" data-document-lang="zh" data-document-title="有限实验设计中的滞后拟合与误差证书" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="cached-design-certificate" data-document-kind="zip" data-document-lang="zh" data-document-title="有限实验设计中的滞后拟合与误差证书" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article>
-         </section><section class="research-work-group" aria-labelledby="research-topic-other">
-          <h3 id="research-topic-other">其他研究</h3><article class="research-entry" id="working-admm-residual-feedback">
+    </article><article class="research-entry" id="working-admm-residual-feedback">
       <div class="research-entry-main">
         <h4>二次 ADMM 的周期罚参数与残差反馈发散</h4>
         <p class="research-meta">v0.2 · 2026.11.28 · 9 页</p>
@@ -1276,70 +1373,9 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
         <p class="research-related">相关稿件 · <a href="#working-pcp-rectangle-sharp-stability">静止矩形 PCP 的最优性端点与唯一恢复</a> · <a href="#working-pcp-rectangle">常数背景上静止矩形目标的 PCP 最优性判据</a> · <a href="#working-admm-residual-feedback">二次 ADMM 的周期罚参数与残差反馈发散</a></p>
       </div>
       <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="pcp-growth-noise-classification" data-document-kind="pdf" data-document-lang="zh" data-document-title="矩形 PCP 唯一分解的增长阶与噪声稳定性" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="pcp-growth-noise-classification" data-document-kind="zip" data-document-lang="zh" data-document-title="矩形 PCP 唯一分解的增长阶与噪声稳定性" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-unlimited-lag-bb-sharp-envelope">
-      <div class="research-entry-main">
-        <h4>无滞后上限谱步长的尖锐最坏界</h4>
-        <p class="research-meta">v0.2 · 2026.11.28 · 5 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a> · <a href="#working-bb-two-point-first-hitting">两特征值下 BB 法的首次达标步数与最速下降法的比较</a> · <a href="#working-noisy-ritz-history">带误差的梯度历史与 Ritz 整轮更新</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="unlimited-lag-bb-sharp-envelope" data-document-kind="pdf" data-document-lang="zh" data-document-title="无滞后上限谱步长的尖锐最坏界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="unlimited-lag-bb-sharp-envelope" data-document-kind="zip" data-document-lang="zh" data-document-title="无滞后上限谱步长的尖锐最坏界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-two-spectrum-fixed-orbit-envelope">
-      <div class="research-entry-main">
-        <h4>两点谱固定轨道的尖锐对数衰减</h4>
-        <p class="research-meta">v0.1 · 2026.11.28 · 2 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-unlimited-lag-bb-sharp-envelope">无滞后上限谱步长的尖锐最坏界</a> · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="two-spectrum-fixed-orbit-envelope" data-document-kind="pdf" data-document-lang="zh" data-document-title="两点谱固定轨道的尖锐对数衰减" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="two-spectrum-fixed-orbit-envelope" data-document-kind="zip" data-document-lang="zh" data-document-title="两点谱固定轨道的尖锐对数衰减" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-nested-log-delay-envelope">
-      <div class="research-entry-main">
-        <h4>两点谱无界滞后的迭代对数收敛界</h4>
-        <p class="research-meta">v0.1 · 2026.11.28 · 6 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-two-spectrum-fixed-orbit-envelope">两点谱固定轨道的尖锐对数衰减</a> · <a href="#working-unlimited-lag-bb-sharp-envelope">无滞后上限谱步长的尖锐最坏界</a> · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="nested-log-delay-envelope" data-document-kind="pdf" data-document-lang="zh" data-document-title="两点谱无界滞后的迭代对数收敛界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="nested-log-delay-envelope" data-document-kind="zip" data-document-lang="zh" data-document-title="两点谱无界滞后的迭代对数收敛界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-continuous-spectrum-sublinear-delay">
-      <div class="research-entry-main">
-        <h4>连续谱滞后梯度法及两点谱的尖锐年龄常数</h4>
-        <p class="research-meta">v0.1 · 2026.11.28 · 8 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a> · <a href="#working-unlimited-lag-bb-sharp-envelope">无滞后上限谱步长的尖锐最坏界</a> · <a href="#working-nested-log-delay-envelope">两点谱无界滞后的迭代对数收敛界</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="continuous-spectrum-sublinear-delay" data-document-kind="pdf" data-document-lang="zh" data-document-title="连续谱滞后梯度法及两点谱的尖锐年龄常数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="continuous-spectrum-sublinear-delay" data-document-kind="zip" data-document-lang="zh" data-document-title="连续谱滞后梯度法及两点谱的尖锐年龄常数" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-alternating-bb-fixed-score-potential">
-      <div class="research-entry-main">
-        <h4>交替 BB 固定谱分数在四点当前谱上的统一势</h4>
-        <p class="research-meta">v0.3 · 2026.11.28 · 21 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-two-point-bb-optimal-selector">两点谱上 BB1/BB2 切换的最优五步序列</a> · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a> · <a href="#working-bb-three-step-endpoint-extremizers">三步 BB 谱前缀的端点极值</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="alternating-bb-fixed-score-potential" data-document-kind="pdf" data-document-lang="zh" data-document-title="交替 BB 固定谱分数在四点当前谱上的统一势" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="alternating-bb-fixed-score-potential" data-document-kind="zip" data-document-lang="zh" data-document-title="交替 BB 固定谱分数在四点当前谱上的统一势" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-narrow-ritz-slow-block">
-      <div class="research-entry-main">
-        <h4>四点谱延迟 Ritz 迭代的慢块概率与局部驻留</h4>
-        <p class="research-meta">v0.1 · 2026.11.28 · 8 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-ritz-minimal-face">LMSD 在最小活跃谱上的精确速率</a> · <a href="#working-noisy-ritz-history">带误差的梯度历史与 Ritz 整轮更新</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="narrow-ritz-slow-block" data-document-kind="pdf" data-document-lang="zh" data-document-title="四点谱延迟 Ritz 迭代的慢块概率与局部驻留" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="narrow-ritz-slow-block" data-document-kind="zip" data-document-lang="zh" data-document-title="四点谱延迟 Ritz 迭代的慢块概率与局部驻留" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-variable-reuse-spectral-gradient">
-      <div class="research-entry-main">
-        <h4>高阶谱步长的可变复用与端点渐近</h4>
-        <p class="research-meta">v0.1 · 2026.11.28 · 11 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-continuous-spectrum-sublinear-delay">连续谱滞后梯度法及两点谱的尖锐年龄常数</a> · <a href="#working-unlimited-lag-bb-sharp-envelope">无滞后上限谱步长的尖锐最坏界</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="variable-reuse-spectral-gradient" data-document-kind="pdf" data-document-lang="zh" data-document-title="高阶谱步长的可变复用与端点渐近" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="variable-reuse-spectral-gradient" data-document-kind="zip" data-document-lang="zh" data-document-title="高阶谱步长的可变复用与端点渐近" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-convex-cap-conformal-radius">
+    </article>
+         </section><section class="research-work-group" aria-labelledby="research-topic-numerical-range">
+          <h3 id="research-topic-numerical-range">数值域与共形映射</h3><article class="research-entry" id="working-convex-cap-conformal-radius">
       <div class="research-entry-main">
         <h4>圆盘凸帽的共形半径</h4>
         <p class="research-meta">v0.1 · 2026.11.28 · 6 页</p>
@@ -1348,33 +1384,6 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
 
       </div>
       <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="convex-cap-conformal-radius" data-document-kind="pdf" data-document-lang="zh" data-document-title="圆盘凸帽的共形半径" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="convex-cap-conformal-radius" data-document-kind="zip" data-document-lang="zh" data-document-title="圆盘凸帽的共形半径" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-bb-three-step-endpoint-extremizers">
-      <div class="research-entry-main">
-        <h4>三步 BB 谱前缀的端点极值</h4>
-        <p class="research-meta">v0.1 · 2026.11.28 · 6 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-alternating-bb-fixed-score-potential">交替 BB 固定谱分数在四点当前谱上的统一势</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-three-step-endpoint-extremizers" data-document-kind="pdf" data-document-lang="zh" data-document-title="三步 BB 谱前缀的端点极值" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-three-step-endpoint-extremizers" data-document-kind="zip" data-document-lang="zh" data-document-title="三步 BB 谱前缀的端点极值" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-bb-critical-dini-prefactor">
-      <div class="research-entry-main">
-        <h4>BB 割线区间法的临界渐近率与可指定前因子</h4>
-        <p class="research-meta">v0.2 · 2026.11.29 · 8 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-continuous-spectrum-sublinear-delay">连续谱滞后梯度法及两点谱的尖锐年龄常数</a> · <a href="#working-bounded-delay-bb-sharp-rate">有界滞后谱步长的尖锐收敛界</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-critical-dini-prefactor" data-document-kind="pdf" data-document-lang="zh" data-document-title="BB 割线区间法的临界渐近率与可指定前因子" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-critical-dini-prefactor" data-document-kind="zip" data-document-lang="zh" data-document-title="BB 割线区间法的临界渐近率与可指定前因子" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-bb-arbitrary-spectrum-prefix">
-      <div class="research-entry-main">
-        <h4>交替 BB 谱动力学的任意谱统一前缀界</h4>
-        <p class="research-meta">v0.2 · 2026.11.29 · 10 页</p>
-
-
-        <p class="research-related">相关稿件 · <a href="#working-alternating-bb-fixed-score-potential">交替 BB 固定谱分数在四点当前谱上的统一势</a></p>
-      </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-arbitrary-spectrum-prefix" data-document-kind="pdf" data-document-lang="zh" data-document-title="交替 BB 谱动力学的任意谱统一前缀界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="bb-arbitrary-spectrum-prefix" data-document-kind="zip" data-document-lang="zh" data-document-title="交替 BB 谱动力学的任意谱统一前缀界" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
     </article><article class="research-entry" id="working-disk-calculus-scalar-complete-separation">
       <div class="research-entry-main">
         <h4>圆盘函数演算的标量与完全范数分离</h4>
@@ -1384,15 +1393,26 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
         <p class="research-related">相关稿件 · <a href="#working-convex-cap-conformal-radius">圆盘凸帽的共形半径</a></p>
       </div>
       <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="disk-calculus-scalar-complete-separation" data-document-kind="pdf" data-document-lang="zh" data-document-title="圆盘函数演算的标量与完全范数分离" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="disk-calculus-scalar-complete-separation" data-document-kind="zip" data-document-lang="zh" data-document-title="圆盘函数演算的标量与完全范数分离" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
-    </article><article class="research-entry" id="working-ritz-vanishing-spectral-support">
+    </article>
+         </section><section class="research-work-group" aria-labelledby="research-topic-design">
+          <h3 id="research-topic-design">最优实验设计</h3><article class="research-entry" id="working-delayed-design">
       <div class="research-entry-main">
-        <h4>Ritz 多项式在谱支撑退化时的极限</h4>
-        <p class="research-meta">v0.1 · 2026.11.29 · 10 页</p>
+        <h4>滞后乘法更新与实验设计</h4>
+        <p class="research-meta">v1.0 · 2026.11.26 · 60 页</p>
 
 
-        <p class="research-related">相关稿件 · <a href="#working-narrow-ritz-slow-block">四点谱延迟 Ritz 迭代的慢块概率与局部驻留</a> · <a href="#working-variable-reuse-spectral-gradient">高阶谱步长的可变复用与端点渐近</a></p>
+
       </div>
-      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="ritz-vanishing-spectral-support" data-document-kind="pdf" data-document-lang="zh" data-document-title="Ritz 多项式在谱支撑退化时的极限" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="ritz-vanishing-spectral-support" data-document-kind="zip" data-document-lang="zh" data-document-title="Ritz 多项式在谱支撑退化时的极限" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="delayed-design" data-document-kind="pdf" data-document-lang="zh" data-document-title="滞后乘法更新与实验设计" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button></div>
+    </article><article class="research-entry" id="working-cached-design-certificate">
+      <div class="research-entry-main">
+        <h4>有限实验设计中的滞后拟合与误差证书</h4>
+        <p class="research-meta">v0.1 · 2026.11.28 · 6 页</p>
+
+
+        <p class="research-related">相关稿件 · <a href="#working-delayed-design">滞后乘法更新与实验设计</a></p>
+      </div>
+      <div class="research-entry-links"><button type="button" class="document-link research-pdf research-protected" data-protected-document="cached-design-certificate" data-document-kind="pdf" data-document-lang="zh" data-document-title="有限实验设计中的滞后拟合与误差证书" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码阅览 PDF</button><button type="button" class="document-link research-pdf research-protected" data-protected-document="cached-design-certificate" data-document-kind="zip" data-document-lang="zh" data-document-title="有限实验设计中的滞后拟合与误差证书" aria-haspopup="dialog"><span aria-hidden="true">🔒</span> 密码下载附件</button></div>
     </article>
          </section>
     </section><section id="research-reading" class="research-section">
@@ -1586,8 +1606,8 @@ body[data-initial-page="research"] #research,body[data-initial-page="meditations
   <script src="./assets/js/Content/ZH/schedule_ZH.js?v=f1da2644d52b" defer></script>
   <script src="./assets/js/Functions/Schedule.js?v=e27a12391a00" defer></script>
 
-  <script src="./assets/js/Content/research.js?v=4f6436b4d800" defer></script>
-  <script src="./assets/js/Functions/Research.js?v=1e8315107ae6" defer></script>
+  <script src="./assets/js/Content/research.js?v=4f69f8f8f1c6" defer></script>
+  <script src="./assets/js/Functions/Research.js?v=89de2acf9091" defer></script>
   <script src="./assets/js/Functions/Bootstrap.js?v=706bad10cd9b" defer></script>
   <script src="./assets/js/Functions/Clock.js?v=60b1cd151ec4" defer></script>
   <script src="./assets/js/Functions/Theme.js?v=f549ce65b8f4" defer></script>

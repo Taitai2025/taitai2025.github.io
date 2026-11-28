@@ -22,12 +22,16 @@
     }
   ];
   const topics = [
-    {id:'spectral', zh:'谱梯度与 Ritz', en:'Spectral gradients and Ritz values',
-     groups:['BB 谱步长','LMSD 与 Ritz 重用','谱梯度与 Ritz','谱梯度与周期切换']},
-    {id:'stepsizes', zh:'步长、线搜索与停止', en:'Stepsizes, line search, and stopping',
+    {id:'spectral', zh:'谱步长与 BB 方法', en:'Spectral steps and BB methods',
+     groups:['BB 谱步长','谱梯度与周期切换','谱步长与 BB 方法']},
+    {id:'ritz', zh:'LMSD 与 Ritz 方法', en:'LMSD and Ritz methods',
+     groups:['LMSD 与 Ritz 重用','谱梯度与 Ritz','LMSD 与 Ritz 方法','延迟记忆与 Ritz']},
+    {id:'stepsizes', zh:'曲率、线搜索与停止', en:'Curvature, line search, and stopping',
      groups:['曲率信息与步长','重启、投影与线搜索','步长设计与停止条件']},
-    {id:'low-rank', zh:'低秩分解与 ADMM', en:'Low-rank decomposition and ADMM',
-     groups:['低秩分解','ADMM 与参数选择']},
+    {id:'low-rank', zh:'矩阵分解与 ADMM', en:'Matrix decomposition and ADMM',
+     groups:['低秩分解','ADMM 与参数选择','分裂法与矩阵分解']},
+    {id:'numerical-range', zh:'数值域与共形映射', en:'Numerical ranges and conformal maps',
+     groups:['数值域与共形映射']},
     {id:'design', zh:'最优实验设计', en:'Optimal experimental design', groups:['最优实验设计']}
   ];
 
@@ -257,10 +261,14 @@
          </section>`
       : '';
     const categorized = new Set(topics.flatMap(t => t.groups));
-    const groups = topics.map(t => section(t.id, zh ? t.zh : t.en,
-      entries.filter(({p}) => t.groups.includes(p.groupZh)))).join('');
-    const other = section('other', zh ? '其他研究' : 'Other research',
-      entries.filter(({p}) => !categorized.has(p.groupZh)));
+    const visibleTopics = topics.map(topic => ({
+      ...topic,
+      items: entries.filter(({p}) => topic.groups.includes(p.groupZh))
+    })).filter(topic => topic.items.length);
+    const ungrouped = entries.filter(({p}) => !categorized.has(p.groupZh));
+    if (ungrouped.length) visibleTopics.push({id:'other', zh:'其他研究', en:'Other research', items:ungrouped});
+    const groups = visibleTopics.map(topic =>
+      section(topic.id, zh ? topic.zh : topic.en, topic.items)).join('');
     const notice = zh
       ? '以下工作稿经 AI 辅助整理，尚待作者逐项人工核阅。标题与版本信息公开保留，全文需输入密码阅览。'
       : 'These AI-assisted working papers await the author’s review. Titles and version details remain public; a password is required to read the full text.';
@@ -269,9 +277,9 @@
       <h2>${zh ? 'AI 辅助研究工作稿' : 'AI-assisted research working papers'}</h2>
       <p class="research-disclosure">${esc(notice)}</p>
       <nav class="research-topic-links" aria-label="${zh ? '工作稿主题' : 'Working-paper topics'}">
-        ${topics.map(t => `<a href="#research-topic-${t.id}">${esc(zh ? t.zh : t.en)}</a>`).join('')}
+        ${visibleTopics.map(t => `<a href="#research-topic-${t.id}">${esc(zh ? t.zh : t.en)}</a>`).join('')}
       </nav>
-      ${groups}${other}
+      ${groups}
     </section>`;
   }
 
