@@ -598,6 +598,36 @@ window.RESEARCH_CONTENT = {
       "releaseDate": "2026.11.28",
       "pages": 13,
       "archive": true
+    },
+    {
+      "id": "narrow-ritz-slow-block",
+      "zh": "四点谱延迟 Ritz 迭代的慢块概率与局部驻留",
+      "en": "Slow blocks and local residence for delayed Ritz iterations on four nodes",
+      "groupZh": "LMSD 与 Ritz 方法",
+      "groupEn": "LMSD and Ritz methods",
+      "related": [
+        "ritz-minimal-face",
+        "noisy-ritz-history"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 8,
+      "archive": true
+    },
+    {
+      "id": "variable-reuse-spectral-gradient",
+      "zh": "高阶谱步长的可变复用与端点渐近",
+      "en": "Spectral convergence with variable reuse of an optimized gradient step",
+      "groupZh": "谱步长与 BB 方法",
+      "groupEn": "Spectral steps and BB methods",
+      "related": [
+        "continuous-spectrum-sublinear-delay",
+        "unlimited-lag-bb-sharp-envelope"
+      ],
+      "version": "0.1",
+      "releaseDate": "2026.11.28",
+      "pages": 11,
+      "archive": true
     }
   ],
   "papers": [

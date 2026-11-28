@@ -46,3 +46,5 @@
 - [两点谱无界滞后的迭代对数收敛界](./nested-log-delay-envelope/)
 - [连续谱滞后梯度法及两点谱的尖锐年龄常数](./continuous-spectrum-sublinear-delay/)
 - [交替 BB 固定谱分数的两点势与三点约化](./alternating-bb-fixed-score-potential/)
+- [四点谱延迟 Ritz 迭代的慢块概率与局部驻留](./narrow-ritz-slow-block/)
+- [高阶谱步长的可变复用与端点渐近](./variable-reuse-spectral-gradient/)
